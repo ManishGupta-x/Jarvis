@@ -92,7 +92,7 @@ client.on('message', message => {
             message.reply("You need to specify a Person!")
         }
     }   else if (command === 'gn') {
-            client.deadline.get('gn').execute(message, args, Discord);
+            client.commands.get('gn').execute(message, args, Discord);
 
     }
 
