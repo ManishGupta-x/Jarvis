@@ -7,110 +7,69 @@ const fs = require('fs');
 const { disconnect } = require('process');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-for(const file of commandFiles){
+for (const file of commandFiles) {
 
-    const command=require(`./commands/${file}`);
-    client.commands.set(command.name, command );
+    const command = require(`./commands/${file}`);
+    client.commands.set(command.name, command);
 }
 client.deadline = new Discord.Collection();
 const deadlineFiles = fs.readdirSync('./deadline/').filter(file => file.endsWith('.js'));
-for(const file of deadlineFiles){
+for (const file of deadlineFiles) {
 
-    const command=require(`./deadline/${file}`);
-    client.deadline.set(command.name, command );
+    const command = require(`./deadline/${file}`);
+    client.deadline.set(command.name, command);
 }
 
 
 client.once('ready', () => {
     console.log('Nightmare is online!');
-    client.user.setActivity('PES 2021', {type: 'PLAYING'}).catch(console.error);
+    client.user.setActivity('PES 2021', { type: 'PLAYING' }).catch(console.error);
 
 });
 
 
-client.on('message', message =>{
-    if(!message.content.startsWith(prefix) || message.author.bot) return;
+client.on('message', message => {
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    switch (args[0]){
+    if (command === 'ping') {
 
+        client.commands.get('ping').execute(message, args);
 
-        case 'ping':
-
-        client.commands.get('ping').execute(message, args, Discord);
-        break;
-
-        case 'youtube':
-
+    } else if (command === 'youtube') {
         client.commands.get('youtube').execute(message, args, Discord);
-        break;
-
-        case 'official':
+    } else if (command === 'official') {
 
         client.commands.get('official').execute(message, args, Discord);
-        break;
-
-        case 'twitter':
+    } else if (command === 'twitter') {
 
         client.commands.get('twitter').execute(message, args, Discord);
-        break;
 
-        case 'freakcup':
-
+    } else if (command === 'freakcup') {
         client.commands.get('freakcup').execute(message, args, Discord);
-        break;
-
-        case 'div':
-
-        client.commands.get('div').execute(message, args, Discord);
-        break;
-
-        case 'clear':
-
+    } else if (command === 'div1') {
+        client.commands.get('div1').execute(message, args, Discord);
+    } else if (command === 'clear') {
         client.commands.get('clear').execute(message, args, Discord);
-        break;
-
-        case 'division':
-
-        client.commands.get('divisons').execute(message, args, Discord);
-        break;
-
-        case 'deadline-mainko':
-
+    } else if (command === 'divisions') {
+        client.commands.get('divisions').execute(message, args, Discord);
+    } else if (command === 'deadline-mainko') {
         client.deadline.get('deadline-mainko').execute(message, args, Discord);
-        break;  
-        
-        case 'main-squadko':
-
+    } else if (command === 'main-squadko') {
         client.commands.get('main-squadko').execute(message, args, Discord);
-        break; 
-
-        case 'deadline-freakcup':
-
+    } else if (command === 'deadline-freakcup') {
         client.deadline.get('deadline-freakcup').execute(message, args, Discord);
-        break; 
-
-        case 'deadline-ucl':
-
+    } else if (command === 'deadline-ucl') {
         client.deadline.get('deadline-ucl').execute(message, args, Discord);
-        break; 
-        
-        case 'deadline-laliga':
-
+    } else if (command === 'deadline-laliga') {
         client.deadline.get('deadline-laliga').execute(message, args, Discord);
-        break; 
-
-        case 'deadline-premleague':
-
+    } else if (command === 'deadline-premleague') {
         client.deadline.get('deadline-premleague').execute(message, args, Discord);
-        break; 
+    }
 
-
-
-        
-        }
 });
+
 
 client.login(process.env.token);
