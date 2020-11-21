@@ -34,84 +34,42 @@ client.on('message', message =>{
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    switch (args[0]){
+    if(command === 'ping'){
+
+               client.commands.get('ping').execute(message, args);
 
 
-        case 'ping':
-
-        client.commands.get('ping').execute(message, args, Discord);
-        break;
-
-        case 'youtube':
-
+        
+    } else if(command === 'youtube'){
         client.commands.get('youtube').execute(message, args, Discord);
-        break;
+    } else if(command === 'official'){
 
-        case 'official':
+        client.commands.get('official').execute(message,args , Discord);
+    } else if(command === 'twitter'){
 
-        client.commands.get('official').execute(message, args, Discord);
-        break;
-
-        case 'twitter':
-
-        client.commands.get('twitter').execute(message, args, Discord);
-        break;
-
-        case 'freakcup':
-
-        client.commands.get('freakcup').execute(message, args, Discord);
-        break;
-
-        case 'div':
-
-        client.commands.get('div').execute(message, args, Discord);
-        break;
-
-        case 'clear':
-
-        client.commands.get('clear').execute(message, args, Discord);
-        break;
-
-        case 'division':
-
-        client.commands.get('divisons').execute(message, args, Discord);
-        break;
-
-        case 'deadline-mainko':
-
-        client.deadline.get('deadline-mainko').execute(message, args, Discord);
-        break;  
-        
-        case 'main-squadko':
-
-        client.commands.get('main-squadko').execute(message, args, Discord);
-        break; 
-
-        case 'deadline-freakcup':
-
-        client.deadline.get('deadline-freakcup').execute(message, args, Discord);
-        break; 
-
-        case 'deadline-ucl':
-
-        client.deadline.get('deadline-ucl').execute(message, args, Discord);
-        break; 
-        
-        case 'deadline-laliga':
-
-        client.deadline.get('deadline-laliga').execute(message, args, Discord);
-        break; 
-
-        case 'deadline-premleague':
-
-        client.deadline.get('deadline-premleague').execute(message, args, Discord);
-        break; 
-
-
-
-        
-        }
-        
+      client.commands.get('twitter').execute(message,args, Discord);         
+    
+    }else if(command === 'freakcup'){
+        client.commands.get('freakcup').execute(message,args , Discord);
+    }else if(command === 'div1'){
+        client.commands.get('div1').execute(message,args , Discord);
+    }else if(command === 'clear'){
+        client.commands.get('clear').execute(message,args , Discord);
+    }else if(command === 'divisions'){
+        client.commands.get('divisions').execute(message,args , Discord);
+    }else if(command === 'deadline-mainko'){
+        client.deadline.get('deadline-mainko').execute(message,args , Discord);
+    }else if(command === 'main-squadko'){
+        client.commands.get('main-squadko').execute(message,args , Discord);
+    }else if(command === 'deadline-freakcup'){
+        client.deadline.get('deadline-freakcup').execute(message,args , Discord);
+    }else if(command === 'deadline-ucl'){
+        client.deadline.get('deadline-ucl').execute(message,args , Discord);
+    }else if(command === 'deadline-laliga'){
+        client.deadline.get('deadline-laliga').execute(message,args , Discord);
+    }else if(command === 'deadline-premleague'){
+        client.deadline.get('deadline-premleague').execute(message,args , Discord);
+    }
 });
 
 client.login(process.env.token);
