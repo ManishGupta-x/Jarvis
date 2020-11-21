@@ -39,7 +39,7 @@ client.on('message', message =>{
 
         case 'ping':
 
-        client.commands.get('pingg').execute(message, args, Discord);
+        client.commands.get('ping').execute(message, args, Discord);
         break;
 
         case 'youtube':
