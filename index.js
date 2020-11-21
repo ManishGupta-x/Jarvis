@@ -107,10 +107,10 @@ client.on('message', message =>{
         client.deadline.get('deadline-premleague').execute(message, args, Discord);
         break; 
          
-        case 'kick':
+        //case 'kick':
            
-        client.commands.get('kick').execute(message,args, Discord);
-        break;
+        //client.commands.get('kick').execute(message,args, Discord);
+        //break;
             
 
 
