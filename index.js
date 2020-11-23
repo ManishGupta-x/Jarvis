@@ -52,7 +52,9 @@ client.on('message', message => {
         client.commands.get('freakcup').execute(message, args, Discord);
     } else if (command === 'div1') {
         client.commands.get('div1').execute(message, args, Discord);
-    } else if (command === 'clear') {
+    } else if (command === 'div2') {
+        client.commands.get('div2').execute(message, args, Discord);
+    }else if (command === 'clear') {
         client.commands.get('clear').execute(message, args, Discord);
     } else if (command === 'divisions') {
         client.commands.get('divisions').execute(message, args, Discord);
