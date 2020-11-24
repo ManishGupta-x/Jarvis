@@ -13,7 +13,7 @@ module.exports ={
            '\n Runner Up: 10000 **Server score**'+
            '\n Semifinalists: 5000 **Server Score**'+
            '\n Quaterfinalist: 3000 **Server Score**'+
-           '\n\n  ** The Winner and Runner Up get access to Freak cup **' }  
+           '\n\n  ** The Winner and Runner Up and Semifinalists get access to Freak cup **' }  
            
            
            )
