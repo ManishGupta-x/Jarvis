@@ -19,6 +19,13 @@ for (const file of deadlineFiles) {
     const command = require(`./deadline/${file}`);
     client.deadline.set(command.name, command);
 }
+client.Rewards = new Discord.Collection();
+const RewardsFiles = fs.readdirSync('./Rewards/').filter(file => file.endsWith('.js'));
+for (const file of RewardsFiles) {
+
+    const command = require(`./Rewards/${file}`);
+    client.Rewards.set(command.name, command);
+}
 
 
 client.once('ready', () => {
@@ -70,7 +77,31 @@ client.on('message', message => {
         client.deadline.get('deadline-laliga').execute(message, args, Discord);
     } else if (command === 'deadline-premleague') {
         client.deadline.get('deadline-premleague').execute(message, args, Discord);
-    } else if (command === 'kick') {
+    }
+    
+    else if (command === 'rewards-freakcup') {
+        client.Rewards.get('rewards-freakcup').execute(message, args, Discord);
+    } else if (command === 'rewards-ucl') {
+        client.Rewards.get('rewards-ucl').execute(message, args, Discord);
+    } else if (command === 'rewards-laliga') {
+        client.Rewards.get('rewards-laliga').execute(message, args, Discord);
+    } else if (command === 'rewards-premleague') {
+        client.Rewards.get('rewards-premleague').execute(message, args, Discord);
+    }else if (command === 'rewards-mainko') {
+        client.Rewards.get('rewards-mainko').execute(message, args, Discord);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    else if (command === 'kick') {
 
         const user = message.mentions.users.first();
 
