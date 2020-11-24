@@ -10,9 +10,9 @@ module.exports ={
        .addFields(
         
            {name: "Rewards" , value: '\n Winner : 15000 **Server score**'+
-           '\n Runner Up 10000 **Server score**'+
-           '\n Semifinalists 5000 **Server Score**'+
-           '\n Quaterfinalist 3000 **Server Score**'+
+           '\n Runner Up: 10000 **Server score**'+
+           '\n Semifinalists: 5000 **Server Score**'+
+           '\n Quaterfinalist: 3000 **Server Score**'+
            '\n\n  ** The Winner and Runner Up get access to Freak cup **' }  
            
            
