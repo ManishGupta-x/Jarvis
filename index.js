@@ -90,17 +90,6 @@ client.on('message', message => {
     }else if (command === 'rewards-mainko') {
         client.Rewards.get('rewards-mainko').execute(message, args, Discord);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     else if (command === 'kick') {
 
         const user = message.mentions.users.first();

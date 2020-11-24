@@ -16,7 +16,7 @@ module.exports ={
            
            
            )
-           .setImage('https://cdn.discordapp.com/attachments/730714810614022228/778985497627197500/20200901ad3119d01bddf7ef9_th_1024x0.jpg');
+           .setImage('https://cdn.discordapp.com/attachments/730714810614022228/775206388128546846/soccer-virgil-van-dijk-dutch-liverpool-f-c-wallpaper-preview.jpg');
            
            
            message.channel.send(newEmbed);
