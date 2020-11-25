@@ -92,32 +92,11 @@ client.on('message', message => {
     }
     else if (command === 'kick') {
 
-       
-
-        const user = message.mentions.users.first();
-
         if(!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180') )
         return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({timeout: 4000}));
         
-        if (user) {
-
-            const member = message.guild.member(user);
-            if (member) {
-                member.kick('You where Kicked from freak gamer').then(() => {
-                    message.reply(`Sucessfully kicked ${user.tag} \nhttps://tenor.com/view/kids-bye-kick-gif-13210062`);
-                }).catch(err => {
-                    message.reply('I can\'t kick that member bruh');
-                    console.log(err);
-
-
-                });
-            } else {
-                message.reply("That user isn\'t in this guild")
-            }
-        } else {
-
-            message.reply("You need to specify a Person!")
-        }
+        client.commands.get('kick').execute(message, args, Discord);
+        
     }   else if (command === 'gn') {
             client.commands.get('gn').execute(message, args, Discord);
 
