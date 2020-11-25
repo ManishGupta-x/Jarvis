@@ -92,7 +92,8 @@ client.on('message', message => {
     }
     else if (command === 'kick') {
 
-        const user = message.mentions.users.first();
+        if(!message.member.roles.find(r => r.name === "VICE PRESIDENT") || !message.member.roles.find(r => r.name === "🎖️│Freaky Staff") )return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB').then(msg => msg.delete(4000)); 
+     const user = message.mentions.users.first();
 
         if (user) {
 
@@ -117,7 +118,7 @@ client.on('message', message => {
             client.commands.get('gn').execute(message, args, Discord);
 
     }
-
+    
 });
 
 
