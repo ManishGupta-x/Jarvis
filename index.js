@@ -96,7 +96,7 @@ client.on('message', message => {
 
         const user = message.mentions.users.first();
 
-        if(!message.member.roles.cache.has(r => r.name === "Bot Manager") || !message.member.roles.cache.has(r => r.name === "🎖️│Freaky Staff") )
+        if(!message.member.roles.cache.has('599566802682511360') || !message.member.roles.cache.has('610377914109788180') )
         return message.channel.send('YOU DONT HAVE PERMISSION TO THAT ').then(message => message.delete({timeout: 4000}));
         
         if (user) {
