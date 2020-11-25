@@ -92,8 +92,11 @@ client.on('message', message => {
     }
     else if (command === 'kick') {
 
-        const user = message.mentions.users.first();
+        if(!message.member.roles.cache.has(r => r.name === "VICE PRESIDENT") || !message.member.roles.cache.has(r => r.name === "🎖️│Freaky Staff") )
+        return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB').then(message => message.delete({timeout: 4000}));
 
+        const user = message.mentions.users.first();
+        
         if (user) {
 
             const member = message.guild.member(user);
@@ -118,7 +121,7 @@ client.on('message', message => {
 
     
    }
-
+    
 });
 
 
