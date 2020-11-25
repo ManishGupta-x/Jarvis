@@ -7,7 +7,7 @@ module.exports ={
      
       if(!args[1]){
       
-         message.channel.send('What are you expecting in poll ? such a dumb');
+         message.channel.send('What are you expecting in poll ?');
          return;
        }
        
