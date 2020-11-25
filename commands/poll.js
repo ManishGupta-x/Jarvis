@@ -5,7 +5,7 @@ module.exports ={
     Description: 'Poll Command!',
     execute(message,args, Discord){
      
-      if(!args[1]){
+      if(!args[0]){
       
          message.channel.send('What are you expecting in poll ?');
          return;
