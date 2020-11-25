@@ -12,10 +12,11 @@ module.exports ={
        }
        
        let msgArgs = args.slice(1).join("");
-        message.channel.send(msgArgs).then(MessageReaction => {
+        message.channel.send("🤔" + "**" + msgArgs + "**").then(MessageReaction => {
         MessageReaction.react("🅰️");
         MessageReaction.react("🅱️");
         MessageReaction.react("🤝");
+        message.delete(1000).catch(console.error);
        })
        
        
