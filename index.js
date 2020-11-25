@@ -30,7 +30,7 @@ for (const file of RewardsFiles) {
 
 client.once('ready', () => {
     console.log('Nightmare is online!');
-    client.user.setActivity('PES 2021', { type: 'PLAYING' }).catch(console.error);
+    client.user.setActivity('Remembering Maradona', { type: 'CUSTOM_STATUS'}).catch(console.error); 
 
 });
 
