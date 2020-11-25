@@ -30,7 +30,7 @@ for (const file of RewardsFiles) {
 
 client.once('ready', () => {
     console.log('Nightmare is online!');
-    client.user.setActivity('Remembering Maradona'); 
+    client.user.setActivity('RIP Maradona' , { type:'STREAMING'}).catch(console.error);
 
 });
 
