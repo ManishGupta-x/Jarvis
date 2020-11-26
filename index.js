@@ -104,7 +104,7 @@ client.on('message', message => {
    }else if (command === 'poll'){
 
       const Embed = new RichEmbed()
-      .setcolor(#ffff00)
+      .setcolor(0xffff00)
       .setTitle(" Initiate a poll")
       .setDescription("p!poll to iniate a match poll"); 
         
@@ -121,8 +121,11 @@ client.on('message', message => {
         messageReaction.react("🅰️");
         messageReaction.react("🅱️");
         messageReaction.react("🤝");
-      }
-   }
+      
+    });
+      
+       
+  }
 });
 
 
