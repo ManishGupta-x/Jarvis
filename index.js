@@ -101,8 +101,6 @@ client.on('message', message => {
             client.commands.get('gn').execute(message, args, Discord);
 
     
-   }else if (command === 'poll') {
-    client.commands.get('poll').execute(message, args, Discord);
    }
 });
 
