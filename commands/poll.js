@@ -16,7 +16,7 @@ module.exports ={
         MessageReaction.react("🅰️");
         MessageReaction.react("🅱️");
         MessageReaction.react("🤝");
-        message.delete(10000).catch(console.error);
+       
        });
        
        
