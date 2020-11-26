@@ -101,9 +101,31 @@ client.on('message', message => {
             client.commands.get('gn').execute(message, args, Discord);
 
     
-   }else if (command === 'poll') {
-    client.commands.get('poll').execute(message, args, Discord);
-   }
+    }
+    switch(args[0]){
+
+     case "poll" : 
+
+     if(!args[1]){
+      
+        message.channel.send('What are you expecting in poll ?');
+        break;
+      }
+       
+      let msgArgs = args.slice(1).join(" ");
+        message.channel.send(msgArgs).then(MessageReaction => {
+        MessageReaction.react("🅰️");
+        MessageReaction.react("🅱️");
+        MessageReaction.react("🤝");
+       
+       });
+       break;
+
+
+
+    }
+   
+  
 });
 
 
