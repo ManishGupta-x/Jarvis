@@ -42,10 +42,9 @@ client.on('message', async message => {
     const command = args.shift().toLowerCase();
     
     const messageArray = message.content.split(' ');
-	const cmd = messageArray[0];
 	const Args = messageArray.slice(1);
 
-    if (cmd === 'poll'){
+    if (command === 'poll'){
         let pollChannel = message.mentions.channels.first();
         let pollDescription = Args.slice(1).join(' ');
 
