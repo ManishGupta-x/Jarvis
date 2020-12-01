@@ -35,27 +35,13 @@ client.once('ready', () => {
 });
 
 
-client.on('message', async message => {
+client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-    
-    const messageArray = message.content.split(' ');
-	const Args = messageArray.slice(1);
 
-    if (command === 'poll'){
-        let pollChannel = message.mentions.channels.first();
-        let pollDescription = Args.slice(1).join(' ');
-
-        let embedPoll = new Discord.MessageEmbed()
-        .setTitle('😲 New Poll! 😲')
-        .setDescription(pollDescription)
-        .setColor('YELLOW')
-        let msgEmbed = await pollChannel.send(embedPoll);
-        await msgEmbed.react('👍')
-        await msgEmbed.react('👎')
-    }else if (command === 'ping') {
+    if (command === 'ping') {
 
         client.commands.get('ping').execute(message, args);
 
