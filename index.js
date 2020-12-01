@@ -108,6 +108,7 @@ client.on('message', message => {
         .setcolor(0xffff00)
         .setTitle(" Initiate a poll")
         .setDescription("p!poll to iniate a match poll"); 
+        message.channel.send(Embed);
        }
        
   
