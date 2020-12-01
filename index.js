@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 
 const client = new Discord.Client();
+const { client ,RichEmbed} = require('discord.js');
 
 const prefix = 'p!';
 const fs = require('fs');
@@ -40,6 +41,7 @@ client.on('message', message => {
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
+    let argument = message.content.substring(prefix.length).split(" "); 
 
     if (command === 'ping') {
 
@@ -101,6 +103,27 @@ client.on('message', message => {
             client.commands.get('gn').execute(message, args, Discord);
 
     
+   }
+
+   switch(argument[0]){
+
+       case "poll" :
+        const Embed = new RichEmbed()
+        .setcolor(0xffff00)
+        .setTitle(" Initiate a poll")
+        .setDescription("p!poll to iniate a match poll"); 
+        
+        if(!argument[1]){
+
+            message.channel.send(Embed);
+            
+        }
+
+        break;
+
+
+
+
    }
        
   
