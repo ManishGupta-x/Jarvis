@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 
+
 const client = new Discord.Client();
 
 const prefix = 'p!';
@@ -38,7 +39,7 @@ client.once('ready', () => {
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    const args = message.content.slice(prefix.length).split(/ +/);
+    const args = message.content.substring(prefix.length).split(" ");
     const command = args.shift().toLowerCase();
 
     if (command === 'ping') {
@@ -101,6 +102,23 @@ client.on('message', message => {
             client.commands.get('gn').execute(message, args, Discord);
 
     
+   } 
+   else if (command === 'poll') {
+       
+    if(!args[0]){
+    const Embed = new RichEmbed()
+    .setcolor(0xffff00)
+    .setTitle(" Initiate a poll")
+    .setDescription("p!poll to iniate a match poll"); 
+   }  
+    if(!args[1]){
+
+      message.channel.send(Embed);
+      
+      
+    }
+    break;
+
    }
        
   
