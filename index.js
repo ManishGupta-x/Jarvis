@@ -101,6 +101,11 @@ client.on('message', message => {
             client.commands.get('gn').execute(message, args, Discord);
 
     
+   }else if(command === 'mute'){
+
+    client.commands.get('mute').execute(message, args, Discord);  
+
+
    }
       
        
