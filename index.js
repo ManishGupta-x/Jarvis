@@ -101,19 +101,7 @@ client.on('message', message => {
             client.commands.get('gn').execute(message, args, Discord);
 
     
-   }else if (command === 'poll')   
-       { 
-
-        const Embed = new RichEmbed()
-        .setcolor(0xffff00)
-        .setTitle(" Initiate a poll")
-        .setDescription("p!poll to iniate a match poll"); 
-
-        if(!args[1]){
-     message.channel.send(Embed);
-      break;   
-    }
-       }
+   }
        
   
 });
