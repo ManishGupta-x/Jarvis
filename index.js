@@ -118,7 +118,7 @@ client.on('message', message => {
 
     client.commands.get('poll').execute(message, args, Discord);
 
-   }*/
+   } */
       
        
   
