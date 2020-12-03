@@ -122,7 +122,7 @@ client.on('message', async message => {
                 return message.channel.send('You did not mention / give the id of the channel you wanted to create the poll in!')
              }
              
-                   let question =  message.content.slice(client.prefix.lenth+5+channel.id.length+3)
+                   let question =  message.content.slice(client.prefix.length+5+channel.id.length+3)
                    if(!question){
         
                        return message.channel.send('You didnt specified a question for the poll')
