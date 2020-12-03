@@ -111,6 +111,13 @@ client.on('message', message => {
     client.commands.get('unmute').execute(message, args, Discord);  
 
 
+   }else if(command === 'poll')
+   {
+    if(!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180') )
+    return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({timeout: 4000}));
+
+    client.commands.get('poll').execute(message, args, Discord);
+    
    }
       
        
