@@ -113,7 +113,7 @@ client.on('message', async message => {
 
     } else if (command === 'poll') {
         if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
-            return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));
+            return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 })).catch(console.error);
 
        
             if(!channel){
@@ -132,8 +132,8 @@ client.on('message', async message => {
                     .setDescription(question)
                     .setFooter(`${message.author.username} Created this Poll`) 
                     let msg = awaitclient.channels.cache.get(channel.id).send(Embed)
-                    await msg.react('🅰️').catch(console.error);
-                    await msg.react('🅱️').catch(console.error);
+                    await msg.react('🅰️')
+                    await msg.react('🅱️')
                     message.delete(5000).catch(console.error);
                
         
