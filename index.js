@@ -137,7 +137,7 @@ client.on('message', async message => {
                     await msg.react('🅰️')
                     await msg.react('🅱️')
                     await msg.react('🤝')
-                    msg.delete(5000).catch(console.error);
+                    .then(msg => msg.delete({ timeout: 4000 })).catch(console.error);
                
         
         
