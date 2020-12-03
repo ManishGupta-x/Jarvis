@@ -132,7 +132,7 @@ client.on('message', async message => {
                     .setColor('#00f1ff')
                     .setTitle("Who will win 🤔")
                     .setDescription(question)
-                    .setFooter(`${message.author.username} Created this Poll`) 
+                    .setFooter(`Mark The correct Option Below 🤩`) 
                     let msg = await client.channels.cache.get(channel.id).send(Embed)
                     await msg.react('🅰️')
                     await msg.react('🅱️')
