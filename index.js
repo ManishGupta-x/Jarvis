@@ -129,12 +129,13 @@ client.on('message', async message => {
                        return message.channel.send('You didnt specified a question for the poll')
                    }
                     const Embed = new MessageEmbed()
-                    .setTitle(" New Poll")
+                    .setTitle("Who will win")
                     .setDescription(question)
                     .setFooter(`${message.author.username} Created this Poll`) 
                     let msg = await client.channels.cache.get(channel.id).send(Embed)
                     await msg.react('🅰️')
                     await msg.react('🅱️')
+                    await msg.react('🤝')
                     message.delete(5000).catch(console.error);
                
         
