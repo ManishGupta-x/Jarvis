@@ -129,6 +129,7 @@ client.on('message', async message => {
                        return message.channel.send('You didnt specified a question for the poll')
                    }
                     const Embed = new MessageEmbed()
+                    .setColor('#00f1ff')
                     .setTitle("Who will win")
                     .setDescription(question)
                     .setFooter(`${message.author.username} Created this Poll`) 
