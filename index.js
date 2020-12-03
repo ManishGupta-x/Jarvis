@@ -134,7 +134,7 @@ client.on('message', async message => {
                     let msg = awaitclient.channels.cache.get(channel.id).send(Embed)
                     await msg.react('🅰️') 
                     await msg.react('🅱️')
-        
+                    message.delete(5000).catch(console.error);
                
         
         
