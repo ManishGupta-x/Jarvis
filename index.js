@@ -115,9 +115,32 @@ client.on('message', message => {
         if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
             return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));
 
-        client.commands.get('poll').execute(message, args, Discord);
+       
+            if(!channel){
 
-    }
+
+                return message.channel.send('You did not mention / give the id of the channel you wanted to create the poll in!')
+             }
+             
+                   let question =  message.content.slice(bot.prefix.lenth+5+channel.id.length+3)
+                   if(!question){
+        
+                       return message.channel.send('You didnt specified a question for the poll')
+                   }
+                    const Embed = new MessageEmbed()
+                    .setTitle(" New Poll")
+                    .setDescription(question)
+                    .setFooter(`${message.author.username} Created this Poll`) 
+                    let msg = awaitbot.channels.cache.get(channel.id).send(Embed)
+                    await msg.react('🅰️') 
+                    await msg.react('🅱️')
+        
+               
+        
+        
+            }  
+        
+    
 
 
 
