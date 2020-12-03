@@ -131,7 +131,7 @@ client.on('message', async message => {
                     .setTitle(" New Poll")
                     .setDescription(question)
                     .setFooter(`${message.author.username} Created this Poll`) 
-                    let msg = awaitclient.channels.cache.get(channel.id).send(Embed)
+                    let msg = await client.channels.cache.get(channel.id).send(Embed)
                     await msg.react('🅰️')
                     await msg.react('🅱️')
                     message.delete(5000).catch(console.error);
