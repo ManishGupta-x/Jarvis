@@ -30,7 +30,7 @@ for (const file of RewardsFiles) {
 
 client.once('ready', () => {
     console.log('Nightmare is online!');
-    client.user.setActivity('RIP Maradona' , { type:'PLAYING'}).catch(console.error);
+    client.user.setActivity('RIP Maradona', { type: 'PLAYING' }).catch(console.error);
 
 });
 
@@ -61,7 +61,7 @@ client.on('message', message => {
         client.commands.get('div1').execute(message, args, Discord);
     } else if (command === 'div2') {
         client.commands.get('div2').execute(message, args, Discord);
-    }else if (command === 'clear') {
+    } else if (command === 'clear') {
         client.commands.get('clear').execute(message, args, Discord);
     } else if (command === 'divisions') {
         client.commands.get('divisions').execute(message, args, Discord);
@@ -78,7 +78,7 @@ client.on('message', message => {
     } else if (command === 'deadline-premleague') {
         client.deadline.get('deadline-premleague').execute(message, args, Discord);
     }
-    
+
     else if (command === 'rewards-freakcup') {
         client.Rewards.get('rewards-freakcup').execute(message, args, Discord);
     } else if (command === 'rewards-ucl') {
@@ -87,41 +87,40 @@ client.on('message', message => {
         client.Rewards.get('rewards-laliga').execute(message, args, Discord);
     } else if (command === 'rewards-premleague') {
         client.Rewards.get('rewards-premleague').execute(message, args, Discord);
-    }else if (command === 'rewards-mainko') {
+    } else if (command === 'rewards-mainko') {
         client.Rewards.get('rewards-mainko').execute(message, args, Discord);
     }
     else if (command === 'kick') {
 
-        if(!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180') )
-        return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({timeout: 4000}));
-        
+        if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
+            return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));
+
         client.commands.get('kick').execute(message, args, Discord);
-        
-    }   else if (command === 'gn') {
-            client.commands.get('gn').execute(message, args, Discord);
 
-    
-   }else if(command === 'mute'){
-
-    client.commands.get('mute').execute(message, args, Discord);  
+    } else if (command === 'gn') {
+        client.commands.get('gn').execute(message, args, Discord);
 
 
-   }else if(command === 'unmute'){
+    } else if (command === 'mute') {
 
-    client.commands.get('unmute').execute(message, args, Discord);  
+        client.commands.get('mute').execute(message, args, Discord);
 
 
-   }else if(command === 'poll')
-   {
-    if(!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180') )
-    return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({timeout: 4000}));
+    } else if (command === 'unmute') {
 
-    client.commands.get('poll').execute(message, args, Discord);
+        client.commands.get('unmute').execute(message, args, Discord);
 
-   } 
-      
-       
-  
+
+    } else if (command === 'poll') {
+        if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
+            return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));
+
+        client.commands.get('poll').execute(message, args, Discord);
+
+    }
+
+
+
 });
 
 
