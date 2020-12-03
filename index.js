@@ -134,10 +134,10 @@ client.on('message', async message => {
                     .setDescription(question)
                     .setFooter(`Mark The correct Option Below 🤩`) 
                     let msg = await client.channels.cache.get(channel.id).send(Embed)
-                    await msg.react('🅰️')
-                    await msg.react('🅱️')
+                    await msg.react('👍')
+                    await msg.react('👎')
                     await msg.react('🤝')
-                    message.delete({timeout: 4000})
+                    message.delete({timeout: 2000})
                
         
         
