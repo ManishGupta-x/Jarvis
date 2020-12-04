@@ -28,7 +28,7 @@ module.exports ={
             /* Function for set interval */
             message.channel.send(Embed);
             val++;
-            
+
 
             valcheck();
           }, 2000);
@@ -52,7 +52,7 @@ module.exports ={
   }
  
 let valcheck = () => {
-  if (source.val === 1){
+  if (source.val > 1){
     clearInterval(source.timedCheck);
     source.timedCheck = undefined;
     return message.channel.send(`command finished as scheduled!`);
