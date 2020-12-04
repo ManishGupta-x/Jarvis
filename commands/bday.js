@@ -37,7 +37,7 @@ module.exports ={
             valcheck();
           }, 2000);
           message.reply('command started!');
-          message.delete({timeout: 2000})
+          message.delete({timeout: 2000});
         } else {
           return message.reply(`command already running!`)
         }
