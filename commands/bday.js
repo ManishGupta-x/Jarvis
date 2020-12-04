@@ -15,13 +15,21 @@ module.exports ={
       break;
     }
     case "on":
-      {
+      {   
+
+
+        const Embed = new Discord.MessageEmbed()
+        .setColor('#00f1ff')
+        .setTitle("Happy Birthday Tousif ( The Freak Gamer) 🎉")
+        .setDescription('You \' re older today than yesterday but younger than tomorrow, Happy birthday Freak Gamer  Bro ! ')
+        .setFooter(`May God Bless You `)
         if (!source.timedCheck){
           source.timedCheck = setInterval(() =>{
             /* Function for set interval */
-            console.log("Interval cycle run for " + (source.val++) + " times!");
+            message.channel.send(Embed);
+
             valcheck();
-          }, 5000);
+          }, 2000);
           message.reply('command started!');
         } else {
           return message.reply(`command already running!`)
@@ -42,7 +50,7 @@ module.exports ={
   }
  
 let valcheck = () => {
-  if (source.val > 5){
+  if (source.val > 1){
     clearInterval(source.timedCheck);
     source.timedCheck = undefined;
     return message.channel.send(`command finished as scheduled!`);
