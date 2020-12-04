@@ -34,6 +34,8 @@ client.once('ready', () => {
     client.user.setActivity('PES 2021', { type: 'PLAYING' }).catch(console.error);
 
 });
+module.exports.timedcheck =undefined;
+module.exports.val = 0;
 
 
 client.on('message', async message => {
