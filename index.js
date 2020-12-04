@@ -28,6 +28,14 @@ for (const file of RewardsFiles) {
     client.Rewards.set(command.name, command);
 }
 
+client.help = new Discord.Collection();
+const helpFiles = fs.readdirSync('./help/').filter(file => file.endsWith('.js'));
+for (const file of helpFiles) {
+
+    const command = require(`./help/${file}`);
+    client.help.set(command.name, command);
+}
+
 
 client.once('ready', () => {
     console.log('Nightmare is online!');
@@ -134,6 +142,17 @@ client.on('message', async message => {
             break;
         case 'help' : client.commands.get('help').execute(message, args, Discord);
             break;
+            case '1' : client.help.get('1').execute(message, args, Discord);
+            break;
+            case '2' : client.help.get('2').execute(message, args, Discord);
+            break;
+            case '3' : client.help.get('3').execute(message, args, Discord);
+            break;
+            case '4' : client.help.get('4').execute(message, args, Discord);
+            break;
+            case '5' : client.help.get('5').execute(message, args, Discord);
+            break;
+
     }
 
 }
