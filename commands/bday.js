@@ -26,8 +26,9 @@ module.exports ={
         if (!source.timedCheck){
           source.timedCheck = setInterval(() =>{
             /* Function for set interval */
-            console.log( val++);
+            
             message.channel.send(Embed);
+            source.val++;
             
 
 
