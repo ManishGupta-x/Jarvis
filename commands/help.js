@@ -22,7 +22,7 @@ module.exports ={
         
            )
            .setFooter(`Type prefix (p!) and the number from above menu Eg: p!2 `)
-          .setimage('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg')
+          .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg');
          
            
            
