@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const source = require('../server');
+const source = require('../index');
 module.exports.run = async (Client, message, args) => {
   if (!args[0]) return message.reply(`Please specify if you are turning the command on or off!`);
   if (args[1]) return message.reply(`Please specify if you are turning the command on or off! [Too many Arguments!]`);
