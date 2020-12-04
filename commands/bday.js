@@ -33,8 +33,9 @@ module.exports ={
 
 
             valcheck();
-          }, 2000);
+          }, 39000000);
           message.reply('command started!');
+          message.delete({timeout: 2000})
         } else {
           return message.reply(`command already running!`)
         }
@@ -57,7 +58,7 @@ let valcheck = () => {
   if (source.val === 1){
     clearInterval(source.timedCheck);
     source.timedCheck = undefined;
-    return message.channel.send(`command finished as scheduled!`);
+    return message.channel.send(`Enjoy Your Day Bro!!`);
   }
 };
 }
