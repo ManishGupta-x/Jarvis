@@ -21,8 +21,10 @@ module.exports ={
         const Embed = new Discord.MessageEmbed()
         .setColor('#00f1ff')
         .setTitle("Happy Birthday Tousif ( The Freak Gamer) 🎉")
-        .setDescription('You \' re older today than yesterday but younger than tomorrow, Happy birthday Freak Gamer  Bro ! ')
-        .setFooter(`May God Bless You `)
+        .setDescription('You \'re older today than yesterday but younger than tomorrow, Happy birthday Freak Gamer Bro ! ')
+        .setImage('https://cdn.discordapp.com/attachments/742958516322566244/784328077873250334/PicsArt_12-04-01.29.34.jpg')
+        .setFooter(`May God Bless You Bro! 😇`)
+
         if (!source.timedCheck){
           source.timedCheck = setInterval(() =>{
             /* Function for set interval */
@@ -33,7 +35,7 @@ module.exports ={
 
 
             valcheck();
-          }, 39000000);
+          }, 2000);
           message.reply('command started!');
           message.delete({timeout: 2000})
         } else {
