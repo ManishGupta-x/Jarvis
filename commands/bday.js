@@ -1,6 +1,10 @@
 const Discord = require("discord.js");
 const source = require('../index');
-module.exports.run = async (Client, message, args) => {
+module.exports ={
+    name: 'bday',
+    Description: 'this is a bday command!',
+    execute(message,args, Discord){
+
   if (!args[0]) return message.reply(`Please specify if you are turning the command on or off!`);
   if (args[1]) return message.reply(`Please specify if you are turning the command on or off! [Too many Arguments!]`);
   switch (args[0]) 
@@ -44,9 +48,6 @@ let valcheck = () => {
     return message.channel.send(`command finished as scheduled!`);
   }
 };
-};
+}
+}
  
-module.exports.help = {
-  name: "bday",
-  usage: "bday <on/off>",
-};
