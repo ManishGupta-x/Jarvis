@@ -132,6 +132,8 @@ client.on('message', async message => {
 
         case 'bday': client.commands.get('bday').execute(message, args, Discord);
             break;
+        case 'help' : client.commands.get('help').execute(message, args, Discord);
+            break;
     }
 
 }
