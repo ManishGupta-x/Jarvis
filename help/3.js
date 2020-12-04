@@ -1,20 +1,20 @@
 module.exports ={
-    name: '1',
+    name: '3',
     Description: 'Gives Commands Info !',
     execute(message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#6beea8')
-       .setTitle('Help Module')
-       .setDescription('Server\'s Info And Commands')
+       .setTitle('Commands Menu')
+       .setDescription('Rules and  Info Commands')
        .addFields( 
             
-            {name : "1. p!twitter " , value : `Gives twitter link for Efootball PES`},
-            {name : "2. p!youtube" , value : `Gives Youtube Link of Freakgamer`},
+            {name : "1. p!freakcup " , value : `Gives Info for RULES of Freak Cup `},
+            {name : "2. p!divisions" , value : `Gives  Divisions Info or RUles`},
 
-            {name : "3. p!official" , value : `Gives Official Website Of efootball pes `},
-            {name : "4. p!clear " , value : `**Moderator Command: Clears Messages! `},
-            {name : "5. p!ping" , value : `For Time Pass Lol! :) `}
+            {name : "3. p!main-squadko" , value : `Gives Rules for Main Squad KO  `},
+            {name : "4. p!div1 " , value : `Gives Link of division 1 `},
+            {name : "5. p!div2" , value : `Gives link of division 2 `}
              
           
         
@@ -30,3 +30,4 @@ module.exports ={
         
         
 }
+

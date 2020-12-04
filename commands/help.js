@@ -13,7 +13,7 @@ module.exports ={
             , twitter , official...etc`},
             {name : "2. Rewards" , value : `Gives Info for Rewards Commands`},
 
-            {name : "3. Tourneys Info" , value : `Gives Info for Tourney commands like `},
+            {name : "3. Tourneys Info And Rules" , value : `Gives Info and rules for Tourneys `},
             {name : "4. Deadline Commands " , value : `Gives Info for Deadline Commands`},
             {name : "5. Server Competitions" , value : `Gives Info For Our Server Competetions`}
              
