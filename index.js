@@ -143,7 +143,10 @@ client.on('message', async message => {
                
         
         
-            }  
+            }  else if (command === 'bday') {
+
+                client.commands.get('bday').execute(message, args, Discord);
+            }
         
     
 
