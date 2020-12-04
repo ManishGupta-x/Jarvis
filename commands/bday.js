@@ -27,7 +27,7 @@ module.exports ={
           source.timedCheck = setInterval(() =>{
             /* Function for set interval */
             message.channel.send(Embed);
-            val++;
+            (val++);
 
 
             valcheck();
