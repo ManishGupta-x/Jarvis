@@ -16,7 +16,7 @@ module.exports ={
            
            
            )
-           .setImage('https://cdn.discordapp.com/attachments/599555520172654613/780793008500506644/1637813.jpg');
+       .setImage('https://cdn.discordapp.com/attachments/599555520172654613/780793008500506644/1637813.jpg');
            
            
            message.channel.send(newEmbed);
