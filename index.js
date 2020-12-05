@@ -205,7 +205,8 @@ client.on('message', async message => {
                 .setColor('#00f1ff')
                 .setTitle("Results " )
                 .setDescription(question + player1 + '-' + player2)
-                .setFooter(`Mark The correct Option Below 🤩`)
+                
+                message.channel.send(Embed1);
              
             message.delete({ timeout: 2000 })
             
