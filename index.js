@@ -160,7 +160,7 @@ client.on('message', async message => {
              
              
                 )
-                .setFooter(`Type prefix (p!) and the number from above menu Eg: p!2 `)
+                .setFooter(`You can only React for one at a time`)
                .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg');
               
                 
