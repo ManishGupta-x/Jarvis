@@ -204,7 +204,7 @@ client.on('message', async message => {
             const Embed1 = new Discord.MessageEmbed()
                 .setColor('#00f1ff')
                 .setTitle("Results " )
-                .setDescription(question1 + player1 + '-' + player2)
+                .setDescription(question1 + "\n" + player1 + '-' + player2)
                 
                 message.channel.send(Embed1);
              
