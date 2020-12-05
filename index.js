@@ -192,14 +192,6 @@ client.on('message', async message => {
         
             break;
            
-            case '2' : client.help.get('2').execute(message, args, Discord);
-            break;
-            case '3' : client.help.get('3').execute(message, args, Discord);
-            break;
-            case '4' : client.help.get('4').execute(message, args, Discord);
-            break;
-            case '5' : client.help.get('5').execute(message, args, Discord);
-            break;
 
     }
 
