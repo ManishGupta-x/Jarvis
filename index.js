@@ -196,7 +196,7 @@ client.on('message', async message => {
             var player1 =Math.floor(Math.random()*4);
             var player2 = Math.floor(Math.random()*4);
             
-            let question1 = message.content.slice(client.prefix.length+6)
+            let question1 = message.content.slice(prefix.length+6)
             if (!question1) {
 
                 return message.channel.send('You didnt specified a match to generate')
