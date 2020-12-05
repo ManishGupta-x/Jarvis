@@ -193,7 +193,7 @@ client.on('message', async message => {
 
 
 );
-client.on("messageReactionAdd", async (reaction,user) => {
+client.on("messageUpdate", async (reaction,user) => {
 
     if(reaction.message.partial) await reaction.message.fetch();
     if(user.client) return;
