@@ -165,12 +165,12 @@ client.on('message', async message => {
               
                 
                 let msg = await message.channel.send(newEmbed)
-                msg.react('1️⃣')
-                msg.react('2️⃣')
-                msg.react('3️⃣')
-                msg.react('4️⃣')
-                msg.react('5️⃣')
-                msg.awaitReactions((reaction,user) => user.id == user.id && (reaction.emoji.name=='1️⃣' || 
+               await msg.react('1️⃣')
+               await msg.react('2️⃣')
+               await msg.react('3️⃣')
+               await msg.react('4️⃣')
+               await msg.react('5️⃣')
+               await msg.awaitReactions((reaction,user) => user.id == user.id && (reaction.emoji.name=='1️⃣' || 
                 
                 reaction.emoji.name=='2️⃣' || reaction.emoji.name=='3️⃣' || reaction.emoji.name=='4️⃣' || reaction.emoji.name=='5️⃣'),{ max :1 , time: 10000})
                 .then(async collected=>{
