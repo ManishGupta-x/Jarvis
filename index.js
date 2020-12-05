@@ -193,8 +193,8 @@ client.on('message', async message => {
             break;
             case 'match' : 
 
-            var player1 =Math.random()*4;
-            var player2 = Math.random()*4;
+            var player1 =Math.floor(Math.random()*4);
+            var player2 = Math.floor(Math.random()*4);
             
             let question1 = message.content.split(`${client.prefix}match`).join("")
             if (!question1) {
@@ -204,7 +204,7 @@ client.on('message', async message => {
             const Embed1 = new Discord.MessageEmbed()
                 .setColor('#00f1ff')
                 .setTitle("Results " )
-                .setDescription(question1 + player1 + '-' + player2)
+                .setDescription(player1 + '-' + player2)
                 
                 message.channel.send(Embed1);
              
