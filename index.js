@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION","USER","GUILD_MEMBER"]});
+const client = new Discord.Client();
 const { MessageEmbed } = require('discord.js')
 
 const prefix = 'p!';
@@ -195,7 +195,7 @@ client.on('message', async message => {
 );
 client.on("messageUpdate", async (reaction,user) => {
 
-    if(reaction.message.partial) await reaction.message.fetch();
+    if(reaction.message) await reaction.message.fetch();
     if(user.client) return;
 
     if (reaction.emoji.name=== '1️⃣'){
