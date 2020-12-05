@@ -191,6 +191,24 @@ client.on('message', async message => {
         
         
             break;
+            case 'match' : 
+
+            var player1 =Math.random()*4;
+            var player2 = Math.random()*4;
+            
+            let question1 = message.content.slice(prefix.length + 5 + channel.id.length + 3)
+            if (!question1) {
+
+                return message.channel.send('You didnt specified a match to generate')
+            }
+            const Embed1 = new MessageEmbed()
+                .setColor('#00f1ff')
+                .setTitle("Results " )
+                .setDescription(question + player1 + '-' + player2)
+                .setFooter(`Mark The correct Option Below 🤩`)
+             
+            message.delete({ timeout: 2000 })
+            
            
 
     }
@@ -201,24 +219,7 @@ client.on('message', async message => {
 
 
 );
-//client.on("messageUpdate", async (reaction,user) => {
 
-  //  if(reaction.message) await reaction.message.fetch();
-    //if(user.client) return;
-
-    //if (reaction.emoji.name=== '1️⃣'){
-      //  client.help.get('1').execute(message, args, Discord);
-
-    //}
-
-
-//} 
-
-
-
-
-
-//)
 
 
 client.login(process.env.token);
