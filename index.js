@@ -201,7 +201,7 @@ client.on('message', async message => {
 
                 return message.channel.send('You didnt specified a match to generate')
             }
-            const Embed1 = new MessageEmbed()
+            const Embed1 = new Discord.MessageEmbed()
                 .setColor('#00f1ff')
                 .setTitle("Results " )
                 .setDescription(question + player1 + '-' + player2)
