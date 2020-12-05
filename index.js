@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION","USER","GUILD_MEMBER"]});
 const { MessageEmbed } = require('discord.js')
 
 const prefix = 'p!';
