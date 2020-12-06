@@ -66,8 +66,8 @@ client.on('message', async message => {
             break;
         case 'freakcup': client.commands.get('freakcup').execute(message, args);
             break;
-        //case 'freakcup-qualifications': client.commands.get('freakcup-qualifications').execute(message, args);
-          //  break;
+        case 'freakcup-qualifications': client.commands.get('freakcup-qualifications').execute(message, args);
+            break;
         case 'div1': client.commands.get('div1').execute(message, args);
             break;
         case 'div2': client.commands.get('div2').execute(message, args);
