@@ -10,6 +10,7 @@ module.exports ={
        .addFields( 
             
             {name : "1. p!freakcup " , value : `Gives Info for RULES of Freak Cup `},
+            {name : "1. p!freakcup-qualifications" , value : `Gives Info for Qualification Rules for Freak cup `},
             {name : "2. p!divisions" , value : `Gives  Divisions Info or RUles`},
 
             {name : "3. p!main-squadko" , value : `Gives Rules for Main Squad KO  `},
