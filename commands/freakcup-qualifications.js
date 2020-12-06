@@ -3,7 +3,7 @@ module.exports ={
     Description: 'Gives Freak Cup Info !',
     execute(message,args,Discord){
      
-       const newEmbed = new MessageEmbed()
+       const newEmbed = new Discord.MessageEmbed()
        .setColor('#FC4206')
        .setTitle('Qualifications Descriptions')
        .setDescription(`4 Ways To Enter `)
