@@ -66,6 +66,8 @@ client.on('message', async message => {
             break;
         case 'freakcup': client.commands.get('freakcup').execute(message, args);
             break;
+        case 'freakcup-qualifications': client.commands.get('freakcup-qualifications').execute(message, args);
+            break;
         case 'div1': client.commands.get('div1').execute(message, args);
             break;
         case 'div2': client.commands.get('div2').execute(message, args);
@@ -140,77 +142,78 @@ client.on('message', async message => {
 
         case 'bday': client.commands.get('bday').execute(message, args, Discord);
             break;
-        case 'help' : {
-               
+        case 'help': {
+
             const newEmbed = new Discord.MessageEmbed()
-            .setColor('#6beea8')
-            .setTitle('Help Module')
-            .setDescription('Server\'s Info And Commands')
-            .addFields( 
-                 
-                 {name : "1. General Commands " , value : `Gives Info for General commands like ping 
+                .setColor('#6beea8')
+                .setTitle('Help Module')
+                .setDescription('Server\'s Info And Commands')
+                .addFields(
+
+                    {
+                        name: "1. General Commands ", value: `Gives Info for General commands like ping 
                  , twitter , official...etc`},
-                 {name : "2. Rewards" , value : `Gives Info for Rewards Commands`},
-     
-                 {name : "3. Tourneys Info And Rules" , value : `Gives Info and rules for Tourneys `},
-                 {name : "4. Deadline Commands " , value : `Gives Info for Deadline Commands`},
-                 {name : "5. Server Competitions" , value : `Gives Info For Our Server Competetions`}
-                  
-               
-             
-             
+                    { name: "2. Rewards", value: `Gives Info for Rewards Commands` },
+
+                    { name: "3. Tourneys Info And Rules", value: `Gives Info and rules for Tourneys ` },
+                    { name: "4. Deadline Commands ", value: `Gives Info for Deadline Commands` },
+                    { name: "5. Server Competitions", value: `Gives Info For Our Server Competetions` }
+
+
+
+
                 )
                 .setFooter(`You can only React for one at a time`)
-               .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg');
-              
-                
-                let msg = await message.channel.send(newEmbed)
-               await msg.react('1️⃣')
-               await msg.react('2️⃣')
-               await msg.react('3️⃣')
-               await msg.react('4️⃣')
-               await msg.react('5️⃣')
-               await msg.awaitReactions((reaction,user) => user.id == user.id && (reaction.emoji.name=='1️⃣' || 
-                
-                reaction.emoji.name=='2️⃣' || reaction.emoji.name=='3️⃣' || reaction.emoji.name=='4️⃣' || reaction.emoji.name=='5️⃣'),{ max :1 , time: 10000})
-                .then(async collected=>{
-                if (collected.first().emoji.name== '1️⃣' ){ return client.help.get('1').execute(message, args, Discord) }
-                else if(collected.first().emoji.name== '2️⃣' ){ return client.help.get('2').execute(message, args, Discord) }
-                else if(collected.first().emoji.name== '3️⃣' ){ return client.help.get('3').execute(message, args, Discord) }
-                else if(collected.first().emoji.name== '4️⃣' ){ return client.help.get('4').execute(message, args, Discord) }
-                else if(collected.first().emoji.name== '5️⃣' ){ return client.help.get('5').execute(message, args, Discord) }
-                else return message.channel.send('error');
-
-                
-                
+                .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg');
 
 
-                } ) .catch(async () => { return message.channel.send("error")});
+            let msg = await message.channel.send(newEmbed)
+            await msg.react('1️⃣')
+            await msg.react('2️⃣')
+            await msg.react('3️⃣')
+            await msg.react('4️⃣')
+            await msg.react('5️⃣')
+            await msg.awaitReactions((reaction, user) => user.id == user.id && (reaction.emoji.name == '1️⃣' ||
+
+                reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣'), { max: 1, time: 10000 })
+                .then(async collected => {
+                    if (collected.first().emoji.name == '1️⃣') { return client.help.get('1').execute(message, args, Discord) }
+                    else if (collected.first().emoji.name == '2️⃣') { return client.help.get('2').execute(message, args, Discord) }
+                    else if (collected.first().emoji.name == '3️⃣') { return client.help.get('3').execute(message, args, Discord) }
+                    else if (collected.first().emoji.name == '4️⃣') { return client.help.get('4').execute(message, args, Discord) }
+                    else if (collected.first().emoji.name == '5️⃣') { return client.help.get('5').execute(message, args, Discord) }
+                    else return message.channel.send('error');
+
+
+
+
+
+                }).catch(async () => { return message.channel.send("error") });
 
         }
-        
-        
-            break;
-            case 'match' : 
 
-            var player1 =Math.floor(Math.random()*4);
-            var player2 = Math.floor(Math.random()*4);
-            
-            let question1 = message.content.slice(prefix.length+6)
+
+            break;
+        case 'match':
+
+            var player1 = Math.floor(Math.random() * 4);
+            var player2 = Math.floor(Math.random() * 4);
+
+            let question1 = message.content.slice(prefix.length + 6)
             if (!question1) {
 
                 return message.channel.send('You didnt specified a match to generate')
             }
             const Embed1 = new Discord.MessageEmbed()
                 .setColor('#00f1ff')
-                .setTitle("Results " )
+                .setTitle("Results ")
                 .setDescription(question1 + "\n" + player1 + '-' + player2)
-                
-                message.channel.send(Embed1);
-             
+
+            message.channel.send(Embed1);
+
             message.delete({ timeout: 2000 })
-            
-           
+
+
 
     }
 
