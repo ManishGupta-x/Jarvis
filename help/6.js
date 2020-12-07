@@ -17,23 +17,23 @@ module.exports = {
                     name: "Activity Roles", value: ` 
            
             \n 
-             __**Leveled roles**__\n\n
+  __**Leveled roles**__\n\n
+ 
+    <@&781087899961393163>  :- Unlocks perms to send Pics and video (attach file perms)  \n\n
   
-             <@&781087899961393163>  :- Unlocks perms to send Pics and video (attach file perms)  \n\n
   
+    <@&754994289280548895> : unlocks Sending embedded links ( Gifs)\n\n 
   
-             <@&754994289280548895> : unlocks Sending embedded links ( Gifs)\n\n 
+    <@&754994039035789393> : - perms to Change Nickname.  And Custom Role\n\n
   
-             <@&754994039035789393> : - perms to Change Nickname.  And Custom Role\n\n
+    <@&754993523501170698><@&754996150880305213>  : - Gets immune to Automod\n\n
   
-             <@&754993523501170698><@&754996150880305213>  : - Gets immune to Automod\n\n
+    <@&737596111463776277>: 
+    1. Guaranteed Participation in  Leagues and Also in Freak Cup ( From Season 3)
+    2. Will be listed highest in the role list ( below staff ofc)**\n\n
   
-             <@&737596111463776277>: 
-              1. Guaranteed Participation in  Leagues and Also in Freak Cup ( From Season 3)
-              2. Will be listed highest in the role list ( below staff ofc)**\n\n
-  
-              __Also this <@&737596111463776277>  role is one time only 1 person can get it and 
-              after one person get it leaderboard will get reset to get the next server legend__ `},
+    __Also this <@&737596111463776277>  role is one time only 1 person can get it and 
+      after one person get it leaderboard will get reset to get the next server legend__ `},
 
             )
             .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784433282804219924/img_agarcial_20180830-140538_imagenes_lv_terceros_pro_evolution_soccer_2019_20180830095902-kkRC-U451.png');
@@ -46,19 +46,19 @@ module.exports = {
                 {
                     name: "Tourney Roles", value: `
            
-            There is a role for every Tourney winner Like <@&767785642276421712>
+  There is a role for every Tourney winner Like <@&767785642276421712>
  
-            \nOther Roles: 
+  \nOther Roles: 
             
-            \n<@&750394745527730268> :  **One who wins 3 tourneys in one season.**
+  \n<@&750394745527730268> :  **One who wins 3 tourneys in one season.**
 
-            \n<@&750394539566694400> : **One who wins 2 tourneys in one season. **
+  \n<@&750394539566694400> : **One who wins 2 tourneys in one season. **
 
-            \n<@&750395021701939250> : 🎖️🎖️🎖️  :  **One who wins freak cup 3 times.**
+  \n<@&750395021701939250> : 🎖️🎖️🎖️  :  **One who wins freak cup 3 times.**
 
-            \n<@&750394928026091711> : 🎖️🎖️ : **One who wins  freak cup 2 times**
+  \n<@&750394928026091711> : 🎖️🎖️ : **One who wins  freak cup 2 times**
 
-            \n<@&750394813416865863> : 🎖️ : **One who wins freak cup 1 time.**
+  \n<@&750394813416865863> : 🎖️ : **One who wins freak cup 1 time.**
             
  
             `},

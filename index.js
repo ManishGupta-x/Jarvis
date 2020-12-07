@@ -142,7 +142,9 @@ client.on('message', async message => {
 
         case 'bday': client.commands.get('bday').execute(message, args, Discord);
             break;
-        case 'help': {
+         case 'roleinfo': client.commands.get('6').execute(message, args, Discord);
+            break;
+         case 'help': {
 
             const newEmbed = new Discord.MessageEmbed()
                 .setColor('#6beea8')
