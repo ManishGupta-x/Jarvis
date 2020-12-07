@@ -10,10 +10,11 @@ module.exports ={
        .addFields(
 
               
-           {name: "1" , value: `__Top 3 Players__ From Both Divisions Will Qualify For the Freak Cup`},
-           {name: "2" , value: `__Semifinalists Of UEFA Champions League __ Will Only be Qualified For Freak Cup`},  
-           {name: "3" , value: ' Depending On the Common players among the above tourneys Maximum Top players form __La Liga and Premier League__ Will Be selected and will  Qualify For Freak Cup'},
-           {name: "4" , value: 'In Total there will be 16 players in the Cup '},
+           {name: "1" , value: `**__Top 3 Players__ From Both Divisions Will Qualify For the Freak Cup**`},
+           {name: "2" , value: `**__Semifinalists Of UEFA Champions League __ Will Only be Qualified For Freak Cup**`},  
+           {name: "3" , value: '** Depending On the Common players among the above tourneys Maximum Top players form __La Liga and Premier League__ Will Be selected and will  Qualify For Freak Cup**'},
+           {name: "4", value : `**3. The Winner Of Main Squad KO ( Scheduled for 19th Nov) and Runner Up, will Qualify For Freak Cup**`},
+           {name: "5" , value: '**In Total there will be 16 players in the Cup** '},
         
 
 
