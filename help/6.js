@@ -3,7 +3,7 @@ module.exports = {
     name: '6',
     Description: 'Gives Info for roles',
     
-    run: async(message, args, Discord) => {
+    async execute(message, args, Discord) {
         
           
         const Embed1 = new Discord.MessageEmbed()
