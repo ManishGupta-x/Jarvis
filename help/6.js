@@ -1,4 +1,4 @@
-const {MessageEmbed} = require('dis')
+const {MessageEmbed} = require('discord.js')
 module.exports = {
     name: '6',
     Description: 'Gives Info for roles',
