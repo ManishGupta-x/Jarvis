@@ -1,8 +1,11 @@
+const {MessageEmbed} = require('dis')
 module.exports = {
     name: '6',
     Description: 'Gives Info for roles',
-    execute(message, args, Discord) {
-
+    
+    run: async(message, args, Discord) => {
+        
+          
         const Embed1 = new Discord.MessageEmbed()
             .setColor('#06FC9F ')
             .setAuthor('Freak Gamer')
@@ -98,10 +101,10 @@ module.exports = {
 
         await msg.awaitReactions((reaction, user) => user.id == user.id && (reaction.emoji.name == '1️⃣' ||
 
-            reaction.emoji.name == '2️⃣' ), { max: 1, time: 10000 })
+            reaction.emoji.name == '2️⃣'), { max: 1, time: 10000 })
             .then(async collected => {
-        if (collected.first().emoji.name == '1️⃣') { return message.channel.send(Embed1) }
-        else if (collected.first().emoji.name == '2️⃣') { return message.channel.send(Embed2) }
+                if (collected.first().emoji.name == '1️⃣') { return message.channel.send(Embed1) }
+                else if (collected.first().emoji.name == '2️⃣') { return message.channel.send(Embed2) }
             }).catch(async () => { return message.channel.send("error") });
     }
 
