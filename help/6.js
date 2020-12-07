@@ -1,11 +1,11 @@
-const {MessageEmbed} = require('discord.js')
+const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: '6',
     Description: 'Gives Info for roles',
-    
+
     async execute(message, args, Discord) {
-        
-          
+
+
         const Embed1 = new Discord.MessageEmbed()
             .setColor('#06FC9F ')
             .setAuthor('Freak Gamer')
@@ -77,17 +77,12 @@ module.exports = {
             .addFields(
 
 
-                { name: "1.Activity Roles" },
-                { name: "2.Tourney Roles " },
+                { name: "1.Activity Roles", value: " Server Activity Roles" },
+                { name: "2.Tourney Roles ", value: " Winner and Other Roles involved with tourney" },
                 {
                     name: "3.Custom Role", value: `\n
-             It is a Role that will contain a name
-             of your choice it maybe a Celebrity, Football Player , 
-             any other sport player or maybe a Club or a Team name. 
-             It's Your Choice!!!! And it will have Your choice colour!! Custom Role Can be Obtained by two ways : 
-            - The one who reaches top player role on Server leaderboard or By Giveaways 
-             You can increase your server score by Being Active and chatting.
-             You can see your position on the server leaderboard by typing "t!top" in #🤖│bot-commands !! `},
+             It is a Role that will contain a nameof your choice it maybe a Celebrity, Football Player , any other sport player or maybe a Club or a Team name. 
+             It's Your Choice!!!! And it will have Your choice colour!! Custom Role Can be Obtained by two ways : - The one who reaches top player role on Server leaderboard or By Giveaways You can increase your server score by Being Active and chatting.You can see your position on the server leaderboard by typing "t!top" in #🤖│bot-commands !! `},
 
 
 
