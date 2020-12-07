@@ -157,7 +157,9 @@ client.on('message', async message => {
 
                     { name: "3. Tourneys Info And Rules", value: `Gives Info and rules for Tourneys ` },
                     { name: "4. Deadline Commands ", value: `Gives Info for Deadline Commands` },
-                    { name: "5. Server Competitions", value: `Gives Info For Our Server Competetions` }
+                    { name: "5. Server Competitions", value: `Gives Info For Our Server Competetions` },
+                    { name: "6. Server Roles", value: `Gives Irfo for For diffrents roles on the server :)` }
+
 
 
 
@@ -173,16 +175,18 @@ client.on('message', async message => {
             await msg.react('3️⃣')
             await msg.react('4️⃣')
             await msg.react('5️⃣')
+            await msg.react('6️⃣')
             await msg.awaitReactions((reaction, user) => user.id == user.id && (reaction.emoji.name == '1️⃣' ||
 
-                reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣'), { max: 1, time: 10000 })
+                reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣' || reaction.emoji.name == '6️⃣'), { max: 1, time: 10000 })
                 .then(async collected => {
                     if (collected.first().emoji.name == '1️⃣') { return client.help.get('1').execute(message, args, Discord) }
                     else if (collected.first().emoji.name == '2️⃣') { return client.help.get('2').execute(message, args, Discord) }
                     else if (collected.first().emoji.name == '3️⃣') { return client.help.get('3').execute(message, args, Discord) }
                     else if (collected.first().emoji.name == '4️⃣') { return client.help.get('4').execute(message, args, Discord) }
                     else if (collected.first().emoji.name == '5️⃣') { return client.help.get('5').execute(message, args, Discord) }
-                    else return message.channel.send('error');
+                    else if (collected.first().emoji.name == '6️⃣') { return client.help.get('6').execute(message, args, Discord) }
+                    else return message.channel.send('You must wait For reactions to come up first Bro');
 
 
 
