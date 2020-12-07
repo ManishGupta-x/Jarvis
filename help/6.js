@@ -52,13 +52,13 @@ module.exports = {
             
             \n<@&750394745527730268> :  **One who wins 3 tourneys in one season.**
 
-            \n<@750394539566694400> : **One who wins 2 tourneys in one season. **
+            \n<@&750394539566694400> : **One who wins 2 tourneys in one season. **
 
-            \n<@750395021701939250> : 🎖️🎖️🎖️  :  **One who wins freak cup 3 times.**
+            \n<@&750395021701939250> : 🎖️🎖️🎖️  :  **One who wins freak cup 3 times.**
 
-            \n<@750394928026091711> : 🎖️🎖️ : **One who wins  freak cup 2 times**
+            \n<@&750394928026091711> : 🎖️🎖️ : **One who wins  freak cup 2 times**
 
-            \n<@750394813416865863> : 🎖️ : **One who wins freak cup 1 time.**
+            \n<@&750394813416865863> : 🎖️ : **One who wins freak cup 1 time.**
             
  
             `},
