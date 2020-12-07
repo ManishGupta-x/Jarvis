@@ -23,7 +23,7 @@ module.exports ={
 
        )
        
-           .setImage('https://cdn.discordapp.com/attachments/767787771816443966/776755041872642048/FIF_world_cup_trophy_on_grassjpg.jpg');
+           .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784433282804219924/img_agarcial_20180830-140538_imagenes_lv_terceros_pro_evolution_soccer_2019_20180830095902-kkRC-U451.png');
            
            
            message.channel.send(newEmbed);
