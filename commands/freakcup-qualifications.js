@@ -7,7 +7,7 @@ module.exports ={
        .setColor('#FC4206')
        .setTitle('Qualifications Descriptions')
        .setDescription(`4 Ways To Enter `)
-       .addfield(
+       .addFields(
 
               
            {name: "1" , value: `__Top 3 Players__ From Both Divisions Will Qualify For the Freak Cup`},
