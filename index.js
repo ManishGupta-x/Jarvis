@@ -56,25 +56,25 @@ client.on('message', async message => {
 
     switch (command) {
 
-        case 'ping': client.commands.get('ping').execute(message, args);
+        case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
-        case 'youtube': client.commands.get('youtube').execute(message, args);
+        case 'youtube': client.commands.get('youtube').execute(message, args, Discord);
             break;
-        case 'official': client.commands.get('official').execute(message, args);
+        case 'official': client.commands.get('official').execute(message, args, Discord);
             break;
-        case 'twitter': client.commands.get('twitter').execute(message, args);
+        case 'twitter': client.commands.get('twitter').execute(message, args, Discord);
             break;
-        case 'freakcup': client.commands.get('freakcup').execute(message, args);
+        case 'freakcup': client.commands.get('freakcup').execute(message, args, Discord);
             break;
-        case 'freakcup-qualifications': client.commands.get('freakcup-qualifications').execute(message, args);
+        case 'freakcup-qualifications': client.commands.get('freakcup-qualifications').execute(message, args, Discord);
             break;
-        case 'div1': client.commands.get('div1').execute(message, args);
+        case 'div1': client.commands.get('div1').execute(message, args, Discord);
             break;
-        case 'div2': client.commands.get('div2').execute(message, args);
+        case 'div2': client.commands.get('div2').execute(message, args, Discord);
             break;
-        case 'clear': client.commands.get('clear').execute(message, args);
+        case 'clear': client.commands.get('clear').execute(message, args, Discord);
             break;
-        case 'divisions': client.commands.get('divisions').execute(message, args);
+        case 'divisions': client.commands.get('divisions').execute(message, args, Discord);
             break;
         case 'deadline-mainko': client.deadline.get('deadline-mainko').execute(message, args, Discord);
             break;
