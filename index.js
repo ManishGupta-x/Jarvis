@@ -223,7 +223,7 @@ client.on('message', async message => {
 
         case 'memberinfo':
 
-            let member = message.mentions.members.first() || message.guild.members.cache.get(userArgs[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === userArgs.slice(0).join(" ") || x.user.username === userArgs[0]) || message.member;
+            let member = message.mentions.members.first() || message.guild.members.cache.get(userArgs[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === userArgs.slice(0).join(" ") || x.user.username === userArgs[0]) || message.member || message.reply("You need to specify a Person!");
             
             if (member.presence.status === 'dnd') member.presence.status = 'Do Not Disturb';
             if (member.presence.status === 'online') member.presence.status = 'Online';
@@ -249,11 +249,7 @@ client.on('message', async message => {
                 .addField('Roles', `<@&${member._roles.join('> <@&')}>`)
                 .addField("Status", status)
 
-           if(member) message.channel.send(userEmbed);
-           else {
-
-            message.reply("You need to specify a Person!")
-        }
+            message.channel.send(userEmbed);
             
             break; 
 
