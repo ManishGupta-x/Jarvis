@@ -239,7 +239,7 @@ client.on('message', async message => {
             const userEmbed = new Discord.MessageEmbed()
                 .setAuthor(member.user.tag, member.user.displayAvatarURL())
                 .setTimestamp()
-                .setColor('BLUE')
+                .setColor('#f7331a')
                 .setImage(member.user.displayAvatarURL())
                 .addField("Member ID", member.id)
                 .addField('Roles', `<@&${member._roles.join('> <@&')}>`)
