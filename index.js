@@ -250,7 +250,7 @@ client.on('message', async message => {
                 .addField("Status", status)
 
             message.channel.send(userEmbed);
-            break;
+            break; 
 
 
 
