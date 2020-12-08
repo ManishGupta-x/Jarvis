@@ -243,9 +243,10 @@ client.on('message', async message => {
                 .setColor('#f7331a')
                 .setImage(member.user.displayAvatarURL())
                 .addField("Member ID", member.id)
-                .addField('Roles', `<@&${member._roles.join('> <@&')}>`)
+                
                 .addField("Account Created On:", ` ${moment.utc(member.user.createdAt).format("dddd, MMMM Do YYYY")}`, true)
                 .addField('Joined the server At', `${joineddate} \n> ${joined} day(S) Ago`)
+                .addField('Roles', `<@&${member._roles.join('> <@&')}>`)
                 .addField("Status", status)
 
             message.channel.send(userEmbed);
