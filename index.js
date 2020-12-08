@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const client = new Discord.Client();
 const { MessageEmbed } = require('discord.js')
+new Discord.Client({ ws: { intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES'] } });
 
 const prefix = 'p!';
 const fs = require('fs');
