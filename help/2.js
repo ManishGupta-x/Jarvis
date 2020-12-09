@@ -13,8 +13,9 @@ module.exports ={
             {name : "2. p!rewards-ucl" , value : `Gives Reward Info For UEFA Champions League`},
 
             {name : "3. p!rewards-laliga" , value : `Gives Reward Info For laliga `},
-            {name : "4. p!rewards-premleague " , value : `GIves Reward Info FOr Premier League `},
-            {name : "5. p!rewards-mainko" , value : `Gives Reward Info  For Main squad KO`}
+            {name : "4. p!rewards-premleague " , value : `Gives Reward Info For Premier League `},
+            {name : "5. p!rewards-divisions " , value : `Gives Reward Info For Divisions rewards `},
+            {name : "6. p!rewards-mainko" , value : `Gives Reward Info  For Main squad KO`}
              
           
         
