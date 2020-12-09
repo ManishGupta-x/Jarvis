@@ -15,7 +15,8 @@ module.exports ={
             {name : "3. p!official" , value : `Gives Official Website Of efootball pes `},
             {name : "4. p!clear " , value : `**Moderator Command: Clears Messages! `},
             {name : "5. p!match  " , value : `To generate Results a Random Match `},
-            {name : "6. p!ping" , value : `For Time Pass Lol! :) `}
+            {name : "6. p!info  " , value : `Gives User Info `},
+            {name : "7. p!ping" , value : `For Time Pass Lol! :) `}
              
           
         
