@@ -19,7 +19,7 @@ module.exports ={
         
         
         )
-       .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784407231369838632/FIF_world_cup_trophy_on_grassjpg.jpg');
+       .setImage('https://media.discordapp.net/attachments/730714810614022228/769431011657383976/gamescom-2019-konami-reveals-efootball-pes-2020-mobile-game-details.jpg?width=887&height=499');
            
            
            message.channel.send(newEmbed);
