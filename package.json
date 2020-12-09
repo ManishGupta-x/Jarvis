@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.4.1",
-    "moment": "^2.29.1"
+    "moment": "^2.29.1",
+    "random-puppy": "^1.1.0"
   }
 }

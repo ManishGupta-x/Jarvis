@@ -59,6 +59,8 @@ client.on('message', async message => {
 
         case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
+        case 'meme': client.commands.get('meme').execute(message, args, Discord);
+            break;
         case 'youtube': client.commands.get('youtube').execute(message, args, Discord);
             break;
         case 'official': client.commands.get('official').execute(message, args, Discord);
