@@ -223,7 +223,7 @@ client.on('message', async message => {
             message.channel.send(Embed1);
 
             message.delete({ timeout: 2000 })
-
+            break;
 
         case 'info':
 
