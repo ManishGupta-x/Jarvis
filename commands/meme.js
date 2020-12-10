@@ -7,7 +7,7 @@ module.exports ={
     Description: 'this is a  meme command!',
     async execute(message,args, Discord){
      
-        const subReddits = ["desimemes","IndianDankMemes", "dankmeme","IndianMeyMeys"]
+        const subReddits = ["IndianDankMemes", "dankmeme","IndianMeyMeys", "DankFootballMemes"]
         const random = subReddits[Math.floor(Math.random() * subReddits.length)];
         const img = await randomPuppy(random);
     
