@@ -13,6 +13,7 @@ module.exports ={
     
         const embed = new Discord.MessageEmbed()
         .setColor('#f7331a')
+        .setTitle(`From /r/${random}`)
         .setImage(img)
         .setURL(`http://reddit.com/${random}`)
     
