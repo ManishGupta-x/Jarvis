@@ -1,5 +1,6 @@
 const got = require('got');
-
+const subReddits = ["memes", "IndianDankMemes", "dankmeme","DankFootballMemes"]
+const rd = subReddits[Math.floor(Math.random() * subReddits.length)];
 
 
 module.exports ={
@@ -8,7 +9,7 @@ module.exports ={
     async execute(message,args, Discord){
      
         const embed = new Discord.MessageEmbed()
-        got('https://www.reddit.com/r/memes/random/.json').then(response => {
+        got(`https://www.reddit.com/r/${rd}/random/.json`).then(response => {
             let content = JSON.parse(response.body);
             let permalink = content[0].data.children[0].data.permalink;
             let memeUrl = `https://reddit.com${permalink}`;
