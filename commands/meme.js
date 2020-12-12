@@ -12,9 +12,9 @@ module.exports ={
         const img = await randomPuppy(random);
     
         const embed = new Discord.MessageEmbed()
+        .setImage(img)
         .setColor('#f7331a')
         .setTitle(`From /r/${random}`)
-        .setImage(img)
         .setURL(`http://reddit.com/${random}`)
     
         message.channel.send(embed);
