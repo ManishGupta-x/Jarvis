@@ -96,7 +96,7 @@ module.exports = {
 
         await msg.awaitReactions((reaction, user) => user.id == user.id && (reaction.emoji.name == '1️⃣' ||
 
-            reaction.emoji.name == '2️⃣'), { max: 1, time: 10000 })
+            reaction.emoji.name == '2️⃣'), { max: 1, time: 20000 })
             .then(async collected => {
                 if (collected.first().emoji.name == '1️⃣') { return message.channel.send(Embed1) }
                 else if (collected.first().emoji.name == '2️⃣') { return message.channel.send(Embed2) }
