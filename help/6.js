@@ -100,7 +100,7 @@ module.exports = {
             .then(async collected => {
                 if (collected.first().emoji.name == '1️⃣') { return message.channel.send(Embed1) }
                 else if (collected.first().emoji.name == '2️⃣') { return message.channel.send(Embed2) }
-            }).catch(async () => { return message.channel.send("error") });
+            }).catch(async () => { return message.channel.send("Time Up") });
     }
 
 
