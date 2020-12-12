@@ -1,4 +1,4 @@
-const randomPuppy = require('random-puppy');
+const randomPuppy = require('got');
 
 
 
@@ -7,18 +7,24 @@ module.exports ={
     Description: 'this is a  meme command!',
     async execute(message,args, Discord){
      
-        const subReddits = ["IndianDankMemes", "dankmeme","IndianMeyMeys", "DankFootballMemes"]
-        const random = subReddits[Math.floor(Math.random() * subReddits.length)];
-        const img = await randomPuppy(random);
-    
         const embed = new Discord.MessageEmbed()
-        .setImage(img)
-        .setColor('#f7331a')
-        .setTitle(`From /r/${random}`)
-        .setURL(`http://reddit.com/${random}`)
-    
-        message.channel.send(embed);
+        got('https://www.reddit.com/r/memes/random/.json').then(response => {
+            let content = JSON.parse(response.body);
+            let permalink = content[0].data.children[0].data.permalink;
+            let memeUrl = `https://reddit.com${permalink}`;
+            let memeImage = content[0].data.children[0].data.url;
+            let memeTitle = content[0].data.children[0].data.title;
+            let memeUpvotes = content[0].data.children[0].data.ups;
+            let memeDownvotes = content[0].data.children[0].data.downs;
+            let memeNumComments = content[0].data.children[0].data.num_comments;
+            embed.setTitle(`${memeTitle}`)
+            embed.setURL(`${memeUrl}`)
+            embed.setImage(memeImage)
+            embed.setColor('RANDOM')
+            embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
+            message.channel.send(embed);
+        
 
-
-    }  
+    } )
+    }
 }
