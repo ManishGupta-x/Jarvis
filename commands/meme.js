@@ -1,4 +1,4 @@
-const randomPuppy = require('got');
+const got = require('got');
 
 
 
