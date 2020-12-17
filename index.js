@@ -61,7 +61,7 @@ client.on('message', async message => {
             break;
         case 'meme': client.commands.get('meme').execute(message, args, Discord);
             break;
-         
+
         case 'youtube': client.commands.get('youtube').execute(message, args, Discord);
             break;
         case 'official': client.commands.get('official').execute(message, args, Discord);
@@ -71,6 +71,10 @@ client.on('message', async message => {
         case 'freakcup': client.commands.get('freakcup').execute(message, args, Discord);
             break;
         case 'freakcup-qualifications': client.commands.get('freakcup-qualifications').execute(message, args, Discord);
+            break;
+        case 'laliga': client.commands.get('laliga').execute(message, args, Discord);
+            break;
+        case 'premleague': client.commands.get('premleague').execute(message, args, Discord);
             break;
         case 'div1': client.commands.get('div1').execute(message, args, Discord);
             break;
