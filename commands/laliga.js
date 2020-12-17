@@ -4,7 +4,7 @@ module.exports ={
     execute(message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
-       .setColor('#00fffa')
+       .setColor('#ff3600')
        .setTitle('La Liga')
        .setAuthor('Freak Gamer')
        .addFields(
