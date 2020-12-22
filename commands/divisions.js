@@ -9,11 +9,10 @@ module.exports ={
        .setTitle('Divisions')
        .addFields(
         
-           {name: "Info: " , value: ' **The Participants will be divided in 2 Divisions !' +
-           'The Players with Good Records in Season 1 will be in @Division 1  and New players and '+
-            'others will be in @Division 2 ..**' +
+           {name: "Info: " , value: ' **The Participants will be divided in 2 or 3 Divisions !' +
+            
             '\n **In the Season ending the Last 5 players in @Division 1  will be demoted to @Division 2  ' + 
-            'and Top 5 Players Of  @Division 2 will be Promoted to@Division 1 in the next season... '+
+            'and Top 5 Players Of  @Division 2 will be Promoted to @Division 1 in the next season... this will be same if Division 3 is Formed  due to more members '+
             'This will go on every Season....**'+
             '\n\n :no_entry:  **RULES** :no_entry:  ' +
             '\n\n :fire: __** NO RULES YOU CAN USE ANY SQUAD AT ANY TIME**__ :fire: '+
