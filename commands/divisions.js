@@ -18,7 +18,7 @@ module.exports ={
             \n\n :fire: __ NO RULES YOU CAN USE ANY SQUAD AT ANY TIME__ :fire: 
             \n\n You have to play all the players of your Division twice (2 LEGS)
             \n\n The Division role will be taggable and you can Tag the role __in the Channel__ '
-            to ask if any one free to play** '+
+            to ask if any one free to play** 
             \n\n Eg: @Division 1 Anyone free to play?`},
             {name: " Results" , value : ` **At the Season End the Final table will be released for
              all the Divisions and The top player will be announced as the winner!!** 
