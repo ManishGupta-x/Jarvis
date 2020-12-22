@@ -21,9 +21,9 @@ module.exports ={
             'to ask if any one free to play** '+
             '\n\n Eg: @Division 1 Anyone free to play?'},
             {name: " Results" , value : ' **At the Season End the Final table will be released for'+
-            ' both the Divisions and The top player will be announced as the winner!!** '+
-            '\n\n **And Ofc there will be Some special Rewards for TOP 3-4 From both Divisions which '+
-            'will Be Revealed in the end or mid of the Season 2 Stay tuned ! :pepechrist:**'}
+            ' all the Divisions and The top player will be announced as the winner!!** '+
+            '\n\n ** To get the Rewards info Follow p!rewards-divisions '
+           }
            
 
            
