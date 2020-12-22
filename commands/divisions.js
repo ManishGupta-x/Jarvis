@@ -13,7 +13,7 @@ module.exports ={
             
             '\n **In the Season ending the Last 5 players in @Division 1  will be demoted to @Division 2**  ' + 
             '**and Top 5 Players Of  @Division 2 will be Promoted to @Division 1 in the next season... this will be same if Division 3 is Formed  due to more members **'+
-            'This will go on every Season....**'+
+            '**This will go on every Season....**'+
             '\n\n :no_entry:  **RULES** :no_entry:  ' +
             '\n\n :fire: __** NO RULES YOU CAN USE ANY SQUAD AT ANY TIME**__ :fire: '+
             '\n\n **You have to play all the players of your Division twice (2 LEGS)**'+
@@ -22,7 +22,7 @@ module.exports ={
             '\n\n Eg: @Division 1 Anyone free to play?'},
             {name: " Results" , value : ' **At the Season End the Final table will be released for'+
             ' all the Divisions and The top player will be announced as the winner!!** '+
-            '\n\n ** To get the Rewards info Follow p!rewards-divisions '
+            '\n\n ** To get the Rewards info Follow p!rewards-divisions** '
            }
            
 
