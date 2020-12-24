@@ -4,7 +4,7 @@ module.exports ={
     name: 'friendly',
     Description: 'this is a  Friendly  command!',
     async  execute(message,args, Discord,client){
-        const channel = '650289693543628812';
+        const channel = '730714810614022228';
         const hand = '🤝';
         
         let member = message.member
@@ -22,7 +22,8 @@ module.exports ={
  
             if (reaction.message.channel.id == channel) {
                 if (reaction.emoji.name === hand) {
-                    await reaction.message.guild.members.cache.get(user.id).then(message.reply(`<@${user.id} Accepeted Your Challenge`))
+                    await reaction.message.guild.members.cache.get(user.id);
+                    message.reply(`<@${user.id} Accepeted Your Challenge`);
                 }
                 } else {
                 return;
