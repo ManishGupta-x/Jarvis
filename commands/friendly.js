@@ -44,7 +44,7 @@ module.exports ={
                     }
                     else{
                     message.reply(`<@${user.id}> Accepeted Your Challenge`);
-                    break;
+                    return;
                 }
             }
                  
