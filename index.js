@@ -59,7 +59,7 @@ client.on('message', async message => {
 
         case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
-        case 'friendly':client.commands.get('friendly').execute(message, args, Discord);
+        case 'friendly':client.commands.get('friendly').execute(message, args, Discord,client);
            
 
 
