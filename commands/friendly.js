@@ -36,11 +36,13 @@ module.exports ={
             if (!reaction.message.guild) return;
  
             if (reaction.message.channel.id == channel) {
-                if (reaction.emoji.name === hand && !member) {
+                if(!member){
+                if (reaction.emoji.name === hand  ) {
                     await reaction.message.guild.members.cache.get(user.id);
                     message.reply(`<@${user.id}> Accepeted Your Challenge`);
                 }
-                 else{
+            }
+                 else if(member){
 
                     message.reply('Challenging Yourself ?')
                  }
