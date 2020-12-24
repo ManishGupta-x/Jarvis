@@ -7,7 +7,8 @@ module.exports ={
         const channel = '650289693543628812';
         const hand = '🤝';
         
-        
+        let member = message.member
+            let membertarget = message.guild.members.cache.get(member.id);
            
         let msg = await message.channel.send(`@here <@${membertarget.id}> is Challenging For friendly ! React Below to Accept his Challenge!`)
         await msg.react('🤝');
