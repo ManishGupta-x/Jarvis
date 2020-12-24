@@ -64,7 +64,8 @@ client.on('message', async message => {
         if(usedCommand.has(message.author.id)){
             message.reply('https://tenor.com/view/slow-down-a-little-bit-anthony-mennella-culter35-slow-down-dont-rush-gif-17969625')
         } else {
-            let member = message.mentions.members.first();
+            const target = message.mentions.users.first();
+            let member = message.guild.members.cache.get(target.id);
             
 
 
