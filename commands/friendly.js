@@ -1,17 +1,22 @@
 
-
+const usedCommand = new Set();
 module.exports ={
     name: 'friendly',
     Description: 'this is a  Friendly  command!',
     async  execute(message,args, Discord,client){
+
+        if (usedCommand.has(message.author.id)) {
+            message.reply('https://tenor.com/view/slow-down-a-little-bit-anthony-mennella-culter35-slow-down-dont-rush-gif-17969625')
+        }
+        else{
         const channel = '650289693543628812';
         const hand = '🤝';
         let member = message.member
         let membertarget = message.guild.members.cache.get(member.id);
         const newEmbed = new Discord.MessageEmbed()
        .setColor('00ff74')
-       .setTitle(`<@${membertarget.id}> is Challenging For friendly ! React Below to Accept his Challenge!`)
-       .setDescription(`\n <@${membertarget.id}> Type  \`join-role @..  If you dont want to play friendlies or Hide channel`)
+       .setTitle(`Someone is Challenging `)
+       .setDescription(`\n <@${membertarget.id}> is Challenging For friendly ! React Below to Accept his Challenge!` )
         
         
         message.channel.send('@here') 
@@ -34,8 +39,12 @@ module.exports ={
                 }
                 } else {
                 return;
-            }
+                                }
  
-        });
+        });usedCommand.add(message.author.id);
+        setTimeout(() => {
+            usedCommand.delete(message.author.id);
+        }, 5000); //You can set the ammount of the cooldown here! Its Formated to Miliseconds.
+    }
     }  
 }
