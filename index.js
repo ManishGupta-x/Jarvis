@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const moment = require('moment');
-const client = new Discord.Client();
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION" ]});
 const { MessageEmbed } = require('discord.js')
 new Discord.Client({ ws: { intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES'] } });
 
