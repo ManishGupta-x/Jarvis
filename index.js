@@ -59,37 +59,37 @@ client.on('message', async message => {
 
         case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
-        case 'friendly': 
-        const usedCommand = new Set();
-        if(usedCommand.has(message.author.id)){
-            message.reply('https://tenor.com/view/slow-down-a-little-bit-anthony-mennella-culter35-slow-down-dont-rush-gif-17969625')
-        } else {
-            let member = message.member 
-            let membertarget = message.guild.members.cache.get(member.id);
-            
-
-
-            let msg = await message.channel.send(`@here <@${membertarget.id}> is Challenging For friendly ! React Below to Accept his Challenge!`)
-            await msg.react('🤝')
-            await msg.awaitReactions((reaction, user) => user.id == user.id && (reaction.emoji.name == '🤝'), { max: 1, time: 1800000 })
-            .then(async collected => {
-                if (collected.first().emoji.name == '🤝') { return message.channel.send(`<@${membertarget.id}> <@${user.id}> Accepted Your Challenge !`) }
-                else return message.channel.send(`Try after Sometime bruh <@${membertarget.id}> ,No one accepted :(`);
+        case 'friendly':
+            const usedCommand = new Set();
+            if (usedCommand.has(message.author.id)) {
+                message.reply('https://tenor.com/view/slow-down-a-little-bit-anthony-mennella-culter35-slow-down-dont-rush-gif-17969625')
+            } else {
+                let member = message.member
+                let membertarget = message.guild.members.cache.get(member.id);
 
 
 
+                let msg = await message.channel.send(`@here <@${membertarget.id}> is Challenging For friendly ! React Below to Accept his Challenge!`)
+                await msg.react('🤝')
+                await msg.awaitReactions((reaction, user) => user.id == user.id && (reaction.emoji.name == '🤝'), { max: 1, time: 1800000 })
+                    .then(async collected => {
+                        if (collected.first().emoji.name == '🤝') {  message.reply(`<@${membertarget.id}> <@${user.id}> Accepted Your Challenge !`) }
+                        else return message.channel.send(`Try after Sometime bruh <@${membertarget.id}> ,No one accepted :(`);
 
 
-            }).catch(async () => { return message.channel.send("error") });
-            
-            usedCommand.add(message.author.id);
-            setTimeout(() => {
-                usedCommand.delete(message.author.id);
-            }, 1800000); //You can set the ammount of the cooldown here! Its Formated to Miliseconds.
-        }           
-        
-          
-        break;
+
+
+
+                    }).catch(async () => { return message.channel.send("error") });
+
+                usedCommand.add(message.author.id);
+                setTimeout(() => {
+                    usedCommand.delete(message.author.id);
+                }, 1800000); //You can set the ammount of the cooldown here! Its Formated to Miliseconds.
+            }
+
+
+            break;
         case 'meme': client.commands.get('meme').execute(message, args, Discord);
             break;
 
