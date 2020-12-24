@@ -6,7 +6,9 @@ module.exports ={
     async  execute(message,args, Discord,client){
 
         if (usedCommand.has(message.author.id)) {
-            message.reply('https://tenor.com/view/slow-down-a-little-bit-anthony-mennella-culter35-slow-down-dont-rush-gif-17969625')
+            
+            message.channel.send('https://tenor.com/view/slow-down-a-little-bit-anthony-mennella-culter35-slow-down-dont-rush-gif-17969625')
+            message.reply('The command has a Cooldown of 30 mins') 
         }
         else{
         const channel = '650289693543628812';
@@ -44,7 +46,7 @@ module.exports ={
         });usedCommand.add(message.author.id);
         setTimeout(() => {
             usedCommand.delete(message.author.id);
-        }, 5000); //You can set the ammount of the cooldown here! Its Formated to Miliseconds.
+        }, 1800000); //You can set the ammount of the cooldown here! Its Formated to Miliseconds.
     }
     }  
 }
