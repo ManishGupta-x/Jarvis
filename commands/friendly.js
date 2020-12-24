@@ -16,10 +16,13 @@ module.exports ={
         let member = message.member
         let membertarget = message.guild.members.cache.get(member.id);
         const newEmbed = new Discord.MessageEmbed()
+       
+       .setAuthor('Freak Gamer')   
        .setColor('00ff74')
+       .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/791728647005536296/1601319291_559_Soccer-Icons-Messi-and-Ronaldo-Make-History-in-the-25th.png')
        .setTitle(`Someone is Challenging `)
        .setDescription(`\n <@${membertarget.id}> is Challenging For friendly ! React Below to Accept his Challenge!` )
-        
+       .setFooter(' Type `join-role @..  If you dont want pings! ')
         
         message.channel.send('@here') 
         let msg = await message.channel.send(newEmbed)
