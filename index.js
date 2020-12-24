@@ -60,7 +60,7 @@ client.on('message', async message => {
         case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
         case 'friendly': 
-          
+        const usedCommand = new Set();
         if(usedCommand.has(message.author.id)){
             message.reply('https://tenor.com/view/slow-down-a-little-bit-anthony-mennella-culter35-slow-down-dont-rush-gif-17969625')
         } else {
