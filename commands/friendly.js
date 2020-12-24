@@ -40,7 +40,7 @@ module.exports ={
                     await reaction.message.guild.members.cache.get(user.id);
                     if(user.id == membertarget.id)
                     {
-                        message.reply('Challenging Yourself');
+                        message.reply('Challenging Yourself?  dumb?? -_-');
                     }
                     else{
                     message.reply(`<@${user.id}> Accepeted Your Challenge`);
