@@ -64,16 +64,17 @@ client.on('message', async message => {
         if(usedCommand.has(message.author.id)){
             message.reply('https://tenor.com/view/slow-down-a-little-bit-anthony-mennella-culter35-slow-down-dont-rush-gif-17969625')
         } else {
-            let member = message.guild.members.cache.get(member.id);
+            let member = message.member 
+            let membertarget = message.guild.members.cache.get(member.id);
             
 
 
-            let msg = await message.channel.send(`@here <@${member.id}> is Challenging For friendly ! React Below to Accept his Challenge!`)
+            let msg = await message.channel.send(`@here <@${membertarget.id}> is Challenging For friendly ! React Below to Accept his Challenge!`)
             await msg.react('🤝')
             await msg.awaitReactions((reaction, user) => user.id == user.id && (reaction.emoji.name == '🤝'), { max: 1, time: 1800000 })
             .then(async collected => {
-                if (collected.first().emoji.name == '🤝') { return `<@${member.id}> <@${user.id}> Accepted Your Challenge !` }
-                else return message.channel.send(`Try after Sometime bruh <@${member.id}> ,No one accepted :(`);
+                if (collected.first().emoji.name == '🤝') { return `<@${membertarget.id}> <@${user.id}> Accepted Your Challenge !` }
+                else return message.channel.send(`Try after Sometime bruh <@${membertarget.id}> ,No one accepted :(`);
 
 
 
