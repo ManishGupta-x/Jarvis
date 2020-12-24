@@ -73,7 +73,7 @@ client.on('message', async message => {
             await msg.react('🤝')
             await msg.awaitReactions((reaction, user) => user.id == user.id && (reaction.emoji.name == '🤝'), { max: 1, time: 1800000 })
             .then(async collected => {
-                if (collected.first().emoji.name == '🤝') { return `<@${membertarget.id}> <@${user.id}> Accepted Your Challenge !` }
+                if (collected.first().emoji.name == '🤝') { return message.channel.send(`<@${membertarget.id}> <@${user.id}> Accepted Your Challenge !`) }
                 else return message.channel.send(`Try after Sometime bruh <@${membertarget.id}> ,No one accepted :(`);
 
 
