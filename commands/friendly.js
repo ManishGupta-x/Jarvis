@@ -11,7 +11,7 @@ module.exports ={
         const newEmbed = new Discord.MessageEmbed()
        .setColor('00ff74')
        .setTitle(`<@${membertarget.id}> is Challenging For friendly ! React Below to Accept his Challenge!`)
-       .setDescription('\n Type  `join-role @..  If you dont want to play friendlies or Hide channel')
+       .setDescription(`\n <@${membertarget.id}> Type  \`join-role @..  If you dont want to play friendlies or Hide channel`)
         
         
         message.channel.send('@here') 
