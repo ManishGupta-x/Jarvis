@@ -31,8 +31,8 @@ module.exports ={
         client.on('messageReactionAdd', async (reaction, user) => {
             if (reaction.message.partial) await reaction.message.fetch();
             if (reaction.partial) await reaction.fetch();
-            if (user.bot) return;
-            if(user.membertarget) return 'Challenging Yourself Lmao';
+            if (user.client) return;
+            if (user.membertarget) return 'Challenging Yourself Lmao';
             if (!reaction.message.guild) return;
  
             if (reaction.message.channel.id == channel) {
