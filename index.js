@@ -72,7 +72,7 @@ client.on('message', async message => {
                 let msg = await message.channel.send(`@here <@${membertarget.id}> is Challenging For friendly ! React Below to Accept his Challenge!`)
                 await msg.react('🤝')
                 await msg.awaitReactions((reaction, user) => user.id == user.id && (reaction.emoji.name == '🤝'), { max: 1, time: 1800000 })
-                    .catch( collected => {
+                    .then( collected => {
                         if (collected.first().emoji.name == '🤝') {  message.reply(`<@${membertarget.id}> <@${user.id}> Accepted Your Challenge !`) }
                         else return message.channel.send(`Try after Sometime bruh <@${membertarget.id}> ,No one accepted :(`);
 
