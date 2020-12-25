@@ -24,7 +24,7 @@ module.exports ={
        .setDescription(`\n <@${membertarget.id}> is Challenging For friendly ! React Below to Accept his Challenge!` )
        .setFooter(' Type `join-role @..  If you dont want pings! ')
         
-       if(message.channel.id= channel)
+       if(message.channel.id == channel)
        {
         message.channel.send('@here') 
         let msg = await message.channel.send(newEmbed)
