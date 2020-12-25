@@ -8,11 +8,12 @@ module.exports ={
        let Role = message.guild.roles.cache.find(role => role.name === 'Stumble Guys'); 
        if(message.member.roles.cache.has('791919963316682752')){
         memberTarget.roles.remove(Role.id);
-
+        message.reply('Your Stumble Guys Role Got removed!');
        }
        else{
 
         memberTarget.roles.add(Role.id);
-       }
+        message.reply('Your Stumble Guys Role Just Got Added :)!')
+    }
         }  
 }.catch(console.error);
