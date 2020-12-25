@@ -15,5 +15,5 @@ module.exports ={
         memberTarget.roles.add(Role.id);
         message.reply('Your Stumble Guys Role Just Got Added :)!')
     }
-        }  
+        }
 } 
