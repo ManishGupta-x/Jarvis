@@ -1,6 +1,13 @@
 const Discord = require('discord.js');
 const moment = require('moment');
+const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION" ]});
+
+mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test',{useNewUrlParser : true, useUnifiedTopology: true})
+
+
+
+
 const { MessageEmbed } = require('discord.js')
 new Discord.Client({ ws: { intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES'] } });
 
