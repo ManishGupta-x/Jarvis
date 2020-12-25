@@ -24,6 +24,8 @@ module.exports ={
        .setDescription(`\n <@${membertarget.id}> is Challenging For friendly ! React Below to Accept his Challenge!` )
        .setFooter(' Type `join-role @..  If you dont want pings! ')
         
+       if(message.channel.id= channel)
+       {
         message.channel.send('@here') 
         let msg = await message.channel.send(newEmbed)
         
@@ -55,8 +57,16 @@ module.exports ={
                 } else {
                 return;
                                 }
+                            
  
-        });usedCommand.add(message.author.id);
+        });
+    }
+    else 
+    {
+        
+        message.reply('You are in the wrong Channle bruh')
+    }
+        usedCommand.add(message.author.id);
         setTimeout(() => {
             usedCommand.delete(message.author.id);
         }, 1800000); //You can set the ammount of the cooldown here! Its Formated to Miliseconds.

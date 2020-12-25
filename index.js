@@ -69,6 +69,8 @@ client.on('message', async message => {
 
         case 'youtube': client.commands.get('youtube').execute(message, args, Discord);
             break;
+        case 'stumbleguys': client.commands.get('stumbleguys').execute(message, args, Discord);
+            break;
         case 'official': client.commands.get('official').execute(message, args, Discord);
             break;
         case 'twitter': client.commands.get('twitter').execute(message, args, Discord);
