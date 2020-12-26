@@ -16,6 +16,7 @@ module.exports ={
             {name : "5. p!clear " , value : `**Moderator Command: Clears Messages! `},
             {name : "6. p!match  " , value : `To generate Results a Random Match `},
             {name : "7. p!info  " , value : `Gives User Info `},
+            {name : "7. p!botinfo  " , value : `Gives BOT Info `},
             {name : "8. p!ping" , value : `For Time Pass Lol! :) `}
              
           
