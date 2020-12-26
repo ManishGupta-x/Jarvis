@@ -11,12 +11,12 @@ module.exports ={
             
             {name : "1. p!twitter " , value : `Gives twitter link for Efootball PES`},
             {name : "2. p!youtube" , value : `Gives Youtube Link of Freakgamer`},
-
-            {name : "3. p!official" , value : `Gives Official Website Of efootball pes `},
-            {name : "4. p!clear " , value : `**Moderator Command: Clears Messages! `},
-            {name : "5. p!match  " , value : `To generate Results a Random Match `},
-            {name : "6. p!info  " , value : `Gives User Info `},
-            {name : "7. p!ping" , value : `For Time Pass Lol! :) `}
+            {name : "3. p!friendly" , value : `Try it in #friendly Channel , You can challenge for friendly to online players `},
+            {name : "4. p!official" , value : `Gives Official Website Of efootball pes `},
+            {name : "5. p!clear " , value : `**Moderator Command: Clears Messages! `},
+            {name : "6. p!match  " , value : `To generate Results a Random Match `},
+            {name : "7. p!info  " , value : `Gives User Info `},
+            {name : "8. p!ping" , value : `For Time Pass Lol! :) `}
              
           
         

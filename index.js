@@ -112,7 +112,8 @@ client.on('message', async message => {
             break;
         case 'main-squadko': client.commands.get('main-squadko').execute(message, args, Discord);
             break;
-        case 'rewards-freakcup': client.Rewards.get('rewards-freakcup').execute(message, args, Discord);
+        
+        case 'rewards-gktourney': client.Rewards.get('rewards-gktourney').execute(message, args, Discord);
             break;
         case 'rewards-ucl': client.Rewards.get('rewards-ucl').execute(message, args, Discord);
             break;
@@ -180,7 +181,7 @@ client.on('message', async message => {
 
                     {
                         name: "1. General Commands ", value: `Gives Info for General commands like ping 
-                 , twitter , official...etc`},
+                 , twitter , friendly,Other Websites...etc`},
                     { name: "2. Rewards", value: `Gives Info for Rewards Commands` },
 
                     { name: "3. Tourneys Info And Rules", value: `Gives Info and rules for Tourneys ` },
