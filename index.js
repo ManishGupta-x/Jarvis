@@ -73,6 +73,8 @@ client.on('message', async message => {
             break;
         case 'meme': client.commands.get('meme').execute(message, args, Discord);
             break;
+        case 'fping': client.commands.get('fping').execute(message, args, Discord);
+            break;
         case 'botinfo': client.commands.get('botinfo').execute(message, args, Discord);
             break;
 
