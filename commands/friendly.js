@@ -31,7 +31,7 @@ module.exports ={
         
         
         await msg.react('🤝')
-        await msg.awaitReactions((reaction, user) =>  (reaction.emoji.name == '🤝'), { max: 2, time: 5000 })
+        
         
         client.on('messageReactionAdd', async (reaction, user) => {
             if (reaction.message.partial) await reaction.message.fetch();
