@@ -31,8 +31,11 @@ module.exports ={
         
         
         await msg.react('🤝')
-
-
+        await msg.awaitReactions((reaction, user) =>  (reaction.emoji.name == '🤝'), { max: 2, time: 1800000 })
+        if(!reaction)
+        {
+             message.channel.send(`<@${membertarget.id}> Sorry no one accepted the challenge try after sometime :) `);
+        }
         client.on('messageReactionAdd', async (reaction, user) => {
             if (reaction.message.partial) await reaction.message.fetch();
             if (reaction.partial) await reaction.fetch();
