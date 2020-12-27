@@ -32,10 +32,7 @@ module.exports ={
         
         await msg.react('🤝')
         await msg.awaitReactions((reaction, user) =>  (reaction.emoji.name == '🤝'), { max: 2, time: 5000 })
-        if(!reaction)
-        {
-             message.channel.send(`<@${membertarget.id}> Sorry no one accepted the challenge try after sometime :) `);
-        }
+        
         client.on('messageReactionAdd', async (reaction, user) => {
             if (reaction.message.partial) await reaction.message.fetch();
             if (reaction.partial) await reaction.fetch();
@@ -45,7 +42,7 @@ module.exports ={
  
             if (reaction.message.channel.id == channel) {
                 if (reaction.emoji.name === hand) {
-                    await reaction.message.guild.members.cache.get(user.id);
+                    await reaction.message.guild.members.cache.get(user.id), { max: 2, time: 5000 };
                     if(user.id == membertarget.id)
                     {
                         message.reply('Challenging Yourself?  dumb?? -_-');
@@ -54,6 +51,9 @@ module.exports ={
                     message.reply(`<@${user.id}> Accepeted Your Challenge`);
                     return;
                 }
+            }else {
+                message.channel.send(`<@${membertarget.id}> Sorry no one accepted the challenge try after sometime :) `);
+                
             }
                  
 
