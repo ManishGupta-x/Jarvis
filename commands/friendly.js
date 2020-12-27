@@ -51,7 +51,7 @@ module.exports ={
                     message.reply(`<@${user.id}> Accepeted Your Challenge`);
                     return;
                 }
-            }else {
+            }else if(!reaction){
                 message.channel.send(`<@${membertarget.id}> Sorry no one accepted the challenge try after sometime :) `);
                 
             }
