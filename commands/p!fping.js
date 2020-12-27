@@ -8,8 +8,7 @@ module.exports ={
        let Role = message.guild.roles.cache.find(role => role.name === '..'); 
        if(message.member.roles.cache.has('791919963316682752')){
         memberTarget.roles.remove(Role.id);
-        message.author.send('You Were removed from the #friendlies channel to undo type p!fping on the server ');
-       }
+          }
        else{
 
         memberTarget.roles.add(Role.id);
