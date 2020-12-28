@@ -42,7 +42,7 @@ module.exports ={
  
             if (reaction.message.channel.id == channel) {
                 if (reaction.emoji.name === hand) {
-                    await reaction.message.guild.members.cache.get(user.id), { max: 2, time: 5000 };
+                    await reaction.message.guild.members.cache.get(user.id);
                     if(user.id == membertarget.id)
                     {
                         message.reply('Challenging Yourself?  dumb?? -_-');
@@ -51,9 +51,6 @@ module.exports ={
                     message.reply(`<@${user.id}> Accepeted Your Challenge`);
                     return;
                 }
-            }else if(!reaction){
-                message.channel.send(`<@${membertarget.id}> Sorry no one accepted the challenge try after sometime :) `);
-                
             }
                  
 
