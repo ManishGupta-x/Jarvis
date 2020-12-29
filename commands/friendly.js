@@ -26,13 +26,21 @@ module.exports ={
         
        if(message.channel.id == channel)
        {
-        if(!message.member.roles.cache.has('754994039035789393') || !message.member.roles.cache.has('754996150880305213') || !message.member.roles.cache.has('754993523501170698') || !message.member.roles.cache.has('758211941473714177'))
-        return message.channel.send('@here') 
+        if(message.member.roles.cache.has('754994039035789393') || message.member.roles.cache.has('754996150880305213') || message.member.roles.cache.has('754993523501170698') || message.member.roles.cache.has('758211941473714177'))
+        { message.channel.send('@here') 
+
         let msg = await message.channel.send(newEmbed)
         
         
         await msg.react('🤝')
+       }
+       else{
+        let msg = await message.channel.send(newEmbed)
         
+        
+        await msg.react('🤝')
+
+       }
         
         client.on('messageReactionAdd', async (reaction, user) => {
             if (reaction.message.partial) await reaction.message.fetch();
