@@ -55,7 +55,7 @@ module.exports ={
                     if(user.id == membertarget.id)
                     {
                         message.reply('Challenging Yourself?  dumb?? -_-');
-                        message.delete({ timeout: 10000 })
+                        message.reply.delete({ timeout: 10000 })
                     }
                     else{
                     message.reply(`<@${user.id}> Accepeted Your Challenge`);
