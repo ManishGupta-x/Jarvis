@@ -3,7 +3,7 @@ module.exports ={
     Description: 'shows deadline of UCL',
     execute(message,args, Discord){
      
-       message.channel.send('13th December, 2020 (Semis)');
+       message.channel.send('17th January 2021 (Group stage)');
 
 
     }  
