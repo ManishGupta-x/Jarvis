@@ -1,7 +1,7 @@
 
 const usedCommand = new Set();
 module.exports ={
-    name: 'friendly',
+    name: 'friendly1',
     Description: 'this is a  Friendly  command!',
     async  execute(message,args, Discord,client){
 
@@ -27,7 +27,7 @@ module.exports ={
        if(message.channel.id == channel)
        {
        
-         message.channel.send('@here') 
+         
 
         let msg = await message.channel.send(newEmbed)
         

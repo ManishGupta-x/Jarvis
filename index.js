@@ -67,7 +67,11 @@ client.on('message', async message => {
         case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
        
-        case 'friendly':client.commands.get('friendly').execute(message, args, Discord,client);
+        case 'friendly':
+         
+            if(message.member.roles.cache.has('754994039035789393') || message.member.roles.cache.has('754996150880305213') || message.member.roles.cache.has('754993523501170698') || message.member.roles.cache.has('758211941473714177'))
+        client.commands.get('friendly').execute(message, args, Discord,client);
+        else client.commands.get('friendly1').execute(message, args, Discord,client);
            
 
 
