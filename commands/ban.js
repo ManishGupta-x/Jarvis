@@ -1,34 +1,37 @@
-const Discord = require('discord.js');
-const botsettings = require('./botsettings.json');
-
-const bot = new Discord.Client({disableEveryone: true});
 module.exports ={
     name: 'ban',
     Description: 'this is a  Ping command!',
     execute(message,args, Discord){
-    if(message.author.bot || message.channel.type === "dm") return;
-
-
-    //args system that is very required!!!!
-    let messageArray = message.content.split(" ")
-    let args1 = messageArray.slice(1);
-
- 
-
-    {
-        let toBan = message.mentions.members.first() || message.guild.members.cache.get(args1[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args1.slice(0).join(" ") || x.user.username === args1[0]);
-
-        if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("You need permissions!") 
-        if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send("Bot need permissions!") 
-
-        const reason = args1[1] || "There was no reason!";
-
-        toBan.ban({
-            reason: reason
-        })
-        message.channel.send(`${toBan} has been banned from the server!\nReason: ${reason}`)
-    }
-
-  
+        module.exports ={
+            name: 'ban',
+            Description: 'this is a kick command!',
+            execute(message,args, Discord){
+             
+                const user = message.mentions.users.first();
+                
+                
+                if (user) {
+        
+                    const member = message.guild.member(user);
+                    if (member) {
+                        member.ban('banned').then(() => {
+                            message.reply(`Sucessfully kicked ${user.tag} `);
+                        }).catch(err => {
+                            message.reply('I can\'t kick that member bruh');
+                            console.log(err);
+        
+        
+                        });
+                    } else {
+                        message.reply("That user isn\'t in this guild")
+                    }
+                } else {
+        
+                    message.reply("You need to specify a Person!")
+                }
+        
+        
+            }  
+        }
     
 }}
