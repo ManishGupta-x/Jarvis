@@ -240,7 +240,7 @@ client.on('message', async message => {
 
 
 
-                }).catch(async () => { return message.channel.send("error") });
+                }).catch(async () => { return message.channel.send("Time up Type p!help to go again") });
 
         }
 
