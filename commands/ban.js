@@ -2,10 +2,7 @@ module.exports ={
     name: 'ban',
     Description: 'this is a  Ping command!',
     execute(message,args, Discord){
-        module.exports ={
-            name: 'ban',
-            Description: 'this is a kick command!',
-            execute(message,args, Discord){
+        
              
                 const user = message.mentions.users.first();
                 
@@ -34,4 +31,3 @@ module.exports ={
             }  
         }
     
-}}
