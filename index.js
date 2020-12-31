@@ -103,6 +103,8 @@ client.on('message', async message => {
             break;
         case 'div2': client.commands.get('div2').execute(message, args, Discord);
             break;
+        case 'div3': client.commands.get('div3').execute(message, args, Discord);
+            break;
         case 'ucl': client.commands.get('ucl').execute(message, args, Discord);
             break;
         case 'clear': client.commands.get('clear').execute(message, args, Discord);
