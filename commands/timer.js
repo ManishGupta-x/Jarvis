@@ -35,7 +35,7 @@ module.exports ={
 
 
             valcheck();
-          }, 16200000 );
+          }, 1000 );
           message.reply('command started!');
           message.delete({timeout: 2000});
         } else {
