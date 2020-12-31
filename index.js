@@ -134,7 +134,7 @@ client.on('message', async message => {
             break;
         case 'rewards-mainko': client.Rewards.get('rewards-mainko').execute(message, args, Discord);
             break;
-        case 'ban': client.commands.get('ban').execute(message, args, Discord);
+        case 'ban': client.commands.get('ban').execute(message, args,prefix, Discord);
             break;
         case 'kick': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
             return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));

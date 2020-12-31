@@ -1,14 +1,15 @@
 module.exports ={
     name: 'ban',
     Description: 'this is a kick command!',
-    execute(message,args, Discord){
+    execute(message,args,prefix, Discord){
      
         const user = message.mentions.users.first();
         
         
+        
         if (user) {
 
-            const member = message.guild.member(user);
+            const member = message.mentions.guild.member(user);
             if (member) {
                 member.ban('You were banned').then(() => {
                     message.reply(`Sucessfully banned ${user.tag} `);
@@ -29,3 +30,4 @@ module.exports ={
 
     }  
 }
+
