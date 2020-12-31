@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const source = require('../index');
 module.exports ={
-    name: 'bday',
+    name: 'timer',
     Description: 'this is a bday command!',
     execute(message,args, Discord){
 
@@ -20,9 +20,9 @@ module.exports ={
 
         const Embed = new Discord.MessageEmbed()
         .setColor('#00f1ff')
-        .setTitle("Happy Birthday Tousif ( The Freak Gamer) 🎉")
-        .setDescription('You \'re older today than yesterday but younger than tomorrow, Happy birthday Freak Gamer Bro ! ')
-        .setImage('https://cdn.discordapp.com/attachments/742958516322566244/784328077873250334/PicsArt_12-04-01.29.34.jpg')
+        .setTitle("Happy New year Guys 🎉")
+        .setDescription(`I hope that 2021 multiplies your joys and divides your sorrows. Happy New Year 2021!`)
+        .setImage('https://cdn.discordapp.com/attachments/610950416498425886/794201520928981012/merry-christmas-happy-new-year-luxury-sports-greeting-card-soccer-football-ball-as-black-background-.png')
         .setFooter(`May God Bless You Bro! 😇`)
 
         if (!source.timedCheck){
@@ -35,7 +35,7 @@ module.exports ={
 
 
             valcheck();
-          }, 1000);
+          }, 16200000 );
           message.reply('command started!');
           message.delete({timeout: 2000});
         } else {
@@ -60,7 +60,7 @@ let valcheck = () => {
   if (source.val === 1){
     clearInterval(source.timedCheck);
     source.timedCheck = undefined;
-    return message.channel.send(`Enjoy Your Day Bro!!`);
+    return message.channel.send(`Fcuk 2020 :)!`);
   }
 };
 }

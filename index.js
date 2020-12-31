@@ -184,7 +184,7 @@ client.on('message', async message => {
             message.delete({ timeout: 2000 })
             break;
 
-        case 'bday': client.commands.get('bday').execute(message, args, Discord);
+        case 'timer': client.commands.get('timer').execute(message, args, Discord);
             break;
         case 'roleinfo': client.help.get('6').execute(message, args, Discord);
             break;
