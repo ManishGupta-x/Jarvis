@@ -1,5 +1,5 @@
 module.exports ={
-    name: 'kick',
+    name: 'ban',
     Description: 'this is a kick command!',
     execute(message,args, Discord){
      
