@@ -226,7 +226,7 @@ client.on('message', async message => {
             await msg.react('6️⃣')
             await msg.awaitReactions((reaction, user) => user.id == user.id && (reaction.emoji.name == '1️⃣' ||
 
-                reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣' || reaction.emoji.name == '6️⃣'), { max: 1, time: 20000 })
+                reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣' || reaction.emoji.name == '6️⃣'), { max: 1, time: 40000 })
                 .then(async collected => {
                     if (collected.first().emoji.name == '1️⃣') { return client.help.get('1').execute(message, args, Discord) }
                     else if (collected.first().emoji.name == '2️⃣') { return client.help.get('2').execute(message, args, Discord) }
@@ -240,7 +240,7 @@ client.on('message', async message => {
 
 
 
-                }).catch(async () => { return message.channel.send("Time up Type p!help to go again") });
+                }).catch(async () => { return message.channel.send("error") });
 
         }
 
