@@ -1,16 +1,16 @@
 const Discord = require('discord.js');
 const moment = require('moment');
-const mongoose = require('mongoose'); 
-const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION" ]});
+const mongoose = require('mongoose');
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 
-mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test',{useNewUrlParser : true, useUnifiedTopology: true})
+mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true })
 
 
 
 
 const { MessageEmbed } = require('discord.js')
 new Discord.Client({ ws: { intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES'] } });
- 
+
 const prefix = 'p!';
 const fs = require('fs');
 const { disconnect } = require('process');
@@ -66,13 +66,13 @@ client.on('message', async message => {
 
         case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
-       
+
         case 'friendly':
-         
-            if(message.member.roles.cache.has('754994039035789393') || message.member.roles.cache.has('754996150880305213') || message.member.roles.cache.has('754993523501170698') || message.member.roles.cache.has('758211941473714177'))
-        client.commands.get('friendly').execute(message, args, Discord,client);
-        else client.commands.get('friendly1').execute(message, args, Discord,client);
-           
+
+            if (message.member.roles.cache.has('754994039035789393') || message.member.roles.cache.has('754996150880305213') || message.member.roles.cache.has('754993523501170698') || message.member.roles.cache.has('758211941473714177'))
+                client.commands.get('friendly').execute(message, args, Discord, client);
+            else client.commands.get('friendly1').execute(message, args, Discord, client);
+
 
 
             break;
@@ -123,10 +123,12 @@ client.on('message', async message => {
             break;
         case 'main-squadko': client.commands.get('main-squadko').execute(message, args, Discord);
             break;
-        
+
         case 'rewards-gktourney': client.Rewards.get('rewards-gktourney').execute(message, args, Discord);
             break;
         case 'rewards-ucl': client.Rewards.get('rewards-ucl').execute(message, args, Discord);
+            break;
+        case 'rewards-freakcup': client.Rewards.get('rewards-freakcup').execute(message, args, Discord);
             break;
         case 'rewards-laliga': client.Rewards.get('rewards-laliga').execute(message, args, Discord);
             break;
@@ -136,7 +138,7 @@ client.on('message', async message => {
             break;
         case 'rewards-mainko': client.Rewards.get('rewards-mainko').execute(message, args, Discord);
             break;
-        case 'ban': client.commands.get('ban').execute(message, args,prefix, Discord);
+        case 'ban': client.commands.get('ban').execute(message, args, prefix, Discord);
             break;
         case 'kick': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
             return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));
@@ -147,14 +149,14 @@ client.on('message', async message => {
         case 'gn': client.commands.get('gn').execute(message, args, Discord);
             break;
         case 'mute': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
-        return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));
-        
-        client.commands.get('mute').execute(message, args, Discord);
+            return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));
+
+            client.commands.get('mute').execute(message, args, Discord);
             break;
         case 'unmute': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
-        return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));
-        
-        client.commands.get('unmute').execute(message, args, Discord);
+            return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));
+
+            client.commands.get('unmute').execute(message, args, Discord);
             break;
         case 'gn': client.commands.get('gn').execute(message, args, Discord);
             break;
