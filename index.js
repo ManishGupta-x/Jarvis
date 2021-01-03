@@ -192,9 +192,9 @@ client.on('message', async message => {
             break;
         case 'roleinfo': client.help.get('6').execute(message, args, Discord);
             break;
-        case 'help': {
+        case 'help': //{
 
-            const newEmbed = new Discord.MessageEmbed()
+            /*const newEmbed = new Discord.MessageEmbed()
                 .setColor('#6beea8')
                 .setTitle('Help Module')
                 .setDescription('Server\'s Info And Commands')
@@ -246,7 +246,8 @@ client.on('message', async message => {
 
         }
 
-
+              */
+             message.channel.send('Command under maintenence');
             break;
         case 'match':
 
