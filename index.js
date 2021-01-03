@@ -66,10 +66,7 @@ client.on('message', async message => {
 
         case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
-        case 'addid': client.commands.get('addid').execute(message, args, Discord);
-            break;
-        case 'id': client.commands.get('id').execute(message, args, Discord);
-            break;
+      
 
         case 'friendly':
 
