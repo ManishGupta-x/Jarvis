@@ -192,9 +192,9 @@ client.on('message', async message => {
             break;
         case 'roleinfo': client.help.get('6').execute(message, args, Discord);
             break;
-        case 'help': //{
+        case 'help': {
 
-            /*const newEmbed = new Discord.MessageEmbed()
+            const newEmbed = new Discord.MessageEmbed()
                 .setColor('#6beea8')
                 .setTitle('Help Module')
                 .setDescription('Server\'s Info And Commands')
@@ -226,7 +226,7 @@ client.on('message', async message => {
             await msg.react('4️⃣')
             await msg.react('5️⃣')
             await msg.react('6️⃣')
-            await msg.awaitReactions((reaction, user) => user.id == user.id && (reaction.emoji.name == '1️⃣' ||
+            await msg.awaitReactions((reaction, user) => user.id == user.id && !message.author.bot && (reaction.emoji.name == '1️⃣' ||
 
                 reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣' || reaction.emoji.name == '6️⃣'), { max: 1, time: 40000 })
                 .then(async collected => {
@@ -246,8 +246,7 @@ client.on('message', async message => {
 
         }
 
-              */
-             message.channel.send('Command under maintenence');
+             
             break;
         case 'match':
 
