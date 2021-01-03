@@ -1,11 +1,11 @@
 module.exports ={
-    name: 'rewards-gktourney',
+    name: 'rewards-armychoice',
     Description: 'Gives info of rewards for Gk Tourney Ko !',
     execute(message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#54EDF7')
-       .setTitle('Rewards For Gk Tourney ')
+       .setTitle('Rewards For Army\'s Choice Tourneys ')
        .setAuthor('Freak Gamer')
        .addFields(
         
