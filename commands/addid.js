@@ -5,7 +5,7 @@ module.exports ={
      
      const sql = require("sqlite");
      sql.open("./id.sqlite");
-     var args1 = message.content.split(" ").join(" ");
+     var args1 = message.content.split(" ").join(" "); 
      if(!args1){
         const newEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
