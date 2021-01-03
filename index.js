@@ -226,7 +226,7 @@ client.on('message', async message => {
             await msg.react('4️⃣')
             await msg.react('5️⃣')
             await msg.react('6️⃣')
-            await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "<778267007439077396>" && (reaction.emoji.name == '1️⃣' ||
+            await msg.awaitReactions((reaction, user) =>  user.id !== "<778267007439077396>" && (reaction.emoji.name == '1️⃣' ||
 
                 reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣' || reaction.emoji.name == '6️⃣'), { max: 1, time: 40000 })
                 .then(async collected => {
