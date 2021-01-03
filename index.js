@@ -238,7 +238,7 @@ client.on('message', async message => {
                     else if (collected.first().emoji.name == '6️⃣') { return client.help.get('6').execute(message, args, Discord) }
                     else return message.channel.send('Time Up');
 
-
+ 
 
 
 
