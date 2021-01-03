@@ -94,7 +94,7 @@ module.exports = {
         await msg.react('1️⃣')
         await msg.react('2️⃣')
 
-        await msg.awaitReactions((reaction, user) => user.id == user.id && (reaction.emoji.name == '1️⃣' ||
+        await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" (reaction.emoji.name == '1️⃣' ||
 
             reaction.emoji.name == '2️⃣'), { max: 1, time: 20000 })
             .then(async collected => {
