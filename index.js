@@ -75,14 +75,14 @@ client.on('message', async message => {
         case 'ping': client.commands.get('ping').execute(message, args, Discord); 
             break;
 
-        case 'setid': client.id.get('setid').execute(client,message, args, Discord); 
+        case 'setid': message.channel.send('opening soon in a few hours');//client.id.get('setid').execute(client,message, args, Discord); 
            break;
 
 
 
 
        
-         case 'id': client.id.get('id').execute(client,message, args, Discord);
+         case 'id': message.channel.send('opening soon in a few hours');//client.id.get('id').execute(client,message, args, Discord);
             break;
         
         case 'friendly':
