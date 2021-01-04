@@ -37,9 +37,9 @@ module.exports = {
                 newdata.save().catch(err => console.log(err));
                 return message.reply('Your Id  has been set ')
 
-             } else {
-                return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);
-            }
+             } 
+        }else{
+            return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);
         }
         }
         )
