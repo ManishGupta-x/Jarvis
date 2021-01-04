@@ -11,13 +11,16 @@ const mongoose =require('mongoose');
     Description: 'this is a  setid  command!',
     execute(client,message,args, Discord){
         user = message.author;
-         konamiid= args[0];
+         
      
        if(!args[0]){
 
           
           return message.reply("Pls enter your id after p!setid");
 
+       }
+       else {
+        konamiid= args[0];
        }
         Data.findOne({
 
