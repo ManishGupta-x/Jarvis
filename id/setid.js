@@ -21,6 +21,7 @@ const mongoose =require('mongoose');
        }
        else {
         konamiid= args[0];
+        return message.channel.send(`Your Id Has been set to ${konamiid} `);
        }
         Data.findOne({
 
@@ -34,7 +35,7 @@ const mongoose =require('mongoose');
                     id : konamiid
                 })
               newdata.save().catch(err => console.log(err));
-              return message.channel.send(`Your Id Has been set to ${konamiid} `);
+              
             } 
         }
         )
