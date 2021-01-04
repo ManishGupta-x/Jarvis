@@ -36,11 +36,22 @@ const mongoose =require('mongoose');
                 })
               newdata.save().catch(err => console.log(err));
               message.channel.send(`Your Id Has been set to ${konamiid} `);
-              
-            } else{
-                data.id = konamiid;
+              data.id = konamiid;
                 data.save().catch(err => console.log(err));
-               
+              
+            } else {
+                 message.channel.send("You want to Edit you Id? (Yes/no)")
+                 var msg = message.author;
+                 if(msg == yes || msg == Yes || msg == YES ){
+
+                    data.id = konamiid;
+                    data.save().catch(err => console.log(err));
+                    message.reply(' Id Updated ')
+
+                 }else {
+                     message.send(' Edit Cancelled')
+                 }
+                
             }
         }
         )
