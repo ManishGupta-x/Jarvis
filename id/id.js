@@ -31,7 +31,7 @@ module.exports = {
 
                 message.channel.send('You want to set your id? (yes/no)').then(() => {
                     message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
-                        .then(collected => {
+                        .then(async collected => {
 
                             if ('yes' == collected.first().content || 'Yes' == collected.first().content) {
                                 message.channel.send('type your id pls').then(() =>  {
