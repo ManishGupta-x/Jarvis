@@ -2,7 +2,7 @@ const fs = require("fs");
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true });
 
-user.message.author;
+user= message.author;
 
 
 const Data = require('../id/data.js');
