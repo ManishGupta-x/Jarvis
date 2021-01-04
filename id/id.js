@@ -36,10 +36,11 @@ module.exports = {
                             if ('yes' == collected.first().content || 'Yes' == collected.first().content) {
                                 message.channel.send('type your id pls').then(() =>  {
                                     message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
-                                     await .then(async collected => {
+                                     .then(async collected => {
 
                                             konamiid = collected.first().content;
-                                        }).then(
+                                        })
+                                   await .then(
                                     message.channel.send('Confirm').then(() => {
                                         message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] }).then(() => {
                                             if ('confirm' == collected.first().content || 'Confirm' == collected.first().content) {
