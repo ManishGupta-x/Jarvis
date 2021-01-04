@@ -35,7 +35,7 @@ const mongoose =require('mongoose');
                     const newdata = new Data({
                         name: client.users.cache.get(user.id).username,
                         userID : user.id,
-                        ID : msg2
+                        ID : msg2,
                     })
                     newdata.save().catch(err => console.log(err));
                    data.save().catch(err => console.log(err));
