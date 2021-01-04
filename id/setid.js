@@ -30,7 +30,7 @@ const mongoose =require('mongoose');
             if(err) console.log(err);
             if(!data){
                 const newdata = new Data({
-                    name: client.users.cache.get(user.id).username,
+                    name: message.author.username,
                     userID : message.author.id,
                     id : konamiid,
                 })
