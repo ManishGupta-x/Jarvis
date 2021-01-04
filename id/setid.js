@@ -16,7 +16,7 @@ const mongoose =require('mongoose');
        if(!args[0]){
 
           
-          return message.reply("Pls enter your id after p!setid");
+          return message.channel.send("Pls enter your id after p!setid");
 
        }
        else {
