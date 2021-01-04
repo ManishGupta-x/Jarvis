@@ -27,25 +27,19 @@ module.exports = {
 
         }, (err, data) => {
             if (err) console.log(err);
-            if(!args[0]){ 
+            if(args[0]){ 
             if (!data) {
-               
-                
-                return message.reply('you dont have any id set ')
+                const newdata = new Data({
+                    name: message.author.username,
+                    userID: message.author.id,
+                    Konami : args[0],
+                })
+                newdata.save().catch(err => console.log(err));
+                return message.reply('Your Id  has been set ')
 
              } else {
                 return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);
             }
-        }else{
-              data.Konami = args[0];
-            const newdata = new Data({
-                name: message.author.username,
-                userID: message.author.id,
-                Konami : args[0],
-            })
-            newdata.save().catch(err => console.log(err));
-            data.save().catch(err => console.log(err));
-            message.reply('Id Has been Set ')
         }
         }
         )
