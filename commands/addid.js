@@ -28,7 +28,7 @@ module.exports ={
 
      }     
         ).catch(() => {console.error;
-        sql.run("CREATE TABLE IF NOT EXISTS id (userId TEXT , ID TEXT").then(() => {
+        sql.run("CREATE TABLE IF NOT EXISTS id (userId INTEGER NOT NULL , ID INTEGER NOT NULL").then(() => {
 
           sql.run("INSERT INTO id (userId,ID) VALUES (?,?)", [message.author.id,args1]);
         }) ;
