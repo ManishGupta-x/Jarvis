@@ -38,8 +38,9 @@ const mongoose =require('mongoose');
               message.channel.send(`Your Id Has been set to ${konamiid} `);
               
             } else{
+                data.id = konamiid;
                 data.save().catch(err => console.log(err));
-                message.channel.send('type p!id to get your id')
+               
             }
         }
         )
