@@ -38,7 +38,7 @@ module.exports = {
                                     message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
                                         .then(collected => {
 
-                                            konamiid = collected.first();
+                                            konamiid = collected.first().content;
                                         })
                                     message.channel.send('Confirm').then(() => {
                                         message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] }).then(() => {
