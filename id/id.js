@@ -14,7 +14,12 @@ module.exports = {
     name: 'id',
     Description: 'this is a  Ping command!',
     async execute(client, message, args, Discord){
-      
-        return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);
-    }
+        Data.findOne({
+            userID :message.author.id
+        }, (err, data) => {
+            if (err) console.log(err);
+            if (!data) { message.reply(' No Id in record type p!setid')}else{
+        return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);}
+    })
+}
 }
