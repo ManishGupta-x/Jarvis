@@ -20,7 +20,7 @@ const mongoose =require('mongoose');
 
         data.findone({
 
-            userID = user.id
+           
         }, (err,data) => {
             if(err) console.log(err);
             if(!data){
