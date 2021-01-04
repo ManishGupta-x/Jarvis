@@ -66,7 +66,9 @@ module.exports = {
                         })
 
 
-                })
+                }).catch(collected => {
+                    message.channel.send('Command closed');
+                });
 
 
 
