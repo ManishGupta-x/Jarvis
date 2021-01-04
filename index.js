@@ -45,6 +45,14 @@ for (const file of helpFiles) {
     client.help.set(command.name, command);
 }
 
+client.id = new Discord.Collection();
+const idFiles = fs.readdirSync('./id/').filter(file => file.endsWith('.js'));
+for (const file of idFiles) {
+
+    const command = require(`./id/${file}`);
+    client.id.set(command.name, command);
+}
+
 
 client.once('ready', () => {
     console.log('Nightmare is online!');
@@ -60,14 +68,19 @@ client.on('message', async message => {
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
+   
     
     switch (command) {
 
         case 'ping': client.commands.get('ping').execute(message, args, Discord); 
             break;
-        case 'addid': client.commands.get('addid').execute(message, args, Discord);
-            break;
-         case 'id': client.commands.get('id').execute(message, args, Discord);
+
+
+
+
+
+       
+         case 'id': client.id.get('id').execute(client,message, args, Discord);
             break;
         case 'friendly':
 
