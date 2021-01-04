@@ -31,18 +31,16 @@ module.exports = {
 
                 message.channel.send('You want to set your id? (yes/no)').then(() => {
                     message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
-                        .then(async collected => {
+                        .then(collected => {
 
                             if ('yes' == collected.first().content || 'Yes' == collected.first().content) {
                                 message.channel.send('type your id pls').then(() =>  {
                                     message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
-                                   await   .then(async collected => {
+                                    .then( collected => {
 
                                             konamiid = collected.first().content;
-                                        }).catch(async () => { return message.channel.send("error") });
-                                    message.channel.send('Confirm').then(() => {
-                                        message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] }).then(() => {
-                                            if ('confirm' == collected.first().content || 'Confirm' == collected.first().content) {
+                                        })
+                                   
                                                 const newdata = new Data({
                                                     name: message.author.username,
                                                     userID: message.author.id,
@@ -51,14 +49,23 @@ module.exports = {
                                                 newdata.save().catch(err => console.log(err));
                                                 message.channel.send(`${data.ID} `);
                                                 data.ID = konamiid;
-                                                data.save().catch(err => console.log(err));
-                                                 message.reply('Your Id Has been set !')
-                                            }else{ message.reply("cancelled")}
+                                                message.channel.send(`Confirm Your Id as  ${konamiid} (yes/no) `).then(()=>{
+                                                    message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
+                                                    .then(collected => {
+                                                        if ('yes' == collected.first().content || 'Yes' == collected.first().content){
+                                                            data.save().catch(err => console.log(err));
+                                                            message.reply('Your Id Has been set !');
+                                                      
+                                                        }else { 
+                                                            message.channel.send('updation cancelled type p!id again to start');
+                                                        }
 
+                                                    })
+                                                 
+                                            
 
-                                        })
-
-                                    })
+                                                })
+                                               
 
 
                                 })
