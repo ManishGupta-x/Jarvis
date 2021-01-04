@@ -29,31 +29,31 @@ module.exports = {
 
         }, (err, data) => {
             if (err) console.log(err);
+            if(!args[0]){ 
             if (!data) {
                
                 const newdata = new Data({
                     name: message.author.username,
                     userID: message.author.id,
-                    Konami: 0,
+                    
                 })
                 newdata.save().catch(err => console.log(err));
-                message.reply('Type your id to set it!').then(()=>{
-                    message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
-                    .then(collected=>{
-
-                            data.Konami = collected.first().content;
-                            data.save().catch(err => console.log(err));
-                            message.reply("Your id has been Set!");
-
-                    }                
-                    )
-                   
-                })
-
+                return message.reply('you dont have any id set ')
 
              } else {
                 return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);
             }
+        }else{
+            args[0] = data.Konami;
+            const newdata = new Data({
+                name: message.author.username,
+                userID: message.author.id,
+                Konami : args[0],
+            })
+            newdata.save().catch(err => console.log(err));
+            data.save().catch(err => console.log(err));
+            message.reply('Id Has benn Set ')
+        }
         }
         )
 
