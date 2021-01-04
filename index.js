@@ -59,7 +59,14 @@ client.on('message', async message => {
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
+    await mongoose().then( mongoose => {
+        try{
 
+            console.log("Connected to Mongoo!")
+        }finally{
+            mongoose.connection.close()
+        }
+    })
 
 
     switch (command) {
