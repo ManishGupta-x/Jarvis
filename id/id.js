@@ -4,7 +4,7 @@ mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/t
 const filter = response => {
 	return (message => message.toLowerCase() === response.content.toLowerCase());
 };
-konamiid = args1[0];
+const konamiid = args1[0];
 const Data = require('../id/data.js');
 
 
@@ -38,7 +38,7 @@ module.exports = {
                                     message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
                                     .then( collected => {
 
-                                            konamiid = collected.first().content;
+                                            konamiid = collected.first(args1[0]).content;
                                         })
                                    
                                                 const newdata = new Data({
