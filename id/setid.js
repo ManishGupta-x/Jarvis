@@ -31,11 +31,11 @@ const mongoose =require('mongoose');
             if(!data){
                 const newdata = new Data({
                     name: client.users.cache.get(user.id).username,
-                    userID : user.id,
+                    userID : message.author.id,
                     id : konamiid,
                 })
               newdata.save().catch(err => console.log(err));
-              message.channel.send(`Your Id Has been set to ${konamiid} `);
+              message.channel.send(`${konamiid} `);
               data.id = konamiid;
                 data.save().catch(err => console.log(err));
               
