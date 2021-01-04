@@ -3,7 +3,7 @@ const mongoose =require('mongoose');
  mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true , useUnifiedTopology: true});
 
 
- const data = require('../id/data.js');
+ const Data = require('../id/data.js');
 
 
  module.exports ={
@@ -18,7 +18,7 @@ const mongoose =require('mongoose');
        }else { user = message.mentions.users.first() || client.users.cache.get(args[0])   ;
         }
 
-        data.findOne({
+        Data.findOne({
 
            
         }, (err,data) => {
