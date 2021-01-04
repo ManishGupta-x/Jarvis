@@ -17,8 +17,10 @@ module.exports = {
         if (!args[0]) {
 
             user = message.author;
+            message.reply('Type Your id after p!id ')
             
-        } 
+        }
+        if(args[0]){ 
 
         Data.findOne({
            userID :message.author.id
@@ -42,7 +44,7 @@ module.exports = {
         }
         )
 
-    }
+    }}
 }
 
 
