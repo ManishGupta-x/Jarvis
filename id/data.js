@@ -3,7 +3,7 @@ const dataschema = mongoose.Schema({
 
   name :String,
   userID: String,
-  ID: String,
+  Konami: String,
 
 
 

@@ -45,11 +45,11 @@ module.exports = {
                                                 const newdata = new Data({
                                                     name: message.author.username,
                                                     userID: message.author.id,
-                                                    ID: konamiid,
+                                                    Konami: konamiid,
                                                 })
                                                
                                                 
-                                                data.ID = konamiid;
+                                                data.Konami= konamiid;
                                                 message.channel.send(`Confirm Your Id as  ${konamiid} (yes/no) `).then(()=>{
                                                     message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
                                                     .then(collected => {
@@ -82,7 +82,7 @@ module.exports = {
 
 
             } else {
-                return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.ID}`);
+                return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);
             }
         }
         )
