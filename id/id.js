@@ -1,9 +1,7 @@
 const fs = require("fs");
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true });
-const filter = response => {
-	return (message => message.toLowerCase() === response.content.toLowerCase());
-};
+
 
 
 
@@ -35,7 +33,7 @@ module.exports = {
                 const newdata = new Data({
                     name: message.author.username,
                     userID: message.author.id,
-                    
+                    Konami : args[0],
                 })
                 newdata.save().catch(err => console.log(err));
                 return message.reply('you dont have any id set ')
@@ -52,7 +50,7 @@ module.exports = {
             })
             newdata.save().catch(err => console.log(err));
             data.save().catch(err => console.log(err));
-            message.reply('Id Has benn Set ')
+            message.reply('Id Has been Set ')
         }
         }
         )
