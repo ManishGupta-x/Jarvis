@@ -5,7 +5,7 @@ const filter = response => {
 	return (message => message.toLowerCase() === response.content.toLowerCase());
 };
 
-var konamiid = 0;
+var konamiid;
 const Data = require('../id/data.js');
 
 
