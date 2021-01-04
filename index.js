@@ -75,6 +75,8 @@ client.on('message', async message => {
         case 'ping': client.commands.get('ping').execute(message, args, Discord); 
             break;
 
+        case 'setid': client.id.get('setid').execute(message, args, Discord); 
+            break;
 
 
 
@@ -82,6 +84,7 @@ client.on('message', async message => {
        
          case 'id': message.channel.send('Command under Maintenence') //client.id.get('id').execute(client,message, args, Discord);
             break;
+        
         case 'friendly':
 
             if (message.member.roles.cache.has('754994039035789393') || message.member.roles.cache.has('754996150880305213') || message.member.roles.cache.has('754993523501170698') || message.member.roles.cache.has('758211941473714177'))
