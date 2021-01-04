@@ -11,7 +11,7 @@ mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/t
 
 const { MessageEmbed } = require('discord.js')
 new Discord.Client({ ws: { intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES'] } });
-
+const data =require(" ../id/data.js");
 const prefix = 'p!';
 const fs = require('fs');
 const { disconnect } = require('process');
