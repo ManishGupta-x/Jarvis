@@ -33,7 +33,7 @@ module.exports = {
                     message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
                         .then(collected => {
 
-                            if ('yes' == collected.first() || 'Yes' == collected.first()) {
+                            if ('yes' == collected.first().content || 'Yes' == collected.first().content) {
                                 message.channel.send('type your id pls').then(() => {
                                     message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
                                         .then(collected => {
@@ -42,7 +42,7 @@ module.exports = {
                                         })
                                     message.send.channel('Confirm').then(() => {
                                         message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] }).then(() => {
-                                            if ('confirm' == collected.first() || 'Confirm' == collected.first()) {
+                                            if ('confirm' == collected.first().content || 'Confirm' == collected.first().content) {
                                                 const newdata = new Data({
                                                     name: message.author.username,
                                                     userID: message.author.id,
