@@ -13,9 +13,9 @@ const mongoose =require('mongoose');
      
        if(!args[0]){
 
-          user = message.author;
+          let member = message.author;
 
-       }else { user = message.mentions.users.first() || client.users.cache.get(args[0])   ;
+       }else { member = message.mentions.users.first() || client.users.cache.get(args[0])   ;
         }
 
         data.findone({
@@ -25,14 +25,14 @@ const mongoose =require('mongoose');
             if(err) console.log(err);
             if(!data){
                 const newdata = new data({
-                    name: client.users.cache.get(user.id).username,
+                    name: client.users.cache.get(member.id).username,
                     userID : user.id,
                     id : "no id"
                 })
               newdata.save().catch(err => console.log(err));
-              return message.channel.send(`${client.users.get(user.id).username} NO Id Yet`);
+              return message.channel.send(`${client.users.get(member.id).username} NO Id Yet`);
             } else {
-                return message.channel.send(`${client.users.get(user.id).username}'s Id ${data.id}`);
+                return message.channel.send(`${client.users.get(member.id).username}'s Id ${data.id}`);
             }
         }
         )
