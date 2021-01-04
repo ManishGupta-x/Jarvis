@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const moment = require('moment');
-const mongo = require('./mongo');
+
 const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 
@@ -60,16 +60,7 @@ client.on('message', async message => {
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-    await mongo().then( mongoose => {
-        try{
-
-            console.log("Connected to Mongoo!")
-        }finally{
-            mongoose.connection.close()
-        }
-    }) 
-
-
+    
     switch (command) {
 
         case 'ping': client.commands.get('ping').execute(message, args, Discord); 
