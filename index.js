@@ -82,7 +82,7 @@ client.on('message', async message => {
 
 
        
-         case 'id': message.channel.send('Command under Maintenence') //client.id.get('id').execute(client,message, args, Discord);
+         case 'id': client.id.get('id').execute(client,message, args, Discord);
             break;
         
         case 'friendly':
