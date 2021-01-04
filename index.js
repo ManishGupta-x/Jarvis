@@ -66,7 +66,7 @@ client.on('message', async message => {
         }finally{
             mongoose.connection.close()
         }
-    })
+    }) 
 
 
     switch (command) {
