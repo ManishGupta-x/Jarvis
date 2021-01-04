@@ -3,7 +3,7 @@ const mongoose =require('mongoose');
  mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true , useUnifiedTopology: true});
 
 
- const data = require('./data.js');
+ const data = require('../id/data.js');
 
 
  module.exports ={
