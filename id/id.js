@@ -48,7 +48,7 @@ module.exports = {
                                                     ID: konamiid,
                                                 })
                                                 newdata.save().catch(err => console.log(err));
-                                                message.channel.send(`${data.ID} `);
+                                                
                                                 data.ID = konamiid;
                                                 message.channel.send(`Confirm Your Id as  ${konamiid} (yes/no) `).then(()=>{
                                                     message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
