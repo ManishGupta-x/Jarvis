@@ -40,7 +40,7 @@ module.exports = {
 
                                             konamiid = collected.first();
                                         })
-                                    message.send.channel('Confirm').then(() => {
+                                    message.channel.send('Confirm').then(() => {
                                         message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] }).then(() => {
                                             if ('confirm' == collected.first().content || 'Confirm' == collected.first().content) {
                                                 const newdata = new Data({
