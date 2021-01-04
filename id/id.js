@@ -18,7 +18,7 @@ const mongoose =require('mongoose');
        }else { user = message.mentions.users.first() || client.users.cache.get(args[0])   ;
         }
 
-        data.findone({
+        data.findOne({
 
            
         }, (err,data) => {
