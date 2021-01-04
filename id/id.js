@@ -9,7 +9,7 @@ const mongoose =require('mongoose');
  module.exports ={
     name: 'id',
     Description: 'this is a  Ping command!',
-    execute(client,message,args, Discord,user){
+    execute(client,message,args, Discord){
      
        if(!args[0]){
 
