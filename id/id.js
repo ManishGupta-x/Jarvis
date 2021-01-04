@@ -21,18 +21,18 @@ module.exports = {
         } 
 
         Data.findOne({
-
+           userID :message.author.id
 
         }, (err, data) => {
             if (err) console.log(err);
             if(args[0]){ 
             if (!data) {
-                const newdata = new Data({
+                const newData = new Data({
                     name: message.author.username,
                     userID: message.author.id,
                     Konami : args[0],
                 })
-                newdata.save().catch(err => console.log(err));
+                newData.save().catch(err => console.log(err));
                 return message.reply('Your Id  has been set ')
 
              } 
