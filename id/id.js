@@ -36,7 +36,7 @@ module.exports = {
                             if ('yes' == collected.first().content || 'Yes' == collected.first().content) {
                                 message.channel.send('type your id pls').then(() => {
                                     message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
-                                        .then(collected => {
+                                     await .then(collected => {
 
                                             konamiid = collected.first().content;
                                         }).then(
