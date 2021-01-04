@@ -32,11 +32,11 @@ const mongoose =require('mongoose');
                 const newdata = new Data({
                     name: message.author.username,
                     userID : message.author.id,
-                    id : konamiid,
+                    ID : konamiid,
                 })
               newdata.save().catch(err => console.log(err));
-              message.channel.send(`${konamiid} `);
-              data.id = konamiid;
+              message.channel.send(`${data.ID} `);
+              data.ID = konamiid;
                 data.save().catch(err => console.log(err));
               
             } else {
@@ -44,7 +44,7 @@ const mongoose =require('mongoose');
                  var msg = message.author;
                  if(msg == yes || msg == Yes || msg == YES ){
 
-                    data.id = konamiid;
+                    data.ID = konamiid;
                     data.save().catch(err => console.log(err));
                     message.reply(' Id Updated ')
 

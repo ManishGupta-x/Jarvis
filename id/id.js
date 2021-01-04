@@ -27,12 +27,12 @@ const mongoose =require('mongoose');
                 const newdata = new Data({
                     name: client.users.cache.get(user.id).username,
                     userID : user.id,
-                    id : "no id"
+                    ID : "no id"
                 })
               newdata.save().catch(err => console.log(err));
               return message.channel.send(`NO Id Yet For ${client.users.cache.get(user.id).username} `);
             } else {
-                return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.id}`);
+                return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.ID}`);
             }
         }
         )
