@@ -4,8 +4,7 @@ mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/t
 const filter = response => {
 	return (message => message.toLowerCase() === response.content.toLowerCase());
 };
-const filter1 = m => m.content.includes('discord');
-const collector = message.channel.createMessageCollector(filter1, { time: 15000 });
+
 
 let konamiid;
 const Data = require('../id/data.js');
@@ -15,7 +14,8 @@ module.exports = {
     name: 'id',
     Description: 'this is a  Ping command!',
     async execute(client, message, args, Discord) {
-
+        const filter1 = m => m.content.includes('discord');
+        const collector = message.channel.createMessageCollector(filter1, { time: 15000 });
         if (!args[0]) {
 
             user = message.author;
