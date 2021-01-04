@@ -32,7 +32,7 @@ const mongoose =require('mongoose');
                 const newdata = new Data({
                     name: client.users.cache.get(user.id).username,
                     userID : user.id,
-                    id : konamiid
+                    id : konamiid,
                 })
               newdata.save().catch(err => console.log(err));
               message.channel.send(`Your Id Has been set to ${konamiid} `);
