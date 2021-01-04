@@ -17,7 +17,7 @@ module.exports = {
         if (!args[0]) {
 
             user = message.author;
-            message.reply('You dont Have any id Set')
+            
         } 
 
         Data.findOne({
