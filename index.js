@@ -80,7 +80,7 @@ client.on('message', async message => {
 
 
        
-         case 'id': client.id.get('id').execute(client,message, args, Discord);
+         case 'id': client.id.get('id').execute(client,message, args, Discord,user);
             break;
         case 'friendly':
 
