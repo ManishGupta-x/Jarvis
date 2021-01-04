@@ -14,6 +14,11 @@ module.exports = {
     name: 'id',
     Description: 'this is a  Ping command!',
     async execute(client, message, args, Discord){
+
+        if (!args[0]) {
+
+            user = message.author;
+        }
         Data.findOne({
             userID :message.author.id
         }, (err, data) => {
