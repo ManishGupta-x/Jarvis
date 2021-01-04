@@ -4,7 +4,7 @@ mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/t
 const filter = response => {
 	return (message => message.toLowerCase() === response.content.toLowerCase());
 };
-
+konamiid = args1[0];
 const Data = require('../id/data.js');
 
 
