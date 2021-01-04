@@ -64,7 +64,7 @@ client.on('message', async message => {
 
     switch (command) {
 
-        case 'ping': client.commands.get('ping').execute(message, args, Discord);
+        case 'ping': client.commands.get('ping').execute(message, args, Discord); 
             break;
         case 'addid': client.commands.get('addid').execute(message, args, Discord);
             break;
