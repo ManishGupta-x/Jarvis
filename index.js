@@ -11,7 +11,7 @@ mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/t
 
 const { MessageEmbed } = require('discord.js')
 new Discord.Client({ ws: { intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES'] } });
-const data =require(" ../id/data.js");
+
 const prefix = 'p!';
 const fs = require('fs');
 const { disconnect } = require('process');
@@ -28,6 +28,13 @@ for (const file of deadlineFiles) {
 
     const command = require(`./deadline/${file}`);
     client.deadline.set(command.name, command);
+}
+client.id = new Discord.Collection();
+const idFiles = fs.readdirSync('./id/').filter(file => file.endsWith('.js'));
+for (const file of deadlineFiles) {
+
+    const command = require(`./id/${file}`);
+    client.id.set(command.name, command);
 }
 client.Rewards = new Discord.Collection();
 const RewardsFiles = fs.readdirSync('./Rewards/').filter(file => file.endsWith('.js'));
