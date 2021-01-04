@@ -4,8 +4,10 @@ mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/t
 const filter = response => {
 	return (message => message.toLowerCase() === response.content.toLowerCase());
 };
+const filter1 = m => m.content.includes('discord');
+const collector = message.channel.createMessageCollector(filter1, { time: 15000 });
 
-var konamiid;
+let konamiid;
 const Data = require('../id/data.js');
 
 
@@ -36,11 +38,11 @@ module.exports = {
 
                             if ('yes' == collected.first().content || 'Yes' == collected.first().content) {
                                 message.channel.send('type your id pls').then(() =>  {
-                                    message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
-                                    .then( collected => {
 
-                                            konamiid = collected.first().content;
-                                        })
+                                    collector.on('collect', m => {
+                                       konamiid = `${m.content}`;
+                                    });
+                                
                                    
                                                 const newdata = new Data({
                                                     name: message.author.username,
