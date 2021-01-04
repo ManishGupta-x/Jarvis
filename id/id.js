@@ -47,13 +47,14 @@ module.exports = {
                                                     userID: message.author.id,
                                                     ID: konamiid,
                                                 })
-                                                newdata.save().catch(err => console.log(err));
+                                               
                                                 
                                                 data.ID = konamiid;
                                                 message.channel.send(`Confirm Your Id as  ${konamiid} (yes/no) `).then(()=>{
                                                     message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] })
                                                     .then(collected => {
                                                         if ('yes' == collected.first().content || 'Yes' == collected.first().content){
+                                                            newdata.save().catch(err => console.log(err));
                                                             data.save().catch(err => console.log(err));
                                                             message.reply('Your Id Has been set !');
                                                       
