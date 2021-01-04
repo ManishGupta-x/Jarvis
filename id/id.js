@@ -39,7 +39,7 @@ module.exports = {
                                         .then(collected => {
 
                                             konamiid = collected.first().content;
-                                        })
+                                        }).then(
                                     message.channel.send('Confirm').then(() => {
                                         message.channel.awaitMessages(filter ,{ max: 1, time: 30000, errors: ['time'] }).then(() => {
                                             if ('confirm' == collected.first().content || 'Confirm' == collected.first().content) {
@@ -53,12 +53,12 @@ module.exports = {
                                                 data.ID = konamiid;
                                                 data.save().catch(err => console.log(err));
                                                  message.reply('Your Id Has been set !')
-                                            }
+                                            }else{ message.reply("cancelled")}
 
 
                                         })
 
-                                    })
+                                    }))
 
 
                                 })
