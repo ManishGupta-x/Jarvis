@@ -1,7 +1,7 @@
 const fs = require("fs");
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true });
-
+var x =0;
 
 
 
@@ -56,6 +56,7 @@ module.exports ={
             if (!reaction.message.guild) return;
  
             if (reaction.message.channel.id == channel) {
+                if(x<4){
                 if (reaction.emoji.name === hand) {
                     await reaction.message.guild.members.cache.get(user.id);
                     if(user.id == membertarget.id)
@@ -66,7 +67,7 @@ module.exports ={
                     }
                     else{
                     message.reply(`<@${user.id}> Accepeted Your Challenge`);
-
+                      x=x+1;
                     return;
                 }
             }else if (reaction.emoji.name === idkonami){
@@ -79,7 +80,7 @@ module.exports ={
                 return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);}
             })
             }
-                 
+        }     
 
                 } else {
                 return;
