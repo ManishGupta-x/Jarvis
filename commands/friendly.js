@@ -1,4 +1,11 @@
+const fs = require("fs");
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true });
 
+
+
+
+const Data = require('../id/data.js');
 const usedCommand = new Set();
 module.exports ={
     name: 'friendly',
