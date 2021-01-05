@@ -75,7 +75,7 @@ module.exports ={
                     userID : membertarget.id
                 }, (err, data) => {
                     if (err) console.log(err);
-                    if (!data) { message.reply(' No Id in record type p!setid')}else{
+                    if (!data) { message.reply(` No Id in record for <@${membertarget.id}> `)}else{
                 return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);}
             })
             }
