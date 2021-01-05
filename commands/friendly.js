@@ -13,6 +13,7 @@ module.exports ={
         else{
         const channel = '650289693543628812';
         const hand = '🤝';
+        const idkonami = '👨‍💻';
         let member = message.member
         let membertarget = message.guild.members.cache.get(member.id);
         const newEmbed = new Discord.MessageEmbed()
@@ -33,13 +34,14 @@ module.exports ={
         
         
         await msg.react('🤝')
-       
-       
+        await msg.react('👨‍💻')
+        
         
 
        
         
         client.on('messageReactionAdd', async (reaction, user) => {
+            
             if (reaction.message.partial) await reaction.message.fetch();
             if (reaction.partial) await reaction.fetch();
             if (user.bot) return;
@@ -60,6 +62,15 @@ module.exports ={
 
                     return;
                 }
+            }else if (reaction.emoji.name === idkonami){
+                await reaction.message.guild.members.cache.get(user.id);
+                Data.findOne({
+                    userID : membertarget.id
+                }, (err, data) => {
+                    if (err) console.log(err);
+                    if (!data) { message.reply(' No Id in record type p!setid')}else{
+                return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);}
+            })
             }
                  
 
