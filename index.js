@@ -77,6 +77,8 @@ client.on('message', async message => {
 
         case 'setid': message.channel.send('opening soon in a few hours');//client.id.get('setid').execute(client,message, args, Discord); 
            break;
+           case 'copyid': message.channel.send('opening soon in a few hours');//client.id.get('copyid').execute(client,message, args, Discord); 
+           break;
 
 
 
