@@ -37,7 +37,9 @@ module.exports = {
                 newData.save().catch(err => console.log(err));
                 return message.reply('Your Id  has been set ')
 
-             } 
+             } else{
+                 message.reply(" Your Id is Already there contact Nightmare#6969 (NIghtmare2.0) to edit your id! ")
+             }
         }
         }
         )
