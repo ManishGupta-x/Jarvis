@@ -41,7 +41,7 @@ module.exports ={
         
         
         await msg.react('🤝')
-       
+        await msg.react('👨‍💻')
        
         
 
