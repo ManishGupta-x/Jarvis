@@ -13,7 +13,9 @@ module.exports = {
     Description: 'this is a  Ping command!',
     async execute(client, message, args, Discord) {
         
-        
+        if(isNaN(args[0])){
+            message.reply("invalid Id")
+        }else {
         if (!args[0]) {
 
             user = message.author;
@@ -46,7 +48,7 @@ module.exports = {
 
     }}
 }
-
+}
 
 
 
