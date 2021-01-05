@@ -1,4 +1,11 @@
+const fs = require("fs");
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true });
 
+
+
+
+const Data = require('../id/data.js');
 const usedCommand = new Set();
 module.exports ={
     name: 'friendly1',
@@ -13,6 +20,7 @@ module.exports ={
         else{
         const channel = '650289693543628812';
         const hand = '🤝';
+        const idkonami = '👨‍💻';
         let member = message.member
         let membertarget = message.guild.members.cache.get(member.id);
         const newEmbed = new Discord.MessageEmbed()
@@ -21,7 +29,7 @@ module.exports ={
        .setColor('00ff74')
        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/791728647005536296/1601319291_559_Soccer-Icons-Messi-and-Ronaldo-Make-History-in-the-25th.png')
        .setTitle(`Someone is Challenging `)
-       .setDescription(`\n <@${membertarget.id}> is Challenging For friendly ! React Below to Accept his Challenge!` )
+       .setDescription(`\n <@${membertarget.id}> is Challenging For friendly ! React Below on 🤝 to Accept his Challenge! Get <@${membertarget.id}> Id by reacting to 👨‍💻` )
        .setFooter(' Type p!fping If you dont want pings! ')
         
        if(message.channel.id == channel)
@@ -40,6 +48,7 @@ module.exports ={
        
         
         client.on('messageReactionAdd', async (reaction, user) => {
+            
             if (reaction.message.partial) await reaction.message.fetch();
             if (reaction.partial) await reaction.fetch();
             if (user.bot) return;
@@ -60,6 +69,15 @@ module.exports ={
 
                     return;
                 }
+            }else if (reaction.emoji.name === idkonami){
+                await reaction.message.guild.members.cache.get(user.id);
+                Data.findOne({
+                    userID : membertarget.id
+                }, (err, data) => {
+                    if (err) console.log(err);
+                    if (!data) { message.reply(' No Id in record type p!setid')}else{
+                return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);}
+            })
             }
                  
 
