@@ -68,25 +68,25 @@ client.on('message', async message => {
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-   
-    
+
+
     switch (command) {
 
-        case 'ping': client.commands.get('ping').execute(message, args, Discord); 
+        case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
 
-        case 'setid': client.id.get('setid').execute(client,message, args, Discord); 
-           break;
-           case 'copyid': client.id.get('copyid').execute(client,message, args, Discord); 
-           break;
-
-
-
-
-       
-         case 'id': client.id.get('id').execute(client,message, args, Discord);
+        case 'setid': client.id.get('setid').execute(client, message, args, Discord);
             break;
-        
+        case 'copyid': client.id.get('copyid').execute(client, message, args, Discord);
+            break;
+
+
+
+
+
+        case 'id': client.id.get('id').execute(client, message, args, Discord);
+            break;
+
         case 'friendly':
 
             if (message.member.roles.cache.has('754994039035789393') || message.member.roles.cache.has('754996150880305213') || message.member.roles.cache.has('754993523501170698') || message.member.roles.cache.has('758211941473714177'))
@@ -98,7 +98,7 @@ client.on('message', async message => {
             break;
         case 'meme': client.commands.get('meme').execute(message, args, Discord);
             break;
-            case 'lngrules': client.commands.get('lngrules').execute(message, args, Discord);
+        case 'lngrules': client.commands.get('lngrules').execute(message, args, Discord);
             break;
         case 'fping': client.commands.get('fping').execute(message, args, Discord);
             break;

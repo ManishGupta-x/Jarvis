@@ -4,7 +4,7 @@ module.exports ={
     execute(message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
-       .setColor('#00fffa')
+       .setColor('RANDOM')
        .setTitle('Language Rules on the Server ')
        .setAuthor('Freak Gamer')
        .addFields(
