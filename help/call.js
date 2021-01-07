@@ -1,11 +1,5 @@
-client.help = new Discord.Collection();
-const helpFiles = fs.readdirSync('./help/').filter(file => file.endsWith('.js'));
-for (const file of helpFiles) {
 
-    const command = require(`./help/${file}`);
-    client.help.set(command.name, command);
 
-}
 module.exports ={
     name: 'call',
     Description: 'this is a  Ping command!',
