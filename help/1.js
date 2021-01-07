@@ -63,7 +63,7 @@ module.exports ={
             if (collected.first().emoji.name == '↩️') { return msg.edit(newEmbed2).then(async()  => {
 
 
-              
+              msg.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));
               await msg.react('1️⃣')
               await msg.react('2️⃣')
               await msg.react('3️⃣')
