@@ -27,7 +27,7 @@ module.exports ={
         )
         .setFooter(`You can only React for one at a time`)
         .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg');
-        let msg3 = await msg.edit(newEmbed2)
+        let msg3 = await message.channel.send(newEmbed2)
         await msg3.react('1️⃣')
         await msg3.react('2️⃣')
         await msg3.react('3️⃣')
