@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports ={
     name: '1',
     Description: 'Gives Commands Info !',
-    execute(message,args,Discord,newEmbed){
+    execute(message,args,Discord,){
      
        const newEmbed1 = new Discord.MessageEmbed()
        .setColor('#6beea8')
@@ -31,7 +31,7 @@ module.exports ={
          
            
            
-           newEmbed.edit(newEmbed1);
+          message.channel.send(newEmbed1);
         } 
         
         
