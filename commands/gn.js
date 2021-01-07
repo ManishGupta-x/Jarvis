@@ -1,5 +1,5 @@
 module.exports ={
-    name: 'stumbleguys',
+    name: 'gn',
     Description: 'this is a role command!',
     execute(message,args, Discord){
      
