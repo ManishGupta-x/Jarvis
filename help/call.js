@@ -9,7 +9,7 @@ for (const file of helpFiles) {
 module.exports ={
     name: 'call',
     Description: 'this is a  Ping command!',
-    execute(client,message,args, Discord,msg){
+   async execute(client,message,args, Discord,msg){
         const newEmbed2 = new Discord.MessageEmbed()
         .setColor('#6beea8')
         .setTitle('Help Module')
