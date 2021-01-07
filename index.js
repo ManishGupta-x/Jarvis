@@ -200,7 +200,7 @@ client.on('message', async message => {
                 return message.channel.send('You didnt specified a question for the poll')
             }
             const Embed = new MessageEmbed()
-                .setColor('#00f1ff')
+                .setColor('RANDOM')
                 .setTitle("Who will win 🤔")
                 .setDescription(question)
                 .setFooter(`Mark The correct Option Below 🤩`)
