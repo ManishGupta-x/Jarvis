@@ -32,7 +32,7 @@ module.exports ={
            
           msg.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));
           
-          msg.edit(newEmbed);
+          msg.edit(newEmbed1);
 
 
 
