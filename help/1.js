@@ -30,7 +30,7 @@ module.exports ={
           .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784432882173214781/pes_25th_anni_1594813901230.png');
          
            
-           
+          msg.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));
           msg.edit(newEmbed1);
         } 
         

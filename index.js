@@ -251,7 +251,7 @@ client.on('message', async message => {
             await msg.react('4️⃣')
             await msg.react('5️⃣')
             await msg.react('6️⃣')
-            await msg.react('↩️')
+           
             
             await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
 
@@ -263,7 +263,7 @@ client.on('message', async message => {
                     else if (collected.first().emoji.name == '4️⃣') { return client.help.get('4').execute(message, args, Discord) }
                     else if (collected.first().emoji.name == '5️⃣') { return client.help.get('5').execute(message, args, Discord) }
                     else if (collected.first().emoji.name == '6️⃣') { return client.help.get('6').execute(message, args, Discord) }
-                    else if (collected.first().emoji.name == '↩️') { return msg.edit(newEmbed) }
+                    
                     else return message.channel.send('Time Up');
 
 
