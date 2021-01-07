@@ -32,10 +32,10 @@ module.exports ={
            
           msg.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));
           let msg1 = await msg.edit(newEmbed1)
-          await msg.react('↩️')
-          await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣'), { max: 1, time: 40000 }) 
+          await msg1.react('↩️')
+          await msg1.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣'), { max: 1, time: 40000 }) 
           .then(async collected => {
-            if (collected.first().emoji.name == '↩️') { return msg.edit(msg) }
+            if (collected.first().emoji.name == '↩️') { return msg1.edit(msg) }
             else return message.channel.send('Time Up');
 
 
