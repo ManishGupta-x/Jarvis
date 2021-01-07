@@ -74,7 +74,7 @@ client.on('message', async message => {
 
         case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
-            case 'snipe': client.commands.get('snipe').execute(message, args, Discord);
+         case 'snipe': client.commands.get('snipe').execute(client,message, args, Discord);
             break;
         case 'setid': client.id.get('setid').execute(client, message, args, Discord);
             break;
