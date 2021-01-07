@@ -29,7 +29,7 @@ module.exports ={
          
            
            
-           message.channel.send(newEmbed);
+           message.edit(newEmbed);
         } 
         
         
