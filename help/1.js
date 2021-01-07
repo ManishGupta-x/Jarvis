@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports ={
     name: '1',
     Description: 'Gives Commands Info !',
-    execute(message,args,Discord,msg){
+   async execute(message,args,Discord,msg){
      
        const newEmbed1 = new Discord.MessageEmbed()
        .setColor('#6beea8')
@@ -31,7 +31,22 @@ module.exports ={
          
            
           msg.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));
-          msg.edit(newEmbed1);
+          let msg1 = await msg.edit(newEmbed1)
+          await msg.react('↩️')
+          await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣'), { max: 1, time: 40000 }) 
+          .then(async collected => {
+            if (collected.first().emoji.name == '↩️') { return msg.edit(msg) }
+            else return message.channel.send('Time Up');
+
+
+
+
+
+          }).catch(async () => { return message.channel.send("error") });
+
+         
+
+
         } 
         
         
