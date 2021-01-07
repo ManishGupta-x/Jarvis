@@ -6,13 +6,6 @@ module.exports ={
    async execute(client,message,args,Discord,msg){
      
    
-
-
-
-
-
-
-
        const newEmbed1 = new Discord.MessageEmbed()
        .setColor('#6beea8')
        .setTitle('Help Module')
@@ -39,9 +32,9 @@ module.exports ={
          
            
           msg.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));
-          let msg1 = await msg.edit(newEmbed1)
-          await msg1.react('↩️')
-          await msg1.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '↩️'), { max: 1, time: 40000 }) 
+          msg.edit(newEmbed1)
+          await msg.react('↩️')
+          await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '↩️'), { max: 1, time: 40000 }) 
           .then(async collected => {
             if (collected.first().emoji.name == '↩️') { return  client.help.get('call').execute(client,message, args, Discord,msg3) }
             else return message.channel.send('Time Up');
