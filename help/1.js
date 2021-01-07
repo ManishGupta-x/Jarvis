@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports ={
     name: '1',
     Description: 'Gives Commands Info !',
@@ -29,7 +31,7 @@ module.exports ={
          
            
            
-           message.edit(newEmbed);
+           MessageEmbed.edit(newEmbed);
         } 
         
         
