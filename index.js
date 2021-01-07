@@ -217,7 +217,7 @@ client.on('message', async message => {
             break;
         case 'roleinfo': client.help.get('6').execute(message, args, Discord);
             break;
-        case 'help': {
+        case 'help': message.reply('Under maintenence')/*{
 
             const newEmbed = new Discord.MessageEmbed()
                 .setColor('#6beea8')
@@ -275,7 +275,7 @@ client.on('message', async message => {
         }
 
 
-            break;
+            break;*/
         case 'match':
 
             var player1 = Math.floor(Math.random() * 4);
