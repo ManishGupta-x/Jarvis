@@ -89,7 +89,7 @@ module.exports ={
               
               
               
-                  }).catch(async () => { return message.channel.send("error") });
+                  }).catch(async () => { return message.channel.send("error").delete({ timeout: 2000 }) });
             })
             
             }
@@ -99,7 +99,7 @@ module.exports ={
 
 
 
-          }).catch(async () => { return message.channel.send("error") });
+          }).catch(async () => { return message.channel.send("error").delete({ timeout: 2000 }) });
 
          
         

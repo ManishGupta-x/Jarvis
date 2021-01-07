@@ -271,7 +271,7 @@ client.on('message', async message => {
 
 
 
-                }).catch(async () => { return message.channel.send("error") });
+                }).catch(async () => { return message.channel.send("error").delete({ timeout: 2000 }) });
 
         }
 
