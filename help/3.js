@@ -71,12 +71,12 @@ module.exports ={
               
                   reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣' || reaction.emoji.name == '6️⃣' || reaction.emoji.name == '↩️'), { max: 1, time: 40000 })
                   .then(async collected => {
-                      if (collected.first().emoji.name == '1️⃣') { return client.help.get('1').execute(message, args, Discord,msg) }
-                      else if (collected.first().emoji.name == '2️⃣') { return client.help.get('2').execute(message, args, Discord) }
-                      else if (collected.first().emoji.name == '3️⃣') { return client.help.get('3').execute(message, args, Discord) }
-                      else if (collected.first().emoji.name == '4️⃣') { return client.help.get('4').execute(message, args, Discord) }
-                      else if (collected.first().emoji.name == '5️⃣') { return client.help.get('5').execute(message, args, Discord) }
-                      else if (collected.first().emoji.name == '6️⃣') { return client.help.get('6').execute(message, args, Discord) }
+                      if (collected.first().emoji.name == '1️⃣') { return client.help.get('1').execute(client,message, args, Discord,msg) }
+                      else if (collected.first().emoji.name == '2️⃣') { return client.help.get('2').execute(client,message, args, Discord) }
+                      else if (collected.first().emoji.name == '3️⃣') { return client.help.get('3').execute(client,message, args, Discord) }
+                      else if (collected.first().emoji.name == '4️⃣') { return client.help.get('4').execute(client,message, args, Discord) }
+                      else if (collected.first().emoji.name == '5️⃣') { return client.help.get('5').execute(client,message, args, Discord) }
+                      else if (collected.first().emoji.name == '6️⃣') { return client.help.get('6').execute(client,message, args, Discord) }
                       
                       else return message.channel.send('Time Up');
               
