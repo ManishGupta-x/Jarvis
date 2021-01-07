@@ -7,6 +7,7 @@ module.exports ={
        .setColor('#9400ff')
        .setTitle('Premier League')
        .setAuthor('Freak Gamer')
+       .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg')
        .addFields(
         
            {name: "Rule 1" , value: ' Only  10 Premier league  players allowed In the whole Squad ( +LEGENDS and IMs) i.e 10 players in the WHOLE SQUAD including SUBS'},
