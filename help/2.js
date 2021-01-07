@@ -1,7 +1,7 @@
 module.exports ={
     name: '2',
     Description: 'Gives Commands Info !',
-    execute(client,message,args,Discord,msg){
+   async execute(client,message,args,Discord,msg){
      
 
       const newEmbed2 = new Discord.MessageEmbed()
