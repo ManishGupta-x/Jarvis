@@ -5,7 +5,7 @@ module.exports ={
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('RANDOM')
-       .setTitle('Commands Menu')
+       .setTitle('All Tourneys Deadlines')
        .setDescription('Deadline Commands')
        .addFields( 
             
