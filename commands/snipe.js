@@ -3,7 +3,7 @@ module.exports ={
     Description: 'this is a role command!',
     execute(client,message,args, Discord){
      
-        const msg = client.snipes.get(message.channel.id)
+        const msg = client.snipes.cache.get(message.channel.id)
         const embed = new Discord.MessageEmbed()
         .setAuthor(msg.author, msg.member.user.displayAvatarURL())
         .setDescription(msg.content)
