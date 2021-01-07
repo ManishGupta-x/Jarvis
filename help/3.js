@@ -1,7 +1,7 @@
 module.exports ={
     name: '3',
     Description: 'Gives Commands Info !',
-    execute(message,args,Discord){
+    execute(message,args,Discord,msg){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#6beea8')
@@ -27,7 +27,7 @@ module.exports ={
          
            
            
-           message.channel.send(newEmbed);
+          msg.edit(newEmbed);
         } 
         
         

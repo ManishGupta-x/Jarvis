@@ -100,8 +100,8 @@ module.exports = {
 
             reaction.emoji.name == '2️⃣'), { max: 1, time: 20000 })
             .then(async collected => {
-                if (collected.first().emoji.name == '1️⃣') { return message.channel.send(Embed1) }
-                else if (collected.first().emoji.name == '2️⃣') { return message.channel.send(Embed2) }
+                if (collected.first().emoji.name == '1️⃣') { return msg.edit(Embed1) }
+                else if (collected.first().emoji.name == '2️⃣') { return msg.edit(Embed2) }
             }).catch(async () => { return message.channel.send("Time Up") });
     }
 
