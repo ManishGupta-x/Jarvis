@@ -255,7 +255,7 @@ client.on('message', async message => {
 
                 reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣' || reaction.emoji.name == '6️⃣'), { max: 1, time: 40000 })
                 .then(async collected => {
-                    if (collected.first().emoji.name == '1️⃣') { return client.help.get('1').execute(message, args, Discord) }
+                    if (collected.first().emoji.name == '1️⃣') { return client.help.get('1').execute(message, args, Discord,newEmbed) }
                     else if (collected.first().emoji.name == '2️⃣') { return client.help.get('2').execute(message, args, Discord) }
                     else if (collected.first().emoji.name == '3️⃣') { return client.help.get('3').execute(message, args, Discord) }
                     else if (collected.first().emoji.name == '4️⃣') { return client.help.get('4').execute(message, args, Discord) }

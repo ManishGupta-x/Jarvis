@@ -3,9 +3,9 @@ const { MessageEmbed } = require("discord.js");
 module.exports ={
     name: '1',
     Description: 'Gives Commands Info !',
-    execute(message,args,Discord){
+    execute(message,args,Discord,newEmbed){
      
-       const newEmbed = new Discord.MessageEmbed()
+       const newEmbed1 = new Discord.MessageEmbed()
        .setColor('#6beea8')
        .setTitle('Help Module')
        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg')
@@ -31,7 +31,7 @@ module.exports ={
          
            
            
-           MessageEmbed.edit(newEmbed);
+           newEmbed.edit(newEmbed1);
         } 
         
         
