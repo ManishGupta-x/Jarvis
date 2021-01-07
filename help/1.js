@@ -6,6 +6,7 @@ module.exports ={
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#6beea8')
        .setTitle('Help Module')
+       .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg')
        .setDescription('Server\'s Info And Commands')
        .addFields( 
             

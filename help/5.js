@@ -6,6 +6,7 @@ module.exports ={
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#06FC9F ')
        .setAuthor('Freak Gamer')
+       .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg')
        .setTitle('Competetions On the Server')
        .addFields(
         
