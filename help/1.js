@@ -60,7 +60,7 @@ module.exports ={
           await msg.react('↩️')
           await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '↩️'), { max: 1, time: 40000 }) 
           .then(async collected => {
-            if (collected.first().emoji.name == '↩️') { return msg.edit(newEmbed2).then(()=> {
+            if (collected.first().emoji.name == '↩️') { return msg.edit(newEmbed2).then(async()  => {
 
 
               
