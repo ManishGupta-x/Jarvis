@@ -3,7 +3,7 @@ module.exports ={
     Description: 'shows deadline of la liga Ko tourney',
     execute(message,args, Discord){
      
-       message.channel.send('11th January ,2021 (Last Updated)');
+       message.channel.send('18th January ,2021 (Last Updated)');
 
 
     }  
