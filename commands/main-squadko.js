@@ -11,7 +11,7 @@ module.exports ={
        .addFields(
         
            {name: "Rule 1" , value: ' You can use any team ,even your main team.*'},
-           {name: "Rule 2" , value: ' You have to Turn on Extra time and penalties for every match'},
+           {name: "Rule 2" , value: ' You have to Turn on Extra time and penalties for every match and time : 6 mins default'},
            {name: "Rule 3" , value: ' In case you forget to set ET AND PEN **EXIT THE GAME IMMEDIATELY** ELSE YOU have to play the whole Match again '}  
            
            
