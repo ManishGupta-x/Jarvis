@@ -1,5 +1,5 @@
 module.exports ={
-    name: 'help match',
+    name: 'help-match',
     Description: 'this is  a help command',
     execute(message,args, Discord){
      
