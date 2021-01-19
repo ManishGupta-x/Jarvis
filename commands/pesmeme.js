@@ -1,4 +1,5 @@
 const got = require('got');
+const meme = require('./meme');
 const subReddits = ["pesmobile"]
 const rd = subReddits[Math.floor(Math.random() * subReddits.length)];
 
@@ -11,7 +12,7 @@ module.exports ={
         const embed = new Discord.MessageEmbed()
         got(`https://www.reddit.com/r/${rd}/random/.json`).then(response => {
             let content = JSON.parse(response.body);
-            let permalink = content[0].data.children[0].data.permalink;
+            let permalink = content[0].data.children[0].data.permalink.flair(meme);
             let flair = content[0].data.children[0].data.flair;
             let memeUrl = `https://reddit.com${permalink}`;
             let memeImage = content[0].data.children[0].data.url;
@@ -28,8 +29,8 @@ module.exports ={
                 message.channel.send(embed);
             }
             else{
-                message.channel.send('NO meme Found');
-                
+                message.channel.send('No meme Found');
+
             }
             
         
