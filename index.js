@@ -99,7 +99,7 @@ client.on('message', async message => {
             break;
         case 'meme': client.commands.get('meme').execute(message, args, Discord);
             break;
-        case 'pes': client.commands.get('pes').execute(message, args, Discord);
+        case 'pes': message.reply('under maintenance')// client.commands.get('pes').execute(message, args, Discord);
             break;
         case 'help-match': client.help.get('help-match').execute(message, args, Discord);
             break;
