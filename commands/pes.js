@@ -26,9 +26,11 @@ module.exports ={
             embed.setColor('RANDOM')
             embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
                         
-            
+            while(memeUpvotes > 5 ){ 
             message.channel.send(embed);
-        
+            }
+            
+            
 
     } )
     }
