@@ -10,7 +10,7 @@ module.exports ={
     async execute(message,args, Discord){
      
         const embed = new Discord.MessageEmbed()
-        got(`https://www.reddit.com/r/${rd}/meme/.json`).then(response => {
+        got(`https://www.reddit.com/r/${rd}/random/.json`).then(response => {
             let content = JSON.parse(response.body);
             let permalink = content[0].data.children[0].data.permalink;
             let flair = content[0].data.children[0].data.flair;
@@ -25,7 +25,14 @@ module.exports ={
             embed.setImage(memeImage)
             embed.setColor('RANDOM')
             embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-            message.channel.send(embed);
+            if(flair =='Meme'){
+                message.channel.send(embed);       
+            }
+            else{
+                message.channel.send(embed); 
+                message.channel.send('Not a meme But fine :/');
+            }
+            
             
             
             
