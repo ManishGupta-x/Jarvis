@@ -5,16 +5,16 @@ const rd = subReddits[Math.floor(Math.random() * subReddits.length)];
 
 
 module.exports ={
-    name: 'pesmeme',
+    name: 'pes',
     Description: 'this is a  meme command!',
     async execute(message,args, Discord){
      
         const embed = new Discord.MessageEmbed()
-        got(`https://www.reddit.com/r/${rd}/?f=flair_name%3A"Meme"/.json`).then(response => {
+        got(`https://www.reddit.com/r/${rd}/random/.json`).then(response => {
             let content = JSON.parse(response.body);
             let permalink = content[0].data.children[0].data.permalink;
             
-            let memeUrl = `https://reddit.com${permalink}`;
+            let memeUrl = `https://reddit.com${permalink}/?f=flair_name%3A"Meme"`;
             let memeImage = content[0].data.children[0].data.url;
             let memeTitle = content[0].data.children[0].data.title;
             let memeUpvotes = content[0].data.children[0].data.ups;
