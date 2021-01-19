@@ -99,9 +99,11 @@ client.on('message', async message => {
             break;
         case 'meme': client.commands.get('meme').execute(message, args, Discord);
             break;
+        case 'pesmeme': client.commands.get('pesmeme').execute(message, args, Discord);
+            break;
         case 'help-match': client.help.get('help-match').execute(message, args, Discord);
             break;
-     
+
         case 'lngrules': client.commands.get('lngrules').execute(message, args, Discord);
             break;
         case 'fping': client.commands.get('fping').execute(message, args, Discord);
@@ -254,19 +256,19 @@ client.on('message', async message => {
             await msg.react('4️⃣')
             await msg.react('5️⃣')
             await msg.react('6️⃣')
-           
-            
+
+
             await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
 
                 reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣' || reaction.emoji.name == '6️⃣' || reaction.emoji.name == '↩️'), { max: 1, time: 40000 })
                 .then(async collected => {
-                    if (collected.first().emoji.name == '1️⃣') { return client.help.get('1').execute(message, args, Discord,msg) }
-                    else if (collected.first().emoji.name == '2️⃣') { return client.help.get('2').execute(message, args, Discord,msg) }
-                    else if (collected.first().emoji.name == '3️⃣') { return client.help.get('3').execute(message, args, Discord,msg) }
-                    else if (collected.first().emoji.name == '4️⃣') { return client.help.get('4').execute(message, args, Discord,msg) }
-                    else if (collected.first().emoji.name == '5️⃣') { return client.help.get('5').execute(message, args, Discord,msg) }
-                    else if (collected.first().emoji.name == '6️⃣') { return client.help.get('6').execute(message, args, Discord,msg) }
-                    
+                    if (collected.first().emoji.name == '1️⃣') { return client.help.get('1').execute(message, args, Discord, msg) }
+                    else if (collected.first().emoji.name == '2️⃣') { return client.help.get('2').execute(message, args, Discord, msg) }
+                    else if (collected.first().emoji.name == '3️⃣') { return client.help.get('3').execute(message, args, Discord, msg) }
+                    else if (collected.first().emoji.name == '4️⃣') { return client.help.get('4').execute(message, args, Discord, msg) }
+                    else if (collected.first().emoji.name == '5️⃣') { return client.help.get('5').execute(message, args, Discord, msg) }
+                    else if (collected.first().emoji.name == '6️⃣') { return client.help.get('6').execute(message, args, Discord, msg) }
+
                     else return message.channel.send('Time Up');
 
 
