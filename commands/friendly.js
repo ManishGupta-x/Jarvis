@@ -74,7 +74,7 @@ module.exports ={
                 await reaction.message.guild.members.cache.get(user.id);
                 Data.findOne({
                     userID : membertarget.id
-                }, (err, data) => {
+                }, (err, data) => { 
                     if (err) console.log(err);
                     if (!data) { message.reply(` No Id in record for <@${membertarget.id}>`)}else{
                 return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);}
