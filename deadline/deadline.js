@@ -10,12 +10,12 @@ module.exports ={
        .setDescription('Deadline Commands')
        .addFields( 
             
-            {name : "1. p!deadline-freakcup" , value : `21th Jan, 2021 (R16)`},
+            {name : "1. p!deadline-freakcup" , value : `31st Jan, 2021 (semis)`},
             {name : "2. p!deadline-laliga" , value : `25th January ,2021 (Last Updated)`},
 
-            {name : "3. p!deadline-mainko" , value : `18th Jan 2021 (R16) `},
+            {name : "3. p!deadline-mainko" , value : `28th Jan 2021 (semis) `},
             {name : "4. p!deadline-premleague" , value : `25th January ,2021 (Last Updated)`},
-            {name : "5. p!deadline-ucl" , value : `25th January 2021 (Quater Finals) `}
+            {name : "5. p!deadline-ucl" , value : `2nd February 2021 (semis) `}
              
           
         
