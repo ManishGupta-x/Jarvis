@@ -127,6 +127,8 @@ client.on('message', async message => {
             break;
         case 'premleague': client.commands.get('premleague').execute(message, args, Discord);
             break;
+        case 'worldcup': client.commands.get('worldcup').execute(message, args, Discord);
+            break;
         case 'div1': client.commands.get('div1').execute(message, args, Discord);
             break;
         case 'div2': client.commands.get('div2').execute(message, args, Discord);
