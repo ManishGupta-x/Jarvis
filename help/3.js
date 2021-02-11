@@ -16,7 +16,8 @@ module.exports ={
 
             {name : "3. p!main-squadko" , value : `Gives Rules for Main Squad KO  `},
             {name : "4. p!div1 " , value : `Gives Link of division 1 `},
-            {name : "5. p!div2" , value : `Gives link of division 2 `}
+            {name : "5. p!worldcup " , value : `Gives Info for RULES of world Cup `},
+            {name : "6. p!div2" , value : `Gives link of division 2 `}
              
           
         
