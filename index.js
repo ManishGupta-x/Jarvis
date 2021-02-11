@@ -149,6 +149,8 @@ client.on('message', async message => {
             break;
         case 'deadline-ucl': client.deadline.get('deadline-ucl').execute(message, args, Discord);
             break;
+        case 'deadline-worldcup': client.deadline.get('deadline-worldcup').execute(message, args, Discord);
+            break;
         case 'deadline-laliga': client.deadline.get('deadline-laliga').execute(message, args, Discord);
             break;
         case 'deadline-premleague': client.deadline.get('deadline-premleague').execute(message, args, Discord);
