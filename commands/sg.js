@@ -22,7 +22,7 @@ module.exports ={
        
        6)type "+daily" every 24 hrs to get some credits. It is recommended to maintain a streak in this too
        STAY PATIENT, and u will get op players  soon`)
-           .setImage('https://cdn.discordapp.com/attachments/730714810614022228/792290989058293790/skysports-lionel-messi-neymar_4470326.png');
+           .setImage('https://cdn.discordapp.com/attachments/610950416498425886/812288002943877130/Best-Soccer-Live-Streaming-Services-and-Websites.png');
            
            
            message.channel.send(newEmbed);
