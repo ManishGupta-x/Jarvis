@@ -17,7 +17,7 @@ module.exports ={
             {name : "4. p!deadline-premleague" , value : `25th January ,2021 (Last Updated)`},
             {name : "5. p!deadline-ucl" , value : `2nd February 2021 (semis) `},
             {name : "6. p!deadline-worldcup" , value : `4th March, 2021 (Group Stage) `},
-            {name : "7. p!deadline-bbtourney" , value : `4th March, 2021 (Group Stage) `}
+            {name : "7. p!deadline-bbtourney" , value : `Not Updated `}
              
           
         

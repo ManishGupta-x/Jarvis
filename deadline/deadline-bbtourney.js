@@ -3,7 +3,7 @@ module.exports ={
     Description: 'shows deadline of bbt tourney',
     execute(message,args, Discord){
      
-       message.channel.send('');
+       message.channel.send('Not Updated');
 
 
     }  
