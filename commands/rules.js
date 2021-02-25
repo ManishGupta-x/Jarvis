@@ -6,7 +6,7 @@ module.exports ={
        const newEmbed = new Discord.MessageEmbed()
        .setColor('RANDOM')
        .setTitle('Gameplay Rules on the Server ')
-       .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg')
+       .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/796271494674120704/12_rules_of_simply_investing-1760w-1100h.png')
        .setAuthor('Freak Gamer')
        .addFields(
         
@@ -16,7 +16,7 @@ module.exports ={
            
            
            )
-           .setImage('https://cdn.discordapp.com/attachments/730714810614022228/796271494674120704/12_rules_of_simply_investing-1760w-1100h.png');
+           .setImage('https://cdn.discordapp.com/attachments/610950416498425886/814461811692535899/law-12---fouls-and-misconduct---800x450.png');
            
            
            message.channel.send(newEmbed);
