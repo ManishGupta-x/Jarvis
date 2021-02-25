@@ -75,6 +75,8 @@ client.on('message', async message => {
 
         case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
+        case 'bbtourney': client.commands.get('bbtourney').execute(message, args, Discord);
+            break;
         case 'sg': client.commands.get('sg').execute(message, args, Discord);
             break;
 
@@ -157,6 +159,8 @@ client.on('message', async message => {
         case 'deadline-laliga': client.deadline.get('deadline-laliga').execute(message, args, Discord);
             break;
         case 'deadline-premleague': client.deadline.get('deadline-premleague').execute(message, args, Discord);
+            break;
+           case 'deadline-bbtourney': client.deadline.get('deadline-bbtourney').execute(message, args, Discord);
             break;
         case 'main-squadko': client.commands.get('main-squadko').execute(message, args, Discord);
             break;
