@@ -62,7 +62,7 @@ client.once('ready', () => {
 });
 module.exports.timedcheck = undefined;
 module.exports.val = 0;
-
+ 
 
 client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
