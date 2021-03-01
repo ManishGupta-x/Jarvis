@@ -60,9 +60,8 @@ module.exports ={
                     await reaction.message.guild.members.cache.get(user.id);
                     if(user.id == membertarget.id)
                     {
-                        message.reply('Challenging Yourself?  dumb?? -_-');
-                        
-                        message.delete({timeout: 2000})
+                        let msg = await message.reply('Challenging Yourself?  -_-')
+                        await msg.delete({timeout: 4000});
                     }
                     else{
                     message.reply(`<@${user.id}> Accepeted Your Challenge`);
