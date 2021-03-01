@@ -62,7 +62,7 @@ module.exports ={
                     if(user.id == membertarget.id)
                     {
                         let msg = await message.reply('Challenging Yourself?  -_-')
-                        msg.delete({timeout: 4000});
+                         await msg.delete({timeout: 4000});
                     }
                     else{
                     message.reply(`<@${user.id}> Accepeted Your Challenge`);
