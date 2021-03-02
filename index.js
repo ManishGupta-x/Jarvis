@@ -20,8 +20,8 @@ client.snipes = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
 
-    const comand = require(`./commands/${file}`);
-    client.commands.set(comand.name, comand);
+    const command = require(`./commands/${file}`);
+    client.commands.set(command.name, command);
 }
 client.deadline = new Discord.Collection();
 const deadlineFiles = fs.readdirSync('./deadline/').filter(file => file.endsWith('.js'));
@@ -69,10 +69,9 @@ client.on('message', async message => {
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-    const comand = client.commands.get(command) || client.commands.find(a => a.aliases && a.aliases.includes(command));
 
 
-    switch (comand) {
+    switch (command) {
 
         case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
