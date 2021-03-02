@@ -68,11 +68,11 @@ client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
-    const command = args.shift().toLowerCase();
-    const comand = client.commands.get(command) || client.commands.find(a => a.aliases && a.aliases.includes(command));
+    const cmd = args.shift().toLowerCase();
+    const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
 
-    switch (comand) {
+    switch (command) {
 
         case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
