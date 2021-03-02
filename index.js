@@ -69,9 +69,10 @@ client.on('message', async message => {
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
+    const comand = client.commands.get(command) || client.commands.find(a => a.aliases && a.aliases.includes(command));
 
 
-    switch (command) {
+    switch (comand) {
 
         case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
