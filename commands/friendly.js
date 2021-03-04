@@ -10,7 +10,7 @@ const usedCommand = new Set();
 module.exports ={
     name: 'friendly',
     Description: 'this is a  Friendly  command!',
-    async  execute(message,args, Discord,client){
+    async  execute(client,message,args, Discord,client){
 
         if (usedCommand.has(message.author.id)) {
             

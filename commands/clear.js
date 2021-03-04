@@ -3,7 +3,7 @@ const { GuildMember } = require("discord.js");
 module.exports = {
     name: 'clear',
     description: "Clear messages!",
-   async  execute(message, args) {
+   async  execute(client,message, args,Discord) {
 
     if(message.member.roles.cache.has('610377914109788180')){
       

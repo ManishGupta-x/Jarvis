@@ -1,7 +1,7 @@
 module.exports ={
     name: 'bbtourney',
     Description: 'Gives bb tourney Info !',
-    execute(message,args,Discord){
+    execute(client,message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('RANDOM')

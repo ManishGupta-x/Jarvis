@@ -1,7 +1,7 @@
 module.exports ={
     name: 'freakcup',
     Description: 'Gives Freak Cup Info !',
-    execute(message,args,Discord){
+    execute(client,message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#FC4206')
