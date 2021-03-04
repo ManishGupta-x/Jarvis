@@ -3,7 +3,7 @@ const source = require('../index');
 module.exports ={
     name: 'timer',
     Description: 'this is a bday command!',
-    execute(message,args, Discord){
+    execute(client,message,args, Discord){
 
   if (!args[0]) return message.reply(`Please specify if you are turning the command on or off!`);
   if (args[1]) return message.reply(`Please specify if you are turning the command on or off! [Too many Arguments!]`);

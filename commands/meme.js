@@ -6,7 +6,7 @@ const rd = subReddits[Math.floor(Math.random() * subReddits.length)];
 module.exports ={
     name: 'meme',
     Description: 'this is a  meme command!',
-    async execute(message,args, Discord){
+    async execute(client,message,args, Discord){
      
         const embed = new Discord.MessageEmbed()
         got(`https://www.reddit.com/r/${rd}/random/.json`).then(response => {

@@ -1,7 +1,7 @@
 module.exports ={
     name: 'ucl',
     Description: 'Gives ucl Info !',
-    execute(message,args,Discord){
+    execute(client,message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('BLUE')

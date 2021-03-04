@@ -1,7 +1,7 @@
 module.exports ={
     name: 'sg',
     Description: 'Gives sg Info !',
-    execute(message,args,Discord){
+    execute(client,message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('RANDOM')

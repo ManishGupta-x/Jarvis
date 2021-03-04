@@ -1,7 +1,7 @@
 module.exports = {
     name: 'mute',
     description: "This mutes a member",
-    execute(message, args) {
+    execute(client,message, args,Discord) {
         const target = message.mentions.users.first();
         if (target) {
  

@@ -1,7 +1,7 @@
 module.exports ={
     name: 'deadline',
     Description: 'Gives Commands Info !',
-    execute(message,args,Discord){
+    execute(client,message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('RANDOM')

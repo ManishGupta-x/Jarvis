@@ -1,7 +1,7 @@
 module.exports ={
     name: 'deadline-mainko',
     Description: 'shows deadline of Main squad Ko tourney',
-    execute(message,args, Discord){
+    execute(client,message,args, Discord){
      
        message.channel.send('28th Jan 2021 (semis)');
 

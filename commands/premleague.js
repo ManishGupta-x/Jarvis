@@ -1,7 +1,7 @@
 module.exports ={
     name: 'premleague',
     Description: 'Gives premleague  Info !',
-    execute(message,args,Discord){
+    execute(client,message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#9400ff')
