@@ -1,7 +1,7 @@
 module.exports ={
     name: 'laliga',
     Description: 'Gives La liga Info !',
-    execute(message,args,Discord){
+    execute(client,message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#ff3600')
