@@ -1,7 +1,7 @@
 module.exports ={
     name: 'lngrules',
     Description: 'Gives RUles !',
-    execute(client,message,args,Discord){
+    execute(message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('RANDOM')

@@ -1,7 +1,7 @@
 module.exports ={
     name: 'freakcup-qualifications',
     Description: 'Gives Freak Cup Info !',
-    execute(client,message,args,Discord){
+    execute(message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#FC4206')

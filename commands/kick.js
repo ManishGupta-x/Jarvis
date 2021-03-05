@@ -1,7 +1,7 @@
 module.exports ={
     name: 'kick',
     Description: 'this is a kick command!',
-    execute(client,message,args, Discord){
+    execute(message,args, Discord){
      
         const user = message.mentions.users.first();
         

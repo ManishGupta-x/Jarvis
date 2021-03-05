@@ -1,7 +1,7 @@
 module.exports ={
     name: 'divisions',
     Description: 'Gives Divisons Info !',
-    execute(client,message,args,Discord){
+    execute(message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#06FC9F ')
