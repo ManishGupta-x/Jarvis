@@ -24,6 +24,6 @@ module.exports ={
            
            
            message.channel.send(newEmbed);
-           return;
+           return; 
         } 
     }
