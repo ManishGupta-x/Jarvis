@@ -21,7 +21,7 @@ client.snipes = new Discord.Collection();
 
 //['command_handler' , 'event_handler'].forEach(handler => {
 
- //   require(`./handlers/${handler}`)(client ,Discord);
+//   require(`./handlers/${handler}`)(client ,Discord);
 //})
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
@@ -68,7 +68,7 @@ client.once('ready', () => {
 });
 module.exports.timedcheck = undefined;
 module.exports.val = 0;
- 
+
 
 client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -168,7 +168,7 @@ client.on('message', async message => {
             break;
         case 'deadline-premleague': client.deadline.get('deadline-premleague').execute(message, args, Discord);
             break;
-           case 'deadline-bbtourney': client.deadline.get('deadline-bbtourney').execute(message, args, Discord);
+        case 'deadline-bbtourney': client.deadline.get('deadline-bbtourney').execute(message, args, Discord);
             break;
         case 'main-squadko': client.commands.get('main-squadko').execute(message, args, Discord);
             break;
@@ -365,4 +365,4 @@ client.on('message', async message => {
 
 
 
-client.login(process.env.token); 
+client.login(process.env.token);
