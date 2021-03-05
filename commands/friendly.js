@@ -12,7 +12,7 @@ module.exports ={
     Description: 'this is a  Friendly  command!',
     async  execute(message,args, Discord,client){
 
-        if (usedCommand.has(message.author )) {
+        if (usedCommand.has(message.author.id )) {
             
             message.channel.send('https://tenor.com/view/slow-down-a-little-bit-anthony-mennella-culter35-slow-down-dont-rush-gif-17969625')
             message.reply('The command has a Cooldown of 30 mins') 
