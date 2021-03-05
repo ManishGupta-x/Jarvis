@@ -3,7 +3,7 @@ module.exports ={
     Description: 'this is a  Ping command!',
     async execute(client,message,args, Discord){
      
-        /*const newEmbed = new Discord.MessageEmbed()
+       /* const newEmbed = new Discord.MessageEmbed()
                 .setColor('#6beea8')
                 .setTitle('Help Module')
                 .setDescription('Server\'s Info And Commands')
@@ -54,11 +54,12 @@ module.exports ={
 
 
 
-                }).catch(async () => { return message.channel.send("error") });
+                }).catch(async () => { return message.channel.send("error") });*/
+                message.channel.send('Under Maintenance')
 
-        }*/
-        message.channel.send('Under Maintenance');
+        }
+       
 
 
 
-    }}
+    }
