@@ -1,7 +1,7 @@
 module.exports ={
     name: 'worldcup',
     Description: 'Gives world cup Info !',
-    execute(client,message,args,Discord){
+    execute(message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('RANDOM')
