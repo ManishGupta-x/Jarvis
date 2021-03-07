@@ -1,5 +1,5 @@
 const got = require('got');
-const subReddits = ["memes", "IndianDankMemes", "dankmeme","DankFootballMemes"]
+const subReddits = ["memes", "IndianDankMemes", "dankmeme",]
 const rd = subReddits[Math.floor(Math.random() * subReddits.length)];
 
 
