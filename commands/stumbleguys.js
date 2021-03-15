@@ -1,7 +1,7 @@
 module.exports ={
     name: 'stumbleguys',
     Description: 'this is a role command!',
-    execute(client,message,args, Discord){
+    execute(message,args, Discord){
      
        let member = message.member;
        let memberTarget = message.guild.members.cache.get(member.id);
