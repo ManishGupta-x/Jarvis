@@ -81,6 +81,8 @@ client.on('message', async message => {
 
         case 'ping': client.commands.get('ping').execute(message, args, Discord);
             break;
+        case 'helpid': client.commands.get('helpid').execute(message, args, Discord);
+            break;
         case 'nta': client.commands.get('nta').execute(message, args, Discord);
             break;
         case 'rules': client.commands.get('rules').execute(message, args, Discord);
