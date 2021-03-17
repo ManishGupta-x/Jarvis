@@ -63,7 +63,7 @@ for (const file of idFiles) {
 
 client.once('ready', () => {
     console.log('Nightmare is online!');
-    client.user.setActivity('Missing Boss 🥺');
+    client.user.setActivity('Missing Boss 🥺', { type: 'PLAYING' }).catch(console.error);
 
 });
 module.exports.timedcheck = undefined;
