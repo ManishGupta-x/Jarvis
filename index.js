@@ -176,6 +176,9 @@ client.on('message', async message => {
             break;
         case 'main-squadko': client.commands.get('main-squadko').execute(message, args, Discord);
             break;
+         
+        case 'help-rewards': client.help.get('help-rewards').execute(message, args, Discord);
+            break;
 
         case 'rewards-armychoice': client.Rewards.get('rewards-armychoice').execute(message, args, Discord);
             break;
