@@ -8,7 +8,7 @@ module.exports = {
 
         const Embed1 = new Discord.MessageEmbed()
             .setColor('#F72DF4')
-            .setAuthor('Freak Gamer')
+            .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
             .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg')
             .setTitle('Roles On the Server')
             .addFields(
@@ -40,7 +40,7 @@ module.exports = {
             .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784433282804219924/img_agarcial_20180830-140538_imagenes_lv_terceros_pro_evolution_soccer_2019_20180830095902-kkRC-U451.png');
         const Embed2 = new Discord.MessageEmbed()
             .setColor('#F72DF4')
-            .setAuthor('Freak Gamer')
+            .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
             .setTitle('Roles On the Server')
             .addFields(
 

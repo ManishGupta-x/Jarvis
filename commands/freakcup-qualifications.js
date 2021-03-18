@@ -5,6 +5,7 @@ module.exports ={
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#FC4206')
+       .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
        .setTitle('Qualifications Descriptions')
        .setDescription(`4 Ways To Enter `)
        .addFields(

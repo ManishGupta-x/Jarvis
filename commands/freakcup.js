@@ -6,6 +6,7 @@ module.exports ={
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#FC4206')
        .setTitle('Freak Cup')
+       .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg')
        .setDescription(' Freak Cup Description')
        .addFields(

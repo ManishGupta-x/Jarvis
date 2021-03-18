@@ -7,7 +7,7 @@ module.exports ={
        .setColor('#ff3600')
        .setTitle('La Liga')
        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg')
-       .setAuthor('Freak Gamer')
+       .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
        .addFields(
         
            {name: "Rule 1" , value: ' Only  10 La liga  players allowed In the whole Squad ( +LEGENDS and IMs) i.e 10 players in the WHOLE SQUAD including SUBS'},
