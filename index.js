@@ -251,7 +251,7 @@ client.on('message', async message => {
         case 'help': {
 
             const newEmbed = new Discord.MessageEmbed()
-                .setColor('#6beea8')
+                .setColor('RANDOM')
                 .setTitle('Help Module')
                 .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
                 .setDescription('Server\'s Info And Commands')
