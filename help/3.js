@@ -10,15 +10,16 @@ module.exports ={
        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg')
        .setDescription('Rules and  Info Commands')
        .addFields( 
-            
-            {name : "1. p!freakcup " , value : `Gives Info for RULES of Freak Cup `},
-            {name : "1. p!freakcup-qualifications" , value : `Gives Info for Qualification Rules for Freak cup `},
-            {name : "2. p!divisions" , value : `Gives  Divisions Info or RUles`},
+         
+            {name : "1. p!rules " , value : `Gives Info for RULES For all tourneys  `},
+            {name : "2. p!freakcup " , value : `Gives Info for RULES of Freak Cup `},
+            {name : "3. p!freakcup-qualifications" , value : `Gives Info for Qualification Rules for Freak cup `},
+            {name : "4. p!divisions" , value : `Gives  Divisions Info or RUles`},
 
-            {name : "3. p!main-squadko" , value : `Gives Rules for Main Squad KO  `},
-            {name : "4. p!div1 " , value : `Gives Link of division 1 `},
-            {name : "5. p!worldcup " , value : `Gives Info for RULES of world Cup `},
-            {name : "6. p!div2" , value : `Gives link of division 2 `}
+            {name : "5. p!main-squadko" , value : `Gives Rules for Main Squad KO  `},
+            {name : "6. p!div1 " , value : `Gives Link of division 1 `},
+            {name : "7. p!worldcup " , value : `Gives Info for RULES of world Cup `},
+            {name : "8. p!div2" , value : `Gives link of division 2 `}
              
           
         
