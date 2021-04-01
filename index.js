@@ -62,7 +62,7 @@ for (const file of idFiles) {
 
 
 client.once('ready', () => {
-    console.log('Nightmare is online!');
+    console.log(' The Jarvis is online!');
     client.user.setActivity('PES 2021', { type: 'PLAYING' }).catch(console.error);
 
 });
