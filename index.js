@@ -257,8 +257,8 @@ client.on('message', async message => {
                 .addFields(
 
                     {
-                        name: "1.Player List Link "},
-                    { name: "2.Compare cards Link" },
+                        name: "1. Player List Link ", value : 'Get List of Players which can be filtered'},
+                    { name: "2. Compare cards Link" , value : 'Compare 2 or 3 Different Cards'},
 
         )
         let msg = await message.channel.send(newEmbed)
