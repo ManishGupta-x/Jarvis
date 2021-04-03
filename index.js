@@ -248,7 +248,7 @@ client.on('message', async message => {
             break;
         case 'roleinfo': client.help.get('6').execute(message, args, Discord);
             break;
-        case 'Futhead' : {
+        case 'futhead' : {
 
             const newEmbed = new Discord.MessageEmbed()
                 .setColor('RANDOM')
