@@ -248,6 +248,40 @@ client.on('message', async message => {
             break;
         case 'roleinfo': client.help.get('6').execute(message, args, Discord);
             break;
+        case 'Futhead' : {
+
+            const newEmbed = new Discord.MessageEmbed()
+                .setColor('RANDOM')
+                .setTitle('Futhead Links')
+                .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
+                .addFields(
+
+                    {
+                        name: "1.Player List Link "},
+                    { name: "2.Compare cards Link" },
+
+        )
+        let msg = await message.channel.send(newEmbed)
+        await msg.react('1️⃣')
+        await msg.react('2️⃣')
+
+        await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
+
+                reaction.emoji.name == '2️⃣'), { max: 1, time: 40000 })
+                .then(async collected => {
+                    if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.futhead.com/21/players/?bin_platform=ps') }
+                    else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.futhead.com/compare/') }
+                   
+
+                    else return message.channel.send('Time Up');
+
+
+
+
+
+                }).catch(async () => { return message.channel.send("error") });
+
+        }
         case 'help': {
 
             const newEmbed = new Discord.MessageEmbed()
