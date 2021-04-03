@@ -280,6 +280,7 @@ client.on('message', async message => {
 
 
                 }).catch(async () => { return message.channel.send("error") });
+                break;
 
         }
         case 'help': {
