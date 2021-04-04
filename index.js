@@ -85,7 +85,10 @@ client.on('message', async message => {
             break;
         case 'nta': client.commands.get('nta').execute(message, args, Discord);
             break;
-        case 'rules': client.commands.get('rules').execute(message, args, Discord);
+        case 'rules': if(message.guild.id == '554275795280068619') {client.commands.get('rules').execute(message, args, Discord);}
+                      else {
+                          message.channel.reply('Command restricted to Freak Gamer server')
+                      }
             break;
         case 'bbtourney': client.commands.get('bbtourney').execute(message, args, Discord);
             break;
