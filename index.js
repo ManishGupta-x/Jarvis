@@ -91,6 +91,7 @@ client.on('message', async message => {
                       }
             break;
         case 'bbtourney': client.commands.get('bbtourney').execute(message, args, Discord);
+        
             break;
         case 'sg': client.commands.get('sg').execute(message, args, Discord);
             break;
@@ -311,7 +312,7 @@ client.on('message', async message => {
 
                 )
                 .setFooter(`You can only React for one at a time`)
-                .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg');
+                .attachFiles('https://tenor.com/view/pes2020-pes2020ronaldhino-ronaldhino-legend-pes-pes-pes19-gif-14320689');
 
 
             let msg = await message.channel.send(newEmbed)
