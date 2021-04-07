@@ -6,7 +6,7 @@ module.exports ={
       message.channel.send({embed: { 
          color: 16777215, description:'Test', 
          image:  {
-             url: "https://tenor.com/view/pes2020-pes2020ronaldhino-ronaldhino-legend-pes-pes-pes19-gif-14320689"
+             url: "https://i.imgur.com/ONngPJY.gifv"
          }
      }});
 
