@@ -312,7 +312,7 @@ client.on('message', async message => {
 
                 )
                 .setFooter(`You can only React for one at a time`)
-                .setImage('https://tenor.com/view/pes2020-pes2020ronaldhino-ronaldhino-legend-pes-pes-pes19-gif-14320689');
+                .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg');
 
 
             let msg = await message.channel.send(newEmbed)
