@@ -312,7 +312,7 @@ client.on('message', async message => {
 
                 )
                 .setFooter(`You can only React for one at a time`)
-                .attachFiles('https://tenor.com/view/pes2020-pes2020ronaldhino-ronaldhino-legend-pes-pes-pes19-gif-14320689');
+                .setImage('https://tenor.com/view/pes2020-pes2020ronaldhino-ronaldhino-legend-pes-pes-pes19-gif-14320689');
 
 
             let msg = await message.channel.send(newEmbed)
