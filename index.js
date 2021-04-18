@@ -79,7 +79,8 @@ client.on('message', async message => {
 
     switch (command) {
 
-        case 'ping': client.commands.get('ping').execute(message, args, Discord);
+        case 'ping': message.delete({ timeout: 2000 })
+                     client.commands.get('ping').execute(message, args, Discord);
             break;
         case 'welcome': client.commands.get('welcome').execute(message, args, Discord);
             break;
