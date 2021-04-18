@@ -20,6 +20,6 @@ module.exports ={
            
            
            message.channel.send(newEmbed);
-
+           message.delete({ timeout: 2000 })
        }
     }
