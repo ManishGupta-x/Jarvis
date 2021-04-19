@@ -80,6 +80,9 @@ client.on('message', async message => {
         .then(data => {
             message.channel.send(data.response)
         })
+        .catch(() => {
+            message.channel.send("Hain?? I can't answer this bruh")
+        })
     }
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
