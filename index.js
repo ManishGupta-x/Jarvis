@@ -75,7 +75,7 @@ client.on('message', async message => {
 
     
     if (message.author.bot) return;
-    if(message.channel.id === '730714810614022228' ){
+    if(message.author.id === '764093123210248234' ){
 
         fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
         .then(response => response.json())
