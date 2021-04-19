@@ -73,18 +73,18 @@ module.exports.val = 0;
 
 client.on('message', async message => {
 
-    
+
     if (message.author.bot) return;
-    if(message.channel.id === '730714810614022228' || message.channel.id === '833722366423990275' || message.channel.id ==='833719325865148456' ){
+    if (message.channel.id === '730714810614022228' || message.channel.id === '833722366423990275' || message.channel.id === '833719325865148456') {
 
         fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
-        .then(response => response.json())
-        .then(data => {
-            message.channel.send(data.response);
-        })
-        .catch(() => {
-            message.channel.send("Hmmmmmmmmmm")
-        })
+            .then(response => response.json())
+            .then(data => {
+                message.channel.send(data.response);
+            })
+            .catch(() => {
+                message.channel.send("Hmmmmmmmmmm")
+            })
     }
 
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -93,24 +93,37 @@ client.on('message', async message => {
 
     switch (command) {
 
-        case 'ping': 
-                     client.commands.get('ping').execute(message, args, Discord);
+        case 'ping':
+            client.commands.get('ping').execute(message, args, Discord);
             break;
-        case 'welcome': client.commands.get('welcome').execute(message, args, Discord);
+
+        case 'welcome': if (message.guild.id == '554275795280068619') { client.commands.get('welcome').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
+
         case 'helpid': client.commands.get('helpid').execute(message, args, Discord);
             break;
         case 'nta': client.commands.get('nta').execute(message, args, Discord);
+
             break;
-        case 'rules': if(message.guild.id == '554275795280068619') {client.commands.get('rules').execute(message, args, Discord);}
-                      else {
-                          message.reply('Command restricted to Freak Gamer server')
-                      }
+        case 'rules': if (message.guild.id == '554275795280068619') { client.commands.get('rules').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'bbtourney': client.commands.get('bbtourney').execute(message, args, Discord);
-        
+        case 'bbtourney': if (message.guild.id == '554275795280068619') { client.commands.get('bbtourney').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
+
             break;
-        case 'sg': client.commands.get('sg').execute(message, args, Discord);
+
+        case 'sg': if (message.guild.id == '554275795280068619') { client.commands.get('sg').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
 
 
@@ -142,78 +155,171 @@ client.on('message', async message => {
         case 'help-match': client.help.get('help-match').execute(message, args, Discord);
             break;
 
-        case 'lngrules': client.commands.get('lngrules').execute(message, args, Discord);
+        case 'lngrules': if (message.guild.id == '554275795280068619') { client.commands.get('lngrules').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'fping': client.commands.get('fping').execute(message, args, Discord);
+        case 'fping': if (message.guild.id == '554275795280068619') { client.commands.get('fping').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
         case 'botinfo': client.commands.get('botinfo').execute(message, args, Discord);
             break;
 
-        case 'youtube': client.commands.get('youtube').execute(message, args, Discord);
+        case 'youtube': if (message.guild.id == '554275795280068619') { client.commands.get('youtube').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'stumbleguys': client.commands.get('stumbleguys').execute(message, args, Discord);
+        case 'stumbleguys': if (message.guild.id == '554275795280068619') { client.commands.get('stumbleguys').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
         case 'official': client.commands.get('official').execute(message, args, Discord);
             break;
         case 'twitter': client.commands.get('twitter').execute(message, args, Discord);
             break;
-        case 'freakcup': client.commands.get('freakcup').execute(message, args, Discord);
+        case 'freakcup': if (message.guild.id == '554275795280068619') { client.commands.get('freakcup').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'freakcup-qualifications': client.commands.get('freakcup-qualifications').execute(message, args, Discord);
+        case 'freakcup-qualifications': if (message.guild.id == '554275795280068619') { client.commands.get('freakcup-qualifications').execute(message, args, Discord); }
             break;
-        case 'laliga': client.commands.get('laliga').execute(message, args, Discord);
+        case 'laliga': if (message.guild.id == '554275795280068619') { client.commands.get('laliga').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'premleague': client.commands.get('premleague').execute(message, args, Discord);
+        case 'premleague': if (message.guild.id == '554275795280068619') { client.commands.get('premleague').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'worldcup': client.commands.get('worldcup').execute(message, args, Discord);
+        case 'worldcup': if (message.guild.id == '554275795280068619') { client.commands.get('worldcup').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'div1': client.commands.get('div1').execute(message, args, Discord);
+        case 'div1': if (message.guild.id == '554275795280068619') { client.commands.get('div1').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'div2': client.commands.get('div2').execute(message, args, Discord);
+        case 'div2': if (message.guild.id == '554275795280068619') { client.commands.get('div2').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'div3': client.commands.get('div3').execute(message, args, Discord);
+        case 'div3': if (message.guild.id == '554275795280068619') { client.commands.get('div3').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'ucl': client.commands.get('ucl').execute(message, args, Discord);
+        case 'ucl': if (message.guild.id == '554275795280068619') { client.commands.get('ucl').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'clear': client.commands.get('clear').execute(message, args, Discord);
+        case 'clear': if (message.guild.id == '554275795280068619') { client.commands.get('clear').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'divisions': client.commands.get('divisions').execute(message, args, Discord);
+        case 'divisions': if (message.guild.id == '554275795280068619') { client.commands.get('divisions').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'deadline': client.deadline.get('deadline').execute(message, args, Discord);
+        case 'deadline': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'deadline-mainko': client.deadline.get('deadline-mainko').execute(message, args, Discord);
+        case 'deadline-mainko': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-mainko').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'deadline-freakcup': client.deadline.get('deadline-freakcup').execute(message, args, Discord);
+        case 'deadline-freakcup': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-freakcup').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'deadline-ucl': client.deadline.get('deadline-ucl').execute(message, args, Discord);
+        case 'deadline-ucl': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-ucl').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'deadline-worldcup': client.deadline.get('deadline-worldcup').execute(message, args, Discord);
+        case 'deadline-worldcup': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-worldcup').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'deadline-laliga': client.deadline.get('deadline-laliga').execute(message, args, Discord);
+        case 'deadline-laliga': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-laliga').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'deadline-premleague': client.deadline.get('deadline-premleague').execute(message, args, Discord);
+        case 'deadline-premleague': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-premleague').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'deadline-bbtourney': client.deadline.get('deadline-bbtourney').execute(message, args, Discord);
+        case 'deadline-bbtourney': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-bbtourney').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'main-squadko': client.commands.get('main-squadko').execute(message, args, Discord);
-            break;
-         
-        case 'help-rewards': client.help.get('help-rewards').execute(message, args, Discord);
+        case 'main-squadko': if (message.guild.id == '554275795280068619') { client.commands.get('main-squadko').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
 
-        case 'rewards-armychoice': client.Rewards.get('rewards-armychoice').execute(message, args, Discord);
+        case 'help-rewards': if (message.guild.id == '554275795280068619') { client.help.get('help-rewards').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'rewards-ucl': client.Rewards.get('rewards-ucl').execute(message, args, Discord);
+
+        case 'rewards-armychoice': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-armychoice').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'rewards-freakcup': client.Rewards.get('rewards-freakcup').execute(message, args, Discord);
+        case 'rewards-ucl': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-ucl').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'rewards-laliga': client.Rewards.get('rewards-laliga').execute(message, args, Discord);
+        case 'rewards-freakcup': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-freakcup').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'rewards-premleague': client.Rewards.get('rewards-premleague').execute(message, args, Discord);
+        case 'rewards-laliga': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-laliga').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'rewards-divisions': client.Rewards.get('rewards-divisions').execute(message, args, Discord);
+        case 'rewards-premleague': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-premleague').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
-        case 'rewards-mainko': client.Rewards.get('rewards-mainko').execute(message, args, Discord);
+        case 'rewards-divisions': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-divisions').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
+            break;
+        case 'rewards-mainko': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-mainko').execute(message, args, Discord); }
+        else {
+            message.reply('Command restricted to Freak Gamer server')
+        }
             break;
         case 'ban': client.commands.get('ban').execute(message, args, prefix, Discord);
             break;
@@ -269,7 +375,7 @@ client.on('message', async message => {
             break;
         case 'roleinfo': client.help.get('6').execute(message, args, Discord);
             break;
-        case 'futhead' : {
+        case 'futhead': {
 
             const newEmbed = new Discord.MessageEmbed()
                 .setColor('RANDOM')
@@ -278,21 +384,22 @@ client.on('message', async message => {
                 .addFields(
 
                     {
-                        name: "1. Player List Link ", value : 'Get List of Players which can be filtered'},
-                    { name: "2. Compare cards Link" , value : 'Compare 2 or 3 Different Cards'},
+                        name: "1. Player List Link ", value: 'Get List of Players which can be filtered'
+                    },
+                    { name: "2. Compare cards Link", value: 'Compare 2 or 3 Different Cards' },
 
-        )
-        let msg = await message.channel.send(newEmbed)
-        await msg.react('1️⃣')
-        await msg.react('2️⃣')
+                )
+            let msg = await message.channel.send(newEmbed)
+            await msg.react('1️⃣')
+            await msg.react('2️⃣')
 
-        await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
+            await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
 
                 reaction.emoji.name == '2️⃣'), { max: 1, time: 40000 })
                 .then(async collected => {
                     if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.futhead.com/21/players/?bin_platform=ps') }
                     else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.futhead.com/compare/') }
-                   
+
 
                     else return message.channel.send('Time Up');
 
@@ -301,7 +408,7 @@ client.on('message', async message => {
 
 
                 }).catch(async () => { return message.channel.send("error") });
-                break;
+            break;
 
         }
         case 'help': {
