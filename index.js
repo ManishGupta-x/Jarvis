@@ -74,7 +74,18 @@ module.exports.val = 0;
 client.on('message', async message => {
 
     
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if (message.author.bot) return;
+    if(message.channel.id === '730714810614022228'){
+
+        fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
+        .then(response => response.json())
+        .then(data => {
+            message.channel.send(data.response);
+        })
+        .catch(() => {
+            message.channel.send("Hain?? I can't answer this bruh")
+        })
+    }
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
