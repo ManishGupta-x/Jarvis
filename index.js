@@ -83,7 +83,7 @@ client.on('message', async message => {
             message.channel.send(data.response);
         })
         .catch(() => {
-            message.channel.send("Hain?? I can't answer this bruh")
+            message.channel.send("Hmmmmmmmmmm")
         })
     }
 
