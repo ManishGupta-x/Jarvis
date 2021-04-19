@@ -3,6 +3,7 @@ const moment = require('moment');
 const prefix = 'p!';
 const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
+const fetch = require("node-fetch").default;
 
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -71,6 +72,15 @@ module.exports.val = 0;
 
 
 client.on('message', async message => {
+
+    if(message.channel.id === '730714810614022228'){
+
+        fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
+        .then(response => response.json())
+        .then(data => {
+            message.channel.send(data.response)
+        })
+    }
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
