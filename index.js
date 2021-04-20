@@ -411,7 +411,7 @@ client.on('message', async message => {
             break;
 
         }
-        case 'help': {
+        case 'help': if (message.guild.id == '554275795280068619'){
 
             const newEmbed = new Discord.MessageEmbed()
                 .setColor('RANDOM')
@@ -467,6 +467,8 @@ client.on('message', async message => {
 
                 }).catch(async () => { return message.channel.send("error") });
 
+        }else {
+            message.reply('Customised for Freak game server Only ')
         }
 
 
