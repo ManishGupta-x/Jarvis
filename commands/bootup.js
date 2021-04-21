@@ -13,7 +13,7 @@ module.exports ={
     
     case "jarvis":
       {  task = 1;
-        message.channel.send("Activated Jarvis");
+        message.channel.send("Activate")
         while(task === 1 ){
         fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
         .then(response => response.json())
@@ -29,7 +29,7 @@ module.exports ={
             
         }
 
-       
+       break;
       }
     
   }
