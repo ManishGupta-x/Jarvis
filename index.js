@@ -78,14 +78,7 @@ client.on('message', async message => {
    /* task = 1;
     message.channel.send("Activated")
        while(task === 1 ){
-            fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
-              .then(response => response.json())
-             .then(data => {
-             message.channel.send(data.response);
-              })
-.catch(() => {
-message.channel.send("Hmmmmmmmmmm")
-})}if(message.content.includes("Deactivate jarvis!"))
+           }if(message.content.includes("Deactivate jarvis!"))
 task =0;
 {message.channel.send('Deactivated Succesfully!')}*/
    
@@ -93,7 +86,7 @@ task =0;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-
+     
 
     switch (command) {
 
@@ -101,8 +94,27 @@ task =0;
             client.commands.get('ping').execute(message, args, Discord);
             break;
         case 'activate-jarvis':
+            const interval = setInterval(function() {
+                message.channel.send("Activated");
+                fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
+                .then(response => response.json())
+               .then(data => {
+               message.channel.send(data.response);
+                })
+  .catch(() => {
+  message.channel.send("Hmmmmmmmmmm")
+  }).catch(err => {
+      console.log(err);
+      clearInterval(interval);
+  
+  });
+
+            },1800000);
           
-              
+              task =interval;
+              if(command === 'deactivate-jarvis'){
+                  clearInterval(task);
+              }
           break;
         
 
