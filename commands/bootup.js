@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const source = require('../index');
+const fetch = require("node-fetch").default;
 
 module.exports ={
     name: 'bootup',
