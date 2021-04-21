@@ -75,14 +75,8 @@ client.on('message', async message => {
 
 
     if (message.author.bot) return;
-    if(message.content.startsWith(`${prefix}bootup-jarvis`)){
-    if(message.content.startsWith(`${prefix}deactivate-jarvis`)){
-        
-        task=0;
-        message.channel.send("Deactivated Succesfully")
-        
-    }
-}
+   
+
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
@@ -104,7 +98,9 @@ client.on('message', async message => {
                           })
     .catch(() => {
         message.channel.send("Hmmmmmmmmmm")
-    })}if(message.content.includes("Deactivate jarvis!")){message.channel.send('Deactivated Succesfully!')}
+    })}if(message.content.includes("Deactivate jarvis!"))
+    task =0;
+    {message.channel.send('Deactivated Succesfully!')}
               
           break;
         
