@@ -12,22 +12,7 @@ module.exports ={
   {
     
     case "jarvis":
-      {  task = 1;
-        message.channel.send("Activate")
-        while(task === 1 ){
-        fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
-        .then(response => response.json())
-        .then(data => {
-            message.channel.send(data.response);
-        })
-        .catch(() => {
-            message.channel.send("Hmmmmmmmmmm")
-        })}if(message.content.includes('Deactivate Jarvis')){
-            
-            task=0;
-            message.channel.send("Deactivated Succesfully")
-            
-        }
+      { 
 
        break;
       }
