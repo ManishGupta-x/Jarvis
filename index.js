@@ -72,11 +72,25 @@ module.exports.val = 0;
 
 
 client.on('message', async message => {
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+     
 
-
-    if (message.author.bot) return;
+    if (message.author.bot) return; 
     if (message.channel.id === '730714810614022228' || message.channel.id === '833722366423990275' || message.channel.id === '833719325865148456' || message.channel.id === '833983319615471626') {
-
+    fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
+    .then(response => response.json())
+   .then(data => {
+   message.channel.send(data.response);
+    })
+.catch(() => {
+message.channel.send("Hmmmmmmmmmm")
+})}
+   /* if (message.content.has('jarvis')) {
+        message.channel.send("Activated")
+        var i=0;
+        while(true){
+            i++;
         fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
             .then(response => response.json())
             .then(data => {
@@ -85,13 +99,18 @@ client.on('message', async message => {
             .catch(() => {
                 message.channel.send("Hmmmmmmmmmm")
             })
-    }
+            if(i===5){
+                break;} 
+            
+            }
+    }else if(message.content.has('Deactivate jarvis')){
+
+        
+    }*/
    
 
 
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const command = args.shift().toLowerCase();
-     
+    
 
     switch (command) {
 
@@ -119,8 +138,8 @@ client.on('message', async message => {
               task =interval;
               if(command === 'deactivate-jarvis'){
                   clearInterval(task);
-              }*/
-          break;
+              }
+          break;*/
         
 
         case 'welcome': if (message.guild.id == '554275795280068619') { client.commands.get('welcome').execute(message, args, Discord); }
