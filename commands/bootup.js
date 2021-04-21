@@ -10,11 +10,7 @@ module.exports ={
   if (args[1]) return message.reply(`Can't activate Check command again [Too many Arguments!]`);
   switch (args[0]) 
   {
-    default: 
-    {
-      message.reply('invalid argument specified.')
-      break;
-    }
+    
     case "jarvis":
       {  task = 1;
         while(task === 1 ){
