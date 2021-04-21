@@ -15,8 +15,9 @@ module.exports ={
       message.reply('invalid argument specified.')
       break;
     }
-    case "activate":
-      {   
+    case "jarvis":
+      {  task = 1;
+        while(task === 1 ){
         fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
         .then(response => response.json())
         .then(data => {
@@ -24,18 +25,16 @@ module.exports ={
         })
         .catch(() => {
             message.channel.send("Hmmmmmmmmmm")
-        })
+        })}if(message.content.include('Deactivate Jarvis')){
+            
+            task=0;
+            message.channel.send("Deactivated Succesfully")
+            
+        }
 
        
       }
-    case "deactivate":
-      {
-       
-        message.reply(`deactivated Jarvis `);
-        
-         
-        break;
-      }
+    
   }
  
 }
