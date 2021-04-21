@@ -25,7 +25,7 @@ module.exports ={
         })
         .catch(() => {
             message.channel.send("Hmmmmmmmmmm")
-        })}if(message.content.include('Deactivate Jarvis')){
+        })}if(message.content.includes('Deactivate Jarvis')){
             
             task=0;
             message.channel.send("Deactivated Succesfully")
