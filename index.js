@@ -86,7 +86,7 @@ client.on('message', async message => {
     })
     .catch(() => {
         message.channel.send("Hmmmmmmmmmm")
-    })}if(message.content.includes('Deactivate Jarvis')){
+    })}if(message.content.startsWith(`${prefix}deactivate-jarvis`)){
         
         task=0;
         message.channel.send("Deactivated Succesfully")
