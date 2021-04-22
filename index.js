@@ -74,7 +74,7 @@ module.exports.val = 0;
 client.on('message', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-     c=0;
+     c='0';
 
     if (message.author.bot) return; 
     if (j===1 && !message.content.startsWith(prefix) && c === message.channel.id ) {
@@ -102,7 +102,7 @@ message.channel.send("Hmmmmmmmmmm")
                                     message.channel.send("Jarvis is Already off")}
                                     else{ j=0;} 
                                   message.channel.send('Deactivated!');
-                                  c=0;
+                                  c='0';
                              
           break;
         
