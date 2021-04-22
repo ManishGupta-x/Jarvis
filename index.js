@@ -77,7 +77,7 @@ client.on('message', async message => {
      var c;
 
     if (message.author.bot) return; 
-    if (j===1 && !message.content.startsWith(prefix) && message.channel.id === c) {
+    if (j===1 && !message.content.startsWith(prefix) && c === message.channel.id ) {
     fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
     .then(response => response.json())
    .then(data => {
