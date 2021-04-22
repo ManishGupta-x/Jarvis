@@ -98,11 +98,11 @@ message.channel.send("Hmmmmmmmmmm")
                                   message.reply(" Booted Up Succesfully! ")
                                   channelID = message.channel.id;
           break;
-        case 'deactivate-jarvis': if(j===0){
+        case 'shutdown-jarvis': if(j===0){
                                     message.channel.send("Jarvis is Already off")}
                                     else{ j=0;} 
-                                  message.channel.send('Deactivated!');
-                                                               
+                                  message.channel.send('https://tenor.com/view/turn-off-shut-off-switch-off-kill-the-lights-lights-off-gif-12198682');
+                                  message.reply("Nicely done! 🥳' ")                       
           break;
         
 
