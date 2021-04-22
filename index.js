@@ -74,7 +74,7 @@ module.exports.val = 0;
 client.on('message', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-     var c;
+     c=0;
 
     if (message.author.bot) return; 
     if (j===1 && !message.content.startsWith(prefix) && c === message.channel.id ) {
