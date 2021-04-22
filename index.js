@@ -97,7 +97,7 @@ message.channel.send("Hmmmmmmmmmm")
        case 'bootup-jarvis': j=1; message.channel.send('booted up Succesfully! Ready to Talk')
                              
           break;
-        case 'deactivate-Jarvis': j=0; message.channel.send('Deactivated succesfully')
+        case 'deactivate-jarvis': j=0; message.channel.send('Deactivated succesfully')
                              
           break;
         
