@@ -94,10 +94,13 @@ message.channel.send("Hmmmmmmmmmm")
         case 'ping':
             client.commands.get('ping').execute(message, args, Discord);
             break;
-       case 'bootup-jarvis': j=1; message.channel.send('booted up Succesfully! Ready to Talk');
-                             
+       case 'bootup-jarvis': j=1; message.channel.send('https://tenor.com/view/iron-man-sped-up-jarvis-gif-19148596');
+                                  message.reply(" Booted Up Succesfully! ")
           break;
-        case 'deactivate-jarvis': j=0; message.channel.send('Deactivated succesfully');
+        case 'deactivate-jarvis': if(j===0){
+                                    message.channel.send("Jarvis is Already off")}
+                                    else{ j=0;} 
+                                  message.channel.send('Deactivated!');
                              
           break;
         
