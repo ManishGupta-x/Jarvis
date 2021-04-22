@@ -69,7 +69,7 @@ client.once('ready', () => {
 });
 module.exports.timedcheck = undefined;
 module.exports.val = 0;
-var j = 0;
+ j = 0;
 
 client.on('message', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
