@@ -86,31 +86,8 @@ client.on('message', async message => {
 .catch(() => {
 message.channel.send("Hmmmmmmmmmm")
 })}
-   /* if (message.content.has('jarvis')) {
-        message.channel.send("Activated")
-        var i=0;
-        while(true){
-            i++;
-        fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
-            .then(response => response.json())
-            .then(data => {
-                message.channel.send(data.response);
-            })
-            .catch(() => {
-                message.channel.send("Hmmmmmmmmmm")
-            })
-            if(i===5){
-                break;} 
-            
-            }
-    }else if(message.content.has('Deactivate jarvis')){
-
-        
-    }*/
-   
-
-
-    
+  
+ 
 
     switch (command) {
 
