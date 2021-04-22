@@ -94,10 +94,10 @@ message.channel.send("Hmmmmmmmmmm")
         case 'ping':
             client.commands.get('ping').execute(message, args, Discord);
             break;
-       case 'bootup-jarvis': j=1; message.channel.send('booted up Succesfully! Ready to Talk')
+       case 'bootup-jarvis': j=1; message.channel.send('booted up Succesfully! Ready to Talk');
                              
           break;
-        case 'deactivate-jarvis': j=0; message.channel.send('Deactivated succesfully')
+        case 'deactivate-jarvis': j=0; message.channel.send('Deactivated succesfully');
                              
           break;
         
