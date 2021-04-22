@@ -74,10 +74,10 @@ module.exports.val = 0;
 client.on('message', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-     
+     var c;
 
     if (message.author.bot) return; 
-    if (j===1 && !message.content.startsWith(prefix)) {
+    if (j===1 && !message.content.startsWith(prefix) && c === message.guild.id) {
     fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
     .then(response => response.json())
    .then(data => {
@@ -96,11 +96,13 @@ message.channel.send("Hmmmmmmmmmm")
             break;
        case 'bootup-jarvis': j=1; message.channel.send('https://tenor.com/view/iron-man-sped-up-jarvis-gif-19148596');
                                   message.reply(" Booted Up Succesfully! ")
+                                  c = message.guild.id;
           break;
         case 'deactivate-jarvis': if(j===0){
                                     message.channel.send("Jarvis is Already off")}
                                     else{ j=0;} 
                                   message.channel.send('Deactivated!');
+
                              
           break;
         
