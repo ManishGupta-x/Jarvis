@@ -69,7 +69,7 @@ client.once('ready', () => {
 });
 module.exports.timedcheck = undefined;
 module.exports.val = 0;
-
+var j = 0;
 
 client.on('message', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -77,7 +77,7 @@ client.on('message', async message => {
      
 
     if (message.author.bot) return; 
-    if (message.channel.id === '730714810614022228' || message.channel.id === '833722366423990275' || message.channel.id === '833719325865148456' || message.channel.id === '833983319615471626') {
+    if (j===1) {
     fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
     .then(response => response.json())
    .then(data => {
@@ -117,29 +117,12 @@ message.channel.send("Hmmmmmmmmmm")
         case 'ping':
             client.commands.get('ping').execute(message, args, Discord);
             break;
-       /*case 'activate-jarvis':
-            const interval = setInterval(function() {
-                message.channel.send("Activated");
-                fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
-                .then(response => response.json())
-               .then(data => {
-               message.channel.send(data.response);
-                })
-  .catch(() => {
-  message.channel.send("Hmmmmmmmmmm")
-  }).catch(err => {
-      console.log(err);
-      clearInterval(interval);
-  
-  });
-
-            },1800000);
-          
-              task =interval;
-              if(command === 'deactivate-jarvis'){
-                  clearInterval(task);
-              }
-          break;*/
+       case 'bootup-jarvis': j=1; message.channel.send('booted up Succesfully! Ready to Talk')
+                             
+          break;
+        case 'deactivate-Jarvis': j=0; message.channel.send('Deactivated succesfully')
+                             
+          break;
         
 
         case 'welcome': if (message.guild.id == '554275795280068619') { client.commands.get('welcome').execute(message, args, Discord); }
