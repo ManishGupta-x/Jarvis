@@ -96,7 +96,7 @@ message.channel.send("Hmmmmmmmmmm")
             break;
        case 'bootup-jarvis': j=1; message.channel.send('https://tenor.com/view/iron-man-sped-up-jarvis-gif-19148596');
                                   message.reply(" Booted Up Succesfully! ")
-                                  var channelID = message.channel.id;
+                                  channelID = message.channel.id;
           break;
         case 'deactivate-jarvis': if(j===0){
                                     message.channel.send("Jarvis is Already off")}
