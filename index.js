@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const moment = require('moment');
-const prefix = 'j!'; 
+const prefix = 'p!'; 
 const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 const fetch = require("node-fetch").default;
