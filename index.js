@@ -233,10 +233,8 @@ message.channel.send("Hmmmmmmmmmm")
             message.reply('Command restricted to Freak Gamer server')
         }
             break;
-        case 'clear': if (message.guild.id == '554275795280068619') { client.commands.get('clear').execute(message, args, Discord); }
-        else {
-            message.reply('Command restricted to Freak Gamer server')
-        }
+        case 'clear':  { client.commands.get('clear').execute(message, args, Discord); }
+        
             break;
         case 'divisions': if (message.guild.id == '554275795280068619') { client.commands.get('divisions').execute(message, args, Discord); }
         else {
@@ -340,7 +338,7 @@ message.channel.send("Hmmmmmmmmmm")
 
         case 'gn': client.commands.get('gn').execute(message, args, Discord);
             break;
-        case 'mute': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
+        case 'mute': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('764536962156593162') && !message.member.roles.cache.has('610377914109788180'))
             return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));
 
             client.commands.get('mute').execute(message, args, Discord);
