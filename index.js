@@ -64,7 +64,7 @@ for (const file of idFiles) {
 
 client.once('ready', () => {
     console.log(' The Jarvis is online!');
-    client.user.setActivity('HBD Boss 🥳', { type: 'PLAYING' }).catch(console.error);
+    client.user.setActivity('v1.0.0', { type: 'PLAYING' }).catch(console.error);
 
 });
 module.exports.timedcheck = undefined;
