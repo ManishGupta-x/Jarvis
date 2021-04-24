@@ -87,7 +87,7 @@ client.on('message', async message => {
 message.channel.send("Hmmmmmmmmmm")
 })}
   
- 
+ if(message.content.startsWith(prefix)){
 
     switch (command) {
 
@@ -536,7 +536,7 @@ message.channel.send("Hmmmmmmmmmm")
 
     }
 
-}
+}}
 
 
 
