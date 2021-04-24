@@ -95,20 +95,29 @@ client.on('message', async message => {
             case 'ping':
                 client.commands.get('ping').execute(message, args, Discord);
                 break;
-            case 'bird':  fetch(`https://api.monkedev.com/attachments/bird`)
-            .then(url => url.json())
-            .then(data => {
-                message.channel.send(data.url);
-            })
-                    
+                case 'av':    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || x.user.username === args[0]) || message.member;
+                    const userEmbed = new Discord.MessageEmbed()
+                    .setAuthor(member.user.tag, member.user.displayAvatarURL())
+                    .setTimestamp()
+                    .setColor('RANDOM')
+                    .setImage(member.user.displayAvatarURL())
+                    message.channel.send(userEmbed);
                     break;
-            case 'monkey':  fetch(`https://api.monkedev.com/attachments/monkey`)
-                    .then(url => url.json())
-                    .then(data => {
-                        message.channel.send(data.url);
-                    })
-                            
-                            break;
+                //.setImage(member.user.displayAvatarURL())
+            case 'bird': fetch(`https://api.monkedev.com/attachments/bird`)
+                .then(url => url.json())
+                .then(data => {
+                    message.channel.send(data.url);
+                })
+
+                break;
+            case 'monkey': fetch(`https://api.monkedev.com/attachments/monkey`)
+                .then(url => url.json())
+                .then(data => {
+                    message.channel.send(data.url);
+                })
+
+                break;
             case 'bootup-jarvis': j = 1; message.channel.send('https://tenor.com/view/iron-man-sped-up-jarvis-gif-19148596');
                 message.reply(" Booted Up Succesfully! ")
                 channelID = message.channel.id;
