@@ -102,6 +102,13 @@ client.on('message', async message => {
             })
                     
                     break;
+            case 'monkey':  fetch(`https://api.monkedev.com/attachments/monkey`)
+                    .then(url => url.json())
+                    .then(data => {
+                        message.channel.send(data.url);
+                    })
+                            
+                            break;
             case 'bootup-jarvis': j = 1; message.channel.send('https://tenor.com/view/iron-man-sped-up-jarvis-gif-19148596');
                 message.reply(" Booted Up Succesfully! ")
                 channelID = message.channel.id;
