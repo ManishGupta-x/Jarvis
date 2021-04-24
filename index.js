@@ -95,6 +95,13 @@ client.on('message', async message => {
             case 'ping':
                 client.commands.get('ping').execute(message, args, Discord);
                 break;
+            case 'bird':  fetch(`https://api.monkedev.com/attachments/bird`)
+            .then(url => url.json())
+            .then(data => {
+                message.channel.send(data.url);
+            })
+                    
+                    break;
             case 'bootup-jarvis': j = 1; message.channel.send('https://tenor.com/view/iron-man-sped-up-jarvis-gif-19148596');
                 message.reply(" Booted Up Succesfully! ")
                 channelID = message.channel.id;
