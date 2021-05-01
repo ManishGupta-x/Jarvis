@@ -11,7 +11,7 @@ module.exports ={
        .setDescription('Rules and  Info Commands')
        .addFields( 
          
-            {name : "1. p!rules " , value : `Gives Info for RULES For all tourneys  `},
+            {name : "1. p!premleague " , value : `Gives Info for RULES For Premier League`},
             {name : "2. p!freakcup " , value : `Gives Info for RULES of Freak Cup `},
             {name : "3. p!freakcup-qualifications" , value : `Gives Info for Qualification Rules for Freak cup `},
             {name : "4. p!divisions" , value : `Gives  Divisions Info or RUles`},
