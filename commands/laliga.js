@@ -10,7 +10,8 @@ module.exports ={
        .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
        .addFields(
         
-           {name: "Rule 1" , value: ' Only  10 La liga  players allowed In the whole Squad ( +LEGENDS and IMs) i.e 10 players in the WHOLE SQUAD including SUBS'},
+           {name: "Rule 1" , value: `You can use that players who played in Laliga  ( +LEGENDS and IMs)  i.e 18 players in the WHOLE SQUAD including SUBS
+           If you don't have enough Laliga players then you can use white ball players but you can't sub them`},
            {name: "Rule 2" , value: ' NO legends Allowed Other than La liga  '},
            {name: "Rule 3" , value: ' If You will break the squad requirements the opponent will get the win !! And that will be final , So save your\' in squads ! '},
            {name: "Rule 4" , value: ' Its a  One Legged Tourney !'}
