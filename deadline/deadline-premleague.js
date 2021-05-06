@@ -3,7 +3,7 @@ module.exports ={
     Description: 'shows deadline of Premier league tourney',
     execute(message,args, Discord){
      
-       message.channel.send('25th January ,2021 (Last Updated)');
+       message.channel.send('14th May, 2021 (Day 1-4)');
 
 
     }  
