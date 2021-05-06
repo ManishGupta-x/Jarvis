@@ -28,7 +28,7 @@ module.exports ={
 
            
            )
-           .setImage('https://media.discordapp.net/attachments/730714810614022228/769431011657383976/gamescom-2019-konami-reveals-efootball-pes-2020-mobile-game-details.jpg?width=887&height=499');
+           .setImage('https://cdn.discordapp.com/attachments/610950416498425886/839845555797491732/pes21_10.png');
            
            
            message.channel.send(newEmbed);
