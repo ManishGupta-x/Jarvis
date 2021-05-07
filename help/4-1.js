@@ -1,5 +1,5 @@
 module.exports ={
-    name: '3',
+    name: '4-1',
     Description: 'Gives Commands Info !',
     execute(message,args,Discord,msg){
      
@@ -11,15 +11,9 @@ module.exports ={
        .setDescription('Rules and  Info Commands')
        .addFields( 
          
-            {name : "1. p!premleague " , value : `Gives Info for RULES For Premier League`},
-            {name : "2. p!freakcup " , value : `Gives Info for RULES of Freak Cup `},
-            {name : "3. p!freakcup-qualifications" , value : `Gives Info for Qualification Rules for Freak cup `},
-            {name : "4. p!divisions" , value : `Gives  Divisions Info or RUles`},
-
-            {name : "5. p!main-squadko" , value : `Gives Rules for Main Squad KO  `},
-            
-            {name : "6. p!worldcup " , value : `Gives Info for RULES of world Cup `},
-            
+            {name : "1. p!pl_table " , value : `Gives Info for RULES For Premier League`},
+            {name : "2. p!div1 " , value : `Gives Link of division 1 `},
+            {name : "3. p!div2" , value : `Gives link of division 2 `}
              
           
         

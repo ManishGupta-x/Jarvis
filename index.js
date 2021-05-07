@@ -391,10 +391,11 @@ client.on('message', async message => {
                  , twitter , friendly,Other Websites...etc`},
                         { name: "2. Rewards", value: `Gives Info for Rewards Commands` },
 
-                        { name: "3. Tourneys Info And Rules", value: `Gives Info and rules for Tourneys ` },
-                        { name: "4. Deadline Commands ", value: `Gives Info for Deadline Commands` },
-                        { name: "5. Server Competitions", value: `Gives Info For Our Server Competetions` },
-                        { name: "6. Server Roles", value: `Gives Info for For diffrents roles on the server :)` }
+                        { name: "3. Tourney Related Commands 1", value: `Gives Info,rules and link commands for Tourneys ` },
+                        { name: "4. Tourney Related Commands 2", value: `Gives Info,rules and links for Tourneys ` },
+                        { name: "5. Deadline Commands ", value: `Gives Info for Deadline Commands` },
+                        { name: "6. Server Competitions", value: `Gives Info For Our Server Competetions` },
+                        { name: "7. Server Roles", value: `Gives Info for For diffrents roles on the server :)` }
 
 
 
@@ -412,18 +413,20 @@ client.on('message', async message => {
                 await msg.react('4️⃣')
                 await msg.react('5️⃣')
                 await msg.react('6️⃣')
+                await msg.react('7️⃣')
 
 
                 await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
 
-                    reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣' || reaction.emoji.name == '6️⃣' || reaction.emoji.name == '↩️'), { max: 1, time: 40000 })
+                    reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣' || reaction.emoji.name == '6️⃣' || reaction.emoji.name == '7️⃣'), { max: 1, time: 40000 })
                     .then(async collected => {
                         if (collected.first().emoji.name == '1️⃣') { return client.help.get('1').execute(message, args, Discord, msg) }
                         else if (collected.first().emoji.name == '2️⃣') { return client.help.get('2').execute(message, args, Discord, msg) }
                         else if (collected.first().emoji.name == '3️⃣') { return client.help.get('3').execute(message, args, Discord, msg) }
-                        else if (collected.first().emoji.name == '4️⃣') { return client.help.get('4').execute(message, args, Discord, msg) }
-                        else if (collected.first().emoji.name == '5️⃣') { return client.help.get('5').execute(message, args, Discord, msg) }
-                        else if (collected.first().emoji.name == '6️⃣') { return client.help.get('6').execute(message, args, Discord, msg) }
+                        else if (collected.first().emoji.name == '4️⃣') { return client.help.get('4-1').execute(message, args, Discord, msg) }
+                        else if (collected.first().emoji.name == '5️⃣') { return client.help.get('4').execute(message, args, Discord, msg) }
+                        else if (collected.first().emoji.name == '6️⃣') { return client.help.get('5').execute(message, args, Discord, msg) }
+                        else if (collected.first().emoji.name == '7️⃣') { return client.help.get('6').execute(message, args, Discord, msg) }
 
                         else return message.channel.send('Time Up');
 
