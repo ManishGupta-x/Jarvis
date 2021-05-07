@@ -131,7 +131,7 @@ client.on('message', async message => {
                 break;
 
             case 'pl_table': 
-                    message.channel.send("https://www.toornament.com/en_US/tournaments/4587785852383068160/information");
+                    message.channel.send("https://www.toornament.com/en_US/tournaments/4587785852383068160/stages/4587840047796125696/groups/4587840048567877657/");
                 break;;
             case 'welcome': if (message.guild.id == '554275795280068619') { client.commands.get('welcome').execute(message, args, Discord); }
 
