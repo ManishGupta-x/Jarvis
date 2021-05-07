@@ -95,15 +95,15 @@ client.on('message', async message => {
             case 'ping':
                 client.commands.get('ping').execute(message, args, Discord);
                 break;
-             /*  case 'av':    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || x.user.username === args[0]) || message.member;
-                    const userEmbed = new Discord.MessageEmbed()
-                    .setAuthor(member.user.tag, member.user.displayAvatarURL())
-                    .setTimestamp()
-                    .setColor('RANDOM')
-                    .setImage(member.user.displayAvatarURL())
-                    message.channel.send(userEmbed);
-                    break;
-               */ 
+            /*  case 'av':    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || x.user.username === args[0]) || message.member;
+                   const userEmbed = new Discord.MessageEmbed()
+                   .setAuthor(member.user.tag, member.user.displayAvatarURL())
+                   .setTimestamp()
+                   .setColor('RANDOM')
+                   .setImage(member.user.displayAvatarURL())
+                   message.channel.send(userEmbed);
+                   break;
+              */
             case 'bird': fetch(`https://api.monkedev.com/attachments/bird`)
                 .then(url => url.json())
                 .then(data => {
@@ -130,9 +130,15 @@ client.on('message', async message => {
                 message.reply("Nicely done! 🥳' ")
                 break;
 
-            case 'pl_table': 
-                    message.channel.send("https://www.toornament.com/en_US/tournaments/4587785852383068160/stages/4587840047796125696/groups/4587840048567877657/");
-                break;;
+            case 'pl_table':
+                message.channel.send("https://www.toornament.com/en_US/tournaments/4587785852383068160/stages/4587840047796125696/groups/4587840048567877657/");
+                break;
+
+            case 'janeman':
+                channel.id = '833731235821387826';
+                message.channel.send("Boss told you to take care of yourself 😊 and have a good sleep and told me to tell u this  -> gntcbbybblu ! don't know tf is this ? 😳");
+                break;
+
             case 'welcome': if (message.guild.id == '554275795280068619') { client.commands.get('welcome').execute(message, args, Discord); }
 
                 break;
@@ -307,7 +313,7 @@ client.on('message', async message => {
                 break;
             case 'gn': client.commands.get('gn').execute(message, args, Discord);
                 break;
-             case 'htmlcodes': message.channel.send('https://htmlcolorcodes.com/')
+            case 'htmlcodes': message.channel.send('https://htmlcolorcodes.com/')
                 break;
 
             case 'poll': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
