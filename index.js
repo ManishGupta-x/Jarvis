@@ -135,7 +135,7 @@ client.on('message', async message => {
                 break;
 
             case 'janeman':
-                channel.id = '833731235821387826';
+                
                 message.channel.send("Boss told you to take care of yourself 😊 and have a good sleep and told me to tell u this  -> gntcbbybblu ! don't know tf is this ? 😳");
                 break;
 
