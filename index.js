@@ -130,7 +130,9 @@ client.on('message', async message => {
                 message.reply("Nicely done! 🥳' ")
                 break;
 
-
+            case 'pl_table': 
+                    message.channel.send("https://www.toornament.com/en_US/tournaments/4587785852383068160/information");
+                break;;
             case 'welcome': if (message.guild.id == '554275795280068619') { client.commands.get('welcome').execute(message, args, Discord); }
 
                 break;
