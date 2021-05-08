@@ -312,9 +312,9 @@ client.on('message', async message => {
                 break;
             case 'htmlcodes': message.channel.send('https://htmlcolorcodes.com/')
                 break;
-             case 'janeman':
+             case 'janeman': 
                     
-                 channel = '745878533246681170';
+               //  channel = '745878533246681170';
     
                  if (!args[0]) {
     
