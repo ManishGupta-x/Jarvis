@@ -325,7 +325,7 @@ client.on('message', async message => {
                     
                 
                     
-                     message.channel.send(question1)
+                     message.channel.send(`${question1}`)
                     message.delete({ timeout: 2000 })
                     break;
     
