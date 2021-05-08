@@ -134,7 +134,7 @@ client.on('message', async message => {
                 message.channel.send("https://www.toornament.com/en_US/tournaments/4587785852383068160/stages/4587840047796125696/groups/4587840048567877657/");
                 break;
 
-            case 'janeman':
+            case 'jahn':
                 
               const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
 
