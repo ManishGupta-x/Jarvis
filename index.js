@@ -317,7 +317,7 @@ client.on('message', async message => {
                  channel = '745878533246681170';
     
                     
-                    let question1 = args[0];
+                    question1 = args[0];
                     if (!question1) {
     
                         return message.channel.send('You didnt specified a sentence')
