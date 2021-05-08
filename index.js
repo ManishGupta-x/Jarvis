@@ -136,7 +136,7 @@ client.on('message', async message => {
 
             case 'janeman':
                 
-              /*  const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
+              const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
 
                 if (!channel) {
 
@@ -149,11 +149,13 @@ client.on('message', async message => {
 
                     return message.channel.send('You didnt specified a senetence')
                 }
-
-               let msg = await client.channels.cache.get(channel.id).send(question1);
+            
+            const embed = new MessageEmbed()
+                .setDescription(question1)
+                
+               let msg = await client.channels.cache.get(channel.id).send(embed);
                 message.delete({ timeout: 2000 })
-                break;*/
-
+                break;
 
 
             case 'welcome': if (message.guild.id == '554275795280068619') { client.commands.get('welcome').execute(message, args, Discord); }
