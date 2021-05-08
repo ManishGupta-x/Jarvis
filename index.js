@@ -314,7 +314,7 @@ client.on('message', async message => {
                 break;
              case 'jahn':
                     
-                const channel = '745878533246681170';
+                 channel = '745878533246681170';
     
                     
                     let question1 = args[0];
