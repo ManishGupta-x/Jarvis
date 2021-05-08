@@ -134,30 +134,7 @@ client.on('message', async message => {
                 message.channel.send("https://www.toornament.com/en_US/tournaments/4587785852383068160/stages/4587840047796125696/groups/4587840048567877657/");
                 break;
 
-            case 'jahn': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
-            return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 })).catch(console.error);
-                
-              const channel2 = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
-
-                if (!channel2) {
-
-
-                    return message.channel.send('You did not mention / give the id of the channel you wanted to create the poll in!')
-                }
-
-                let question1 = message.content.slice(prefix.length + 5 + channel2.id.length + 3)
-                if (!question1) {
-
-                    return message.channel.send('You didnt specified a senetence')
-                }
             
-            const embed = new MessageEmbed()
-                .setDescription(question1)
-                
-               let msg = await client.channels.cache.get(channel2.id).send(embed);
-                message.delete({ timeout: 2000 })
-                break;
-
 
             case 'welcome': if (message.guild.id == '554275795280068619') { client.commands.get('welcome').execute(message, args, Discord); }
 
@@ -335,7 +312,30 @@ client.on('message', async message => {
                 break;
             case 'htmlcodes': message.channel.send('https://htmlcolorcodes.com/')
                 break;
-
+             case 'jahn': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
+                return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 })).catch(console.error);
+                    
+                  const channel2 = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
+    
+                    if (!channel2) {
+    
+    
+                        return message.channel.send('You did not mention / give the id of the channel you wanted to create the poll in!')
+                    }
+    
+                    let question1 = message.content.slice(prefix.length + 5 + channel2.id.length + 3)
+                    if (!question1) {
+    
+                        return message.channel.send('You didnt specified a senetence')
+                    }
+                
+                const embed = new MessageEmbed()
+                    .setDescription(question1)
+                    
+                   let msg = client.channels.cache.get(channel2.id).send(embed);
+                    message.delete({ timeout: 2000 })
+                    break;
+    
             case 'poll': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
                 return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 })).catch(console.error);
                 const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
