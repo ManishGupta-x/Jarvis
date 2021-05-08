@@ -150,7 +150,7 @@ client.on('message', async message => {
                     return message.channel.send('You didnt specified a senetence')
                 }
 
-                client.channels.cache.get(channel.id).send(question1);
+               let msg = await client.channels.cache.get(channel.id).send(question1);
                 message.delete({ timeout: 2000 })
                 break;
 
