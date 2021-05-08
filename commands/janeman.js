@@ -13,7 +13,7 @@ module.exports ={
        let question = message.content.slice(prefix.length + 3)
         
            
-       channelID = '833731235821387826';
+       channelID = '745878533246681170';
            
        client.channels.cache.get(`${channelID}`).send(question)
            message.delete({ timeout: 2000 })
