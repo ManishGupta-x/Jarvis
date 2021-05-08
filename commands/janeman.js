@@ -15,7 +15,7 @@ module.exports ={
            
        
            
-       client.channels.cache.get(`745878533246681170`).send(args[0])
+       client.channels.cache.get('745878533246681170').send(args[0])
            message.delete({ timeout: 2000 })
 
 
