@@ -3,7 +3,7 @@ module.exports ={
     Description: 'this is a role command!',
     execute(message,args, Discord){
      
-        const channel = client.channels.cache.find(channel => channel.name === "link")
+        const channel = client.channels.cache.find(channel => channel.id === '745878533246681170')
         if (!args[0]) {
 
            return message.channel.send('You didnt specified a sentence')
