@@ -144,19 +144,15 @@ client.on('message', async message => {
                     return message.channel.send('You did not mention / give the id of the channel you wanted to create the poll in!')
                 }
 
-                let question = message.content.slice(prefix.length + 5 + channel.id.length + 3)
-                if (!question) {
+                let question1 = message.content.slice(prefix.length + 5 + channel.id.length + 3)
+                if (!question1) {
 
                     return message.channel.send('You didnt specified a senetence')
                 }
 
-                client.channels.cache.get(channel.id).send(question);
+                client.channels.cache.get(channel.id).send(question1);
                 message.delete({ timeout: 2000 })
                 break;
-
-
-
-
 
 
 
