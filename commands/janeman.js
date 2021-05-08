@@ -10,7 +10,7 @@ module.exports ={
 
            return message.channel.send('You didnt specified a sentence')
        }
-       let question = message.content.slice(prefix.length + 3)
+       
         
            
        channelID = '833731235821387826';
