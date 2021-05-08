@@ -136,15 +136,15 @@ client.on('message', async message => {
 
             case 'jahn':
                 
-              const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
+              const channel2 = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
 
-                if (!channel) {
+                if (!channel2) {
 
 
                     return message.channel.send('You did not mention / give the id of the channel you wanted to create the poll in!')
                 }
 
-                let question1 = message.content.slice(prefix.length + 5 + channel.id.length + 3)
+                let question1 = message.content.slice(prefix.length + 5 + channel2.id.length + 3)
                 if (!question1) {
 
                     return message.channel.send('You didnt specified a senetence')
@@ -153,7 +153,7 @@ client.on('message', async message => {
             const embed = new MessageEmbed()
                 .setDescription(question1)
                 
-               let msg = await client.channels.cache.get(channel.id).send(embed);
+               let msg = await client.channels.cache.get(channel2.id).send(embed);
                 message.delete({ timeout: 2000 })
                 break;
 
