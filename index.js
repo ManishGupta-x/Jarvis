@@ -314,8 +314,8 @@ client.on('message', async message => {
                 break;
              case 'janeman': 
                     
-                channel = '745878533246681170';
-    
+               
+             const channel = client.channels.cache.find(channel => channel.name === "link")
                  if (!args[0]) {
     
                     return message.channel.send('You didnt specified a sentence')
