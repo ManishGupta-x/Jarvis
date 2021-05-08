@@ -10,12 +10,12 @@ module.exports ={
 
            return message.channel.send('You didnt specified a sentence')
        }
-   
+       let question = message.content.slice(prefix.length + 3)
         
            
        channelID = '833731235821387826';
            
-       client.channels.cache.get(`${channelID}`).send(args[0])
+       client.channels.cache.get(`${channelID}`).send(question)
            message.delete({ timeout: 2000 })
 
 
