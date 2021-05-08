@@ -312,7 +312,7 @@ client.on('message', async message => {
                 break;
             case 'htmlcodes': message.channel.send('https://htmlcolorcodes.com/')
                 break;
-             case 'jahn':/* if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
+             case 'jahn': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
                 return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 })).catch(console.error);
                     
                   const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
@@ -329,12 +329,17 @@ client.on('message', async message => {
                         return message.channel.send('You didnt specified a senetence')
                     }
                 
-                const embed = new MessageEmbed()
+                  const embed1 = new MessageEmbed()
+                    .setColor('RANDOM')
+                    .setTitle("Who will win 🤔")
                     .setDescription(question1)
-                    
-                   let msg = client.channels.cache.get(channel.id).send(embed)
-                    message.delete({ timeout: 2000 })
-                    break;*/
+                    .setFooter(`Mark The correct Option Below 🤩`)
+                let msg = await client.channels.cache.get(channel.id).send(embed1)
+                await msg.react('1️⃣')
+                await msg.react('2️⃣')
+                await msg.react('🤝')
+                message.delete({ timeout: 2000 })
+                break;
     
             case 'poll': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
                 return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 })).catch(console.error);
