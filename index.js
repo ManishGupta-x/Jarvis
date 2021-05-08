@@ -313,20 +313,9 @@ client.on('message', async message => {
             case 'htmlcodes': message.channel.send('https://htmlcolorcodes.com/')
                 break;
              case 'janeman': 
-                    
+             client.commands.get('janeman').execute(message, args, Discord);
                
-             const channel = client.channels.cache.find(channel => channel.name === "link")
-                 if (!args[0]) {
-    
-                    return message.channel.send('You didnt specified a sentence')
-                }
-            
-                 
-                    
-                
-                    
-                     message.channel.send(args[0]);
-                    message.delete({ timeout: 2000 })
+           
                     break;
     
             case 'poll': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
