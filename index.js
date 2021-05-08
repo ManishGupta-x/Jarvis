@@ -321,11 +321,11 @@ client.on('message', async message => {
                     return message.channel.send('You didnt specified a sentence')
                 }
             
-                   else{ question1 = args[0];}
+                 
                     
                 
                     
-                     message.channel.send(`${question1}`)
+                     message.channel.send(args[0]);
                     message.delete({ timeout: 2000 })
                     break;
     
