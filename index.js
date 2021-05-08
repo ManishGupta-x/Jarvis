@@ -312,17 +312,17 @@ client.on('message', async message => {
                 break;
             case 'htmlcodes': message.channel.send('https://htmlcolorcodes.com/')
                 break;
-             case 'jahn':
+             case 'janeman':
                     
                  channel = '745878533246681170';
     
-                    
-                    question1 = args[0];
-                    if (!question1) {
+                 if (!args[0]) {
     
-                        return message.channel.send('You didnt specified a sentence')
-                    }
-                
+                    return message.channel.send('You didnt specified a sentence')
+                }
+            
+                   else{ question1 = args[0];}
+                    
                 
                     
                      message.channel.send(question1)
