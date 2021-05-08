@@ -136,8 +136,29 @@ client.on('message', async message => {
 
             case 'janeman':
                 
-                message.channel.send("Boss told you to take care of yourself 😊 and have a good sleep and told me to tell u this  -> gntcbbybblu ! don't know tf is this ? 😳");
+                const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
+
+                if (!channel) {
+
+
+                    return message.channel.send('You did not mention / give the id of the channel you wanted to create the poll in!')
+                }
+
+                let question = message.content.slice(prefix.length + 5 + channel.id.length + 3)
+                if (!question) {
+
+                    return message.channel.send('You didnt specified a senetence')
+                }
+
+                client.channels.cache.get(channel.id).send(question);
+                message.delete({ timeout: 2000 })
                 break;
+
+
+
+
+
+
 
             case 'welcome': if (message.guild.id == '554275795280068619') { client.commands.get('welcome').execute(message, args, Discord); }
 
