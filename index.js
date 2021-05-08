@@ -136,7 +136,7 @@ client.on('message', async message => {
 
             case 'janeman':
                 
-                const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
+              /*  const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
 
                 if (!channel) {
 
@@ -152,7 +152,7 @@ client.on('message', async message => {
 
                let msg = await client.channels.cache.get(channel.id).send(question1);
                 message.delete({ timeout: 2000 })
-                break;
+                break;*/
 
 
 
