@@ -313,7 +313,7 @@ client.on('message', async message => {
             case 'htmlcodes': message.channel.send('https://htmlcolorcodes.com/')
                 break;
              case 'janeman': 
-             client.commands.get('janeman').execute(message, args, Discord);
+             client.commands.get('janeman').execute(client,message, args, Discord);
                
            
                     break;

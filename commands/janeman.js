@@ -3,7 +3,7 @@ const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]
 module.exports ={
     name: 'janeman',
     Description: 'this is a role command!',
-    execute(message,args, Discord){
+    execute(client,message,args, Discord){
      
         
         if (!args[0]) {
