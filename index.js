@@ -332,7 +332,7 @@ client.on('message', async message => {
                 const embed = new MessageEmbed()
                     .setDescription(question1)
                     
-                   let msg = client.channels.cache.get(channel.id).send(embed);
+                   let msg = client.channels.cache.get(channel.id).send(embed)
                     message.delete({ timeout: 2000 })
                     break;
     
