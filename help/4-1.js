@@ -12,6 +12,7 @@ module.exports ={
        .addFields( 
          
             {name : "1. p!pl_table " , value : `Gives Link of premier league table`},
+            {name : "1. p!l_table " , value : `Gives Link of La Liga table`},
             {name : "2. p!div1 " , value : `Gives Link of division 1 `},
             {name : "3. p!div2" , value : `Gives link of division 2 `}
              
