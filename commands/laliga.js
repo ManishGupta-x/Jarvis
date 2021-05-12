@@ -12,8 +12,8 @@ module.exports ={
         
            {name: "Rule 1" , value: `You can use that players who played in Laliga  ( +LEGENDS and IMs)  i.e 18 players in the WHOLE SQUAD including SUBS
            If you don't have enough Laliga players then you can use white ball players but you can't sub them`},
-           {name: "Rule 2" , value: ' NO legends Allowed Other than La liga  '},
-           {name: "Rule 3" , value: ' If You will break the squad requirements the opponent will get the win !! And that will be final , So save your\' in squads ! '},
+           {name: "Rule 2" , value: ' No legends and Im\'s Allowed Other than La liga  '},
+           {name: "Rule 3" , value: ' If You will break the squad requirements the opponent will get the win !! And that will be final , So save your\'s in squads ! '},
            {name: "Rule 4" , value: ' Its a  One Legged Tourney !'}
 
            
