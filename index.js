@@ -364,8 +364,8 @@ client.on('message', async message => {
                             name: "1. Group 1 Link ", value: 'Table and Matchday Link for Group 1'
                             },
                             { name: "2. Group 2 Link", value: 'Table and Matchday Link for Group 2' },
-                            { name: "2. Group 3 Link", value: 'Table and Matchday Link for Group 3' },
-                            { name: "2. Group 4 Link", value: 'Table and Matchday Link for Group 4' },
+                            { name: "3. Group 3 Link", value: 'Table and Matchday Link for Group 3' },
+                            { name: "4. Group 4 Link", value: 'Table and Matchday Link for Group 4' },
     
                         )
                     let msg = await message.channel.send(newEmbed)
