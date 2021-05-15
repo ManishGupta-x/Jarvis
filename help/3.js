@@ -12,14 +12,14 @@ module.exports ={
        .addFields( 
          
             {name : "1. p!premleague " , value : `Gives Info for RULES For Premier League`},
-            {name : "1. p!laliga " , value : `Gives Info for RULES For La Liga`},
-            {name : "2. p!freakcup " , value : `Gives Info for RULES of Freak Cup `},
-            {name : "3. p!freakcup-qualifications" , value : `Gives Info for Qualification Rules for Freak cup `},
-            {name : "4. p!divisions" , value : `Gives  Divisions Info or RUles`},
+            {name : "2. p!laliga " , value : `Gives Info for RULES For La Liga`},
+            {name : "3. p!freakcup " , value : `Gives Info for RULES of Freak Cup `},
+            {name : "4. p!freakcup-qualifications" , value : `Gives Info for Qualification Rules for Freak cup `},
+            {name : "5. p!divisions" , value : `Gives  Divisions Info or RUles`},
 
-            {name : "5. p!main-squadko" , value : `Gives Rules for Main Squad KO  `},
+            {name : "6. p!main-squadko" , value : `Gives Rules for Main Squad KO  `},
             
-            {name : "6. p!worldcup " , value : `Gives Info for RULES of world Cup `},
+            {name : "7. p!worldcup " , value : `Gives Info for RULES of world Cup `},
             
              
           
