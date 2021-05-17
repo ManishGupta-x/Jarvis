@@ -368,6 +368,7 @@ client.on('message', async message => {
                             { name: "4. Group 4 Link", value: 'Table and Matchday Link for Group 4' },
     
                         )
+                        .setFooter("Gives 1 link at a time")
                     let msg = await message.channel.send(newEmbed)
                     await msg.react('1️⃣')
                     await msg.react('2️⃣')
