@@ -129,7 +129,9 @@ client.on('message', async message => {
                 message.channel.send('https://tenor.com/view/turn-off-shut-off-switch-off-kill-the-lights-lights-off-gif-12198682');
                 message.reply("Nicely done! 🥳' ")
                 break;
-
+                case 'gk11':
+                    message.channel.send("https://www.toornament.com/en_GB/tournaments/4633689801351979008/stages/4633708230049832960/");
+                    break;
             case 'pl_table':
                 message.channel.send("https://www.toornament.com/en_US/tournaments/4587785852383068160/stages/4587840047796125696/groups/4587840048567877657/");
                 break;
