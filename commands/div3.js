@@ -3,7 +3,7 @@ module.exports ={
     Description: 'Gives Rank for Divion 3',
     execute(message,args, Discord){
      
-       message.channel.send('https://ws.eniblo.com/qsbUjSWfngZBiK4ZfC/');
+       message.channel.send('No division found');
 
 
     }  
