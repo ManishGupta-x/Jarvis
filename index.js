@@ -381,10 +381,10 @@ client.on('message', async message => {
     
                         reaction.emoji.name == '2️⃣'|| reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 1, time: 40000 })
                         .then(async collected => {
-                            if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://organizer.toornament.com/tournaments/4613323097503203328/stages/4613331255382286336/groups/4613331256120483873/result') }
-                            else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://organizer.toornament.com/tournaments/4613323097503203328/stages/4613331255382286336/groups/4613331256120483900/result#structure') }
-                            else if (collected.first().emoji.name == '3️⃣') {return message.channel.send('https://organizer.toornament.com/tournaments/4613323097503203328/stages/4613331255382286336/groups/4613331256120483927/result#structure')   }
-                            else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('https://organizer.toornament.com/tournaments/4613323097503203328/stages/4613331255382286336/groups/4613331256120483954/result#structure')  }
+                            if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027471347712/#structure') }
+                            else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902192/#structure') }
+                            else if (collected.first().emoji.name == '3️⃣') {return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902240/#structure')   }
+                            else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902288/#structure')  }
     
     
                             else return message.channel.send('Time Up');
