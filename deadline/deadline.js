@@ -15,7 +15,7 @@ module.exports ={
 
             {name : "3. p!deadline-mainko" , value : `To Be Decided`},
             {name : "4. p!deadline-premleague" , value : `21st May, 2021 (Day 5-8)`},
-            {name : "5. p!deadline-ucl" , value : `24th May (Group stage)`},
+            {name : "5. p!deadline-ucl" , value : `23rd May (Group stage)`},
             {name : "6. p!deadline-worldcup" , value : `To Be Decided`},
             {name : "7. p!deadline-bbtourney" , value : `To Be Decided`}
              
