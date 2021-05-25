@@ -157,7 +157,7 @@ client.on('message', async message => {
                 
                 const help = new Discord.MessageEmbed()
                 .setColor('RANDOM')
-                .setAuthor('',client.user.displayAvatarURL())
+                .setAuthor('Jarvis',client.user.displayAvatarURL())
                 .setTitle('Remind Command')
                 .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/846735263345803284/636610343961500870-GettyImages-508896288.png')
                 .addFields(
