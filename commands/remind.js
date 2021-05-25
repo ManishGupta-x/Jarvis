@@ -9,7 +9,7 @@ module.exports ={
       let time = args[0];
 
       const noDurationEmbed = new Discord.MessageEmbed()
-      .setcolor('RANDOM')
+      .setColor('RANDOM')
       .setTitle('ERROR')
       .setDescription('Please mention Duration Of The Reminder after p!remind')
       .setFooter(client.user.username , client.user.displayAvatarURL() )
@@ -18,7 +18,7 @@ module.exports ={
       if(!time) return message.channel.send(noDurationEmbed);
 
       const noReminderEmbed = new Discord.MessageEmbed()
-      .setcolor('RANDOM')
+      .setColor('RANDOM')
       .setTitle('ERROR')
       .setDescription('PLease state the task syntax : p!remind 10s Task')
       .setFooter(client.user.username , client.user.displayAvatarURL() )
@@ -27,7 +27,7 @@ module.exports ={
       if(!reminder) return message.channel.send(noReminderEmbed);
 
       const ReminderEmbed = new Discord.MessageEmbed()
-      .setcolor('RANDOM')
+      .setColor('RANDOM')
       .setAuthor('Reminder set!', message.author.displayAvatarURL())
       
       .setDescription(`Succesfully set ${message.author.tag}'s reminder !`)
@@ -42,7 +42,7 @@ module.exports ={
           message.channel.send(`<@${message.author.id}> Reminder!`);
 
       const ReminderAlertEmbed = new Discord.MessageEmbed()
-      .setcolor('RANDOM')
+      .setColor('RANDOM')
       .setAuthor('Reminder here !', message.author.displayAvatarURL())
       .addField(`Reminder`, `${reminder}`)
       .setFooter(client.user.username , client.user.displayAvatarURL() )
