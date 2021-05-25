@@ -152,6 +152,25 @@ client.on('message', async message => {
              case 'remind': client.commands.get('remind').execute(client,message, args, Discord);
 
                 break;
+                
+                case 'helpremind': 
+                
+                const help = new Discord.MessageEmbed()
+                .setColor('RANDOM')
+                .setTitle('Remind Command')
+                .addFields(
+
+                    {
+                        name: "1. Syntax", value: 'p!remind [time] [task]'
+                    },
+                    { name: "2. How to write time ", value: 'Mention Time in either seconds or minutees or hours' },
+                    { name: "3.Examples ", value: ` p!remind 10s Test \n p!remind 1m PLay \n p!remind 1h Class` },
+
+                )
+                .setFooter(client.user.username , client.user.displayAvatarURL() )
+                .setTimestamp();
+          
+                break;
             case 'rules': if (message.guild.id == '554275795280068619') { client.commands.get('rules').execute(message, args, Discord); }
 
                 break;
@@ -551,7 +570,7 @@ client.on('message', async message => {
                     .addField('Joined the server At', `${joineddate} \n> ${joined} day(S) Ago`)
                     .addField("Status", status)
                     .addField('Roles', `<@&${member._roles.join('> <@&')}>`)
-
+                    .setFooter(client.user.username , client.user.displayAvatarURL() )   
                 message.channel.send(userEmbed);
                 break;
 

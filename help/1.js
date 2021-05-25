@@ -21,7 +21,7 @@ module.exports ={
             {name : "6. p!match  " , value : `To generate Results a Random Match `},
             {name : "7. p!info  " , value : `Gives User Info `},
             {name : "7. p!botinfo  " , value : `Gives BOT Info `},
-            {name : "8. p!ping" , value : `For Time Pass Lol! :) `}
+            {name : "8. p!remind" , value : `Syntax : p!remind [time] [task]`}
              
           
         
