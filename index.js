@@ -64,7 +64,7 @@ for (const file of idFiles) {
 
 client.once('ready', () => {
     console.log(' The Jarvis is online!');
-    client.user.setActivity('v1.0.1', { type: 'PLAYING' }).catch(console.error);
+    client.user.setActivity('v2.0.0', { type: 'PLAYING' }).catch(console.error);
 
 });
 module.exports.timedcheck = undefined;
@@ -147,6 +147,9 @@ client.on('message', async message => {
             case 'helpid': client.commands.get('helpid').execute(message, args, Discord);
                 break;
             case 'nta': client.commands.get('nta').execute(message, args, Discord);
+
+                break;
+             case 'remind': client.commands.get('remind').execute(client,message, args, Discord);
 
                 break;
             case 'rules': if (message.guild.id == '554275795280068619') { client.commands.get('rules').execute(message, args, Discord); }
