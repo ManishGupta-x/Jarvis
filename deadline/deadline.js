@@ -10,7 +10,7 @@ module.exports ={
        .setDescription('Deadline Commands')
        .addFields( 
             
-            {name : "1. p!deadline-freakcup" , value : `To Be Decided `},
+            {name : "1. p!deadline-freakcup" , value : `4th June , 2021 (R8) `},
             {name : "2. p!deadline-laliga" , value : `27th May ,2021 (Day 4-6)`},
 
             {name : "3. p!deadline-mainko" , value : `To Be Decided`},

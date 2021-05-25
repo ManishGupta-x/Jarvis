@@ -3,7 +3,7 @@ module.exports ={
     Description: 'shows deadline of Freak cup tourney',
     execute(message,args, Discord){
      
-       message.channel.send('To Be Decided');
+       message.channel.send('4th June , 2021 (R8)');
 
 
     }  
