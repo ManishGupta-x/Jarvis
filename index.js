@@ -169,6 +169,7 @@ client.on('message', async message => {
                 )
                 .setFooter(client.user.username , client.user.displayAvatarURL() )
                 .setTimestamp();
+                message.channel.send(help);
           
                 break;
             case 'rules': if (message.guild.id == '554275795280068619') { client.commands.get('rules').execute(message, args, Discord); }
