@@ -8,7 +8,7 @@ module.exports ={
     Description: 'this is a  meme command!',
     async execute(message,args, Discord){
       message.channel.send("Under Maintenance -_-")
-     /*   const embed = new Discord.MessageEmbed()
+        const embed = new Discord.MessageEmbed()
         got(`https://www.reddit.com/r/${rd}/random/.json`).then(response => {
             let content = JSON.parse(response.body);
             let permalink = content[0].data.children[0].data.permalink;
@@ -27,5 +27,5 @@ module.exports ={
         
 
     } )
-  */  }
+    }
 }
