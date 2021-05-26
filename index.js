@@ -1,6 +1,10 @@
 const Discord = require('discord.js');
 const moment = require('moment');
 const prefix = 'p!';
+const ttt = require("discord.js-tictactoe")
+
+const embed_color = "#ff00aa"
+const start_cmd = "ttt"
 const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 const fetch = require("node-fetch").default;
@@ -129,16 +133,16 @@ client.on('message', async message => {
                 message.channel.send('https://tenor.com/view/turn-off-shut-off-switch-off-kill-the-lights-lights-off-gif-12198682');
                 message.reply("Nicely done! 🥳' ")
                 break;
-                case 'gk11':
-                    message.channel.send("https://www.toornament.com/en_GB/tournaments/4633689801351979008/stages/4633708230049832960/");
-                    break;
+            case 'gk11':
+                message.channel.send("https://www.toornament.com/en_GB/tournaments/4633689801351979008/stages/4633708230049832960/");
+                break;
             case 'pl_table':
                 message.channel.send("https://www.toornament.com/en_US/tournaments/4587785852383068160/stages/4587840047796125696/groups/4587840048567877657/");
                 break;
             case 'll_table':
-                    message.channel.send("https://www.toornament.com/en_GB/tournaments/4604652790765264896/stages/4604704419425280000/groups/4604704420129923113/");
-                    break;
-            
+                message.channel.send("https://www.toornament.com/en_GB/tournaments/4604652790765264896/stages/4604704419425280000/groups/4604704420129923113/");
+                break;
+
 
             case 'welcome': if (message.guild.id == '554275795280068619') { client.commands.get('welcome').execute(message, args, Discord); }
 
@@ -149,30 +153,33 @@ client.on('message', async message => {
             case 'nta': client.commands.get('nta').execute(message, args, Discord);
 
                 break;
-             case 'remind': client.commands.get('remind').execute(client,message, args, Discord);
+            case 'remind': client.commands.get('remind').execute(client, message, args, Discord);
 
                 break;
-                
-                case 'helpremind': 
-                
+            case 'ttt': ttt.run(client, prefix, embed_color, start_cmd);
+
+                break;
+
+            case 'helpremind':
+
                 const help = new Discord.MessageEmbed()
-                .setColor('RANDOM')
-                .setAuthor('Jarvis',client.user.displayAvatarURL())
-                .setTitle('Remind Command')
-                .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/846735263345803284/636610343961500870-GettyImages-508896288.png')
-                .addFields(
+                    .setColor('RANDOM')
+                    .setAuthor('Jarvis', client.user.displayAvatarURL())
+                    .setTitle('Remind Command')
+                    .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/846735263345803284/636610343961500870-GettyImages-508896288.png')
+                    .addFields(
 
-                    {
-                        name: "1. Syntax", value: 'p!remind [time] [task]'
-                    },
-                    { name: "2. How to write time ", value: 'Mention Time in either seconds or minutees or hours' },
-                    { name: "3.Examples ", value: ` p!remind 10s Test \n p!remind 1m PLay \n p!remind 1h Class` },
+                        {
+                            name: "1. Syntax", value: 'p!remind [time] [task]'
+                        },
+                        { name: "2. How to write time ", value: 'Mention Time in either seconds or minutees or hours' },
+                        { name: "3.Examples ", value: ` p!remind 10s Test \n p!remind 1m PLay \n p!remind 1h Class` },
 
-                )
-                .setFooter(client.user.username , client.user.displayAvatarURL() )
-                .setTimestamp();
+                    )
+                    .setFooter(client.user.username, client.user.displayAvatarURL())
+                    .setTimestamp();
                 message.channel.send(help);
-          
+
                 break;
             case 'rules': if (message.guild.id == '554275795280068619') { client.commands.get('rules').execute(message, args, Discord); }
 
@@ -225,7 +232,7 @@ client.on('message', async message => {
                 break;
 
             case 'youtube': if (message.guild.id == '554275795280068619') { client.commands.get('youtube').execute(message, args, Discord); }
- 
+
                 break;
             case 'stumbleguys': if (message.guild.id == '554275795280068619') { client.commands.get('stumbleguys').execute(message, args, Discord); }
 
@@ -341,12 +348,12 @@ client.on('message', async message => {
                 break;
             case 'htmlcodes': message.channel.send('https://htmlcolorcodes.com/')
                 break;
-             case 'janeman': 
-             client.commands.get('janeman').execute(client,message, args, Discord);
-               
-           
-                    break;
-    
+            case 'janeman':
+                client.commands.get('janeman').execute(client, message, args, Discord);
+
+
+                break;
+
             case 'poll': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
                 return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 })).catch(console.error);
                 const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
@@ -378,50 +385,50 @@ client.on('message', async message => {
                 break;
             case 'roleinfo': client.help.get('6').execute(message, args, Discord);
                 break;
-                case 'ucl_table': {
+            case 'ucl_table': {
 
-                    const newEmbed = new Discord.MessageEmbed()
-                        .setColor('RANDOM')
-                        .setTitle('UCL Group Links')
-                        .setThumbnail('https://media.discordapp.net/attachments/610950416498425886/840830686167433216/champions-league-trophy.png')
-                        .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
-                        .addFields(
-    
-                            {
+                const newEmbed = new Discord.MessageEmbed()
+                    .setColor('RANDOM')
+                    .setTitle('UCL Group Links')
+                    .setThumbnail('https://media.discordapp.net/attachments/610950416498425886/840830686167433216/champions-league-trophy.png')
+                    .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
+                    .addFields(
+
+                        {
                             name: "1. Group 1 Link ", value: 'Table and Matchday Link for Group 1'
-                            },
-                            { name: "2. Group 2 Link", value: 'Table and Matchday Link for Group 2' },
-                            { name: "3. Group 3 Link", value: 'Table and Matchday Link for Group 3' },
-                            { name: "4. Group 4 Link", value: 'Table and Matchday Link for Group 4' },
-    
-                        )
-                        .setFooter("Gives 1 link at a time")
-                    let msg = await message.channel.send(newEmbed)
-                    await msg.react('1️⃣')
-                    await msg.react('2️⃣')
-                    await msg.react('3️⃣')
-                    await msg.react('4️⃣')
+                        },
+                        { name: "2. Group 2 Link", value: 'Table and Matchday Link for Group 2' },
+                        { name: "3. Group 3 Link", value: 'Table and Matchday Link for Group 3' },
+                        { name: "4. Group 4 Link", value: 'Table and Matchday Link for Group 4' },
 
-                    await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
-    
-                        reaction.emoji.name == '2️⃣'|| reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 1, time: 40000 })
-                        .then(async collected => {
-                            if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027471347712/#structure') }
-                            else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902192/#structure') }
-                            else if (collected.first().emoji.name == '3️⃣') {return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902240/#structure')   }
-                            else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902288/#structure')  }
-    
-    
-                            else return message.channel.send('Time Up');
-    
-    
-    
-    
-    
-                        }).catch(async () => { return message.channel.send("error") });
-                    break;
-    
-                }
+                    )
+                    .setFooter("Gives 1 link at a time")
+                let msg = await message.channel.send(newEmbed)
+                await msg.react('1️⃣')
+                await msg.react('2️⃣')
+                await msg.react('3️⃣')
+                await msg.react('4️⃣')
+
+                await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
+
+                    reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 1, time: 40000 })
+                    .then(async collected => {
+                        if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027471347712/#structure') }
+                        else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902192/#structure') }
+                        else if (collected.first().emoji.name == '3️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902240/#structure') }
+                        else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902288/#structure') }
+
+
+                        else return message.channel.send('Time Up');
+
+
+
+
+
+                    }).catch(async () => { return message.channel.send("error") });
+                break;
+
+            }
             case 'futhead': {
 
                 const newEmbed = new Discord.MessageEmbed()
@@ -439,14 +446,14 @@ client.on('message', async message => {
                 let msg = await message.channel.send(newEmbed)
                 await msg.react('1️⃣')
                 await msg.react('2️⃣')
-                
+
                 await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
 
                     reaction.emoji.name == '2️⃣'), { max: 1, time: 40000 })
                     .then(async collected => {
                         if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.futhead.com/21/players/?bin_platform=ps') }
                         else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.futhead.com/compare/') }
-                
+
 
                         else return message.channel.send('Time Up');
 
@@ -573,7 +580,7 @@ client.on('message', async message => {
                     .addField('Joined the server At', `${joineddate} \n> ${joined} day(S) Ago`)
                     .addField("Status", status)
                     .addField('Roles', `<@&${member._roles.join('> <@&')}>`)
-                    .setFooter(client.user.username , client.user.displayAvatarURL() )   
+                    .setFooter(client.user.username, client.user.displayAvatarURL())
                 message.channel.send(userEmbed);
                 break;
 
