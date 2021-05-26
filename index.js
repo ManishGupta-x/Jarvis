@@ -1,10 +1,6 @@
 const Discord = require('discord.js');
 const moment = require('moment');
 const prefix = 'p!';
-//const ttt = require("discord.js-tictactoe")
-
-//const embed_color = "#ff00aa"
-//const start_cmd = "ttt"
 const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 const fetch = require("node-fetch").default;
