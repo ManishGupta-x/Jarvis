@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 const moment = require('moment');
 const prefix = 'p!';
-const ttt = require("discord.js-tictactoe")
+//const ttt = require("discord.js-tictactoe")
 
-const embed_color = "#ff00aa"
-const start_cmd = "ttt"
+//const embed_color = "#ff00aa"
+//const start_cmd = "ttt"
 const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 const fetch = require("node-fetch").default;
@@ -156,9 +156,9 @@ client.on('message', async message => {
             case 'remind': client.commands.get('remind').execute(client, message, args, Discord);
 
                 break;
-            case 'ttt': ttt.run(client, prefix, embed_color, start_cmd);
+           // case 'ttt': ttt.run(client, prefix, embed_color, start_cmd);
 
-                break;
+             //   break;
 
             case 'helpremind':
 
