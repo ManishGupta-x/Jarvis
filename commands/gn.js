@@ -3,7 +3,7 @@ module.exports ={
     Description: 'this is a role command!',
     execute(message,args, Discord){
      
-       message.channel.send('Very Good Night Boss!');
+       message.channel.send('Very Good Night Janeman <3');
 
 
     }  

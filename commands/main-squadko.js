@@ -1,7 +1,7 @@
 module.exports ={
     name: 'main-squadko',
     Description: 'Gives Main Squad KO Info !',
-    execute(client,message,args,Discord){
+    execute(message,args,Discord){
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#00fffa')
