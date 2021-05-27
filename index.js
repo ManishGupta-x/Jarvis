@@ -328,7 +328,7 @@ client.on('message', async message => {
                 client.commands.get('kick').execute(message, args, Discord);
                 break;
 
-            case 'gn': message.channel.send("Nasha utar gya bhai ab :)")//client.commands.get('gn').execute(message, args, Discord);
+            case 'gn': client.commands.get('gn').execute(message, args, Discord);
                 break;
             case 'mute': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('764536962156593162') && !message.member.roles.cache.has('610377914109788180'))
                 return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));
