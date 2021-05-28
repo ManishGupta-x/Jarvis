@@ -10,7 +10,7 @@ module.exports ={
        .setDescription(' RULES')
        .addFields(
         
-           {name: "Rule 1" , value: '  9 Players Of the SAME NATIONAL TEAM Must be On the ground for 90 mins. [ Doesn\'t have to be the same 9 players , can sub however you want, just keep 9 NT players ALWAYS]'},
+           {name: "Rule 1" , value: '  11 Players Of the SAME NATIONAL TEAM Must be On the ground for 90 mins. [ Doesn\'t have to be the same 11 players , can sub however you want, just keep 11 NT players ALWAYS]'},
            {name: "Rule 2" , value: '  Only Legends and IM\'s who played for that national team are allowed [NO other legends are allowed]'},  
            {name: "Rule 3" , value: '  2 encounters with each opponent in group stage'},
            {name: "Rule 4" , value: ' Seeded quarter finals (Top 2 from each group)'},
