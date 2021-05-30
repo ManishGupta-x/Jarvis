@@ -11,8 +11,7 @@ module.exports ={
         .setColor('RANDOM')
         .setImage(member.user.displayAvatarURL())
         message.channel.send(userEmbed);
-        break;
-
+        
 
     }  
 }
