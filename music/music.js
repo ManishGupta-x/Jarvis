@@ -11,7 +11,7 @@ module.exports ={
        .setTitle('Command Menu Music')
        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609773754515516/wp4815475.png')
-       
+       .setTimestamp()
        .addFields( 
             
             {name : "1. p!play [song name] " , value : `Plays the song mentioned`},
@@ -26,7 +26,7 @@ module.exports ={
         
         
            )
-           .setFooter('Jarvis', client.user.displayAvatarURL())
+           .setFooter(client.user.username , client.user.displayAvatarURL() )
           .setImage('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png');
          
            message.channel.send(newEmbed1)      
