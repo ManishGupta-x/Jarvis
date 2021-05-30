@@ -29,7 +29,7 @@ client.distube
     .setColor('#F0074F')
     .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
     .setTitle('Added to Queue')
-    .setDescription(`${song.name}`,`${song.formattedDuration}`)
+    .setDescription(`${song.name}`,`•  ${song.formattedDuration}`)
     .setFooter(`Requested by: ${song.user}`)
     .setTimestamp();
 
