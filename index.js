@@ -15,6 +15,7 @@ client.distube
     .on("playSong", (message, queue, song) => {
         const playsong = new Discord.MessageEmbed()
             .setColor('#F0074F')
+            .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
             .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
             .setTitle(`Now Playing` )
             .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\` `)
@@ -27,6 +28,7 @@ client.distube
     .on("addSong", (message, queue, song) =>{ 
         const addsong = new Discord.MessageEmbed()
     .setColor('#F0074F')
+    .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
     .setTitle(`Added to Queue`)
     .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
     .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\``)
