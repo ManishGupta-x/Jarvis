@@ -15,10 +15,11 @@ client.distube
     .on("playSong", (message, queue, song) => {
         const playsong = new Discord.MessageEmbed()
             .setColor('#F0074F')
+            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
             .setTitle('Playing')
             .setDescription(`${song.name}`)
-            .addField(`${song.formattedDuration}`, `Requested by: ${song.user}`)
-            .setFooter(client.user.username, client.user.displayAvatarURL())
+            
+            .setFooter(`Requested by: ${song.user}`,`${song.formattedDuration}` )
             .setTimestamp();
 
         message.channel.send(playsong)
@@ -26,10 +27,11 @@ client.distube
     .on("addSong", (message, queue, song) =>{ 
         const addsong = new Discord.MessageEmbed()
     .setColor('#F0074F')
+    .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
     .setTitle('Added to Queue')
     .setDescription(`${song.name}`)
-    .addField(`${song.formattedDuration}`, `Requested by: ${song.user}`)
-    .setFooter(client.user.username, client.user.displayAvatarURL())
+    
+    .setFooter(`Requested by: ${song.user}`,`${song.formattedDuration}` )
     .setTimestamp();
 
         
