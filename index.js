@@ -17,7 +17,7 @@ client.distube
             .setColor('#F0074F')
             .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
             .setTitle('Playing')
-            .setDescription(`${song.name} | Requested by: ${song.user} | ${song.formattdeDuration} `)
+            .setDescription(`${song.name} | Requested by: ${song.user} || ${song.formattdeDuration} `)
             
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
