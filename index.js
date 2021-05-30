@@ -4,7 +4,7 @@ const prefix = 'p!';
 const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 const fetch = require("node-fetch").default;
-const DisTube = require('distube');
+/*const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
 client.distube
     .on("playSong", (message, queue, song) => message.channel.send(
@@ -12,7 +12,7 @@ client.distube
     ))
     .on("addSong", (message, queue, song) => message.channel.send(
         `Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`
-    ))
+    ))*/
 
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -111,12 +111,12 @@ client.on('message', async message => {
             case 'ping':
                 client.commands.get('ping').execute(message, args, Discord);
                 break;
-           case 'play':
+         /*  case 'play':
                     client.music.get('ping').execute(client,message, args, Discord);
                     break;
                     case 'stop':
                         client.music.get('stop').execute(client,message, args, Discord);
-                        break;
+                        break;*/
 
 
 
