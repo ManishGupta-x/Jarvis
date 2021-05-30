@@ -126,8 +126,8 @@ client.on('message', async message => {
             case 'play':
                 client.music.get('play').execute(client, message, args, Discord);
                 break;
-            case 'baseboost':
-                    client.music.get('baseboost').execute(client, message, args, Discord);
+            case 'bassboost':
+                    client.music.get('bassboost').execute(client, message, args, Discord);
                     break;
             case 'stop':
                 client.music.get('stop').execute(client, message, args, Discord);
