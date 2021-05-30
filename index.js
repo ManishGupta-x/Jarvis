@@ -112,7 +112,7 @@ client.on('message', async message => {
                 client.commands.get('ping').execute(message, args, Discord);
                 break;
            case 'play':
-                    client.music.get('ping').execute(client,message, args, Discord);
+                    client.music.get('play').execute(client,message, args, Discord);
                     break;
                     case 'stop':
                         client.music.get('stop').execute(client,message, args, Discord);
