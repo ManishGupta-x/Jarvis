@@ -1,6 +1,6 @@
 const disTube = require('distube');
 module.exports ={
-    name: '3d',
+    name: 'nightcore',
     Description: 'this is a music command!',
     execute(client,message,args, Discord){
         

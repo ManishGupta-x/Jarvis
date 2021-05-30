@@ -142,7 +142,7 @@ client.on('message', async message => {
                 client.music.get('echo').execute(client, message, args, Discord);
                 break;
             case 'vaporwave':
-                client.music.get('vapourwave').execute(client, message, args, Discord);
+                client.music.get('vaporwave').execute(client, message, args, Discord);
                 break;
             case 'nightcore':
                 client.music.get('nightcore').execute(client, message, args, Discord);
