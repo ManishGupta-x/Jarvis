@@ -16,8 +16,8 @@ client.distube
         const playsong = new Discord.MessageEmbed()
             .setColor('#F0074F')
             .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setTitle('Playing')
-            .setDescription(`${song.name} | Requested by: ${song.user} || ${song.formattdeDuration} `)
+            .setTitle(`Now Playing • ${song.formattdeDuration}`)
+            .setDescription(`${song.name} | Requested by: ${song.user} `)
             
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
@@ -27,9 +27,9 @@ client.distube
     .on("addSong", (message, queue, song) =>{ 
         const addsong = new Discord.MessageEmbed()
     .setColor('#F0074F')
-    .setTitle('Added to Queue')
+    .setTitle(`Added to Queue  • ${song.formattdeDuration}`)
     .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-    .setDescription(`${song.name} | Requested by: ${song.user} || ${song.formattdeDuration} `)
+    .setDescription(`${song.name} | Requested by: ${song.user}`)
             
     .setFooter(client.user.username,  client.user.displayAvatarURL())
     .setTimestamp();
