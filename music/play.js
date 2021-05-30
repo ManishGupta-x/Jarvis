@@ -1,4 +1,4 @@
-/*const disTube = require('distube');
+const disTube = require('distube');
 module.exports ={
     name: 'play',
     Description: 'this is a music command!',
@@ -10,4 +10,4 @@ module.exports ={
 
 
     }  
-}*/
+}
