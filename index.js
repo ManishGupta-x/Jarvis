@@ -95,7 +95,7 @@ client.on('message', async message => {
             case 'ping':
                 client.commands.get('ping').execute(message, args, Discord);
                 break;
-              case 'av':   client.commands.get('av').execute(message, args, Discord);
+              case 'av':   client.commands.get('av').execute(client,message, args, Discord);
                  break;
              
             case 'bird': fetch(`https://api.monkedev.com/attachments/bird`)
