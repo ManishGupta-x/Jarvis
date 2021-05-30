@@ -18,8 +18,8 @@ module.exports ={
             {name : "2. p!queue" , value : `Gives Current queue`},
             {name : "3. p!skip" , value : `Skips Current song to next one`},
             {name : "4. p![filter name]" , value : `Write the filter name after p! Eg: p!3d , p!nightcore`},
-            {name : "5. Filters Available " , value : `bassboost , 3d , echo , nightcore, vaporwave `},
-            {name : "6. p!stop  " , value : `stops the music and leaves the channel`}
+            {name : "5. Filters Available " , value : `Bassboost , 3d , Echo , Nightcore, Vaporwave `},
+            {name : "6. p!stop  " , value : `Stops the music and leaves the channel`}
              
              
           
