@@ -9,7 +9,7 @@ module.exports ={
        const newEmbed1 = new Discord.MessageEmbed()
        .setColor('#FF0074')
        .setTitle('Command Menu Music')
-       .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+       .setAuthor('The Jarvis v2.0.0', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609773754515516/wp4815475.png')
        .setTimestamp()
        .addFields( 
