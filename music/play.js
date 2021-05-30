@@ -1,7 +1,7 @@
 const disTube = require('distube');
 module.exports ={
     name: 'play',
-    Description: 'this is a music command!',
+    Description: 'this is a play  command!',
     execute(client,message,args, Discord){
         if(!args[0]){
            message.channel.send('Please Mention song!')
