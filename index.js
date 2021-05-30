@@ -16,15 +16,15 @@ client.distube
     .on("playList", (message, queue, playlist, song) => message.channel.send(
         `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
     ))
- //  .on("searchResult", (message, result) => {
-  //      let i = 0;
-  //      message.channel.send(`**Choose an option from below**\n${result.map(song => `**${++i}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}\n*Enter anything else or wait 60 seconds to cancel*`);
-  //  })
-  //  .on("searchCancel", (message) => message.channel.send(`Searching canceled`))
-  //  .on("error", (message, e) => {
+//  .on("searchResult", (message, result) => {
+//      let i = 0;
+//      message.channel.send(`**Choose an option from below**\n${result.map(song => `**${++i}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}\n*Enter anything else or wait 60 seconds to cancel*`);
+//  })
+//  .on("searchCancel", (message) => message.channel.send(`Searching canceled`))
+//  .on("error", (message, e) => {
 //        console.error(e)
- //       message.channel.send("An error encountered: " + e);
- //   })
+//       message.channel.send("An error encountered: " + e);
+//   })
 
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -127,8 +127,8 @@ client.on('message', async message => {
                 client.music.get('play').execute(client, message, args, Discord);
                 break;
             case 'bassboost':
-                    client.music.get('bassboost').execute(client, message, args, Discord);
-                    break;
+                client.music.get('bassboost').execute(client, message, args, Discord);
+                break;
             case 'stop':
                 client.music.get('stop').execute(client, message, args, Discord);
                 break;
@@ -143,6 +143,9 @@ client.on('message', async message => {
                 break;
             case 'echo':
                 client.music.get('echo').execute(client, message, args, Discord);
+                break;
+            case 'music':
+                client.music.get('music').execute(client, message, args, Discord);
                 break;
             case 'vaporwave':
                 client.music.get('vaporwave').execute(client, message, args, Discord);
