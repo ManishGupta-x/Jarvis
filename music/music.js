@@ -4,7 +4,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports ={
     name: 'music',
     Description: 'Gives Commands Info !',
-    execute(message,args,Discord,msg){
+    execute(client,message,args,Discord){
      
        const newEmbed1 = new Discord.MessageEmbed()
        .setColor('RANDOM')
