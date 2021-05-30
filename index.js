@@ -95,7 +95,7 @@ client.on('message', async message => {
             case 'ping':
                 client.commands.get('ping').execute(message, args, Discord);
                 break;
-            /*  case 'av':    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || x.user.username === args[0]) || message.member;
+              case 'av':    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || x.user.username === args[0]) || message.member;
                    const userEmbed = new Discord.MessageEmbed()
                    .setAuthor(member.user.tag, member.user.displayAvatarURL())
                    .setTimestamp()
@@ -103,7 +103,7 @@ client.on('message', async message => {
                    .setImage(member.user.displayAvatarURL())
                    message.channel.send(userEmbed);
                    break;
-              */
+              
             case 'bird': fetch(`https://api.monkedev.com/attachments/bird`)
                 .then(url => url.json())
                 .then(data => {
