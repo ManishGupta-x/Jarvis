@@ -4,6 +4,12 @@ const prefix = 'p!';
 const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 const fetch = require("node-fetch").default;
+const disTube = require('distube');
+client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
+client.distube
+    .on("playSong", (message, queue, song) => message.channel.send(
+        `Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`
+    ))
 
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -36,6 +42,13 @@ for (const file of deadlineFiles) {
 
     const command = require(`./deadline/${file}`);
     client.deadline.set(command.name, command);
+}
+client.music = new Discord.Collection();
+const musicFiles = fs.readdirSync('./music/').filter(file => file.endsWith('.js'));
+for (const file of musicFiles) {
+
+    const command = require(`./music/${file}`);
+    client.music.set(command.name, command);
 }
 client.Rewards = new Discord.Collection();
 const RewardsFiles = fs.readdirSync('./Rewards/').filter(file => file.endsWith('.js'));
@@ -95,9 +108,15 @@ client.on('message', async message => {
             case 'ping':
                 client.commands.get('ping').execute(message, args, Discord);
                 break;
-              case 'av':   client.commands.get('av').execute(client,message, args, Discord);
-                 break;
-             
+           case 'play':
+                    client.music.get('ping').execute(client,message, args, Discord);
+                    break;
+
+
+
+            case 'av': client.commands.get('av').execute(client, message, args, Discord);
+                break;
+
             case 'bird': fetch(`https://api.monkedev.com/attachments/bird`)
                 .then(url => url.json())
                 .then(data => {
@@ -146,9 +165,9 @@ client.on('message', async message => {
             case 'remind': client.commands.get('remind').execute(client, message, args, Discord);
 
                 break;
-           // case 'ttt': ttt.run(client, prefix, embed_color, start_cmd);
+            // case 'ttt': ttt.run(client, prefix, embed_color, start_cmd);
 
-             //   break;
+            //   break;
 
             case 'helpremind':
 
