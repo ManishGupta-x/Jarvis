@@ -13,7 +13,7 @@ client.distube
     .on("addSong", (message, queue, song) => message.channel.send(
         `Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`
     ))
- 
+
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true })
 
 
@@ -111,12 +111,15 @@ client.on('message', async message => {
             case 'ping':
                 client.commands.get('ping').execute(message, args, Discord);
                 break;
-           case 'play':
-                    client.music.get('play').execute(client,message, args, Discord);
-                    break;
-                    case 'stop':
-                        client.music.get('stop').execute(client,message, args, Discord);
-                        break;
+            case 'play':
+                client.music.get('play').execute(client, message, args, Discord);
+                break;
+            case 'stop':
+                client.music.get('stop').execute(client, message, args, Discord);
+                break;
+            case 'skip':
+                client.music.get('skip').execute(client, message, args, Discord);
+                break;
 
 
 
