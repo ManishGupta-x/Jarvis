@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 const fetch = require("node-fetch").default;
 const DisTube = require('distube');
-client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
+client.distube = new DisTube(client, { searchSongs: true, emitNewSongOnly: true });
 client.distube
     .on("playSong", (message, queue, song) => message.channel.send(
         `Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`
@@ -13,6 +13,18 @@ client.distube
     .on("addSong", (message, queue, song) => message.channel.send(
         `Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`
     ))
+    .on("playList", (message, queue, playlist, song) => message.channel.send(
+        `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
+    ))
+    .on("searchResult", (message, result) => {
+        let i = 0;
+        message.channel.send(`**Choose an option from below**\n${result.map(song => `**${++i}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}\n*Enter anything else or wait 60 seconds to cancel*`);
+    })
+    .on("searchCancel", (message) => message.channel.send(`Searching canceled`))
+    .on("error", (message, e) => {
+        console.error(e)
+        message.channel.send("An error encountered: " + e);
+    })
 
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -119,6 +131,21 @@ client.on('message', async message => {
                 break;
             case 'skip':
                 client.music.get('skip').execute(client, message, args, Discord);
+                break;
+            case 'queue':
+                client.music.get('queue').execute(client, message, args, Discord);
+                break;
+            case '3d':
+                client.music.get('3d').execute(client, message, args, Discord);
+                break;
+            case 'echo':
+                client.music.get('echo').execute(client, message, args, Discord);
+                break;
+            case 'vaporwave':
+                client.music.get('vapourwave').execute(client, message, args, Discord);
+                break;
+            case 'nightcore':
+                client.music.get('nightcore').execute(client, message, args, Discord);
                 break;
 
             case 'av': client.commands.get('av').execute(client, message, args, Discord);
