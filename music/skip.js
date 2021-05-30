@@ -6,10 +6,10 @@ module.exports ={
     async execute(client,message,args, Discord){
         if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
 
-        let queue = await bot.distube.getQueue(message);
+        let queue = await client.distube.getQueue(message);
         
         if(queue) {
-            bot.distube.skip(message)
+            client.distube.skip(message)
         
             message.channel.send('DONE!')
         } else if (!queue) {
