@@ -14,12 +14,12 @@ module.exports ={
        .setTimestamp()
        .addFields( 
             
-            {name : "1. p!play [song name] " , value : `Plays the song mentioned`},
-            {name : "2. p!queue" , value : `Gives Current queue`},
-            {name : "3. p!skip" , value : `Skips Current song to next one`},
-            {name : "4. p![filter name]" , value : `Write the filter name after p! Eg: p!3d , p!nightcore`},
-            {name : "5. Filters Available " , value : `Bassboost , 3d , Echo , Nightcore, Vaporwave `},
-            {name : "6. p!stop  " , value : `Stops the music and leaves the channel`}
+            {name : "🎧 p!play [song name] " , value : `🎤Plays the song mentioned`},
+            {name : "🎧 p!queue" , value : `🎬 Gives Current queue`},
+            {name : "🎧 p!skip" , value : `🪕 Skips Current song to next one`},
+            {name : "🎧 p![filter name]" , value : `🎼 Write the filter name after p! Eg: p!3d , p!nightcore`},
+            {name : "🎧 Filters Available " , value : ` 🎼 Bassboost , 3d , Echo , Nightcore, Vaporwave `},
+            {name : "🎧 p!stop  " , value : `🎬 Stops the music and leaves the channel`}
              
              
           
