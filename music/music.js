@@ -7,7 +7,7 @@ module.exports ={
     execute(client,message,args,Discord){
      
        const newEmbed1 = new Discord.MessageEmbed()
-       .setColor('#FF0074')
+       .setColor('#F0074F')
        .setTitle('Command Menu Music')
        .setAuthor('The Jarvis v2.0.0', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
        .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/848623748050976858/dj-console-mixing-music-with-hands-with-blurred-people-dancing-night-club-party_137321-140.png')

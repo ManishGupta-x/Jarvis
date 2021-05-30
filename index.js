@@ -6,13 +6,29 @@ const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]
 const fetch = require("node-fetch").default;
 const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
+const playsong = new Discord.MessageEmbed()
+.setColor('#F0074F')
+.setTitle('Playing')
+.setDescription(`${song.name}`)
+.addField(`${song.formattedDuration}`, `Requested by: ${song.user}`)
+.setFooter(client.user.username , client.user.displayAvatarURL() )
+.setTimestamp();
+
+const addsong = new Discord.MessageEmbed()
+.setColor('#F0074F')
+.setTitle('Added to Queue')
+.setDescription(`${song.name}`)
+.addField(`${song.formattedDuration}`, `Requested by: ${song.user}`)
+.setFooter(client.user.username , client.user.displayAvatarURL() )
+.setTimestamp();
+
+
+
 client.distube
-    .on("playSong", (message, queue, song) => message.channel.send(
-        `Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`
+    .on("playSong", (message, queue, song) => message.channel.send(playsong        
     ))
-    .on("addSong", (message, queue, song) => message.channel.send(
-        `Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`
-    ))
+    .on("addSong", (message, queue, song) => message.channel.send(addsong
+            ))
     .on("playList", (message, queue, playlist, song) => message.channel.send(
         `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
     ))
