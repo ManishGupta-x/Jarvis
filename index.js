@@ -10,7 +10,18 @@ client.disbut = require('discord-buttons')(client);
 client.on('clickButton', async (button) => {
     if (button.id === 'Skip') {
           await button.defer();
-      button.client.music.get('skip').execute(client, message, args, Discord);
+      button.channel.send('Skipped')
+      if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
+           
+      let queue = await client.distube.getQueue(message);
+      
+      if(queue) {
+          client.distube.skip(message)
+      
+          message.channel.send('DONE!')
+      } else if (!queue) {
+          return
+      };
    }
   });
 
