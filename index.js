@@ -43,7 +43,7 @@ client.distube
             ], embed: playsong
         })
 
-        let Collector = msg.createButtonCollector(button => button.clicker.user.id == message.author.id);
+        const  Collector = msg.createButtonCollector(button => button.clicker.user.id == message.author.id);
         Collector.on('collect', async (button) => {
             Click.defer();
             switch (button.id) {
