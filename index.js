@@ -142,6 +142,11 @@ module.exports.timedcheck = undefined;
 module.exports.val = 0;
 j = 0;
 
+client.on('message', async message => {
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+    
+       
 
 
 client.on('clickButton', async (button) => {
@@ -181,7 +186,8 @@ client.on('clickButton', async (button) => {
         button.channel.send('Current queue:\n' + queue.songs.map((song, id) =>
             `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``
         ).slice(0, 10).join("\n"));
-    };
+    }
+    });
 
 if (message.author.bot) return;
 if (j === 1 && !message.content.startsWith(prefix) && message.channel.id === channelID) {
