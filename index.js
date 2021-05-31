@@ -24,14 +24,22 @@ client.distube
             
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
+            let btn3 = new client.disbut.MessageButton()
+            .setStyle('grey')
+            .setLabel('Show Queue')
+            .setID('Queue');
 
+            let btn2 = new client.disbut.MessageButton()
+            .setStyle('green')
+            .setLabel('Stop')
+            .setID('Stop');
         
             let btn = new client.disbut.MessageButton()
             .setStyle('red')
             .setLabel('Skip')
             .setID('Skip');
           let msg = await message.channel.send({
-        button: btn, embed: playsong })
+        button:[ btn, btn2, btn3], embed: playsong })
       ;
     })
     .on("addSong", async (message, queue, song) =>{ 
@@ -137,6 +145,41 @@ client.on('message', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
     client.on('clickButton', async (button) => {
+        if (button.id === 'Queue') {
+              await button.defer();
+          button.channel.send('Current queue:\n' + queue.songs.map((song, id) =>
+          `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``
+      ).slice(0, 10).join("\n"));
+                
+         
+                 
+  
+      }  
+       }
+      );
+    client.on('clickButton', async (button) => {
+        if (button.id === 'Stop') {
+              await button.defer();
+          button.channel.send('Stopped Music')
+         
+          if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
+
+          let queue = await client.distube.getQueue(message);
+      
+          if(queue) {
+              client.distube.stop(message)
+      
+              
+          } else if (!queue) {
+              return
+          };
+  
+  
+      }  
+       }
+      );
+
+    client.on('clickButton', async (button) => {
         if (button.id === 'Skip') {
               await button.defer();
           button.channel.send('Skipped')
@@ -147,7 +190,7 @@ client.on('message', async message => {
           if(queue) {
               client.distube.skip(message)
           
-              message.channel.send('DONE!')
+              
           } else if (!queue) {
               return
           };
