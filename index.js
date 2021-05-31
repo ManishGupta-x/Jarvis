@@ -7,7 +7,12 @@ const fetch = require("node-fetch").default;
 const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
 client.disbut = require('discord-buttons')(client);
-
+client.on('clickButton', async (button) => {
+    if (button.id === 'Skip') {
+          await button.defer();
+      button.client.music.get('skip').execute(client, message, args, Discord);
+   }
+  });
 
 
 
@@ -25,12 +30,12 @@ client.distube
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
 
-        message.channel.send(playsong)
-        let btn = new bot.disbut.MessageButton()
+        
+        let btn = new client.disbut.MessageButton()
         .setStyle('red')
         .setLabel('Skip')
-        .setID('amogus');
-        let msg = await client.music.get('skip').execute(client, message, args, Discord);     
+        .setID('Skip');
+        let msg = await message.channel.send(playsong)
         button: btn
       ;
     })
