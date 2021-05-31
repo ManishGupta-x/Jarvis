@@ -39,7 +39,7 @@ client.distube
             .setLabel('Skip')
             .setID('Skip');
         let msg = await message.channel.send({
-            button: btn, btn2, btn3, embed: playsong
+            button: [btn, btn2, btn3], embed: playsong
         })
             ;
     })
