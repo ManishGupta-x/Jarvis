@@ -11,7 +11,7 @@ client.on('clickButton', async (button) => {
     if (button.id === 'Skip') {
           await button.defer();
       button.channel.send('Skipped')
-      if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
+     
            
       let queue = await client.distube.getQueue(message);
       
@@ -60,15 +60,8 @@ client.distube
            
     .setFooter(client.user.username,  client.user.displayAvatarURL())
     .setTimestamp();
-    let btn2 = new client.disbut.MessageButton()
-    .setStyle('red')
-    .setLabel('Skip')
-    .setID('Skip');
-    
-     let msg = await message.channel.send({
-   button: btn2, embed: addsong })
-  ;
-        
+   
+    message.channel.send(addsong)        
         })
     .on("playList", (message, queue, playlist, song) => message.channel.send(
         `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
