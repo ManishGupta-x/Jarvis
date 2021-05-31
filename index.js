@@ -42,8 +42,8 @@ client.distube
                 btn, btn2, btn3
             ], embed: playsong
         })
-
-         const  Collector = msg.createButtonCollector();
+        const filter1 = (button) => button.clicker.user.id === message.author.id;
+         const  Collector = msg.createButtonCollector(filter1 , { time: 1800000 });
         Collector.on('collect', async (button) => {
           switch (button.id) {
 
