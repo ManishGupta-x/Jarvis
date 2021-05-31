@@ -7,7 +7,7 @@ const fetch = require("node-fetch").default;
 const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
 client.disbut = require('discord-buttons')(client);
-client.on('clickButton', async (message,button) => {
+client.on('clickButton', async (button,message) => {
     if (button.id === 'Skip') {
         await button.defer();
         button.channel.send('Skipped')
