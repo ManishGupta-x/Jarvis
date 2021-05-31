@@ -152,19 +152,19 @@ client.on('message', async message => {
 
 
 
-    client.on('clickButton', (button) => {
+    client.on('clickButton', async (button) => {
         if (button.id === 'Skip') {
-            button.defer();
+            await button.defer();
             button.channel.send('Skipped')
             client.music.get('skip').execute(client, message, args, Discord);
 
         } else if (button.id === 'BB') {
-            button.defer();
+            await button.defer();
             client.music.get('bassboost').execute(client, message, args, Discord);
 
         } else if (button.id === 'Nightcore') {
-            button.defer();
-
+            await button.defer();
+          
             client.music.get('nightcore').execute(client, message, args, Discord);
 
         };
