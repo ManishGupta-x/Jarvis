@@ -35,11 +35,11 @@ client.distube
         .setStyle('red')
         .setLabel('Skip')
         .setID('Skip');
-        let msg = await message.channel.send('hello' , {
+        let msg = await message.channel.send(`${playsong}` , {
         button: btn})
       ;
     })
-    .on("addSong", (message, queue, song) =>{ 
+    .on("addSong", (message, queue, song) =>{ d
         const addsong = new Discord.MessageEmbed()
     .setColor('#F0074F')
     .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
