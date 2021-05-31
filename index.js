@@ -8,30 +8,7 @@ const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
 client.disbut = require('discord-buttons')(client);
 
-const  Collector = msg.createButtonCollector();
-Collector.on('collect', async (button) => {
-    Click.defer();
-    switch (button.id) {
 
-        case "Skip":
-            await button.defer()
-            client.music.get('skip').execute(client, message, args, Discord);
-            break;
-
-        case "BB":
-            await button.defer()
-            client.music.get('BB').execute(client, message, args, Discord);
-            break;
-
-        case "Nightcore":
-            await button.defer()
-            client.music.get('Nightcore').execute(client, message, args, Discord);
-            break;
-
-    }
-
-
-})
 
 client.distube
     .on("playSong", async (message, queue, song) => {
@@ -66,7 +43,29 @@ client.distube
             ], embed: playsong
         })
 
-       
+         const  Collector = msg.createButtonCollector();
+        Collector.on('collect', async (button) => {
+          switch (button.id) {
+
+                case "Skip":
+                    await button.defer()
+                    client.music.get('skip').execute(client, message, args, Discord);
+                    break;
+
+                case "BB":
+                    await button.defer()
+                    client.music.get('BB').execute(client, message, args, Discord);
+                    break;
+
+                case "Nightcore":
+                    await button.defer()
+                    client.music.get('Nightcore').execute(client, message, args, Discord);
+                    break;
+
+            }
+
+
+        })
         
     
         if (message.guild.id == '554275795280068619') { message.channel.send("Warning : Dont use button now  ") }
