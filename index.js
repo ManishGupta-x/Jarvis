@@ -26,8 +26,8 @@ client.distube
             .setTimestamp();
         let btn3 = new client.disbut.MessageButton()
             .setStyle('gray')
-            .setLabel('Show Queue')
-            .setID('Queue');
+            .setLabel('Nightcore')
+            .setID('Nightcore');
 
         let btn2 = new client.disbut.MessageButton()
             .setStyle('green')
@@ -40,7 +40,7 @@ client.distube
             .setID('Skip');
         let msg = await message.channel.send({
             buttons: [
-                btn, btn3, btn2
+                btn, btn2, btn3
             ], embed: playsong
         }) 
             ;
@@ -182,15 +182,24 @@ client.on('clickButton', async (button) => {
         message.channel.send(embed);
 
 
-    } else if (button.id === 'Queue') {
+    }else if (button.id === 'Nightcore') {
         await button.defer();
+        if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
+        let filter = client.distube.setFilter(message,'nightcore');
+        const embed = new Discord.MessageEmbed()
+        .setColor('#F0074F')
+        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+        .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+        .setDescription(`${"Current queue filter: " + (filter || "Off")} `)
+      
         
-        let queue = await client.distube.getQueue(message);
-        button.channel.send('Current queue:\n' + queue.songs.map((song, id) =>
-            `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``
-        ).slice(0, 10).join("\n"));
-    }
-    });
+        .setFooter(client.user.username, client.user.displayAvatarURL())
+        .setTimestamp();
+        message.channel.send(embed);
+
+
+    } ;
+     });
 
 if (message.author.bot) return;
 if (j === 1 && !message.content.startsWith(prefix) && message.channel.id === channelID) {
