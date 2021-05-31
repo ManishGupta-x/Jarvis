@@ -6,13 +6,15 @@ const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]
 const fetch = require("node-fetch").default;
 const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
-
+client.disbut = require('discord-buttons')(client);
 
 
 
 
 client.distube
-    .on("playSong", (message, queue, song) => {
+    .on("playSong", async (message, queue, song) => {
+
+        
         const playsong = new Discord.MessageEmbed()
             .setColor('#F0074F')
             .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
@@ -24,6 +26,13 @@ client.distube
             .setTimestamp();
 
         message.channel.send(playsong)
+        let btn = new bot.disbut.MessageButton()
+        .setStyle('red')
+        .setLabel('Skip')
+        .setID('amogus');
+        let msg = await client.music.get('skip').execute(client, message, args, Discord);     
+        button: btn
+      ;
     })
     .on("addSong", (message, queue, song) =>{ 
         const addsong = new Discord.MessageEmbed()
