@@ -155,21 +155,25 @@ client.on('message', async message => {
 
 
     client.on('clickButton', async (button) => {
-        if (button.id === 'Skip') {
-            await button.defer();
-            button.channel.send('Skipped')
-            client.music.get('skip').execute(client, message, args, Discord);
-
-        } else if (button.id === 'BB') {
-            await button.defer();
-            client.music.get('bassboost').execute(client, message, args, Discord);
-
-        } else if (button.id === 'Nightcore') {
-            await button.defer();
-          
-            client.music.get('nightcore').execute(client, message, args, Discord);
-
-        };
+        process.on('error', async() => {
+            if (button.id === 'Skip') {
+                await button.defer();
+                button.channel.send('Skipped')
+                client.music.get('skip').execute(client, message, args, Discord);
+    
+            } else if (button.id === 'BB') {
+                await button.defer();
+                client.music.get('bassboost').execute(client, message, args, Discord);
+    
+            } else if (button.id === 'Nightcore') {
+                await button.defer();
+              
+                client.music.get('nightcore').execute(client, message, args, Discord);
+    
+            };
+            return;
+            })
+        
     });
 
     if (message.author.bot) return;
