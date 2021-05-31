@@ -50,7 +50,7 @@ client.distube
         button: btn, embed: playsong })
       ;
     })
-    .on("addSong", (message, queue, song) =>{ 
+    .on("addSong", async (message, queue, song) =>{ 
         const addsong = new Discord.MessageEmbed()
     .setColor('#F0074F')
     .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
