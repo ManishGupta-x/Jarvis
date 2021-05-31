@@ -24,7 +24,6 @@ client.on('clickButton', async (button,message) => {
         }
     } else if (button.id === 'BB') {
         await button.defer();
-        if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
         let filter = client.distube.setFilter(message,'bassboost');
         const embed = new Discord.MessageEmbed()
         .setColor('#F0074F')
