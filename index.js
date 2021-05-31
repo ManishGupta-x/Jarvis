@@ -31,8 +31,8 @@ client.distube
 
         let btn2 = new client.disbut.MessageButton()
             .setStyle('green')
-            .setLabel('Stop')
-            .setID('Stop');
+            .setLabel('Bassboost')
+            .setID('BB');
 
         let btn = new client.disbut.MessageButton()
             .setStyle('red')
@@ -40,7 +40,7 @@ client.distube
             .setID('Skip');
         let msg = await message.channel.send({
             buttons: [
-                btn, btn2, btn3
+                btn, btn3, btn2
             ], embed: playsong
         }) 
             ;
