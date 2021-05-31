@@ -8,7 +8,8 @@ const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
 client.disbut = require('discord-buttons')(client);
 
-
+const emitter = require('events')
+emitter.setMaxListeners(999)
 
 client.distube
     .on("playSong", async (message, queue, song) => {
