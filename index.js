@@ -185,6 +185,8 @@ client.on('clickButton', async (button) => {
 
     } else if (button.id === 'Queue') {
         await button.defer();
+        
+        let queue = await client.distube.getQueue(message);
         button.channel.send('Current queue:\n' + queue.songs.map((song, id) =>
             `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``
         ).slice(0, 10).join("\n"));
