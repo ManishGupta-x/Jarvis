@@ -42,31 +42,7 @@ client.distube
                 btn, btn2, btn3
             ], embed: playsong
         })
-        const filter1 = (button) => button.clicker.user.id === message.author.id;
-         const  Collector = msg.createButtonCollector(filter1 , { time: 1800000 });
-        Collector.on('collect', async (button) => {
-          switch (button.id) {
-
-                case "Skip":
-                    await button.defer()
-                    client.music.get('skip').execute(client, message, args, Discord);
-                    break;
-
-                case "BB":
-                    await button.defer()
-                    client.music.get('BB').execute(client, message, args, Discord);
-                    break;
-
-                case "Nightcore":
-                    await button.defer()
-                    client.music.get('Nightcore').execute(client, message, args, Discord);
-                    break;
-
-            }
-
-
-        })
-        
+           
     
         if (message.guild.id == '554275795280068619') { message.channel.send("Warning : Dont use button now  ") }
         ;
@@ -174,6 +150,26 @@ client.on('message', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
+    client.on('clickButton', async (button) => {
+      
+        process.on('error', async() => {
+            if (button.id === 'Skip') {
+                await button.defer();
+                button.channel.send('Skipped')
+                client.music.get('skip').execute(client, message, args, Discord);
+
+            } else if (button.id === 'BB') {
+                await button.defer();
+                client.music.get('bassboost').execute(client, message, args, Discord);
+
+            } else if (button.id === 'Nightcore') {
+                await button.defer();
+
+                client.music.get('nightcore').execute(client, message, args, Discord);
+
+            };
+            return;
+            })  });
 
 
 
