@@ -46,8 +46,9 @@ client.distube
         .setStyle('red')
         .setLabel('Skip')
         .setID('Skip');
-        let msg = await message.channel.send(playsong , {
-        button: btn, Embed:playsong })
+        message.channel.send(playsong);
+        let msg = await message.channel.send({
+        button: btn, embed: playsong })
       ;
     })
     .on("addSong", (message, queue, song) =>{ d
