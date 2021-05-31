@@ -25,7 +25,7 @@ client.distube
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
         let btn3 = new client.disbut.MessageButton()
-            .setStyle('blurpurple')
+            .setStyle('blurple')
             .setLabel('Nightcore')
             .setID('Nightcore');
 
