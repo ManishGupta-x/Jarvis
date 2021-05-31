@@ -7,8 +7,6 @@ const fetch = require("node-fetch").default;
 const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
 client.disbut = require('discord-buttons')(client);
-const emitter = require('events')
-emitter.setMaxListeners(999)
 
 
 
