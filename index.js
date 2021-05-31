@@ -7,23 +7,7 @@ const fetch = require("node-fetch").default;
 const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
 client.disbut = require('discord-buttons')(client);
-client.on('clickButton', async (button) => {
-    if (button.id === 'Skip') {
-          await button.defer();
-      button.channel.send('Skipped')
-     
-           
-      let queue = await client.distube.getQueue(message);
-      
-      if(queue) {
-          client.distube.skip(message)
-      
-          message.channel.send('DONE!')
-      } else if (!queue) {
-          return
-      };
-   }
-  });
+
 
 
 
@@ -152,7 +136,23 @@ j = 0;
 client.on('message', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-
+    client.on('clickButton', async (button) => {
+        if (button.id === 'Skip') {
+              await button.defer();
+          button.channel.send('Skipped')
+         
+               
+          let queue = await client.distube.getQueue(message);
+          
+          if(queue) {
+              client.distube.skip(message)
+          
+              message.channel.send('DONE!')
+          } else if (!queue) {
+              return
+          };
+       }
+      });
 
     if (message.author.bot) return;
     if (j === 1 && !message.content.startsWith(prefix) && message.channel.id === channelID) {
