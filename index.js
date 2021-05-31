@@ -42,10 +42,10 @@ client.distube
             .setTimestamp();
 
         
-        let btn = new client.disbut.MessageButton()
-        .setStyle('red')
-        .setLabel('Skip')
-        .setID('Skip');
+            let btn = new client.disbut.MessageButton()
+            .setStyle('red')
+            .setLabel('Skip')
+            .setID('Skip');
           let msg = await message.channel.send({
         button: btn, embed: playsong })
       ;
@@ -61,9 +61,9 @@ client.distube
     .setFooter(client.user.username,  client.user.displayAvatarURL())
     .setTimestamp();
     
-    message.channel.send(addsong)
- //     let msg = await message.channel.send({
-  //  button: btn, embed: addsong })
+    
+     let msg = await message.channel.send({
+   button: btn, embed: addsong })
   ;
         
         })
