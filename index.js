@@ -44,9 +44,34 @@ client.distube
                 btn, btn2, btn3
             ], embed: playsong
         })
-        if (message.guild.id == '554275795280068619') 
-       { message.channel.send("Warning : Dont use button now  ")}
-            ;
+
+        let Collector = msg.createButtonCollector(button => button.clicker.user.id == message.author.id);
+        Collector.on('collect', async (button) => {
+            Click.defer();
+            switch (button.id) {
+
+                case "Skip":
+                    await button.defer()
+                    client.music.get('skip').execute(client, message, args, Discord);
+                    break;
+
+
+                case "BB":
+                    await button.defer()
+                    client.music.get('BB').execute(client, message, args, Discord);
+                    break;
+
+                case "Nightcore":
+                    await button.defer()
+                    client.music.get('Nightcore').execute(client, message, args, Discord);
+                    break;
+
+            }
+
+
+        });
+        if (message.guild.id == '554275795280068619') { message.channel.send("Warning : Dont use button now  ") }
+        ;
     })
     .on("addSong", async (message, queue, song) => {
         const addsong = new Discord.MessageEmbed()
@@ -154,27 +179,7 @@ client.on('message', async message => {
 
 
 
-    client.on('clickButton', async (button) => {
-        process.on('error', async() => {
-            if (button.id === 'Skip') {
-                await button.defer();
-                button.channel.send('Skipped')
-                client.music.get('skip').execute(client, message, args, Discord);
     
-            } else if (button.id === 'BB') {
-                await button.defer();
-                client.music.get('bassboost').execute(client, message, args, Discord);
-    
-            } else if (button.id === 'Nightcore') {
-                await button.defer();
-              
-                client.music.get('nightcore').execute(client, message, args, Discord);
-    
-            };
-            return;
-            })
-        
-    });
 
     if (message.author.bot) return;
     if (j === 1 && !message.content.startsWith(prefix) && message.channel.id === channelID) {
