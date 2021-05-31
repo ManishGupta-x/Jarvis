@@ -43,7 +43,7 @@ client.distube
             ], embed: playsong
         })
 
-        const  Collector = msg.createButtonCollector(button => button.clicker.user.id == message.author.id);
+         const  Collector = msg.createButtonCollector();
         Collector.on('collect', async (button) => {
             Click.defer();
             switch (button.id) {
@@ -67,8 +67,7 @@ client.distube
             }
 
 
-        }).catch(error) 
-            console.log(error.stack);
+        })
         
     
         if (message.guild.id == '554275795280068619') { message.channel.send("Warning : Dont use button now  ") }
