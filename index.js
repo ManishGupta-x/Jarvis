@@ -50,7 +50,7 @@ client.distube
         button: btn, embed: playsong })
       ;
     })
-    .on("addSong", (message, queue, song) =>{ d
+    .on("addSong", (message, queue, song) =>{ 
         const addsong = new Discord.MessageEmbed()
     .setColor('#F0074F')
     .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
@@ -60,8 +60,15 @@ client.distube
            
     .setFooter(client.user.username,  client.user.displayAvatarURL())
     .setTimestamp();
+    let btn = new client.disbut.MessageButton()
+    .setStyle('red')
+    .setLabel('Skip')
+    .setID('Skip');
+      let msg = await message.channel.send({
+    button: btn, embed: addsong })
+  ;
         
-        message.channel.send(addsong)})
+        })
     .on("playList", (message, queue, playlist, song) => message.channel.send(
         `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
     ))
