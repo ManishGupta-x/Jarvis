@@ -44,7 +44,8 @@ client.distube
                 btn, btn2, btn3
             ], embed: playsong
         })
-        message.channel.send("Warning : Dont use button now  ")
+        if (message.guild.id == '554275795280068619') 
+       { message.channel.send("Warning : Dont use button now  ")}
             ;
     })
     .on("addSong", async (message, queue, song) => {
