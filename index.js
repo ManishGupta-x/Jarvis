@@ -7,7 +7,55 @@ const fetch = require("node-fetch").default;
 const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
 client.disbut = require('discord-buttons')(client);
+client.on('clickButton', async (message,button) => {
+    if (button.id === 'Skip') {
+        await button.defer();
+        button.channel.send('Skipped')
 
+
+        let queue = await client.distube.getQueue(message);
+
+        if (queue) {
+            client.distube.skip(message)
+
+
+        } else if (!queue) {
+            return
+        }
+    } else if (button.id === 'BB') {
+        await button.defer();
+        if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
+        let filter = client.distube.setFilter(message,'bassboost');
+        const embed = new Discord.MessageEmbed()
+        .setColor('#F0074F')
+        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+        .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+        .setDescription(`${"Current queue filter: " + (filter || "Off")} `)
+      
+        
+        .setFooter(client.user.username, client.user.displayAvatarURL())
+        .setTimestamp();
+        message.channel.send(embed);
+
+
+    }else if (button.id === 'Nightcore') {
+        await button.defer();
+        if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
+        let filter = client.distube.setFilter(message,'nightcore');
+        const embed = new Discord.MessageEmbed()
+        .setColor('#F0074F')
+        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+        .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+        .setDescription(`${"Current queue filter: " + (filter || "Off")} `)
+      
+        
+        .setFooter(client.user.username, client.user.displayAvatarURL())
+        .setTimestamp();
+        message.channel.send(embed);
+
+
+    } ;
+     });
 
 
 
@@ -151,55 +199,7 @@ client.on('message', async message => {
        
 
 
-client.on('clickButton', async (button) => {
-    if (button.id === 'Skip') {
-        await button.defer();
-        button.channel.send('Skipped')
 
-
-        let queue = await client.distube.getQueue(message);
-
-        if (queue) {
-            client.distube.skip(message)
-
-
-        } else if (!queue) {
-            return
-        }
-    } else if (button.id === 'BB') {
-        await button.defer();
-        if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
-        let filter = client.distube.setFilter(message,'bassboost');
-        const embed = new Discord.MessageEmbed()
-        .setColor('#F0074F')
-        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
-        .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-        .setDescription(`${"Current queue filter: " + (filter || "Off")} `)
-      
-        
-        .setFooter(client.user.username, client.user.displayAvatarURL())
-        .setTimestamp();
-        message.channel.send(embed);
-
-
-    }else if (button.id === 'Nightcore') {
-        await button.defer();
-        if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
-        let filter = client.distube.setFilter(message,'nightcore');
-        const embed = new Discord.MessageEmbed()
-        .setColor('#F0074F')
-        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
-        .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-        .setDescription(`${"Current queue filter: " + (filter || "Off")} `)
-      
-        
-        .setFooter(client.user.username, client.user.displayAvatarURL())
-        .setTimestamp();
-        message.channel.send(embed);
-
-
-    } ;
-     });
 
 if (message.author.bot) return;
 if (j === 1 && !message.content.startsWith(prefix) && message.channel.id === channelID) {
