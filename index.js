@@ -60,10 +60,13 @@ client.distube
            
     .setFooter(client.user.username,  client.user.displayAvatarURL())
     .setTimestamp();
-    
+    let btn2 = new client.disbut.MessageButton()
+    .setStyle('red')
+    .setLabel('Skip')
+    .setID('Skip');
     
      let msg = await message.channel.send({
-   button: btn, embed: addsong })
+   button: btn2, embed: addsong })
   ;
         
         })
