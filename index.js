@@ -43,9 +43,9 @@ client.distube
                 btn, btn2, btn3
             ], embed: playsong
         })
-           
-    
-        
+
+
+
     })
     .on("addSong", async (message, queue, song) => {
         const addsong = new Discord.MessageEmbed()
@@ -151,8 +151,8 @@ client.on('message', async message => {
     const command = args.shift().toLowerCase();
 
     client.on('clickButton', async (button) => {
-      
-        process.on('error', async() => {
+
+        process.on('error', async () => {
             if (button.id === 'Skip') {
                 await button.defer();
                 button.channel.send('Skipped')
@@ -169,11 +169,12 @@ client.on('message', async message => {
 
             };
             return;
-            })  });
+        })
+    });
 
 
 
-    
+
 
     if (message.author.bot) return;
     if (j === 1 && !message.content.startsWith(prefix) && message.channel.id === channelID) {
@@ -196,6 +197,9 @@ client.on('message', async message => {
                 break;
             case 'play':
                 client.music.get('play').execute(client, message, args, Discord);
+                break;
+            case 'loop':
+                client.music.get('loop').execute(client, message, args, Discord);
                 break;
             case 'bassboost':
                 client.music.get('bassboost').execute(client, message, args, Discord);
