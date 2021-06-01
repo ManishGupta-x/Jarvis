@@ -13,8 +13,8 @@ module.exports ={
             {name : "1. p!deadline-freakcup" , value : `4th June , 2021 (R8) `},
             {name : "2. p!deadline-laliga" , value : `'4th June, 2021 (day 7-9)'`},
 
-            {name : "3. p!deadline-mainko" , value : `To Be Decided`},
-            {name : "4. p!deadline-premleague" , value : `31st May, 2021 (Day 8-11)`},
+            {name : "3. p!deadline-mainko" , value : `6th June , 2021 (R32)`},
+            {name : "4. p!deadline-premleague" , value : `Ended For season 3`},
             {name : "5. p!deadline-ucl" , value : `31st May, 2021 (R8)`},
             {name : "6. p!deadline-worldcup" , value : `To Be Decided`},
             {name : "7. p!deadline-bbtourney" , value : `To Be Decided`}
