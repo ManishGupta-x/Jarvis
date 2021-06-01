@@ -44,7 +44,30 @@ client.distube
             ], embed: playsong
         })
            
-    
+        const filter1 = (button) => button.clicker.user.id === message.author.id;
+        const  Collector = msg.createButtonCollector(filter1 , { time: 1800000 });
+       Collector.on('collect', async (button) => {
+         switch (button.id) {
+
+               case "Skip":
+                   await button.defer()
+                   client.music.get('skip').execute(client, message, args, Discord);
+                   break;
+
+               case "BB":
+                   await button.defer()
+                   client.music.get('BB').execute(client, message, args, Discord);
+                   break;
+
+               case "Nightcore":
+                   await button.defer()
+                   client.music.get('Nightcore').execute(client, message, args, Discord);
+                   break;
+
+           }
+
+
+       })
         
     })
     .on("addSong", async (message, queue, song) => {
@@ -150,7 +173,7 @@ client.on('message', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    client.on('clickButton', async (button) => {
+  /*  client.on('clickButton', async (button) => {
       
        
             if (button.id === 'Skip') {
@@ -170,7 +193,7 @@ client.on('message', async message => {
             };
             return;
              });
-
+*/
 
 
     
