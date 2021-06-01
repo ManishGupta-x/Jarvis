@@ -6,7 +6,7 @@ module.exports ={
         
         if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
         
-        distube.setRepeatMode(message, parseInt(args[0]));
+        client.distube.setRepeatMode(message, parseInt(args[0]));
         const embed = new Discord.MessageEmbed()
         .setColor('#F0074F')
         .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
