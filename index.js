@@ -17,7 +17,7 @@ client.distube
 
         const playsong = new Discord.MessageEmbed()
             .setColor('#F0074F')
-            .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+            .setThumbnail(`${song.thumbnail}`)
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
             .setTitle(`Now Playing`)
             .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\` `)
@@ -27,17 +27,18 @@ client.distube
         let btn3 = new client.disbut.MessageButton()
             .setStyle('blurple')
             .setLabel('Nightcore')
-            .setID('Nightcore');
-
+            .setID('Nightcore')
+            .setDisabled();
         let btn2 = new client.disbut.MessageButton()
             .setStyle('green')
             .setLabel('Bassboost')
-            .setID('BB');
-
+            .setID('BB')
+            .setDisabled();
         let btn = new client.disbut.MessageButton()
             .setStyle('red')
             .setLabel('Skip')
-            .setID('Skip');
+            .setID('Skip')
+            .setDisabled();
         let msg = await message.channel.send({
             buttons: [
                 btn, btn2, btn3
@@ -150,7 +151,7 @@ client.on('message', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    client.on('clickButton', async (button) => {
+   /* client.on('clickButton', async (button) => {
 
         process.on('error', async () => {
             if (button.id === 'Skip') {
@@ -170,7 +171,7 @@ client.on('message', async message => {
             };
             return;
         })
-    });
+    });*/
 
 
 
