@@ -1,4 +1,4 @@
-const math = require('mathjs');
+/*const math = require('mathjs');
 module.exports ={
     name: 'calc',
     Description: 'this is a  Ping command!',
@@ -18,4 +18,4 @@ module.exports ={
 
      message.channel.send(embed);
     }  
-}
+}*/
