@@ -1,4 +1,4 @@
-const math = require('math.js');
+const math = require('mathjs');
 module.exports ={
     name: 'calc',
     Description: 'this is a  Ping command!',
