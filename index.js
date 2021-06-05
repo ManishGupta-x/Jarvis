@@ -14,42 +14,44 @@ emitter.setMaxListeners(999)
 client.distube
     .on("playSong", async (message, queue, song) => {
 
+        process.on('error', async () => {
+            const playsong = new Discord.MessageEmbed()
+                .setColor('#F0074F')
+                .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                .setTitle(`Now Playing`)
+                .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\` `)
 
-        const playsong = new Discord.MessageEmbed()
-            .setColor('#F0074F')
-            .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
-            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setTitle(`Now Playing`)
-            .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\` `)
-
-            .setFooter(client.user.username, client.user.displayAvatarURL())
-            .setTimestamp();
-        let btn3 = new client.disbut.MessageButton()
-            .setStyle('blurple')
-            .setLabel('Nightcore')
-            .setID('Nightcore')
-            .setDisabled();
-        let btn2 = new client.disbut.MessageButton()
-            .setStyle('green')
-            .setLabel('Bassboost')
-            .setID('BB')
-            .setDisabled();
-        let btn = new client.disbut.MessageButton()
-            .setStyle('red')
-            .setLabel('Skip')
-            .setID('Skip')
-            .setDisabled();
-        let msg = await message.channel.send({
-            buttons: [
-                btn, btn2, btn3
-            ], embed: playsong
+                .setFooter(client.user.username, client.user.displayAvatarURL())
+                .setTimestamp();
+            let btn3 = new client.disbut.MessageButton()
+                .setStyle('blurple')
+                .setLabel('Nightcore')
+                .setID('Nightcore')
+                .setDisabled();
+            let btn2 = new client.disbut.MessageButton()
+                .setStyle('green')
+                .setLabel('Bassboost')
+                .setID('BB')
+                .setDisabled();
+            let btn = new client.disbut.MessageButton()
+                .setStyle('red')
+                .setLabel('Skip')
+                .setID('Skip')
+                .setDisabled();
+            let msg = await message.channel.send({
+                buttons: [
+                    btn, btn2, btn3
+                ], embed: playsong
+            })
         })
 
-  
+
 
     })
     .on("addSong", async (message, queue, song) => {
-        const addsong = new Discord.MessageEmbed()
+        process.on('error', async () => { 
+            const addsong = new Discord.MessageEmbed()
             .setColor('#F0074F')
             .setThumbnail(`${song.thumbnail}`)
             .setTitle(`Added to Queue`)
@@ -59,7 +61,7 @@ client.distube
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
 
-        message.channel.send(addsong)
+        message.channel.send(addsong)})
     })
     .on("playList", (message, queue, playlist, song) => message.channel.send(
         `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
@@ -151,27 +153,27 @@ client.on('message', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-   /* client.on('clickButton', async (button) => {
-
-        process.on('error', async () => {
-            if (button.id === 'Skip') {
-                await button.defer();
-                button.channel.send('Skipped')
-                client.music.get('skip').execute(client, message, args, Discord);
-
-            } else if (button.id === 'BB') {
-                await button.defer();
-                client.music.get('bassboost').execute(client, message, args, Discord);
-
-            } else if (button.id === 'Nightcore') {
-                await button.defer();
-
-                client.music.get('nightcore').execute(client, message, args, Discord);
-
-            };
-            return;
-        })
-    });*/
+    /* client.on('clickButton', async (button) => {
+ 
+         process.on('error', async () => {
+             if (button.id === 'Skip') {
+                 await button.defer();
+                 button.channel.send('Skipped')
+                 client.music.get('skip').execute(client, message, args, Discord);
+ 
+             } else if (button.id === 'BB') {
+                 await button.defer();
+                 client.music.get('bassboost').execute(client, message, args, Discord);
+ 
+             } else if (button.id === 'Nightcore') {
+                 await button.defer();
+ 
+                 client.music.get('nightcore').execute(client, message, args, Discord);
+ 
+             };
+             return;
+         })
+     });*/
 
 
 
@@ -510,6 +512,56 @@ client.on('message', async message => {
                 break;
             case 'roleinfo': client.help.get('6').execute(message, args, Discord);
                 break;
+            case 'wc_table': {
+
+                const newEmbed = new Discord.MessageEmbed()
+                    .setColor('RANDOM')
+                    .setTitle('World Cup Group Links')
+                    .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/808248403644907580/images_1.jpeg')
+                    .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
+                    .addFields(
+
+                        {
+                            name: "1. Group 1 Link ", value: 'Table and Matchday Link for Group 1'
+                        },
+                        { name: "2. Group 2 Link", value: 'Table and Matchday Link for Group 2' },
+                        { name: "3. Group 3 Link", value: 'Table and Matchday Link for Group 3' },
+                        { name: "4. Group 4 Link", value: 'Table and Matchday Link for Group 4' },
+
+                    )
+                    .setFooter("Gives 1 link at a time")
+                let msg = await message.channel.send(newEmbed)
+                await msg.react('1️⃣')
+                await msg.react('2️⃣')
+                await msg.react('3️⃣')
+                await msg.react('4️⃣')
+
+                await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
+
+                    reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 1, time: 40000 })
+                    .then(async collected => {
+                        if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4685792168818196513/#structure') }
+                        else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4685792168851750972/#structure') }
+                        else if (collected.first().emoji.name == '3️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4685792168851750999/#structure') }
+                        else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4685792168851751026/#structure') }
+
+
+                        else return message.channel.send('Time Up');
+
+
+
+
+
+                    }).catch(async () => { return message.channel.send("error") });
+                break;
+
+            }
+
+
+
+
+
+
             case 'ucl_table': {
 
                 const newEmbed = new Discord.MessageEmbed()
