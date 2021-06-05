@@ -14,7 +14,7 @@ emitter.setMaxListeners(999)
 client.distube
     .on("playSong", async (message, queue, song) => {
 
-        process.on('error', async () => {
+        
             const playsong = new Discord.MessageEmbed()
                 .setColor('#F0074F')
                 .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
@@ -44,13 +44,13 @@ client.distube
                     btn, btn2, btn3
                 ], embed: playsong
             })
-        })
+        
 
 
 
     })
     .on("addSong", async (message, queue, song) => {
-        process.on('error', async () => { 
+        
             const addsong = new Discord.MessageEmbed()
             .setColor('#F0074F')
             .setThumbnail(`${song.thumbnail}`)
@@ -61,7 +61,7 @@ client.distube
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
 
-        message.channel.send(addsong)})
+        message.channel.send(addsong)
     })
     .on("playList", (message, queue, playlist, song) => message.channel.send(
         `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
