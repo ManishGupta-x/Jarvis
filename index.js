@@ -540,10 +540,10 @@ client.on('message', async message => {
 
                     reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 1, time: 40000 })
                     .then(async collected => {
-                        if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4685792168818196513/#structure') }
-                        else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4685792168851750972/#structure') }
-                        else if (collected.first().emoji.name == '3️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4685792168851750999/#structure') }
-                        else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4685792168851751026/#structure') }
+                        if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4688766268798468096/#structure') }
+                        else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4688766268832022576/#structure') }
+                        else if (collected.first().emoji.name == '3️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4688766268832022624/#structure') }
+                        else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4688766268865577104/#structure') }
 
 
                         else return message.channel.send('Time Up');
