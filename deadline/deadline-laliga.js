@@ -3,7 +3,7 @@ module.exports ={
     Description: 'shows deadline of la liga Ko tourney',
     execute(message,args, Discord){
      
-       message.channel.send('11th June. 2021(Group Stage)');
+       message.channel.send('18th June. 2021(Day 13-15)');
 
 
     }  

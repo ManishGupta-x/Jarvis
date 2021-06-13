@@ -3,7 +3,7 @@ module.exports ={
     Description: 'shows deadline of Main squad Ko tourney',
     execute(message,args, Discord){
      
-       message.channel.send('6th June , 2021 (R32)');
+       message.channel.send('16th June , 2021 (R16)');
 
 
     }  
