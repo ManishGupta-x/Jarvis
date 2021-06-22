@@ -43,6 +43,8 @@ client.distube
                 buttons: [
                     btn, btn2, btn3
                 ], embed: playsong
+            }).catch(() => {
+                message.channel.send("Try Again pls <3")
             })
         
 
@@ -61,7 +63,9 @@ client.distube
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
 
-        message.channel.send(addsong)
+        message.channel.send(addsong).catch(() => {
+            message.channel.send("Try Again pls <3")
+        })
     })
     .on("playList", (message, queue, playlist, song) => message.channel.send(
         `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
