@@ -198,7 +198,17 @@ client.on('message', async message => {
                 client.commands.get('ping').execute(message, args, Discord);
                 break;
             case 'play':
-                client.music.get('play').execute(client, message, args, Discord);
+                if(!args[0]){
+                    message.channel.send('Please Mention song!')
+                    return;
+         
+                 }
+                 if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
+                 const music = args.join(" ");
+         
+                 client.distube.play(message, music).catch(() => {
+                     message.channel.send("Try Again pls getting some Issues <3")
+                 })
                 break;
             case 'loop':
                 client.music.get('loop').execute(client, message, args, Discord);
