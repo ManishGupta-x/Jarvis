@@ -12,7 +12,7 @@ module.exports ={
         const music = args.join(" ");
 
         client.distube.play(message, music).catch(() => {
-            message.channel.send("Try Again")
+            message.channel.send("Try Again pls getting ome Issues <3")
         })
 
 
