@@ -48,7 +48,7 @@ client.distube
 
 
     })
-    .on("addSong", async (message, queue, song) => {
+    .on("addSong", (message, queue, song) => {
         
             const addsong = new Discord.MessageEmbed()
             .setColor('#F0074F')
