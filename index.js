@@ -292,9 +292,7 @@ client.on('message', async message => {
             case 'remind': client.commands.get('remind').execute(client, message, args, Discord);
 
                 break;
-            // case 'ttt': ttt.run(client, prefix, embed_color, start_cmd);
-
-            //   break;
+           
 
             case 'helpremind':
 
