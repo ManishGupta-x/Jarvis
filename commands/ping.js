@@ -3,7 +3,11 @@ module.exports ={
      Description: 'this is a  Ping command!',
      execute(message,args, Discord){
       
-        message.channel.send('pong!');
+      message.reply('Computing...').then((resultMessage) => {
+         const ping = resultMessage.createdTimestamp - message.createdTimestamp
+   
+         resultMessage.edit(`Latency: ${ping}, API Latency: ${client.ws.ping}`)
+       })
 
 
      }  
