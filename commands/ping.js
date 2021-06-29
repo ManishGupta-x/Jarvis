@@ -1,7 +1,7 @@
 module.exports ={
      name: 'ping',
      Description: 'this is a  Ping command!',
-     execute(message,args, Discord){
+     execute(client,message,args, Discord){
       
       message.reply('Computing...').then((resultMessage) => {
          const ping = resultMessage.createdTimestamp - message.createdTimestamp

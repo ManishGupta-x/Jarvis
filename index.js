@@ -195,7 +195,7 @@ client.on('message', async message => {
         switch (command) {
 
             case 'ping':
-                client.commands.get('ping').execute(message, args, Discord);
+                client.commands.get('ping').execute(client,message, args, Discord);
                 break;
             case 'play':
                 if(!args[0]){
