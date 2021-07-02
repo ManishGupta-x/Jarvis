@@ -59,7 +59,7 @@ module.exports = {
                             switch (reaction.emoji.name) {
 
                                 case 'hand': await reaction.message.guild.members.cache.get(user.id);
-                                    if (user.id === membertarget.id) {
+                                    if (user.id == membertarget.id) {
                                         let msg = await message.reply('Challenging Yourself?  -_-')
                                         await msg.delete({ timeout: 4000 });
                                     }
