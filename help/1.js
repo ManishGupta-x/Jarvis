@@ -28,7 +28,7 @@ module.exports ={
         
            )
            .setFooter(`Type p!help to get back to Main menu`)
-          .setImage('https://i.imgur.com/IOc6tij.gif');
+          .setImage('https://i.imgur.com/SwA0525.gif');
          
            
           msg.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));
