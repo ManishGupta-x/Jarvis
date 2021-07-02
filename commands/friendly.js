@@ -56,7 +56,7 @@ module.exports = {
 
                     if (reaction.message.channel.id == channel) {
                         if (x < 4) {
-                            switch (reaction.emoji.name) {
+                            switch(reaction.emoji.name) {
 
                                 case 'hand': await reaction.message.guild.members.cache.get(user.id);
                                     if (user.id == membertarget.id) {
@@ -79,9 +79,9 @@ module.exports = {
                                         } else {
                                             let msg2 = await message.channel.send(`${client.users.cache.get(membertarget.id).username}'s Id ${data.Konami}`);
                                             await msg2.delete({ timeout: 100000 }); return;
-                                        }break;
+                                        }
                                         
-                                    }) 
+                                    }); break; 
                             }
 
                         }
