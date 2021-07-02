@@ -79,10 +79,10 @@ module.exports = {
                                         } else {
                                             let msg2 = await message.channel.send(`${client.users.cache.get(membertarget.id).username}'s Id ${data.Konami}`);
                                             await msg2.delete({ timeout: 100000 }); return;
-                                        }
+                                        }break;
                                         
                                     }) 
-                            }break;
+                            }
 
                         }
 
