@@ -9,7 +9,7 @@ module.exports = {
         const Embed1 = new Discord.MessageEmbed()
             .setColor('#F72DF4')
             .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/c6bc3800d00c07ccd4dbf015bf3e743c.png?size=256')
-            .setThumbnail('https://i.imgur.com/5xYEw1U.gif')
+            .setThumbnail('https://i.imgur.com/KmTA1Mn.gif')
             .setTitle('Roles On the Server')
             .addFields(
 
@@ -74,7 +74,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
             .setColor('#F72DF4')
             .setAuthor('Freak Gamer')
-            .setThumbnail('https://i.imgur.com/5xYEw1U.gif')
+            .setThumbnail('https://i.imgur.com/KmTA1Mn.gif')
             .setTitle('Roles On the Server')
             .addFields(
 
