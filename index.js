@@ -654,7 +654,7 @@ client.on('message', async message => {
                 const newEmbed = new Discord.MessageEmbed()
                     .setColor('RANDOM')
                     .setTitle('Help Module')
-                    .setThumbnail('https://i.imgur.com/IOc6tij.gif')
+                    .setThumbnail('https://i.imgur.com/AOlmJpF.gif')
                     .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/c6bc3800d00c07ccd4dbf015bf3e743c.png?size=256')
                     .setDescription('Server\'s Info And Commands')
                     .addFields(
@@ -676,7 +676,7 @@ client.on('message', async message => {
 
                     )
                     .setFooter(`You can only React for one at a time`)
-                    .setImage('https://i.imgur.com/AOlmJpF.gif');
+                    .setImage('https://i.imgur.com/oyxpmTp.gif');
 
 
                 let msg = await message.channel.send(newEmbed)
