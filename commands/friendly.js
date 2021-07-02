@@ -65,7 +65,7 @@ module.exports ={
                          await msg.delete({timeout: 4000});
                     }
                     else{
-                   message.reply(`<@${user.id}> Accepeted Your Challenge`);
+                    await message.reply(`<@${user.id}> Accepeted Your Challenge`);
                       x=x+1;
                     return;
                 }
@@ -73,10 +73,11 @@ module.exports ={
                 await reaction.message.guild.members.cache.get(user.id);
                 Data.findOne({
                     userID : membertarget.id
-                }, (err, data) => { 
+                }, async (err, data) => { 
                     if (err) console.log(err);
                     if (!data) {  message.reply(` No Id in record for <@${membertarget.id}>`)}else{
-                 return message.channel.send(`${client.users.cache.get(membertarget.id).username}'s Id ${data.Konami}`) ; 
+                  await message.channel.send(`${client.users.cache.get(membertarget.id).username}'s Id ${data.Konami}`) ;
+                  return; 
                  }
                  return;
             })
