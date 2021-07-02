@@ -75,9 +75,10 @@ module.exports ={
                     userID : membertarget
                 }, async (err, data) => { 
                     if (err) console.log(err);
-                    if (!data) {  message.reply(` No Id in record for <@${membertarget}>`)}else{
-                  await message.channel.send(`${client.users.cache.get(membertarget).username}'s Id ${data.Konami}`) ;
-                  return; 
+                    if (!data) {  let msg1 = await message.reply(` No Id in record for <@${membertarget}>`)
+                    await msg1.delete({timeout: 100000});}else{
+                  let msg2 = await message.channel.send(`${client.users.cache.get(membertarget).username}'s Id ${data.Konami}`) ;
+                  await msg2.delete({timeout: 100000}); return; 
                  }
                  return;
             })
