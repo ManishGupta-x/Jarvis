@@ -65,7 +65,7 @@ module.exports ={
                          await msg.delete({timeout: 4000});
                     }
                     else{
-                    await message.reply(`<@${user.id}> Accepeted Your Challenge`);
+                    await message.reply(`<@${user.id}> Accepted Your Challenge`);
                       x=x+1;
                     return;
                 }
