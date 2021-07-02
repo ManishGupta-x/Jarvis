@@ -6,7 +6,7 @@ module.exports ={
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#9454F7')
        .setTitle('Rewards for Premier League ')
-       .setThumbanail('https://i.imgur.com/NIAjQ1T.com')
+       .setThumbnail('https://i.imgur.com/NIAjQ1T.com')
        .setAuthor('Freak Gamer')
        .addFields(
         
