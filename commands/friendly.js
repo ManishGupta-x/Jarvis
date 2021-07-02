@@ -67,7 +67,7 @@ module.exports = {
                                         await message.reply(`<@${user.id}> Accepted Your Challenge`);
                                         x = x + 1;
                                         return;
-                                    }
+                                    } break;
                                 case 'idkonami': await reaction.message.guild.members.cache.get(user.id);
                                     Data.findOne({
                                         userID: membertarget.id
@@ -80,9 +80,9 @@ module.exports = {
                                             let msg2 = await message.channel.send(`${client.users.cache.get(membertarget.id).username}'s Id ${data.Konami}`);
                                             await msg2.delete({ timeout: 100000 }); return;
                                         }
-                                        return;
-                                    })
-                            }
+                                        
+                                    }) 
+                            }break;
 
                         }
 

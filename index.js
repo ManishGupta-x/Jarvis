@@ -771,6 +771,13 @@ client.on('message', async message => {
 
         }
 
+    }else{
+        switch(message.content){
+
+            case 'hi' : message.channel.send("hi")
+            break;
+            
+        }
     }
 }
 
