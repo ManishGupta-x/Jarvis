@@ -59,7 +59,7 @@ module.exports ={
                 if(x<4){
                 if (reaction.emoji.name === hand) {
                     await reaction.message.guild.members.cache.get(user.id);
-                    if(user.id == membertarget.id)
+                    if(user.id == membertarget)
                     {
                         let msg = await message.reply('Challenging Yourself?  -_-')
                          await msg.delete({timeout: 4000});
@@ -72,11 +72,11 @@ module.exports ={
             }else if (reaction.emoji.name === idkonami){
                 await reaction.message.guild.members.cache.get(user.id);
                 Data.findOne({
-                    userID : membertarget.id
+                    userID : membertarget
                 }, async (err, data) => { 
                     if (err) console.log(err);
-                    if (!data) {  message.reply(` No Id in record for <@${membertarget.id}>`)}else{
-                  await message.channel.send(`${client.users.cache.get(membertarget.id).username}'s Id ${data.Konami}`) ;
+                    if (!data) {  message.reply(` No Id in record for <@${membertarget}>`)}else{
+                  await message.channel.send(`${client.users.cache.get(membertarget).username}'s Id ${data.Konami}`) ;
                   return; 
                  }
                  return;
