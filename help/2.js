@@ -7,7 +7,7 @@ module.exports ={
        .setColor('#6beea8')
        .setTitle('Command Menu')
        .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
-       .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg')
+       .setThumbnail('https://i.imgur.com/IOc6tij.gif')
        .setDescription('Tourneys Rewards INFO')
        .addFields( 
             
@@ -24,7 +24,7 @@ module.exports ={
         
            )
            .setFooter(`Type p!help to get back to Main menu`)
-          .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784433051182170142/pes2021thumb-1594909443576.png');
+          .setImage('https://i.imgur.com/qOFNRzr.gif');
          
           msg.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));
            

@@ -654,7 +654,7 @@ client.on('message', async message => {
                 const newEmbed = new Discord.MessageEmbed()
                     .setColor('RANDOM')
                     .setTitle('Help Module')
-                    .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/843019025806393344/1739440.png')
+                    .setThumbnail('https://i.imgur.com/IOc6tij.gif')
                     .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
                     .setDescription('Server\'s Info And Commands')
                     .addFields(
