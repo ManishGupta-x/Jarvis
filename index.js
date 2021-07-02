@@ -707,7 +707,7 @@ client.on('message', async message => {
 
 
 
-                    }).catch(async () => { return message.channel.send("error") });
+                    }).catch(async () => { return message.channel.send("Time Over") });
 
             } else {
                 message.reply('Customised for Freak game server Only ')
