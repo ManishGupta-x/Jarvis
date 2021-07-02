@@ -6,7 +6,7 @@ module.exports ={
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#06FC9F ')
        .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/c6bc3800d00c07ccd4dbf015bf3e743c.png?size=256')
-       .setThumbnail('https://i.imgur.com/5xYEw1U.gif')
+       .setThumbnail('https://i.imgur.com/zkHVLeO.gif')
        .setTitle('Competetions On the Server')
        .addFields(
         
@@ -18,7 +18,7 @@ module.exports ={
 
            
            )
-           .setImage('https://i.imgur.com/5xYEw1U.gif');
+           .setImage('https://i.imgur.com/W1gmwHl.gif');
            
            msg.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));
            msg.edit(newEmbed);
