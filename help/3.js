@@ -5,9 +5,9 @@ module.exports ={
      
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#6beea8')
-       .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
+       .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/c6bc3800d00c07ccd4dbf015bf3e743c.png?size=256')
        .setTitle('Commands Menu')
-       .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg')
+       .setThumbnail('https://i.imgur.com/IOc6tij.gif')
        .setDescription('Rules and  Info Commands')
        .addFields( 
          
@@ -27,7 +27,7 @@ module.exports ={
         
            )
            .setFooter(`Type p!help to get back to Main menu`)
-          .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784432968852439100/apps.png');
+          .setImage('https://i.imgur.com/JVWDDH7.gif');
          
            
           msg.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));

@@ -7,7 +7,7 @@ module.exports ={
        .setColor('#FC4206')
        .setTitle('Freak Cup')
        .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
-       .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/784406658075721758/WW-17-800x445.jpg')
+       .setThumbnail('https://i.imgur.com/Et0YjaM.gif')
        .setDescription(' Freak Cup Description')
        .addFields(
         
@@ -19,7 +19,7 @@ module.exports ={
 
            
            )
-           .setImage('https://cdn.discordapp.com/attachments/767787771816443966/776755041872642048/FIF_world_cup_trophy_on_grassjpg.jpg');
+           .setImage('https://i.imgur.com/HEBDUlg.gif');
            
            
            message.channel.send(newEmbed);

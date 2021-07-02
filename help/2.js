@@ -6,7 +6,7 @@ module.exports ={
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#6beea8')
        .setTitle('Command Menu')
-       .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
+       .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/c6bc3800d00c07ccd4dbf015bf3e743c.png?size=256')
        .setThumbnail('https://i.imgur.com/IOc6tij.gif')
        .setDescription('Tourneys Rewards INFO')
        .addFields( 

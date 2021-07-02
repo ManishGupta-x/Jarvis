@@ -6,6 +6,7 @@ module.exports ={
        const newEmbed = new Discord.MessageEmbed()
        .setColor('#4A68EE')
        .setTitle('Rewards for UCL')
+       .setThumbnail('https://i.imgur.com/oGPVyrT.gif')
        .setAuthor('Freak Gamer')
        .addFields(
         
@@ -17,7 +18,7 @@ module.exports ={
            
            
            )
-           .setImage('https://cdn.discordapp.com/attachments/730714810614022228/770908796951330816/the_16_contenders_heading_for_monday_s_draw201.png');
+           .setImage('https://i.imgur.com/c41Il5b.gif');
            
            
            message.channel.send(newEmbed);

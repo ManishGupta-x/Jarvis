@@ -18,7 +18,7 @@ module.exports ={
            
            
            )
-           .setImage('https://cdn.discordapp.com/attachments/610950416498425886/787548932082630656/skysports-premier-league-restart_5015502.png');
+           .setImage('https://i.imgur.com/29rBiEu.gif');
            
            
            message.channel.send(newEmbed);
