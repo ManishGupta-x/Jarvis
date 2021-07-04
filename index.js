@@ -14,43 +14,43 @@ emitter.setMaxListeners(999)
 client.distube
     .on("playSong", async (message, queue, song) => {
 
-        
-            const playsong = new Discord.MessageEmbed()
-                .setColor('#F0074F')
-                .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
-                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                .setTitle(`Now Playing`)
-                .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\` `)
 
-                .setFooter(client.user.username, client.user.displayAvatarURL())
-                .setTimestamp();
-            let btn3 = new client.disbut.MessageButton()
-                .setStyle('blurple')
-                .setLabel('Nightcore')
-                .setID('Nightcore')
-                .setDisabled();
-            let btn2 = new client.disbut.MessageButton()
-                .setStyle('green')
-                .setLabel('Bassboost')
-                .setID('BB')
-                .setDisabled();
-            let btn = new client.disbut.MessageButton()
-                .setStyle('red')
-                .setLabel('Skip')
-                .setID('Skip')
-                .setDisabled();
-            let msg = await message.channel.send({
-                buttons: [
-                    btn, btn2, btn3
-                ], embed: playsong
-            })      
+        const playsong = new Discord.MessageEmbed()
+            .setColor('#F0074F')
+            .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+            .setTitle(`Now Playing`)
+            .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\` `)
+
+            .setFooter(client.user.username, client.user.displayAvatarURL())
+            .setTimestamp();
+        let btn3 = new client.disbut.MessageButton()
+            .setStyle('blurple')
+            .setLabel('Nightcore')
+            .setID('Nightcore')
+            .setDisabled();
+        let btn2 = new client.disbut.MessageButton()
+            .setStyle('green')
+            .setLabel('Bassboost')
+            .setID('BB')
+            .setDisabled();
+        let btn = new client.disbut.MessageButton()
+            .setStyle('red')
+            .setLabel('Skip')
+            .setID('Skip')
+            .setDisabled();
+        let msg = await message.channel.send({
+            buttons: [
+                btn, btn2, btn3
+            ], embed: playsong
+        })
 
 
 
     })
     .on("addSong", (message, queue, song) => {
-        
-            const addsong = new Discord.MessageEmbed()
+
+        const addsong = new Discord.MessageEmbed()
             .setColor('#F0074F')
             .setThumbnail(`${song.thumbnail}`)
             .setTitle(`Added to Queue`)
@@ -147,6 +147,7 @@ client.once('ready', () => {
 module.exports.timedcheck = undefined;
 module.exports.val = 0;
 j = 0;
+var d = 0;
 
 client.on('message', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -195,20 +196,20 @@ client.on('message', async message => {
         switch (command) {
 
             case 'ping':
-                client.commands.get('ping').execute(client,message, args, Discord);
+                client.commands.get('ping').execute(client, message, args, Discord);
                 break;
             case 'play':
-                if(!args[0]){
+                if (!args[0]) {
                     message.channel.send('Please Mention song!')
                     return;
-         
-                 }
-                 if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
-                 const music = args.join(" ");
-         
-                 client.distube.play(message, music).catch(() => {
-                     message.channel.send("Try Again pls getting some Issues <3")
-                 })
+
+                }
+                if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
+                const music = args.join(" ");
+
+                client.distube.play(message, music).catch(() => {
+                    message.channel.send("Try Again pls getting some Issues <3")
+                })
                 break;
             case 'loop':
                 client.music.get('loop').execute(client, message, args, Discord);
@@ -292,7 +293,7 @@ client.on('message', async message => {
             case 'remind': client.commands.get('remind').execute(client, message, args, Discord);
 
                 break;
-           
+
 
             case 'helpremind':
 
@@ -771,13 +772,35 @@ client.on('message', async message => {
 
         }
 
-    }else{
-        switch(message.content){
+    } else {
+        switch (message.content) {
 
-            case 'hi' : message.channel.send("hi")
-            break;
-            case "adnan short story" : message.channel.send("https://cdn.discordapp.com/attachments/794240262972243979/860556430490468362/VID_20210701_195116_318.mp4")
-            break;
+            case 'hi': message.channel.send("hi")
+                break;
+            case "adnan short story": message.channel.send("https://cdn.discordapp.com/attachments/794240262972243979/860556430490468362/VID_20210701_195116_318.mp4")
+                break;
+            case "study mode on": if (message.author.id == '550267183503114250' || message.author.id == '852779571816562729') {
+                message.reply("Activated Boss!!")
+                d = 1;
+            }
+                break;
+            case "study mode off": if (message.author.id == '550267183503114250' || message.author.id == '852779571816562729') {
+                    message.reply("Activated Boss!!")
+                    d = 1;
+                }
+            case "<@852779571816562729>": if (d == 1 && message.author.id == '761159077639356446') {
+                message.reply("Your Love is studying at the moment janeman! He will come back soon 🥰 Till then Continue you studies janeman 😠")
+            }
+            else if (d == 1) {
+                message.reply("Boss is studying at the moment he will be back soon! Be patient 👍 ")
+            } break;
+            case "<@550267183503114250>": if (d == 1 && message.author.id == '761159077639356446') {
+                message.reply("Your Love is studying at the moment janeman! He will come back soon 🥰 Till then Continue you studies janeman 😠")
+            }
+            else if (d == 1) {
+                message.reply("Boss is studying at the moment he will be back soon! Be patient ")
+            } break;
+
         }
     }
 }
