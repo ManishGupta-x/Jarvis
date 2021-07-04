@@ -797,7 +797,7 @@ client.on('message', async message => {
             }
                 break;
             case "study mode off": if (message.author.id == '550267183503114250' || message.author.id == '852779571816562729') {
-                message.reply("DeActivated Boss!!")
+                message.reply("Deactivated Boss!!")
                 d = 0;
             }break;
         }
