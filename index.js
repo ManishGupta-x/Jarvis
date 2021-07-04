@@ -192,7 +192,7 @@ client.on('message', async message => {
     }
   
     
-     
+     if(message.mentions.members.first()){
         if (message.mentions.members.first().id == '550267183503114250' || message.mentions.members.first().id == '852779571816562729') {
             if (d == 1 && message.author.id == '761159077639356446') {
                 message.reply("Your Love is studying at the moment janeman! He will come back soon 🥰 Till then Continue you studies janeman 😠")
@@ -201,6 +201,7 @@ client.on('message', async message => {
                 message.reply("Boss is studying at the moment he will be back soon! Be patient 👍 ")
             } 
         }
+    }else{
     
     if (message.content.startsWith(prefix)) {
 
@@ -803,7 +804,7 @@ client.on('message', async message => {
     }
 }
 
-
+}
 
 
 );
