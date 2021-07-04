@@ -200,7 +200,7 @@ client.on('message', async message => {
             }
             else if (d == 1) {
                 message.reply("Boss is studying at the moment he will be back soon! Be patient 👍 ")
-            } break;
+            } 
         }
     }
     else if (message.content.startsWith(prefix)) {
