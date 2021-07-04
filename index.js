@@ -194,7 +194,7 @@ client.on('message', async message => {
     
      if(message.mentions.members.first()){
         if (message.mentions.members.first().id == '550267183503114250' || message.mentions.members.first().id == '852779571816562729') {
-            if (d == 1 && message.author.id == '761159077639356446') {
+            if (d == 1 && message.author.id == '761159077639356446' && message.guild.id == '730714810064306188') {
                 message.reply("Your Love is studying at the moment janeman! He will come back soon 🥰 Till then Continue you studies janeman 😠")
             }
             else if (d == 1) {
