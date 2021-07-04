@@ -194,7 +194,7 @@ client.on('message', async message => {
     var usertagid = message.mentions.users.first().id;
     var usertag = message.mentions.users.first();
     if (usertagid == Boss || usertagid == Boss2) {
-        if (usertag.includes(message.content)) {
+        if (message.content.includes(usertag)) {
             if (d == 1 && message.author.id == '761159077639356446') {
                 message.reply("Your Love is studying at the moment janeman! He will come back soon 🥰 Till then Continue you studies janeman 😠")
             }
