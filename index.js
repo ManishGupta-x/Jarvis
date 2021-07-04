@@ -190,19 +190,18 @@ client.on('message', async message => {
                 message.channel.send("Hmmmmmmmmmm")
             })
     }
-    Boss = '550267183503114250'; Boss2 = '852779571816562729';
-    var usertagid = message.mentions.users.first().id;
-    var usertag = message.mentions.users.first();
-    // if (usertagid == Boss || usertagid == Boss2) {
-    //     if (message.content.includes(usertag)) {
-    //         if (d == 1 && message.author.id == '761159077639356446') {
-    //             message.reply("Your Love is studying at the moment janeman! He will come back soon 🥰 Till then Continue you studies janeman 😠")
-    //         }
-    //         else if (d == 1) {
-    //             message.reply("Boss is studying at the moment he will be back soon! Be patient 👍 ")
-    //         } 
-    //     }
-    // }
+  
+    
+     
+        if (message.mentions.members.first().id == '550267183503114250' || message.mentions.members.first().id == '852779571816562729') {
+            if (d == 1 && message.author.id == '761159077639356446') {
+                message.reply("Your Love is studying at the moment janeman! He will come back soon 🥰 Till then Continue you studies janeman 😠")
+            }
+            else if (d == 1) {
+                message.reply("Boss is studying at the moment he will be back soon! Be patient 👍 ")
+            } 
+        }
+    
     if (message.content.startsWith(prefix)) {
 
         switch (command) {
