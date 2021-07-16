@@ -10,6 +10,7 @@ module.exports ={
         let queue = await client.distube.getQueue(message);
     
         if(queue) {
+            client.distube.pause(message)
             client.distube.resume(message)
             const embed = new Discord.MessageEmbed()
             .setColor('#F0074F')
