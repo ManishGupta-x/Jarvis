@@ -10,8 +10,9 @@ module.exports ={
         let queue = await client.distube.getQueue(message);
     
         if(queue) {
-            
-            await client.distube.resume(message)
+             client.distube.resume(message)
+             client.distube.pause(message)
+             client.distube.resume(message)
             const embed = new Discord.MessageEmbed()
             .setColor('#F0074F')
             .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
