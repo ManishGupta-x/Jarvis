@@ -188,8 +188,6 @@ client.on('message', async message => {
             })
             .catch(() => {
                 message.channel.send("Hmmmmmmmmmm")
-            }).catch(() => {
-                message.channel.send("Ahh Sorry?")
             })
     }
 
