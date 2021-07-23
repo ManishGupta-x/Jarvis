@@ -23,6 +23,6 @@
     "node-fetch": "^2.6.1",
     "random-puppy": "^1.1.0",
     "sqlite": "^4.0.19",
-    "ytdl-core": "github:distubejs/node-ytdl-core"
+    "ytdl-core": "^4.9.0"
   }
 }
