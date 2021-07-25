@@ -213,6 +213,9 @@ client.on('message', async message => {
                 case 'search':
                     client.commands.get('search').execute(client, message, args, Discord);
                     break;
+                case 'fix':
+                        client.music.get('fix').execute(client, message, args, Discord);
+                        break;
                 case 'play':
                     if (!args[0]) {
                         message.channel.send('Please Mention song!')
