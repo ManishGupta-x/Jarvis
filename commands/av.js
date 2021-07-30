@@ -10,7 +10,7 @@ module.exports ={
         .setTimestamp()
         .setColor('RANDOM')
         .setImage(member.user.displayAvatarURL())
-        .setFooter(client.user.username, client.user.displayAvatarURL())
+        
         message.channel.send(userEmbed);
         
 
