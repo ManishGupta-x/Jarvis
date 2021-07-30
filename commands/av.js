@@ -9,7 +9,7 @@ module.exports ={
         .setAuthor(member.user.tag, member.user.displayAvatarURL())
         .setTimestamp()
         .setColor('RANDOM')
-        .setImage(member.user.displayAvatarURL())
+        .setDescription(member.user.displayAvatarURL())
         .setFooter(client.user.username, client.user.displayAvatarURL())
         message.channel.send(userEmbed);
         
