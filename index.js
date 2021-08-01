@@ -799,8 +799,12 @@ client.on('message', async message => {
         } else {
             switch (message.content) {
 
-                case 'hi': message.channel.send("hi")
+                case 'hey jarvis': if (message.author.id == '550267183503114250') { message.channel.send("Yes Boss 🙃") }
+                else message.channel.send('Hn bol bsdk 😒')
                     break;
+                case 'jarvis': if (message.author.id == '550267183503114250') { message.channel.send("Yes Boss 🙃") }
+                    else message.channel.send('Hn bol bsdk 😒')
+                        break;
                 case "adnan short story": message.channel.send("https://cdn.discordapp.com/attachments/794240262972243979/860556430490468362/VID_20210701_195116_318.mp4")
                     break;
                 case "jarvis expose cvm": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
