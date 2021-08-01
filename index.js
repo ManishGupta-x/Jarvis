@@ -214,8 +214,8 @@ client.on('message', async message => {
                     client.commands.get('search').execute(client, message, args, Discord);
                     break;
                 case 'fix':
-                        client.music.get('fix').execute(client, message, args, Discord);
-                        break;
+                    client.music.get('fix').execute(client, message, args, Discord);
+                    break;
                 case 'play':
                     if (!args[0]) {
                         message.channel.send('Please Mention song!')
@@ -802,6 +802,10 @@ client.on('message', async message => {
                 case 'hi': message.channel.send("hi")
                     break;
                 case "adnan short story": message.channel.send("https://cdn.discordapp.com/attachments/794240262972243979/860556430490468362/VID_20210701_195116_318.mp4")
+                    break;
+                case "jarvis expose cvm": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
+                    break;
+                case "jarvis expose shivam": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
                     break;
                 case "study mode on": if (message.author.id == '550267183503114250' || message.author.id == '852779571816562729') {
                     message.reply("Activated Boss!!")
