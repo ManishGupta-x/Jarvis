@@ -20,7 +20,7 @@ module.exports = {
             user = message.author;
         }
         else if(args[0]){
-             user = message.mentions.members.first() || client.members.cache.get(args[0])
+             user = message.mentions.members.first() || client.users.cache.get(args[0])
              message.channel.send(`${user}`);
             
         }
