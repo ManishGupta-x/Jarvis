@@ -21,6 +21,7 @@ module.exports = {
         }
         else if(args[0]){
              user = message.mentions.members.first() || client.members.get(args[0])
+             message.channel.send(`${user}`);
             
         }
         Data.findOne({
