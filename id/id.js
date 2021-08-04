@@ -19,7 +19,7 @@ module.exports = {
 
             user = message.author;
         }
-        else{
+        else if(args[0]){
             let user = message.mentions.members.first() || client.members.cache.get(args[0])
             await message.channel.send(`${client.users.cache.get(user.id).username}`)
         }
