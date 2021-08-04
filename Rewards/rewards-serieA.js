@@ -1,5 +1,5 @@
 module.exports ={
-    name: 'rewards-serieA',
+    name: 'rewards-seriea',
     Description: 'Gives info of rewards for laliga !',
     execute(message,args,Discord){
      
