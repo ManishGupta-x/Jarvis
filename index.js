@@ -688,6 +688,7 @@ client.on('message', async message => {
                   , twitter , friendly,Other Websites...etc`},
                             { name: "2. Rewards", value: `Gives Info for Rewards Commands` },
                             { name: "3. Tourney Related Commands 1", value: `Gives Info,rules and link commands for Tourneys ` },
+                            { name: "4. Tourney Related Commands 2", value: `Gives Info,rules and link commands for Tourneys ` },
                             { name: "5. Deadline Commands ", value: `Gives Info for Deadline Commands` },
                             { name: "6. Server Competitions", value: `Gives Info For Our Server Competetions` },
                             { name: "7. Server Roles", value: `Gives Info for For diffrents roles on the server :)` }
