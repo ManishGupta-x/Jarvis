@@ -20,8 +20,8 @@ module.exports = {
             user = message.author;
         }
         else if(args[0]){
-             user = message.mentions.members.first() || client.members.cache.get(args[0])
-             message.channel.send(`${client.users.cache.get(user.id)}`)
+             user = message.mentions.members.first() || client.members.get(args[0])
+            
         }
         Data.findOne({
             userID : user.id 
