@@ -1,5 +1,5 @@
 module.exports ={
-    name: 'serieA',
+    name: 'seriea',
     Description: 'Gives serie  Info !',
     execute(message,args,Discord){
      

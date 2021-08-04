@@ -13,7 +13,7 @@ module.exports ={
          
             {name : "1. p!premleague " , value : `Gives Info for RULES For Premier League`},
             {name : "2. p!laliga " , value : `Gives Info for RULES For La Liga`},
-            {name : "3. p!serieA " , value : `Gives Info for RULES of serie A `},
+            {name : "3. p!seriea " , value : `Gives Info for RULES of serie A `},
             {name : "4. p!bundesliga" , value : `Gives Info for Bundesliga `},
             
 

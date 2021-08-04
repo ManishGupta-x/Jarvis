@@ -416,6 +416,12 @@ client.on('message', async message => {
                 case 'ucl': if (message.guild.id == '554275795280068619') { client.commands.get('ucl').execute(message, args, Discord); }
 
                     break;
+                    case 'seriea': if (message.guild.id == '554275795280068619') { client.commands.get('seriea').execute(message, args, Discord); }
+
+                    break;
+                    case 'bundesliga': if (message.guild.id == '554275795280068619') { client.commands.get('bundesliga').execute(message, args, Discord); }
+
+                    break;
                 case 'clear': { client.commands.get('clear').execute(message, args, Discord); }
 
                     break;

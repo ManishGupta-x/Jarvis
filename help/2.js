@@ -11,7 +11,7 @@ module.exports ={
        .setDescription('Tourneys Rewards INFO')
        .addFields( 
             
-            {name : "1. p!rewards-serieA " , value : `Gives Reward Info For Serie A`},
+            {name : "1. p!rewards-seriea " , value : `Gives Reward Info For Serie A`},
             {name : "2. p!rewards-ucl" , value : `Gives Reward Info For UEFA Champions League`},
             
             {name : "3. p!rewards-laliga" , value : `Gives Reward Info For laliga `},
