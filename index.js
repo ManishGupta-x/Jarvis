@@ -703,6 +703,7 @@ client.on('message', async message => {
 
                     let msg = await message.channel.send(newEmbed)
                     await msg.react('1️⃣')
+                    await msg.react('2️⃣')
                     await msg.react('3️⃣')
                     await msg.react('4️⃣')
                     await msg.react('5️⃣')
