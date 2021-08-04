@@ -679,7 +679,7 @@ client.on('message', async message => {
                     const newEmbed = new Discord.MessageEmbed()
                         .setColor('RANDOM')
                         .setTitle('Help Module')
-                        .setThumbnail('https://tenor.com/view/helprave-i-need-help-onery-onery-popopango-help-flash-gif-19500575')
+                        .setThumbnail('https://i.imgur.com/KmTA1Mn.gif')
                         .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/c6bc3800d00c07ccd4dbf015bf3e743c.png?size=256')
                         .setDescription('Server\'s Info And Commands')
                         .addFields(
