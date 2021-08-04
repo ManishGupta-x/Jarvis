@@ -20,14 +20,15 @@ module.exports = {
             user = message.author;
         }
         else{
-            user= message.mentions.members.first() || client.members.cache.get(args[0])
+            let user = message.mentions.members.first() || client.members.cache.get(args[0])
         }
         Data.findOne({
             userID : user.id
         }, (err, data) => {
             if (err) console.log(err);
             if (!data) { message.reply(' No Id in record type p!setid')}else{
-        return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);}
+                await message.channel.send(`${client.users.cache.get(user.id).username}`)
+       return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);}
     })
 }
 }
