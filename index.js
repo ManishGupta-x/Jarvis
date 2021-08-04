@@ -141,7 +141,7 @@ for (const file of idFiles) {
 
 client.once('ready', () => {
     console.log(' The Jarvis is online!');
-    client.user.setActivity('Serving Boss 😎', { type: 'CUSTOM_STATUS' }).catch(console.error);
+    client.user.setActivity('to Boss 😎', { type:'LISTENING' }).catch(console.error);
 
 });
 module.exports.timedcheck = undefined;
