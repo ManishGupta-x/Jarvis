@@ -21,13 +21,14 @@ module.exports = {
         }
         else{
             let user = message.mentions.members.first() || client.members.cache.get(args[0])
+            await message.channel.send(`${client.users.cache.get(user.id).username}`)
         }
         Data.findOne({
             userID : user.id
         }, (err, data) => {
             if (err) console.log(err);
             if (!data) { message.reply(' No Id in record type p!setid')}else{
-                await message.channel.send(`${client.users.cache.get(user.id).username}`)
+                
        return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);}
     })
 }
