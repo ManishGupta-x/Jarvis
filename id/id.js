@@ -3,7 +3,7 @@
 const fs = require("fs");
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true });
-
+let membertarget =0 ;
 
 
 
@@ -20,10 +20,11 @@ module.exports = {
             user = message.author;
         }
         else if(args[0]){
-             user = message.mentions.members.first() || client.users.cache.get(args[0])
-             message.channel.send(`${user}`);
+            membertarget = message.mentions.members.first().id 
+        
             
         }
+        if (!args[0]){
         Data.findOne({
             userID : user.id 
         }, (err, data) => {
@@ -31,6 +32,15 @@ module.exports = {
             if (!data) { message.reply(' No Id in record type p!setid')}else{
                 
        return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);}
-    })
+    })}else if(args[0]){
+        Data.findOne({
+            userID : membertarget
+        }, (err, data) => {
+            if (err) console.log(err);
+            if (!data) { message.reply(' No Id in record type p!setid')}else{
+                
+       return message.channel.send(`${client.users.cache.get(membertarget).username}'s Id ${data.Konami}`);}
+    })}
+    
 }
-}
+}  
