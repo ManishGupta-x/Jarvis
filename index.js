@@ -698,7 +698,7 @@ client.on('message', async message => {
 
 
                         )
-                        .setImage('https://tenor.com/view/do-you-need-help-madison-iseman-john-shartzer-james-morosini-crypt-tv-gif-17052933');
+                        .setImage('https://i.imgur.com/vV89zxE.gif');
 
 
                     let msg = await message.channel.send(newEmbed)
