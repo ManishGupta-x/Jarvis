@@ -29,7 +29,7 @@ module.exports = {
             if (err) console.log(err);
             if (!data) { message.reply(' No Id in record type p!setid')}else{
                 
-       return message.channel.send(`${client.users.cache.get(user).id}'s Id ${data.Konami}`);}
+       return message.channel.send(`${client.users.cache.get(user.id).username}'s Id ${data.Konami}`);}
     })
 }
 }
