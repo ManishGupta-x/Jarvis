@@ -141,7 +141,7 @@ for (const file of idFiles) {
 
 client.once('ready', () => {
     console.log(' The Jarvis is online!');
-    client.user.setActivity('v2.0.1', { type: 'PLAYING' }).catch(console.error);
+    client.user.setActivity('Serving Boss 😎', { type: 'CUSTOM_STATUS' }).catch(console.error);
 
 });
 module.exports.timedcheck = undefined;
@@ -294,14 +294,12 @@ client.on('message', async message => {
                     message.channel.send('https://tenor.com/view/turn-off-shut-off-switch-off-kill-the-lights-lights-off-gif-12198682');
                     message.reply("Nicely done! 🥳' ")
                     break;
-                case 'gk11':
-                    message.channel.send("https://www.toornament.com/en_GB/tournaments/4633689801351979008/stages/4633708230049832960/");
-                    break;
+               
                 case 'pl_table':
-                    message.channel.send("https://www.toornament.com/en_US/tournaments/4587785852383068160/stages/4587840047796125696/groups/4587840048567877657/");
+                    message.channel.send("Not Started Yet");
                     break;
                 case 'll_table':
-                    message.channel.send("https://www.toornament.com/en_GB/tournaments/4604652790765264896/stages/4604704419425280000/groups/4604704420129923113/");
+                    message.channel.send("Not Started Yet");
                     break;
 
 
@@ -414,23 +412,14 @@ client.on('message', async message => {
                 case 'worldcup': if (message.guild.id == '554275795280068619') { client.commands.get('worldcup').execute(message, args, Discord); }
 
                     break;
-                case 'div1': if (message.guild.id == '554275795280068619') { client.commands.get('div1').execute(message, args, Discord); }
-
-                    break;
-                case 'div2': if (message.guild.id == '554275795280068619') { client.commands.get('div2').execute(message, args, Discord); }
-                    break;
-                case 'div3': if (message.guild.id == '554275795280068619') { client.commands.get('div3').execute(message, args, Discord); }
-
-                    break;
+             
                 case 'ucl': if (message.guild.id == '554275795280068619') { client.commands.get('ucl').execute(message, args, Discord); }
 
                     break;
                 case 'clear': { client.commands.get('clear').execute(message, args, Discord); }
 
                     break;
-                case 'divisions': if (message.guild.id == '554275795280068619') { client.commands.get('divisions').execute(message, args, Discord); }
-
-                    break;
+               
                 case 'deadline': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline').execute(message, args, Discord); }
 
                     break;
@@ -477,9 +466,13 @@ client.on('message', async message => {
                 case 'rewards-premleague': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-premleague').execute(message, args, Discord); }
 
                     break;
-                case 'rewards-divisions': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-divisions').execute(message, args, Discord); }
+                    case 'rewards-bundesliga': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-bundesliga').execute(message, args, Discord); }
 
                     break;
+                    case 'rewards-serieA': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-serieA').execute(message, args, Discord); }
+
+                    break;
+                
                 case 'rewards-mainko': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-mainko').execute(message, args, Discord); }
 
                     break;
@@ -572,10 +565,10 @@ client.on('message', async message => {
 
                         reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 1, time: 40000 })
                         .then(async collected => {
-                            if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4688766268798468096/#structure') }
-                            else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4688766268832022576/#structure') }
-                            else if (collected.first().emoji.name == '3️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4688766268832022624/#structure') }
-                            else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('https://www.toornament.com/en_US/tournaments/4685785144835612672/stages/4685792168180662272/groups/4688766268865577104/#structure') }
+                            if (collected.first().emoji.name == '1️⃣') { return message.channel.send('Not Available') }
+                            else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('Not Available') }
+                            else if (collected.first().emoji.name == '3️⃣') { return message.channel.send('Not Available') }
+                            else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('Not Available') }
 
 
                             else return message.channel.send('Time Up');

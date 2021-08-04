@@ -11,13 +11,13 @@ module.exports ={
        .setDescription('Rules and  Info Commands')
        .addFields( 
          
-            {name : "1. p! " , value : ``},
-            {name : "2. p! " , value : ``},
-            {name : "3. p!" , value : ` `},
-            {name : "4. p!" , value : `  `},
-            {name : "5. p! " , value : ` `},
-            {name : "6. p!" , value : ``},
-            {name : "7. p!" , value : ``}
+            {name : "1. p!laliga " , value : `Info For laliga`},
+            {name : "2. p!premleague " , value : `Info For EPL`},
+            {name : "3. p!bundesliga" , value : ` Info For Bundesliga`},
+            {name : "4. p!serieA" , value : ` Info For serie A `},
+            {name : "5. p!battleroyal " , value : `Info For Battle Royal `},
+            {name : "6. p!ucl" , value : `Info For ucl`},
+            {name : "7. p!worldcup" , value : `Info For worldcup`}
              
           
         
@@ -27,8 +27,7 @@ module.exports ={
           .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784432968852439100/apps.png');
          
            
-          msg.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error));
-          msg.edit(newEmbed);
+          
         } 
         
         
