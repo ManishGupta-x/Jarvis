@@ -20,7 +20,7 @@ module.exports = {
             user = message.author;
         }
         else if(args[0]){
-            membertarget = message.mentions.members.first().id 
+            membertarget = message.mentions.members.first().id ;
         
             
         }
