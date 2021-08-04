@@ -674,155 +674,151 @@ client.on('message', async message => {
                     break;
 
                 }
-                 case 'help': message.channel.send('Under Maintenance') //if (message.guild.id == '554275795280068619') {
+                case 'help': if (message.guild.id == '554275795280068619') {
 
-                //     const newEmbed = new Discord.MessageEmbed()
-                //         .setColor('RANDOM')
-                //         .setTitle('Help Module')
-                //         .setThumbnail('https://i.imgur.com/KmTA1Mn.gif')
-                //         .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/c6bc3800d00c07ccd4dbf015bf3e743c.png?size=256')
-                //         .setDescription('Server\'s Info And Commands')
-                //         .addFields(
+                    const newEmbed = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setTitle('Help Module')
+                        .setThumbnail('https://tenor.com/view/helprave-i-need-help-onery-onery-popopango-help-flash-gif-19500575')
+                        .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/c6bc3800d00c07ccd4dbf015bf3e743c.png?size=256')
+                        .setDescription('Server\'s Info And Commands')
+                        .addFields(
 
-                //             {
-                //                 name: "1. General Commands ", value: `Gives Info for General commands like ping 
-                //  , twitter , friendly,Other Websites...etc`},
-                //             { name: "2. Rewards", value: `Gives Info for Rewards Commands` },
-
-                //             { name: "3. Tourney Related Commands 1", value: `Gives Info,rules and link commands for Tourneys ` },
-                //             { name: "4. Tourney Related Commands 2", value: `Gives Info,rules and links for Tourneys ` },
-                //             { name: "5. Deadline Commands ", value: `Gives Info for Deadline Commands` },
-                //             { name: "6. Server Competitions", value: `Gives Info For Our Server Competetions` },
-                //             { name: "7. Server Roles", value: `Gives Info for For diffrents roles on the server :)` }
+                            {
+                                name: "1. General Commands ", value: `Gives Info for General commands like ping 
+                  , twitter , friendly,Other Websites...etc`},
+                            { name: "2. Rewards", value: `Gives Info for Rewards Commands` },
+                            { name: "3. Tourney Related Commands 1", value: `Gives Info,rules and link commands for Tourneys ` },
+                            { name: "5. Deadline Commands ", value: `Gives Info for Deadline Commands` },
+                            { name: "6. Server Competitions", value: `Gives Info For Our Server Competetions` },
+                            { name: "7. Server Roles", value: `Gives Info for For diffrents roles on the server :)` }
 
 
 
 
 
-                //         )
-                //         .setFooter(`You can only React for one at a time`)
-                //         .setImage('https://i.imgur.com/oyxpmTp.gif');
+                        )
+                        .setImage('https://tenor.com/view/do-you-need-help-madison-iseman-john-shartzer-james-morosini-crypt-tv-gif-17052933');
 
 
-                //     let msg = await message.channel.send(newEmbed)
-                //     await msg.react('1️⃣')
-                //     await msg.react('2️⃣')
-                //     await msg.react('3️⃣')
-                //     await msg.react('4️⃣')
-                //     await msg.react('5️⃣')
-                //     await msg.react('6️⃣')
-                //     await msg.react('7️⃣')
+                    let msg = await message.channel.send(newEmbed)
+                    await msg.react('1️⃣')
+                    await msg.react('3️⃣')
+                    await msg.react('4️⃣')
+                    await msg.react('5️⃣')
+                    await msg.react('6️⃣')
+                    await msg.react('7️⃣')
 
 
-                //     await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
+                    await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
 
-                //         reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣' || reaction.emoji.name == '6️⃣' || reaction.emoji.name == '7️⃣'), { max: 1, time: 40000 })
-                //         .then(async collected => {
-                //             if (collected.first().emoji.name == '1️⃣') { return client.help.get('1').execute(message, args, Discord, msg) }
-                //             else if (collected.first().emoji.name == '2️⃣') { return client.help.get('2').execute(message, args, Discord, msg) }
-                //             else if (collected.first().emoji.name == '3️⃣') { return client.help.get('3').execute(message, args, Discord, msg) }
-                //             else if (collected.first().emoji.name == '4️⃣') { return client.help.get('4-1').execute(message, args, Discord, msg) }
-                //             else if (collected.first().emoji.name == '5️⃣') { return client.help.get('4').execute(message, args, Discord, msg) }
-                //             else if (collected.first().emoji.name == '6️⃣') { return client.help.get('5').execute(message, args, Discord, msg) }
-                //             else if (collected.first().emoji.name == '7️⃣') { return client.help.get('6').execute(message, args, Discord, msg) }
+                        reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣' || reaction.emoji.name == '6️⃣' || reaction.emoji.name == '7️⃣'), { max: 1, time: 40000 })
+                        .then(async collected => {
+                            if (collected.first().emoji.name == '1️⃣') { return client.help.get('1').execute(message, args, Discord, msg) }
+                            else if (collected.first().emoji.name == '2️⃣') { return client.help.get('2').execute(message, args, Discord, msg) }
+                            else if (collected.first().emoji.name == '3️⃣') { return client.help.get('3').execute(message, args, Discord, msg) }
+                            else if (collected.first().emoji.name == '4️⃣') { return client.help.get('4-1').execute(message, args, Discord, msg) }
+                            else if (collected.first().emoji.name == '5️⃣') { return client.help.get('4').execute(message, args, Discord, msg) }
+                            else if (collected.first().emoji.name == '6️⃣') { return client.help.get('5').execute(message, args, Discord, msg) }
+                            else if (collected.first().emoji.name == '7️⃣') { return client.help.get('6').execute(message, args, Discord, msg) }
 
-                //             else return message.channel.send('Time Up');
+                            else return message.channel.send('Time Up');
 
 
 
 
 
-                //         }).catch(async () => { return message.channel.send("Time Over") });
+                        }).catch(async () => { return message.channel.send("Time Over") });
 
-                // } else {
-                //     message.reply('Customised for Freak game server Only ')
-                // }
+            } else {
+                message.reply('Customised for Freak game server Only ')
+            }
 
 
-                    break;
+            break;
                 case 'match':
 
-                    var player1 = Math.floor(Math.random() * 4);
-                    var player2 = Math.floor(Math.random() * 4);
+            var player1 = Math.floor(Math.random() * 4);
+            var player2 = Math.floor(Math.random() * 4);
 
-                    let question1 = message.content.slice(prefix.length + 6)
-                    if (!question1) {
+            let question1 = message.content.slice(prefix.length + 6)
+            if (!question1) {
 
-                        return message.channel.send('You didnt specified a match to generate')
-                    }
-                    const Embed1 = new Discord.MessageEmbed()
-                        .setColor('#00f1ff')
-                        .setTitle("Results ")
-                        .setDescription(question1 + "\n" + player1 + '-' + player2)
+                return message.channel.send('You didnt specified a match to generate')
+            }
+            const Embed1 = new Discord.MessageEmbed()
+                .setColor('#00f1ff')
+                .setTitle("Results ")
+                .setDescription(question1 + "\n" + player1 + '-' + player2)
 
-                    message.channel.send(Embed1);
+            message.channel.send(Embed1);
 
-                    message.delete({ timeout: 2000 })
-                    break;
+            message.delete({ timeout: 2000 })
+            break;
 
                 case 'info':
 
-                    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || x.user.username === args[0]) || message.member;
+            let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || x.user.username === args[0]) || message.member;
 
 
 
-                    if (member.presence.status === 'dnd') member.presence.status = 'Do Not Disturb';
-                    if (member.presence.status === 'online') member.presence.status = 'Online';
-                    if (member.presence.status === 'idle') member.presence.status = 'Idle';
-                    if (member.presence.status === 'offline') member.presence.status = 'offline';
+            if (member.presence.status === 'dnd') member.presence.status = 'Do Not Disturb';
+            if (member.presence.status === 'online') member.presence.status = 'Online';
+            if (member.presence.status === 'idle') member.presence.status = 'Idle';
+            if (member.presence.status === 'offline') member.presence.status = 'offline';
 
-                    let x = Date.now() - member.createdAt;
-                    let y = Date.now() - message.guild.members.cache.get(member.id).joinedAt;
-                    const joined = Math.floor(y / 86400000);
+            let x = Date.now() - member.createdAt;
+            let y = Date.now() - message.guild.members.cache.get(member.id).joinedAt;
+            const joined = Math.floor(y / 86400000);
 
-                    const joineddate = moment.utc(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss");
-                    let status = member.presence.status;
+            const joineddate = moment.utc(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss");
+            let status = member.presence.status;
 
-                    const userEmbed = new Discord.MessageEmbed()
-                        .setAuthor(member.user.tag, member.user.displayAvatarURL())
-                        .setTimestamp()
-                        .setColor('#f7331a')
-                        .setImage(member.user.displayAvatarURL())
-                        .addField("Member ID", member.id)
+            const userEmbed = new Discord.MessageEmbed()
+                .setAuthor(member.user.tag, member.user.displayAvatarURL())
+                .setTimestamp()
+                .setColor('#f7331a')
+                .setImage(member.user.displayAvatarURL())
+                .addField("Member ID", member.id)
 
-                        .addField("Account Created On:", ` ${moment.utc(member.user.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
-                        .addField('Joined the server At', `${joineddate} \n> ${joined} day(S) Ago`)
-                        .addField("Status", status)
-                        .addField('Roles', `<@&${member._roles.join('> <@&')}>`)
-                        .setFooter(client.user.username, client.user.displayAvatarURL())
-                    message.channel.send(userEmbed);
-                    break;
+                .addField("Account Created On:", ` ${moment.utc(member.user.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
+                .addField('Joined the server At', `${joineddate} \n> ${joined} day(S) Ago`)
+                .addField("Status", status)
+                .addField('Roles', `<@&${member._roles.join('> <@&')}>`)
+                .setFooter(client.user.username, client.user.displayAvatarURL())
+            message.channel.send(userEmbed);
+            break;
 
 
+        }
+
+    } else {
+        switch (message.content) {
+
+            case 'hey jarvis': if (message.author.id == '550267183503114250' || message.guild.id == '730714810064306188') { message.channel.send("Yes Boss 🙃") }
+            else message.channel.send('Hn bol bsdk 😒')
+                break;
+            case 'jarvis': if (message.author.id == '550267183503114250' || message.guild.id == '730714810064306188') { message.channel.send("Yes Boss 🙃") }
+            else message.channel.send('Hn bol bsdk 😒')
+                break;
+            case "adnan short story": message.channel.send("https://cdn.discordapp.com/attachments/794240262972243979/860556430490468362/VID_20210701_195116_318.mp4")
+                break;
+            case "jarvis expose cvm": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
+                break;
+            case "jarvis expose shivam": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
+                break;
+            case "study mode on": if (message.author.id == '550267183503114250' || message.author.id == '852779571816562729') {
+                message.reply("Activated Boss!!")
+                d = 1;
             }
-
-        } else {
-            switch (message.content) {
-
-                case 'hey jarvis': if (message.author.id == '550267183503114250' || message.guild.id == '730714810064306188') { message.channel.send("Yes Boss 🙃") }
-                else message.channel.send('Hn bol bsdk 😒')
-                    break;
-                case 'jarvis': if (message.author.id == '550267183503114250'|| message.guild.id == '730714810064306188') { message.channel.send("Yes Boss 🙃") }
-                    else message.channel.send('Hn bol bsdk 😒')
-                        break;
-                case "adnan short story": message.channel.send("https://cdn.discordapp.com/attachments/794240262972243979/860556430490468362/VID_20210701_195116_318.mp4")
-                    break;
-                case "jarvis expose cvm": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
-                    break;
-                case "jarvis expose shivam": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
-                    break;
-                case "study mode on": if (message.author.id == '550267183503114250' || message.author.id == '852779571816562729') {
-                    message.reply("Activated Boss!!")
-                    d = 1;
-                }
-                    break;
-                case "study mode off": if (message.author.id == '550267183503114250' || message.author.id == '852779571816562729') {
-                    message.reply("Deactivated Boss!!")
-                    d = 0;
-                } break;
-            }
+                break;
+            case "study mode off": if (message.author.id == '550267183503114250' || message.author.id == '852779571816562729') {
+                message.reply("Deactivated Boss!!")
+                d = 0;
+            } break;
         }
     }
+}
 
 }
 
