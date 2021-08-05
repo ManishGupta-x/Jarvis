@@ -24,6 +24,6 @@
     "puppeteer": "^10.2.0",
     "random-puppy": "^1.1.0",
     "sqlite": "^4.0.19",
-    "ytdl-core": "^4.9.0"
+    "ytdl-core": "^4.9.1"
   }
 }
