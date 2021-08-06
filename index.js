@@ -107,6 +107,14 @@ for (const file of deadlineFiles) {
     const command = require(`./deadline/${file}`);
     client.deadline.set(command.name, command);
 }
+
+client.leagues = new Discord.Collection();
+const leaguesFiles = fs.readdirSync('./leagues/').filter(file => file.endsWith('.js'));
+for (const file of leaguesFiles) {
+
+    const command = require(`./leagues/${file}`);
+    client.leagues.set(command.name, command);
+}
 client.music = new Discord.Collection();
 const musicFiles = fs.readdirSync('./music/').filter(file => file.endsWith('.js'));
 for (const file of musicFiles) {
@@ -210,6 +218,9 @@ client.on('message', async message => {
                 case 'ping':
                     client.commands.get('ping').execute(client, message, args, Discord);
                     break;
+                case 'epl':
+                        client.leagues.get('epl').execute(client, message, args, Discord);
+                        break;
                 case 'search':
                     client.commands.get('search').execute(client, message, args, Discord);
                     break;
