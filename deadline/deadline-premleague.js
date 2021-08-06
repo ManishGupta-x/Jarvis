@@ -3,7 +3,7 @@ module.exports ={
     Description: 'shows deadline of Premier league tourney',
     execute(message,args, Discord){
      
-       message.channel.send('Ended For season 3');
+       message.channel.send('12th August 2021');
 
 
     }  
