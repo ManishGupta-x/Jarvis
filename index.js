@@ -220,7 +220,7 @@ client.on('message', async message => {
                     break;
                 case 'epl':
                     if(message.member.roles.cache.has('610377914109788180')){
-                        client.leagues.get('epl').execute(client, message, args, Discord);}
+                        client.leagues.get('epl').execute(message, args, Discord);}
                         break;
                 case 'search':
                     client.commands.get('search').execute(client, message, args, Discord);
