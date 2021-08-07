@@ -12,7 +12,6 @@ module.exports ={
             
             {name : "1. p!deadline-freakcup" , value : `Ended`},
             {name : "2. p!deadline-laliga" , value : `Ended`},
-
             {name : "3. p!deadline-mainko" , value : `Ended`},
             {name : "4. p!deadline-premleague" , value : `12th August 2021`},
             {name : "5. p!deadline-ucl" , value : `Ended For season 3`},
