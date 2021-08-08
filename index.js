@@ -149,7 +149,7 @@ for (const file of idFiles) {
 
 client.once('ready', () => {
     console.log(' The Jarvis is online!');
-    client.user.setActivity('Boss 😎', { type:'LISTENING' }).catch(console.error);
+    client.user.setActivity('Boss 😎', { type: 'LISTENING' }).catch(console.error);
 
 });
 module.exports.timedcheck = undefined;
@@ -219,9 +219,14 @@ client.on('message', async message => {
                     client.commands.get('ping').execute(client, message, args, Discord);
                     break;
                 case 'epl':
-                    if(message.member.roles.cache.has('610377914109788180')){
-                        client.leagues.get('epl').execute(message, args, Discord);}
-                        break;
+                    if (message.member.roles.cache.has('610377914109788180')) {
+                        client.leagues.get('epl').execute(message, args, Discord);
+                    }
+                case 'br':
+                    if (message.member.roles.cache.has('610377914109788180')) {
+                        client.leagues.get('br').execute(message, args, Discord);
+                    }
+                    break;
                 case 'search':
                     client.commands.get('search').execute(client, message, args, Discord);
                     break;
@@ -428,10 +433,10 @@ client.on('message', async message => {
                 case 'ucl': if (message.guild.id == '554275795280068619') { client.commands.get('ucl').execute(message, args, Discord); }
 
                     break;
-                    case 'seriea': if (message.guild.id == '554275795280068619') { client.commands.get('seriea').execute(message, args, Discord); }
+                case 'seriea': if (message.guild.id == '554275795280068619') { client.commands.get('seriea').execute(message, args, Discord); }
 
                     break;
-                    case 'bundesliga': if (message.guild.id == '554275795280068619') { client.commands.get('bundesliga').execute(message, args, Discord); }
+                case 'bundesliga': if (message.guild.id == '554275795280068619') { client.commands.get('bundesliga').execute(message, args, Discord); }
 
                     break;
                 case 'clear': { client.commands.get('clear').execute(message, args, Discord); }
@@ -459,7 +464,7 @@ client.on('message', async message => {
                 case 'deadline-premleague': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-premleague').execute(message, args, Discord); }
 
                     break;
-                case 'deadline-bbtourney': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-bbtourney').execute(message, args, Discord); }
+                case 'deadline-battleroyal': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-battleroyal').execute(message, args, Discord); }
 
                     break;
                 case 'main-squadko': if (message.guild.id == '554275795280068619') { client.commands.get('main-squadko').execute(message, args, Discord); }
@@ -482,6 +487,9 @@ client.on('message', async message => {
 
                     break;
                 case 'rewards-premleague': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-premleague').execute(message, args, Discord); }
+
+                    break;
+                case 'rewards-battleroyal': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-battleroyal').execute(message, args, Discord); }
 
                     break;
                 case 'rewards-bundesliga': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-bundesliga').execute(message, args, Discord); }
