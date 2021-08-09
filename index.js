@@ -315,6 +315,9 @@ client.on('message', async message => {
                 case 'pl_table':
                     message.channel.send("https://play.toornament.com/en_GB/tournaments/4865938665053093888/stages/4865939949177348096/groups/4865957197042778112/");
                     break;
+                case 'br_table':
+                        message.channel.send("https://play.toornament.com/en_GB/tournaments/4872089970820571136/stages/4872101454729175040/groups/4872152775729233920/");
+                        break;
                 case 'll_table':
                     message.channel.send("Not Started Yet");
                     break;
