@@ -226,6 +226,10 @@ client.on('message', async message => {
                     if (message.member.roles.cache.has('610377914109788180')) {
                         client.leagues.get('br').execute(message, args, Discord);
                     }
+                case 'll':
+                    if (message.member.roles.cache.has('610377914109788180')) {
+                        client.leagues.get('ll').execute(message, args, Discord);
+                    }
                     break;
                 case 'search':
                     client.commands.get('search').execute(client, message, args, Discord);
@@ -316,10 +320,10 @@ client.on('message', async message => {
                     message.channel.send("https://play.toornament.com/en_GB/tournaments/4865938665053093888/stages/4865939949177348096/groups/4865957197042778112/");
                     break;
                 case 'br_table':
-                        message.channel.send("https://play.toornament.com/en_GB/tournaments/4872089970820571136/stages/4872101454729175040/groups/4872152775729233920/");
-                        break;
+                    message.channel.send("https://play.toornament.com/en_GB/tournaments/4872089970820571136/stages/4872101454729175040/groups/4872152775729233920/");
+                    break;
                 case 'll_table':
-                    message.channel.send("Not Started Yet");
+                    message.channel.send("https://play.toornament.com/en_GB/tournaments/4877637697536647168/stages/4877671880807235584/groups/4877673240538669056/");
                     break;
 
 
