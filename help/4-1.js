@@ -13,9 +13,9 @@ module.exports ={
          
             {name : "1. p!pl_table " , value : `Gives Link of premier league table`},
             {name : "2. p!ll_table " , value : `Gives Link of La Liga table`},
-            {name : "3. p!ucl_table" , value : `Gives link of UCl Matchdays and Table `},
-            {name : "4. p!ucl" , value : `Gives Rules for Ucl  `},
-            {name : "5. p!wc_table" , value : `Gives link World Cup`}
+            {name : "3. p!br_table" , value : `Gives link of Battle royal Table `},
+            {name : "4. p!bl_table" , value : `Gives link for Bundesliga table `},
+            {name : "5. p!sr_table" , value : `Gives link of serie A Table`}
              
           
         

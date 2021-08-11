@@ -226,6 +226,14 @@ client.on('message', async message => {
                     if (message.member.roles.cache.has('610377914109788180')) {
                         client.leagues.get('br').execute(message, args, Discord);
                     }
+                case 'bl':
+                    if (message.member.roles.cache.has('610377914109788180')) {
+                        client.leagues.get('bl').execute(message, args, Discord);
+                    }
+                case 'sr':
+                    if (message.member.roles.cache.has('610377914109788180')) {
+                        client.leagues.get('sr').execute(message, args, Discord);
+                    }
                 case 'll':
                     if (message.member.roles.cache.has('610377914109788180')) {
                         client.leagues.get('ll').execute(message, args, Discord);
@@ -474,6 +482,10 @@ client.on('message', async message => {
                 case 'deadline-battleroyal': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-battleroyal').execute(message, args, Discord); }
 
                     break;
+                case 'deadline-bundesliga': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-bundesliga').execute(message, args, Discord); }
+
+                    break;
+
                 case 'main-squadko': if (message.guild.id == '554275795280068619') { client.commands.get('main-squadko').execute(message, args, Discord); }
 
                     break;
