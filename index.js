@@ -222,18 +222,20 @@ client.on('message', async message => {
                     if (message.member.roles.cache.has('610377914109788180')) {
                         client.leagues.get('epl').execute(message, args, Discord);
                     }
+                    break;
                 case 'br':
                     if (message.member.roles.cache.has('610377914109788180')) {
                         client.leagues.get('br').execute(message, args, Discord);
                     }
+                    break;
                 case 'bl':
                     if (message.member.roles.cache.has('610377914109788180')) {
                         client.leagues.get('bl').execute(message, args, Discord);
-                    }
+                    }break;
                 case 'sr':
                     if (message.member.roles.cache.has('610377914109788180')) {
                         client.leagues.get('sr').execute(message, args, Discord);
-                    }
+                    }break;
                 case 'll':
                     if (message.member.roles.cache.has('610377914109788180')) {
                         client.leagues.get('ll').execute(message, args, Discord);
