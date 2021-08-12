@@ -15,7 +15,7 @@ module.exports ={
             {name : "2. p!deadline-worldcup" , value : `Gives Last Updated Deadline For world Cup`},
             {name : "3. p!deadline-laliga" , value : `Gives Last Updated Deadline For La liga`},
 
-            {name : "4. p!deadline-mainko" , value : `Gives Last Updated Deadline For Main Squad KO `},
+            {name : "4. p!deadline-bundesliga" , value : `Gives Last Updated Deadline For bundesliga `},
             {name : "5. p!deadline-premleague" , value : `Gives Last Updated Deadline For Premier League `},
             {name : "6. p!deadline-ucl" , value : `Gives Last Updated Deadline For UCL `}
              
