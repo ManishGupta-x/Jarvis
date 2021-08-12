@@ -335,6 +335,12 @@ client.on('message', async message => {
                 case 'll_table':
                     message.channel.send("https://play.toornament.com/en_GB/tournaments/4877637697536647168/stages/4877671880807235584/groups/4877673240538669056/");
                     break;
+                case 'bl_table':
+                        message.channel.send("https://play.toornament.com/en_GB/tournaments/4880298888668282880/stages/4880376674243969024/groups/4880376674881503247/");
+                        break;
+                 case 'sr_table':
+                            message.channel.send("https://play.toornament.com/en_GB/tournaments/4883199297793040384/stages/4883200803025297408/groups/4883214227227738112/");
+                            break;
 
 
                 case 'welcome': if (message.guild.id == '554275795280068619') { client.commands.get('welcome').execute(message, args, Discord); }
