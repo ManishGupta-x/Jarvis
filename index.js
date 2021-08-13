@@ -472,6 +472,9 @@ client.on('message', async message => {
                 case 'deadline-mainko': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-mainko').execute(message, args, Discord); }
 
                     break;
+                    case 'deadline-seriea': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-seriea').execute(message, args, Discord); }
+
+                    break;
                 case 'deadline-freakcup': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-freakcup').execute(message, args, Discord); }
 
                     break;

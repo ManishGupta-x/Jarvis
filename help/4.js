@@ -12,12 +12,12 @@ module.exports ={
        .addFields( 
             
             {name : "1. p!deadline-freakcup" , value : `Gives Last Updated Deadline For Freak Cup`},
-            {name : "2. p!deadline-worldcup" , value : `Gives Last Updated Deadline For world Cup`},
+            {name : "2. p!deadline-seriea" , value : `Gives Last Updated Deadline For serie A`},
             {name : "3. p!deadline-laliga" , value : `Gives Last Updated Deadline For La liga`},
 
             {name : "4. p!deadline-bundesliga" , value : `Gives Last Updated Deadline For bundesliga `},
             {name : "5. p!deadline-premleague" , value : `Gives Last Updated Deadline For Premier League `},
-            {name : "6. p!deadline-ucl" , value : `Gives Last Updated Deadline For UCL `}
+            {name : "6. p!deadline-battleroyal" , value : `Gives Last Updated Deadline For Battle royal `}
              
           
         
