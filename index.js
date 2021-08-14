@@ -331,19 +331,19 @@ client.on('message', async message => {
                     break;
 
                 case 'pl_table':
-                    message.channel.send("https://play.toornament.com/en_GB/tournaments/4865938665053093888/stages/4865939949177348096/groups/4865957197042778112/");
+                    if (message.guild.id == '554275795280068619') message.channel.send("https://play.toornament.com/en_GB/tournaments/4865938665053093888/stages/4865939949177348096/groups/4865957197042778112/");
                     break;
                 case 'br_table':
-                    message.channel.send("https://play.toornament.com/en_GB/tournaments/4872089970820571136/stages/4872101454729175040/groups/4872152775729233920/");
+                    if (message.guild.id == '554275795280068619')  message.channel.send("https://play.toornament.com/en_GB/tournaments/4872089970820571136/stages/4872101454729175040/groups/4872152775729233920/");
                     break;
                 case 'll_table':
-                    message.channel.send("https://play.toornament.com/en_GB/tournaments/4877637697536647168/stages/4877671880807235584/groups/4877673240538669056/");
+                    if (message.guild.id == '554275795280068619')   message.channel.send("https://play.toornament.com/en_GB/tournaments/4877637697536647168/stages/4877671880807235584/groups/4877673240538669056/");
                     break;
                 case 'bl_table':
-                        message.channel.send("https://play.toornament.com/en_GB/tournaments/4880298888668282880/stages/4880376674243969024/groups/4880376674881503247/");
+                    if (message.guild.id == '554275795280068619')   message.channel.send("https://play.toornament.com/en_GB/tournaments/4880298888668282880/stages/4880376674243969024/groups/4880376674881503247/");
                         break;
                  case 'sr_table':
-                            message.channel.send("https://play.toornament.com/en_GB/tournaments/4883199297793040384/stages/4883200803025297408/groups/4883214227227738112/");
+                    if (message.guild.id == '554275795280068619')   message.channel.send("https://play.toornament.com/en_GB/tournaments/4883199297793040384/stages/4883200803025297408/groups/4883214227227738112/");
                             break;
 
 
@@ -351,7 +351,7 @@ client.on('message', async message => {
 
                     break;
 
-                case 'helpid': client.commands.get('helpid').execute(message, args, Discord);
+                case 'helpid': if (message.guild.id == '554275795280068619') client.commands.get('helpid').execute(message, args, Discord);
                     break;
                 case 'nta': client.commands.get('nta').execute(message, args, Discord);
 
@@ -395,7 +395,7 @@ client.on('message', async message => {
                     break;
 
 
-                case 'setid': client.id.get('setid').execute(client, message, args, Discord);
+                case 'setid':  client.id.get('setid').execute(client, message, args, Discord);
                     break;
                 case 'copyid': client.id.get('copyid').execute(client, message, args, Discord);
                     break;
@@ -536,7 +536,7 @@ client.on('message', async message => {
                 case 'rewards-mainko': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-mainko').execute(message, args, Discord); }
 
                     break;
-                case 'ban': client.commands.get('ban').execute(message, args, prefix, Discord);
+                case 'ban': if (message.guild.id == '554275795280068619') client.commands.get('ban').execute(message, args, prefix, Discord);
                     break;
                 case 'kick': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
                     return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));
@@ -598,7 +598,7 @@ client.on('message', async message => {
                 case 'roleinfo': client.help.get('6').execute(message, args, Discord);
                     break;
                 case 'wc_table': {
-
+                    if (message.guild.id == '554275795280068619'){
                     const newEmbed = new Discord.MessageEmbed()
                         .setColor('RANDOM')
                         .setTitle('World Cup Group Links')
@@ -637,7 +637,7 @@ client.on('message', async message => {
 
 
 
-                        }).catch(async () => { return message.channel.send("error") });
+                        }).catch(async () => { return message.channel.send("error") });}
                     break;
 
                 }
@@ -648,7 +648,7 @@ client.on('message', async message => {
 
 
                 case 'ucl_table': {
-
+                    if (message.guild.id == '554275795280068619') {
                     const newEmbed = new Discord.MessageEmbed()
                         .setColor('RANDOM')
                         .setTitle('UCL Group Links')
@@ -687,7 +687,7 @@ client.on('message', async message => {
 
 
 
-                        }).catch(async () => { return message.channel.send("error") });
+                        }).catch(async () => { return message.channel.send("error") });}
                     break;
 
                 }
