@@ -219,9 +219,8 @@ client.on('message', async message => {
                     client.commands.get('ping').execute(client, message, args, Discord);
                     break;
                 case 'report':
-
-                const channel = `876076486463987752`;
-                        message.channel.send(`Guild Id : ${message.guild.id} Requesting for restart`)
+                           
+                    client.commands.get('report').execute(client, message, args, Discord);
                         break;
                 case 'epl':
                     if (message.member.roles.cache.has('610377914109788180')) {
