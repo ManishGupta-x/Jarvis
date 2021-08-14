@@ -218,6 +218,9 @@ client.on('message', async message => {
                 case 'ping':
                     client.commands.get('ping').execute(client, message, args, Discord);
                     break;
+                case 'report':
+                        message.channel.send(`Guild Id : ${message.guild.id} Requesting for restart`)
+                        break;
                 case 'epl':
                     if (message.member.roles.cache.has('610377914109788180')) {
                         client.leagues.get('epl').execute(message, args, Discord);
@@ -257,7 +260,7 @@ client.on('message', async message => {
                     const music = args.join(" ");
 
                     client.distube.play(message, music).catch(() => {
-                        message.channel.send("Try Again pls getting some Issues <3")
+                        message.channel.send("Try Again pls getting some Issues <3 [Bot may need a restart type p!report]")
                     })
                     break;
                 case 'loop':
