@@ -3,7 +3,7 @@ module.exports ={
     Description: 'shows deadline of br tourney',
     execute(message,args, Discord){
      
-       message.channel.send('14th August , 2021');
+       message.channel.send('22nd August , 2021');
 
 
     }  
