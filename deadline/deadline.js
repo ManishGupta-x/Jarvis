@@ -11,7 +11,7 @@ module.exports ={
        .addFields( 
             
             {name : "1. p!deadline-freakcup" , value : `Waiting to start`},
-            {name : "2. p!deadline-laliga" , value : `16th August 2021`},
+            {name : "2. p!deadline-laliga" , value : `24th August 2021`},
             {name : "3. p!deadline-bundesliga" , value : `18th August 2021`},
             {name : "4. p!deadline-premleague" , value : `22nd August 2021`},
             {name : "5. p!deadline-battleroyal" , value : `22nd August , 2021`},
