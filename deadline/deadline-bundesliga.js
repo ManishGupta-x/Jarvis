@@ -3,7 +3,7 @@ module.exports ={
     Description: 'shows deadline of bundesliga tourney',
     execute(message,args, Discord){
      
-       message.channel.send('18th August 2021');
+       message.channel.send('29th August 2021');
 
 
     }  
