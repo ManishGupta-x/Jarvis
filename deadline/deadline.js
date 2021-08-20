@@ -15,7 +15,7 @@ module.exports ={
             {name : "3. p!deadline-bundesliga" , value : `29th August 2021`},
             {name : "4. p!deadline-premleague" , value : `22nd August 2021`},
             {name : "5. p!deadline-battleroyal" , value : `22nd August , 2021`},
-            {name : "6. p!deadline-seriea" , value : `19th August 2021`},
+            {name : "6. p!deadline-seriea" , value : `30th August 2021`},
             
              
           
