@@ -219,9 +219,9 @@ client.on('message', async message => {
                     client.commands.get('ping').execute(client, message, args, Discord);
                     break;
                 case 'report':
-                           
+
                     client.commands.get('report').execute(client, message, args, Discord);
-                        break;
+                    break;
                 case 'epl':
                     if (message.member.roles.cache.has('610377914109788180')) {
                         client.leagues.get('epl').execute(message, args, Discord);
@@ -235,11 +235,11 @@ client.on('message', async message => {
                 case 'bl':
                     if (message.member.roles.cache.has('610377914109788180')) {
                         client.leagues.get('bl').execute(message, args, Discord);
-                    }break;
+                    } break;
                 case 'sr':
                     if (message.member.roles.cache.has('610377914109788180')) {
                         client.leagues.get('sr').execute(message, args, Discord);
-                    }break;
+                    } break;
                 case 'll':
                     if (message.member.roles.cache.has('610377914109788180')) {
                         client.leagues.get('ll').execute(message, args, Discord);
@@ -263,16 +263,19 @@ client.on('message', async message => {
                     client.distube.play(message, music).catch(() => {
 
                         const embed4 = new Discord.MessageEmbed()
-                        .setColor('#F0074F')
-                        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
-                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                        .setTitle(`Issue`)
-                        .setDescription(`Try Again pls getting some Issues <3 || [Bot may need a restart type p!report] `)
+                            .setColor('#F0074F')
+                            .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+                            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                            .setTitle(`Issue`)
+                            .setDescription(`Try Again pls getting some Issues <3 || [Bot may need a restart type p!report] `)
                         message.channel.send(embed4);
                     })
                     break;
                 case 'loop':
                     client.music.get('loop').execute(client, message, args, Discord);
+                    break;
+                case 'np':
+                    client.music.get('np').execute(client, message, args, Discord);
                     break;
                 case 'bassboost':
                     client.music.get('bassboost').execute(client, message, args, Discord);
@@ -341,17 +344,17 @@ client.on('message', async message => {
                     if (message.guild.id == '554275795280068619') message.channel.send("https://play.toornament.com/en_GB/tournaments/4865938665053093888/stages/4865939949177348096/groups/4865957197042778112/");
                     break;
                 case 'br_table':
-                    if (message.guild.id == '554275795280068619')  message.channel.send("https://play.toornament.com/en_GB/tournaments/4872089970820571136/stages/4872101454729175040/groups/4872152775729233920/");
+                    if (message.guild.id == '554275795280068619') message.channel.send("https://play.toornament.com/en_GB/tournaments/4872089970820571136/stages/4872101454729175040/groups/4872152775729233920/");
                     break;
                 case 'll_table':
-                    if (message.guild.id == '554275795280068619')   message.channel.send("https://play.toornament.com/en_GB/tournaments/4877637697536647168/stages/4877671880807235584/groups/4877673240538669056/");
+                    if (message.guild.id == '554275795280068619') message.channel.send("https://play.toornament.com/en_GB/tournaments/4877637697536647168/stages/4877671880807235584/groups/4877673240538669056/");
                     break;
                 case 'bl_table':
-                    if (message.guild.id == '554275795280068619')   message.channel.send("https://play.toornament.com/en_GB/tournaments/4880298888668282880/stages/4880376674243969024/groups/4880376674881503247/");
-                        break;
-                 case 'sr_table':
-                    if (message.guild.id == '554275795280068619')   message.channel.send("https://play.toornament.com/en_GB/tournaments/4883199297793040384/stages/4883200803025297408/groups/4883214227227738112/");
-                            break;
+                    if (message.guild.id == '554275795280068619') message.channel.send("https://play.toornament.com/en_GB/tournaments/4880298888668282880/stages/4880376674243969024/groups/4880376674881503247/");
+                    break;
+                case 'sr_table':
+                    if (message.guild.id == '554275795280068619') message.channel.send("https://play.toornament.com/en_GB/tournaments/4883199297793040384/stages/4883200803025297408/groups/4883214227227738112/");
+                    break;
 
 
                 case 'welcome': if (message.guild.id == '554275795280068619') { client.commands.get('welcome').execute(message, args, Discord); }
@@ -402,7 +405,7 @@ client.on('message', async message => {
                     break;
 
 
-                case 'setid':  client.id.get('setid').execute(client, message, args, Discord);
+                case 'setid': client.id.get('setid').execute(client, message, args, Discord);
                     break;
                 case 'copyid': client.id.get('copyid').execute(client, message, args, Discord);
                     break;
@@ -483,7 +486,7 @@ client.on('message', async message => {
                 case 'deadline-mainko': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-mainko').execute(message, args, Discord); }
 
                     break;
-                    case 'deadline-seriea': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-seriea').execute(message, args, Discord); }
+                case 'deadline-seriea': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-seriea').execute(message, args, Discord); }
 
                     break;
                 case 'deadline-freakcup': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-freakcup').execute(message, args, Discord); }
@@ -605,46 +608,47 @@ client.on('message', async message => {
                 case 'roleinfo': client.help.get('6').execute(message, args, Discord);
                     break;
                 case 'wc_table': {
-                    if (message.guild.id == '554275795280068619'){
-                    const newEmbed = new Discord.MessageEmbed()
-                        .setColor('RANDOM')
-                        .setTitle('World Cup Group Links')
-                        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/808248403644907580/images_1.jpeg')
-                        .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
-                        .addFields(
+                    if (message.guild.id == '554275795280068619') {
+                        const newEmbed = new Discord.MessageEmbed()
+                            .setColor('RANDOM')
+                            .setTitle('World Cup Group Links')
+                            .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/808248403644907580/images_1.jpeg')
+                            .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
+                            .addFields(
 
-                            {
-                                name: "1. Group 1 Link ", value: 'Table and Matchday Link for Group 1'
-                            },
-                            { name: "2. Group 2 Link", value: 'Table and Matchday Link for Group 2' },
-                            { name: "3. Group 3 Link", value: 'Table and Matchday Link for Group 3' },
-                            { name: "4. Group 4 Link", value: 'Table and Matchday Link for Group 4' },
+                                {
+                                    name: "1. Group 1 Link ", value: 'Table and Matchday Link for Group 1'
+                                },
+                                { name: "2. Group 2 Link", value: 'Table and Matchday Link for Group 2' },
+                                { name: "3. Group 3 Link", value: 'Table and Matchday Link for Group 3' },
+                                { name: "4. Group 4 Link", value: 'Table and Matchday Link for Group 4' },
 
-                        )
-                        .setFooter("Gives 1 link at a time")
-                    let msg = await message.channel.send(newEmbed)
-                    await msg.react('1️⃣')
-                    await msg.react('2️⃣')
-                    await msg.react('3️⃣')
-                    await msg.react('4️⃣')
+                            )
+                            .setFooter("Gives 1 link at a time")
+                        let msg = await message.channel.send(newEmbed)
+                        await msg.react('1️⃣')
+                        await msg.react('2️⃣')
+                        await msg.react('3️⃣')
+                        await msg.react('4️⃣')
 
-                    await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
+                        await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
 
-                        reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 1, time: 40000 })
-                        .then(async collected => {
-                            if (collected.first().emoji.name == '1️⃣') { return message.channel.send('Not Available') }
-                            else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('Not Available') }
-                            else if (collected.first().emoji.name == '3️⃣') { return message.channel.send('Not Available') }
-                            else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('Not Available') }
-
-
-                            else return message.channel.send('Time Up');
+                            reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 1, time: 40000 })
+                            .then(async collected => {
+                                if (collected.first().emoji.name == '1️⃣') { return message.channel.send('Not Available') }
+                                else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('Not Available') }
+                                else if (collected.first().emoji.name == '3️⃣') { return message.channel.send('Not Available') }
+                                else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('Not Available') }
 
 
+                                else return message.channel.send('Time Up');
 
 
 
-                        }).catch(async () => { return message.channel.send("error") });}
+
+
+                            }).catch(async () => { return message.channel.send("error") });
+                    }
                     break;
 
                 }
@@ -656,45 +660,46 @@ client.on('message', async message => {
 
                 case 'ucl_table': {
                     if (message.guild.id == '554275795280068619') {
-                    const newEmbed = new Discord.MessageEmbed()
-                        .setColor('RANDOM')
-                        .setTitle('UCL Group Links')
-                        .setThumbnail('https://media.discordapp.net/attachments/610950416498425886/840830686167433216/champions-league-trophy.png')
-                        .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
-                        .addFields(
+                        const newEmbed = new Discord.MessageEmbed()
+                            .setColor('RANDOM')
+                            .setTitle('UCL Group Links')
+                            .setThumbnail('https://media.discordapp.net/attachments/610950416498425886/840830686167433216/champions-league-trophy.png')
+                            .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
+                            .addFields(
 
-                            {
-                                name: "1. Group 1 Link ", value: 'Table and Matchday Link for Group 1'
-                            },
-                            { name: "2. Group 2 Link", value: 'Table and Matchday Link for Group 2' },
-                            { name: "3. Group 3 Link", value: 'Table and Matchday Link for Group 3' },
-                            { name: "4. Group 4 Link", value: 'Table and Matchday Link for Group 4' },
+                                {
+                                    name: "1. Group 1 Link ", value: 'Table and Matchday Link for Group 1'
+                                },
+                                { name: "2. Group 2 Link", value: 'Table and Matchday Link for Group 2' },
+                                { name: "3. Group 3 Link", value: 'Table and Matchday Link for Group 3' },
+                                { name: "4. Group 4 Link", value: 'Table and Matchday Link for Group 4' },
 
-                        )
-                        .setFooter("Gives 1 link at a time")
-                    let msg = await message.channel.send(newEmbed)
-                    await msg.react('1️⃣')
-                    await msg.react('2️⃣')
-                    await msg.react('3️⃣')
-                    await msg.react('4️⃣')
+                            )
+                            .setFooter("Gives 1 link at a time")
+                        let msg = await message.channel.send(newEmbed)
+                        await msg.react('1️⃣')
+                        await msg.react('2️⃣')
+                        await msg.react('3️⃣')
+                        await msg.react('4️⃣')
 
-                    await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
+                        await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
 
-                        reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 1, time: 40000 })
-                        .then(async collected => {
-                            if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027471347712/#structure') }
-                            else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902192/#structure') }
-                            else if (collected.first().emoji.name == '3️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902240/#structure') }
-                            else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902288/#structure') }
-
-
-                            else return message.channel.send('Time Up');
+                            reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 1, time: 40000 })
+                            .then(async collected => {
+                                if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027471347712/#structure') }
+                                else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902192/#structure') }
+                                else if (collected.first().emoji.name == '3️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902240/#structure') }
+                                else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902288/#structure') }
 
 
+                                else return message.channel.send('Time Up');
 
 
 
-                        }).catch(async () => { return message.channel.send("error") });}
+
+
+                            }).catch(async () => { return message.channel.send("error") });
+                    }
                     break;
 
                 }
