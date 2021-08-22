@@ -7,8 +7,8 @@ module.exports ={
 
         let queue = await client.distube.getQueue(message);
        
-        message.channel.send('Now playing :\n' + queue.songs.map((song, id) =>
+        message.channel.send('Current queue:\n' + queue.songs.map((song, id) =>
         `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``
-    ).slice(0,0).join("\n"));
+    ).slice(0,1).join("\n"));
     }  
 } 
