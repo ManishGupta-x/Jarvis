@@ -14,12 +14,12 @@ module.exports ={
             .setTitle(`Now Playing`)
             .setDescription(`${song.name}- \`${song.formattedDuration}\``)
 
-             
+            message.channel.send(embed);
 
 
-        }).slice(0, 1).join("\n");
+        }).slice(0, 1).join("\n")
 
       
-          message.channel.send(embed);
+          
     }  
 } 
