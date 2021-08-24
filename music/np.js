@@ -17,7 +17,7 @@ module.exports ={
             message.channel.send(embed);
 
 
-        }).slice(0, 1).join("\n")
+        })
 
       
           

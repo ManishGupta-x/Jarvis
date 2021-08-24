@@ -739,7 +739,7 @@ client.on('message', async message => {
                     break;
 
                 }
-                case 'help': if (message.guild.id == '554275795280068619') {
+                case 'help': if (message.guild.id == '554275795280068619' || message.guild.id == '730714810064306188') {
 
                     const newEmbed = new Discord.MessageEmbed()
                         .setColor('RANDOM')
