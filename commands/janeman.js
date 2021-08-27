@@ -4,7 +4,7 @@ module.exports ={
     name: 'janeman',
     Description: 'this is a role command!',
     execute(client,message,args, Discord){
-     
+        let text = args.slice(1).join(' ');
         
         if (!args[0]) {
 
@@ -15,7 +15,7 @@ module.exports ={
            
        channelID = '833731235821387826';
            
-       client.channels.cache.get(`${channelID}`).send(args[0])
+       client.channels.cache.get(`${channelID}`).send(text)
            message.delete({ timeout: 2000 })
 
 
