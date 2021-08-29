@@ -4,7 +4,7 @@ module.exports ={
     name: 'janeman',
     Description: 'this is a role command!',
     execute(client,message,args, Discord){
-        let text = args.slice(1).join(' ');
+        let text = args.slice(0).join(' ');
         
         if (!args[0]) {
 

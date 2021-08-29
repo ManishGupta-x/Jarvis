@@ -149,7 +149,7 @@ for (const file of idFiles) {
 
 client.once('ready', () => {
     console.log(' The Jarvis is online!');
-    client.user.setActivity('Boss 😎', { type: 'LISTENING' }).catch(console.error);
+    client.user.setActivity('Can\'t see Boss like this! Just worried 😢', { type :'CUSTOM_STATUS' }).catch(console.error);
 
 });
 module.exports.timedcheck = undefined;
@@ -221,29 +221,6 @@ client.on('message', async message => {
                 case 'report':
 
                     client.commands.get('report').execute(client, message, args, Discord);
-                    break;
-                case 'epl':
-                    if (message.member.roles.cache.has('610377914109788180')) {
-                        client.leagues.get('epl').execute(message, args, Discord);
-                    }
-                    break;
-                case 'br':
-                    if (message.member.roles.cache.has('610377914109788180')) {
-                        client.leagues.get('br').execute(message, args, Discord);
-                    }
-                    break;
-                case 'bl':
-                    if (message.member.roles.cache.has('610377914109788180')) {
-                        client.leagues.get('bl').execute(message, args, Discord);
-                    } break;
-                case 'sr':
-                    if (message.member.roles.cache.has('610377914109788180')) {
-                        client.leagues.get('sr').execute(message, args, Discord);
-                    } break;
-                case 'll':
-                    if (message.member.roles.cache.has('610377914109788180')) {
-                        client.leagues.get('ll').execute(message, args, Discord);
-                    }
                     break;
                 case 'search':
                     client.commands.get('search').execute(client, message, args, Discord);
@@ -340,21 +317,7 @@ client.on('message', async message => {
                     message.reply("Nicely done! 🥳' ")
                     break;
 
-                case 'pl_table':
-                    if (message.guild.id == '554275795280068619') message.channel.send("https://play.toornament.com/en_GB/tournaments/4865938665053093888/stages/4865939949177348096/groups/4865957197042778112/");
-                    break;
-                case 'br_table':
-                    if (message.guild.id == '554275795280068619') message.channel.send("https://play.toornament.com/en_GB/tournaments/4872089970820571136/stages/4872101454729175040/groups/4872152775729233920/");
-                    break;
-                case 'll_table':
-                    if (message.guild.id == '554275795280068619') message.channel.send("https://play.toornament.com/en_GB/tournaments/4877637697536647168/stages/4877671880807235584/groups/4877673240538669056/");
-                    break;
-                case 'bl_table':
-                    if (message.guild.id == '554275795280068619') message.channel.send("https://play.toornament.com/en_GB/tournaments/4880298888668282880/stages/4880376674243969024/groups/4880376674881503247/");
-                    break;
-                case 'sr_table':
-                    if (message.guild.id == '554275795280068619') message.channel.send("https://play.toornament.com/en_GB/tournaments/4883199297793040384/stages/4883200803025297408/groups/4883214227227738112/");
-                    break;
+
 
 
                 case 'welcome': if (message.guild.id == '554275795280068619') { client.commands.get('welcome').execute(message, args, Discord); }
@@ -393,10 +356,6 @@ client.on('message', async message => {
 
                     break;
                 case 'rules': if (message.guild.id == '554275795280068619') { client.commands.get('rules').execute(message, args, Discord); }
-
-                    break;
-                case 'bbtourney': if (message.guild.id == '554275795280068619') { client.commands.get('bbtourney').execute(message, args, Discord); }
-
 
                     break;
 
@@ -452,102 +411,10 @@ client.on('message', async message => {
                     break;
                 case 'twitter': client.commands.get('twitter').execute(message, args, Discord);
                     break;
-                case 'freakcup': if (message.guild.id == '554275795280068619') { client.commands.get('freakcup').execute(message, args, Discord); }
 
-                    break;
-                case 'freakcup-qualifications': if (message.guild.id == '554275795280068619') { client.commands.get('freakcup-qualifications').execute(message, args, Discord); }
-                    break;
-                case 'laliga': if (message.guild.id == '554275795280068619') { client.commands.get('laliga').execute(message, args, Discord); }
-
-                    break;
-                case 'premleague': if (message.guild.id == '554275795280068619') { client.commands.get('premleague').execute(message, args, Discord); }
-
-                    break;
-                case 'worldcup': if (message.guild.id == '554275795280068619') { client.commands.get('worldcup').execute(message, args, Discord); }
-
-                    break;
-
-                case 'ucl': if (message.guild.id == '554275795280068619') { client.commands.get('ucl').execute(message, args, Discord); }
-
-                    break;
-                case 'seriea': if (message.guild.id == '554275795280068619') { client.commands.get('seriea').execute(message, args, Discord); }
-
-                    break;
-                case 'bundesliga': if (message.guild.id == '554275795280068619') { client.commands.get('bundesliga').execute(message, args, Discord); }
-
-                    break;
-                case 'clear': { client.commands.get('clear').execute(message, args, Discord); }
-
-                    break;
-
-                case 'deadline': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline').execute(message, args, Discord); }
-
-                    break;
-                case 'deadline-mainko': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-mainko').execute(message, args, Discord); }
-
-                    break;
-                case 'deadline-seriea': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-seriea').execute(message, args, Discord); }
-
-                    break;
-                case 'deadline-freakcup': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-freakcup').execute(message, args, Discord); }
-
-                    break;
-                case 'deadline-ucl': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-ucl').execute(message, args, Discord); }
-
-                    break;
-                case 'deadline-worldcup': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-worldcup').execute(message, args, Discord); }
-
-                    break;
-                case 'deadline-laliga': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-laliga').execute(message, args, Discord); }
-
-                    break;
-                case 'deadline-premleague': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-premleague').execute(message, args, Discord); }
-
-                    break;
-                case 'deadline-battleroyal': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-battleroyal').execute(message, args, Discord); }
-
-                    break;
-                case 'deadline-bundesliga': if (message.guild.id == '554275795280068619') { client.deadline.get('deadline-bundesliga').execute(message, args, Discord); }
-
-                    break;
-
-                case 'main-squadko': if (message.guild.id == '554275795280068619') { client.commands.get('main-squadko').execute(message, args, Discord); }
-
-                    break;
-
-                case 'help-rewards': if (message.guild.id == '554275795280068619') { client.help.get('help-rewards').execute(message, args, Discord); }
-
-                    break;
-
-                case 'rewards-armychoice': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-armychoice').execute(message, args, Discord); }
-                    break;
-                case 'rewards-ucl': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-ucl').execute(message, args, Discord); }
-
-                    break;
-                case 'rewards-freakcup': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-freakcup').execute(message, args, Discord); }
-
-                    break;
-                case 'rewards-laliga': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-laliga').execute(message, args, Discord); }
-
-                    break;
-                case 'rewards-premleague': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-premleague').execute(message, args, Discord); }
-
-                    break;
-                case 'rewards-battleroyal': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-battleroyal').execute(message, args, Discord); }
-
-                    break;
-                case 'rewards-bundesliga': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-bundesliga').execute(message, args, Discord); }
-
-                    break;
-                case 'rewards-seriea': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-seriea').execute(message, args, Discord); }
-
-                    break;
-
-                case 'rewards-mainko': if (message.guild.id == '554275795280068619') { client.Rewards.get('rewards-mainko').execute(message, args, Discord); }
-
-                    break;
                 case 'ban': if (message.guild.id == '554275795280068619') client.commands.get('ban').execute(message, args, prefix, Discord);
                     break;
+
                 case 'kick': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
                     return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 }));
 
@@ -607,102 +474,15 @@ client.on('message', async message => {
                     break;
                 case 'roleinfo': client.help.get('6').execute(message, args, Discord);
                     break;
-                case 'wc_table': {
-                    if (message.guild.id == '554275795280068619') {
-                        const newEmbed = new Discord.MessageEmbed()
-                            .setColor('RANDOM')
-                            .setTitle('World Cup Group Links')
-                            .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/808248403644907580/images_1.jpeg')
-                            .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
-                            .addFields(
+             
 
-                                {
-                                    name: "1. Group 1 Link ", value: 'Table and Matchday Link for Group 1'
-                                },
-                                { name: "2. Group 2 Link", value: 'Table and Matchday Link for Group 2' },
-                                { name: "3. Group 3 Link", value: 'Table and Matchday Link for Group 3' },
-                                { name: "4. Group 4 Link", value: 'Table and Matchday Link for Group 4' },
-
-                            )
-                            .setFooter("Gives 1 link at a time")
-                        let msg = await message.channel.send(newEmbed)
-                        await msg.react('1️⃣')
-                        await msg.react('2️⃣')
-                        await msg.react('3️⃣')
-                        await msg.react('4️⃣')
-
-                        await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
-
-                            reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 1, time: 40000 })
-                            .then(async collected => {
-                                if (collected.first().emoji.name == '1️⃣') { return message.channel.send('Not Available') }
-                                else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('Not Available') }
-                                else if (collected.first().emoji.name == '3️⃣') { return message.channel.send('Not Available') }
-                                else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('Not Available') }
-
-
-                                else return message.channel.send('Time Up');
-
-
-
-
-
-                            }).catch(async () => { return message.channel.send("error") });
-                    }
-                    break;
-
-                }
+                
 
 
 
 
 
 
-                case 'ucl_table': {
-                    if (message.guild.id == '554275795280068619') {
-                        const newEmbed = new Discord.MessageEmbed()
-                            .setColor('RANDOM')
-                            .setTitle('UCL Group Links')
-                            .setThumbnail('https://media.discordapp.net/attachments/610950416498425886/840830686167433216/champions-league-trophy.png')
-                            .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
-                            .addFields(
-
-                                {
-                                    name: "1. Group 1 Link ", value: 'Table and Matchday Link for Group 1'
-                                },
-                                { name: "2. Group 2 Link", value: 'Table and Matchday Link for Group 2' },
-                                { name: "3. Group 3 Link", value: 'Table and Matchday Link for Group 3' },
-                                { name: "4. Group 4 Link", value: 'Table and Matchday Link for Group 4' },
-
-                            )
-                            .setFooter("Gives 1 link at a time")
-                        let msg = await message.channel.send(newEmbed)
-                        await msg.react('1️⃣')
-                        await msg.react('2️⃣')
-                        await msg.react('3️⃣')
-                        await msg.react('4️⃣')
-
-                        await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
-
-                            reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 1, time: 40000 })
-                            .then(async collected => {
-                                if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027471347712/#structure') }
-                                else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902192/#structure') }
-                                else if (collected.first().emoji.name == '3️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902240/#structure') }
-                                else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('https://www.toornament.com/en_GB/tournaments/4613323097503203328/stages/4613331255382286336/groups/4631306027504902288/#structure') }
-
-
-                                else return message.channel.send('Time Up');
-
-
-
-
-
-                            }).catch(async () => { return message.channel.send("error") });
-                    }
-                    break;
-
-                }
                 case 'futhead': {
 
                     const newEmbed = new Discord.MessageEmbed()
@@ -739,70 +519,7 @@ client.on('message', async message => {
                     break;
 
                 }
-                case 'help': if (message.guild.id == '554275795280068619' || message.guild.id == '730714810064306188') {
-
-                    const newEmbed = new Discord.MessageEmbed()
-                        .setColor('RANDOM')
-                        .setTitle('Help Module')
-                        .setThumbnail('https://i.imgur.com/KmTA1Mn.gif')
-                        .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/c6bc3800d00c07ccd4dbf015bf3e743c.png?size=256')
-                        .setDescription('Server\'s Info And Commands')
-                        .addFields(
-
-                            {
-                                name: "1. General Commands ", value: `Gives Info for General commands like ping 
-                  , twitter , friendly,Other Websites...etc`},
-                            { name: "2. Rewards", value: `Gives Info for Rewards Commands` },
-                            { name: "3. Tourney Related Commands 1", value: `Gives Info,rules and link commands for Tourneys ` },
-                            { name: "4. Tourney Related Commands 2", value: `Gives Info,rules and link commands for Tourneys ` },
-                            { name: "5. Deadline Commands ", value: `Gives Info for Deadline Commands` },
-                            { name: "6. Server Competitions", value: `Gives Info For Our Server Competetions` },
-                            { name: "7. Server Roles", value: `Gives Info for For diffrents roles on the server :)` }
-
-
-
-
-
-                        )
-                        .setImage('https://i.imgur.com/vV89zxE.gif');
-
-
-                    let msg = await message.channel.send(newEmbed)
-                    await msg.react('1️⃣')
-                    await msg.react('2️⃣')
-                    await msg.react('3️⃣')
-                    await msg.react('4️⃣')
-                    await msg.react('5️⃣')
-                    await msg.react('6️⃣')
-                    await msg.react('7️⃣')
-
-
-                    await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
-
-                        reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣' || reaction.emoji.name == '5️⃣' || reaction.emoji.name == '6️⃣' || reaction.emoji.name == '7️⃣'), { max: 1, time: 40000 })
-                        .then(async collected => {
-                            if (collected.first().emoji.name == '1️⃣') { return client.help.get('1').execute(message, args, Discord, msg) }
-                            else if (collected.first().emoji.name == '2️⃣') { return client.help.get('2').execute(message, args, Discord, msg) }
-                            else if (collected.first().emoji.name == '3️⃣') { return client.help.get('3').execute(message, args, Discord, msg) }
-                            else if (collected.first().emoji.name == '4️⃣') { return client.help.get('4-1').execute(message, args, Discord, msg) }
-                            else if (collected.first().emoji.name == '5️⃣') { return client.help.get('4').execute(message, args, Discord, msg) }
-                            else if (collected.first().emoji.name == '6️⃣') { return client.help.get('5').execute(message, args, Discord, msg) }
-                            else if (collected.first().emoji.name == '7️⃣') { return client.help.get('6').execute(message, args, Discord, msg) }
-
-                            else return message.channel.send('Time Up');
-
-
-
-
-
-                        }).catch(async () => { return message.channel.send("Time Over") });
-
-                } else {
-                    message.reply('Customised for Freak game server Only ')
-                }
-
-
-                    break;
+           
                 case 'match':
 
                     var player1 = Math.floor(Math.random() * 4);
