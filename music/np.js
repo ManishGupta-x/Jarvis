@@ -12,8 +12,8 @@ module.exports ={
             .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
             .setTitle(`Now Playing`)
-            .setDescription(`${song.name}- \`${song.formattedDuration}\``)
-
+            .setDescription(`${song.name} | Requested by: ${song.user}\` - ${song.formattedDuration}\` `)
+            .setimage(`${song.setThumbnail}`)
             message.channel.send(embed);
 
 

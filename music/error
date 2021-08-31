@@ -21,4 +21,6 @@ const filter1 = (button) => button.clicker.user.id === message.author.id;
             }
 
 
-        })
+        })   message.channel.send('Current song  playing :\n' + queue.songs.map((song, id) =>
+        `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``
+    ).slice(0,0).join("\n"));

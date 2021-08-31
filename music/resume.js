@@ -15,9 +15,9 @@ module.exports ={
              client.distube.resume(message)
             const embed = new Discord.MessageEmbed()
             .setColor('#F0074F')
-            .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+            .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/882270899556991036/bhoZOt.png')
             .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setDescription(`⏸ Resumed the pLayer! `)
+            .setDescription(`Resumed the player! `)
           
             
             .setFooter(client.user.username, client.user.displayAvatarURL())
