@@ -121,7 +121,7 @@ for (const file of musicFiles) {
 
     const command = require(`./music/${file}`);
     client.music.set(command.name, command);
-}
+} 
 client.Rewards = new Discord.Collection();
 const RewardsFiles = fs.readdirSync('./Rewards/').filter(file => file.endsWith('.js'));
 for (const file of RewardsFiles) {
