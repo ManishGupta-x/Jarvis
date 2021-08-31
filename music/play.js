@@ -4,7 +4,8 @@ module.exports ={
     Description: 'this is a play  command!',
    async  execute(client,message,args, Discord){
         if(!args[0]){
-           message.channel.send('Please Mention song!')
+          
+            message.channel.send('Please Mention song!')
            return;
 
         }
