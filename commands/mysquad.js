@@ -12,7 +12,7 @@ module.exports ={
          let member =message.author;
 
         
-        let imlegend = random(im); 
+        let imlegend = Ims[im]; 
         const newEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
         .setThumbnail('https://i.imgur.com/IOc6tij.gif')
@@ -20,7 +20,7 @@ module.exports ={
         .setAuthor('Jarvis','https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
         .setDescription(`
         
-        Formantion : ${random(fr)}\n Max Im's In Whole squad  ${imlegend}\n Max Legends in whole squad : ${6-imlegend}\n Max featured in whole squad : ${random(im)} \n Special Difficulty : ${ramdom(df)}\n Remaining players must be Base players !
+        Formantion : ${formation[fr]}\n Max Im's In Whole squad  ${imlegend}\n Max Legends in whole squad : ${6-imlegend}\n Max featured in whole squad : ${Ims[im]} \n Special Difficulty : ${Difficulty[df]}\n Remaining players must be Base players !
 
         
         

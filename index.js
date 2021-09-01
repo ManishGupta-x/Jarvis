@@ -33,7 +33,7 @@ client.distube
 
         const playsong = new Discord.MessageEmbed()
             .setColor('#F0074F')
-            .setThumbnail(`${mu}`)
+            .setThumbnail(`${wallpapers[mu]}`)
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
             .setTitle(`Now Playing`)
             .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\` `)
