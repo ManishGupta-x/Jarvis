@@ -3,7 +3,7 @@ const fr =formation[Math. floor(Math.random() * formation.length)];
 const Difficulty = ["1 Cf Must be a goalkeeper", "1 Cb Must be a goalkeeper" , "1 Cb must be Amf Player", "1 Cf must be a Center back","A Gk of rating less than 85", "1 Mid player as goalkeeper"]
 const df = Difficulty[Math.floor(Math.random() * Difficulty.length)];
 const Ims = ["1","2","3","4"]
-const im = Ims[Math.floor(Math.random() *Ims.length)];
+const im = Math.floor(Math.random() *Ims.length);
 
 module.exports ={
     name: 'mysquad',
@@ -20,7 +20,7 @@ module.exports ={
         .setAuthor('Jarvis','https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
         .setDescription(`
         
-        Formantion : ${formation[fr]}\n Max Im's In Whole squad  ${imlegend}\n Max Legends in whole squad : ${6-imlegend}\n Max featured in whole squad : ${Ims[im]} \n Special Difficulty : ${Difficulty[df]}\n Remaining players must be Base players !
+        Formantion : ${formation[fr]}\n Max Im's In Whole squad : ${imlegend}\n Max Legends in whole squad : ${6-imlegend}\n Max featured in whole squad : ${Ims[im]} \n Special Difficulty : ${Difficulty[df]}\n Remaining players must be Base players !
 
         
         
