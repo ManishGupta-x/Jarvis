@@ -16,7 +16,7 @@ module.exports ={
         const newEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
         .setThumbnail('https://i.imgur.com/IOc6tij.gif')
-        .setTitle(`${member.user.tag}'s Squad Requirements`)
+        .setTitle(`${client.users.cache.get(member.id).username}'s Squad Requirements`)
         .setAuthor('Jarvis','https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
         .setDescription(`
         
