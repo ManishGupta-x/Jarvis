@@ -4,12 +4,12 @@ const Difficulty = ["1 Cf Must be a goalkeeper", "1 Cb Must be a goalkeeper" , "
 const df = Difficulty[Math.floor(Math.random() * Difficulty.length)];
 const Ims = ["1","2","3","4"]
 const im = Ims[Math.floor(Math.random() *Ims.length)];
-let membertarget = message.guild.members.cache.get(member.id);
+
 module.exports ={
     name: 'mysquad',
     Description: 'this is a role command!',
     execute(message,args, Discord){
-     
+        let membertarget = message.guild.members.cache.get(member.id);
         let imlegend = im; 
         const newEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
