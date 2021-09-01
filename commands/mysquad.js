@@ -9,18 +9,18 @@ module.exports ={
     name: 'mysquad',
     Description: 'this is a role command!',
     execute(message,args, Discord){
-
+         let member =message.author;
 
         
         let imlegend = im; 
         const newEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setThumbnail('https://i.imgur.com/KmTA1Mn.gif')
-        .setTitle(`${(message.author.id).username}'s Squad Requirements`)
+        .setThumbnail('https://i.imgur.com/IOc6tij.gif')
+        .setTitle(`${member.user.tag}'s Squad Requirements`)
         .setAuthor('Jarvis','https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
         .setDescription(`
         
-        Formantion : ${fr}\n Max Im's In Whole squad : ${imlegend}\n Max Legends in whole squad : ${6-imlegend}\n Max featured in whole squad : ${im} \n Special Difficulty : ${df}\n Remaining players must be Base players !
+        Formantion : ${fr}\n Max Im's In Whole squad  ${imlegend}\n Max Legends in whole squad : ${6-imlegend}\n Max featured in whole squad : ${im} \n Special Difficulty : ${df}\n Remaining players must be Base players !
 
         
         
