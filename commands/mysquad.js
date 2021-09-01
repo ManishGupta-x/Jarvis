@@ -1,16 +1,16 @@
-var formation = ["3-4-3", "4-1-2-3", "5-3-2", "4-1-3-2","4-2-2-2", "4-2-1-3","5-2-1-2","4-2-3-1"]
-var fr = Math. floor(Math.random() * formation.length);
-var Difficulty = ["1 Cf Must be a goalkeeper", "1 Cb Must be a goalkeeper" , "1 Cb must be Amf Player", "1 Cf must be a Center back","A Gk of rating less than 85", "1 Mid player as goalkeeper"]
-var df = Math.floor(Math.random() * Difficulty.length);
-var Ims = ["1","2","3","4"]
-var im = Math.floor(Math.random() *Ims.length);
 
 module.exports ={
     name: 'mysquad',
     Description: 'this is a role command!',
     async execute(client,message,args, Discord){
          let member =message.author;
-
+         var formation = ["3-4-3", "4-1-2-3", "5-3-2", "4-1-3-2","4-2-2-2", "4-2-1-3","5-2-1-2","4-2-3-1"]
+         var fr = Math. floor(Math.random() * formation.length);
+         var Difficulty = ["1 Cf Must be a goalkeeper", "1 Cb Must be a goalkeeper" , "1 Cb must be Amf Player", "1 Cf must be a Center back","A Gk of rating less than 85", "1 Mid player as goalkeeper"]
+         var df = Math.floor(Math.random() * Difficulty.length);
+         var Ims = ["1","2","3","4"]
+         var im = Math.floor(Math.random() *Ims.length);
+         
         
         let imlegend = Ims[im]; 
         const newEmbed = new Discord.MessageEmbed()
