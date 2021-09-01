@@ -1,7 +1,7 @@
 const formation = ["3-4-3", "4-1-2-3", "5-3-2", "4-1-3-2","4-2-2-2", "4-2-1-3","5-2-1-2","4-2-3-1"]
-const fr =formation[Math. floor(Math.random() * formation.length)];
+const fr = Math. floor(Math.random() * formation.length);
 const Difficulty = ["1 Cf Must be a goalkeeper", "1 Cb Must be a goalkeeper" , "1 Cb must be Amf Player", "1 Cf must be a Center back","A Gk of rating less than 85", "1 Mid player as goalkeeper"]
-const df = Difficulty[Math.floor(Math.random() * Difficulty.length)];
+const df = Math.floor(Math.random() * Difficulty.length);
 const Ims = ["1","2","3","4"]
 const im = Math.floor(Math.random() *Ims.length);
 
