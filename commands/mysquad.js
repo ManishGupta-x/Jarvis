@@ -10,13 +10,13 @@ module.exports ={
     Description: 'this is a role command!',
     execute(message,args, Discord){
 
+
         
-        let membertarget = message.guild.members.cache.get(member.id);
         let imlegend = im; 
         const newEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
         .setThumbnail('https://i.imgur.com/KmTA1Mn.gif')
-        .setTitle(`${client.users.cache.get(membertarget.id).username}'s Squad Requirements`)
+        .setTitle(`${(message.author.id).username}'s Squad Requirements`)
         .setAuthor('Jarvis','https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
         .setDescription(`
         
