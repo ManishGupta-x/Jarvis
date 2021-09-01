@@ -8,8 +8,8 @@ const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
 client.disbut = require('discord-buttons')(client);
 const wallpapers = ["https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284561726308372/433536-Klayton-women-science_fiction-planet-Scandroid.png"
-, "https://cdn.discordapp.com/attachments/730714810614022228/882284789145677854/Drum-Instrument-Neon-HD-Wallpapers-Free-Download.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png",
-"https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png","https://cdn.discordapp.com/attachments/730714810614022228/882284384202395678/neon-wallpaper-2008181520192-scaled.png","https://cdn.discordapp.com/attachments/730714810614022228/882283761868357682/edm-house-music-dj-producer-beatmaker-wallpaper-hd-4k-desktop-6-2048x1080.png"]
+    , "https://cdn.discordapp.com/attachments/730714810614022228/882284789145677854/Drum-Instrument-Neon-HD-Wallpapers-Free-Download.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png",
+    "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284384202395678/neon-wallpaper-2008181520192-scaled.png", "https://cdn.discordapp.com/attachments/730714810614022228/882283761868357682/edm-house-music-dj-producer-beatmaker-wallpaper-hd-4k-desktop-6-2048x1080.png"]
 const mu = wallpapers[Math.floor(Math.random() * wallpapers.length)];
 
 
@@ -137,7 +137,7 @@ for (const file of musicFiles) {
 
     const command = require(`./music/${file}`);
     client.music.set(command.name, command);
-} 
+}
 client.Rewards = new Discord.Collection();
 const RewardsFiles = fs.readdirSync('./Rewards/').filter(file => file.endsWith('.js'));
 for (const file of RewardsFiles) {
@@ -165,7 +165,7 @@ for (const file of idFiles) {
 
 client.once('ready', () => {
     console.log('Jarvis is online!');
-    client.user.setActivity('Boss 😎', { type : 'LISTENING' }).catch(console.error);
+    client.user.setActivity('Boss 😎', { type: 'LISTENING' }).catch(console.error);
 
 });
 module.exports.timedcheck = undefined;
@@ -237,6 +237,10 @@ client.on('message', async message => {
                 case 'report':
 
                     client.commands.get('report').execute(client, message, args, Discord);
+                    break;
+                case 'mysquad':
+
+                    client.commands.get('mysquad').execute(client, message, args, Discord);
                     break;
                 case 'search':
                     client.commands.get('search').execute(client, message, args, Discord);
@@ -490,9 +494,9 @@ client.on('message', async message => {
                     break;
                 case 'roleinfo': client.help.get('6').execute(message, args, Discord);
                     break;
-             
 
-                
+
+
 
 
 
@@ -535,7 +539,7 @@ client.on('message', async message => {
                     break;
 
                 }
-           
+
                 case 'match':
 
                     var player1 = Math.floor(Math.random() * 4);
