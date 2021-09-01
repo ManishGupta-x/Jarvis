@@ -20,7 +20,7 @@ module.exports ={
         .setAuthor('Jarvis','https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
         .setDescription(`
         
-        Formantion : ${fr}\n Max Im's In Whole squad = ${imlegend}\n Max Legends in whole squad = ${6-imlegend}\n Max featured in whole squad = ${im} \n Special Difficulty = ${df}\n Remaining players must be Base players !
+        Formantion : ${fr}\n Max Im's In Whole squad : ${imlegend}\n Max Legends in whole squad : ${6-imlegend}\n Max featured in whole squad : ${im} \n Special Difficulty : ${df}\n Remaining players must be Base players !
 
         
         
