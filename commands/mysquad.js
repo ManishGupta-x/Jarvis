@@ -9,6 +9,8 @@ module.exports ={
     name: 'mysquad',
     Description: 'this is a role command!',
     execute(message,args, Discord){
+
+        
         let membertarget = message.guild.members.cache.get(member.id);
         let imlegend = im; 
         const newEmbed = new Discord.MessageEmbed()
