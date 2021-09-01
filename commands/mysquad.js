@@ -8,7 +8,7 @@ const im = Ims[Math.floor(Math.random() *Ims.length)];
 module.exports ={
     name: 'mysquad',
     Description: 'this is a role command!',
-    execute(message,args, Discord){
+    async execute(client,message,args, Discord){
          let member =message.author;
 
         

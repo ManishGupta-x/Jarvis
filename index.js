@@ -240,7 +240,7 @@ client.on('message', async message => {
                     break;
                 case 'mysquad':
 
-                    client.commands.get('mysquad').execute( message, args, Discord);
+                    client.commands.get('mysquad').execute(client,message, args, Discord);
                     break;
                 case 'search':
                     client.commands.get('search').execute(client, message, args, Discord);
