@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 const fetch = require("node-fetch").default;
 const DisTube = require('distube');
-client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
+client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, youtubeCookie: '' });
 client.disbut = require('discord-buttons')(client);
 
 
