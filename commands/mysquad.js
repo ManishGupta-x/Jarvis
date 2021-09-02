@@ -29,6 +29,11 @@ module.exports ={
             
             
             message.channel.send(newEmbed);
+            channelID = '882895969887350825';
+           
+            client.channels.cache.get(`${channelID}`).send(`${client.users.cache.get(member.id).username} used the p!mysquad command `)
+              
+             
  
 
 
