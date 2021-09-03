@@ -10,8 +10,8 @@ module.exports ={
        .setAuthor('Freak Gamer')
        .addFields(
         
-        {name: "Type !freakgamer " , value: 'Get whole server info'},
-        {name: "Read #announcemtns" , value: 'To see Current Season Tourneys Schedule'},
+        {name: "Go to #registration For tournament Rules !  " , value: 'Cash prize'},
+        {name: "Enjoy Your stay " , value: 'Have fun'},
         
         
         
