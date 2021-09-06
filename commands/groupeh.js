@@ -29,7 +29,7 @@ module.exports = {
 
         await msg1.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
 
-            reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 2, time: 40000 })
+            reaction.emoji.name == '2️⃣' || reaction.emoji.name == '3️⃣' || reaction.emoji.name == '4️⃣'), { max: 1, time: 40000 })
             .then(async collected => {
                 if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://play.toornament.com/en_GB/tournaments/4956543308535955456/stages/4956579276281544704/groups/4956579277153960257/#structure') }
                 else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://play.toornament.com/en_GB/tournaments/4956543308535955456/stages/4956579276281544704/groups/4956579277153960299/#structure') }
