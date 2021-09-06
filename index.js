@@ -301,7 +301,7 @@ client.on('message', async message => {
                 case 'av': client.commands.get('av').execute(client, message, args, Discord);
                     break;
 
-                case 'fg_table':  if (message.guild.id == '554275795280068619') {
+                case 'fg_table': if (message.guild.id == '554275795280068619') {
                     const newEmbed = new Discord.MessageEmbed()
                         .setColor('RANDOM')
                         .setTitle('FG Tourney Group Links')
@@ -310,26 +310,26 @@ client.on('message', async message => {
                         .addFields(
 
                             {
-                              name: "1.Group Links For Group 1 to 4 ", value: 'Table and Matchday Links for Group A, B, C, D'
+                                name: "1.Group Links For Group 1 to 4 ", value: 'Table and Matchday Links for Group A, B, C, D'
                             },
                             { name: "2. Group Links from 5 to 8", value: 'Table and Matchday Link for Group E, F, G, H' },
-                         
-                            
+
+
 
                         )
                         .setFooter("You have 45 secs to react!")
                     let msg = await message.channel.send(newEmbed)
                     await msg.react('1️⃣')
                     await msg.react('2️⃣')
-                  
+
 
                     await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
 
-                        reaction.emoji.name == '2️⃣' ), { max: 1, time: 45000 })
+                        reaction.emoji.name == '2️⃣'), { max: 1, time: 45000 })
                         .then(async collected => {
-                            if (collected.first().emoji.name == '1️⃣') {return client.commands.get('groupad').execute(client, message, args, Discord,msg);}
-                            else if (collected.first().emoji.name == '2️⃣') {return  client.commands.get('groupeh').execute(client, message, args, Discord,msg); }
-                            
+                            if (collected.first().emoji.name == '1️⃣') { return client.commands.get('groupad').execute(client, message, args, Discord, msg); }
+                            else if (collected.first().emoji.name == '2️⃣') { return client.commands.get('groupeh').execute(client, message, args, Discord, msg); }
+
 
 
                             else return message.channel.send('Time Up');
@@ -340,10 +340,10 @@ client.on('message', async message => {
 
                         }).catch(async () => { return message.channel.send("error") });
                 }
-                break;
+                    break;
 
-            
-                    
+
+
                 case 'bird': fetch(`https://api.monkedev.com/attachments/bird`)
                     .then(url => url.json())
                     .then(data => {
