@@ -306,7 +306,7 @@ client.on('message', async message => {
                         .setColor('RANDOM')
                         .setTitle('FG Tourney Group Links')
                         .setThumbnail('https://cdn.discordapp.com/attachments/737883256128798800/853284175775924294/Snapshot_1.png')
-                        .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
+                        .setAuthor('Jarvis', client.user.displayAvatarURL())
                         .addFields(
 
                             {
