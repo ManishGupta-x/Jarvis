@@ -310,9 +310,9 @@ client.on('message', async message => {
                         .addFields(
 
                             {
-                                name: "1.Group Links For Group 1 to 4 ", value: 'Table and Matchday Links for Group A, B, C, D'
+                                name: "1.Group Links For Groups 1 to 4 ", value: 'Table and Matchday Links for Group A, B, C, D'
                             },
-                            { name: "2. Group Links from 5 to 8", value: 'Table and Matchday Link for Group E, F, G, H' },
+                            { name: "2. Group Links For Groups 5 to 8", value: 'Table and Matchday Link for Group E, F, G, H' },
 
 
 
