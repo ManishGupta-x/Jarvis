@@ -17,9 +17,9 @@ client.distube
     .on("playSong", async (message, queue, song) => {
 
         var wallpapers = ["https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284561726308372/433536-Klayton-women-science_fiction-planet-Scandroid.png"
-        , "https://cdn.discordapp.com/attachments/730714810614022228/882284789145677854/Drum-Instrument-Neon-HD-Wallpapers-Free-Download.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png",
-        "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284384202395678/neon-wallpaper-2008181520192-scaled.png", "https://cdn.discordapp.com/attachments/730714810614022228/882283761868357682/edm-house-music-dj-producer-beatmaker-wallpaper-hd-4k-desktop-6-2048x1080.png"]
-         var mu = Math.floor(Math.random() * wallpapers.length);
+            , "https://cdn.discordapp.com/attachments/730714810614022228/882284789145677854/Drum-Instrument-Neon-HD-Wallpapers-Free-Download.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png",
+            "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284384202395678/neon-wallpaper-2008181520192-scaled.png", "https://cdn.discordapp.com/attachments/730714810614022228/882283761868357682/edm-house-music-dj-producer-beatmaker-wallpaper-hd-4k-desktop-6-2048x1080.png"]
+        var mu = Math.floor(Math.random() * wallpapers.length);
 
         const playsong = new Discord.MessageEmbed()
             .setColor('#F0074F')
@@ -230,7 +230,7 @@ client.on('message', async message => {
                     break;
                 case 'mysquad':
 
-                    client.commands.get('mysquad').execute(client,message, args, Discord);
+                    client.commands.get('mysquad').execute(client, message, args, Discord);
                     break;
                 case 'search':
                     client.commands.get('search').execute(client, message, args, Discord);
@@ -301,6 +301,49 @@ client.on('message', async message => {
                 case 'av': client.commands.get('av').execute(client, message, args, Discord);
                     break;
 
+                case 'fg_table':  if (message.guild.id == '554275795280068619') {
+                    const newEmbed = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setTitle('FG Tourney Group Links')
+                        .setThumbnail('https://cdn.discordapp.com/attachments/737883256128798800/853284175775924294/Snapshot_1.png')
+                        .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
+                        .addFields(
+
+                            {
+                              name: "1.Group Links For Group 1 to 4 ", value: 'Table and Matchday Links for Group A, B, C, D'
+                            },
+                            { name: "2. Group Links from 5 to 8", value: 'Table and Matchday Link for Group E, F, G, H' },
+                         
+                            
+
+                        )
+                        .setFooter("You have 45 secs to react!")
+                    let msg = await message.channel.send(newEmbed)
+                    await msg.react('1️⃣')
+                    await msg.react('2️⃣')
+                  
+
+                    await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
+
+                        reaction.emoji.name == '2️⃣' ), { max: 1, time: 45000 })
+                        .then(async collected => {
+                            if (collected.first().emoji.name == '1️⃣') {return client.commands.get('groupad').execute(client, message, args, Discord,msg);}
+                            else if (collected.first().emoji.name == '2️⃣') {return  client.commands.get('groupeh').execute(client, message, args, Discord,msg); }
+                            
+
+
+                            else return message.channel.send('Time Up');
+
+
+
+
+
+                        }).catch(async () => { return message.channel.send("error") });
+                }
+                break;
+
+            
+                    
                 case 'bird': fetch(`https://api.monkedev.com/attachments/bird`)
                     .then(url => url.json())
                     .then(data => {
