@@ -15,16 +15,9 @@ module.exports = {
     Description: 'this is a  Ping command!',
     async execute(client, message, args, Discord){
 
+        const user = message.mentions.users.first() || message.author;
         
-        if (!args[0]) {
-
-            user = message.author;
-        }
-        else if(args[0]){
-            user = message.mentions.users.first() ;
-        
-            
-        }
+       
         
         Data.findOne({
             userID : user.id 
