@@ -300,6 +300,8 @@ client.on('message', async message => {
 
                 case 'av': client.commands.get('av').execute(client, message, args, Discord);
                     break;
+                case 'fgtourney': client.commands.get('fgtourney').execute(client, message, args, Discord);
+                    break;
 
                 case 'fg_table': if (message.guild.id == '554275795280068619') {
                     const newEmbed = new Discord.MessageEmbed()
