@@ -16,8 +16,8 @@ module.exports = {
     async execute(client, message, args, Discord){
              if(message.author== message.mentions.members.first()){
                           return message.channel.send(" type p!id better ")
-        
-             }else{ const user = message.mentions.users.first() || message.author;}
+    
+             }else {const user = message.mentions.users.first() || message.author
         
         Data.findOne({
             userID : user.id 
@@ -29,4 +29,4 @@ module.exports = {
     })
     
 }
-}  
+}  }
