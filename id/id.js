@@ -15,7 +15,7 @@ module.exports = {
     Description: 'this is a  Ping command!',
     async execute(client, message, args, Discord){
 
-        const user = message.mentions.users.first() || message.author;
+        const user = message.mentions.members.first() || message.author;
         
        
         
