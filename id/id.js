@@ -17,7 +17,7 @@ module.exports = {
 
         const user = message.mentions.users.first() || message.author;
         
-       console.log(user.id)
+       
         
         Data.findOne({
             userID : user.id 
