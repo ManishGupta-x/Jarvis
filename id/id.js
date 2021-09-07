@@ -12,10 +12,10 @@ const Data = require('../id/data.js');
 
 module.exports = {
     name: 'id',
-    Description: 'this is a  Ping command!',
+    Description: 'this is a id command!',
     async execute(client, message, args, Discord){
 
-        const user = message.mentions.members.first() || message.author;
+        const user = message.mentions.users.first() || message.author;
         
        
         
