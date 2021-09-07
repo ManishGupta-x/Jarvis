@@ -14,10 +14,10 @@ module.exports = {
     name: 'id',
     Description: 'this is a id command!',
     async execute(client, message, args, Discord){
-
-        const user = message.mentions.users.first() || message.author;
+             if(message.author.id == message.mentions.members.first().id){
+                          return message.channel.send(" type p!id better ")
         
-       
+             }else{ const user = message.mentions.users.first() || message.author;}
         
         Data.findOne({
             userID : user.id 
