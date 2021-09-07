@@ -15,27 +15,13 @@ module.exports = {
     Description: 'this is a  Ping command!',
     async execute(client, message, args, Discord){
 
-
-        function getUserFromMention(mention) {
-            if (!mention) return;
         
-            if (mention.startsWith('<@') && mention.endsWith('>')) {
-                mention = mention.slice(2, -1);
-        
-                if (mention.startsWith('!')) {
-                    mention = mention.slice(1);
-                }
-        
-                return client.users.cache.get(mention);
-            }
-        }
-
         if (!args[0]) {
 
             user = message.author;
         }
         else if(args[0]){
-            user = getUserFromMention(args[0]);
+            user = message.mentions.users.first() ;
         
             
         }
