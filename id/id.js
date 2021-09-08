@@ -14,7 +14,9 @@ module.exports = {
     name: 'id',
     Description: 'this is a id command!',
     async execute(client, message, args, Discord){
-             if(message.author== message.mentions.members.first()){
+
+        var mentionid = message.mentions.users.first().id
+             if(message.author.id == mentionid){
                           return message.channel.send(" type p!id better ")
     
              }else {const user = message.mentions.users.first() || message.author
