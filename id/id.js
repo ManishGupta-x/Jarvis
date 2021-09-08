@@ -16,7 +16,7 @@ module.exports = {
     async execute(client, message, args, Discord){
 
         const user = message.mentions.users.first() || message.author
-        
+       if(args[0]){ console.log(args[0])}
         Data.findOne({
             userID : user.id 
         }, (err, data) => {
