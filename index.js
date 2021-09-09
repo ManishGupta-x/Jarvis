@@ -28,47 +28,11 @@ client.distube
 
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
-            const row = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-					.setCustomId('skip')
-					.setLabel('Skip')
-					.setStyle('DANGER'),
-
-                    new MessageButton()
-					.setCustomId('BassBoost')
-					.setLabel('Bassboost')
-					.setStyle('PRIMARY'),
-                    new MessageButton()
-					.setCustomId('Nightcore')
-					.setLabel('Nightcore')
-					.setStyle('SUCCESS'),
-			);
-        
-            message.channel.send({embeds: [playsong], components: [row] })
-
-        client.on('interactionCreate', async interaction => {
-           
-        
           
-            if(interaction.isButton()){
+        message.channel.send(playsong);
+           
 
-                if(interaction.customId === 'skip'){ interaction.reply({content: "Skipped"})
-                client.music.get('skip').execute(client, message, args, Discord);
-                    
-                }else if(interaction.customId === 'BassBoost'){
-                    interaction.reply({content: "BassBoost Activated !"})
-                    client.music.get('bassboost').execute(client, message, args, Discord);
-    
-    
-                }else if(interaction.customId === 'Nightcore'){
-                    interaction.reply({content: "BassBoost Activated !"})
-                    client.music.get('nightcore').execute(client, message, args, Discord);
-    
-    
-                }
-            }
-        })
+        
        
 
 
@@ -168,11 +132,32 @@ module.exports.timedcheck = undefined;
 module.exports.val = 0;
 j = 0;
 var d = 0;
+client.on('interactionCreate', async interaction => {
+           
+        
+          
+    if(interaction.isButton()){
 
+        if(interaction.customId === 'skip'){ interaction.reply({content: "Skipped"})
+        client.music.get('skip').execute(client, message, args, Discord);
+            
+        }else if(interaction.customId === 'BassBoost'){
+            interaction.reply({content: "BassBoost Activated !"})
+            client.music.get('bassboost').execute(client, message, args, Discord);
+
+
+        }else if(interaction.customId === 'Nightcore'){
+            interaction.reply({content: "BassBoost Activated !"})
+            client.music.get('nightcore').execute(client, message, args, Discord);
+
+
+        }
+    }
+})
 client.on('messageCreate', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-
+       
 
     if (message.author.bot) return;
     if (j === 1 && !message.content.startsWith(prefix) && message.channel.id === channelID) {
@@ -236,7 +221,25 @@ client.on('messageCreate', async message => {
                             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
                             .setTitle(`Issue`)
                             .setDescription(`Try Again pls getting some Issues <3 || [Bot may need a restart type p!report] `)
-                        message.channel.send(embed4);
+                       
+
+                        const row = new MessageActionRow()
+                        .addComponents(
+                            new MessageButton()
+                                .setCustomId('skip')
+                                .setLabel('Skip')
+                                .setStyle('DANGER'),
+            
+                                new MessageButton()
+                                .setCustomId('BassBoost')
+                                .setLabel('Bassboost')
+                                .setStyle('PRIMARY'),
+                                new MessageButton()
+                                .setCustomId('Nightcore')
+                                .setLabel('Nightcore')
+                                .setStyle('SUCCESS'),
+                        );
+                        message.channel.send({embeds: [embed4], components: [row] })
                     })
                     break;
                 case 'loop':
