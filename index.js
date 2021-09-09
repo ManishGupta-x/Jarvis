@@ -4,7 +4,7 @@ const prefix = 'p!';
 const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"], intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES'] });
 const fetch = require("node-fetch").default;
-const DisTube = require('distube');
+const {DisTube} = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, youtubeCookie: '' });
 const { MessageActionRow, MessageButton } = require('discord.js');
 
@@ -12,7 +12,7 @@ const emitter = require('events')
 emitter.setMaxListeners(999)
 
 client.distube
-    .on("playSong", async (message, queue, song) => {
+    .on("playSong", async (queue, song) => {
 
         var wallpapers = ["https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284561726308372/433536-Klayton-women-science_fiction-planet-Scandroid.png"
             , "https://cdn.discordapp.com/attachments/730714810614022228/882284789145677854/Drum-Instrument-Neon-HD-Wallpapers-Free-Download.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png",
@@ -29,7 +29,7 @@ client.distube
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
           
-        message.channel.send({embeds : [playsong]});
+       queue.textchannel.send({embeds : [playsong]});
            
 
         // const row = new MessageActionRow()
