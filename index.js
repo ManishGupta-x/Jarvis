@@ -54,7 +54,7 @@ client.distube
 
 
     })
-    .on("addSong", (message, queue, song) => {
+    .on("addSong", ( queue, song) => {
 
         const addsong = new Discord.MessageEmbed()
             .setColor('#F0074F')
@@ -66,7 +66,7 @@ client.distube
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
 
-            message.channel.send({embeds : [addsong]});
+          queue.textchannel.send({embeds : [addsong]});
     })
     .on("playList", (message, queue, playlist, song) => message.channel.send(
         `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
