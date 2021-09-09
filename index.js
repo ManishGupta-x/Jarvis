@@ -597,7 +597,7 @@ client.on('messageCreate', async message => {
         }else if(message.content.startsWith(prefix)){
 
 
-message.channel.send({content :" Am Currently Under a Big update, Will resume its services soon!"})
+message.channel.send({content :" Am Currently Under a Big update, Will resume services soon!"})
 
 
 
