@@ -29,26 +29,26 @@ client.distube
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
           
-        message.channel.send(playsong);
+        
            
 
-        // const row = new MessageActionRow()
-        //                 .addComponents(
-        //                     new MessageButton()
-        //                         .setCustomId('skip')
-        //                         .setLabel('Skip')
-        //                         .setStyle('DANGER'),
+        const row = new MessageActionRow()
+                        .addComponents(
+                            new MessageButton()
+                                .setCustomId('skip')
+                                .setLabel('Skip')
+                                .setStyle('DANGER'),
             
-        //                         new MessageButton()
-        //                         .setCustomId('BassBoost')
-        //                         .setLabel('Bassboost')
-        //                         .setStyle('PRIMARY'),
-        //                         new MessageButton()
-        //                         .setCustomId('Nightcore')
-        //                         .setLabel('Nightcore')
-        //                         .setStyle('SUCCESS'),
-        //                 );
-        //                 message.channel.send({embeds: [playsong], components: [row] })
+                                new MessageButton()
+                                .setCustomId('BassBoost')
+                                .setLabel('Bassboost')
+                                .setStyle('PRIMARY'),
+                                new MessageButton()
+                                .setCustomId('Nightcore')
+                                .setLabel('Nightcore')
+                                .setStyle('SUCCESS'),
+                        );
+                        message.channel.send({embeds: [playsong], components: [row] })
                     
        
 
