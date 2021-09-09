@@ -32,23 +32,23 @@ client.distube
        queue.textchannel.send({embeds : [playsong]});
            
 
-        // const row = new MessageActionRow()
-        //                 .addComponents(
-        //                     new MessageButton()
-        //                         .setCustomId('skip')
-        //                         .setLabel('Skip')
-        //                         .setStyle('DANGER'),
+        const row = new MessageActionRow()
+                        .addComponents(
+                            new MessageButton()
+                                .setCustomId('skip')
+                                .setLabel('Skip')
+                                .setStyle('DANGER'),
             
-        //                         new MessageButton()
-        //                         .setCustomId('BassBoost')
-        //                         .setLabel('Bassboost')
-        //                         .setStyle('PRIMARY'),
-        //                         new MessageButton()
-        //                         .setCustomId('Nightcore')
-        //                         .setLabel('Nightcore')
-        //                         .setStyle('SUCCESS'),
-        //                 );
-        //                 message.channel.send({embeds: [playsong], components: [row] })
+                                new MessageButton()
+                                .setCustomId('BassBoost')
+                                .setLabel('Bassboost')
+                                .setStyle('PRIMARY'),
+                                new MessageButton()
+                                .setCustomId('Nightcore')
+                                .setLabel('Nightcore')
+                                .setStyle('SUCCESS'),
+                        );
+                        message.channel.send({embeds: [playsong], components: [row] })
                     
        
 
@@ -149,28 +149,28 @@ module.exports.timedcheck = undefined;
 module.exports.val = 0;
 j = 0;
 var d = 0;
-// client.on('interactionCreate', async interaction => {
+client.on('interactionCreate', async interaction => {
            
         
           
-//     if(interaction.isButton()){
+    if(interaction.isButton()){
 
-//         if(interaction.customId === 'skip'){ interaction.reply({content: "Skipped"})
-//         client.music.get('skip').execute(client, message, args, Discord);
+        if(interaction.customId === 'skip'){ interaction.reply({content: "Skipped"})
+        client.music.get('skip').execute(client, message, args, Discord);
             
-//         }else if(interaction.customId === 'BassBoost'){
-//             interaction.reply({content: "BassBoost Activated !"})
-//             client.music.get('bassboost').execute(client, message, args, Discord);
+        }else if(interaction.customId === 'BassBoost'){
+            interaction.reply({content: "BassBoost Activated !"})
+            client.music.get('bassboost').execute(client, message, args, Discord);
 
 
-//         }else if(interaction.customId === 'Nightcore'){
-//             interaction.reply({content: "BassBoost Activated !"})
-//             client.music.get('nightcore').execute(client, message, args, Discord);
+        }else if(interaction.customId === 'Nightcore'){
+            interaction.reply({content: "BassBoost Activated !"})
+            client.music.get('nightcore').execute(client, message, args, Discord);
 
 
-//         }
-//     }
-// })
+        }
+    }
+})
 client.on('messageCreate', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
