@@ -2,12 +2,12 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const prefix = 'p!';
 const mongoose = require('mongoose');
-const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] },{ intents: [Intents.FLAGS.GUILDS] });
 const fetch = require("node-fetch").default;
 const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, youtubeCookie: '' });
 client.disbut = require('discord-buttons')(client);
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+
 
 
 const emitter = require('events')
