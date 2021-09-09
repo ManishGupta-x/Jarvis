@@ -230,17 +230,9 @@ client.on('messageCreate', async message => {
                     if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
                     const music = args.join(" ");
 
-                    client.distube.play(message, music).catch(() => {
+                    client.distube.play(message, music)
 
-                        const embed4 = new Discord.MessageEmbed()
-                            .setColor('#F0074F')
-                            .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
-                            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                            .setTitle(`Issue`)
-                            .setDescription(`Try Again pls getting some Issues <3 || [Bot may need a restart type p!report] `)
-                       
-
-                        message.channel.send({embeds : [embed4]});})
+                    
                     break;
                 case 'loop':
                     client.music.get('loop').execute(client, message, args, Discord);
