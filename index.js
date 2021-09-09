@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const prefix = 'p!';
 const mongoose = require('mongoose');
-const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"], intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES'] });
 const fetch = require("node-fetch").default;
 const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, youtubeCookie: '' });
@@ -51,15 +51,7 @@ client.distube
     .on("playList", (message, queue, playlist, song) => message.channel.send(
         `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
     ))
-//  .on("searchResult", (message, result) => {
-//      let i = 0;
-//      message.channel.send(`**Choose an option from below**\n${result.map(song => `**${++i}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}\n*Enter anything else or wait 60 seconds to cancel*`);
-//  })
-//  .on("searchCancel", (message) => message.channel.send(`Searching canceled`))
-//  .on("error", (message, e) => {
-//        console.error(e)
-//       message.channel.send("An error encountered: " + e);
-//   })
+
 
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -67,7 +59,7 @@ mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/t
 
 
 const { MessageEmbed } = require('discord.js')
-new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES'] });
+
 
 
 const fs = require('fs');
