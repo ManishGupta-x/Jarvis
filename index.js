@@ -120,7 +120,7 @@ for (const file of idFiles) {
 
 client.once('ready', () => {
     console.log('Jarvis is online!');
-    client.user.setActivity('Boss 😎', { type: 'LISTENING' }).catch(console.error);
+    client.user.setActivity('Boss 😎', { type: 'LISTENING' })
 
 });
 module.exports.timedcheck = undefined;
