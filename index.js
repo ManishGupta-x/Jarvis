@@ -597,7 +597,7 @@ client.on('messageCreate', async message => {
         }else if(message.content.startsWith(prefix)){
 
 
-message.channel.send({contents :" Jarvis Is Currently Under Maintenance For 2 days"})
+message.channel.send({content :" Jarvis Is Currently Under Maintenance For 2 days"})
 
 
 
