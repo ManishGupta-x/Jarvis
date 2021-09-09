@@ -6,7 +6,7 @@ const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]
 const fetch = require("node-fetch").default;
 const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, youtubeCookie: '' });
-client.disbut = require('discord-buttons')(client);
+
 
 
 
@@ -29,27 +29,7 @@ client.distube
             .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\` `)
 
             .setFooter(client.user.username, client.user.displayAvatarURL())
-            .setTimestamp();
-        let btn3 = new client.disbut.MessageButton()
-            .setStyle('blurple')
-            .setLabel('Nightcore')
-            .setID('Nightcore')
-            .setDisabled();
-        let btn2 = new client.disbut.MessageButton()
-            .setStyle('green')
-            .setLabel('Bassboost')
-            .setID('BB')
-            .setDisabled();
-        let btn = new client.disbut.MessageButton()
-            .setStyle('red')
-            .setLabel('Skip')
-            .setID('Skip')
-            .setDisabled();
-        let msg = await message.channel.send({
-            buttons: [
-                btn, btn2, btn3
-            ], embed: playsong
-        })
+        
 
 
 
@@ -162,32 +142,7 @@ client.on('messageCreate', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    /* client.on('clickButton', async (button) => {
- 
-         process.on('error', async () => {
-             if (button.id === 'Skip') {
-                 await button.defer();
-                 button.channel.send('Skipped')
-                 client.music.get('skip').execute(client, message, args, Discord);
- 
-             } else if (button.id === 'BB') {
-                 await button.defer();
-                 client.music.get('bassboost').execute(client, message, args, Discord);
- 
-             } else if (button.id === 'Nightcore') {
-                 await button.defer();
- 
-                 client.music.get('nightcore').execute(client, message, args, Discord);
- 
-             };
-             return;
-         })
-     });*/
-
-
-
-
-
+   
     if (message.author.bot) return;
     if (j === 1 && !message.content.startsWith(prefix) && message.channel.id === channelID) {
         fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
