@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"], intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES'] });
 const fetch = require("node-fetch").default;
 const DisTube = require('distube');
-const distube = new DisTube.default(options);
+const distube = new DisTube.default(client, { searchSongs: 10 , emitNewSongOnly: true, youtubeCookie: '' });
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 const emitter = require('events')
