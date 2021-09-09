@@ -7,7 +7,7 @@ const fetch = require("node-fetch").default;
 const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, youtubeCookie: '' });
 client.disbut = require('discord-buttons')(client);
-
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 
 const emitter = require('events')
