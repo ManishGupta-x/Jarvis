@@ -63,7 +63,7 @@ client.distube
     
                 }else if(interaction.customId === 'Nightcore'){
                     interaction.reply({content: "BassBoost Activated !"})
-                    client.music.get('').execute(client, message, args, Discord);
+                    client.music.get('nightcore').execute(client, message, args, Discord);
     
     
                 }
