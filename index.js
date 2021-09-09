@@ -4,8 +4,8 @@ const prefix = 'p!';
 const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"], intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES'] });
 const fetch = require("node-fetch").default;
-const {DisTube} = require('distube');
-const distube = new DisTube.Distube(client, { searchSongs: false, emitNewSongOnly: true, youtubeCookie: '' });
+const DisTube = require('distube');
+const distube = new DisTube.default(options);
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 const emitter = require('events')
