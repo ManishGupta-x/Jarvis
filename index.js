@@ -29,7 +29,7 @@ client.distube
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
           
-        message.channel.send(playsong);
+        message.channel.send({embeds : [playsong]});
            
 
         // const row = new MessageActionRow()
@@ -66,7 +66,7 @@ client.distube
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
 
-        message.channel.send(addsong)
+            message.channel.send({embeds : [addsong]});
     })
     .on("playList", (message, queue, playlist, song) => message.channel.send(
         `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
@@ -223,7 +223,7 @@ client.on('messageCreate', async message => {
                     break;
                 case 'play':
                     if (!args[0]) {
-                        message.channel.send('Please Mention song!')
+                        message.channel.send({content :'Please Mention song!'})
                         return;
 
                     }
@@ -240,7 +240,7 @@ client.on('messageCreate', async message => {
                             .setDescription(`Try Again pls getting some Issues <3 || [Bot may need a restart type p!report] `)
                        
 
-                        message.channel.send(embed4);})
+                        message.channel.send({embeds : [embed4]});})
                     break;
                 case 'loop':
                     client.music.get('loop').execute(client, message, args, Discord);
@@ -331,21 +331,6 @@ client.on('messageCreate', async message => {
                     break;
 
 
-
-                case 'bird': fetch(`https://api.monkedev.com/attachments/bird`)
-                    .then(url => url.json())
-                    .then(data => {
-                        message.channel.send(data.url);
-                    })
-
-                    break;
-                case 'monkey': fetch(`https://api.monkedev.com/attachments/monkey`)
-                    .then(url => url.json())
-                    .then(data => {
-                        message.channel.send(data.url);
-                    })
-
-                    break;
                 case 'bootup-jarvis': j = 1; message.channel.send('https://tenor.com/view/iron-man-sped-up-jarvis-gif-19148596');
                     message.reply(" Booted Up Succesfully! ")
                     channelID = message.channel.id;

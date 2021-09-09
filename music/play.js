@@ -5,7 +5,7 @@ module.exports ={
    async  execute(client,message,args, Discord){
         if(!args[0]){
           
-            message.channel.send('Please Mention song!')
+            message.channel.send({content :'Please Mention song!'})
            return;
 
         }
