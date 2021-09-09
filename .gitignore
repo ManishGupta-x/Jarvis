@@ -1,1 +1,9 @@
-node_modules
+node_modules/.bin
+node_modules/abbrev
+node_modules/agent-base
+node_modules/ansi-regex
+node_modules/@derhuerst
+node_modules/discord.js
+node_modules/discord-buttons
+node_modules/distube
+node_modules/puppeteer

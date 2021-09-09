@@ -158,7 +158,7 @@ module.exports.val = 0;
 j = 0;
 var d = 0;
 
-client.on('message', async message => {
+client.on('messageCreate', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
