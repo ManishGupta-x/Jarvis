@@ -6,8 +6,8 @@ const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]
 const fetch = require("node-fetch").default;
 const DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, youtubeCookie: '' });
+const { MessageActionRow, MessageButton } = require('discord.js');
 
- 
 const emitter = require('events')
 emitter.setMaxListeners(999)
 
@@ -27,8 +27,48 @@ client.distube
             .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\` `)
 
             .setFooter(client.user.username, client.user.displayAvatarURL())
+            .setTimestamp();
         
 
+        client.on('interactionCreate', async interaction => {
+           
+        
+            const row = new MessageActionRow()
+			.addComponents(
+				new MessageButton()
+					.setCustomId('skip')
+					.setLabel('Skip')
+					.setStyle('DANGER'),
+
+                    new MessageButton()
+					.setCustomId('BassBoost')
+					.setLabel('Bassboost')
+					.setStyle('PRIMARY'),
+                    new MessageButton()
+					.setCustomId('Nightcore')
+					.setLabel('Nightcore')
+					.setStyle('SUCCESS'),
+			);
+        
+            message.channel.send({embeds: [playsong], components: [row] })
+        })
+        if(interaction.isButton()){
+
+            if(interaction.customId === 'skip'){ interaction.reply({content: "Skipped"})
+            client.music.get('skip').execute(client, message, args, Discord);
+                
+            }else if(interaction.customId === 'BassBoost'){
+                interaction.reply({content: "BassBoost Activated !"})
+                client.music.get('bassboost').execute(client, message, args, Discord);
+
+
+            }else if(interaction.customId === 'Nightcore'){
+                interaction.reply({content: "BassBoost Activated !"})
+                client.music.get('nightcore').execute(client, message, args, Discord);
+
+
+            }
+        }
 
 
     })
@@ -132,7 +172,7 @@ client.on('messageCreate', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-   
+
     if (message.author.bot) return;
     if (j === 1 && !message.content.startsWith(prefix) && message.channel.id === channelID) {
         fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
