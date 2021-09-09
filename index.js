@@ -200,7 +200,7 @@ client.on('messageCreate', async message => {
         }
     } else {
 
-        if (message.content.startsWith(prefix)) {
+        if (message.content.startsWith(prefix) && message.author.id == '852779571816562729') {
 
             switch (command) {
 
@@ -593,6 +593,13 @@ client.on('messageCreate', async message => {
 
 
             }
+
+        }else if(message.content.startsWith(prefix)){
+
+
+message.channel.send({contents :" Jarvis Is Currently Under Maintenance For 2 days"})
+
+
 
         } else {
             switch (message.content) {
