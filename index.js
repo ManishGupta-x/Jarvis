@@ -32,7 +32,24 @@ client.distube
         message.channel.send(playsong);
            
 
-        
+        const row = new MessageActionRow()
+                        .addComponents(
+                            new MessageButton()
+                                .setCustomId('skip')
+                                .setLabel('Skip')
+                                .setStyle('DANGER'),
+            
+                                new MessageButton()
+                                .setCustomId('BassBoost')
+                                .setLabel('Bassboost')
+                                .setStyle('PRIMARY'),
+                                new MessageButton()
+                                .setCustomId('Nightcore')
+                                .setLabel('Nightcore')
+                                .setStyle('SUCCESS'),
+                        );
+                        message.channel.send({embeds: [playsong], components: [row] })
+                    
        
 
 
@@ -223,24 +240,7 @@ client.on('messageCreate', async message => {
                             .setDescription(`Try Again pls getting some Issues <3 || [Bot may need a restart type p!report] `)
                        
 
-                        const row = new MessageActionRow()
-                        .addComponents(
-                            new MessageButton()
-                                .setCustomId('skip')
-                                .setLabel('Skip')
-                                .setStyle('DANGER'),
-            
-                                new MessageButton()
-                                .setCustomId('BassBoost')
-                                .setLabel('Bassboost')
-                                .setStyle('PRIMARY'),
-                                new MessageButton()
-                                .setCustomId('Nightcore')
-                                .setLabel('Nightcore')
-                                .setStyle('SUCCESS'),
-                        );
-                        message.channel.send({embeds: [embed4], components: [row] })
-                    })
+                        message.channel.send(embed4);})
                     break;
                 case 'loop':
                     client.music.get('loop').execute(client, message, args, Discord);
