@@ -51,24 +51,25 @@ client.distube
 			);
         
             message.channel.send({embeds: [playsong], components: [row] })
-        })
-        if(interaction.isButton()){
+            if(interaction.isButton()){
 
-            if(interaction.customId === 'skip'){ interaction.reply({content: "Skipped"})
-            client.music.get('skip').execute(client, message, args, Discord);
-                
-            }else if(interaction.customId === 'BassBoost'){
-                interaction.reply({content: "BassBoost Activated !"})
-                client.music.get('bassboost').execute(client, message, args, Discord);
-
-
-            }else if(interaction.customId === 'Nightcore'){
-                interaction.reply({content: "BassBoost Activated !"})
-                client.music.get('nightcore').execute(client, message, args, Discord);
-
-
+                if(interaction.customId === 'skip'){ interaction.reply({content: "Skipped"})
+                client.music.get('skip').execute(client, message, args, Discord);
+                    
+                }else if(interaction.customId === 'BassBoost'){
+                    interaction.reply({content: "BassBoost Activated !"})
+                    client.music.get('bassboost').execute(client, message, args, Discord);
+    
+    
+                }else if(interaction.customId === 'Nightcore'){
+                    interaction.reply({content: "BassBoost Activated !"})
+                    client.music.get('').execute(client, message, args, Discord);
+    
+    
+                }
             }
-        }
+        })
+       
 
 
     })
