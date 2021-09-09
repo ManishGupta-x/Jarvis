@@ -5,13 +5,13 @@ const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"], intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES'] });
 const fetch = require("node-fetch").default;
 const DisTube = require('distube');
-client.distube = new DisTube.default(client, { searchSongs: 10 , emitNewSongOnly: true, youtubeCookie: '' });
+const distube = new DisTube.default(client, { searchSongs: 10 , emitNewSongOnly: true, youtubeCookie: '' });
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 const emitter = require('events')
 emitter.setMaxListeners(999)
 
-client.distube
+distube
     .on("playSong", async (queue, song) => {
 
         var wallpapers = ["https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284561726308372/433536-Klayton-women-science_fiction-planet-Scandroid.png"
@@ -230,7 +230,7 @@ client.on('messageCreate', async message => {
                     if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
                     const music = args.join(" ");
 
-                    client.distube.play(message, music)
+                    distube.play(message, music)
 
                     
                     break;
