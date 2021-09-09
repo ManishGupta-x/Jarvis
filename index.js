@@ -28,11 +28,6 @@ client.distube
 
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
-        
-
-        client.on('interactionCreate', async interaction => {
-           
-        
             const row = new MessageActionRow()
 			.addComponents(
 				new MessageButton()
@@ -51,6 +46,11 @@ client.distube
 			);
         
             message.channel.send({embeds: [playsong], components: [row] })
+
+        client.on('interactionCreate', async interaction => {
+           
+        
+          
             if(interaction.isButton()){
 
                 if(interaction.customId === 'skip'){ interaction.reply({content: "Skipped"})
