@@ -173,7 +173,7 @@ client.on('messageCreate', async message => {
                 await  client.music.get('nightcore').execute(client, message, args, Discord);
     
     
-            }console.log(interaction);
+            }
         }
     })
     if (message.author.bot) return;
