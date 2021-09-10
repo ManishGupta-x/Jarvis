@@ -60,7 +60,7 @@ client.distube
                         await client.music.get('skip').execute(client, message, args, Discord);
         
                     } else if (interaction.customId === 'BassBoost') {
-                        await interaction.deferReply({ content: "BassBoost Activated !", ephemeral: true })
+                        await interaction.reply({ content: "BassBoost Activated !", ephemeral: true })
                         await client.music.get('bassboost').execute(client, message, args, Discord);
         
         
