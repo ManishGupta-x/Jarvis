@@ -624,6 +624,7 @@ client.on('messageCreate', async message => {
                     let Role = message.guild.roles.cache.find(role => role.name === 'friendly');
                     if (message.member.roles.cache.has('885896296739790919')) {
                         memberTarget.roles.remove(Role.id);
+                        message.reply('You will not get pinged for friendlies now  :)!')
                     }
                     else {
 
