@@ -7,9 +7,7 @@ const fetch = require("node-fetch").default;
 const { DisTube } = require('distube');
 client.distube = new DisTube(client, { searchSongs: 0, emitNewSongOnly: true, youtubeCookie: '' });
 const { MessageActionRow, MessageButton } = require('discord.js');
-const filter = i => i.customId === 'primary' && i.user.id === '778267007439077396';
 
-const collector =  interaction.channel.createMessageComponentCollector({ filter, time: 30000 });
 const emitter = require('events')
 emitter.setMaxListeners(999)
 
@@ -51,23 +49,23 @@ client.distube
                     .setStyle('SUCCESS'),
             );
         queue.textChannel.send({ embeds: [playsong], components: [row] }).then( async (message,args) =>{
-            collector.on('collect', async i => {
+            client.on('interactionCreate', async interaction => {
 
 
 
-                if (i.isButton()) {
+                if (interaction.isButton()) {
         
-                    if (i.customId === 'skip') {
-                        await i.update({ content: "Skipped", ephemeral: true,components:[row] })
+                    if (interaction.customId === 'skip') {
+                        await interaction.reply({ content: "Skipped", ephemeral: true })
                         await client.music.get('skip').execute(client, message, args, Discord);
         
-                    } else if (i.customId === 'BassBoost') {
-                        await i.update({ content: "BassBoost Activated !", ephemeral: true ,components:[row]})
+                    } else if (interaction.customId === 'BassBoost') {
+                        await interaction.reply({ content: "BassBoost Activated !", ephemeral: true })
                         await client.music.get('bassboost').execute(client, message, args, Discord);
         
         
-                    } else if (i.customId === 'Nightcore') {
-                        await i.update({ content: "Nightcore Activated !", ephemeral: true,components:[row] })
+                    } else if (interaction.customId === 'Nightcore') {
+                        await interaction.reply({ content: "Nightcore Activated !", ephemeral: true })
                         await client.music.get('nightcore').execute(client, message, args, Discord);
         
         
