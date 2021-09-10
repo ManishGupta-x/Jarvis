@@ -48,7 +48,7 @@ client.distube
                     .setLabel('Nightcore')
                     .setStyle('SUCCESS'),
             );
-        queue.textChannel.send({ embeds: [playsong], components: [row] }).then( async (message) =>{
+        queue.textChannel.send({ embeds: [playsong], components: [row] }).then( async (message,args) =>{
             client.on('interactionCreate', async interaction => {
 
 
