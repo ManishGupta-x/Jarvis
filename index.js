@@ -48,7 +48,7 @@ client.distube
                                 .setLabel('Nightcore')
                                 .setStyle('SUCCESS'),
                         );
-                        queue.textchannel.send({embeds: [playsong], components: [row] })
+                        queue.textChannel.send({embeds: [playsong], components: [row] })
                     
        
 
@@ -66,7 +66,7 @@ client.distube
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
 
-          queue.textchannel.send({embeds : [addsong]});
+          queue.textChannel.send({embeds : [addsong]});
     })
     .on("playList", (message, queue, playlist, song) => message.channel.send(
         `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`

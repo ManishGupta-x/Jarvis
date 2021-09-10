@@ -10,10 +10,11 @@ module.exports ={
            return;
 
         }
+        let textchannel = message.channel;
         if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
         const music = args.join(" ");
 
-        client.distube.playVoiceChannel(voiceChannel, music,{textChannel : aTextChannelVariable})
+        client.distube.playVoiceChannel(voiceChannel, music,{textChannel : textchannel})
         
 
     }  
