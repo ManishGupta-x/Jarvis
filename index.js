@@ -48,7 +48,34 @@ client.distube
                     .setLabel('Nightcore')
                     .setStyle('SUCCESS'),
             );
-        queue.textChannel.send({ embeds: [playsong], components: [row] })
+        queue.textChannel.send({ embeds: [playsong], components: [row] }).then( async (message) =>{
+            client.on('interactionCreate', async interaction => {
+
+
+
+                if (interaction.isButton()) {
+        
+                    if (interaction.customId === 'skip') {
+                        await interaction.deferReply({ content: "Skipped", ephemeral: true })
+                        await client.music.get('skip').execute(client, message, args, Discord);
+        
+                    } else if (interaction.customId === 'BassBoost') {
+                        await interaction.deferReply({ content: "BassBoost Activated !", ephemeral: true })
+                        await client.music.get('bassboost').execute(client, message, args, Discord);
+        
+        
+                    } else if (interaction.customId === 'Nightcore') {
+                        await interaction.deferReply({ content: "Nightcore Activated !", ephemeral: true })
+                        await client.music.get('nightcore').execute(client, message, args, Discord);
+        
+        
+                    }
+                }
+            })
+
+
+
+        })
 
 
 
