@@ -1,3 +1,4 @@
+const { VoiceChannel } = require('discord.js');
 const disTube = require('distube');
 module.exports ={
     name: 'play',
@@ -12,7 +13,7 @@ module.exports ={
         if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
         const music = args.join(" ");
 
-        client.distube.play(message, music)
+        client.distube.playVoiceChannel(VoiceChannel, music)
         
 
     }  
