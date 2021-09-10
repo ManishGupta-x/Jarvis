@@ -2,10 +2,10 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const prefix = 'p!';
 const mongoose = require('mongoose');
-const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"], intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES','GUILD_VOICE_STATES'] });
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"], intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES', 'GUILD_VOICE_STATES'] });
 const fetch = require("node-fetch").default;
-const {DisTube} = require('distube');
-client.distube = new DisTube(client, { searchSongs: 0 , emitNewSongOnly: true, youtubeCookie: '' });
+const { DisTube } = require('distube');
+client.distube = new DisTube(client, { searchSongs: 0, emitNewSongOnly: true, youtubeCookie: '' });
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 const emitter = require('events')
@@ -28,33 +28,33 @@ client.distube
 
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
-          
-    
-           
+
+
+
 
         const row = new MessageActionRow()
-                        .addComponents(
-                            new MessageButton()
-                                .setCustomId('skip')
-                                .setLabel('Skip')
-                                .setStyle('DANGER'),
-            
-                                new MessageButton()
-                                .setCustomId('BassBoost')
-                                .setLabel('Bassboost')
-                                .setStyle('PRIMARY'),
-                                new MessageButton()
-                                .setCustomId('Nightcore')
-                                .setLabel('Nightcore')
-                                .setStyle('SUCCESS'),
-                        );
-                        queue.textChannel.send({embeds: [playsong], components: [row] })
-                    
-       
+            .addComponents(
+                new MessageButton()
+                    .setCustomId('skip')
+                    .setLabel('Skip')
+                    .setStyle('DANGER'),
+
+                new MessageButton()
+                    .setCustomId('BassBoost')
+                    .setLabel('Bassboost')
+                    .setStyle('PRIMARY'),
+                new MessageButton()
+                    .setCustomId('Nightcore')
+                    .setLabel('Nightcore')
+                    .setStyle('SUCCESS'),
+            );
+        queue.textChannel.send({ embeds: [playsong], components: [row] })
+
+
 
 
     })
-    .on("addSong", ( queue, song) => {
+    .on("addSong", (queue, song) => {
 
         const addsong = new Discord.MessageEmbed()
             .setColor('#F0074F')
@@ -66,7 +66,7 @@ client.distube
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
 
-          queue.textChannel.send({embeds : [addsong]});
+        queue.textChannel.send({ embeds: [addsong] });
     })
     .on("playList", (message, queue, playlist, song) => message.channel.send(
         `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
@@ -153,26 +153,27 @@ var d = 0;
 client.on('messageCreate', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-       
+
     client.on('interactionCreate', async interaction => {
-           
-        
-          
-        if(interaction.isButton()){
-    
-            if(interaction.customId === 'skip'){ await interaction.reply({content: "Skipped", ephemeral: true})
-            await  client.music.get('skip').execute(client, message, args, Discord);
-                
-            }else if(interaction.customId === 'BassBoost'){
-                await  interaction.reply({content: "BassBoost Activated !", ephemeral: true})
+
+
+
+        if (interaction.isButton()) {
+
+            if (interaction.customId === 'skip') {
+                await interaction.reply({ content: "Skipped", ephemeral: true })
+                await client.music.get('skip').execute(client, message, args, Discord);
+
+            } else if (interaction.customId === 'BassBoost') {
+                await interaction.reply({ content: "BassBoost Activated !", ephemeral: true })
                 await client.music.get('bassboost').execute(client, message, args, Discord);
-    
-    
-            }else if(interaction.customId === 'Nightcore'){
-                await   interaction.reply({content: "Nightcore Activated !", ephemeral: true})
-                await  client.music.get('nightcore').execute(client, message, args, Discord);
-    
-    
+
+
+            } else if (interaction.customId === 'Nightcore') {
+                await interaction.reply({ content: "Nightcore Activated !", ephemeral: true })
+                await client.music.get('nightcore').execute(client, message, args, Discord);
+
+
             }
         }
     })
@@ -223,7 +224,7 @@ client.on('messageCreate', async message => {
                     break;
                 case 'play':
                     if (!args[0]) {
-                        message.channel.send({content :'Please Mention song!'})
+                        message.channel.send({ content: 'Please Mention song!' })
                         return;
 
                     }
@@ -232,7 +233,7 @@ client.on('messageCreate', async message => {
 
                     client.distube.play(message, music)
 
-                    
+
                     break;
                 case 'loop':
                     client.music.get('loop').execute(client, message, args, Discord);
@@ -594,10 +595,10 @@ client.on('messageCreate', async message => {
 
             }
 
-        }else if(message.content.startsWith(prefix)){
+        } else if (message.content.startsWith(prefix)) {
 
 
-message.channel.send({content :" Am Currently Under a Big update, Will resume services soon!"})
+            message.channel.send({ content: " Am Currently Under a Big update, Will resume services soon!" })
 
 
 
@@ -616,7 +617,19 @@ message.channel.send({content :" Am Currently Under a Big update, Will resume se
                     break;
                 case "jarvis expose shivam": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
                     break;
-                case "-friendly": (await message.channel.send({content : `<@&885896296739790919>`})).delete({ timeout: 2000 })
+                case "-friendly": await message.channel.send({ content: `<@&885896296739790919>` }).delete({ timeout: 2000 })
+                    break;
+                case "togglefriendly": let member = message.member;
+                    let memberTarget = message.guild.members.cache.get(member.id);
+                    let Role = message.guild.roles.cache.find(role => role.name === 'friendly');
+                    if (message.member.roles.cache.has('885896296739790919')) {
+                        memberTarget.roles.remove(Role.id);
+                    }
+                    else {
+
+                        memberTarget.roles.add(Role.id);
+                        message.reply('You Joined Friendlies Channel  :)!')
+                    }
                     break;
                 case "study mode on": if (message.author.id == '550267183503114250' || message.author.id == '852779571816562729') {
                     message.reply("Activated Boss!!")
