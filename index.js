@@ -29,7 +29,7 @@ client.distube
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
           
-       queue.textchannel.send({embeds : [playsong]});
+    
            
 
         const row = new MessageActionRow()
@@ -48,7 +48,7 @@ client.distube
                                 .setLabel('Nightcore')
                                 .setStyle('SUCCESS'),
                         );
-                        message.channel.send({embeds: [playsong], components: [row] })
+                        queue.textchannel.send({embeds: [playsong], components: [row] })
                     
        
 
