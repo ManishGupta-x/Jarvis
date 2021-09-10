@@ -9,7 +9,7 @@ client.distube = new DisTube(client, { searchSongs: 0, emitNewSongOnly: true, yo
 const { MessageActionRow, MessageButton } = require('discord.js');
 const filter = interaction => interaction.customId === 'primary' && interaction.user.id === '778267007439077396';
 
-const collector = interaction.channel.createMessageComponentCollector({ filter, time: 15000 });
+const collector = interaction => interaction.channel.createMessageComponentCollector({ filter, time: 15000 });
 const emitter = require('events')
 emitter.setMaxListeners(999)
 
