@@ -56,7 +56,7 @@ client.distube
                 if (interaction.isButton()) {
         
                     if (interaction.customId === 'skip') {
-                        await interaction.deferReply({ content: "Skipped", ephemeral: true })
+                        await interaction.reply({ content: "Skipped", ephemeral: true })
                         await client.music.get('skip').execute(client, message, args, Discord);
         
                     } else if (interaction.customId === 'BassBoost') {
@@ -65,7 +65,7 @@ client.distube
         
         
                     } else if (interaction.customId === 'Nightcore') {
-                        await interaction.deferReply({ content: "Nightcore Activated !", ephemeral: true })
+                        await interaction.reply({ content: "Nightcore Activated !", ephemeral: true })
                         await client.music.get('nightcore').execute(client, message, args, Discord);
         
         
