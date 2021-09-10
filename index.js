@@ -160,17 +160,17 @@ client.on('messageCreate', async message => {
           
         if(interaction.isButton()){
     
-            if(interaction.customId === 'skip'){ interaction.reply({content: "Skipped"})
-            client.music.get('skip').execute(client, message, args, Discord);
+            if(interaction.customId === 'skip'){ await interaction.reply({content: "Skipped"})
+            await  client.music.get('skip').execute(client, message, args, Discord);
                 
             }else if(interaction.customId === 'BassBoost'){
-                interaction.reply({content: "BassBoost Activated !"})
-                client.music.get('bassboost').execute(client, message, args, Discord);
+                await  interaction.reply({content: "BassBoost Activated !"})
+                await client.music.get('bassboost').execute(client, message, args, Discord);
     
     
             }else if(interaction.customId === 'Nightcore'){
-                interaction.reply({content: "BassBoost Activated !"})
-                client.music.get('nightcore').execute(client, message, args, Discord);
+                await   interaction.reply({content: "BassBoost Activated !"})
+                await  client.music.get('nightcore').execute(client, message, args, Discord);
     
     
             }
