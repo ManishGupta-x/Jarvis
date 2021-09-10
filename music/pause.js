@@ -20,7 +20,7 @@ module.exports ={
             
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
-            message.channel.send(embed);
+            message.channel.send({embeds: [embed]});
             
         } else if (!queue) {
             return

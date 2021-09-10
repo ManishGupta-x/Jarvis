@@ -12,7 +12,7 @@ module.exports ={
         if(queue) {
             client.distube.stop(message)
     
-            message.channel.send('Stopped Music')
+            message.channel.send({content: 'Stopped Music'})
         } else if (!queue) {
             return
         };

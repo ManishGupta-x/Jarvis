@@ -11,7 +11,7 @@ module.exports ={
         if(queue) {
             client.distube.skip(message)
         
-            message.channel.send('DONE!')
+            message.channel.send({content : 'DONE!'})
         } else if (!queue) {
             return
         };

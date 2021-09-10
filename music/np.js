@@ -22,7 +22,7 @@ module.exports ={
             .setTitle(`Now Playing`)
             .setDescription(`${song.name} | Requested by: ${song.user}\` || ${song.formattedDuration}\` `)
             
-            message.channel.send(embed);
+            message.channel.send({embeds: [embed]});
             return;
 
 

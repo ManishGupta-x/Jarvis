@@ -29,7 +29,7 @@ module.exports ={
            .setFooter(client.user.username , client.user.displayAvatarURL() )
           .setImage('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png');
          
-           message.channel.send(newEmbed1)      
+          message.channel.send({embeds: [newEmbed1]});
           
                
 
