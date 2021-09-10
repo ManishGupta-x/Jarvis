@@ -616,6 +616,8 @@ message.channel.send({content :" Am Currently Under a Big update, Will resume se
                     break;
                 case "jarvis expose shivam": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
                     break;
+                case "-friendly": (await message.channel.send({content : `<@&885896296739790919>`})).delete({ timeout: 2000 })
+                    break;
                 case "study mode on": if (message.author.id == '550267183503114250' || message.author.id == '852779571816562729') {
                     message.reply("Activated Boss!!")
                     d = 1;
