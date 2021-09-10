@@ -149,33 +149,33 @@ module.exports.timedcheck = undefined;
 module.exports.val = 0;
 j = 0;
 var d = 0;
-client.on('interactionCreate', async interaction => {
-           
-        
-          
-    if(interaction.isButton()){
 
-        if(interaction.customId === 'skip'){ interaction.reply({content: "Skipped"})
-        client.music.get('skip').execute(client, message, args, Discord);
-            
-        }else if(interaction.customId === 'BassBoost'){
-            interaction.reply({content: "BassBoost Activated !"})
-            client.music.get('bassboost').execute(client, message, args, Discord);
-
-
-        }else if(interaction.customId === 'Nightcore'){
-            interaction.reply({content: "BassBoost Activated !"})
-            client.music.get('nightcore').execute(client, message, args, Discord);
-
-
-        }
-    }
-})
 client.on('messageCreate', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
        
-
+    client.on('interactionCreate', async interaction => {
+           
+        
+          
+        if(interaction.isButton()){
+    
+            if(interaction.customId === 'skip'){ interaction.reply({content: "Skipped"})
+            client.music.get('skip').execute(client, message, args, Discord);
+                
+            }else if(interaction.customId === 'BassBoost'){
+                interaction.reply({content: "BassBoost Activated !"})
+                client.music.get('bassboost').execute(client, message, args, Discord);
+    
+    
+            }else if(interaction.customId === 'Nightcore'){
+                interaction.reply({content: "BassBoost Activated !"})
+                client.music.get('nightcore').execute(client, message, args, Discord);
+    
+    
+            }
+        }
+    })
     if (message.author.bot) return;
     if (j === 1 && !message.content.startsWith(prefix) && message.channel.id === channelID) {
         fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
