@@ -162,7 +162,7 @@ client.on('messageCreate', async message => {
 
             if (interaction.customId === 'skip') {
                 await interaction.deferReply({ content: "Skipped", ephemeral: true })
-                
+                await client.music.get('skip').execute(client, message, args, Discord);
 
             } else if (interaction.customId === 'BassBoost') {
                 await interaction.deferReply({ content: "BassBoost Activated !", ephemeral: true })
