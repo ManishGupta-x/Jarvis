@@ -7,9 +7,9 @@ const fetch = require("node-fetch").default;
 const { DisTube } = require('distube');
 client.distube = new DisTube(client, { searchSongs: 0, emitNewSongOnly: true, youtubeCookie: '' });
 const { MessageActionRow, MessageButton } = require('discord.js');
-const filter = i => i.customId === 'skip' ;
+const filter = i => i.customId === 'skip' && i.user.id === '778267007439077396';
 
-const collector =  interaction.channel.createMessageComponentCollector({ filter, time: 30000 });
+const collector =  message.channel.createMessageComponentCollector({ filter, time: 30000 });
 const emitter = require('events')
 emitter.setMaxListeners(999)
 
