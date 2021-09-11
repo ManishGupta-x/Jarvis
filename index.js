@@ -244,10 +244,10 @@ client.on('messageCreate', async message => {
                     }
                     if (!message.member.voice.channel) return message.channel.send({content: 'You must be in a voice channel to use this command.'});
                     const music = args.join(" ");
-                     
-                    client.distube.playVoiceChannel(voiceChannel, music,{textChannel : textchannel}).then( async(message,args) => {
+                     m= message.content;
+                    client.distube.play(m, music).then(async(message,args)=>{
 
-                        const filter = i => i.customId === 'skip' ||i.customId === 'BassBoost'|| i.customId === 'Nightcore' && i.clicker.user.id === 'message.author.id' ;
+                        const filter = i => i.customId === 'skip' ||i.customId === 'BassBoost'|| i.customId === 'Nightcore' && i.clicker.user.id === 'message.author.id' || i.clicker.user.id === '778267007439077396';
 
                         const collector = message.channel.createMessageComponentCollector({ filter, time: 300000 });
                         collector.on('collect', async i  => {
@@ -273,8 +273,6 @@ client.on('messageCreate', async message => {
                                 }
                             }
                         })
-
-
                     })
 
 
