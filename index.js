@@ -191,10 +191,10 @@ client.on('messageCreate', async message => {
         fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
             .then(response => response.json())
             .then(data => {
-                message.channel.send(data.response);
+                message.channel.send({content: data.response});
             })
             .catch(() => {
-                message.channel.send("Hmmmmmmmmmm")
+                message.channel.send({content : "Hmmmmmmmmmm"})
             })
     }
 
