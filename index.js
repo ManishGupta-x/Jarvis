@@ -48,11 +48,11 @@ client.distube
                     .setLabel('Nightcore')
                     .setStyle('SUCCESS'),
             );
-        queue.textChannel.send({ embeds: [playsong], components: [row] }).then( async (client,message,args,interaction,Discord) =>{
+        queue.textChannel.send({ embeds: [playsong], components: [row] }).then( async (message,args) =>{
 
             const filter = i => i.customId === 'skip' ||i.customId === 'BassBoost'|| i.customId === 'Nightcore' && i.user.id === `${message.author.id}`;
 
-            const collector = interaction.channel.createMessageComponentCollector({ filter, time: 300000 });
+            const collector = message.channel.createMessageComponentCollector({ filter, time: 300000 });
             collector.on('collect', async i  => {
 
 
