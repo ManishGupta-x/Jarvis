@@ -48,7 +48,7 @@ client.distube
                     .setLabel('Nightcore')
                     .setStyle('SUCCESS'),
             );
-        queue.textChannel.send({ embeds: [playsong], components: [row] }).then( async (message,args,interaction) =>{
+        queue.textChannel.send({ embeds: [playsong], components: [row] }).then( async (message,args,Discord) =>{
 
             const filter = i => i.customId === 'skip' ||i.customId === 'BassBoost'|| i.customId === 'Nightcore' && i.clicker.user.id === `${message.author.id}`;
 
