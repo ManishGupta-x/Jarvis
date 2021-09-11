@@ -237,7 +237,7 @@ client.on('messageCreate', async message => {
                         return;
 
                     }
-                    if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
+                    if (!message.member.voice.channel) return message.channel.send({content: 'You must be in a voice channel to use this command.'});
                     const music = args.join(" ");
 
                     client.distube.play(message, music)
