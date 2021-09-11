@@ -50,7 +50,7 @@ client.distube
             );
         queue.textChannel.send({ embeds: [playsong], components: [row] }).then( async (message,args) =>{
 
-            const filter = i => i.customId === 'skip' && i.user.id === '778267007439077396';
+            const filter = i => i.customId === 'skip' ||i.customId === 'BassBoost'|| i.customId === 'Nightcore';
 
             const collector = message.channel.createMessageComponentCollector({ filter, time: 30000 });
             collector.on('collect', async i  => {
