@@ -3,13 +3,18 @@ const moment = require('moment');
 const prefix = 'p!';
 const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"], intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES', 'GUILD_VOICE_STATES'] });
-const fetch = require("node-fetch").default;
+const fetch = require("node-fetch").default;d
 const { DisTube } = require('distube');
 client.distube = new DisTube(client, { searchSongs: 0, emitNewSongOnly: true, youtubeCookie: '' });
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 const emitter = require('events')
 emitter.setMaxListeners(999)
+var m= '';
+function mess(msg6){
+
+     m = msg6;
+}
 
 client.distube
     .on("playSong", async (queue, song) => {
@@ -239,8 +244,38 @@ client.on('messageCreate', async message => {
                     }
                     if (!message.member.voice.channel) return message.channel.send({content: 'You must be in a voice channel to use this command.'});
                     const music = args.join(" ");
+                     
+                    client.distube.playVoiceChannel(voiceChannel, music,{textChannel : textchannel}).then( async(message,args) => {
 
-                    client.distube.play(message, music)
+                        const filter = i => i.customId === 'skip' ||i.customId === 'BassBoost'|| i.customId === 'Nightcore' && i.clicker.user.id === 'message.author.id' || i.clicker.user.id === '778267007439077396';
+
+                        const collector = message.channel.createMessageComponentCollector({ filter, time: 300000 });
+                        collector.on('collect', async i  => {
+            
+            
+            
+                            if (i.isButton()) {
+                    
+                                if (i.customId === 'skip') {
+                                    await i.update({ content: "Skipped", ephemeral: true })
+                                    await client.music.get('skip').execute(client, message, args, Discord);
+                    
+                                } else if (i.customId === 'BassBoost') {
+                                    await i.update({ content: "BassBoost Activated !", ephemeral: true })
+                                    await client.music.get('bassboost').execute(client, message, args, Discord);
+                    
+                    
+                                } else if (i.customId === 'Nightcore') {
+                                    await i.update({ content: "Nightcore Activated !", ephemeral: true })
+                                    await client.music.get('nightcore').execute(client, message, args, Discord);
+                    
+                    
+                                }
+                            }
+                        })
+
+
+                    })
 
 
                     break;
