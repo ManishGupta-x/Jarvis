@@ -7,7 +7,9 @@ const fetch = require("node-fetch").default;
 const { DisTube } = require('distube');
 client.distube = new DisTube(client, { searchSongs: 0, emitNewSongOnly: true, youtubeCookie: '' });
 const { MessageActionRow, MessageButton } = require('discord.js');
+const filter = i => i.customId === 'skip' ;
 
+const collector =  interaction.channel.createMessageComponentCollector({ filter, time: 30000 });
 const emitter = require('events')
 emitter.setMaxListeners(999)
 
@@ -49,23 +51,23 @@ client.distube
                     .setStyle('SUCCESS'),
             );
         queue.textChannel.send({ embeds: [playsong], components: [row] }).then( async (message,args) =>{
-            client.on('interactionCreate', async interaction => {
+            collector.on('collect', async i  => {
 
 
 
-                if (interaction.isButton()) {
+                if (i.isButton()) {
         
-                    if (interaction.customId === 'skip') {
-                        await interaction.reply({ content: "Skipped", ephemeral: true })
+                    if (i.customId === 'skip') {
+                        await i.update({ content: "Skipped", ephemeral: true })
                         await client.music.get('skip').execute(client, message, args, Discord);
         
-                    } else if (interaction.customId === 'BassBoost') {
-                        await interaction.reply({ content: "BassBoost Activated !", ephemeral: true })
+                    } else if (i.customId === 'BassBoost') {
+                        await i.update({ content: "BassBoost Activated !", ephemeral: true })
                         await client.music.get('bassboost').execute(client, message, args, Discord);
         
         
-                    } else if (interaction.customId === 'Nightcore') {
-                        await interaction.reply({ content: "Nightcore Activated !", ephemeral: true })
+                    } else if (i.customId === 'Nightcore') {
+                        await i.update({ content: "Nightcore Activated !", ephemeral: true })
                         await client.music.get('nightcore').execute(client, message, args, Discord);
         
         
