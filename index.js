@@ -48,11 +48,11 @@ client.distube
                     .setLabel('Nightcore')
                     .setStyle('SUCCESS'),
             );
-        queue.textChannel.send({ embeds: [playsong], components: [row] }).then( async (message,args) =>{
+        queue.textChannel.send({ embeds: [playsong], components: [row] }).then( async (message,args,interaction) =>{
 
             const filter = i => i.customId === 'skip' && i.user.id === '778267007439077396';
 
-            const collector =  interaction.channel.createMessageComponentCollector({ filter, time: 30000 });
+            const collector = interaction.channel.createMessageComponentCollector({ filter, time: 30000 });
             collector.on('collect', async i  => {
 
 
