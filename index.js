@@ -52,7 +52,7 @@ client.distube
 
             const filter = i => i.customId === 'skip' && i.user.id === '778267007439077396';
 
-            const collector = interaction.channel.createMessageComponentCollector({ filter, time: 30000 });
+            const collector = interaction.createMessageComponentCollector({ filter, time: 30000 });
             collector.on('collect', async i  => {
 
 
