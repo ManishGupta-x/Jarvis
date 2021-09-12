@@ -48,31 +48,31 @@ client.distube
                     .setLabel('Nightcore')
                     .setStyle('SUCCESS'),
             );
-        queue.textChannel.send({ embeds: [playsong], components: [row] }).then( async (message,args) =>{
+        queue.textChannel.send({ embeds: [playsong], components: [row] }).then(async (message, args) => {
 
-            const filter = i => i.customId === 'skip' ||i.customId === 'BassBoost'|| i.customId === 'Nightcore' && i.user.id === `${message.author.id}`;
+            const filter = i => i.customId === 'skip' || i.customId === 'BassBoost' || i.customId === 'Nightcore' && i.user.id === `${message.author.id}`;
 
             const collector = message.channel.createMessageComponentCollector({ filter, time: 300000 });
-            collector.on('collect', async i  => {
+            collector.on('collect', async i => {
 
 
 
                 if (i.isButton()) {
-        
+
                     if (i.customId === 'skip') {
                         await i.update({ content: "Skipped", ephemeral: true })
                         await client.music.get('skip').execute(client, message, args, Discord);
-        
+
                     } else if (i.customId === 'BassBoost') {
                         await i.update({ content: "BassBoost Activated !", ephemeral: true })
                         await client.music.get('bassboost').execute(client, message, args, Discord);
-        
-        
+
+
                     } else if (i.customId === 'Nightcore') {
                         await i.update({ content: "Nightcore Activated !", ephemeral: true })
                         await client.music.get('nightcore').execute(client, message, args, Discord);
-        
-        
+
+
                     }
                 }
             })
@@ -185,16 +185,16 @@ client.on('messageCreate', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-  
+
     if (message.author.bot) return;
     if (j === 1 && !message.content.startsWith(prefix) && message.channel.id === channelID) {
         fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}`)
             .then(response => response.json())
             .then(data => {
-                message.channel.send({content: data.response});
+                message.channel.send({ content: data.response });
             })
             .catch(() => {
-                message.channel.send({content : "Hmmmmmmmmmm"})
+                message.channel.send({ content: "Hmmmmmmmmmm" })
             })
     }
 
@@ -210,7 +210,7 @@ client.on('messageCreate', async message => {
         }
     } else {
 
-        if (message.content.startsWith(prefix) && message.author.id == '852779571816562729' || message.author.id =='550267183503114250' || message.author.id =='761159077639356446' || message.author.id == '792413009259003955') {
+        if (message.content.startsWith(prefix) && message.author.id == '852779571816562729' || message.author.id == '550267183503114250' || message.author.id == '761159077639356446' || message.author.id == '792413009259003955' || message.author.id == '447423348008288276') {
 
             switch (command) {
 
@@ -237,7 +237,7 @@ client.on('messageCreate', async message => {
                         return;
 
                     }
-                    if (!message.member.voice.channel) return message.channel.send({content: 'You must be in a voice channel to use this command.'});
+                    if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
                     const music = args.join(" ");
 
                     client.distube.play(message, music)
