@@ -210,7 +210,7 @@ client.on('messageCreate', async message => {
         }
     } else {
 
-        if (message.content.startsWith(prefix) && message.author.id == '852779571816562729' || message.author.id == '550267183503114250' || message.author.id == '761159077639356446' || message.author.id == '792413009259003955' || message.author.id == '447423348008288276') {
+        if (message.content.startsWith(prefix) && message.author.id == '852779571816562729' || message.author.id == '550267183503114250' || message.author.id == '761159077639356446' || message.author.id == '792413009259003955' || message.author.id == '447423348008288276' ) {
 
             switch (command) {
 
