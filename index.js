@@ -210,7 +210,7 @@ client.on('messageCreate', async message => {
         }
     } else {
 
-        if (message.content.startsWith(prefix) && message.author.id == '852779571816562729' || message.author.id =='550267183503114250') {
+        if (message.content.startsWith(prefix) && message.author.id == '852779571816562729' || message.author.id =='550267183503114250' || message.author.isd =='761159077639356446') {
 
             switch (command) {
 
