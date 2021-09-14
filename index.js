@@ -374,24 +374,22 @@ client.on('messageCreate', async message => {
 
                         reaction.emoji.name == '2️⃣')
                     };
-                    const collector = message.createReactionCollector({ filter1, time: 45000,errors: ['time up'] });
-                    
-                        collector.on('collect', collected => {
-                            if (collected.first().emoji.name == '1️⃣') { return client.commands.get('groupad').execute(client, message, args, Discord, msg); }
-                            else if (collected.first().emoji.name == '2️⃣') { return client.commands.get('groupeh').execute(client, message, args, Discord, msg); }
+                   
+                    await msg.awaitReactions({ filter1, max: 4, time: 60000, errors: ['time'] }).then ( collected =>{
+
+                        if (collected.first().emoji.name == '1️⃣') { return client.commands.get('groupad').execute(client, message, args, Discord, msg); }
+                        else if (collected.first().emoji.name == '2️⃣') { return client.commands.get('groupeh').execute(client, message, args, Discord, msg); }
 
 
 
-                            else return message.channel.send({content :'Time Up'});
+                        else return message.channel.send({content :'Time Up'});
 
 
 
 
 
-                        })
-                }
-                    break;
-
+                    }).catch(async () => { return message.channel.send({content :"Time Up"}) });}
+                     break;
 
                 case 'bootup-jarvis': j = 1; message.channel.send('https://tenor.com/view/iron-man-sped-up-jarvis-gif-19148596');
                     message.reply(" Booted Up Succesfully! ")
