@@ -49,37 +49,42 @@ client.distube
                     .setStyle('SUCCESS'),
             );
         queue.textChannel.send({ embeds: [playsong], components: [row] }).then(async (message, args,interaction) => {
+     client.on('interactionCreate' , interaction =>{
 
-            const filter = i => i.customId === 'skip' || i.customId === 'BassBoost' || i.customId === 'Nightcore' && i.user.id === `${message.author.id}`;
+        const filter = i => i.customId === 'skip' || i.customId === 'BassBoost' || i.customId === 'Nightcore' && i.user.id === `${message.author.id}`;
 
-            const collector = message.channel.createMessageComponentCollector({ filter, time: 300000 });
-            collector.on('collect', async i => {
-
-
-
-                if (i.isButton()) {
-
-                    if (i.customId === 'skip') {
-                        await i.update({ content: "Skipped", ephemeral: true })
-                        await client.music.get('skip').execute(client, message, args, Discord);
-
-                    } else if (i.customId === 'BassBoost') {
-                        await i.update({ content: "BassBoost Activated !", ephemeral: true })
-                        await client.music.get('bassboost').execute(client, message, args, Discord);
+        const collector = interaction.channel.createMessageComponentCollector({ filter, time: 300000 });
+        collector.on('collect', async i => {
 
 
-                    } else if (i.customId === 'Nightcore') {
-                        await i.update({ content: "Nightcore Activated !", ephemeral: true })
-                        await client.music.get('nightcore').execute(client, message, args, Discord);
+
+            if (i.isButton()) {
+
+                if (i.customId === 'skip') {
+                    await i.update({ content: "Skipped", ephemeral: true })
+                    await client.music.get('skip').execute(client, message, args, Discord);
+
+                } else if (i.customId === 'BassBoost') {
+                    await i.update({ content: "BassBoost Activated !", ephemeral: true })
+                    await client.music.get('bassboost').execute(client, message, args, Discord);
 
 
-                    }
+                } else if (i.customId === 'Nightcore') {
+                    await i.update({ content: "Nightcore Activated !", ephemeral: true })
+                    await client.music.get('nightcore').execute(client, message, args, Discord);
+
+
                 }
-            })
-
-
-
+            }
         })
+
+
+
+    })
+
+
+     })
+           
 
 
 
