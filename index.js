@@ -7,7 +7,7 @@ const fetch = require("node-fetch").default;
 const { DisTube } = require('distube');
 client.distube = new DisTube(client, { searchSongs: 0, emitNewSongOnly: true, youtubeCookie: 'VISITOR_INFO1_LIVE=VizaEEKSaKU; CONSENT=YES+IN.en-GB+202003; HSID=AkXW3VgkDmwLdXppv; SSID=ABztr9AiYhzU3cims; APISID=ISlgWkeBCPS4FVpU/AvUkKq2Y5as3oxS5w; SAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; __Secure-1PAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; __Secure-3PAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; PREF=f6=40000000&volume=100&tz=Asia.Calcutta&al=en&f5=30000; SID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzm-75v8zEUbkM-Fo42HHtsAw.; __Secure-1PSID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzmSwyewdsV5rUu2dwol9JkHQ.; __Secure-3PSID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzm5Yk-KzCTNlH-9DSJJAMa2g.; LOGIN_INFO=AFmmF2swRQIhAOAj5hxBaepKf2QWAhyxRsQ5qVM6AsWFNCuhOrLqYbwdAiAgEelIbJr9T2CTnJ_r_A1CpNZOhD5lH083xqIr83DoOQ:QUQ3MjNmdzl3dnFBalF2d1F6N3gxQ1F0cG9CV2hSMXZaTkpRU1NWN0RialZqVXNDcnlkUlNYODJLbFFuNnVnOXVaS2xVaWpCc2JpUXFJbE1EVGpzRlJhZzhqMmR0UXFZRnJzR1dzUW5jdG14UE82MjdzVlJzMGt6UF9mcVlpYnEzQklEbjFTQnFwa3VjOGRzS2FaNjdLWWhtMGpUYmtJSXFB; YSC=__AMedv__lI; SIDCC=AJi4QfH4YiFJJLPF53VeLb73e5CmQ1rF-8jYPZBKsDwUPGX-QBv06-a44iNU2Zvf-SXwz8O_7Jco; __Secure-3PSIDCC=AJi4QfGxy3tYK9mYe4YxsvsB5__Q5dbyTF5LxF1JEj6Nlomf4xxUeDIkX7FrjZuxelpdByFZ9WyK' });
 const { MessageActionRow, MessageButton } = require('discord.js');
-
+var flag =0;
 const emitter = require('events')
 emitter.setMaxListeners(999)
 
@@ -72,11 +72,11 @@ client.distube
                         
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-                        message.channel.send({embeds: [embed8]});
+                        message.channel.send({embeds: [embed8]});flag = 1;
                         return;
                     });
-            
-                    await client.music.get('skip').execute(client, message, args, Discord);
+                    if(flag =0){
+                    await client.music.get('skip').execute(client, message, args, Discord);}
 
                 } else if (i.customId === 'BassBoost') {
                     await i.update({ content: "BassBoost Activated !", ephemeral: true }).catch(async () => {
@@ -90,10 +90,12 @@ client.distube
                         
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-                        message.channel.send({embeds: [embed8]});return;
+                        message.channel.send({embeds: [embed8]});
+                        flag = 1;
+                        
                     });
-            
-                    await client.music.get('bassboost').execute(client, message, args, Discord);
+                    if(flag =0){
+                    await client.music.get('bassboost').execute(client, message, args, Discord);}
 
 
                 } else if (i.customId === 'Nightcore') {
@@ -108,10 +110,11 @@ client.distube
                         
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-                        message.channel.send({embeds: [embed8]});return;
+                        message.channel.send({embeds: [embed8]});
+                        flag = 1;
                     });
-            
-                    await client.music.get('nightcore').execute(client, message, args, Discord);
+                    if(flag =0){
+                    await client.music.get('nightcore').execute(client, message, args, Discord);}
 
 
                 }
