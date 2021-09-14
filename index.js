@@ -49,11 +49,11 @@ client.distube
                     .setStyle('SUCCESS'),
             );
         queue.textChannel.send({ embeds: [playsong], components: [row] }).then(async (message, args) => {
-     client.on('interactionCreate' , i =>{
+   
 
         const filter = i => i.customId === 'skip' || i.customId === 'BassBoost' || i.customId === 'Nightcore' ;
 
-        const collector = i.channel.createMessageComponentCollector({ filter, time: 300000 });
+        const collector = message.channel.createMessageComponentCollector({ filter, time: 300000 });
         collector.on('collect', async i => {
 
 
@@ -89,7 +89,7 @@ client.distube
 
 
 
-    })
+    
     .on("addSong", (queue, song) => {
 
         const addsong = new Discord.MessageEmbed()
