@@ -52,7 +52,7 @@ client.distube
 
             const filter = i => i.customId === 'skip' || i.customId === 'BassBoost' || i.customId === 'Nightcore' && i.user.id === `${message.author.id}`;
 
-            const collector = message.channel.createMessageComponentCollector({ filter, time: 300000 });
+            const collector = Discord.Interaction.channel.createMessageComponentCollector({ filter, time: 300000 });
             collector.on('collect', async i => {
 
 
@@ -240,7 +240,19 @@ client.on('messageCreate', async message => {
                     if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
                     const music = args.join(" ");
 
-                    client.distube.play(message, music)
+                    client.distube.play(message, music).catch(async () => {
+
+                        const embed9 = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+                        .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                        .setDescription(`Getting some issues try again `)
+                      
+                        
+                        .setFooter(client.user.username, client.user.displayAvatarURL())
+                        .setTimestamp();
+                        message.channel.send({embeds: [embed9]});
+                    });
 
 
                     break;
