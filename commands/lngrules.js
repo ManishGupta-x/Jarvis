@@ -19,7 +19,7 @@ module.exports ={
            .setImage('https://cdn.discordapp.com/attachments/730714810614022228/796271494674120704/12_rules_of_simply_investing-1760w-1100h.png');
            
            
-           message.channel.send({embeds : newEmbed});
+           message.channel.send({embeds : [newEmbed]});
 
        }
     }

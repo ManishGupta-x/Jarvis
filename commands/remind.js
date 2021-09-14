@@ -15,7 +15,7 @@ module.exports ={
       .setFooter(client.user.username , client.user.displayAvatarURL() )
       .setTimestamp();
 
-      if(!time) return message.channel.send({embeds :noDurationEmbed});
+      if(!time) return message.channel.send({embeds :[noDurationEmbed]});
 
       const noReminderEmbed = new Discord.MessageEmbed()
       .setColor('RANDOM')
@@ -24,7 +24,7 @@ module.exports ={
       .setFooter(client.user.username , client.user.displayAvatarURL() )
       .setTimestamp();
 
-      if(!reminder) return message.channel.send({embeds :noReminderEmbed});
+      if(!reminder) return message.channel.send({embeds :[noReminderEmbed]});
 
       const ReminderEmbed = new Discord.MessageEmbed()
       .setColor('RANDOM')
@@ -36,7 +36,7 @@ module.exports ={
       .setFooter(client.user.username , client.user.displayAvatarURL() )
       .setTimestamp();
 
-      message.channel.send({embeds: ReminderEmbed});
+      message.channel.send({embeds:[ ReminderEmbed]});
 
       setTimeout(async function () {
           message.channel.send(`<@${message.author.id}> Reminder!`);
@@ -48,7 +48,7 @@ module.exports ={
       .setFooter(client.user.username , client.user.displayAvatarURL() )
       .setTimestamp();
 
-      message.channel.send({embeds : ReminderAlertEmbed});
+      message.channel.send({embeds :[ ReminderAlertEmbed]});
 
       }, ms(time));
 

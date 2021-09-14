@@ -21,7 +21,7 @@ module.exports ={
            .setImage('https://i.imgur.com/6Wb2nev.gif');
            
            
-           message.channel.send({embeds : newEmbed});
+           message.channel.send({embeds : [newEmbed]});
 
        }
     }

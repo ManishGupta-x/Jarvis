@@ -365,7 +365,7 @@ client.on('messageCreate', async message => {
 
                         )
                         .setFooter("You have 45 secs to react!")
-                    let msg = await message.channel.send({embeds :newEmbed})
+                    let msg = await message.channel.send({embeds :[newEmbed]})
                     await msg.react('1️⃣')
                     await msg.react('2️⃣')
 
@@ -437,7 +437,7 @@ client.on('messageCreate', async message => {
                         )
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-                    message.channel.send({embeds :help});
+                    message.channel.send({embeds :[help] });
 
                     break;
                 case 'rules': if (message.guild.id == '554275795280068619') { client.commands.get('rules').execute(message, args, Discord); }
@@ -548,7 +548,7 @@ client.on('messageCreate', async message => {
                         .setTitle("Who will win 🤔")
                         .setDescription(question)
                         .setFooter(`Mark The correct Option Below 🤩`)
-                    let msg = await client.channels.cache.get(channel.id).send({content : Embed})
+                    let msg = await client.channels.cache.get(channel.id).send({content : [Embed]})
                     await msg.react('1️⃣')
                     await msg.react('2️⃣')
                     await msg.react('🤝')
@@ -582,7 +582,7 @@ client.on('messageCreate', async message => {
                             { name: "2. Compare cards Link", value: 'Compare 2 or 3 Different Cards' },
 
                         )
-                    let msg = await message.channel.send({embeds : newEmbed})
+                    let msg = await message.channel.send({embeds : [newEmbed]})
                     await msg.react('1️⃣')
                     await msg.react('2️⃣')
 
@@ -620,7 +620,7 @@ client.on('messageCreate', async message => {
                         .setTitle("Results ")
                         .setDescription(question1 + "\n" + player1 + '-' + player2)
 
-                    message.channel.send({embeds :Embed1});
+                    message.channel.send({embeds :[Embed1]});
 
                     message.delete({ timeout: 2000 })
                     break;
@@ -655,7 +655,7 @@ client.on('messageCreate', async message => {
                         .addField("Status", status)
                         .addField('Roles', `<@&${member._roles.join('> <@&')}>`)
                         .setFooter(client.user.username, client.user.displayAvatarURL())
-                    message.channel.send({content :userEmbed});
+                    message.channel.send({content :[userEmbed]});
                     break;
 
 

@@ -28,7 +28,7 @@ module.exports ={
            .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784433282804219924/img_agarcial_20180830-140538_imagenes_lv_terceros_pro_evolution_soccer_2019_20180830095902-kkRC-U451.png');
            
            
-           message.channel.send({embeds : newEmbed});
+           message.channel.send({embeds : [newEmbed]});
         } 
         
         

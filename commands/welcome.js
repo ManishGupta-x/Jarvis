@@ -19,7 +19,7 @@ module.exports ={
           
            
            
-        message.channel.send({embeds :newEmbed});
+        message.channel.send({embeds : [newEmbed]});
            message.delete({ timeout: 2000 })
        }
     }

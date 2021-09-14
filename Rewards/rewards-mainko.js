@@ -20,7 +20,7 @@ module.exports ={
            .setImage('https://cdn.discordapp.com/attachments/730714810614022228/778985497627197500/20200901ad3119d01bddf7ef9_th_1024x0.jpg');
            
            
-           message.channel.send({embeds :newEmbed});
+           message.channel.send({embeds : [newEmbed]});
 
        }
     }

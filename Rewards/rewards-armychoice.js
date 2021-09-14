@@ -19,7 +19,7 @@ module.exports ={
            .setImage('https://media.discordapp.net/attachments/610950416498425886/791945574924025856/20171214-The18-Image-Kahn.png?width=750&height=498');
            
            
-           message.channel.send({embeds :newEmbed});
+           message.channel.send({embeds : [newEmbed]});
 
        }
     }

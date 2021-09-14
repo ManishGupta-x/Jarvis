@@ -36,7 +36,7 @@ module.exports = {
 
                 message.channel.send('@here')
 
-                let msg = await  message.channel.send({embeds : newEmbed});
+                let msg = await message.channel.send({embeds : [newEmbed]});
 
 
                 await msg.react('🤝')

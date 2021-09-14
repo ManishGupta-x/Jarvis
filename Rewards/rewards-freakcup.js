@@ -19,7 +19,7 @@ module.exports ={
        .setImage('https://cdn.discordapp.com/attachments/610950416498425886/784407231369838632/FIF_world_cup_trophy_on_grassjpg.jpg');
            
            
-       message.channel.send({embeds :newEmbed});
+       message.channel.send({embeds : [newEmbed]});
 
        }
     }
