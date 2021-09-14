@@ -49,7 +49,7 @@ client.distube
                     .setStyle('SUCCESS'),
             );
         queue.textChannel.send({ embeds: [playsong], components: [row] }).then(async (message, args) => {
-     client.on('interactionCreate' , interaction =>{
+     client.on('interactionCreate' , i =>{
 
         const filter = i => i.customId === 'skip' || i.customId === 'BassBoost' || i.customId === 'Nightcore' && i.user.id === `${message.author.id}`;
 
