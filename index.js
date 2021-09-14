@@ -375,7 +375,7 @@ client.on('messageCreate', async message => {
                         reaction.emoji.name == '2️⃣')
                     };
                    
-                    await msg.awaitReactions({ filter1, max: 4, time: 60000, errors: ['time'] }).then ( collected =>{
+                    await msg.awaitReactions({ filter1, max: 1, time: 60000, errors: ['time'] }).then ( collected =>{
 
                         if (collected.first().emoji.name == '1️⃣') { return client.commands.get('groupad').execute(client, message, args, Discord, msg); }
                         else if (collected.first().emoji.name == '2️⃣') { return client.commands.get('groupeh').execute(client, message, args, Discord, msg); }
