@@ -63,7 +63,7 @@ client.distube
                 if (i.customId === 'skip') {
                     await i.update({ content: "Skipped", ephemeral: true }).catch(async () => {
 
-                        const embed9 = new Discord.MessageEmbed()
+                        const embed8 = new Discord.MessageEmbed()
                         .setColor('RANDOM')
                         .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
                         .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
@@ -72,7 +72,7 @@ client.distube
                         
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-                        message.channel.send({embeds: [embed9]});
+                        message.channel.send({embeds: [embed8]});
                     });
             
                     await client.music.get('skip').execute(client, message, args, Discord);
@@ -80,7 +80,7 @@ client.distube
                 } else if (i.customId === 'BassBoost') {
                     await i.update({ content: "BassBoost Activated !", ephemeral: true }).catch(async () => {
 
-                        const embed9 = new Discord.MessageEmbed()
+                        const embed8 = new Discord.MessageEmbed()
                         .setColor('RANDOM')
                         .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
                         .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
@@ -89,7 +89,7 @@ client.distube
                         
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-                        message.channel.send({embeds: [embed9]});
+                        message.channel.send({embeds: [embed8]});
                     });
             
                     await client.music.get('bassboost').execute(client, message, args, Discord);
@@ -98,7 +98,7 @@ client.distube
                 } else if (i.customId === 'Nightcore') {
                     await i.update({ content: "Nightcore Activated !", ephemeral: true }).catch(async () => {
 
-                        const embed9 = new Discord.MessageEmbed()
+                        const embed8 = new Discord.MessageEmbed()
                         .setColor('RANDOM')
                         .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
                         .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
@@ -107,7 +107,7 @@ client.distube
                         
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-                        message.channel.send({embeds: [embed9]});
+                        message.channel.send({embeds: [embed8]});
                     });
             
                     await client.music.get('nightcore').execute(client, message, args, Discord);
