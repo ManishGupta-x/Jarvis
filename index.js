@@ -48,12 +48,12 @@ client.distube
                     .setLabel('Nightcore')
                     .setStyle('SUCCESS'),
             );
-        queue.textChannel.send({ embeds: [playsong], components: [row] }).then(async (message, args) => {
+        queue.textChannel.send({ embeds: [playsong], components: [row] }).then(async (message, args,interaction) => {
    
 
         const filter = i => i.customId === 'skip' || i.customId === 'BassBoost' || i.customId === 'Nightcore' ;
 
-        const collector = message.channel.createMessageComponentCollector({ filter, time: 300000 });
+        const collector = interaction.textChannel.createMessageComponentCollector({ filter, time: 300000 });
         collector.on('collect', async i => {
 
 
@@ -61,41 +61,15 @@ client.distube
             if (i.isButton()) {
 
                 if (i.customId === 'skip') {
-                    await i.update({ content: "Skipped", ephemeral: true }).catch(async () => {
-
-                        const embed8 = new Discord.MessageEmbed()
-                        .setColor('RANDOM')
-                        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
-                        .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                        .setDescription(`Getting some issues try again `)
-                      
-                        
-                        .setFooter(client.user.username, client.user.displayAvatarURL())
-                        .setTimestamp();
-                        message.channel.send({embeds: [embed8]});flag = 1;
-                        return;
-                    });
-                    if(flag =0){
-                    await client.music.get('skip').execute(client, message, args, Discord);}
+                    await i.update({ content: "Skipped", ephemeral: true })
+                
+                    await i.followup(client.music.get('skip').execute(client, message, args, Discord));
 
                 } else if (i.customId === 'BassBoost') {
-                    await i.update({ content: "BassBoost Activated !", ephemeral: true }).catch(async () => {
-
-                        const embed8 = new Discord.MessageEmbed()
-                        .setColor('RANDOM')
-                        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
-                        .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                        .setDescription(`Getting some issues try again `)
-                      
-                        
-                        .setFooter(client.user.username, client.user.displayAvatarURL())
-                        .setTimestamp();
-                        message.channel.send({embeds: [embed8]});
-                        flag = 1;
-                        
-                    });
-                    if(flag =0){
-                    await client.music.get('bassboost').execute(client, message, args, Discord);}
+                    await i.update({ content: "BassBoost Activated !", ephemeral: true })
+                
+                    
+                    await client.music.get('bassboost').execute(client, message, args, Discord);
 
 
                 } else if (i.customId === 'Nightcore') {
