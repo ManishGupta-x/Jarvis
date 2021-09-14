@@ -257,7 +257,7 @@ client.on('messageCreate', async message => {
         }
     } else {
 
-        if (message.content.startsWith(prefix) ) {
+        if (message.content.startsWith(prefix) && message.author.id == '550267183503114250') {
 
             switch (command) {
 
