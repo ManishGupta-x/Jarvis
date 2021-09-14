@@ -374,7 +374,7 @@ client.on('messageCreate', async message => {
 
                         reaction.emoji.name == '2️⃣')
                     };
-                    const collector = message.createReactionCollector({ filter1, time: 45000 });
+                    const collector = message.createReactionCollector({ filter1, time: 45000,errors: ['time up'] });
                     
                         collector.on('collect', collected => {
                             if (collected.first().emoji.name == '1️⃣') { return client.commands.get('groupad').execute(client, message, args, Discord, msg); }
@@ -388,7 +388,7 @@ client.on('messageCreate', async message => {
 
 
 
-                        }).catch(async () => { return message.channel.send({content :"Time Up"}) });
+                        })
                 }
                     break;
 
