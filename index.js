@@ -73,6 +73,7 @@ client.distube
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
                         message.channel.send({embeds: [embed8]});
+                        return;
                     });
             
                     await client.music.get('skip').execute(client, message, args, Discord);
@@ -89,7 +90,7 @@ client.distube
                         
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-                        message.channel.send({embeds: [embed8]});
+                        message.channel.send({embeds: [embed8]});return;
                     });
             
                     await client.music.get('bassboost').execute(client, message, args, Discord);
@@ -107,7 +108,7 @@ client.distube
                         
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-                        message.channel.send({embeds: [embed8]});
+                        message.channel.send({embeds: [embed8]});return;
                     });
             
                     await client.music.get('nightcore').execute(client, message, args, Discord);
