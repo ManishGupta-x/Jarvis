@@ -369,11 +369,14 @@ client.on('messageCreate', async message => {
                     await msg.react('1️⃣')
                     await msg.react('2️⃣')
 
+                    const filter1 = (reaction, user) => {
+                        user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
 
-                    await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
-
-                        reaction.emoji.name == '2️⃣'), { max: 1, time: 45000 })
-                        .then(async collected => {
+                        reaction.emoji.name == '2️⃣')
+                    };
+                    const collector = message.createReactionCollector({ filter1, time: 45000 });
+                    
+                        collector.on('collect', collected => {
                             if (collected.first().emoji.name == '1️⃣') { return client.commands.get('groupad').execute(client, message, args, Discord, msg); }
                             else if (collected.first().emoji.name == '2️⃣') { return client.commands.get('groupeh').execute(client, message, args, Discord, msg); }
 
