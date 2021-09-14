@@ -18,7 +18,7 @@ module.exports ={
           
            
            
-           message.channel.send(newEmbed);
+        message.channel.send({embeds : newEmbed});
 
        }
     }

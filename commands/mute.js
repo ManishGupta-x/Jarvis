@@ -25,7 +25,7 @@ module.exports = {
                 memberTarget.roles.add(mainRole.id);
             }, ms(args[1]));
         } else {
-            message.channel.send('Cant find that member!');
+            message.channel.send({content :'Cant find that member!'});
         }
     }
 }

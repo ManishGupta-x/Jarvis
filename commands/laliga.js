@@ -22,7 +22,7 @@ module.exports ={
            .setImage('https://cdn.discordapp.com/attachments/730714810614022228/769813155815358474/skysports-real-madrid-barcelona_5146542.jpg');
            
            
-           message.channel.send(newEmbed);
+           message.channel.send({embeds : newEmbed});
 
        }
     }

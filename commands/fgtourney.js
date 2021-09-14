@@ -22,7 +22,7 @@ module.exports ={
            .setImage('https://cdn.discordapp.com/attachments/610950416498425886/868375698706939944/x1080.png');
            
            
-           message.channel.send(newEmbed);
+           message.channel.send({embeds : newEmbed});
         } 
         
         

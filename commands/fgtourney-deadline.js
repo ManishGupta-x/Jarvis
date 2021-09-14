@@ -3,7 +3,7 @@ module.exports ={
     Description: 'this is a role command!',
     execute(client,message,args, Discord){
      
-       message.channel.send('22nd of september,2021 ( Group stage)');
+       message.channel.send({content :'19th of september,2021 ( Group stage)'});
 
 
     }  

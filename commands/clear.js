@@ -17,7 +17,7 @@ module.exports = {
          
         await message.channel.messages.fetch({ limit: args[0]}).then(messages =>{
             message.channel.bulkDelete(messages)
-    });} else { message.channel.send('You Dont Have enough Permissions to That!');} 
+    });} else { message.channel.send({content :'You Dont Have enough Permissions to That!'});} 
  
  }
 }   

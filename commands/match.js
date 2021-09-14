@@ -16,7 +16,7 @@ module.exports ={
             .setTitle("Results ")
             .setDescription(question1 + "\n" + player1 + '-' + player2)
 
-        message.channel.send(Embed1);
+            message.channel.send({embeds : Embed1});
 
         message.delete({ timeout: 2000 })
 

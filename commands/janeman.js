@@ -8,7 +8,7 @@ module.exports ={
         
         if (!args[0]) {
 
-           return message.channel.send('You didnt specified a sentence')
+           return message.channel.send({content :'You didnt specified a sentence'})
        }
        
         

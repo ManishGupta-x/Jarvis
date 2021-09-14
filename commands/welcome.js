@@ -10,7 +10,7 @@ module.exports ={
        .setAuthor('Freak Gamer')
        .addFields(
         
-        {name: "Go to #registration For tournament Rules !  " , value: 'Cash prize'},
+        
         {name: "Enjoy Your stay " , value: 'Have fun'},
         
         
@@ -19,7 +19,7 @@ module.exports ={
           
            
            
-           message.channel.send(newEmbed);
+        message.channel.send({embeds :newEmbed});
            message.delete({ timeout: 2000 })
        }
     }

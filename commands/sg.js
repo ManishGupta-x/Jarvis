@@ -25,7 +25,7 @@ module.exports ={
            .setImage('https://cdn.discordapp.com/attachments/610950416498425886/812288002943877130/Best-Soccer-Live-Streaming-Services-and-Websites.png');
            
            
-           message.channel.send(newEmbed);
+           message.channel.send({embeds :newEmbed});
 
        }
     }

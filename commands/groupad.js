@@ -37,13 +37,13 @@ module.exports = {
                 else if (collected.first().emoji.name == '4️⃣') { return message.channel.send('https://play.toornament.com/en_GB/tournaments/4956543308535955456/stages/4956579276281544704/groups/4956579277120405767/#structure') }
 
 
-                else return message.channel.send('Time Up');
+                else return message.channel.send({content: 'Time Up'});
 
 
 
 
 
-            }).catch(async () => { return message.channel.send("error") });
+            }).catch(async () => { return message.channel.send("Time up") });
     }
 
 }

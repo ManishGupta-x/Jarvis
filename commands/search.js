@@ -6,6 +6,6 @@ module.exports ={
           if(!args[0]) {
               message.reply("Please mention Player name");
           }   else{
-          message.channel.send(`https://www.pesmaster.com/pes-2021/?q=${args[0]}`)}
+          message.channel.send({content :`https://www.pesmaster.com/pes-2021/?q=${args[0]}`})}
     }  
 }

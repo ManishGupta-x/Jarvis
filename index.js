@@ -220,7 +220,7 @@ for (const file of idFiles) {
 
 client.once('ready', () => {
     console.log('Jarvis is online!');
-    client.user.setActivity('Boss 😎', { type: 'LISTENING' })
+    client.user.setActivity('Boss 😎 (Back on Services)', { type: 'LISTENING' })
 
 });
 module.exports.timedcheck = undefined;
@@ -257,7 +257,7 @@ client.on('messageCreate', async message => {
         }
     } else {
 
-        if (message.content.startsWith(prefix) && message.author.id == '852779571816562729' || message.author.id == '550267183503114250' || message.author.id == '761159077639356446' || message.author.id == '792413009259003955' || message.author.id == '447423348008288276' ) {
+        if (message.content.startsWith(prefix) ) {
 
             switch (command) {
 
@@ -275,9 +275,7 @@ client.on('messageCreate', async message => {
                 case 'search':
                     client.commands.get('search').execute(client, message, args, Discord);
                     break;
-                case 'fix':
-                    client.music.get('fix').execute(client, message, args, Discord);
-                    break;
+              
                 case 'play':
                     if (!args[0]) {
                         message.channel.send({ content: 'Please Mention song!' })
@@ -367,7 +365,7 @@ client.on('messageCreate', async message => {
 
                         )
                         .setFooter("You have 45 secs to react!")
-                    let msg = await message.channel.send(newEmbed)
+                    let msg = await message.channel.send({embeds :newEmbed})
                     await msg.react('1️⃣')
                     await msg.react('2️⃣')
 
@@ -381,13 +379,13 @@ client.on('messageCreate', async message => {
 
 
 
-                            else return message.channel.send('Time Up');
+                            else return message.channel.send({content :'Time Up'});
 
 
 
 
 
-                        }).catch(async () => { return message.channel.send("error") });
+                        }).catch(async () => { return message.channel.send({content :"Time Up"}) });
                 }
                     break;
 
@@ -397,7 +395,7 @@ client.on('messageCreate', async message => {
                     channelID = message.channel.id;
                     break;
                 case 'shutdown-jarvis': if (j === 0) {
-                    message.channel.send("Jarvis is Already off")
+                    message.channel.send({content :"Jarvis is Already off"})
                 }
                 else { j = 0; }
                     message.channel.send('https://tenor.com/view/turn-off-shut-off-switch-off-kill-the-lights-lights-off-gif-12198682');
@@ -439,7 +437,7 @@ client.on('messageCreate', async message => {
                         )
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-                    message.channel.send(help);
+                    message.channel.send({embeds :help});
 
                     break;
                 case 'rules': if (message.guild.id == '554275795280068619') { client.commands.get('rules').execute(message, args, Discord); }
@@ -522,7 +520,7 @@ client.on('messageCreate', async message => {
                     break;
                 case 'gn': client.commands.get('gn').execute(message, args, Discord);
                     break;
-                case 'htmlcodes': message.channel.send('https://htmlcolorcodes.com/')
+                case 'htmlcodes': message.channel.send({content :'https://htmlcolorcodes.com/'})
                     break;
                 case 'janeman':
                     client.commands.get('janeman').execute(client, message, args, Discord);
@@ -531,26 +529,26 @@ client.on('messageCreate', async message => {
                     break;
 
                 case 'poll': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
-                    return message.channel.send('YOU DONT HAVE PERMISSION TO THAT DUMB ').then(message => message.delete({ timeout: 4000 })).catch(console.error);
+                    return message.channel.send({content :'YOU DONT HAVE PERMISSION TO THAT DUMB '}).then(message => message.delete({ timeout: 4000 })).catch(console.error);
                     const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
 
                     if (!channel) {
 
 
-                        return message.channel.send('You did not mention / give the id of the channel you wanted to create the poll in!')
+                        return message.channel.send({content :'You did not mention / give the id of the channel you wanted to create the poll in!'})
                     }
 
                     let question = message.content.slice(prefix.length + 5 + channel.id.length + 3)
                     if (!question) {
 
-                        return message.channel.send('You didnt specified a question for the poll')
+                        return message.channel.send({content :'You didnt specified a question for the poll'})
                     }
                     const Embed = new MessageEmbed()
                         .setColor('RANDOM')
                         .setTitle("Who will win 🤔")
                         .setDescription(question)
                         .setFooter(`Mark The correct Option Below 🤩`)
-                    let msg = await client.channels.cache.get(channel.id).send(Embed)
+                    let msg = await client.channels.cache.get(channel.id).send({content : Embed})
                     await msg.react('1️⃣')
                     await msg.react('2️⃣')
                     await msg.react('🤝')
@@ -584,7 +582,7 @@ client.on('messageCreate', async message => {
                             { name: "2. Compare cards Link", value: 'Compare 2 or 3 Different Cards' },
 
                         )
-                    let msg = await message.channel.send(newEmbed)
+                    let msg = await message.channel.send({embeds : newEmbed})
                     await msg.react('1️⃣')
                     await msg.react('2️⃣')
 
@@ -596,13 +594,13 @@ client.on('messageCreate', async message => {
                             else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.futhead.com/compare/') }
 
 
-                            else return message.channel.send('Time Up');
+                            else return message.channel.send({content :'Time Up'});
 
 
 
 
 
-                        }).catch(async () => { return message.channel.send("error") });
+                        }).catch(async () => { return message.channel.send({content :"Time Up"}) });
                     break;
 
                 }
@@ -615,14 +613,14 @@ client.on('messageCreate', async message => {
                     let question1 = message.content.slice(prefix.length + 6)
                     if (!question1) {
 
-                        return message.channel.send('You didnt specified a match to generate')
+                        return message.channel.send({content :'You didnt specified a match to generate'})
                     }
                     const Embed1 = new Discord.MessageEmbed()
                         .setColor('#00f1ff')
                         .setTitle("Results ")
                         .setDescription(question1 + "\n" + player1 + '-' + player2)
 
-                    message.channel.send(Embed1);
+                    message.channel.send({embeds :Embed1});
 
                     message.delete({ timeout: 2000 })
                     break;
@@ -657,20 +655,13 @@ client.on('messageCreate', async message => {
                         .addField("Status", status)
                         .addField('Roles', `<@&${member._roles.join('> <@&')}>`)
                         .setFooter(client.user.username, client.user.displayAvatarURL())
-                    message.channel.send(userEmbed);
+                    message.channel.send({content :userEmbed});
                     break;
 
 
             }
 
-        } else if (message.content.startsWith(prefix)) {
-
-
-            message.channel.send({ content: " Am Currently Under a Big update, Will resume services soon!" })
-
-
-
-        } else {
+        }  else {
             switch (message.content) {
 
                 case 'hey jarvis': if (message.author.id == '550267183503114250' || message.guild.id == '730714810064306188') { message.channel.send("Yes Boss 🙃") }

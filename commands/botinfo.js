@@ -11,7 +11,7 @@ module.exports ={
            .setImage('https://cdn.discordapp.com/attachments/730714810614022228/855885746853642260/24664-jarvis-wallpaper-hd.png');
            
            
-           message.channel.send(newEmbed);
+           message.channel.send({embeds : newEmbed});
 
        }
     }
