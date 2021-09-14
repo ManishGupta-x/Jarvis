@@ -52,7 +52,7 @@ client.distube
 
             const filter = i => i.customId === 'skip' || i.customId === 'BassBoost' || i.customId === 'Nightcore' && i.user.id === `${message.author.id}`;
 
-            const collector = message.channel.createMessageComponentCollector({ filter, time: 300000 });
+            const collector = message.user.createMessageComponentCollector({ filter, time: 300000 });
             collector.on('collect', async i => {
 
 
