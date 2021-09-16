@@ -14,6 +14,24 @@ module.exports ={
         "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png","https://cdn.discordapp.com/attachments/730714810614022228/882284384202395678/neon-wallpaper-2008181520192-scaled.png","https://cdn.discordapp.com/attachments/730714810614022228/882283761868357682/edm-house-music-dj-producer-beatmaker-wallpaper-hd-4k-desktop-6-2048x1080.png"]
         var mu = wallpapers[Math.floor(Math.random() * wallpapers.length)];
         let queue = await client.distube.getQueue(message);
+
+        
+        const row = new MessageActionRow()
+            .addComponents(
+                new MessageButton()
+                    .setCustomId('skip')
+                    .setLabel('Skip')
+                    .setStyle('DANGER'),
+
+                new MessageButton()
+                    .setCustomId('BassBoost')
+                    .setLabel('Bassboost')
+                    .setStyle('PRIMARY'),
+                new MessageButton()
+                    .setCustomId('Nightcore')
+                    .setLabel('Nightcore')
+                    .setStyle('SUCCESS'),
+            );
         queue.songs.map((song,id) => {
             const embed = new Discord.MessageEmbed()
             .setColor('#F0074F')
@@ -22,13 +40,40 @@ module.exports ={
             .setTitle(`Now Playing`)
             .setDescription(`${song.name} | Requested by: ${song.user}\` || ${song.formattedDuration}\` `)
             
-            message.channel.send({embeds: [embed]});
+            message.channel.send({embeds: [embed] ,components : [row]});
             return;
 
 
         }).slice(0,0);
 
-      
+        const filter = (interaction) => interaction.isButton() && interaction.customId === 'skip' || interaction.customId === 'BassBoost' || interaction.customId === 'Nightcore' ;
+
+        const collector = message.channel.createMessageComponentCollector({ filter, time: 300000 });
+        collector.on('collect', async collected => {
+
+
+
+            
+
+                if (collected.customId === 'skip') {
+                    await collected.channel.send({ content: "Skipped"})
+                  
+                    await client.music.get('skip').execute(client, message, args, Discord);
+                } else if (collected.customId === 'BassBoost') {
+                    await i.update({ content: "BassBoost Activated !" })
+                    
+                    await client.music.get('bassboost').execute(client, message, args, Discord);
+
+
+                } else if (collected.customId === 'Nightcore') {
+                    await i.update({ content: "Nightcore Activated !" })
+                    await client.music.get('nightcore').execute(client, message, args, Discord);
+
+
+                }
+                collected.deferUpdate()
+            
+        })
           
     }  
 } 
