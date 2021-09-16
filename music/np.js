@@ -13,7 +13,7 @@ module.exports ={
         "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png","https://cdn.discordapp.com/attachments/730714810614022228/882284384202395678/neon-wallpaper-2008181520192-scaled.png","https://cdn.discordapp.com/attachments/730714810614022228/882283761868357682/edm-house-music-dj-producer-beatmaker-wallpaper-hd-4k-desktop-6-2048x1080.png"]
         var mu = wallpapers[Math.floor(Math.random() * wallpapers.length)];
         let queue = await client.distube.getQueue(message);
-
+        const song = queue.songs[0];
         
         const row = new MessageActionRow()
             .addComponents(
@@ -31,8 +31,8 @@ module.exports ={
                     .setLabel('Nightcore')
                     .setStyle('SUCCESS'),
             );
-        queue.songs.map((song,id) => {
-            if(queue[0]){
+       
+            
             const embed = new Discord.MessageEmbed()
             .setColor('#F0074F')
             .setThumbnail(`${mu}`)
@@ -43,8 +43,8 @@ module.exports ={
             message.channel.send({embeds: [embed] ,components : [row]});
             return;
 
-            }
-        }).slice(0,2);
+            
+    
 
         const filter = (interaction) => interaction.isButton() && interaction.customId === 'skip' || interaction.customId === 'BassBoost' || interaction.customId === 'Nightcore' ;
 
