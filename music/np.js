@@ -75,7 +75,7 @@ module.exports ={
             
 
                 if (collected.customId === 'skip') {
-                    await collected.channel.send({ content: "Skipping"})
+                    await collected.channel.send({ content: ""})
                   
                     await client.music.get('skip').execute(client, message, args, Discord);
                 } else if (collected.customId === 'BassBoost') {
@@ -85,12 +85,12 @@ module.exports ={
 
 
                 } else if (collected.customId === 'Nightcore') {
-                    await collected.channel.send({ content: "Nightcore Activated !" })
+                    await collected.channel.send({ content: "" })
                     await client.music.get('nightcore').execute(client, message, args, Discord);
 
 
                 }else if (collected.customId === '8d') {
-                    await collected.channel.send({ content: "8D Activated !" })
+                    await collected.channel.send({ content: '' })
                     await client.music.get('8d').execute(client, message, args, Discord);
 
 
