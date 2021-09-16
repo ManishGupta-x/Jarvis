@@ -59,7 +59,7 @@ module.exports ={
             
 
                 if (collected.customId === 'skip') {
-                    await collected.channel.send({ content: "Skipped"})
+                    await collected.channel.send({ content: "Skipping"})
                   
                     await client.music.get('skip').execute(client, message, args, Discord);
                 } else if (collected.customId === 'BassBoost') {

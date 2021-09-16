@@ -218,6 +218,7 @@ client.on('messageCreate', async message => {
                         .setTimestamp();
                         message.channel.send({embeds: [embed9]});
                     });
+                   client.distube.toggleAutoplay(message)
 
 
                     break;
