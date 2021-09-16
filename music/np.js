@@ -33,7 +33,7 @@ module.exports ={
                     .setStyle('SUCCESS'),
             );
        
-            if(upcomingsong.name == null){
+            if(upcomingsong.name == undefined){
             const embed1 = new Discord.MessageEmbed()
             .setColor('#F0074F')
             .setThumbnail(`${mu}`)
