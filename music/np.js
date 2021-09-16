@@ -59,13 +59,13 @@ module.exports ={
                   
                     await client.music.get('skip').execute(client, message, args, Discord);
                 } else if (collected.customId === 'BassBoost') {
-                    await i.update({ content: "BassBoost Activated !" })
+                    await collected.channel.send({ content: "BassBoost Activated !" })
                     
                     await client.music.get('bassboost').execute(client, message, args, Discord);
 
 
                 } else if (collected.customId === 'Nightcore') {
-                    await i.update({ content: "Nightcore Activated !" })
+                    await collected.channel.send({ content: "Nightcore Activated !" })
                     await client.music.get('nightcore').execute(client, message, args, Discord);
 
 
