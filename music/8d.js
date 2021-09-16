@@ -11,7 +11,7 @@ module.exports ={
         .setColor('#F0074F')
         .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/888052883549995048/maxresdefault.png')
         .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-        .setDescription("Filter :`" + (filter || "Off") + "`")
+        .setDescription("Filter :" + (`${filter} Activated`  || "Off"))
         .setImage('https://cdn.discordapp.com/attachments/730714810614022228/888052065631354930/maxresdefault.png')
         
         .setFooter(client.user.username, client.user.displayAvatarURL())
