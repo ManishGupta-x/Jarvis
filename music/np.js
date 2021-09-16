@@ -75,22 +75,22 @@ module.exports ={
             
 
                 if (collected.customId === 'skip') {
-                    await collected.channel.send({ content: ""})
+                    await collected.channel.send({ content: "Skipping"})
                   
                     await client.music.get('skip').execute(client, message, args, Discord);
                 } else if (collected.customId === 'BassBoost') {
-                    await collected.channel.send({ content: "BassBoost Activated !" })
+                    
                     
                     await client.music.get('bassboost').execute(client, message, args, Discord);
 
 
                 } else if (collected.customId === 'Nightcore') {
-                    await collected.channel.send({ content: "" })
+                   
                     await client.music.get('nightcore').execute(client, message, args, Discord);
 
 
                 }else if (collected.customId === '8d') {
-                    await collected.channel.send({ content: '' })
+                   
                     await client.music.get('8d').execute(client, message, args, Discord);
 
 
