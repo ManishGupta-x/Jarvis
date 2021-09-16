@@ -33,7 +33,7 @@ module.exports ={
                     .setStyle('SUCCESS'),
             );
        
-            
+            if(upcomingsong.name == null){
             const embed1 = new Discord.MessageEmbed()
             .setColor('#F0074F')
             .setThumbnail(`${mu}`)
@@ -42,6 +42,9 @@ module.exports ={
             .setDescription(`${song.name} | Requested by: ${song.user}\` || ${song.formattedDuration}\` \n`)
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
+            message.channel.send({embeds: [embed1] ,components : [row]});
+        
+        }else{
             const embed2 = new Discord.MessageEmbed()
             .setColor('#F0074F')
             .setThumbnail(`${mu}`)
@@ -51,12 +54,9 @@ module.exports ={
             .addField("Upcoming Song :", `${upcomingsong.name} | Requested by: ${upcomingsong.user}\` || ${upcomingsong.formattedDuration}\``)
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
-
-            if(upcomingsong.name == null)
-            message.channel.send({embeds: [embed1] ,components : [row]});
-            else{
             message.channel.send({embeds: [embed2] ,components : [row]});
-            }
+        }
+           
 
             
     
