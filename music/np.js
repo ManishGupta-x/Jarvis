@@ -34,7 +34,15 @@ module.exports ={
             );
        
             
-            const embed = new Discord.MessageEmbed()
+            const embed1 = new Discord.MessageEmbed()
+            .setColor('#F0074F')
+            .setThumbnail(`${mu}`)
+            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+            .setTitle(`Now Playing`)
+            .setDescription(`${song.name} | Requested by: ${song.user}\` || ${song.formattedDuration}\` \n`)
+            .setFooter(client.user.username, client.user.displayAvatarURL())
+            .setTimestamp();
+            const embed2 = new Discord.MessageEmbed()
             .setColor('#F0074F')
             .setThumbnail(`${mu}`)
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
@@ -43,8 +51,12 @@ module.exports ={
             .addField("Upcoming Song :", `${upcomingsong.name} | Requested by: ${upcomingsong.user}\` || ${upcomingsong.formattedDuration}\``)
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
-            message.channel.send({embeds: [embed] ,components : [row]});
-            
+
+            if(upcomingsong == null)
+            message.channel.send({embeds: [embed1] ,components : [row]});
+            else{
+            message.channel.send({embeds: [embed2] ,components : [row]});
+            }
 
             
     
