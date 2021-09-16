@@ -14,8 +14,8 @@ module.exports ={
         var mu = wallpapers[Math.floor(Math.random() * wallpapers.length)];
         let queue = await client.distube.getQueue(message);
         const song = queue.songs[0];
-        const upcomingsong = queue.songs[1];
         
+       
         const row = new MessageActionRow()
             .addComponents(
                 new MessageButton()
@@ -33,29 +33,29 @@ module.exports ={
                     .setStyle('SUCCESS'),
             );
        
-            if(upcomingsong.name == undefined){
-            const embed1 = new Discord.MessageEmbed()
-            .setColor('#F0074F')
-            .setThumbnail(`${mu}`)
-            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setTitle(`Now Playing`)
-            .setDescription(`${song.name} | Requested by: ${song.user}\` || ${song.formattedDuration}\` \n`)
-            .setFooter(client.user.username, client.user.displayAvatarURL())
-            .setTimestamp();
-            message.channel.send({embeds: [embed1] ,components : [row]});
-        
-        }else{
-            const embed2 = new Discord.MessageEmbed()
-            .setColor('#F0074F')
-            .setThumbnail(`${mu}`)
-            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setTitle(`Now Playing`)
-            .setDescription(`${song.name} | Requested by: ${song.user}\` || ${song.formattedDuration}\` \n`)
-            .addField("Upcoming Song :", `${upcomingsong.name} | Requested by: ${upcomingsong.user}\` || ${upcomingsong.formattedDuration}\``)
-            .setFooter(client.user.username, client.user.displayAvatarURL())
-            .setTimestamp();
-            message.channel.send({embeds: [embed2] ,components : [row]});
-        }
+            if(queue.songs.length <= 1) {
+                const embed1 = new Discord.MessageEmbed()
+                .setColor('#F0074F')
+                .setThumbnail(`${mu}`)
+                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                .setTitle(`Now Playing`)
+                .setDescription(`${song.name} | Requested by: ${song.user}\` || ${song.formattedDuration}\` \n`)
+                .setFooter(client.user.username, client.user.displayAvatarURL())
+                .setTimestamp();
+                message.channel.send({embeds: [embed1] ,components : [row]});
+              } else {
+                const upcomingsong = queue.songs[1];
+                const embed2 = new Discord.MessageEmbed()
+                .setColor('#F0074F')
+                .setThumbnail(`${mu}`)
+                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                .setTitle(`Now Playing`)
+                .setDescription(`${song.name} | Requested by: ${song.user}\` || ${song.formattedDuration}\` \n`)
+                .addField("Upcoming Song :", `${upcomingsong.name} | Requested by: ${upcomingsong.user}\` || ${upcomingsong.formattedDuration}\``)
+                .setFooter(client.user.username, client.user.displayAvatarURL())
+                .setTimestamp();
+                message.channel.send({embeds: [embed2] ,components : [row]});
+              }
            
 
             
