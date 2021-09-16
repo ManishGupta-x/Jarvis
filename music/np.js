@@ -41,6 +41,7 @@ module.exports ={
             .setTitle(`Now Playing`)
             .setDescription(`${song.name} | Requested by: ${song.user}\` || ${song.formattedDuration}\` `)
             .addField("Upcoming Song :", `${upcomingsong.name} | Requested by: ${upcomingsong.user}\` || ${upcomingsong.formattedDuration}\`}`)
+            .setFooter(client.user.username, client.user.displayAvatarURL())
             message.channel.send({embeds: [embed] ,components : [row]});
             
 
