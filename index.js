@@ -472,7 +472,7 @@ client.on('messageCreate', async message => {
                     break;
                 case "jarvis expose shivam": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
                     break;
-                case "-friendly": await message.channel.send({ content: `<@&885896296739790919>` }).delete({ timeout: 2000 })
+                case "-friendly": await message.channel.send({ content: `<@&885896296739790919>` })
                     break;
                 case "togglefriendly": let member = message.member;
                     let memberTarget = message.guild.members.cache.get(member.id);
