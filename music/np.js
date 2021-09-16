@@ -52,7 +52,7 @@ module.exports ={
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
 
-            if(upcomingsong == '')
+            if(upcomingsong.length == 0)
             message.channel.send({embeds: [embed1] ,components : [row]});
             else{
             message.channel.send({embeds: [embed2] ,components : [row]});
