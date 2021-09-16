@@ -218,13 +218,16 @@ client.on('messageCreate', async message => {
                         .setTimestamp();
                         message.channel.send({embeds: [embed9]});
                     });
-                   client.distube.toggleAutoplay(message)
+                  
 
 
                     break;
                 case 'loop':
                     client.music.get('loop').execute(client, message, args, Discord);
                     break;
+                case 'autoplay':
+                        client.music.get('autoplay').execute(client, message, args, Discord);
+                        break;
                 case 'np':
                     client.music.get('np').execute(client, message, args, Discord);
                     break;
