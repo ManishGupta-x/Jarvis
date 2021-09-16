@@ -41,7 +41,7 @@ module.exports ={
             .setDescription(`${song.name} | Requested by: ${song.user}\` || ${song.formattedDuration}\` `)
             
             message.channel.send({embeds: [embed] ,components : [row]});
-            return;
+            
 
             
     
