@@ -30,6 +30,10 @@ module.exports ={
                 new MessageButton()
                     .setCustomId('Nightcore')
                     .setLabel('Nightcore')
+                    .setStyle('SECONDARY'),
+                new MessageButton()
+                    .setCustomId('8d')
+                    .setLabel('8D')
                     .setStyle('SUCCESS'),
             );
        
@@ -61,7 +65,7 @@ module.exports ={
             
     
 
-        const filter = (interaction) => interaction.isButton() && interaction.customId === 'skip' || interaction.customId === 'BassBoost' || interaction.customId === 'Nightcore' ;
+        const filter = (interaction) => interaction.isButton() && interaction.customId === 'skip'|| interaction.customId === '8d' || interaction.customId === 'BassBoost' || interaction.customId === 'Nightcore' ;
 
         const collector = message.channel.createMessageComponentCollector({ filter, time: 300000 });
         collector.on('collect', async collected => {
@@ -83,6 +87,11 @@ module.exports ={
                 } else if (collected.customId === 'Nightcore') {
                     await collected.channel.send({ content: "Nightcore Activated !" })
                     await client.music.get('nightcore').execute(client, message, args, Discord);
+
+
+                }else if (collected.customId === '8d') {
+                    await collected.channel.send({ content: "8D Activated !" })
+                    await client.music.get('8d').execute(client, message, args, Discord);
 
 
                 }
