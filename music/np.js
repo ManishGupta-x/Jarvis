@@ -32,7 +32,7 @@ module.exports ={
                     .setStyle('SUCCESS'),
             );
         queue.songs.map((song,id) => {
-            if(song.id == 0){
+            if(queue[0]){
             const embed = new Discord.MessageEmbed()
             .setColor('#F0074F')
             .setThumbnail(`${mu}`)
@@ -44,7 +44,7 @@ module.exports ={
             return;
 
             }
-        }).slice(0,0);
+        }).slice(0,2);
 
         const filter = (interaction) => interaction.isButton() && interaction.customId === 'skip' || interaction.customId === 'BassBoost' || interaction.customId === 'Nightcore' ;
 
