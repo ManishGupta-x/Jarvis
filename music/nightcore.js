@@ -10,7 +10,7 @@ module.exports ={
         .setColor('#F0074F')
         .setThumbnail('https://i.imgur.com/CpmhwPH.gif')
         .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-        .setDescription("Filter :`" + (filter ? "On" : "Off") + "`")
+        .setDescription("Nightcore :`" + (filter ? "On" : "Off") + "`")
       
         
         .setFooter(client.user.username, client.user.displayAvatarURL())
