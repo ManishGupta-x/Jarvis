@@ -2,12 +2,12 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const prefix = 'p!';
 const mongoose = require('mongoose');
-const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"], intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES', 'GUILD_VOICE_STATES','GUILD_MESSAGE_REACTIONS'] });
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"], intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES', 'GUILD_VOICE_STATES', 'GUILD_MESSAGE_REACTIONS'] });
 const fetch = require("node-fetch").default;
 const { DisTube } = require('distube');
-client.distube = new DisTube(client, { searchSongs: 0, emitNewSongOnly: true,  customFilters : {"8d": "apulsator=hz=0.08"}, leaveOnFinish: false, youtubeCookie: 'VISITOR_INFO1_LIVE=VizaEEKSaKU; CONSENT=YES+IN.en-GB+202003; HSID=AkXW3VgkDmwLdXppv; SSID=ABztr9AiYhzU3cims; APISID=ISlgWkeBCPS4FVpU/AvUkKq2Y5as3oxS5w; SAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; __Secure-1PAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; __Secure-3PAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; PREF=f6=40000000&volume=100&tz=Asia.Calcutta&al=en&f5=30000; SID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzm-75v8zEUbkM-Fo42HHtsAw.; __Secure-1PSID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzmSwyewdsV5rUu2dwol9JkHQ.; __Secure-3PSID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzm5Yk-KzCTNlH-9DSJJAMa2g.; LOGIN_INFO=AFmmF2swRQIhAOAj5hxBaepKf2QWAhyxRsQ5qVM6AsWFNCuhOrLqYbwdAiAgEelIbJr9T2CTnJ_r_A1CpNZOhD5lH083xqIr83DoOQ:QUQ3MjNmdzl3dnFBalF2d1F6N3gxQ1F0cG9CV2hSMXZaTkpRU1NWN0RialZqVXNDcnlkUlNYODJLbFFuNnVnOXVaS2xVaWpCc2JpUXFJbE1EVGpzRlJhZzhqMmR0UXFZRnJzR1dzUW5jdG14UE82MjdzVlJzMGt6UF9mcVlpYnEzQklEbjFTQnFwa3VjOGRzS2FaNjdLWWhtMGpUYmtJSXFB; YSC=__AMedv__lI; SIDCC=AJi4QfH4YiFJJLPF53VeLb73e5CmQ1rF-8jYPZBKsDwUPGX-QBv06-a44iNU2Zvf-SXwz8O_7Jco; __Secure-3PSIDCC=AJi4QfGxy3tYK9mYe4YxsvsB5__Q5dbyTF5LxF1JEj6Nlomf4xxUeDIkX7FrjZuxelpdByFZ9WyK' });
+client.distube = new DisTube(client, { searchSongs: 0, emitNewSongOnly: true, customFilters: { "8d": "apulsator=hz=0.08" }, leaveOnFinish: false, youtubeCookie: 'VISITOR_INFO1_LIVE=VizaEEKSaKU; CONSENT=YES+IN.en-GB+202003; HSID=AkXW3VgkDmwLdXppv; SSID=ABztr9AiYhzU3cims; APISID=ISlgWkeBCPS4FVpU/AvUkKq2Y5as3oxS5w; SAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; __Secure-1PAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; __Secure-3PAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; PREF=f6=40000000&volume=100&tz=Asia.Calcutta&al=en&f5=30000; SID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzm-75v8zEUbkM-Fo42HHtsAw.; __Secure-1PSID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzmSwyewdsV5rUu2dwol9JkHQ.; __Secure-3PSID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzm5Yk-KzCTNlH-9DSJJAMa2g.; LOGIN_INFO=AFmmF2swRQIhAOAj5hxBaepKf2QWAhyxRsQ5qVM6AsWFNCuhOrLqYbwdAiAgEelIbJr9T2CTnJ_r_A1CpNZOhD5lH083xqIr83DoOQ:QUQ3MjNmdzl3dnFBalF2d1F6N3gxQ1F0cG9CV2hSMXZaTkpRU1NWN0RialZqVXNDcnlkUlNYODJLbFFuNnVnOXVaS2xVaWpCc2JpUXFJbE1EVGpzRlJhZzhqMmR0UXFZRnJzR1dzUW5jdG14UE82MjdzVlJzMGt6UF9mcVlpYnEzQklEbjFTQnFwa3VjOGRzS2FaNjdLWWhtMGpUYmtJSXFB; YSC=__AMedv__lI; SIDCC=AJi4QfH4YiFJJLPF53VeLb73e5CmQ1rF-8jYPZBKsDwUPGX-QBv06-a44iNU2Zvf-SXwz8O_7Jco; __Secure-3PSIDCC=AJi4QfGxy3tYK9mYe4YxsvsB5__Q5dbyTF5LxF1JEj6Nlomf4xxUeDIkX7FrjZuxelpdByFZ9WyK' });
 
-var flag =0;
+var flag = 0;
 const emitter = require('events')
 emitter.setMaxListeners(999)
 
@@ -32,22 +32,22 @@ client.distube
 
 
 
-        queue.textChannel.send({ embeds: [playsong]})
-   
-
-        
-
-
-    
-
-
-     })
-           
+        queue.textChannel.send({ embeds: [playsong] })
 
 
 
 
-    
+
+
+
+
+    })
+
+
+
+
+
+
     .on("addSong", (queue, song) => {
 
         const addsong = new Discord.MessageEmbed()
@@ -191,7 +191,7 @@ client.on('messageCreate', async message => {
                 case 'search':
                     client.commands.get('search').execute(client, message, args, Discord);
                     break;
-              
+
                 case 'play':
                     if (!args[0]) {
                         message.channel.send({ content: 'Please Mention song!' })
@@ -204,17 +204,17 @@ client.on('messageCreate', async message => {
                     client.distube.play(message, music).catch(async () => {
 
                         const embed9 = new Discord.MessageEmbed()
-                        .setColor('RANDOM')
-                        .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
-                        .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                        .setDescription(`Getting some issues try again `)
-                      
-                        
-                        .setFooter(client.user.username, client.user.displayAvatarURL())
-                        .setTimestamp();
-                        message.channel.send({embeds: [embed9]});
+                            .setColor('RANDOM')
+                            .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+                            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                            .setDescription(`Getting some issues try again `)
+
+
+                            .setFooter(client.user.username, client.user.displayAvatarURL())
+                            .setTimestamp();
+                        message.channel.send({ embeds: [embed9] });
                     });
-                  
+
 
 
                     break;
@@ -222,8 +222,8 @@ client.on('messageCreate', async message => {
                     client.music.get('loop').execute(client, message, args, Discord);
                     break;
                 case 'autoplay':
-                        client.music.get('autoplay').execute(client, message, args, Discord);
-                        break;
+                    client.music.get('autoplay').execute(client, message, args, Discord);
+                    break;
                 case 'np':
                     client.music.get('np').execute(client, message, args, Discord);
                     break;
@@ -268,55 +268,14 @@ client.on('messageCreate', async message => {
                 case 'fgtourney-deadline': client.commands.get('fgtourney-deadline').execute(client, message, args, Discord);
                     break;
 
-                case 'fg_table': if (message.guild.id == '554275795280068619') {
-                    const newEmbed = new Discord.MessageEmbed()
-                        .setColor('RANDOM')
-                        .setTitle('FG Tourney Group Links')
-                        .setThumbnail('https://cdn.discordapp.com/attachments/737883256128798800/853284175775924294/Snapshot_1.png')
-                        .setAuthor('Jarvis', client.user.displayAvatarURL())
-                        .addFields(
 
-                            {
-                                name: "1.Group Links For Groups 1 to 4 ", value: 'Table and Matchday Links for Group A, B, C, D'
-                            },
-                            { name: "2. Group Links For Groups 5 to 8", value: 'Table and Matchday Link for Group E, F, G, H' },
-
-
-
-                        )
-                        .setFooter("You have 45 secs to react!")
-                    let msg = await message.channel.send({embeds :[newEmbed]})
-                    await msg.react('1️⃣')
-                    await msg.react('2️⃣')
-
-                    const filter1 = (reaction, user) => {
-                        user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
-
-                        reaction.emoji.name == '2️⃣')
-                    };
-                   
-                    await msg.awaitReactions({ filter1, max: 1, time: 60000, errors: ['time'] }).then ( collected =>{
-
-                        if (collected.first().emoji.name == '1️⃣') { return client.commands.get('groupad').execute(client, message, args, Discord, msg); }
-                        else if (collected.first().emoji.name == '2️⃣') { return client.commands.get('groupeh').execute(client, message, args, Discord, msg); }
-
-
-
-                        else return message.channel.send({content :'Time Up'});
-
-
-
-
-
-                    }).catch(async () => { return message.channel.send({content :"Time Up"}) });}
-                     break;
 
                 case 'bootup-jarvis': j = 1; message.channel.send('https://tenor.com/view/iron-man-sped-up-jarvis-gif-19148596');
                     message.reply(" Booted Up Succesfully! ")
                     channelID = message.channel.id;
                     break;
                 case 'shutdown-jarvis': if (j === 0) {
-                    message.channel.send({content :"Jarvis is Already off"})
+                    message.channel.send({ content: "Jarvis is Already off" })
                 }
                 else { j = 0; }
                     message.channel.send('https://tenor.com/view/turn-off-shut-off-switch-off-kill-the-lights-lights-off-gif-12198682');
@@ -358,7 +317,7 @@ client.on('messageCreate', async message => {
                         )
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-                    message.channel.send({embeds :[help] });
+                    message.channel.send({ embeds: [help] });
 
                     break;
                 case 'rules': if (message.guild.id == '554275795280068619') { client.commands.get('rules').execute(message, args, Discord); }
@@ -382,15 +341,7 @@ client.on('messageCreate', async message => {
                 case 'id': client.id.get('id').execute(client, message, args, Discord);
                     break;
 
-                case 'friendly': message.channel.send("Lawda ka friendly hai")
-
-                    // if (message.member.roles.cache.has('754994039035789393') || message.member.roles.cache.has('754996150880305213') || message.member.roles.cache.has('599566802682511360') || message.member.roles.cache.has('754993523501170698') || message.member.roles.cache.has('758211941473714177'))
-                    //     client.commands.get('friendly').execute(message, args, Discord, client);
-                    // else client.commands.get('friendly1').execute(message, args, Discord, client);
-
-
-
-                    break;
+                
                 case 'meme': client.commands.get('meme').execute(message, args, Discord);
                     break;
                 case 'pes': message.reply('under maintenance')// client.commands.get('pes').execute(message, args, Discord);
@@ -441,7 +392,7 @@ client.on('messageCreate', async message => {
                     break;
                 case 'gn': client.commands.get('gn').execute(message, args, Discord);
                     break;
-                case 'htmlcodes': message.channel.send({content :'https://htmlcolorcodes.com/'})
+                case 'htmlcodes': message.channel.send({ content: 'https://htmlcolorcodes.com/' })
                     break;
                 case 'janeman':
                     client.commands.get('janeman').execute(client, message, args, Discord);
@@ -450,26 +401,26 @@ client.on('messageCreate', async message => {
                     break;
 
                 case 'poll': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
-                    return message.channel.send({content :'YOU DONT HAVE PERMISSION TO THAT DUMB '}).then(message => message.delete({ timeout: 4000 })).catch(console.error);
+                    return message.channel.send({ content: 'YOU DONT HAVE PERMISSION TO THAT DUMB ' }).then(message => message.delete({ timeout: 4000 })).catch(console.error);
                     const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
 
                     if (!channel) {
 
 
-                        return message.channel.send({content :'You did not mention / give the id of the channel you wanted to create the poll in!'})
+                        return message.channel.send({ content: 'You did not mention / give the id of the channel you wanted to create the poll in!' })
                     }
 
                     let question = message.content.slice(prefix.length + 5 + channel.id.length + 3)
                     if (!question) {
 
-                        return message.channel.send({content :'You didnt specified a question for the poll'})
+                        return message.channel.send({ content: 'You didnt specified a question for the poll' })
                     }
                     const Embed = new MessageEmbed()
                         .setColor('RANDOM')
                         .setTitle("Who will win 🤔")
                         .setDescription(question)
                         .setFooter(`Mark The correct Option Below 🤩`)
-                    let msg = await client.channels.cache.get(channel.id).send({content : [Embed]})
+                    let msg = await client.channels.cache.get(channel.id).send({ content: [Embed] })
                     await msg.react('1️⃣')
                     await msg.react('2️⃣')
                     await msg.react('🤝')
@@ -481,51 +432,6 @@ client.on('messageCreate', async message => {
                 case 'roleinfo': client.help.get('6').execute(message, args, Discord);
                     break;
 
-
-
-
-
-
-
-
-
-                case 'futhead': {
-
-                    const newEmbed = new Discord.MessageEmbed()
-                        .setColor('RANDOM')
-                        .setTitle('Futhead Links')
-                        .setAuthor('Freak Gamer', 'https://cdn.discordapp.com/avatars/549989000115519503/e745abd8a0a5b7fd392d51a5a431755e.png?size=256')
-                        .addFields(
-
-                            {
-                                name: "1. Player List Link ", value: 'Get List of Players which can be filtered'
-                            },
-                            { name: "2. Compare cards Link", value: 'Compare 2 or 3 Different Cards' },
-
-                        )
-                    let msg = await message.channel.send({embeds : [newEmbed]})
-                    await msg.react('1️⃣')
-                    await msg.react('2️⃣')
-
-                    await msg.awaitReactions((reaction, user) => user.id == user.id && user.id !== "778267007439077396" && (reaction.emoji.name == '1️⃣' ||
-
-                        reaction.emoji.name == '2️⃣'), { max: 1, time: 40000 })
-                        .then(async collected => {
-                            if (collected.first().emoji.name == '1️⃣') { return message.channel.send('https://www.futhead.com/21/players/?bin_platform=ps') }
-                            else if (collected.first().emoji.name == '2️⃣') { return message.channel.send('https://www.futhead.com/compare/') }
-
-
-                            else return message.channel.send({content :'Time Up'});
-
-
-
-
-
-                        }).catch(async () => { return message.channel.send({content :"Time Up"}) });
-                    break;
-
-                }
-
                 case 'match':
 
                     var player1 = Math.floor(Math.random() * 4);
@@ -534,55 +440,24 @@ client.on('messageCreate', async message => {
                     let question1 = message.content.slice(prefix.length + 6)
                     if (!question1) {
 
-                        return message.channel.send({content :'You didnt specified a match to generate'})
+                        return message.channel.send({ content: 'You didnt specified a match to generate' })
                     }
                     const Embed1 = new Discord.MessageEmbed()
                         .setColor('#00f1ff')
                         .setTitle("Results ")
                         .setDescription(question1 + "\n" + player1 + '-' + player2)
 
-                    message.channel.send({embeds :[Embed1]});
+                    message.channel.send({ embeds: [Embed1] });
 
                     message.delete({ timeout: 2000 })
                     break;
 
-                case 'info':
 
-                    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || x.user.username === args[0]) || message.member;
-
-
-
-                    if (member.presence.status === 'dnd') member.presence.status = 'Do Not Disturb';
-                    if (member.presence.status === 'online') member.presence.status = 'Online';
-                    if (member.presence.status === 'idle') member.presence.status = 'Idle';
-                    if (member.presence.status === 'offline') member.presence.status = 'offline';
-
-                    let x = Date.now() - member.createdAt;
-                    let y = Date.now() - message.guild.members.cache.get(member.id).joinedAt;
-                    const joined = Math.floor(y / 86400000);
-
-                    const joineddate = moment.utc(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss");
-                    let status = member.presence.status;
-
-                    const userEmbed = new Discord.MessageEmbed()
-                        .setAuthor(member.user.tag, member.user.displayAvatarURL())
-                        .setTimestamp()
-                        .setColor('#f7331a')
-                        .setImage(member.user.displayAvatarURL())
-                        .addField("Member ID", member.id)
-
-                        .addField("Account Created On:", ` ${moment.utc(member.user.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
-                        .addField('Joined the server At', `${joineddate} \n> ${joined} day(S) Ago`)
-                        .addField("Status", status)
-                        .addField('Roles', `<@&${member._roles.join('> <@&')}>`)
-                        .setFooter(client.user.username, client.user.displayAvatarURL())
-                    message.channel.send({content :[userEmbed]});
-                    break;
 
 
             }
 
-        }  else {
+        } else {
             switch (message.content) {
 
                 case 'hey jarvis': if (message.author.id == '550267183503114250' || message.guild.id == '730714810064306188') { message.channel.send("Yes Boss 🙃") }
