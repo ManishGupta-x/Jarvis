@@ -14,6 +14,7 @@ module.exports ={
         var mu = wallpapers[Math.floor(Math.random() * wallpapers.length)];
         let queue = await client.distube.getQueue(message);
         const song = queue.songs[0];
+        const upcomingsong = queue.songs[1];
         
         const row = new MessageActionRow()
             .addComponents(
@@ -39,7 +40,7 @@ module.exports ={
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
             .setTitle(`Now Playing`)
             .setDescription(`${song.name} | Requested by: ${song.user}\` || ${song.formattedDuration}\` `)
-            
+            .addField("Upcoming Song :", `${upcomingsong.name} | Requested by: ${upcomingsong.user}\` || ${upcomingsong.formattedDuration}\`}`)
             message.channel.send({embeds: [embed] ,components : [row]});
             
 
