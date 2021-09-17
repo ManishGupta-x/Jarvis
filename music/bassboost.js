@@ -10,7 +10,7 @@ module.exports ={
         .setColor('#1BE124')
         .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/888052510416330762/wp7806858.png')
         .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-        .setDescription("Filter :" +  (filter  || "Off"))
+        .setDescription("Filter : " +  (filter.join(", ")  || "Off"))
          .setImage('https://cdn.discordapp.com/attachments/730714810614022228/888052384306184212/wp7806840.png')
         
         .setFooter(client.user.username, client.user.displayAvatarURL())
