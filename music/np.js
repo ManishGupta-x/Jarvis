@@ -15,7 +15,7 @@ module.exports ={
         let queue = await client.distube.getQueue(message);
         if(!queue){
             message.reply('No Song in Queue !')
-        }else
+        }else{
         const song = queue.songs[0];
         
        
@@ -102,4 +102,4 @@ module.exports ={
         })
           
     }  
-} 
+} }
