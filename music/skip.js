@@ -8,7 +8,7 @@ module.exports ={
            
         let queue = await client.distube.getQueue(message);
         
-        if(!queue) {
+        if(queue.songs.length <= 1) {
             message.reply(" No Upcoming Song")
            
         } else if(queue) {
