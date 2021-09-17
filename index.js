@@ -232,7 +232,13 @@ client.on('messageCreate', async message => {
                 case 'np':
                     client.music.get('np').execute(client, message, args, Discord);
                     break;
-                case 'volume': client.distube.setVolume(message, Number(args[0]));
+                case 'volume': if(!args[0]){
+
+                    message.reply('Pls Specify Volume Level . Eg : p!volume 80')
+                } 
+                
+                
+                client.distube.setVolume(message, Number(args[0]));
                 const embed9 = new Discord.MessageEmbed()
                 .setColor('RANDOM')
                 .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/888335393542524948/wp4067216.png')
