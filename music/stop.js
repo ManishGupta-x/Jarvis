@@ -9,12 +9,13 @@ module.exports ={
 
         let queue = await client.distube.getQueue(message);
     
-        if(queue) {
+        if(!queue) {
+            return;
+           
+        } else if(queue) {
             client.distube.stop(message)
     
             message.channel.send({content: 'Stopped Music'})
-        } else if (!queue) {
-            return
         };
 
 

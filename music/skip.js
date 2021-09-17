@@ -8,14 +8,14 @@ module.exports ={
            
         let queue = await client.distube.getQueue(message);
         
-        if(queue) {
+        if(!queue) {
+            message.reply(" No Upcoming Song")
+           
+        } else if(queue) {
             client.distube.skip(message)
-        
-            message.channel.send({content : 'DONE!'})
-        } else if (!queue) {
-            return
+    
+            message.channel.send({content: 'SKipped'})
         };
-        
 
     }  
 } 
