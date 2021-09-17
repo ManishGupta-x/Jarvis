@@ -13,6 +13,9 @@ module.exports ={
         "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png","https://cdn.discordapp.com/attachments/730714810614022228/882284384202395678/neon-wallpaper-2008181520192-scaled.png","https://cdn.discordapp.com/attachments/730714810614022228/882283761868357682/edm-house-music-dj-producer-beatmaker-wallpaper-hd-4k-desktop-6-2048x1080.png"]
         var mu = wallpapers[Math.floor(Math.random() * wallpapers.length)];
         let queue = await client.distube.getQueue(message);
+        if(queue.songs.length == 0){
+            message.reply('No Song in Queue !')
+        }else
         const song = queue.songs[0];
         
        
@@ -36,9 +39,7 @@ module.exports ={
                     .setLabel('8D')
                     .setStyle('SUCCESS'),
             );
-       if(queue.songs.length == 0){
-           message.reply('No Song in Queue !')
-       }else if(queue.songs.length <= 1) {
+        if(queue.songs.length <= 1) {
                 const embed1 = new Discord.MessageEmbed()
                 .setColor('#F0074F')
                 .setThumbnail(`${mu}`)
