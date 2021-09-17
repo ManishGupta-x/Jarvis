@@ -62,15 +62,9 @@ client.distube
 
         queue.textChannel.send({ embeds: [addsong] });
     })
-    .on("error", (channel, error) => channel.send({
-        content: "An error encountered: " + error
-    }
-
-    ))
+    
     .on("noRelated", queue => queue.textChannel.send("Can't find related video to play."))
-    .on("playList", (message, queue, playlist, song) => message.channel.send(
-        `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
-    ))
+    
 
 
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true })
