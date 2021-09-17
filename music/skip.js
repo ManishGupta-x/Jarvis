@@ -7,8 +7,9 @@ module.exports ={
         if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
            
         let queue = await client.distube.getQueue(message);
-        
-        if(queue.songs.length <= 1) {
+        if(!queue){
+            message.reply('No Song in Queue !')
+        }else if(queue.songs.length <= 1) {
             message.reply(" No Upcoming Song")
            
         } else if(queue) {

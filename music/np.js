@@ -36,7 +36,7 @@ module.exports ={
                     .setStyle('SECONDARY'),
                 new MessageButton()
                     .setCustomId('8d')
-                    .setLabel('8D')
+                    .setLabel('🎼 8D')
                     .setStyle('SUCCESS'),
             );
         if(queue.songs.length <= 1) {
