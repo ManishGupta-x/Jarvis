@@ -15,7 +15,7 @@ module.exports ={
         } else if(queue) {
             client.distube.skip(message)
     
-            message.channel.send({content: 'SKipped'})
+            message.channel.send({content: 'Skipped'})
         };
 
     }  
