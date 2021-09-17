@@ -1,12 +1,28 @@
+
 const disTube = require('distube');
+var loop ;
 module.exports ={
     name: 'loop',
     Description: 'this is a music command!',
     execute(client,message,args, Discord){
-        
+        if(!args[0]){
+
+            message.reply("What kind of loop U want type \`p!loop song\` to loop song or \`p!loop queue \` to Loop Queue")
+        }else if(args[0] == 'song' || args[0] == 'Song'){
+
+            loop = 1;
+        }
+        else if(args[0] == 'queue' || args[0] == 'Queue'){
+
+            loop = 2;
+        }
+        else if(args[0] == 'off' || args[0] == 'Off'|| args[0] == 'OFF'){
+
+            loop = 0;
+        }
         if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
         
-        let mode = client.distube.setRepeatMode(message, parseInt(args[0]));
+        let mode = client.distube.setRepeatMode(message, loop);
 
         mode = mode ? mode == 2 ? "Repeat queue" : "Repeat song" : "Off";
         const embed = new Discord.MessageEmbed()
