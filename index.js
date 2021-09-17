@@ -62,6 +62,9 @@ client.distube
 
         queue.textChannel.send({ embeds: [addsong] });
     })
+    .on("error", (channel, error) => channel.send(
+        "An error encountered: " + error
+    ))
     .on("playList", (message, queue, playlist, song) => message.channel.send(
         `Play \`${playlist.name}\` playlist (${playlist.songs.length} songs).\nRequested by: ${song.user}\nNow playing \`${song.name}\` - \`${song.formattedDuration}\`\n${status(queue)}`
     ))
