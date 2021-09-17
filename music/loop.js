@@ -11,15 +11,15 @@ module.exports ={
         return;
         }else if(args[0] == 'song' || args[0] == 'Song'){
 
-            loop = 0;
+            loop = 1;
         }
         else if(args[0] == 'queue' || args[0] == 'Queue'){
 
-            loop = 1;
+            loop = 2;
         }
         else if(args[0] == 'off' || args[0] == 'Off'|| args[0] == 'OFF'){
 
-            loop = 2;
+            loop = 0;
         }
         if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
         
