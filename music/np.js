@@ -36,7 +36,7 @@ module.exports ={
                     .setLabel('8D')
                     .setStyle('SUCCESS'),
             );
-       if(queue.songs.length =0){
+       if(queue.songs.length == 0){
            message.reply('No Song in Queue !')
        }else if(queue.songs.length <= 1) {
                 const embed1 = new Discord.MessageEmbed()
