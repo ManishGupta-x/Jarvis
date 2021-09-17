@@ -57,7 +57,7 @@ module.exports ={
            )
            .setFooter('Type p!music to get the first menu' , client.user.displayAvatarURL() )
           .setImage('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png');
-          message.channel.send({embeds: [newEmbed1], components : [row]});
+         let msg = message.channel.send({embeds: [newEmbed1], components : [row]});
           
                
           const filter = (interaction) => interaction.isButton() && interaction.customId === 'Next' ;
@@ -72,7 +72,8 @@ module.exports ={
                   if (collected.customId === 'Next') {
                       
                     
-                      await message.edit(newEmbed2);
+                      await message.channel.send({embeds : [newEmbed2]})
+                      setTimeout(() => msg.delete(), 1000)
                   } 
               
               
