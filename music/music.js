@@ -72,8 +72,8 @@ module.exports ={
                   if (collected.customId === 'Next') {
                       
                     
-                      await message.channel.send({embeds : [newEmbed2]})
-                      setTimeout(() => msg.delete(), 1000)
+                      await message.edit({embeds : [newEmbed2]})
+                    
                   } 
               
               
