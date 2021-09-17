@@ -23,16 +23,16 @@ module.exports ={
             .addComponents(
                 new MessageButton()
                     .setCustomId('skip')
-                    .setLabel('Skip')
+                    .setLabel('🏃‍♂️ Skip')
                     .setStyle('DANGER'),
 
                 new MessageButton()
                     .setCustomId('BassBoost')
-                    .setLabel('Bassboost')
+                    .setLabel('🎶 Bassboost')
                     .setStyle('PRIMARY'),
                 new MessageButton()
                     .setCustomId('Nightcore')
-                    .setLabel('Nightcore')
+                    .setLabel('🎧 Nightcore')
                     .setStyle('SECONDARY'),
                 new MessageButton()
                     .setCustomId('8d')
