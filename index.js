@@ -62,8 +62,9 @@ client.distube
 
         queue.textChannel.send({ embeds: [addsong] });
     })
-    .on("error", (channel, error) => channel.send(
-        "An error encountered: " + error
+    .on("error", (channel, error) => channel.send({content:  "An error encountered: " + error
+}
+       
     ))
     .on("noRelated", queue => queue.textChannel.send("Can't find related video to play."))
     .on("playList", (message, queue, playlist, song) => message.channel.send(
