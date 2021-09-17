@@ -18,7 +18,7 @@ module.exports ={
             {name : "🎧 p!play [song name] " , value : ` •  Plays the song mentioned`},
             {name : "🎧 p!np " , value : ` • Shows current song playing! Button Access! `},
             {name : "🎧 p!loop" , value : ` • Loops queue If typed 1st time , 2nd time Loops song `},
-            {name : "🎧 p!pause/resume" , value : ` •  Pause/Resume Songs `},
+            {name : "🎧 p!pause/resume/stop" , value : ` •  Pause/Resume/stop Songs `},
             {name : "🎧 p!queue" , value : ` •  Gives Current queue`},
             {name : "🎧 p!skip" , value : ` •  Skips Current song to next one`},
             {name : "🎧 Filters Available " , value : ` •  Bassboost , 8d , Echo , Nightcore, Vaporwave `},
