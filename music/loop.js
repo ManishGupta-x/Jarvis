@@ -8,17 +8,18 @@ module.exports ={
         if(!args[0]){
 
             message.reply("What kind of loop U want type \`p!loop song\` to loop song or \`p!loop queue \` to Loop Queue")
+        return;
         }else if(args[0] == 'song' || args[0] == 'Song'){
 
-            loop = 1;
+            loop = 0;
         }
         else if(args[0] == 'queue' || args[0] == 'Queue'){
 
-            loop = 2;
+            loop = 1;
         }
         else if(args[0] == 'off' || args[0] == 'Off'|| args[0] == 'OFF'){
 
-            loop = 0;
+            loop = 2;
         }
         if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
         
