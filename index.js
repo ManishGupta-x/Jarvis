@@ -62,9 +62,10 @@ client.distube
 
         queue.textChannel.send({ embeds: [addsong] });
     })
-    .on("error", (channel, error) => channel.send({content:  "An error encountered: " + error
-}
-       
+    .on("error", (channel, error) => channel.send({
+        content: "An error encountered: " + error
+    }
+
     ))
     .on("noRelated", queue => queue.textChannel.send("Can't find related video to play."))
     .on("playList", (message, queue, playlist, song) => message.channel.send(
@@ -178,7 +179,7 @@ client.on('messageCreate', async message => {
         }
     } else {
 
-        if (message.content.startsWith(prefix) ) {
+        if (message.content.startsWith(prefix)) {
 
             switch (command) {
 
@@ -226,29 +227,39 @@ client.on('messageCreate', async message => {
                 case 'loop':
                     client.music.get('loop').execute(client, message, args, Discord);
                     break;
+
+                case 'disconnect': client.distube.voices.leave(message);
+                    message.channel.send({ content: 'Successfully Disconnected' });
+
+                    break;
+                case 'dc': client.distube.voices.leave(message);
+                    message.channel.send({ content: 'Successfully Disconnected' })
+
+
+                    break;
                 case 'autoplay':
                     client.music.get('autoplay').execute(client, message, args, Discord);
                     break;
                 case 'np':
                     client.music.get('np').execute(client, message, args, Discord);
                     break;
-                case 'volume': if(!args[0]){
+                case 'volume': if (!args[0]) {
 
                     message.reply('Pls Specify Volume Level . Eg : p!volume 80')
-                } 
-                
-                
-                client.distube.setVolume(message, Number(args[0]));
-                const embed9 = new Discord.MessageEmbed()
-                .setColor('RANDOM')
-                .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/888335393542524948/wp4067216.png')
-                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                .setDescription(`Volume Set to : ${Number(args[0])}`)
+                }
 
 
-                .setFooter(client.user.username, client.user.displayAvatarURL())
-                .setTimestamp();
-                message.channel.send({ embeds: [embed9] });
+                    client.distube.setVolume(message, Number(args[0]));
+                    const embed9 = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/888335393542524948/wp4067216.png')
+                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                        .setDescription(`Volume Set to : ${Number(args[0])}`)
+
+
+                        .setFooter(client.user.username, client.user.displayAvatarURL())
+                        .setTimestamp();
+                    message.channel.send({ embeds: [embed9] });
                     break;
                 case 'bassboost':
                     client.music.get('bassboost').execute(client, message, args, Discord);
@@ -364,7 +375,7 @@ client.on('messageCreate', async message => {
                 case 'id': client.id.get('id').execute(client, message, args, Discord);
                     break;
 
-                
+
                 case 'meme': client.commands.get('meme').execute(message, args, Discord);
                     break;
                 case 'pes': message.reply('under maintenance')// client.commands.get('pes').execute(message, args, Discord);
