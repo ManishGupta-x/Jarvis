@@ -201,8 +201,11 @@ client.on('messageCreate', async message => {
                         message.reply('Pls mention song to search')
                     }if(searchsong){
                     
-                   const result = await client.distube.search(searchsong,10);
-                   console.log(result);
+                   const result = await client.distube.search(searchsong,{limit :15});
+                  
+                   message.channel.send(`**Choose an option from below**\n${
+                    result.map((song, i) => `**${i + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")
+                }\n*Enter anything else or wait 60 seconds to cancel*`);
                    await client.distube.play(message,result[0])
                     }
                     break;
