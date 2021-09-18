@@ -202,6 +202,7 @@ client.on('messageCreate', async message => {
                     }if(searchsong){
                     
                    const result = await client.distube.search(searchsong,10);
+                   console.log(result);
                    await client.distube.play(message,result[0])
                     }
                     break;
