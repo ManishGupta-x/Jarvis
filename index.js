@@ -66,7 +66,7 @@ client.distube
         message.channel.send(`**Choose an option from below**\n${
             results.map((song, i) => `**${i + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")
         }\n*Enter anything else or wait 60 seconds to cancel*`);
-    }).on("searchInvalidAnswer", (message) => message.channel.send(`Search Done!`))
+    }).on("searchDone", (message) => message.channel.send(`Search Done!`))
     .on("searchCancel", (message) => message.channel.send(`Searching canceled`))
     .on("searchInvalidAnswer", (message) => message.channel.send(`You answered an invalid `))
     .on("searchNoResult", (message, query) => message.channel.send(`No result found for ${query}!`))
