@@ -195,8 +195,8 @@ client.on('messageCreate', async message => {
                     client.commands.get('mysquad').execute(client, message, args, Discord);
                     break;
                 case 'search':
-                    const music = args.join(" ");
-                   const result = client.distube.search(music,10);
+                    const searchsong = args.join(" ");
+                   const result = client.distube.search(searchsong,10);
                    client.distube.play(message,result[0])
                     
                     break;
