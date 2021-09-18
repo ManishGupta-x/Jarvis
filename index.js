@@ -201,8 +201,8 @@ client.on('messageCreate', async message => {
                         message.reply('Pls mention song to search')
                     }if(searchsong){
                     
-                   const result = client.distube.search(searchsong,10);
-                   client.distube.play(message,result[0])
+                   const result = await client.distube.search(searchsong,10);
+                   await client.distube.play(message,result[0])
                     }
                     break;
 
