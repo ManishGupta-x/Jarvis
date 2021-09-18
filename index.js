@@ -287,7 +287,7 @@ client.on('messageCreate', async message => {
 
 
                     client.distube.setVolume(message, Number(args[0]));
-                    const embed9 = new Discord.MessageEmbed()
+                    const embed6 = new Discord.MessageEmbed()
                         .setColor('RANDOM')
                         .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/888335393542524948/wp4067216.png')
                         .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
@@ -296,7 +296,7 @@ client.on('messageCreate', async message => {
 
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-                    message.channel.send({ embeds: [embed9] });
+                    message.channel.send({ embeds: [embed6] });
                     break;
                 case 'volume': if (!args[0]) {
 
