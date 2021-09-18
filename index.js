@@ -196,20 +196,23 @@ client.on('messageCreate', async message => {
                     client.commands.get('mysquad').execute(client, message, args, Discord);
                     break;
                 case 'search': message.reply('Under Construction');
-                //     const searchsong = args.join(" ");
-                //     if(!searchsong){
-                //         message.reply('Pls mention song to search')
-                //     }if(searchsong){
+                    const searchsong = args.join(" ");
+                    if(!searchsong){
+                        message.reply('Pls mention song to search')
+                    }if(searchsong){
                     
-                //    const result = await client.distube.search(searchsong,{limit :15});
+                   const result = await client.distube.search(searchsong,{limit :15});
                   
-                //    message.channel.send(`**Choose an option from below**\n${
-                //     result.map((song, i) => `**${i + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")
-                // }\n*Enter anything else or wait 60 seconds to cancel*`);
-
-                //    await client.distube.play(message,result[0])
-                //     }
-                //     break;
+                   message.channel.send(`**Choose an option from below**\n${
+                    result.map((song, i) => `**${i + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")
+                }\n*Enter anything else or wait 60 seconds to cancel*`);
+                const filter = m => m.author.id == message.author.id;
+                const collected = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
+                const numSong = collected.first().content - 1;
+                await client.distube.play(message, result[numSong]);
+                  
+                    }
+                    break;
 
                 case 'play':
                     if (!args[0]) {
