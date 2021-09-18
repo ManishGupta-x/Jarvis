@@ -22,9 +22,9 @@ module.exports ={
             {name : "🎧 p!play [song name] " , value : ` •  Plays the song mentioned`},
             {name : "🎧 p!np " , value : ` • Shows current song playing! Button Access! `},
             {name : "🎧 p!loop song/queue" , value : ` • Loops song Queue `},
-            {name : "🎧 p!pause/resume/stop" , value : ` •  Pause/Resume/stop Songs`},
+            {name : "🎧 p!pause/resume/stop/skip" , value : ` •  Pause/Resume/stop/skip Songs`},
             {name : "🎧 p!queue" , value : ` •  Gives Current queue`},
-            {name : "🎧 p!skip" , value : ` •  Skips Current song to next one`},
+            {name : "🎧 p!search" , value : ` •  To search song`},
             {name : "🎧 Filters Available " , value : ` •  Bassboost , 8d , Echo , Nightcore, Vaporwave `},
             {name : "🎧 p!volume [value] " , value : ` • Sets Volume to the value . Eg ! p!volume 70 `},
             
