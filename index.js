@@ -61,6 +61,10 @@ client.distube
             .setTimestamp();
 
         queue.textChannel.send({ embeds: [addsong] });
+    }).on("searchResult", (message, results) => {
+        message.channel.send(`**Choose an option from below**\n${
+            results.map((song, i) => `**${i + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")
+        }\n*Enter anything else or wait 60 seconds to cancel*`);
     })
     
     .on("noRelated", queue => queue.textChannel.send("Can't find related video to play."))
@@ -189,7 +193,8 @@ client.on('messageCreate', async message => {
                     client.commands.get('mysquad').execute(client, message, args, Discord);
                     break;
                 case 'search':
-                    client.commands.get('search').execute(client, message, args, Discord);
+                    client.distube.search(message,10);
+                    
                     break;
 
                 case 'play':
