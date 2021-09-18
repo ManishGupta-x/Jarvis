@@ -66,7 +66,9 @@ client.distube
             results.map((song, i) => `**${i + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")
         }\n*Enter anything else or wait 60 seconds to cancel*`);
     })
-    
+    .on("searchCancel", (message) => message.channel.send(`Searching canceled`))
+    .on("searchInvalidAnswer", (message) => message.channel.send(`You answered an invalid `))
+    .on("searchNoResult", (message, query) => message.channel.send(`No result found for ${query}!`))
     .on("noRelated", queue => queue.textChannel.send("Can't find related video to play."))
     
 
