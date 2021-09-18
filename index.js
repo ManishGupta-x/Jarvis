@@ -196,8 +196,8 @@ client.on('messageCreate', async message => {
                     break;
                 case 'search':
                     const music = args.join(" ");
-                   const result = client.distube.search(message,10);
-                   client.distube.play(music,result[0])
+                   const result = client.distube.search(music,10);
+                   client.distube.play(message,result[0])
                     
                     break;
 
