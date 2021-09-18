@@ -247,6 +247,24 @@ client.on('messageCreate', async message => {
                 case 'np':
                     client.music.get('np').execute(client, message, args, Discord);
                     break;
+                    case 'seek': if (!args[0]) {
+
+                        message.reply('Provide time to seek in secs')
+                    }
+    
+                    let queue = await client.distube.getQueue(message);
+                        client.distube.seek(message, Number(args[0]));
+                        const embed9 = new Discord.MessageEmbed()
+                            .setColor('RANDOM')
+                            .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/888335393542524948/wp4067216.png')
+                            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                            .setDescription(`At: \`${queue.currentTime}\``)
+    
+    
+                            .setFooter(client.user.username, client.user.displayAvatarURL())
+                            .setTimestamp();
+                        message.channel.send({ embeds: [embed9] });
+                        break
                 case 'volume': if (!args[0]) {
 
                     message.reply('Pls Specify Volume Level . Eg : p!volume 80')
