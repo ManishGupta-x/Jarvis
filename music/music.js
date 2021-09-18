@@ -21,7 +21,7 @@ module.exports ={
             
             {name : "🎧 p!play [song name] " , value : ` •  Plays the song mentioned`},
             {name : "🎧 p!np " , value : ` • Shows current song playing! Button Access! `},
-            {name : "🎧 p!loop" , value : ` • Loops queue if typed 1st time , 2nd time Loops song `},
+            {name : "🎧 p!loop song/queue" , value : ` • Loops song Queue `},
             {name : "🎧 p!pause/resume/stop" , value : ` •  Pause/Resume/stop Songs`},
             {name : "🎧 p!queue" , value : ` •  Gives Current queue`},
             {name : "🎧 p!skip" , value : ` •  Skips Current song to next one`},

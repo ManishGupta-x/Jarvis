@@ -66,7 +66,7 @@ client.distube
         message.channel.send(`**Choose an option from below**\n${
             results.map((song, i) => `**${i + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")
         }\n*Enter anything else or wait 60 seconds to cancel*`);
-    })
+    }).on("searchInvalidAnswer", (message) => message.channel.send(`Search Done!`))
     .on("searchCancel", (message) => message.channel.send(`Searching canceled`))
     .on("searchInvalidAnswer", (message) => message.channel.send(`You answered an invalid `))
     .on("searchNoResult", (message, query) => message.channel.send(`No result found for ${query}!`))
@@ -258,7 +258,7 @@ client.on('messageCreate', async message => {
                             .setColor('RANDOM')
                             .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/888335393542524948/wp4067216.png')
                             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                            .setDescription(`At: \`${queue.currentTime}\``)
+                            .setDescription(`At: \`${queue.formattedCurrentTime}\``)
     
     
                             .setFooter(client.user.username, client.user.displayAvatarURL())
