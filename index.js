@@ -210,8 +210,12 @@ client.on('messageCreate', async message => {
                 const filter = m => m.author.id == message.author.id;
                 const collected = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
                 const numSong = collected.first().content - 1;
+                if(numSong >15 || numSong == NaN){
+                         message.reply(`Invalid Song id`)
+                         return;
+                }else{
                 await client.distube.play(message, result[numSong]);
-                  
+                }
                     }
                     break;
 
@@ -413,10 +417,8 @@ client.on('messageCreate', async message => {
 
                 case 'meme': client.commands.get('meme').execute(message, args, Discord);
                     break;
-                case 'pes': message.reply('under maintenance')// client.commands.get('pes').execute(message, args, Discord);
-                    break;
-                case 'help-match': client.help.get('help-match').execute(message, args, Discord);
-                    break;
+                
+               
 
                 case 'lngrules': if (message.guild.id == '554275795280068619') { client.commands.get('lngrules').execute(message, args, Discord); }
 
