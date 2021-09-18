@@ -26,7 +26,7 @@ client.distube
             .setTitle(`Now Playing`)
             .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\` `)
 
-            .setFooter(client.user.username, client.user.displayAvatarURL())
+            .setFooter(`p!np For More Features`, client.user.displayAvatarURL())
             .setTimestamp();
 
 
@@ -57,7 +57,7 @@ client.distube
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
             .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\``)
 
-            .setFooter(client.user.username, client.user.displayAvatarURL())
+            .setFooter(`p!music for Command List`, client.user.displayAvatarURL())
             .setTimestamp();
 
         queue.textChannel.send({ embeds: [addsong] });
@@ -196,6 +196,7 @@ client.on('messageCreate', async message => {
                     client.commands.get('mysquad').execute(client, message, args, Discord);
                     break;
                 case 'search': 
+                if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
                     const searchsong = args.join(" ");
                     if(!searchsong){
                         message.reply('Pls mention song to search')
