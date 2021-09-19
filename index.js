@@ -266,7 +266,7 @@ client.on('messageCreate', async message => {
 
                     message.reply('Provide time to seek in secs')
                 }
-
+                if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
                     let queue = await client.distube.getQueue(message);
                     client.distube.seek(message, Number(args[0]));
                     const embed8 = new Discord.MessageEmbed()
@@ -287,7 +287,7 @@ client.on('messageCreate', async message => {
 
                     message.reply('Max Volume is 100')
                 }if(args[0] <= 100){
-
+                    if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
                     client.distube.setVolume(message, Number(args[0]));
                     const embed6 = new Discord.MessageEmbed()
                         .setColor('RANDOM')
@@ -302,7 +302,9 @@ client.on('messageCreate', async message => {
 
                 }
                     break;
-                case 'volume': if (!args[0] || args[0] == NaN) {
+                case 'volume': 
+                if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
+                if (!args[0] || args[0] == NaN) {
 
                     message.reply('Pls Specify Volume Level . Eg : p!volume 80')
                 }if(args[0] > 100){
