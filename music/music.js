@@ -25,7 +25,7 @@ module.exports ={
             {name : "🎧 p!pause/resume/stop/skip" , value : ` •  Pause/Resume/stop/skip Songs`},
             {name : "🎧 p!queue" , value : ` •  Gives Current queue`},
             {name : "🎧 p!search" , value : ` •  To search song`},
-            {name : "🎧 Filters Available " , value : ` •  Bassboost , 8d , Echo , Nightcore, Vaporwave `},
+            {name : "🎧 Filters Available " , value : ` •  Bassboost , 8d , Echo , Nightcore, Vaporwave To run \`p!bassboost\``},
             {name : "🎧 p!volume [value] " , value : ` • Sets Volume to the value . Eg ! p!volume 70 `},
             
              

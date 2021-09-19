@@ -283,8 +283,10 @@ client.on('messageCreate', async message => {
                 case 'vol': if (!args[0]) {
 
                     message.reply('Pls Specify Volume Level . Eg : p!volume 80')
-                }
+                }if(args[0] > 100){
 
+                    message.reply('Max Volume is 100')
+                }if(args[0] <= 100){
 
                     client.distube.setVolume(message, Number(args[0]));
                     const embed6 = new Discord.MessageEmbed()
@@ -297,12 +299,16 @@ client.on('messageCreate', async message => {
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
                     message.channel.send({ embeds: [embed6] });
+
+                }
                     break;
-                case 'volume': if (!args[0]) {
+                case 'volume': if (!args[0] || args[0] == NaN) {
 
                     message.reply('Pls Specify Volume Level . Eg : p!volume 80')
-                }
+                }if(args[0] > 100){
 
+                    message.reply('Max Volume is 100')
+                }if(args[0] <= 100){
 
                     client.distube.setVolume(message, Number(args[0]));
                     const embed9 = new Discord.MessageEmbed()
@@ -315,6 +321,11 @@ client.on('messageCreate', async message => {
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
                     message.channel.send({ embeds: [embed9] });
+
+                }
+
+
+                
                     break;
                 case 'bassboost':
                     client.music.get('bassboost').execute(client, message, args, Discord);
