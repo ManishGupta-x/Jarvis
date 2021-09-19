@@ -69,7 +69,7 @@ module.exports ={
 
         const filter = (interaction) => interaction.isButton() && interaction.customId === 'skip'|| interaction.customId === '8d' || interaction.customId === 'BassBoost' || interaction.customId === 'Nightcore' ;
 
-        const collector = message.channel.createMessageComponentCollector({ filter, time: 300000 });
+        const collector = message.channel.createMessageComponentCollector({ filter, time: 180000 });
         collector.on('collect', async collected => {
 
 
