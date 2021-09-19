@@ -149,7 +149,9 @@ module.exports.timedcheck = undefined;
 module.exports.val = 0;
 j = 0;
 var d = 0;
-
+client.on('guildCreate', guild => {
+    guild.systemChannel.send(`Hello, I'm Jarvis a Pro Music Bot. Thanks for inviting me, Type \`p!music\` To get started`)
+  });
 client.on('messageCreate', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
