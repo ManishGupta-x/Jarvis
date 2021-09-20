@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"], intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES', 'GUILD_VOICE_STATES', 'GUILD_MESSAGE_REACTIONS'] });
 const fetch = require("node-fetch").default;
 const { DisTube } = require('distube');
-client.distube = new DisTube(client, { emitNewSongOnly: true, customFilters: { "8d": "apulsator=hz=0.08" }, leaveOnFinish: false, leaveOnStop: false, youtubeCookie: 'VISITOR_INFO1_LIVE=VizaEEKSaKU; CONSENT=YES+IN.en-GB+202003; HSID=AkXW3VgkDmwLdXppv; SSID=ABztr9AiYhzU3cims; APISID=ISlgWkeBCPS4FVpU/AvUkKq2Y5as3oxS5w; SAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; __Secure-1PAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; __Secure-3PAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; PREF=f6=40000000&volume=100&tz=Asia.Calcutta&al=en&f5=30000; SID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzm-75v8zEUbkM-Fo42HHtsAw.; __Secure-1PSID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzmSwyewdsV5rUu2dwol9JkHQ.; __Secure-3PSID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzm5Yk-KzCTNlH-9DSJJAMa2g.; LOGIN_INFO=AFmmF2swRQIhAOAj5hxBaepKf2QWAhyxRsQ5qVM6AsWFNCuhOrLqYbwdAiAgEelIbJr9T2CTnJ_r_A1CpNZOhD5lH083xqIr83DoOQ:QUQ3MjNmdzl3dnFBalF2d1F6N3gxQ1F0cG9CV2hSMXZaTkpRU1NWN0RialZqVXNDcnlkUlNYODJLbFFuNnVnOXVaS2xVaWpCc2JpUXFJbE1EVGpzRlJhZzhqMmR0UXFZRnJzR1dzUW5jdG14UE82MjdzVlJzMGt6UF9mcVlpYnEzQklEbjFTQnFwa3VjOGRzS2FaNjdLWWhtMGpUYmtJSXFB; YSC=__AMedv__lI; SIDCC=AJi4QfH4YiFJJLPF53VeLb73e5CmQ1rF-8jYPZBKsDwUPGX-QBv06-a44iNU2Zvf-SXwz8O_7Jco; __Secure-3PSIDCC=AJi4QfGxy3tYK9mYe4YxsvsB5__Q5dbyTF5LxF1JEj6Nlomf4xxUeDIkX7FrjZuxelpdByFZ9WyK' });
+client.distube = new DisTube(client, { emitNewSongOnly: true, customFilters: { "8d": "apulsator=hz=0.08" }, leaveOnFinish: false, emptyCooldown: 60, leaveOnStop: false, youtubeCookie: 'VISITOR_INFO1_LIVE=VizaEEKSaKU; CONSENT=YES+IN.en-GB+202003; HSID=AkXW3VgkDmwLdXppv; SSID=ABztr9AiYhzU3cims; APISID=ISlgWkeBCPS4FVpU/AvUkKq2Y5as3oxS5w; SAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; __Secure-1PAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; __Secure-3PAPISID=T679YjYmlQBtggOQ/ARd21Lsm08R60aQxc; PREF=f6=40000000&volume=100&tz=Asia.Calcutta&al=en&f5=30000; SID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzm-75v8zEUbkM-Fo42HHtsAw.; __Secure-1PSID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzmSwyewdsV5rUu2dwol9JkHQ.; __Secure-3PSID=BgjH_Kc2ABFMQu5bLy2syWFiJtPl2bOqI4gLDwmVnCXLmjzm5Yk-KzCTNlH-9DSJJAMa2g.; LOGIN_INFO=AFmmF2swRQIhAOAj5hxBaepKf2QWAhyxRsQ5qVM6AsWFNCuhOrLqYbwdAiAgEelIbJr9T2CTnJ_r_A1CpNZOhD5lH083xqIr83DoOQ:QUQ3MjNmdzl3dnFBalF2d1F6N3gxQ1F0cG9CV2hSMXZaTkpRU1NWN0RialZqVXNDcnlkUlNYODJLbFFuNnVnOXVaS2xVaWpCc2JpUXFJbE1EVGpzRlJhZzhqMmR0UXFZRnJzR1dzUW5jdG14UE82MjdzVlJzMGt6UF9mcVlpYnEzQklEbjFTQnFwa3VjOGRzS2FaNjdLWWhtMGpUYmtJSXFB; YSC=__AMedv__lI; SIDCC=AJi4QfH4YiFJJLPF53VeLb73e5CmQ1rF-8jYPZBKsDwUPGX-QBv06-a44iNU2Zvf-SXwz8O_7Jco; __Secure-3PSIDCC=AJi4QfGxy3tYK9mYe4YxsvsB5__Q5dbyTF5LxF1JEj6Nlomf4xxUeDIkX7FrjZuxelpdByFZ9WyK' });
 
 var flag = 0;
 const emitter = require('events')
@@ -151,7 +151,7 @@ j = 0;
 var d = 0;
 client.on('guildCreate', guild => {
     guild.systemChannel.send(`Hello, I'm Jarvis a Pro Music Bot. Thanks for inviting me, Type \`p!music\` To get started`)
-  });
+});
 client.on('messageCreate', async message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
@@ -268,7 +268,7 @@ client.on('messageCreate', async message => {
 
                     message.reply('Provide time to seek in secs')
                 }
-                if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
+                    if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
                     let queue = await client.distube.getQueue(message);
                     client.distube.seek(message, Number(args[0]));
                     const embed8 = new Discord.MessageEmbed()
@@ -285,10 +285,10 @@ client.on('messageCreate', async message => {
                 case 'vol': if (!args[0]) {
 
                     message.reply('Pls Specify Volume Level . Eg : p!volume 80')
-                }if(args[0] > 100){
+                } if (args[0] > 100) {
 
                     message.reply('Max Volume is 100')
-                }if(args[0] <= 100){
+                } if (args[0] <= 100) {
                     if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
                     client.distube.setVolume(message, Number(args[0]));
                     const embed6 = new Discord.MessageEmbed()
@@ -304,32 +304,32 @@ client.on('messageCreate', async message => {
 
                 }
                     break;
-                case 'volume': 
-                if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
-                if (!args[0] || args[0] == NaN) {
+                case 'volume':
+                    if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
+                    if (!args[0] || args[0] == NaN) {
 
-                    message.reply('Pls Specify Volume Level . Eg : p!volume 80')
-                }if(args[0] > 100){
+                        message.reply('Pls Specify Volume Level . Eg : p!volume 80')
+                    } if (args[0] > 100) {
 
-                    message.reply('Max Volume is 100')
-                }if(args[0] <= 100){
+                        message.reply('Max Volume is 100')
+                    } if (args[0] <= 100) {
 
-                    client.distube.setVolume(message, Number(args[0]));
-                    const embed9 = new Discord.MessageEmbed()
-                        .setColor('RANDOM')
-                        .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/888335393542524948/wp4067216.png')
-                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                        .setDescription(`Volume Set to : ${Number(args[0])}`)
-
-
-                        .setFooter(client.user.username, client.user.displayAvatarURL())
-                        .setTimestamp();
-                    message.channel.send({ embeds: [embed9] });
-
-                }
+                        client.distube.setVolume(message, Number(args[0]));
+                        const embed9 = new Discord.MessageEmbed()
+                            .setColor('RANDOM')
+                            .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/888335393542524948/wp4067216.png')
+                            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                            .setDescription(`Volume Set to : ${Number(args[0])}`)
 
 
-                
+                            .setFooter(client.user.username, client.user.displayAvatarURL())
+                            .setTimestamp();
+                        message.channel.send({ embeds: [embed9] });
+
+                    }
+
+
+
                     break;
                 case 'bassboost':
                     client.music.get('bassboost').execute(client, message, args, Discord);
@@ -563,12 +563,13 @@ client.on('messageCreate', async message => {
             switch (message.content) {
 
                 case 'hey jarvis': if (message.author.id == '550267183503114250' || message.guild.id == '730714810064306188') { message.reply("Yes Boss 🙃") }
-                else message.channel.send({content :'Hn bol bsdk 😒'})
+                else message.channel.send({ content: 'Hn bol bsdk 😒' })
                     break;
                 case 'jarvis': if (message.author.id == '550267183503114250' || message.author.id == '761159077639356446' && message.guild.id == '730714810064306188') { message.reply("Yes Boss 🙃") }
-                else if(message.author.id == '761159077639356446') {
-                message.channel.send({content : 'Hn bolo Janeman 🙃'})}
-                else message.channel.send({content :'Hn bol bsdk 😒'})
+                else if (message.author.id == '761159077639356446') {
+                    message.channel.send({ content: 'Hn bolo Janeman 🙃' })
+                }
+                else message.channel.send({ content: 'Hn bol bsdk 😒' })
 
                     break;
                 case "adnan short story": message.channel.send("https://cdn.discordapp.com/attachments/794240262972243979/860556430490468362/VID_20210701_195116_318.mp4")
