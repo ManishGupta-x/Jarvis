@@ -562,11 +562,14 @@ client.on('messageCreate', async message => {
         } else {
             switch (message.content) {
 
-                case 'hey jarvis': if (message.author.id == '550267183503114250' || message.guild.id == '730714810064306188') { message.channel.send("Yes Boss 🙃") }
-                else message.channel.send('Hn bol bsdk 😒')
+                case 'hey jarvis': if (message.author.id == '550267183503114250' || message.guild.id == '730714810064306188') { message.reply("Yes Boss 🙃") }
+                else message.channel.send({content :'Hn bol bsdk 😒'})
                     break;
-                case 'jarvis': if (message.author.id == '550267183503114250' || message.guild.id == '730714810064306188') { message.channel.send("Yes Boss 🙃") }
-                else message.channel.send('Hn bol bsdk 😒')
+                case 'jarvis': if (message.author.id == '550267183503114250' || message.author.id == '761159077639356446' && message.guild.id == '730714810064306188') { message.reply("Yes Boss 🙃") }
+                else if(message.author.id == '761159077639356446') {
+                message.channel.send({content : 'Hn bolo Janeman 🙃'})}
+                else message.channel.send({content :'Hn bol bsdk 😒'})
+
                     break;
                 case "adnan short story": message.channel.send("https://cdn.discordapp.com/attachments/794240262972243979/860556430490468362/VID_20210701_195116_318.mp4")
                     break;
