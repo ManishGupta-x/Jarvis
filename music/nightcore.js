@@ -5,7 +5,9 @@ module.exports ={
     execute(client,message,args, Discord){
         
         if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
-        let filter = client.distube.setFilter(message, 'nightcore');
+        let queue = await client.distube.getQueue(message);
+      
+        if(queue){ let filter = client.distube.setFilter(message, 'nightcore');
         const embed = new Discord.MessageEmbed()
         .setColor('#F0074F')
         .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/888053234273497179/1482252.png')
@@ -16,8 +18,10 @@ module.exports ={
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp();
         message.channel.send({embeds: [embed]});
-
-        
+    }else {
+            message.reply('No Song playing')
+        }
+      
 
 
 

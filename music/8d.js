@@ -5,7 +5,8 @@ module.exports ={
     execute(client,message,args, Discord){
         
         if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
-        let filter = client.distube.setFilter(message,'8d');
+        let queue = await client.distube.getQueue(message);
+      if(queue) { let filter = client.distube.setFilter(message,'8d');
 
         const embed = new Discord.MessageEmbed()
         .setColor('#F0074F')
@@ -18,7 +19,10 @@ module.exports ={
         .setTimestamp();
         message.channel.send({embeds: [embed]});
 
-        
+    } else {
+        message.reply('No Song playing')
+    }
+
 
 
     }  
