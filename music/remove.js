@@ -20,9 +20,8 @@ module.exports = {
 
         } else if (queue) {
 
-            var valuedelete = args[0] - 1;
-            
-             queue.songs.slice(valuedelete,1);
+            const numSong = args[0] - 1;
+            delete queue.songs[numSong];
 
 
             const embed9 = new Discord.MessageEmbed()
