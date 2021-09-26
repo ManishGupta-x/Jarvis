@@ -287,6 +287,9 @@ client.on('messageCreate', async message => {
                 case 'np':
                     client.music.get('np').execute(client, message, args, Discord);
                     break;
+                case 'remove':
+                    client.music.get('remove').execute(client, message, args, Discord);
+                    break;
                 case 'seek': if (!args[0]) {
 
                     message.reply('Provide time to seek in secs')
