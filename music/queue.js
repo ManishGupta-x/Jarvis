@@ -23,15 +23,12 @@ module.exports ={
             .setDescription(`**Current Queue**\n${queue.songs.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}\n\n${status(queue)}`)
 
 
-            .setFooter(client.user.username, client.user.displayAvatarURL())
+            .setFooter(`Total Queue Time : \`${queue.formattedDuration}\``)
             .setTimestamp();
         message.channel.send({ embeds: [embed9] });
             
             
-            message.channel.send({content : 'Current queue:\n' + queue.songs.map((song, id) =>
-                `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``
-            ).slice(0, 15).join("\n")});
-            message.channel.send(`Total Queue Time : \`${queue.formattedDuration}\``)
+             
         }
 
         }
