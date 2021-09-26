@@ -17,7 +17,7 @@ module.exports ={
             message.reply('No Song in Queue !')
         }else{
         const song = queue.songs[0];
-        
+        const status = (queue) => `Volume: \`${queue.volume}%\` | Loop: \`${queue.repeatMode ? queue.repeatMode == 2 ? "Repeat queue" : "Repeat song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``;
        
         const row = new MessageActionRow()
             .addComponents(
@@ -45,7 +45,7 @@ module.exports ={
                 .setThumbnail(`${mu}`)
                 .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
                 .setTitle(`Now Playing`)
-                .setDescription(`${song.name} | Requested by: ${song.user} || at \`${queue.formattedCurrentTime}\`/ \`${song.formattedDuration}\` \n`)
+                .setDescription(`${song.name} | Requested by: ${song.user} || at \`${queue.formattedCurrentTime}\`/ \`${song.formattedDuration}\` \n\n\n${status(queue)}`)
                 .setFooter(client.user.username, client.user.displayAvatarURL())
                 .setTimestamp();
                 message.channel.send({embeds: [embed1] ,components : [row]});
@@ -56,7 +56,7 @@ module.exports ={
                 .setThumbnail(`${mu}`)
                 .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
                 .setTitle(`Now Playing`)
-                .setDescription(`${song.name} | Requested by: ${song.user} || at \` ${queue.formattedCurrentTime}\`/ \`${song.formattedDuration}\` \n`)
+                .setDescription(`${song.name} | Requested by: ${song.user} || at \` ${queue.formattedCurrentTime}\`/ \`${song.formattedDuration}\` \n\n${status(queue)}`)
                 .addField("Upcoming Song :", `${upcomingsong.name} | Requested by: ${upcomingsong.user}\` || ${upcomingsong.formattedDuration}\``)
                 .setFooter(client.user.username, client.user.displayAvatarURL())
                 .setTimestamp();
