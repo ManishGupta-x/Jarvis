@@ -307,6 +307,9 @@ client.on('messageCreate', async message => {
                 case 'np':
                     client.music.get('np').execute(client, message, args, Discord);
                     break;
+                    case 'lyrics':
+                        client.music.get('lyrics').execute(client, message, args, Discord);
+                        break;
                 case 'remove':
                     client.music.get('remove').execute(client, message, args, Discord);
                     break;
