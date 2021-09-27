@@ -47,7 +47,8 @@ module.exports = {
                     .setDescription(`${y[1]}\n\n${status(queue)}`)
                     .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
                     .setTimestamp();
-                await message.channel.send({ embeds: [embed9, embed10] });
+               message.channel.send({ embeds: [embed9] })
+               await message.channel.send({embeds : [embed10]})
                 if (y[2] && !y[3]) {
 
                     const embed9 = new Discord.MessageEmbed()
