@@ -17,57 +17,110 @@ module.exports = {
             const status = (queue) => `Volume: \`${queue.volume}%\` | Loop: \`${queue.repeatMode ? queue.repeatMode == 2 ? "Repeat queue" : "Repeat song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``;
 
 
-         let y =  Util.splitMessage(`**Current Queue**\n\n${queue.songs.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}`, { maxLength: 4000 })
+            let y = Util.splitMessage(`**Current Queue**\n\n${queue.songs.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}`, { maxLength: 4000 })
 
-if(!y[1]){
-            const embed9 = new Discord.MessageEmbed()
-                .setColor('RANDOM')
-                .setThumbnail(`${mu}`)
-                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                .setDescription(`${y[0]}\n\n${status(queue)}`)
+            if (!y[1]) {
+                const embed9 = new Discord.MessageEmbed()
+                    .setColor('RANDOM')
+                    .setThumbnail(`${mu}`)
+                    .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                    .setDescription(`${y[0]}\n\n${status(queue)}`)
+                    .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+                    .setTimestamp();
+                await message.channel.send({ embeds: [embed9] })
+            }
 
+            if (y[1] && !y[2]) {
 
-                .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
-                .setTimestamp();
-            await message.channel.send({ embeds: [embed9] })
-};
+                const embed9 = new Discord.MessageEmbed()
+                    .setColor('RANDOM')
+                    .setThumbnail(`${mu}`)
+                    .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                    .setDescription(`${y[0]}`)
+                    .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+                    .setTimestamp();
 
-            if (y[1]) {
                 const embed10 = new Discord.MessageEmbed()
                     .setColor('RANDOM')
                     .setThumbnail(`${mu}`)
                     .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                    .setDescription(`${y[1]}`)
-
-
+                    .setDescription(`${y[1]}\n\n${status(queue)}`)
                     .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
                     .setTimestamp();
-                    await   message.channel.send({ embeds: [embed10] });
-            }
+                await message.channel.send({ embeds: [embed9, embed10] });
+                if (y[2] && !y[3]) {
 
-            if (y[2]) {
-                const embed12 = new Discord.MessageEmbed()
-                    .setColor('RANDOM')
-                    .setThumbnail(`${mu}`)
-                    .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                    .setDescription(`${y[2]}`)
+                    const embed9 = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setThumbnail(`${mu}`)
+                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                        .setDescription(`${y[0]}`)
+                        .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+                        .setTimestamp();
 
-
-                    .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
-                    .setTimestamp();
-                    await  message.channel.send({ embeds: [embed12] });
-            }
-            if (y[3]) {
-                const embed11 = new Discord.MessageEmbed()
-                    .setColor('RANDOM')
-                    .setThumbnail(`${mu}`)
-                    .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                    .setDescription(`${y[3]}`)
+                    const embed10 = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setThumbnail(`${mu}`)
+                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                        .setDescription(`${y[1]}`)
+                        .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+                        .setTimestamp();
 
 
-                    .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
-                    .setTimestamp();
-               await  message.channel.send({ embeds: [embed11] });
+                    const embed12 = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setThumbnail(`${mu}`)
+                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                        .setDescription(`${y[2]}\n\n${status(queue)}`)
+                        .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+                        .setTimestamp();
+                    await message.channel.send({ embeds: [embed9, embed10, embed12] });
+                }
+                if (y[3]) {
+
+                    const embed9 = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setThumbnail(`${mu}`)
+                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                        .setDescription(`${y[0]}`)
+                        .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+                        .setTimestamp();
+
+                    const embed10 = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setThumbnail(`${mu}`)
+                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                        .setDescription(`${y[1]}`)
+                        .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+                        .setTimestamp();
+
+
+                    const embed12 = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setThumbnail(`${mu}`)
+                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                        .setDescription(`${y[2]}`)
+                        .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+                        .setTimestamp();
+
+
+                    const embed14 = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setThumbnail(`${mu}`)
+                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                        .setDescription(`${y[3]}\n\n${status(queue)}`)
+                        .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+                        .setTimestamp();
+                    await message.channel.send({ embeds: [embed9, embed10, embed12, embed14] });
+                }
+
+
+
+
+
+
+
+
             }
 
 
