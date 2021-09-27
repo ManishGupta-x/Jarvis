@@ -228,8 +228,21 @@ client.on('messageCreate', async message => {
 
                         const result = await client.distube.search(searchsong, { limit: 15 });
 
-                        message.channel.send(`**Choose an option from below**\n${result.map((song, i) => `**${i + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")
-                            }\n*Enter anything else or wait 60 seconds to cancel*`);
+                        const embed9 = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setThumbnail(`${mu}`)
+                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                        .setDescription(`**Choose an Option from Below : **\n\n${result.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}`)
+            
+            
+                        .setFooter(`Enter anything else or wait 60 seconds to cancel`)
+                        .setTimestamp();
+
+                        message.channel.send({ embeds: [embed9] });                 
+
+
+
+
                         const filter = m => m.author.id == message.author.id;
                         const collected = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
                         const numSong = collected.first().content - 1;
