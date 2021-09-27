@@ -16,7 +16,7 @@ module.exports = {
     if (!queue ) { message.reply('No song Playing')}      
     let lyrics = null;
     //define the temporary Embed
-    let temEmbed = new MessageEmbed()
+    let temEmbed = new Discord.MessageEmbed()
     .setAuthor("Searching...", "https://cdn.discordapp.com/emojis/757632044632375386.gif?v=1").setFooter("Lyrics")
     .setColor("#ffe700")
     //send it and safe it in a variable
@@ -33,7 +33,7 @@ module.exports = {
       lyrics = `No lyrics found for ${queue.songs[0].title}.`;
     }
     //define lyrics Embed
-    let lyricsEmbed = new MessageEmbed()
+    let lyricsEmbed = new Discord.MessageEmbed()
       .setTitle("📑 Lyrics")
       .setDescription(lyrics)
       .setColor("#ffe700")
