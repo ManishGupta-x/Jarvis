@@ -29,7 +29,22 @@ module.exports = {
 
                 .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
                 .setTimestamp();
-            await message.channel.send({ embeds: [embed9] });
+            await message.channel.send({ embeds: [embed9] }).catch(error => {
+
+                const embed = new Discord.MessageEmbed()
+                .setColor('RANDOM')
+                .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                .setDescription(`Queue is Too long to display -_-`)
+
+
+                .setFooter(client.user.username, client.user.displayAvatarURL())
+                .setTimestamp();
+            message.channel.send({ embeds: [embed] });
+
+
+            }
+                );
 
             // if (y[1]) {
             //     const embed10 = new Discord.MessageEmbed()
