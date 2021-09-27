@@ -45,6 +45,32 @@ module.exports ={
             message.channel.send({ embeds: [embed10] });
         }
             
+        if(y[2]){
+            const embed12 = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setThumbnail(`${mu}`)
+            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+            .setDescription(`${y[2]}`)
+
+
+            .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+            .setTimestamp();
+            message.channel.send({ embeds: [embed12] });
+        }
+        if(y[3]){
+            const embed11 = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setThumbnail(`${mu}`)
+            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+            .setDescription(`${y[3]}`)
+
+
+            .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+            .setTimestamp();
+            message.channel.send({ embeds: [embed11] });
+        }
+
+            
             
              
         }
