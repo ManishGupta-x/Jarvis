@@ -15,22 +15,35 @@ module.exports ={
     }else if(queue)
         {         
             
-            const status = (queue) => `Volume: \`${queue.volume}%\` | Loop: \`${queue.repeatMode ? queue.repeatMode == 2 ? "Repeat queue" : "Repeat song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``;
+            const status = async (queue) => `Volume: \`${queue.volume}%\` | Loop: \`${queue.repeatMode ? queue.repeatMode == 2 ? "Repeat queue" : "Repeat song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``;
             
            
-            let y = await Util.splitMessage(`**Current Queue**\n\n${queue.songs.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}\n\n${status(queue)}`, { maxLength: 1000 });
+            let y = await Util.splitMessage(`**Current Queue**\n\n${queue.songs.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}\n\n${status(queue)}`, { maxLength: 4000 });
             
             
             const embed9 = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setThumbnail(`${mu}`)
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setDescription(`${y}`)
+            .setDescription(`${y[0]}`)
 
 
             .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
             .setTimestamp();
         message.channel.send({ embeds: [embed9] });
+
+        if(y[1]){
+            const embed10 = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setThumbnail(`${mu}`)
+            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+            .setDescription(`${y[1]}`)
+
+
+            .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+            .setTimestamp();
+            message.channel.send({ embeds: [embed10] });
+        }
             
             
              
