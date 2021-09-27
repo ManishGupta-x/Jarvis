@@ -29,7 +29,7 @@ module.exports = {
 
                 .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
                 .setTimestamp();
-            message.channel.send({ embeds: [embed9] });
+            await message.channel.send({ embeds: [embed9] });
 
             if (y[1]) {
                 const embed10 = new Discord.MessageEmbed()
@@ -41,7 +41,7 @@ module.exports = {
 
                     .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
                     .setTimestamp();
-                message.channel.send({ embeds: [embed10] });
+                    await   message.channel.send({ embeds: [embed10] });
             }
 
             if (y[2]) {
@@ -54,7 +54,7 @@ module.exports = {
 
                     .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
                     .setTimestamp();
-                message.channel.send({ embeds: [embed12] });
+                    await  message.channel.send({ embeds: [embed12] });
             }
             if (y[3]) {
                 const embed11 = new Discord.MessageEmbed()
@@ -66,7 +66,7 @@ module.exports = {
 
                     .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
                     .setTimestamp();
-                message.channel.send({ embeds: [embed11] });
+                    await   message.channel.send({ embeds: [embed11] });
             }
 
 
