@@ -66,7 +66,7 @@ module.exports = {
 
                     .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
                     .setTimestamp();
-                    await   message.channel.send({ embeds: [embed11] });
+               await  message.channel.send({ embeds: [embed11] });
             }
 
 
