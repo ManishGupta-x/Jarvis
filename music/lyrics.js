@@ -22,16 +22,18 @@ module.exports = {
     //send it and safe it in a variable
     let result = await message.channel.send({embeds: [temEmbed]})
     //try to find lyrics
-    try {
+    
       //use lyricsfinder
-      lyrics = await lyricsFinder(queue.songs[0].title,"");
+      lyrics = await lyricsFinder(queue.songs[0].title,"").catch(error => {
+        {
+            lyrics = `No lyrics found for ${queue.songs[0].title}.`;
+          }
+      });
       //If no Lyrics define no lyrics
       if (!lyrics) lyrics = `No lyrics found for ${queue.songs[0].title}.`;
-    }
+    
     //catch any error
-    catch (error) {
-      lyrics = `No lyrics found for ${queue.songs[0].title}.`;
-    }
+
     //define lyrics Embed
     let lyricsEmbed = new Discord.MessageEmbed()
       .setTitle("📑 Lyrics")
