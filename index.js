@@ -271,7 +271,7 @@ client.on('messageCreate', async message => {
                     if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
                     const music = args.join(" ");
 
-                    client.distube.play(message, music).catch(async (error) => {
+                    client.distube.play(message, music).catch(error => {
 
                         const embed9 = new Discord.MessageEmbed()
                             .setColor('RANDOM')
