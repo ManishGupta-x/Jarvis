@@ -19,7 +19,7 @@ module.exports ={
             
            
             let y = await Util.splitMessage(`**Current Queue**\n\n${queue.songs.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}\n\n${status(queue)}`, { maxLength: 4000 });
-            
+            let z = await Util.splitMessage(y[1] ,  { maxLength: 4000 })
             
             const embed9 = new Discord.MessageEmbed()
             .setColor('RANDOM')
@@ -45,24 +45,24 @@ module.exports ={
             message.channel.send({ embeds: [embed10] });
         }
             
-        if(y[2]){
+        if(z[0]){
             const embed12 = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setThumbnail(`${mu}`)
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setDescription(`${y[2]}`)
+            .setDescription(`${z[0]}`)
 
 
             .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
             .setTimestamp();
             message.channel.send({ embeds: [embed12] });
         }
-        if(y[3]){
+        if(z[1]){
             const embed11 = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setThumbnail(`${mu}`)
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setDescription(`${y[3]}`)
+            .setDescription(`${z[1]}`)
 
 
             .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
