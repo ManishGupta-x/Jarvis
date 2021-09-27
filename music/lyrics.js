@@ -20,7 +20,7 @@ module.exports = {
     .setAuthor("Searching...", "https://cdn.discordapp.com/emojis/757632044632375386.gif?v=1").setFooter("Lyrics")
     .setColor("#ffe700")
     //send it and safe it in a variable
-    let result = await message.channel.send(temEmbed)
+    let result = await message.channel.send({embeds: [temEmbed]})
     //try to find lyrics
     try {
       //use lyricsfinder
