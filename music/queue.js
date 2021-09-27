@@ -75,7 +75,9 @@ module.exports = {
                         .setDescription(`${y[2]}\n\n${status(queue)}`)
                         .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
                         .setTimestamp();
-                    await message.channel.send({ embeds: [embed9, embed10, embed12] });
+                     message.channel.send({ embeds: [embed9] });
+                    await message.channel.send({embeds : [embed10]})
+                    await message.channel.send({embeds : [embed12]})
                 }
                 if (y[3]) {
 
@@ -112,7 +114,12 @@ module.exports = {
                         .setDescription(`${y[3]}\n\n${status(queue)}`)
                         .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
                         .setTimestamp();
-                    await message.channel.send({ embeds: [embed9, embed10, embed12, embed14] });
+                   
+                    message.channel.send({ embeds: [embed9] });
+                    await message.channel.send({embeds : [embed10]})
+                    await message.channel.send({embeds : [embed12]})
+                    await message.channel.send({embeds : [embed14]})
+
                 }
 
 
