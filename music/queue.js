@@ -14,60 +14,60 @@ module.exports = {
             message.reply('No queue Available');
         } else if (queue) {
 
-            const status = (queue) => await `Volume: \`${queue.volume}%\` | Loop: \`${queue.repeatMode ? queue.repeatMode == 2 ? "Repeat queue" : "Repeat song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``;
+            const status = (queue) => `Volume: \`${queue.volume}%\` | Loop: \`${queue.repeatMode ? queue.repeatMode == 2 ? "Repeat queue" : "Repeat song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``;
 
 
-            let y = Util.splitMessage(`**Current Queue**\n\n${queue.songs.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}\n\n${status(queue)}`, { maxLength: 4000 });
+         
 
 
             const embed9 = new Discord.MessageEmbed()
                 .setColor('RANDOM')
                 .setThumbnail(`${mu}`)
                 .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                .setDescription(`${y[0]}`)
+                .setDescription(`**Current Queue**\n\n${queue.songs.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}\n\n${status(queue)}`)
 
 
                 .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
                 .setTimestamp();
             await message.channel.send({ embeds: [embed9] });
 
-            if (y[1]) {
-                const embed10 = new Discord.MessageEmbed()
-                    .setColor('RANDOM')
-                    .setThumbnail(`${mu}`)
-                    .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                    .setDescription(`${y[1]}`)
+            // if (y[1]) {
+            //     const embed10 = new Discord.MessageEmbed()
+            //         .setColor('RANDOM')
+            //         .setThumbnail(`${mu}`)
+            //         .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+            //         .setDescription(`${y[1]}`)
 
 
-                    .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
-                    .setTimestamp();
-                    await   message.channel.send({ embeds: [embed10] });
-            }
+            //         .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+            //         .setTimestamp();
+            //         await   message.channel.send({ embeds: [embed10] });
+            // }
 
-            if (y[2]) {
-                const embed12 = new Discord.MessageEmbed()
-                    .setColor('RANDOM')
-                    .setThumbnail(`${mu}`)
-                    .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                    .setDescription(`${y[2]}`)
-
-
-                    .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
-                    .setTimestamp();
-                    await  message.channel.send({ embeds: [embed12] });
-            }
-            if (y[3]) {
-                const embed11 = new Discord.MessageEmbed()
-                    .setColor('RANDOM')
-                    .setThumbnail(`${mu}`)
-                    .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                    .setDescription(`${y[3]}`)
+            // if (y[2]) {
+            //     const embed12 = new Discord.MessageEmbed()
+            //         .setColor('RANDOM')
+            //         .setThumbnail(`${mu}`)
+            //         .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+            //         .setDescription(`${y[2]}`)
 
 
-                    .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
-                    .setTimestamp();
-               await  message.channel.send({ embeds: [embed11] });
-            }
+            //         .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+            //         .setTimestamp();
+            //         await  message.channel.send({ embeds: [embed12] });
+            // }
+            // if (y[3]) {
+            //     const embed11 = new Discord.MessageEmbed()
+            //         .setColor('RANDOM')
+            //         .setThumbnail(`${mu}`)
+            //         .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+            //         .setDescription(`${y[3]}`)
+
+
+            //         .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
+            //         .setTimestamp();
+            //    await  message.channel.send({ embeds: [embed11] });
+            // }
 
 
 
