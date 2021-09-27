@@ -17,14 +17,14 @@ module.exports = {
             const status = (queue) => `Volume: \`${queue.volume}%\` | Loop: \`${queue.repeatMode ? queue.repeatMode == 2 ? "Repeat queue" : "Repeat song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``;
 
 
-         
+         let y =  Util.splitMessage(`**Current Queue**\n\n${queue.songs.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}`)
 
 
             const embed9 = new Discord.MessageEmbed()
                 .setColor('RANDOM')
                 .setThumbnail(`${mu}`)
                 .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                .setDescription(`**Current Queue**\n\n${queue.songs.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}\n\n${status(queue)}`)
+                .setDescription(`${y[0]}\n\n${status(queue)}`)
 
 
                 .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
