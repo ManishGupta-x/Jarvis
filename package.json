@@ -21,6 +21,7 @@
     "fs": "0.0.1-security",
     "got": "^11.8.2",
     "libsodium-wrappers": "^0.7.9",
+    "lyrics-finder": "^21.7.0",
     "moment": "^2.29.1",
     "mongoose": "^5.11.8",
     "ms": "^2.1.3",
