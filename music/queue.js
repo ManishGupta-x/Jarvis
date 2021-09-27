@@ -1,4 +1,5 @@
 const disTube = require('distube');
+const { MessageEmbed, Util } = require("discord.js")
 module.exports ={
     name: 'queue',
     Description: 'this is a music command!',
@@ -16,14 +17,15 @@ module.exports ={
             
             const status = (queue) => `Volume: \`${queue.volume}%\` | Loop: \`${queue.repeatMode ? queue.repeatMode == 2 ? "Repeat queue" : "Repeat song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``;
             
-            
+           
+            let y = await Util.splitMessage(`**Current Queue**\n\n${queue.songs.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}\n\n${status(queue)}`, { maxLength: 1000 });
             
             
             const embed9 = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setThumbnail(`${mu}`)
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setDescription(`**Current Queue**\n\n${queue.songs.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}\n\n${status(queue)}`)
+            .setDescription(y)
 
 
             .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
