@@ -551,33 +551,7 @@ client.on('messageCreate', async message => {
 
                     break;
 
-                case 'poll': if (!message.member.roles.cache.has('599566802682511360') && !message.member.roles.cache.has('610377914109788180'))
-                    return message.channel.send({ content: 'YOU DONT HAVE PERMISSION TO THAT DUMB ' }).then(message => message.delete({ timeout: 4000 })).catch(console.error);
-                    const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
-
-                    if (!channel) {
-
-
-                        return message.channel.send({ content: 'You did not mention / give the id of the channel you wanted to create the poll in!' })
-                    }
-
-                    let question = message.content.slice(prefix.length + 5 + channel.id.length + 3)
-                    if (!question) {
-
-                        return message.channel.send({ content: 'You didnt specified a question for the poll' })
-                    }
-                    const Embed = new MessageEmbed()
-                        .setColor('RANDOM')
-                        .setTitle("Who will win 🤔")
-                        .setDescription(question)
-                        .setFooter(`Mark The correct Option Below 🤩`)
-                    let msg = await client.channels.cache.get(channel.id).send({ content: [Embed] })
-                    await msg.react('1️⃣')
-                    await msg.react('2️⃣')
-                    await msg.react('🤝')
-                    message.delete({ timeout: 2000 })
-                    break;
-
+                
                 case 'timer': client.commands.get('timer').execute(message, args, Discord);
                     break;
                 case 'roleinfo': client.help.get('6').execute(message, args, Discord);
