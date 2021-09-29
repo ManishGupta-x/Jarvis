@@ -221,13 +221,13 @@ client.on('messageCreate', async message => {
                     break;
                 case 'search':
                     if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
-                  
+
                     var wallpapers = ["https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284561726308372/433536-Klayton-women-science_fiction-planet-Scandroid.png"
-                    , "https://cdn.discordapp.com/attachments/730714810614022228/882284789145677854/Drum-Instrument-Neon-HD-Wallpapers-Free-Download.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png",
-                    "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png","https://cdn.discordapp.com/attachments/730714810614022228/882284384202395678/neon-wallpaper-2008181520192-scaled.png","https://cdn.discordapp.com/attachments/730714810614022228/882283761868357682/edm-house-music-dj-producer-beatmaker-wallpaper-hd-4k-desktop-6-2048x1080.png"]
+                        , "https://cdn.discordapp.com/attachments/730714810614022228/882284789145677854/Drum-Instrument-Neon-HD-Wallpapers-Free-Download.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png",
+                        "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284384202395678/neon-wallpaper-2008181520192-scaled.png", "https://cdn.discordapp.com/attachments/730714810614022228/882283761868357682/edm-house-music-dj-producer-beatmaker-wallpaper-hd-4k-desktop-6-2048x1080.png"]
                     var mu = wallpapers[Math.floor(Math.random() * wallpapers.length)];
-                  
-                  
+
+
                     const searchsong = args.join(" ");
                     if (!searchsong) {
                         message.reply('Pls mention song to search')
@@ -236,16 +236,16 @@ client.on('messageCreate', async message => {
                         const result = await client.distube.search(searchsong, { limit: 15 });
 
                         const embed9 = new Discord.MessageEmbed()
-                        .setColor('RANDOM')
-                        .setThumbnail(`${mu}`)
-                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                        .setDescription(`**Choose an Option from Below : **\n\n${result.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}`)
-            
-            
-                        .setFooter(`Enter anything else or wait 60 seconds to cancel`)
-                        .setTimestamp();
+                            .setColor('RANDOM')
+                            .setThumbnail(`${mu}`)
+                            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                            .setDescription(`**Choose an Option from Below : **\n\n${result.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}`)
 
-                        message.channel.send({ embeds: [embed9] });                 
+
+                            .setFooter(`Enter anything else or wait 60 seconds to cancel`)
+                            .setTimestamp();
+
+                        message.channel.send({ embeds: [embed9] });
 
 
 
@@ -307,9 +307,9 @@ client.on('messageCreate', async message => {
                 case 'np':
                     client.music.get('np').execute(client, message, args, Discord);
                     break;
-                    case 'lyrics':
-                        client.music.get('lyrics').execute(client, message, args, Discord);
-                        break;
+                case 'lyrics':
+                    client.music.get('lyrics').execute(client, message, args, Discord);
+                    break;
                 case 'remove':
                     client.music.get('remove').execute(client, message, args, Discord);
                     break;
@@ -412,6 +412,9 @@ client.on('messageCreate', async message => {
                     break;
                 case 'nightcore':
                     client.music.get('nightcore').execute(client, message, args, Discord);
+                    break;
+                case 'earwax':
+                    client.music.get('earwax').execute(client, message, args, Discord);
                     break;
 
                 case 'av': client.commands.get('av').execute(client, message, args, Discord);
@@ -551,7 +554,7 @@ client.on('messageCreate', async message => {
 
                     break;
 
-                
+
                 case 'timer': client.commands.get('timer').execute(message, args, Discord);
                     break;
                 case 'roleinfo': client.help.get('6').execute(message, args, Discord);
