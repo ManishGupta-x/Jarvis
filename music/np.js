@@ -1,7 +1,20 @@
 const disTube = require('distube');
 const { MessageActionRow, MessageButton } = require('discord.js');
 
+ function createBar(player) {
+    let size = 30;
+    let line = "▬";
+    let slider = "🔘";
+    
+    if (!player.queue.current) return `${slider}${line.repeat(size - 1)}]`;
+    let current = player.queue.current.duration !== 0 ? player.position : player.queue.current.duration;
+    let total = player.queue.current.duration;
+    let bar = current > total ? [line.repeat(size / 2 * 2), (current / total) * 100] : [line.repeat(Math.round(size / 2 * (current / total))).replace(/.$/, slider) + line.repeat(size - Math.round(size * (current / total)) + 1), current / total];
+   
+    if (!String(bar).includes(slider)) return `${slider}${line.repeat(size - 1)}`;
+    return `${bar[0]}`;
 
+  }
 
 module.exports ={
     name: 'np',
@@ -18,7 +31,7 @@ module.exports ={
         }else{
         const song = queue.songs[0];
         const status = (queue) => `Volume: \`${queue.volume}%\` | Loop: \`${queue.repeatMode ? queue.repeatMode == 2 ? "Repeat queue" : "Repeat song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``;
-       
+        const player = client.manager.players.get(message.guild.id);
         const row = new MessageActionRow()
             .addComponents(
                 new MessageButton()
@@ -45,7 +58,7 @@ module.exports ={
                 .setThumbnail(`${mu}`)
                 .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
                 .setTitle(`Now Playing`)
-                .setDescription(`${song.name} | Requested by: ${song.user} || at \`${queue.formattedCurrentTime}\`/ \`${song.formattedDuration}\` \n\n${status(queue)}`)
+                .setDescription(`${song.name} | Requested by: ${song.user} || at \`${queue.formattedCurrentTime}\`/ \`${song.formattedDuration}\`\n${createBar(player)} \n\n${status(queue)}`)
                 .setFooter(client.user.username, client.user.displayAvatarURL())
                 .setTimestamp();
                 message.channel.send({embeds: [embed1] ,components : [row]});
