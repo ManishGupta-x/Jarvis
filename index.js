@@ -215,9 +215,9 @@ client.on('messageCreate', async message => {
                     let size = 30;
                     let line = "▬";
                     let slider = "🔘";
-                    
-                    song = queue.songs[0]
-                    if (!queue) return `${slider}${line.repeat(size - 1)}]`;
+                    let queue1 = await client.distube.getQueue(message);
+                    song = queue1.songs[0]
+                    if (!queue1) return `${slider}${line.repeat(size - 1)}]`;
 
                     let current = song.currentTime !== 0 ? song.currentTime : song.duration;
                     let total = song.duration;
