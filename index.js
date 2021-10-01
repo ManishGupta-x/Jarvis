@@ -211,6 +211,21 @@ client.on('messageCreate', async message => {
                 case 'ping':
                     client.commands.get('ping').execute(client, message, args, Discord);
                     break;
+                case 'bar':
+                    let size = 30;
+                    let line = "▬";
+                    let slider = "🔘";
+                    let queue = await client.distube.getQueue(message);
+                    song = queue.songs[0]
+                    if (!queue) return `${slider}${line.repeat(size - 1)}]`;
+
+                    let current = song.currentTime !== 0 ? song.currentTime : song.duration;
+                    let total = song.duration;
+                    let bar = current > total ? [line.repeat(size / 2 * 2), (current / total) * 100] : [line.repeat(Math.round(size / 2 * (current / total))).replace(/.$/, slider) + line.repeat(size - Math.round(size * (current / total)) + 1), current / total];
+                    if (!String(bar).includes(slider)) return `${slider}${line.repeat(size - 1)}`;
+                    return `${bar[0]}`;
+                    
+                    break;
                 case 'report':
 
                     client.commands.get('report').execute(client, message, args, Discord);
