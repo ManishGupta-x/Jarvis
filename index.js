@@ -212,7 +212,7 @@ client.on('messageCreate', async message => {
                     client.commands.get('ping').execute(client, message, args, Discord);
                     break;
                 case 'bar':
-                   function createbar(){
+                  async function createbar(){
                     let size = 30;
                     let line = "▬";
                     let slider = "🔘";
