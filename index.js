@@ -212,32 +212,32 @@ client.on('messageCreate', async message => {
                     client.commands.get('ping').execute(client, message, args, Discord);
                     break;
                 case 'bar':
-                  async function createbar(){
-                    let size = 30;
-                    let line = "▬";
-                    let slider = "🔘";
-                    let queue1 = await client.distube.getQueue(message);
-                    song = queue1.songs[0]
-                    if (!queue1) return `${slider}${line.repeat(size - 1)}]`;
+                //   async function createbar(){
+                //     let size = 30;
+                //     let line = "▬";
+                //     let slider = "🔘";
+                //     let queue1 = await client.distube.getQueue(message);
+                //     song = queue1.songs[0]
+                //     if (!queue1) return `${slider}${line.repeat(size - 1)}]`;
 
-                    let current = song.currentTime !== 0 ? song.currentTime : song.duration;
-                    let total = song.duration;
-                    let bar = current > total ? [line.repeat(size / 2 * 2), (current / total) * 100] : [line.repeat(Math.round(size / 2 * (current / total))).replace(/.$/, slider) + line.repeat(size - Math.round(size * (current / total)) + 1), current / total];
-                    if (!String(bar).includes(slider)) return `${slider}${line.repeat(size - 1)}`;
-                    return `${bar[0]}`
-                }
-                    const embed4 = new Discord.MessageEmbed()
-                    .setColor('RANDOM')
+                //     let current = song.currentTime !== 0 ? song.currentTime : song.duration;
+                //     let total = song.duration;
+                //     let bar = current > total ? [line.repeat(size / 2 * 2), (current / total) * 100] : [line.repeat(Math.round(size / 2 * (current / total))).replace(/.$/, slider) + line.repeat(size - Math.round(size * (current / total)) + 1), current / total];
+                //     if (!String(bar).includes(slider)) return `${slider}${line.repeat(size - 1)}`;
+                //    return `${bar[0]}`
+                // }
+                //     const embed4 = new Discord.MessageEmbed()
+                //     .setColor('RANDOM')
                    
-                    .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                    .setDescription(`${createbar()}`)
+                //     .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                //     .setDescription(`${createbar()}`)
 
 
                    
-                    .setTimestamp();
+                //     .setTimestamp();
 
-                message.channel.send({ embeds: [embed4] });
-                    ;
+                // message.channel.send({ embeds: [embed4] });
+                //     ;
                     
                     break;
                 case 'report':
