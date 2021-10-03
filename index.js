@@ -225,13 +225,7 @@ client.on('messageCreate', async message => {
                     break;
                 case 'snipe':
 
-                    const msg = client.snipes.get(message.channel.id)
-                    const embed = new Discord.MessageEmbed()
-                       
-                        .setDescription(msg.content)
-                        .setFooter('Get Sniped lol')
-                        .setTimestamp();
-                    message.channel.send({embeds : [embed]});
+                   
 
                     break;
                 case 'bar':
@@ -680,6 +674,15 @@ client.on('messageCreate', async message => {
                     message.reply("Deactivated Boss!!")
                     d = 0;
                 } break;
+                case "jarvis snipe" :  const msg = client.snipes.get(message.channel.id)
+                const embed = new Discord.MessageEmbed()
+                    .setColor('RANDOM')
+                    .setAuthor(msg.author, client.user.displayAvatarURL())
+                    .setDescription(msg.content)
+                    .setFooter('Caught :)')
+                    .setTimestamp();
+                message.channel.send({embeds : [embed]});
+                break;
             }
         }
     }
