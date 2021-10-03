@@ -84,19 +84,6 @@ client.distube
 
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true })
 client.snipes = new Discord.Collection();
-client.on('messageDelete', async (client, message) => {
-
-  
-    client.snipes.set(message.channel.id, {
-        content: message.content,
-        author: message.author.tag,
-        member: message.member,
-        image: message.attachments.first() ? message.attachments.first().proxyURL : null
-
-
-
-    })
-})
 
 
 const { MessageEmbed } = require('discord.js')
@@ -160,6 +147,19 @@ for (const file of idFiles) {
     client.id.set(command.name, command);
 }
 
+// client.on('messageDelete', async (client, message) => {
+
+//     if (message.author.bot) return;
+//     client.snipes.set(message.channel.id, {
+//         content: message.content,
+//         author: message.author.tag,
+//         member: message.member,
+//         image: message.attachments.first() ? message.attachments.first().proxyURL : null
+
+
+
+//     })
+// })
 
 client.once('ready', () => {
     console.log('Jarvis is online!');
@@ -223,17 +223,17 @@ client.on('messageCreate', async message => {
                 case 'ping':
                     client.commands.get('ping').execute(client, message, args, Discord);
                     break;
-                case 'snipe':
+                // case 'snipe':
 
-                    const msg = client.snipes.get(message.channel.id)
-                    const embed = new Discord.MessageEmbed()
+                //     const msg = client.snipes.get(message.channel.id)
+                //     const embed = new Discord.MessageEmbed()
                        
-                        .setDescription(msg.content)
-                        .setFooter('Get Sniped lol')
-                        .setTimestamp();
-                    message.channel.send({embeds : [embed]});
+                //         .setDescription(msg.content)
+                //         .setFooter('Get Sniped lol')
+                //         .setTimestamp();
+                //     message.channel.send({embeds : [embed]});
 
-                    break;
+                //     break;
                 case 'bar':
                     //   async function createbar(){
                     //     let size = 30;
