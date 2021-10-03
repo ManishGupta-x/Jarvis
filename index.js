@@ -675,7 +675,7 @@ client.on('messageCreate', async message => {
                     d = 0;
                 } break;
                 case "jarvis snipe": const msg = client.snipes.get(message.channel.id)
-                if (!msg.author) {
+                if (!msg) {
                     message.reply(`Nothing to snipe!`);
                     return;
                 }
@@ -700,7 +700,7 @@ client.on('messageCreate', async message => {
                     });;
                     break;
                 case "snipe": const msg1 = client.snipes.get(message.channel.id)
-                    if (!msg1.author) {
+                    if (!msg1) {
                         message.reply(`Nothing to snipe!`);
                         return;
                     }
