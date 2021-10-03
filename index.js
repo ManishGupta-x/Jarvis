@@ -227,7 +227,7 @@ client.on('messageCreate', async message => {
 
                     const msg = client.snipes.get(message.channel.id)
                     const embed = new Discord.MessageEmbed()
-                        .setAuthor(msg.author, msg.member.user.displayAvatarURL())
+                        .setAuthor(msg.member.user.displayAvatarURL())
                         .setDescription(msg.content)
                         .setFooter('Get Sniped lol')
                         .setTimestamp();
