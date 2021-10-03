@@ -695,16 +695,16 @@ client.on('messageCreate', async message => {
                     message.channel.send({ embeds: [embed5] });
                 });;
                 break;
-                case "snipe" :  const msg = client.snipes.get(message.channel.id)
-                const embed = new Discord.MessageEmbed()
+                case "snipe" :  const msg1 = client.snipes.get(message.channel.id)
+                const embed17 = new Discord.MessageEmbed()
                     .setColor('RANDOM')
-                    .setAuthor(msg.author, client.user.displayAvatarURL())
-                    .setDescription(msg.content)
+                    .setAuthor(msg1.author, client.user.displayAvatarURL())
+                    .setDescription(msg1.content)
                     .setFooter('Caught :)')
                     .setTimestamp();
-                message.channel.send({embeds : [embed]}).catch(error => {
+                message.channel.send({embeds : [embed17]}).catch(error => {
 
-                    const embed5 = new Discord.MessageEmbed()
+                    const embed8 = new Discord.MessageEmbed()
                         .setColor('RANDOM')
                         .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
                         .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
@@ -713,7 +713,7 @@ client.on('messageCreate', async message => {
 
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-                    message.channel.send({ embeds: [embed5] });
+                    message.channel.send({ embeds: [embed8] });
                 });;
                 break;
             }
