@@ -83,10 +83,10 @@ client.distube
 
 
 mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true })
-
+client.snipes = new Discord.Collection();
 client.on('messageDelete', async (client, message) => {
 
-    if (message.author.bot) return;
+  
     client.snipes.set(message.channel.id, {
         content: message.content,
         author: message.author.tag,
@@ -106,7 +106,7 @@ const { MessageEmbed } = require('discord.js')
 const fs = require('fs');
 const { disconnect } = require('process');
 client.commands = new Discord.Collection();
-client.snipes = new Discord.Collection();
+
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
@@ -227,7 +227,7 @@ client.on('messageCreate', async message => {
 
                     const msg = client.snipes.get(message.channel.id)
                     const embed = new Discord.MessageEmbed()
-                        .setAuthor(msg.member.user.displayAvatarURL())
+                       
                         .setDescription(msg.content)
                         .setFooter('Get Sniped lol')
                         .setTimestamp();
