@@ -1,5 +1,6 @@
 
 const solenolyrics= require("solenolyrics"); 
+const lyricsFinder = require("lyrics-finder")
 const disTube = require('distube');
 const { MessageEmbed, Util } = require("discord.js")
 module.exports = {
@@ -24,7 +25,10 @@ module.exports = {
           }
       });
     
-      if (!lyrics) lyrics = `No lyrics found for ${song.name}.`;
+      if (!lyrics) 
+    {  lyrics = await lyricsFinder(`${song.name}`,'')}
+      if(!lyrics){
+      lyrics = `No lyrics found for ${song.name}.`;}
     
       let y = Util.splitMessage(lyrics, { maxLength: 3500 })
 
