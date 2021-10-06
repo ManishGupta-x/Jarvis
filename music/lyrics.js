@@ -34,7 +34,7 @@ if(args[0]){
   if (lyrics1) {
     let lyricsEmbed1 = new Discord.MessageEmbed()
       .setTitle("📑 Lyrics")
-      .setDescription(`**${song.name}**\n\n${y1[0]}`)
+      .setDescription(`**${searchsong}}**\n\n${y1[0]}`)
       .setColor('RANDOM')
     let lyricsEmbed3 = new Discord.MessageEmbed()
       .setTitle("📑 Lyrics")
