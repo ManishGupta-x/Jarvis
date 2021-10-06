@@ -37,6 +37,6 @@ module.exports = {
       //slice the embed description and redefine it
       lyricsEmbed.description = `${lyricsEmbed.description.substr(0, 2045)}...`;
       //edit to approve
-    return result.edit(lyricsEmbed).catch(console.error);
+    message.channel.send({ embeds : [lyricsEmbed]})
   }
 };
