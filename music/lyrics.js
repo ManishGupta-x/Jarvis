@@ -13,7 +13,7 @@ module.exports = {
 
     //Get the current Queue
     let queue = await client.distube.getQueue(message);
-  if(queue) const song = queue.songs[0] ;
+    
     //If no Queue Error
     if (!args[0]) { if (!queue) { message.reply('No song Playing') } }
     if (args[0]) {
@@ -51,7 +51,8 @@ module.exports = {
 
     }
 
-    if (!args[0]) {
+    if (!args[0] && queue) {
+      const song = queue.songs[0] ;
       var lyrics = await lyricsFinder("", `${song.name}`)
 
       if (!lyrics) {
