@@ -19,11 +19,7 @@ module.exports = {
      
   
      
-     var lyrics = await lyricsFinder("",`${song.name}`).catch(error => {
-        {
-            lyrics = `No lyrics found for ${song.name}.`;
-          }
-      })
+     var lyrics =  await lyricsFinder("",`${song.name}`)
     
       if (!lyrics) 
     {  lyrics = await solenolyrics.requestLyricsFor(`${song.name}`)
@@ -33,10 +29,10 @@ module.exports = {
       lyrics = `No lyrics found for ${song.name}.`;}
     
       let y = Util.splitMessage(lyrics, { maxLength: 3500 })
-
+if(lyrics){
     let lyricsEmbed = new Discord.MessageEmbed()
       .setTitle("📑 Lyrics")
-      .setDescription(`${y[0]}`)
+      .setDescription(`**${song.name}**\n\n${y[0]}`)
       .setColor('RANDOM')
       let lyricsEmbed2 = new Discord.MessageEmbed()
       .setTitle("📑 Lyrics")
@@ -48,5 +44,5 @@ module.exports = {
 
     if(y[1]){
     await   message.channel.send({ embeds : [lyricsEmbed2]})}
-  }
+  }}
 };
