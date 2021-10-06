@@ -38,6 +38,11 @@ module.exports ={
                     .setCustomId('8d')
                     .setLabel('🎼 8D')
                     .setStyle('SUCCESS'),
+                 new MessageButton()
+                    .setCustomId('lyrics')
+                    .setLabel('📑Lyrics')
+                    .setStyle('Danger'),
+
             );
         if(queue.songs.length <= 1) {
                 const embed1 = new Discord.MessageEmbed()
@@ -67,7 +72,7 @@ module.exports ={
             
     
 
-        const filter = (interaction) => interaction.isButton() && interaction.customId === 'skip'|| interaction.customId === '8d' || interaction.customId === 'BassBoost' || interaction.customId === 'Nightcore' ;
+        const filter = (interaction) => interaction.isButton() && interaction.customId === 'skip'|| interaction.customId === '8d' || interaction.customId === 'lyrics' || interaction.customId === 'BassBoost' || interaction.customId === 'Nightcore' ;
 
         const collector = message.channel.createMessageComponentCollector({ filter, time: 180000 });
         collector.on('collect', async collected => {
@@ -96,7 +101,13 @@ module.exports ={
                     await client.music.get('8d').execute(client, message, args, Discord);
 
 
+                }else if (collected.customId === 'lyrics') {
+                   
+                    await client.music.get('lyrics').execute(client, message, args, Discord);
+
+
                 }
+                
                 collected.deferUpdate()
             
         })
