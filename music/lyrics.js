@@ -1,7 +1,7 @@
 
 const solenolyrics= require("solenolyrics"); 
 const disTube = require('distube');
-const song = queue.songs[0];
+
 module.exports = {
   name: "lyrics",
   Description: "Get lyrics for the currently playing song",
@@ -12,6 +12,7 @@ module.exports = {
     
     //Get the current Queue
     let queue = await client.distube.getQueue(message);
+    const song = queue.songs[0];
     //If no Queue Error
     if (!queue ) { message.reply('No song Playing')}      
     let lyrics = null;
