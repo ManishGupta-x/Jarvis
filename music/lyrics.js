@@ -16,9 +16,40 @@ module.exports = {
     const song = queue.songs[0];
     //If no Queue Error
     if (!queue) { message.reply('No song Playing') }
+if(args[0]){
+  var lyrics = await lyricsFinder("", args[0])
+
+  if (!lyrics) {
+    lyrics = await solenolyrics.requestLyricsFor(args[0])
+
+  }
+  if (!lyrics) {
+    lyrics = `No lyrics found for ${song.name}.`;
+  }
 
 
+  let y = Util.splitMessage(lyrics, { maxLength: 3500 })
+  if (lyrics) {
+    let lyricsEmbed = new Discord.MessageEmbed()
+      .setTitle("📑 Lyrics")
+      .setDescription(`**${song.name}**\n\n${y[0]}`)
+      .setColor('RANDOM')
+    let lyricsEmbed2 = new Discord.MessageEmbed()
+      .setTitle("📑 Lyrics")
+      .setDescription(`${y[1]}`)
+      .setColor('RANDOM')
 
+
+    message.channel.send({ embeds: [lyricsEmbed] })
+
+    if (y[1]) {
+      await message.channel.send({ embeds: [lyricsEmbed2] })
+    }
+  }
+
+}
+
+if(!args[0]){
     var lyrics = await lyricsFinder("", `${song.name}`)
 
     if (!lyrics) {
@@ -47,5 +78,8 @@ module.exports = {
         await message.channel.send({ embeds: [lyricsEmbed2] })
       }
     }
-  }
+  }}
+
+
+  
 };
