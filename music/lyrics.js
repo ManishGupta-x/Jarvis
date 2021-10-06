@@ -1,7 +1,7 @@
 
 const solenolyrics= require("solenolyrics"); 
 const disTube = require('distube');
-
+const song = queue.songs[0];
 module.exports = {
   name: "lyrics",
   Description: "Get lyrics for the currently playing song",
@@ -24,13 +24,13 @@ module.exports = {
     //try to find lyrics
     
       //use lyricsfinder
-      lyrics = await solenolyrics.requestLyricsFor(`${queue.songs[0].name}`).catch(error => {
+      lyrics = await solenolyrics.requestLyricsFor(`${song.name}`).catch(error => {
         {
-            lyrics = `No lyrics found for ${queue.songs[0].title}.`;
+            lyrics = `No lyrics found for ${song.name}.`;
           }
       });
       //If no Lyrics define no lyrics
-      if (!lyrics) lyrics = `No lyrics found for ${queue.songs[0].title}.`;
+      if (!lyrics) lyrics = `No lyrics found for ${song.name}.`;
     
     //catch any error
 
