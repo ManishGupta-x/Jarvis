@@ -26,7 +26,7 @@ module.exports = {
       });
     
       if (!lyrics) 
-    {  lyrics = await lyricsFinder(`${song.name}`,'')}
+    {  lyrics = await lyricsFinder("",`${song.name}`)}
       if(!lyrics){
       lyrics = `No lyrics found for ${song.name}.`;}
     
