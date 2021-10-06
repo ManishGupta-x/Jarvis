@@ -15,30 +15,22 @@ module.exports = {
     const song = queue.songs[0];
     //If no Queue Error
     if (!queue ) { message.reply('No song Playing')}      
-    let lyrics = null;
-    //define the temporary Embed
-    let temEmbed = new Discord.MessageEmbed()
-    .setAuthor("Searching...", "https://cdn.discordapp.com/emojis/757632044632375386.gif?v=1").setFooter("Lyrics")
-    .setColor("#ffe700")
-    //send it and safe it in a variable
-    let result = await message.channel.send({embeds: [temEmbed]})
-    //try to find lyrics
-    
-      //use lyricsfinder
-      lyrics = await solenolyrics.requestLyricsFor(`${song.name}`).catch(error => {
+     
+  
+     
+     var lyrics = await solenolyrics.requestLyricsFor(`${song.name}`).catch(error => {
         {
             lyrics = `No lyrics found for ${song.name}.`;
           }
       });
-      //If no Lyrics define no lyrics
+    
       if (!lyrics) lyrics = `No lyrics found for ${song.name}.`;
     
-    //catch any error
+    
 
-    //define lyrics Embed
     let lyricsEmbed = new Discord.MessageEmbed()
       .setTitle("📑 Lyrics")
-      .setDescription(lyrics)
+      .setDescription(`${lyrics}`)
       .setColor("#ffe700")
     //if to long make slice it 
     if (lyricsEmbed.description.length >= 2048)
