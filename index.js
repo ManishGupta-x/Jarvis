@@ -153,7 +153,7 @@ client.on('messageDelete', async message => {
 
         return;
     }
-    if (message.author.bot) return;
+    if (message?.author?.bot) return;
     client.snipes.set(message.channel.id, {
         content: message.content,
         author: message.author.tag,
@@ -679,11 +679,11 @@ client.on('messageCreate', async message => {
                     d = 0;
                 } break;
                 case "jarvis snipe": const msg = client.snipes.get(message.channel.id)
-                if (!msg) {
-                    message.reply(`Nothing to snipe!`);
-                    return;
-                }
-                const embed = new Discord.MessageEmbed()
+                    if (!msg) {
+                        message.reply(`Nothing to snipe!`);
+                        return;
+                    }
+                    const embed = new Discord.MessageEmbed()
                         .setColor('RANDOM')
                         .setAuthor(msg.author, client.user.displayAvatarURL())
                         .setDescription(msg.content)
