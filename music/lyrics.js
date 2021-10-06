@@ -1,5 +1,5 @@
 
-const lyricsFinder = require("lyrics-finder");
+const solenolyrics= require("solenolyrics"); 
 const disTube = require('distube');
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
     //try to find lyrics
     
       //use lyricsfinder
-      lyrics = await lyricsFinder(queue.songs[0].title,"").catch(error => {
+      lyrics = await solenolyrics.requestLyricsFor(queue.songs[0].title).catch(error => {
         {
             lyrics = `No lyrics found for ${queue.songs[0].title}.`;
           }
