@@ -24,7 +24,7 @@ module.exports = {
     //try to find lyrics
     
       //use lyricsfinder
-      lyrics = await solenolyrics.requestLyricsFor(`${queue.songs[0].title}`).catch(error => {
+      lyrics = await solenolyrics.requestLyricsFor(`${queue.songs[0].name}`).catch(error => {
         {
             lyrics = `No lyrics found for ${queue.songs[0].title}.`;
           }
