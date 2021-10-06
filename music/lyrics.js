@@ -1,7 +1,7 @@
 
 const solenolyrics= require("solenolyrics"); 
 const disTube = require('distube');
-
+const { MessageEmbed, Util } = require("discord.js")
 module.exports = {
   name: "lyrics",
   Description: "Get lyrics for the currently playing song",
@@ -26,17 +26,19 @@ module.exports = {
     
       if (!lyrics) lyrics = `No lyrics found for ${song.name}.`;
     
-    
+      let y = Util.splitMessage(lyrics, { maxLength: 3500 })
 
     let lyricsEmbed = new Discord.MessageEmbed()
       .setTitle("📑 Lyrics")
-      .setDescription(`${lyrics}`)
-      .setColor("#ffe700")
-    //if to long make slice it 
-    if (lyricsEmbed.description.length >= 2048)
-      //slice the embed description and redefine it
-      lyricsEmbed.description = `${lyricsEmbed.description.substr(0, 2045)}...`;
-      //edit to approve
+      .setDescription(`${y[0]}`)
+      .setColor('RANDOM')
+      let lyricsEmbed2 = new Discord.MessageEmbed()
+      .setTitle("📑 Lyrics")
+      .setDescription(`${y[1]}`)
+      .setColor('RANDOM')
+    
+     
     message.channel.send({ embeds : [lyricsEmbed]})
+    await   message.channel.send({ embeds : [lyricsEmbed2]})
   }
 };
