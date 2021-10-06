@@ -162,8 +162,6 @@ client.on('messageDelete', async message => {
 
 
 
-    }).catch(error => {
-        return;
     })
 })
 
