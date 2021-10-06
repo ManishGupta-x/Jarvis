@@ -19,14 +19,16 @@ module.exports = {
      
   
      
-     var lyrics = await solenolyrics.requestLyricsFor(`${song.name}`).catch(error => {
+     var lyrics = await lyricsFinder("",`${song.name}`).catch(error => {
         {
             lyrics = `No lyrics found for ${song.name}.`;
           }
-      });
+      })
     
       if (!lyrics) 
-    {  lyrics = await lyricsFinder("",`${song.name}`)}
+    {  lyrics = await solenolyrics.requestLyricsFor(`${song.name}`)
+      
+      }
       if(!lyrics){
       lyrics = `No lyrics found for ${song.name}.`;}
     
