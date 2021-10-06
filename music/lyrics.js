@@ -17,10 +17,12 @@ module.exports = {
     //If no Queue Error
     if (!queue) { message.reply('No song Playing') }
 if(args[0]){
-  var lyrics1 = await lyricsFinder("", args[0])
+
+  const searchsong = args.join(" ");
+  var lyrics1 = await lyricsFinder("", searchsong)
 
   if (!lyrics1) {
-    lyrics1 = await solenolyrics.requestLyricsFor(args[0])
+    lyrics1 = await solenolyrics.requestLyricsFor(searchsong)
 
   }
   if (!lyrics1) {
