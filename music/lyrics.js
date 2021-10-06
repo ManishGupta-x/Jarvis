@@ -39,6 +39,8 @@ module.exports = {
     
      
     message.channel.send({ embeds : [lyricsEmbed]})
-    await   message.channel.send({ embeds : [lyricsEmbed2]})
+
+    if(y[1]){
+    await   message.channel.send({ embeds : [lyricsEmbed2]})}
   }
 };
