@@ -16,7 +16,7 @@ module.exports = class ClientManager extends Client {
     setup() {
         const { DisTube } = require('distube');
 const { SpotifyPlugin } = require("@distube/spotify");
-this.distube = new DisTube(client, {
+this.distube = new DisTube(this, {
     emitNewSongOnly: true, plugins: [new SpotifyPlugin({
         parallel: true,
         emitEventsAfterFetching: false,
