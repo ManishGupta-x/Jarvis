@@ -42,7 +42,7 @@ this.distube = new DisTube(this, {
                 .setTitle(`Now Playing`)
                 .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\` `)
     
-                .setFooter(`p!np For More Features`, client.user.displayAvatarURL())
+                .setFooter(`p!np For More Features`)
                 .setTimestamp();
     
     
@@ -58,7 +58,7 @@ this.distube = new DisTube(this, {
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
             .setDescription(`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\``)
 
-            .setFooter(`p!music for Command List`, client.user.displayAvatarURL())
+            .setFooter(`p!music for Command List`)
             .setTimestamp();
 
         queue.textChannel.send({ embeds: [addsong] });
