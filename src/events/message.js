@@ -9,7 +9,7 @@ module.exports = async (client,message) => {
 	const args = messageArray.slice(1);
 
 	if (message.author.bot || message.channel.type === 'dm' ) return;
-if(message.author.id != '550267183503114250' ){
+if(message.author.id != '550267183503114250' && message.content.startsWith(prefix) ){
 	message.channel.send('Bot Under Maintenance currently Possible Resolving time 5-6 hrs . Sorry For Inconvieniece Caused')
 }
 

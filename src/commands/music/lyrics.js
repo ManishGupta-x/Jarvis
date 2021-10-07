@@ -3,14 +3,10 @@ const solenolyrics = require("solenolyrics");
 const lyricsFinder = require("lyrics-finder")
 const disTube = require('distube');
 const { MessageEmbed, Util } = require("discord.js")
-module.exports = {
-  name: "lyrics",
-  Description: "Get lyrics for the currently playing song",
 
+const Discord = require("discord.js")
 
-  async execute(client, message, args, Discord) {
-
-
+module.exports.run = async (client, message, args,Discord) => {
     //Get the current Queue
     let queue = await client.distube.getQueue(message);
     
@@ -86,4 +82,7 @@ module.exports = {
 
 
 
-};
+module.exports.config = {
+    name: "lyrics",
+    Description: 'Command',
+}

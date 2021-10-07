@@ -1,10 +1,9 @@
 const { GuildMember } = require("discord.js");
 
-module.exports = {
-    name: 'clear',
-    description: "Clear messages!",
-   async  execute(message, args,Discord) {
+ 
+const Discord = require("discord.js")
 
+module.exports.run = async (client, message, args,Discord) => {
     if(message.member.roles.cache.has('610377914109788180') || message.author.id =='550267183503114250' ){
       
         if (!args[0]) return message.reply("Please enter the amount of messages to clear!");
@@ -18,6 +17,9 @@ module.exports = {
         await message.channel.messages.fetch({ limit: args[0]}).then(messages =>{
             message.channel.bulkDelete(messages)
     });} else { message.channel.send({content :'You Dont Have enough Permissions to That!'});} 
- 
- }
-}   
+}
+
+module.exports.config = {
+    name: "clear",
+    Description: 'Command',
+}

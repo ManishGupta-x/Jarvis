@@ -1,10 +1,9 @@
 const disTube = require('distube');
-module.exports ={
-    name: 'nightcore',
-    Description: 'this is a music command!',
-    async  execute(client,message,args, Discord){
-        
-        if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
+
+const Discord = require("discord.js")
+
+module.exports.run = async (client, message, args,Discord) => {
+    if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
         let queue = await client.distube.getQueue(message);
       
         if(queue){ let filter = client.distube.setFilter(message, 'nightcore');
@@ -23,10 +22,9 @@ module.exports ={
         }
       
 
+}
 
-
-        
-
-
-    }  
+module.exports.config = {
+    name: "nightcore",
+    Description: 'Command',
 }

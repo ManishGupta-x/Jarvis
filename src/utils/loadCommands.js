@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+const Discord = require('discord-js')
 function loadCommands(client) {
 	fs.readdir('./src/commands/', (err, cmdfolders) => {
 

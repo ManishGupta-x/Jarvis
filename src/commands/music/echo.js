@@ -1,10 +1,8 @@
-const disTube = require('distube');
-module.exports ={
-    name: 'echo',
-    Description: 'this is a music command!',
-    execute(client,message,args, Discord){
-        
-        if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
+
+const Discord = require("discord.js")
+
+module.exports.run = async (client, message, args,Discord) => {
+    if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
         let filter = client.distube.setFilter(message, 'echo');
         const embed = new Discord.MessageEmbed()
         .setColor('#F0074F')
@@ -16,13 +14,9 @@ module.exports ={
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp();
         message.channel.send({embeds: [embed]});
+}
 
-        
-
-
-
-        
-
-
-    }  
+module.exports.config = {
+    name: "echo",
+    Description: 'Command',
 }

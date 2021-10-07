@@ -1,8 +1,8 @@
-module.exports ={
-    name: 'sg',
-    Description: 'Gives sg Info !',
-    execute(message,args,Discord){
-     
+
+    const Discord = require("discord.js")
+
+    module.exports.run = async (client, message, args,Discord) => {
+        
        const newEmbed = new Discord.MessageEmbed()
        .setColor('RANDOM')
        .setTitle('Soccer Guru')
@@ -26,10 +26,12 @@ module.exports ={
            
            
            message.channel.send({embeds : [newEmbed]});
-
-       }
     }
-
+    
+    module.exports.config = {
+        name: "sg",
+        Description: 'Command',
+    }
 
 
 

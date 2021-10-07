@@ -1,10 +1,12 @@
-module.exports ={
-    name: 'twitter',
-    Description: 'Gives twitter link of Efootball Pes',
-    execute(message,args, Discord){
-     
-       message.channel.send({content : 'https://twitter.com/officialpes'});
 
 
-    }  
+const Discord = require("discord.js")
+
+module.exports.run = async (client, message, args,Discord) => {
+    message.channel.send({content : 'https://twitter.com/officialpes'});
+}
+
+module.exports.config = {
+    name: "twitter",
+    Description: 'Command',
 }
