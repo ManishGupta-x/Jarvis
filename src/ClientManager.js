@@ -3,7 +3,7 @@ const {
     Collection,
 } = require('discord.js');
 const EventHandler = require("./utils/loadEvents");
-
+const Discord = require('discord.js')
 
 module.exports = class ClientManager extends Client {
     constructor(options) {
