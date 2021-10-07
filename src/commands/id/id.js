@@ -7,7 +7,7 @@ const Discord = require('discord.js');
 
 
 
-const Data = require('./src/commands/id/data.js');
+const Data = require('./data.js');
 
 const Discord = require("discord.js")
 
