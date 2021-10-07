@@ -10,19 +10,117 @@ module.exports = async (client,message) => {
 
 	if (message.author.bot || message.channel.type === 'dm' ) return;
 if(message.author.id != '550267183503114250' && message.content.startsWith(prefix) ){
-	message.channel.send('Bot Under Maintenance currently Possible Resolving time 5-6 hrs . Sorry For Inconvieniece Caused')
+	message.channel.send('Bot Under Maintenance currently Possible Resolving time 5 Pm ist . Sorry For Inconvieniece Caused')
   return;
 }
 
 
     if (message.author.bot) return;
-    if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(prefix)) {
+
+          switch(message.content){
+			case 'hey jarvis': if (message.author.id == '550267183503114250' || message.guild.id == '730714810064306188') { message.reply("Yes Boss 🙃") }
+			else message.channel.send({ content: 'Hn bol bsdk 😒' })
+				break;
+			case 'jarvis': if (message.author.id == '550267183503114250' || message.author.id == '761159077639356446' && message.guild.id == '730714810064306188') { message.reply("Yes Boss 🙃") }
+			else if (message.author.id == '761159077639356446') {
+				message.channel.send({ content: 'Hn bolo Janeman 🙃' })
+			}
+			else message.channel.send({ content: 'Hn bol bsdk 😒' })
+
+				break;
+			case "adnan short story": message.channel.send("https://cdn.discordapp.com/attachments/794240262972243979/860556430490468362/VID_20210701_195116_318.mp4")
+				break;
+			case "jarvis expose cvm": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
+				break;
+			case "jarvis expose shivam": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
+				break;
+			case "-friendly": await message.channel.send({ content: `<@&885896296739790919>` })
+				break;
+			case "togglefriendly": let member = message.member;
+				let memberTarget = message.guild.members.cache.get(member.id);
+				let Role = message.guild.roles.cache.find(role => role.name === 'friendly');
+				if (message.member.roles.cache.has('885896296739790919')) {
+					memberTarget.roles.remove(Role.id);
+					message.reply('You will not get pinged for friendlies now  :)!')
+				}
+				else {
+
+					memberTarget.roles.add(Role.id);
+					message.reply('You Joined Friendlies Channel  :)!')
+				}
+				break;
+			case "sleep mode on": if (message.author.id == '550267183503114250' || message.author.id == '852779571816562729') {
+				message.reply("Sweet dreams boss 🥱 ")
+				d = 1;
+			}
+				break;
+			case "sleep mode off": if (message.author.id == '550267183503114250' || message.author.id == '852779571816562729') {
+				message.reply("Deactivated Boss!!")
+				d = 0;
+			} break;
+			case "jarvis snipe": const msg = client.snipes.get(message.channel.id)
+				if (!msg) {
+					message.reply(`Nothing to snipe!`);
+					return;
+				}
+				const embed = new Discord.MessageEmbed()
+					.setColor('RANDOM')
+					.setAuthor(msg.author, client.user.displayAvatarURL())
+					.setDescription(msg.content)
+					.setFooter('Caught :)')
+					.setTimestamp();
+				message.channel.send({ embeds: [embed] }).catch(error => {
+
+					const embed5 = new Discord.MessageEmbed()
+						.setColor('RANDOM')
+						.setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+						.setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+						.setDescription(`Message could not be loaded !`)
+
+
+						.setFooter(client.user.username, client.user.displayAvatarURL())
+						.setTimestamp();
+					message.channel.send({ embeds: [embed5] });
+				});;
+				break;
+			case "snipe": const msg1 = client.snipes.get(message.channel.id)
+				if (!msg1) {
+					message.reply(`Nothing to snipe!`);
+					return;
+				}
+
+				;
+				const embed17 = new Discord.MessageEmbed()
+					.setColor('RANDOM')
+					.setAuthor(msg1.author, client.user.displayAvatarURL())
+					.setDescription(msg1.content)
+					.setFooter('Caught :)')
+					.setTimestamp();
+				message.channel.send({ embeds: [embed17] }).catch(error => {
+
+					const embed8 = new Discord.MessageEmbed()
+						.setColor('RANDOM')
+						.setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+						.setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+						.setDescription(`Message could not be loaded !`)
+
+
+						.setFooter(client.user.username, client.user.displayAvatarURL())
+						.setTimestamp();
+					message.channel.send({ embeds: [embed8] });
+				});;
+				break;
+
+		  }
+
+	}else if(message.content.startsWith(prefix)){
 	const commandfile = client.commands.get(cmd.slice(prefix.length).toString().toLowerCase()) ;
 	if (commandfile) {
 		commandfile.run(client, message, args,Discord);
 	}
 
-
+	}
     
 
 }
