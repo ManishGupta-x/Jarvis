@@ -18,8 +18,7 @@ module.exports.run = async (client, message, args,Discord) => {
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
         message.channel.send({ embeds: [embed8] });
-        const Discord = require("discord.js")
-}
+}     
 
 module.exports.config = {
     name: "seek",
