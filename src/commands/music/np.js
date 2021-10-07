@@ -77,14 +77,14 @@ module.exports.run = async (client, message, args, Discord) => {
                 await collected.channel.send({ content: "Skipping" })
                 
                 await commandfile.run(client, message, args, Discord)
-            } else if (collected.customId === 'BassBoost') {
+            } else if (collected.customId === 'bassboost') {
 
 
                 
                 await commandfile.run(client, message, args, Discord)
 
 
-            } else if (collected.customId === 'Nightcore') {
+            } else if (collected.customId === 'nightcore') {
 
                
                 await commandfile.run(client, message, args, Discord)
