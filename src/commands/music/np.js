@@ -24,11 +24,11 @@ module.exports.run = async (client, message, args, Discord) => {
                     .setStyle('DANGER'),
 
                 new MessageButton()
-                    .setCustomId('BassBoost')
+                    .setCustomId('bassboost')
                     .setLabel('🎶 Bassboost')
                     .setStyle('PRIMARY'),
                 new MessageButton()
-                    .setCustomId('Nightcore')
+                    .setCustomId('nightcore')
                     .setLabel('🎧 Nightcore')
                     .setStyle('SECONDARY'),
                 new MessageButton()
@@ -64,35 +64,35 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
 
-        const filter = (interaction) => interaction.isButton() && interaction.customId === 'skip' || interaction.customId === '8d' || interaction.customId === 'BassBoost' || interaction.customId === 'Nightcore';
+        const filter = (interaction) => interaction.isButton() && interaction.customId === 'skip' || interaction.customId === '8d' || interaction.customId === 'bassboost' || interaction.customId === 'nightcore';
 
         const collector = message.channel.createMessageComponentCollector({ filter, time: 180000 });
         collector.on('collect', async collected => {
 
-
+            const commandfile = client.commands.get(collected.customId)
 
 
 
             if (collected.customId === 'skip') {
                 await collected.channel.send({ content: "Skipping" })
-                const commandfile = client.commands.get('skip')
+                
                 await commandfile.run(client, message, args, Discord)
             } else if (collected.customId === 'BassBoost') {
 
 
-                const commandfile = client.commands.get('bassboost')
+                
                 await commandfile.run(client, message, args, Discord)
 
 
             } else if (collected.customId === 'Nightcore') {
 
-                const commandfile = client.commands.get('nightcore')
+               
                 await commandfile.run(client, message, args, Discord)
 
 
             } else if (collected.customId === '8d') {
 
-                const commandfile = client.commands.get('8d')
+               
                 await commandfile.run(client, message, args, Discord)
 
 
