@@ -3,7 +3,7 @@ const { MessageActionRow, MessageButton } = require('discord.js');
 
 const Discord = require("discord.js")
 
-module.exports.run = async (client, message, args,Discord) => {
+module.exports.run = async (client, message, args, Discord) => {
     if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
     var wallpapers = ["https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284561726308372/433536-Klayton-women-science_fiction-planet-Scandroid.png"
         , "https://cdn.discordapp.com/attachments/730714810614022228/882284789145677854/Drum-Instrument-Neon-HD-Wallpapers-Free-Download.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png",
@@ -75,22 +75,25 @@ module.exports.run = async (client, message, args,Discord) => {
 
             if (collected.customId === 'skip') {
                 await collected.channel.send({ content: "Skipping" })
-
-                await client.music.get('skip').execute(client, message, args, Discord);
+                const commandfile = client.commands.get('skip')
+                await commandfile.run(client, message, args, Discord)
             } else if (collected.customId === 'BassBoost') {
 
 
-                await client.music.get('bassboost').execute(client, message, args, Discord);
+                const commandfile = client.commands.get('bassboost')
+                await commandfile.run(client, message, args, Discord)
 
 
             } else if (collected.customId === 'Nightcore') {
 
-                await client.music.get('nightcore').execute(client, message, args, Discord);
+                const commandfile = client.commands.get('nightcore')
+                await commandfile.run(client, message, args, Discord)
 
 
             } else if (collected.customId === '8d') {
 
-                await client.music.get('8d').execute(client, message, args, Discord);
+                const commandfile = client.commands.get('8d')
+                await commandfile.run(client, message, args, Discord)
 
 
             }

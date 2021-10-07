@@ -17,7 +17,7 @@ if(message.author.id != '550267183503114250' && message.content.startsWith(prefi
 
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
-	const commandfile = client.commands.get(cmd.slice(prefix.length).toString().toLowerCase()) || client.commands.get(client.aliases.get(cmd.slice(prefix.length).toString().toLowerCase()));;
+	const commandfile = client.commands.get(cmd.slice(prefix.length).toString().toLowerCase()) ;
 	if (commandfile) {
 		commandfile.run(client, message, args,Discord);
 	}
