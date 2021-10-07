@@ -5,7 +5,8 @@ mongoose.connect('mongodb+srv://Manish:m7827851250@pesmobile.zolll.mongodb.net/t
 
 
 
-const Data = require('./data.js');
+const Data = require('../../models/data.js');
+
 
 
 

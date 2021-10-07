@@ -7,7 +7,8 @@ const Discord = require('discord.js');
 
 
 
-const Data = require('./data.js');
+const Data = require('../../models/data.js');
+
 
 const Discord = require("discord.js")
 
