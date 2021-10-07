@@ -10,7 +10,7 @@ const Discord = require('discord.js');
 const Data = require('../../models/data.js');
 
 
-const Discord = require("discord.js")
+
 
 module.exports.run = async (client, message, args,Discord) => {
     const user = message.mentions.users.first() || message.author
