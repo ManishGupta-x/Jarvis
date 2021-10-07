@@ -13,9 +13,19 @@ if(message.author.id != '550267183503114250' && message.content.startsWith(prefi
 	message.channel.send('Bot Under Maintenance currently Possible Resolving time 5 Pm ist . Sorry For Inconvieniece Caused')
   return;
 }
-
+var d= 0;
 
     if (message.author.bot) return;
+	if (message.mentions.members.first()) {
+        if (message.mentions.members.first().id == '550267183503114250' || message.mentions.members.first().id == '852779571816562729') {
+            if (d == 1 && message.author.id == '761159077639356446' && message.guild.id == '730714810064306188') {
+                message.reply("Tumahra Darloo so rha h abhi 🥱, thodi der me ana 😴")
+            }
+            else if (d == 1) {
+                message.reply("Boss sleeping rn 😴 , Ping him after a while 🥱")
+            }
+        }
+    }
     if (!message.content.startsWith(prefix)) {
 
           switch(message.content){
@@ -56,7 +66,8 @@ if(message.author.id != '550267183503114250' && message.content.startsWith(prefi
 			}
 				break;
 			case "sleep mode off": if (message.author.id == '550267183503114250' || message.author.id == '852779571816562729') {
-				message.reply("Deactivated Boss!!")
+				if(d==1){
+				message.reply("Deactivated Boss!!")}
 				d = 0;
 			} break;
 			case "jarvis snipe": const msg = client.snipes.get(message.channel.id)
