@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const { MessageEmbed } = require('discord.js')
 const prefix = 'p!';
-var d
+var d;
 module.exports = async (client,message) => {
 
 	const messageArray = message.content.split(' ');
