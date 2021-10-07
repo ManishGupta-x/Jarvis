@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const { MessageEmbed } = require('discord.js')
 const prefix = 'p!';
-var d;
+var d
 module.exports = async (client,message) => {
 
 	const messageArray = message.content.split(' ');
@@ -9,10 +9,7 @@ module.exports = async (client,message) => {
 	const args = messageArray.slice(1);
 
 	if (message.author.bot || message.channel.type === 'dm' ) return;
-if(message.author.id != '550267183503114250' && message.content.startsWith(prefix) ){
-	message.channel.send('Bot Under Maintenance currently Possible Resolving time 5 Pm ist . Sorry For Inconvieniece Caused')
-  return;
-}
+
 
 
     if (message.author.bot) return;
