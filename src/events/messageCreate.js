@@ -13,7 +13,7 @@ if(message.author.id != '550267183503114250' && message.content.startsWith(prefi
 	message.channel.send('Bot Under Maintenance currently Possible Resolving time 5 Pm ist . Sorry For Inconvieniece Caused')
   return;
 }
-var d= 0;
+
 
     if (message.author.bot) return;
 	if (message.mentions.members.first()) {
