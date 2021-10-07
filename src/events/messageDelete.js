@@ -1,4 +1,4 @@
-module.exports = message => {
+module.exports = (client,message) => {
     if (!message) {
 
         return;
