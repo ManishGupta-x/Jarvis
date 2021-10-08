@@ -35,7 +35,7 @@ module.exports.run = async (client, message, args, Discord) => {
         });
         data.save();
         message.channel.send({ content: `Yours task \`${task}\` has been Added!` })
-        message.channel.send({content : task.join('\n')})
+        message.channel.send({content : list.join('\n')})
        
     } else if (!data) {
         let newData = new list({
