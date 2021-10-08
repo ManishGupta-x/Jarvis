@@ -11,12 +11,27 @@ module.exports.run = async (client, message, args, Discord) => {
     });
 
     if(data){
-             message.reply('Are you sure u awnt to delete your todo list? yes/no')
+             message.reply('Are you sure u want to delete your todo list? yes/no')
         const filter = m => m.author.id == message.author.id;
         const collected = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
         const response = collected.first().content;
         if(response == 'yes' || response == 'Yes' || response == 'YES' ){
-
+            list.findOneAndDelete({
+                UserID: message.author.id
+    
+            }, (err, res) => {
+                if(err) console.log(err)
+                const embed = new Discord.MessageEmbed()
+                .setColor('RANDOM')
+                .setThumbnail('https://media.discordapp.net/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
+                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                .setDescription(`Data Deleted succesfully!`)
+                
+                
+                .setFooter(client.user.username, client.user.displayAvatarURL())
+                .setTimestamp();
+                message.channel.send({ embeds: [embed] });
+              })
 
         }else if( response == 'no' || response == 'No' || response == 'NO' ){
                 
@@ -26,17 +41,20 @@ module.exports.run = async (client, message, args, Discord) => {
             message.reply('Invalid Reply -_-')
         }
 
-        list.findOneAndDelete({
-            UserID: message.author.id
-
-        }, (err, res) => {
-            if(err) console.log(err)
-          message.channel.send({content : 'Data Deleted Successfully! '})
-          })
+       
    }
     if(!data){
 
-        message.reply('Sorry you dont have any task to do 😥')
+        const embed2 = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
+        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+        .setDescription(`Bruh You dont have a Task to do 😥`)
+        
+        
+        .setFooter(client.user.username, client.user.displayAvatarURL())
+        .setTimestamp();
+        message.channel.send({ embeds: [embed2] });
     }
 }
 
