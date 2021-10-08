@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
         const embed1 = new Discord.MessageEmbed()
             .setColor('RANDOM')
-            .setTitle(" Your Todo List ")
+            .setTitle("__Your Todo List__")
             .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
             .addField( `**__Status__**`, `✅ :  Task Done \n ❌ : Task Incomplete`)
