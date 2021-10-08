@@ -7,7 +7,7 @@ const list = require('../../models/todolist');
 module.exports.run = async (client, message, args, Discord) => {
 
 
-    let task = args.slice(0).join(" ") ;
+    let task = args.slice(0).join(" ");
     let state = '❌';
     if (!task) {
 
@@ -33,45 +33,45 @@ module.exports.run = async (client, message, args, Discord) => {
         data.list.unshift({
             User: message.author.id,
             Task: task,
-            status : state 
+            status: state
         });
         data.save();
 
         const embed1 = new Discord.MessageEmbed()
-        .setColor('RANDOM')
-        .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
-        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-        .setDescription(`Your Task has been added to list 😉`)
-        
-        
-        .setFooter(`Type p!mytasks to view your todo list`, client.user.displayAvatarURL())
-        .setTimestamp();
-        message.channel.send({ embeds: [embed1] });
-            
+            .setColor('RANDOM')
+            .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
+            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+            .setDescription(`Your Task has been added to list 😉`)
 
-              
+
+            .setFooter(`Type p!mytasks to view your todo list`, client.user.displayAvatarURL())
+            .setTimestamp();
+        message.channel.send({ embeds: [embed1] });
+
+
+
     } else if (!data) {
         let newData = new list({
 
             UserID: message.author.id,
-            list: [{            
+            list: [{
                 Task: task,
-                status : state 
+                status: state
             },],
-           
+
         });
         newData.save();
 
         const embed2 = new Discord.MessageEmbed()
-.setColor('RANDOM')
-.setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
-.setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-.setDescription(`Congrats you Saved your First task todo 😇`)
+            .setColor('RANDOM')
+            .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
+            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+            .setDescription(`Congrats you Saved your First task todo 😇`)
 
 
-.setFooter(`type p!mytasks to view`, client.user.displayAvatarURL())
-.setTimestamp();
-message.channel.send({ embeds: [embed2] });
+            .setFooter(`type p!mytasks to view`, client.user.displayAvatarURL())
+            .setTimestamp();
+        message.channel.send({ embeds: [embed2] });
 
     }
 
