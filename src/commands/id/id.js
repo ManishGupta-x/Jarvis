@@ -14,8 +14,8 @@ const Data = require('../../models/data.js');
 
 
 module.exports.run = async (client, message, args,Discord) => {
-    const user = message.mentions.users.first() || message.author
-    if(args[0]){ console.log(message.mentions.users.first())}
+    const user = message.mentions.members.first() || message.author
+    if(args[0]){ console.log(message.mentions.members.first())}
      Data.findOne({
          userID : user.id 
      }, (err, data) => {
