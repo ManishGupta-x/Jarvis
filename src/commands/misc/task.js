@@ -16,13 +16,10 @@ module.exports.run = async (client, message, args, Discord) => {
         if (isNaN(args[1]) || data.list.length < args[1]) {
             message.reply(" Invalid task Number 🙄")
         } else {
-
-
-          
-
-
+      
             const num = args[1] - 1;
             data.list.splice(num,1);
+            
             data.save();
             const embed9 = new Discord.MessageEmbed()
             .setColor('RANDOM')
@@ -41,7 +38,16 @@ module.exports.run = async (client, message, args, Discord) => {
     }}
     if(!data){
 
-        message.reply('Sorry you dont have any task to do 😥')
+        const embed2 = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
+        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+        .setDescription(`Bruh You dont have a Task to do 😥`)
+        
+        
+        .setFooter(client.user.username, client.user.displayAvatarURL())
+        .setTimestamp();
+        message.channel.send({ embeds: [embed2] });
     }
 }
 

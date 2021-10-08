@@ -18,23 +18,31 @@ if(!args[0] || isNaN(args[0])){
     });
 
     if (data) {
-        let taskno = args[0] -1; 
-        let state = '❌';
+             
         let state1 = '✔️';
-list.updateOne({
-
-    status : state,
-    
-},{
-     status : state1,
-   
-})
-    
-    
+        const num = args[0] - 1;
+        let savetask = data.list[num].Task;
+        
+        data.list.splice(num,1);
+        data.list.unshift({
+            User: message.author.id,
+            Task: savetask,
+            status : state1 
+        });
+        data.save();
        
     }else if (!data) {
       
-
+        const embed2 = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
+        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+        .setDescription(`Bruh You dont have a Task to do 😥`)
+        
+        
+        .setFooter(client.user.username, client.user.displayAvatarURL())
+        .setTimestamp();
+        message.channel.send({ embeds: [embed2] });
 
     }
 
