@@ -11,7 +11,8 @@ module.exports.run = async (client, message, args, Discord) => {
     if (!task) {
 
         message.reply('Please Mention the Tasks You wanna Do!')
-
+        return;
+    }
         let data = await list.findOne({
 
             UserID: message.author.id
@@ -53,7 +54,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
 
-    }
+    
 }
 
 module.exports.config = {
