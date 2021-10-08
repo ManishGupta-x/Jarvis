@@ -30,6 +30,17 @@ if(!args[0] || isNaN(args[0])){
             status : state1 
         });
         data.save();
+
+        const embed = new Discord.MessageEmbed()
+.setColor('RANDOM')
+.setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
+.setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+.setDescription(`The Task Has Been Marked Done ! ✔️`)
+
+
+.setFooter(client.user.username, client.user.displayAvatarURL())
+.setTimestamp();
+message.channel.send({ embeds: [embed] });
        
     }else if (!data) {
       
