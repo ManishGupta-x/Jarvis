@@ -7,7 +7,8 @@ const list = require('../../models/todolist');
 module.exports.run = async (client, message, args, Discord) => {
 
 
-    let task = args.slice(0).join(" ") + ' : ❌';
+    let task = args.slice(0).join(" ") ;
+    let state = '❌';
     if (!task) {
 
         const embed = new Discord.MessageEmbed()
@@ -32,6 +33,7 @@ module.exports.run = async (client, message, args, Discord) => {
         data.list.unshift({
             User: message.author.id,
             Task: task,
+            status : state 
         });
         data.save();
 
@@ -55,6 +57,7 @@ module.exports.run = async (client, message, args, Discord) => {
             list: [{            
                 Task: task,
             },],
+            status : state 
         });
         newData.save();
 

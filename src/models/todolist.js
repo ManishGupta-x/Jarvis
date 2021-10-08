@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const todoSchema = mongoose.Schema({
 
     UserID: String,
-    list : Array
+    list : Array,
+    status : String
 
 
 })
