@@ -19,14 +19,15 @@ if(!args[0] || isNaN(args[0])){
 
     if (data) {
         let taskno = args[0] ; 
+        let state = '❌';
+        let state1 = '✔️';
+list[taskno].updateOne({
 
-list.updateOne({
-
-    Task : data.list[taskno].Task,
+    status : state,
     
 },{
-
-    Task : data.list[taskno].Task,
+     status : state1,
+   
 })
         
         
