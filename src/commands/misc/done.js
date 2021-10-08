@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
     if (data) {
 
-        let state1 = '✔️';
+        let state1 = '✅';
         const num = args[0] - 1;
         let savetask = data.list[num].Task;
 
