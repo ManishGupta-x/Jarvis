@@ -18,7 +18,7 @@ if(!args[0] || isNaN(args[0])){
     });
 
     if (data) {
-        let taskno = args[0] ; 
+        let taskno = args[0] -1; 
         let state = '❌';
         let state1 = '✔️';
 list.updateOne({
@@ -29,7 +29,8 @@ list.updateOne({
      status : state1,
    
 })
-        
+    
+    
        
     }else if (!data) {
       
