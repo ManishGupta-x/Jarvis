@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 const disTube = require('distube');
 const config = require('../../../settings.json')
-mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(config.todo, { useNewUrlParser: true, useUnifiedTopology: true });
 const list = require('../../models/todolist');
 module.exports.run = async (client, message, args, Discord) => {
 
