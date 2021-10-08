@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const mongoose = require('mongoose');
 
 const ClientManager = require(`./src/ClientManager`);
 const client = new ClientManager({
@@ -8,7 +7,7 @@ const client = new ClientManager({
 });
 const fetch = require("node-fetch").default;
 const config = require('./settings.json')
-mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true })
+
 
 
 client.setup();
