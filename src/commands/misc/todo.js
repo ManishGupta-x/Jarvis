@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const disTube = require('distube');
+
 const mongoose = require("mongoose");
 const config = require('../../../settings.json')
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args, Discord) => {
             .setColor('RANDOM')
             .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setDescription(`Mention task You wanna do `)
+            .setDescription(`Mention task You wanna do 🤔 Eg: p!todo [Task] `)
 
 
             .setFooter(client.user.username, client.user.displayAvatarURL())
@@ -34,9 +34,20 @@ module.exports.run = async (client, message, args, Discord) => {
             Task: task,
         });
         data.save();
-        message.channel.send({ content: `Yours task \`${task}\` has been Added!` })
-        message.channel.send({content : data.list.map( (Task,id,list) => ` **${id + 1}**  ${list[id].Task}`).join('\n')})
-       
+
+        const embed1 = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
+        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+        .setDescription(`Your Task \`${task}\` has been added to list 😉`)
+        
+        
+        .setFooter(`Type p!mytasks to view your todo list`, client.user.displayAvatarURL())
+        .setTimestamp();
+        message.channel.send({ embeds: [embed1] });
+            
+
+              
     } else if (!data) {
         let newData = new list({
 
@@ -47,18 +58,18 @@ module.exports.run = async (client, message, args, Discord) => {
         });
         newData.save();
 
-        message.channel.send({ content: `Yours task has been Added!` })
+        const embed2 = new Discord.MessageEmbed()
+.setColor('RANDOM')
+.setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
+.setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+.setDescription(`Congrats you Saved your First task todo 😇`)
+
+
+.setFooter(client.user.username, client.user.displayAvatarURL())
+.setTimestamp();
+message.channel.send({ embeds: [embed2] });
+
     }
-
-
-
-
-
-
-
-
-
-
 
 
 
