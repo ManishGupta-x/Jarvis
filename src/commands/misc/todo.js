@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
         let data = await list.findOne({
 
-            userID: message.author.id
+            UserID: message.author.id
         });
 
 
@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args, Discord) => {
         } else if (!data) {
             let newData = new list({
 
-                userID: message.author.id,
+                UserID: message.author.id,
                 list: [{
 
                     User: message.author.id,
