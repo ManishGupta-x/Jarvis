@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const disTube = require('distube');
+const mongoose = require("mongoose");
 const config = require('../../../settings.json')
 mongoose.connect(config.todo, { useNewUrlParser: true, useUnifiedTopology: true });
 const list = require('../../models/todolist');
