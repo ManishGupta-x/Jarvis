@@ -65,7 +65,7 @@ module.exports.run = async (client, message, args, Discord) => {
 .setDescription(`Congrats you Saved your First task todo 😇`)
 
 
-.setFooter(client.user.username, client.user.displayAvatarURL())
+.setFooter(`type p!mytasks to view`, client.user.displayAvatarURL())
 .setTimestamp();
 message.channel.send({ embeds: [embed2] });
 

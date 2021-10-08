@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args, Discord) => {
             message.reply(" Invalid task Number 🙄")
         } else {
             const num = args[1] - 1;
-            data.list.splice(num, 1);
+            delete data.list[num];
             const embed9 = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
