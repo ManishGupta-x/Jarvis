@@ -56,8 +56,9 @@ module.exports.run = async (client, message, args, Discord) => {
             UserID: message.author.id,
             list: [{            
                 Task: task,
+                status : state 
             },],
-            status : state 
+           
         });
         newData.save();
 
