@@ -7,7 +7,7 @@ const list = require('../../models/todolist');
 module.exports.run = async (client, message, args, Discord) => {
 
 
-    let task = args.slice(0).join(" ");
+    let task = args.slice(0).join(" ") + ': ❌';
     if (!task) {
 
         const embed = new Discord.MessageEmbed()

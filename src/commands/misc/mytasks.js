@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args,Discord) => {
         .setColor('RANDOM')
         .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
         .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-        .setDescription(data.list.map( (Task,id,list) => ` **${id + 1}** - \`${list[id].Task}\` : ❌`).join('\n'))
+        .setDescription(data.list.map( (Task,id,list) => ` **${id + 1}** - \`${list[id].Task}\` : `).join('\n'))
         
         
         .setFooter(`Type p!todo [task] to add task`, client.user.displayAvatarURL())
