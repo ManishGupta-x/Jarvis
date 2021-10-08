@@ -7,7 +7,7 @@ const list = require('../../models/todolist');
 module.exports.run = async (client, message, args, Discord) => {
 
 
-    let task = args.slice(0).join(" ") + ': ❌';
+    let task = args.slice(0).join(" ") + ' : ❌';
     if (!task) {
 
         const embed = new Discord.MessageEmbed()
@@ -39,7 +39,7 @@ module.exports.run = async (client, message, args, Discord) => {
         .setColor('RANDOM')
         .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
         .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-        .setDescription(`Your Task \`${task}\` has been added to list 😉`)
+        .setDescription(`Your Task has been added to list 😉`)
         
         
         .setFooter(`Type p!mytasks to view your todo list`, client.user.displayAvatarURL())
