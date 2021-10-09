@@ -144,8 +144,8 @@ module.exports = async (client, message) => {
 		}
 	} else if (!data) {
 
-		prefix = 'p!';
-		if (!message.content.startsWith(prefix)) {
+		const prefix2 = 'p!';
+		if (!message.content.startsWith(prefix2)) {
 
 			switch (message.content) {
 				case 'hey jarvis': if (message.author.id == '550267183503114250' || message.guild.id == '730714810064306188') { message.reply("Yes Boss 🙃") }
@@ -245,8 +245,8 @@ module.exports = async (client, message) => {
 
 			}
 
-		} else if (message.content.startsWith(prefix)) {
-			const commandfile = client.commands.get(cmd.slice(prefix.length).toString().toLowerCase());
+		} else if (message.content.startsWith(prefix2)) {
+			const commandfile = client.commands.get(cmd.slice(prefix2.length).toString().toLowerCase());
 			if (commandfile) {
 				commandfile.run(client, message, args, Discord);
 			}
