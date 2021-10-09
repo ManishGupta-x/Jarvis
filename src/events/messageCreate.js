@@ -34,8 +34,8 @@ module.exports = async (client, message) => {
 	if (data) {
 
 
-		prefix = data.Prefix;
-		if (!message.content.startsWith(prefix)) {
+	const prefix1 = data.Prefix;
+		if (!message.content.startsWith(prefix1)) {
 
 			switch (message.content) {
 				case 'hey jarvis': if (message.author.id == '550267183503114250' || message.guild.id == '730714810064306188') { message.reply("Yes Boss 🙃") }
@@ -135,8 +135,8 @@ module.exports = async (client, message) => {
 
 			}
 
-		} else if (message.content.startsWith(prefix)) {
-			const commandfile = client.commands.get(cmd.slice(prefix.length).toString().toLowerCase());
+		} else if (message.content.startsWith(prefix1)) {
+			const commandfile = client.commands.get(cmd.slice(prefix1.length).toString().toLowerCase());
 			if (commandfile) {
 				commandfile.run(client, message, args, Discord);
 			}
