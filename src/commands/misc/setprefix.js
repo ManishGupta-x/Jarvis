@@ -6,7 +6,10 @@ module.exports.run = async (bot, message, args) => {
     const data = await prefixModel.findOne({
         GuildID: message.guild.id
     });
-
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+        message.reply("You are not allowed to Change prefix you need \`Manage Messages Permission\` !")
+        return;
+    }
     if (!args[0]) return message.channel.send('You must provide a **new prefix**!');
 
     if (args[0].length > 5) return message.channel.send('Your new prefix must be under \`5\` characters!')
