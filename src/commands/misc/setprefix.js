@@ -1,6 +1,6 @@
 const prefixModel = require("../../models/prefix")
 const mongoose = require("mongoose");
-const config = require('../../settings.json')
+const config = require('../../../settings.json')
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 module.exports.run = async (bot, message, args) => {
     const data = await prefixModel.findOne({
