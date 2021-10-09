@@ -2,7 +2,9 @@ const Discord = require('discord.js');
 const { MessageEmbed } = require('discord.js')
 const mongoose = require("mongoose");
 const prefix = require('../models/prefix');
+const prefixModel = require("../models/prefix")
 const config = require('../../settings.json')
+
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 var d;
 module.exports = async (client, message) => {
