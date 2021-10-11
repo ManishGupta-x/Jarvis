@@ -3,7 +3,6 @@ const math = require('mathjs')
 module.exports.run = async (client, message, args,Discord) => {
     let task = args.slice(0).join(" ");
 
-try {
 
     const embed = new Discord.MessageEmbed()
 .setColor('RANDOM')
@@ -15,10 +14,7 @@ try {
 .setTimestamp();
 message.channel.send({ embeds: [embed] });
  
-}catch(err){
 
-    message.channel.send(' Invalid Question -_-')
-}
 
 
 }
