@@ -224,7 +224,7 @@ module.exports = async (client, message) => {
 					;
 					const embed17 = new Discord.MessageEmbed()
 						.setColor('RANDOM')
-						.setAuthor(msg1.author, client.user.displayAvatarURL())
+						.setAuthor(`${msg1.author}`, client.user.displayAvatarURL())
 						.setDescription(msg1.content)
 						.setFooter('Caught :)')
 						.setTimestamp();
