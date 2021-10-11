@@ -10,6 +10,7 @@ module.exports = class ClientManager extends Client {
         super(options);
         this.commands = new Collection();
         this.snipes = new Collection();
+        this.aliases = new Collection();
          
     }
 

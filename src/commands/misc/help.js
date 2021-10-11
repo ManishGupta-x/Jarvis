@@ -59,6 +59,7 @@ module.exports.run = async (client, message, args, Discord) => {
             const commandfile = client.commands.get('helptodo')
             await commandfile.run(client, message, args, Discord)
         }
+        collected.deferUpdate()
     })
 
 }

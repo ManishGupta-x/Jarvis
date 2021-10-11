@@ -13,6 +13,9 @@ function loadCommands(client) {
 				cmds.forEach((cmd) => {
 					const pull = require(`../commands/${cmdfolder}/${cmd}`);
 					client.commands.set(pull.config.name, pull);
+					pull.config.aliases.forEach((alias) => {
+						client.aliases.set(alias, pull.config.name);
+					});
 					
 				});
 			});

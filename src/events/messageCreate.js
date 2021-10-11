@@ -136,7 +136,7 @@ module.exports = async (client, message) => {
 			}
 
 		} else if (message.content.startsWith(prefix1)) {
-			const commandfile = client.commands.get(cmd.slice(prefix1.length).toString().toLowerCase());
+			const commandfile = client.commands.get(cmd.slice(prefix1.length).toString().toLowerCase()) || client.commands.get(client.aliases.get(cmd.slice(prefix.length).toString().toLowerCase()));
 			if (commandfile) {
 				commandfile.run(client, message, args, Discord);
 			}
@@ -246,7 +246,7 @@ module.exports = async (client, message) => {
 			}
 
 		} else if (message.content.startsWith(prefix2)) {
-			const commandfile = client.commands.get(cmd.slice(prefix2.length).toString().toLowerCase());
+			const commandfile = client.commands.get(cmd.slice(prefix2.length).toString().toLowerCase())|| client.commands.get(client.aliases.get(cmd.slice(prefix.length).toString().toLowerCase()));
 			if (commandfile) {
 				commandfile.run(client, message, args, Discord);
 			}
