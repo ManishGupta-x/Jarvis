@@ -8,5 +8,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "official",
+    aliases: [],
     Description: 'Command',
 }

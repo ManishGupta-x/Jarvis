@@ -11,5 +11,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "ping",
+    aliases: [],
     Description: 'This is a Ping command',
 }

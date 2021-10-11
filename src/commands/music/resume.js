@@ -31,5 +31,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "resume",
+    aliases: [],
     Description: 'Command',
 }

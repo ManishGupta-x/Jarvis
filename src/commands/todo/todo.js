@@ -82,5 +82,6 @@ module.exports.run = async (client, message, args, Discord) => {
 
 module.exports.config = {
     name: "todo",
+    aliases: [],
     Description: 'Command',
 }

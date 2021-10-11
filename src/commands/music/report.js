@@ -10,5 +10,6 @@ client.channels.cache.get(`${channelID}`).send(`Guild Id : ${message.guild.id} R
 
 module.exports.config = {
     name: "report",
+    aliases: [],
     Description: 'Command',
 }

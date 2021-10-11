@@ -8,5 +8,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "twitter",
+    aliases: [],
     Description: 'Command',
 }

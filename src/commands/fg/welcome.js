@@ -23,5 +23,6 @@ const Discord = require("discord.js")
     
     module.exports.config = {
         name: "welcome",
+        aliases: [],
         Description: 'Command',
     }

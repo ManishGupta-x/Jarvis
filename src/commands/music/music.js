@@ -70,5 +70,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "music",
+    aliases: [],
     Description: 'Command',
 }

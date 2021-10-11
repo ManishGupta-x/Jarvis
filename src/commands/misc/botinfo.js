@@ -15,5 +15,6 @@ module.exports.run = async (client, message, args, Discord) => {
 
 module.exports.config = {
     name: "botinfo",
+    aliases: [],
     Description: 'Command',
 }

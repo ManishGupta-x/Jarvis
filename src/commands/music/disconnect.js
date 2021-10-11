@@ -7,5 +7,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "disconnect",
+    aliases: [],
     Description: 'Command',
 }

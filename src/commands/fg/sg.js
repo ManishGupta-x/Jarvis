@@ -30,6 +30,7 @@
     
     module.exports.config = {
         name: "sg",
+        aliases: [],
         Description: 'Command',
     }
 

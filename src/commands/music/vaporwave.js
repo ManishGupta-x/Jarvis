@@ -20,5 +20,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "vaporwave",
+    aliases: [],
     Description: 'Command',
 }

@@ -107,5 +107,6 @@ module.exports.run = async (client, message, args, Discord) => {
 
 module.exports.config = {
     name: "np",
+    aliases: [],
     Description: 'Command',
 }

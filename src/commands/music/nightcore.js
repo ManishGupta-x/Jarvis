@@ -26,5 +26,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "nightcore",
+    aliases: [],
     Description: 'Command',
 }

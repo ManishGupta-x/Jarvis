@@ -45,5 +45,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "search",
+    aliases: [],
     Description: 'Command',
 }

@@ -26,5 +26,6 @@ if(queue) { let filter = client.distube.setFilter(message,'8d');
 
 module.exports.config = {
     name: "8d",
+    aliases: [],
     Description: 'Command',
 }

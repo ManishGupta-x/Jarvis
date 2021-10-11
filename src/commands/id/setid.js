@@ -53,6 +53,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
 module.exports.config = {
     name: "setid",
+    aliases: [],
     Description: 'Command',
 }
 

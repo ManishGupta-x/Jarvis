@@ -26,5 +26,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "vol",
+    aliases: [],
     Description: 'Command',
 }
