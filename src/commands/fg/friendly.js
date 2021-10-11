@@ -1,7 +1,7 @@
 const { ButtonInteraction } = require("discord.js");
 const fs = require("fs");
 const mongoose = require('mongoose');
-const config =  require('../../../settings.json')
+const config = require('../../../settings.json')
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 var x = 0;
 
@@ -13,7 +13,7 @@ const usedCommand = new Set();
 
 const Discord = require("discord.js")
 const { MessageActionRow, MessageButton } = require('discord.js');
-module.exports.run = async (client, message, args,Discord) => {
+module.exports.run = async (client, message, args, Discord) => {
     if (usedCommand.has(message.author.id)) {
 
         message.channel.send('https://tenor.com/view/slow-down-a-little-bit-anthony-mennella-culter35-slow-down-dont-rush-gif-17969625')
@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args,Discord) => {
     }
     else {
         const channel = '885897626753593364';
-      
+
         let member = message.member
         let membertarget = message.guild.members.cache.get(member.id);
         const newEmbed = new Discord.MessageEmbed()
@@ -32,44 +32,65 @@ module.exports.run = async (client, message, args,Discord) => {
             .setTitle(`Someone is Challenging `)
             .setDescription(`\n <@${membertarget.id}> is Challenging For friendly ! React Below on 🤝 to Accept his Challenge! Get <@${membertarget.id}> Id by reacting to 👨‍💻`)
             .setFooter(' Type p!fping If you dont want pings! ')
-            const row = new MessageActionRow()
+        const row = new MessageActionRow()
             .addComponents(
                 new MessageButton()
                     .setCustomId('Accept')
-                    .setLabel('🏃‍♂️ Accept Chal;enge')
+                    .setLabel('🏃‍♂️ Accept Challenge')
                     .setStyle('DANGER'),
 
                 new MessageButton()
                     .setCustomId('id')
                     .setLabel('👨‍💻 Get Challenger Id')
                     .setStyle('SUCCESS'),
-              
-               
+
+
             );
 
         if (message.channel.id == channel) {
 
-                    message.channel.send({embeds : [newEmbed] , components: [row]})
-              
-            const filter = (interaction) => interaction.isButton() && interaction.user.id != message.author.id && interaction.customId === 'Accept'  || interaction.customId === 'id' ;
+            message.channel.send({ embeds: [newEmbed], components: [row] })
+
+            const filter = (interaction) => interaction.isButton() && interaction.user.id != message.author.id && interaction.customId === 'Accept' || interaction.customId === 'id';
             const collector = message.channel.createMessageComponentCollector({ filter, time: 9000000 });
-            
 
-            collector.on('collect', async collected => {
+            client.on('interactionCreate', async interaction => {
 
-
-                if (collected.customId === 'Accept'){
-                
-                const  user = interaction.user.id;
-                await collected.channel.send({ contents: `${user.id}`})
-                }
-                else if(collected.customId == 'id'){
+                collector.on('collect', async collected => {
 
 
-                }
+                    if (collected.customId === 'Accept') {
+
+                        const user = interaction.user.id;
+                        await collected.channel.send({ contents: `${user}` })
+                    }
+                    else if (collected.customId == 'id') {
+
+
+                        Data.findOne({
+                            userID: message.author.id
+                        }, async (err, data) => {
+                            if (err) console.log(err);
+                            if (!data) {
+                                let msg1 = await message.reply(` No Id in record for <@${message.author.id}>`)
+                                await msg1.delete({ timeout: 100000 });
+                            } else {
+                                let msg2 = await message.channel.send(`${client.users.cache.get(message.author.id).username}'s Id ${data.Konami}`);
+                                await msg2.delete({ timeout: 100000 }); return;
+                            }
+
+                        });
+
+                    }
+
+                })
+
+
+
 
             })
-           
+
+
         }
         else {
 
