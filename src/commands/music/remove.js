@@ -40,6 +40,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "remove",
-    aliases: [],
+    aliases: ['r'],
     Description: 'Command',
 }

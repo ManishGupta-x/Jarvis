@@ -138,6 +138,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "queue",
-    aliases: [],
+    aliases: ['q'],
     Description: 'Command',
 }

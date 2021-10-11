@@ -27,6 +27,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "bassboost",
-    aliases: [],
+    aliases: ['bb'],
     Description: 'Command',
 }

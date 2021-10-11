@@ -18,6 +18,6 @@ module.exports.run = async (client, message, args,Discord) => {
 
 module.exports.config = {
     name: "autoplay",
-    aliases: [],
+    aliases: ['ap'],
     Description: 'Command',
 }

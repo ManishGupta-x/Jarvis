@@ -107,6 +107,6 @@ module.exports.run = async (client, message, args, Discord) => {
 
 module.exports.config = {
     name: "np",
-    aliases: [],
+    aliases: ["nowplaying"],
     Description: 'Command',
 }
