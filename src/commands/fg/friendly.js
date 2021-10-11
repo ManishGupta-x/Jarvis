@@ -62,7 +62,7 @@ module.exports.run = async (client, message, args, Discord) => {
                     if (collected.customId === 'Accept') {
 
                         const user = interaction.user.id;
-                        await collected.channel.send({ contents: `${user}` })
+                        await message.channel.send({ contents: `${user}` })
                     }
                     else if (collected.customId == 'id') {
 
@@ -82,7 +82,7 @@ module.exports.run = async (client, message, args, Discord) => {
                         });
 
                     }
-
+                    collected.deferUpdate();
                 })
 
 
