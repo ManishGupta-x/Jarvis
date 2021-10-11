@@ -73,10 +73,10 @@ module.exports.run = async (client, message, args, Discord) => {
                             if (err) console.log(err);
                             if (!data) {
                                 let msg1 = await message.reply(` No Id in record for <@${message.author.id}>`)
-                                await msg1.delete({ timeout: 100000 });
+                              
                             } else {
                                 let msg2 = await message.channel.send(`${client.users.cache.get(message.author.id).username}'s Id ${data.Konami}`);
-                                await msg2.delete({ timeout: 100000 }); return;
+                                 
                             }
 
                         });
