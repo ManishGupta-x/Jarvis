@@ -20,9 +20,8 @@ module.exports = {
             message.reply('The command has a Cooldown of 30 mins')
         }
         else {
-            const channel = '650289693543628812';
-            const hand = '🤝';
-            const idkonami = '👨‍💻';
+            const channel = '885897626753593364';
+          
             let member = message.member
             let membertarget = message.guild.members.cache.get(member.id);
             const newEmbed = new Discord.MessageEmbed()
@@ -50,7 +49,7 @@ module.exports = {
 
             if (message.channel.id == channel) {
 
-                        
+                        message.channel.send({embeds : [newEmbed] , components: [row]})
                   
                 const filter = (interaction) => interaction.isButton() && interaction.user.id != message.author.id && interaction.customId === 'Accept'  || interaction.customId === 'id' ;
                 const collector = message.channel.createMessageComponentCollector({ filter, time: 9000000 });
@@ -66,7 +65,7 @@ module.exports = {
                     }
                     else if(collected.customId == 'id'){
 
-                        
+
                     }
 
                 })
