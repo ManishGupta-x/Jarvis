@@ -37,5 +37,6 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
     name: "setprefix",
+    aliases: [],
     Description: 'Command',
 }
