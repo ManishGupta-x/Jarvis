@@ -88,7 +88,7 @@ module.exports.config = {
     Description: 'Command',
 }
 
-}
+
 
 
 
