@@ -28,7 +28,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
             .setAuthor('Freak Gamer')
             .setColor('00ff74')
-            .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/791728647005536296/1601319291_559_Soccer-Icons-Messi-and-Ronaldo-Make-History-in-the-25th.png')
+            .setThumbnail('https://cdn.discordapp.com/attachments/885897626753593364/897535348777832448/bpbRkXKgJqnyGKDbe8t9z5.png')
             .setTitle(`Someone is Challenging `)
             .setDescription(`\n <@${membertarget.id}> is Challenging For friendly ! React Below on 🤝 to Accept his Challenge! Get <@${membertarget.id}> Id by reacting to 👨‍💻`)
             .setFooter(' Type p!fping If you dont want pings! ')
