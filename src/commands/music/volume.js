@@ -9,7 +9,13 @@ module.exports.run = async (client, message, args,Discord) => {
         message.reply('Max Volume is 100')
     } if (args[0] <= 100) {
         if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
+     try{
         client.distube.setVolume(message, Number(args[0]));
+
+     }  catch(err){
+
+        message.reply('Invalid Volume')
+     }
         const embed6 = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/888335393542524948/wp4067216.png')
