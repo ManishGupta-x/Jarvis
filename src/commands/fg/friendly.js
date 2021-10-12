@@ -54,41 +54,41 @@ module.exports.run = async (client, message, args, Discord) => {
             const filter = (interaction) => interaction.isButton() && interaction.user.id != message.author.id && interaction.customId === 'Accept' || interaction.customId === 'id';
             const collector = message.channel.createMessageComponentCollector({ filter, time: 9000000 });
 
-   
-
-                collector.on('collect', async collected => {
 
 
-                    if (collected.customId == 'Accept') {
-
-                     
-                        await message.channel.send({ contents: `Someone Accepted the challenge ${message.author.id}` })
-                    }
-                    else if (collected.customId == 'id') {
+            collector.on('collect', async collected => {
 
 
-                        Data.findOne({
-                            userID: message.author.id
-                        }, async (err, data) => {
-                            if (err) console.log(err);
-                            if (!data) {
-                                let msg1 = await message.reply(` No Id in record for <@${message.author.id}>`)
-
-                            } else {
-                                let msg2 = await message.channel.send(`${client.users.cache.get(message.author.id).username}'s Id ${data.Konami}`);
-
-                            }
-
-                        });
-
-                    }
-                    collected.deferUpdate();
-                })
+                if (collected.customId == 'Accept') {
 
 
+                    await collected.channel.send({ contents: `Someone Accepted the challenge ${message.author.id}` })
+                }
+                else if (collected.customId == 'id') {
 
 
-     
+                    Data.findOne({
+                        userID: message.author.id
+                    }, async (err, data) => {
+                        if (err) console.log(err);
+                        if (!data) {
+                            let msg1 = await message.reply(` No Id in record for <@${message.author.id}>`)
+
+                        } else {
+                            let msg2 = await message.channel.send(`${client.users.cache.get(message.author.id).username}'s Id ${data.Konami}`);
+
+                        }
+
+                    });
+
+                }
+                collected.deferUpdate();
+            })
+
+
+
+
+
 
 
         }
