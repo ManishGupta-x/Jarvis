@@ -1,3 +1,16 @@
+
+const Discord = require("discord.js")
+const disTube = require('distube');
+module.exports.run = async (client, message, args,Discord) => {
+    message.reply('Deprecated')
+}
+
+module.exports.config = {
+    name: "friendly",
+    aliases: [],
+    Description: 'Command',
+}
+
 // const { ButtonInteraction } = require("discord.js");
 // const fs = require("fs");
 // const mongoose = require('mongoose');
