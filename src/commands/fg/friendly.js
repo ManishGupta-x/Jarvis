@@ -59,10 +59,10 @@ module.exports.run = async (client, message, args, Discord) => {
                 collector.on('collect', async collected => {
 
 
-                    if (collected.customId === 'Accept') {
+                    if (collected.customId == 'Accept') {
 
                         const user = interaction.user.id;
-                        await message.channel.send({ contents: `${user}` })
+                        await message.channel.send({ contents: `${user} Accepted the challenge ${message.author.id}` })
                     }
                     else if (collected.customId == 'id') {
 
