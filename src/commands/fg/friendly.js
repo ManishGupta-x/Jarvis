@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args, Discord) => {
         message.reply('The command has a Cooldown of 30 mins')
     }
     else {
-        const channel = '885897626753593364';
+        const channel1 = '885897626753593364';
 
         let member = message.member
         let membertarget = message.guild.members.cache.get(member.id);
@@ -47,7 +47,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
             );
 
-        if (message.channel.id == channel) {
+        if (message.channel.id == channel1) {
 
             message.channel.send({ embeds: [newEmbed], components: [row] })
 
