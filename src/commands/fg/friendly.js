@@ -82,7 +82,11 @@ module.exports.run = async (client, message, args, Discord) => {
                         });
 
                     }
-                    collected.deferUpdate();
+                   try{ collected.deferUpdate();
+                   }catch(err){
+
+                    message.channel.send('Some error occured')
+                   }
                 })
 
 
