@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args, Discord) => {
         message.reply('The command has a Cooldown of 30 mins')
     }
     else {
-        const channel1 = '885897626753593364';
+        const channel = '885897626753593364';
 
         let member = message.member
         let membertarget = message.guild.members.cache.get(member.id);
@@ -47,48 +47,48 @@ module.exports.run = async (client, message, args, Discord) => {
 
             );
 
-        if (message.channel.id == channel1) {
+        if (message.channel.id == channel) {
 
             message.channel.send({ embeds: [newEmbed], components: [row] })
 
             const filter = (interaction) => interaction.isButton() && interaction.user.id !== message.author.id && interaction.customId === 'Accept' || interaction.customId === 'id';
             const collector = message.channel.createMessageComponentCollector({ filter, time: 9000000 });
 
+            client.on('interactionCreate', async interaction => {
+
+                collector.on('collect', async collected => {
 
 
-            collector.on('collect', async collected => {
+                    if (collected.customId === 'Accept') {
+
+                    
+                        await message.channel.send({ content : `<@${interaction.user.id}> Accepted the challenge <@${message.author.id}>` })
+                    }
+                    else if (collected.customId === 'id') {
 
 
-                if (collected.customId === 'Accept') {
+                        Data.findOne({
+                            userID: message.author.id
+                        }, async (err, data) => {
+                            if (err) console.log(err);
+                            if (!data) {
+                                let msg1 = await message.reply(` No Id in record for <@${message.author.id}>`)
+                              
+                            } else {
+                                let msg2 = await message.channel.send(`${client.users.cache.get(message.author.id).username}'s Id ${data.Konami}`);
+                                 
+                            }
+
+                        });
+
+                    }
+                    collected.deferUpdate();
+                })
 
 
-                    await collected.channel.send({ content: `Someone Accepted the challenge ${message.author.id}` })
-                }
-                else if (collected.customId === 'id') {
 
 
-                    Data.findOne({
-                        userID: message.author.id
-                    }, async (err, data) => {
-                        if (err) console.log(err);
-                        if (!data) {
-                            let msg1 = await message.reply(` No Id in record for <@${message.author.id}>`)
-
-                        } else {
-                            let msg2 = await message.channel.send(`${client.users.cache.get(message.author.id).username}'s Id ${data.Konami}`);
-
-                        }
-
-                    });
-
-                }
-                collected.deferUpdate();
             })
-
-
-
-
-
 
 
         }
