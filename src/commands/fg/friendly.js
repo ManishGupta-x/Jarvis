@@ -59,12 +59,12 @@ module.exports.run = async (client, message, args, Discord) => {
             collector.on('collect', async collected => {
 
 
-                if (collected.customId == 'Accept') {
+                if (collected.customId === 'Accept') {
 
 
                     await collected.channel.send({ contents: `Someone Accepted the challenge ${message.author.id}` })
                 }
-                else if (collected.customId == 'id') {
+                else if (collected.customId === 'id') {
 
 
                     Data.findOne({
