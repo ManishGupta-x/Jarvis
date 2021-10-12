@@ -62,7 +62,7 @@ module.exports.run = async (client, message, args, Discord) => {
                 if (collected.customId === 'Accept') {
 
 
-                    await collected.channel.send({ contents: `Someone Accepted the challenge ${message.author.id}` })
+                    await collected.channel.send({ content: `Someone Accepted the challenge ${message.author.id}` })
                 }
                 else if (collected.customId === 'id') {
 
