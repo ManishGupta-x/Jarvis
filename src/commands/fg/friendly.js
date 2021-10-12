@@ -54,7 +54,6 @@ module.exports.run = async (client, message, args, Discord) => {
             const filter = (interaction) => interaction.isButton() && interaction.user.id != message.author.id && interaction.customId === 'Accept' || interaction.customId === 'id';
             const collector = message.channel.createMessageComponentCollector({ filter, time: 9000000 });
 
-            client.on('interactionCreate', async interaction => {
 
                 collector.on('collect', async collected => {
 
@@ -88,7 +87,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
 
-            })
+            
 
 
         }
