@@ -61,8 +61,8 @@ module.exports.run = async (client, message, args, Discord) => {
 
                     if (collected.customId === 'Accept') {
 
-                    
-                        await message.channel.send({ content : `<@${interaction.user.id}> Accepted the challenge <@${message.author.id}>` })
+
+                        await message.channel.send({ content: `<@${interaction.user.id}> Accepted the challenge <@${message.author.id}>` })
                     }
                     else if (collected.customId === 'id') {
 
@@ -73,20 +73,21 @@ module.exports.run = async (client, message, args, Discord) => {
                             if (err) console.log(err);
                             if (!data) {
                                 let msg1 = await message.reply(` No Id in record for <@${message.author.id}>`)
-                              
+
                             } else {
                                 let msg2 = await message.channel.send(`${client.users.cache.get(message.author.id).username}'s Id ${data.Konami}`);
-                                 
+
                             }
 
                         });
 
                     }
-                   try{ collected.deferUpdate();
-                   }catch(err){
+                    try {
+                        collected.deferUpdate();
+                    } catch (err) {
 
-                    message.channel.send('Some error occured')
-                   }
+                        message.channel.send('Some error occured')
+                    }
                 })
 
 
