@@ -6,8 +6,9 @@ module.exports.run = async (client, message, args,Discord) => {
 
     if(!args[0]){
         message.reply('Specify Your review pls \`p!review [type your review]\`')
+        return;
     }    let issue = args.join(" ");
-client.channels.cache.get(`${channelID}`).send(`${(message.author.id).username}'s Review : ${issue}'`)
+client.channels.cache.get(`${channelID}`).send(`${client.users.cache.get(message.author.id).username}'s Review : ${issue}'`)
     message.channel.send({content :`Review sent successfully!`})
 }
 
