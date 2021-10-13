@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args,Discord) => {
         })
         
         message.channel.send(`The new prefix is now **\`${args[0]}\`**`);
-        client.setNickname(`[${args[0]}] Jarvis`);
+       
 
         let newData = new prefixModel({
             Prefix: args[0],
@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args,Discord) => {
         newData.save();
     } else if (!data) {
         message.channel.send(`The new prefix is now **\`${args[0]}\`**`);
-        client.setNickname(`[${args[0]}] Jarvis`)
+      
 
         let newData = new prefixModel({
             Prefix: args[0],
