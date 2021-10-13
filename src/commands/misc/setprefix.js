@@ -1,8 +1,9 @@
 const prefixModel = require("../../models/prefix")
 const mongoose = require("mongoose");
-const config = require('../../../settings.json')
+const config = require('../../../settings.json');
+const { Client } = require("discord.js");
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (client, message, args,Discord) => {
     const data = await prefixModel.findOne({
         GuildID: message.guild.id
     });
@@ -17,6 +18,7 @@ module.exports.run = async (bot, message, args) => {
         })
         
         message.channel.send(`The new prefix is now **\`${args[0]}\`**`);
+        client.setNickname(`[${args[0]}] Jarvis`);
 
         let newData = new prefixModel({
             Prefix: args[0],
@@ -25,6 +27,7 @@ module.exports.run = async (bot, message, args) => {
         newData.save();
     } else if (!data) {
         message.channel.send(`The new prefix is now **\`${args[0]}\`**`);
+        client.setNickname(`[${args[0]}] Jarvis`)
 
         let newData = new prefixModel({
             Prefix: args[0],
@@ -32,6 +35,7 @@ module.exports.run = async (bot, message, args) => {
         })
         newData.save();
     }
+
 
 }
 
