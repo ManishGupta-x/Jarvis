@@ -4,11 +4,6 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
 
-
-
-
-
-
     const row = new Discord.MessageActionRow()
         .addComponents(
 
@@ -21,10 +16,7 @@ module.exports.run = async (client, message, args, Discord) => {
                         label: 'Music',
                         value: 'View Music Help Menu',
                         emoji: '🎶'
-                    }
-
-
-                ],[
+                    },
                     {
 
                         label: 'Todo',
@@ -32,7 +24,9 @@ module.exports.run = async (client, message, args, Discord) => {
                         emoji: '✍️'
 
                     }
-                ]
+
+
+                ],
                 )
         )
     const embed = new Discord.MessageEmbed()
