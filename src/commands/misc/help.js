@@ -47,7 +47,7 @@ module.exports.run = async (client, message, args, Discord) => {
     const collector = message.channel.createMessageComponentCollector({ filter, time: 100000, max: 2 });
     collector.on('collect', async collected => {
 
-        if (collected.values[0]) {
+       const value = collected.values[0];
             if (value === 'first') {
                 const commandfile = client.commands.get('music')
                 await commandfile.run(client, message, args, Discord)
@@ -55,7 +55,7 @@ module.exports.run = async (client, message, args, Discord) => {
                 const commandfile = client.commands.get('helptodo')
                 await commandfile.run(client, message, args, Discord)
             }
-        }
+        
         collected.deferUpdate()
     })
 
