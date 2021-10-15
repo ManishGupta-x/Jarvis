@@ -14,14 +14,16 @@ module.exports.run = async (client, message, args, Discord) => {
                     {
 
                         label: 'Music',
-                        value: 'View Music Help Menu',
-                        emoji: '🎶'
+                        value: 'first',
+                        emoji: '🎶',
+                        description: 'Click Here to see Music Help Menu'
                     },
                     {
 
                         label: 'Todo',
-                        value: 'View Todo Help Menu',
-                        emoji: '✍️'
+                        value: 'second',
+                        emoji: '✍️',
+                        description: 'Click here to see Todo help Menu'
 
                     }
 
@@ -31,9 +33,10 @@ module.exports.run = async (client, message, args, Discord) => {
         )
     const embed = new Discord.MessageEmbed()
         .setColor('RANDOM')
+        .setTitle('Help Menu For Jarvis')
         .setThumbnail('https://cdn.discordapp.com/attachments/794240262972243979/897009795146612782/561283.png')
         .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-
+         .setDescription('Select Help menu from options Below !')
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp();
 
@@ -45,13 +48,13 @@ module.exports.run = async (client, message, args, Discord) => {
     collector.on('collect', async collected => {
 
         if (collected.values[0]) {
-
-            const commandfile = client.commands.get('music')
-            await commandfile.run(client, message, args, Discord)
-        } else if (collected.values[1]) {
-
-            const commandfile = client.commands.get('helptodo')
-            await commandfile.run(client, message, args, Discord)
+            if (value === 'first') {
+                const commandfile = client.commands.get('music')
+                await commandfile.run(client, message, args, Discord)
+            } else if (value === 'second') {
+                const commandfile = client.commands.get('helptodo')
+                await commandfile.run(client, message, args, Discord)
+            }
         }
         collected.deferUpdate()
     })
