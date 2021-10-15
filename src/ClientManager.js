@@ -24,7 +24,14 @@ module.exports = class ClientManager extends Client {
 
 
 
-			})], customFilters: { "8d": "apulsator=hz=0.08" },
+			})],
+			customFilters: {
+				"8d": "apulsator=hz=0.08",
+				"lightbass": "bass=g=8,dynaudnorm=f=200",
+				"heavybass": "bass=g=20,dynaudnorm=f=200",
+
+
+			},
 			leaveOnFinish: false,
 			emptyCooldown: 15,
 			leaveOnEmpty: true,
