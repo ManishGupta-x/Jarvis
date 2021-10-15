@@ -29,7 +29,7 @@ module.exports = class ClientManager extends Client {
 			emptyCooldown: 15,
 			leaveOnEmpty: true,
 			leaveOnStop: false,
-			youtubeCookie: cookie
+			youtubeCookie: `${cookie}`
 		});
 		this.events = new EventHandler(this);
 		this.events.init();
