@@ -4,10 +4,11 @@ module.exports = (client) => {
     console.log('Jarvis is online!');
 
 var us = client.users.cache.size;
-us = us/100;
+
 us = us.toString();
-us = us.slice(0,-1);
+us = us.slice(0,-2);
 us = parseInt(us);
+us = us/10;
 
 
     let statusarray = [
