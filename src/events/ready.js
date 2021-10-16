@@ -9,7 +9,7 @@ module.exports = (client) => {
 
 guildsize = guildsize/1000; 
 
- }
+ 
     let statusarray = [
 
         `${guildsize} Servers`,
@@ -18,10 +18,15 @@ guildsize = guildsize/1000;
         `p!music for help `
 
     ]
+
     setInterval(() => {
 
         client.user.setActivity(`${statusarray[Math.floor(Math.random() * statusarray.length)]}`, { type: 'WATCHING' })
 
     }, 10000)
 
+
+}
+
+    
 };
