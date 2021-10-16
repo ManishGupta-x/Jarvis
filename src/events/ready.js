@@ -7,9 +7,9 @@ module.exports = (client) => {
 
     let statusarray = [
 
-        `${client.guilds.cache.size/1000} K Servers`,
+        `${client.guilds.cache.size}  Servers`,
         `${client.channels.cache.size} Channels`,
-        `${client.users.cache.size} Users`,
+        `${client.users.cache.size/1000} K Users`,
         `p!music for help `
 
     ]
