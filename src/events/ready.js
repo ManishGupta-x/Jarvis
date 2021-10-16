@@ -4,7 +4,7 @@ module.exports = (client) => {
     console.log('Jarvis is online!');
 
 var us = client.users.cache.size;
-us = us/1000;
+us = us/100;
 us = us.toString();
 us = us.slice(0,-1);
 us = parseInt(us);
