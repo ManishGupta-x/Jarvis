@@ -15,7 +15,7 @@ us = parseInt(us);
         `${client.guilds.cache.size}  Servers`,
         `${client.channels.cache.size} Channels`,
         `${us} K Users`,
-        `p!music for help `
+        `p!help `
 
     ]
     setInterval(() => {
