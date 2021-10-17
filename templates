@@ -20,3 +20,32 @@ const embed = new Discord.MessageEmbed()
 .setFooter(client.user.username, client.user.displayAvatarURL())
 .setTimestamp();
 message.channel.send({ embeds: [embed] });
+
+//selectmenu
+ const row1 = new Discord.MessageActionRow()
+        .addComponents(
+
+            new MessageSelectMenu()
+                .setCustomId('help')
+                .setPlaceholder('Choose Help Module To View')
+                .addOptions([
+                    {
+
+                        label: ``,
+                        value: 'first',
+                        emoji: '🎶',
+                        description: ``
+                    },
+                    {
+
+                        label: '',
+                        value: 'second',
+                        emoji: '🎶',
+                        description: ``
+
+                    }
+
+
+                ],
+                )
+        )
