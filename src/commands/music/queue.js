@@ -88,7 +88,46 @@ module.exports.run = async (client, message, args, Discord) => {
                } else if (queue.songs.length == 1 && queue.previousSongs.length >= 1) {
                     message.channel.send({ embeds: [embed9], components: [row1] })
 
-
+                    const collector = message.channel.createMessageComponentCollector({ filter, time: 60000 , max: 2 });
+                    collector.on('collect', async collected => {
+          
+                         const value = collected.values[0];
+                         switch (value) {
+          
+                              case 'first1': client.distube.previous(message);
+                                   break;
+                              case 'first2': client.distube.previous(message);
+                                   break;
+                              case 'first3': client.distube.previous(message);
+                                   break;
+                              case 'first4': client.distube.previous(message);
+                                   break;
+                              case 'first5': client.distube.previous(message);
+                                   break;
+                              case 'second2': client.distube.jump(message, 1);
+                                   break;
+                              case 'second3': client.distube.jump(message, 1);
+                                   break;
+                              case 'second4': client.distube.jump(message, 1);
+                                   break;
+                              case 'second5': client.distube.jump(message, 1);
+                                   break;
+                              case 'third3': client.distube.jump(message, 2);
+                                   break;
+                              case 'third4': client.distube.jump(message, 2);
+                                   break;
+                              case 'third5': client.distube.jump(message, 2);
+                                   break;
+                              case 'fourth4': client.distube.jump(message, 3);
+                                   break;
+                              case 'fourth5': client.distube.jump(message, 3);
+                                   break;
+                              case 'fifth5': client.distube.jump(message, 4);
+                                   break;
+                         }
+          
+                         collected.deferUpdate()
+                    })
                } else if (queue.songs.length == 2 && queue.previousSongs.length >= 1) {
 
                     /*------------------------------------------------------------------------------------*/
@@ -121,6 +160,46 @@ module.exports.run = async (client, message, args, Discord) => {
                                    )
                          )
                     message.channel.send({ embeds: [embed9], components: [row2] })
+                    const collector = message.channel.createMessageComponentCollector({ filter, time: 60000 , max: 2 });
+                    collector.on('collect', async collected => {
+          
+                         const value = collected.values[0];
+                         switch (value) {
+          
+                              case 'first1': client.distube.previous(message);
+                                   break;
+                              case 'first2': client.distube.previous(message);
+                                   break;
+                              case 'first3': client.distube.previous(message);
+                                   break;
+                              case 'first4': client.distube.previous(message);
+                                   break;
+                              case 'first5': client.distube.previous(message);
+                                   break;
+                              case 'second2': client.distube.jump(message, 1);
+                                   break;
+                              case 'second3': client.distube.jump(message, 1);
+                                   break;
+                              case 'second4': client.distube.jump(message, 1);
+                                   break;
+                              case 'second5': client.distube.jump(message, 1);
+                                   break;
+                              case 'third3': client.distube.jump(message, 2);
+                                   break;
+                              case 'third4': client.distube.jump(message, 2);
+                                   break;
+                              case 'third5': client.distube.jump(message, 2);
+                                   break;
+                              case 'fourth4': client.distube.jump(message, 3);
+                                   break;
+                              case 'fourth5': client.distube.jump(message, 3);
+                                   break;
+                              case 'fifth5': client.distube.jump(message, 4);
+                                   break;
+                         }
+          
+                         collected.deferUpdate()
+                    })
                }
                else if (queue.songs.length == 3 && queue.previousSongs.length >= 1) {
 
@@ -206,6 +285,46 @@ module.exports.run = async (client, message, args, Discord) => {
                                    )
                          )
                     message.channel.send({ embeds: [embed9], components: [row4] })
+                    const collector = message.channel.createMessageComponentCollector({ filter, time: 60000 , max: 2 });
+                    collector.on('collect', async collected => {
+          
+                         const value = collected.values[0];
+                         switch (value) {
+          
+                              case 'first1': client.distube.previous(message);
+                                   break;
+                              case 'first2': client.distube.previous(message);
+                                   break;
+                              case 'first3': client.distube.previous(message);
+                                   break;
+                              case 'first4': client.distube.previous(message);
+                                   break;
+                              case 'first5': client.distube.previous(message);
+                                   break;
+                              case 'second2': client.distube.jump(message, 1);
+                                   break;
+                              case 'second3': client.distube.jump(message, 1);
+                                   break;
+                              case 'second4': client.distube.jump(message, 1);
+                                   break;
+                              case 'second5': client.distube.jump(message, 1);
+                                   break;
+                              case 'third3': client.distube.jump(message, 2);
+                                   break;
+                              case 'third4': client.distube.jump(message, 2);
+                                   break;
+                              case 'third5': client.distube.jump(message, 2);
+                                   break;
+                              case 'fourth4': client.distube.jump(message, 3);
+                                   break;
+                              case 'fourth5': client.distube.jump(message, 3);
+                                   break;
+                              case 'fifth5': client.distube.jump(message, 4);
+                                   break;
+                         }
+          
+                         collected.deferUpdate()
+                    })
                } else if (queue.songs.length == 5 && queue.previousSongs.length >= 1) {
                     /*-----------------------------------------------------------------------------------------------------------------*/
                     //row5
@@ -260,48 +379,49 @@ module.exports.run = async (client, message, args, Discord) => {
                                    )
                          )
                     message.channel.send({ embeds: [embed9], components: [row5] })
+                    const collector = message.channel.createMessageComponentCollector({ filter, time: 60000 , max: 2 });
+                    collector.on('collect', async collected => {
+          
+                         const value = collected.values[0];
+                         switch (value) {
+          
+                              case 'first1': client.distube.previous(message);
+                                   break;
+                              case 'first2': client.distube.previous(message);
+                                   break;
+                              case 'first3': client.distube.previous(message);
+                                   break;
+                              case 'first4': client.distube.previous(message);
+                                   break;
+                              case 'first5': client.distube.previous(message);
+                                   break;
+                              case 'second2': client.distube.jump(message, 1);
+                                   break;
+                              case 'second3': client.distube.jump(message, 1);
+                                   break;
+                              case 'second4': client.distube.jump(message, 1);
+                                   break;
+                              case 'second5': client.distube.jump(message, 1);
+                                   break;
+                              case 'third3': client.distube.jump(message, 2);
+                                   break;
+                              case 'third4': client.distube.jump(message, 2);
+                                   break;
+                              case 'third5': client.distube.jump(message, 2);
+                                   break;
+                              case 'fourth4': client.distube.jump(message, 3);
+                                   break;
+                              case 'fourth5': client.distube.jump(message, 3);
+                                   break;
+                              case 'fifth5': client.distube.jump(message, 4);
+                                   break;
+                         }
+          
+                         collected.deferUpdate()
+                    })
                }
           }
-          const collector = message.channel.createMessageComponentCollector({ filter, time: 60000 , max: 2 });
-          collector.on('collect', async collected => {
-
-               const value = collected.values[0];
-               switch (value) {
-
-                    case 'first1': client.distube.previous(message);
-                         break;
-                    case 'first2': client.distube.previous(message);
-                         break;
-                    case 'first3': client.distube.previous(message);
-                         break;
-                    case 'first4': client.distube.previous(message);
-                         break;
-                    case 'first5': client.distube.previous(message);
-                         break;
-                    case 'second2': client.distube.jump(message, 1);
-                         break;
-                    case 'second3': client.distube.jump(message, 1);
-                         break;
-                    case 'second4': client.distube.jump(message, 1);
-                         break;
-                    case 'second5': client.distube.jump(message, 1);
-                         break;
-                    case 'third3': client.distube.jump(message, 2);
-                         break;
-                    case 'third4': client.distube.jump(message, 2);
-                         break;
-                    case 'third5': client.distube.jump(message, 2);
-                         break;
-                    case 'fourth4': client.distube.jump(message, 3);
-                         break;
-                    case 'fourth5': client.distube.jump(message, 3);
-                         break;
-                    case 'fifth5': client.distube.jump(message, 4);
-                         break;
-               }
-
-               collected.deferUpdate()
-          })
+         
 
           if (y[1] && !y[2]) {
 
