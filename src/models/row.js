@@ -1,14 +1,9 @@
-
+const Discord = require("discord.js")
 const disTube = require('distube');
 const { MessageEmbed, Util } = require("discord.js")
 const { MessageActionRow, MessageSelectMenu } = require('discord.js')
-const Discord = require("discord.js")
-const ClientManager = require(`../ClientManager`);
-const client = new ClientManager({
-    partials: ["MESSAGE", "CHANNEL", "REACTION"],
-    intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES', 'GUILD_VOICE_STATES', 'GUILD_MESSAGE_REACTIONS']
-});
-let queue =  client.distube.getQueue(message);
+module.exports.run = async (client, message, args,Discord) => {
+    let queue = await client.distube.getQueue(message);
 if (queue.songs.length == 2) {
 
     song1 = queue.songs[1];
@@ -204,3 +199,11 @@ const row1 = new Discord.MessageActionRow()
                ],
                )
      )
+}
+
+module.exports.config = {
+    name: "row",
+    aliases: [],
+    Description: 'Command',
+}
+
