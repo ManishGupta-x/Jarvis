@@ -3,7 +3,7 @@ const { MessageEmbed, Util } = require("discord.js")
 const { MessageActionRow, MessageSelectMenu } = require('discord.js')
 const Discord = require("discord.js")
 
-
+const filter = (interaction) => interaction.isSelectMenu() && interaction.user.id == message.author.id;
 
 module.exports.run = async (client, message, args, Discord) => {
 
@@ -112,7 +112,7 @@ module.exports.run = async (client, message, args, Discord) => {
                                              label: `Play 2nd Song`,
                                              value: 'second2',
                                              emoji: '🎶',
-                                           
+
 
                                         }
 
@@ -144,14 +144,14 @@ module.exports.run = async (client, message, args, Discord) => {
                                              label: `Play 2nd Song`,
                                              value: 'second3',
                                              emoji: '🎶',
-                                     
+
 
                                         }, {
 
                                              label: `Play 3rd Song`,
                                              value: 'third3',
                                              emoji: '🎶',
-                                           
+
 
                                         }
 
@@ -182,14 +182,14 @@ module.exports.run = async (client, message, args, Discord) => {
                                              label: `Play 2nd Song`,
                                              value: 'second4',
                                              emoji: '🎶',
-                                           
+
                                         },
                                         {
 
                                              label: `Play 3rd song`,
                                              value: 'third4',
                                              emoji: '🎶',
-                                           
+
 
                                         },
                                         {
@@ -197,7 +197,7 @@ module.exports.run = async (client, message, args, Discord) => {
                                              label: `Play 4th song`,
                                              value: 'fourth4',
                                              emoji: '🎶',
-                                  
+
 
                                         }
 
@@ -228,14 +228,14 @@ module.exports.run = async (client, message, args, Discord) => {
                                              label: `Play 2nd song`,
                                              value: 'second5',
                                              emoji: '🎶',
-                                          
+
 
                                         },
                                         {
                                              label: `Play 3rd song `,
                                              value: 'third5',
                                              emoji: '🎶',
-                                          
+
 
                                         },
                                         {
@@ -243,7 +243,7 @@ module.exports.run = async (client, message, args, Discord) => {
                                              label: `Play 4th song`,
                                              value: 'fourth5',
                                              emoji: '🎶',
-                                         
+
 
                                         },
                                         {
@@ -251,7 +251,7 @@ module.exports.run = async (client, message, args, Discord) => {
                                              label: `Play 5th song`,
                                              value: 'fifth5',
                                              emoji: '🎶',
-                                         
+
 
                                         }
 
@@ -262,6 +262,46 @@ module.exports.run = async (client, message, args, Discord) => {
                     message.channel.send({ embeds: [embed9], components: [row5] })
                }
           }
+          const collector = message.channel.createMessageComponentCollector({ filter, time: 100000, max: 2 });
+          collector.on('collect', async collected => {
+
+               const value = collected.values[0];
+               switch (value) {
+
+                    case 'first1': client.distube.previous(message);
+                         break;
+                    case 'first2': client.distube.previous(message);
+                         break;
+                    case 'first3': client.distube.previous(message);
+                         break;
+                    case 'first4': client.distube.previous(message);
+                         break;
+                    case 'first5': client.distube.previous(message);
+                         break;
+                    case 'second2': client.distube.jump(message, 1);
+                         break;
+                    case 'second3': client.distube.jump(message, 1);
+                         break;
+                    case 'second4': client.distube.jump(message, 1);
+                         break;
+                    case 'second5': client.distube.jump(message, 1);
+                         break;
+                    case 'third3': client.distube.jump(message, 2);
+                         break;
+                    case 'third4': client.distube.jump(message, 2);
+                         break;
+                    case 'third5': client.distube.jump(message, 2);
+                         break;
+                    case 'fourth4': client.distube.jump(message, 3);
+                         break;
+                    case 'fourth5': client.distube.jump(message, 3);
+                         break;
+                    case 'fifth5': client.distube.jump(message, 4);
+                         break;
+               }
+
+               collected.deferUpdate()
+          })
 
           if (y[1] && !y[2]) {
 
