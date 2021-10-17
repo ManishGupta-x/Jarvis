@@ -4,7 +4,7 @@ const { MessageEmbed, Util } = require("discord.js")
 const { MessageActionRow, MessageSelectMenu } = require('discord.js')
 const Discord = require("discord.js")
 
-let queue = await client.distube.getQueue(message);
+let queue =  client.distube.getQueue(message);
 if (queue.songs.length == 2) {
 
     song1 = queue.songs[1];
