@@ -263,7 +263,7 @@ module.exports.run = async (client, message, args, Discord) => {
                }
           }
           const filter = (interaction) => interaction.isSelectMenu() && interaction.user.id == message.author.id;
-          const collector = message.channel.createMessageComponentCollector({ filter, time: 60000 , max: 2 });
+          const collector = message.channel.createMessageComponentCollector({ filter, time: 30000 , max: 2 });
           collector.on('collect', async collected => {
 
                const value = collected.values[0];
@@ -301,7 +301,7 @@ module.exports.run = async (client, message, args, Discord) => {
                          break;
                }
 
-               collected.deferUpdate()
+               collected.deferUpdate();
           })
 
           if (y[1] && !y[2]) {
