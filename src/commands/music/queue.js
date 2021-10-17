@@ -262,7 +262,7 @@ module.exports.run = async (client, message, args, Discord) => {
                     message.channel.send({ embeds: [embed9], components: [row5] })
                }
           }
-          const collector = message.channel.createMessageComponentCollector({ filter, time: 100000, max: 2 });
+          const collector = message.channel.createMessageComponentCollector({ filter, time: 60000 , max: 2 });
           collector.on('collect', async collected => {
 
                const value = collected.values[0];
