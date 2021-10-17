@@ -248,35 +248,35 @@ module.exports.run = async (client, message, args, Discord) => {
                const value = collected.values[0];
                switch (value) {
 
-                    case 'first1': client.distube.previous(message);
+                    case 'first1': await client.distube.previous(message);
                          break;
-                    case 'first2': client.distube.previous(message);
+                    case 'first2': await client.distube.previous(message);
                          break;
-                    case 'first3': client.distube.previous(message);
+                    case 'first3': await client.distube.previous(message);
                          break;
-                    case 'first4': client.distube.previous(message);
+                    case 'first4': await client.distube.previous(message);
                          break;
-                    case 'first5': client.distube.previous(message);
+                    case 'first5': await client.distube.previous(message);
                          break;
-                    case 'second2': client.distube.jump(message, 1);
+                    case 'second2': await client.distube.jump(message, 1);
                          break;
-                    case 'second3': client.distube.jump(message, 1);
+                    case 'second3': await client.distube.jump(message, 1);
                          break;
-                    case 'second4': client.distube.jump(message, 1);
+                    case 'second4': await client.distube.jump(message, 1);
                          break;
-                    case 'second5': client.distube.jump(message, 1);
+                    case 'second5': await client.distube.jump(message, 1);
                          break;
-                    case 'third3': client.distube.jump(message, 2);
+                    case 'third3': await client.distube.jump(message, 2);
                          break;
-                    case 'third4': client.distube.jump(message, 2);
+                    case 'third4': await client.distube.jump(message, 2);
                          break;
-                    case 'third5': client.distube.jump(message, 2);
+                    case 'third5': await client.distube.jump(message, 2);
                          break;
-                    case 'fourth4': client.distube.jump(message, 3);
+                    case 'fourth4': await client.distube.jump(message, 3);
                          break;
-                    case 'fourth5': client.distube.jump(message, 3);
+                    case 'fourth5': await client.distube.jump(message, 3);
                          break;
-                    case 'fifth5': client.distube.jump(message, 4);
+                    case 'fifth5': await client.distube.jump(message, 4);
                          break;
                }
 
