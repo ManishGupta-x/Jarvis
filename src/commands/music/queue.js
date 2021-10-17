@@ -109,7 +109,7 @@ module.exports.run = async (client, message, args, Discord) => {
                                              description: `Play the previous song`
                                         },
                                         {
-                                             label: `${song1.name} - \`${song1.formattedDuration}\``,
+                                             label: `2nd`,
                                              value: 'second2',
                                              emoji: '🎶',
                                              description: `Requested By ${song1.user}`
@@ -141,14 +141,14 @@ module.exports.run = async (client, message, args, Discord) => {
                                              description: `Play the previous song`
                                         },
                                         {
-                                             label: `${song1.name} - \`${song1.formattedDuration}\``,
+                                             label: `2nd`,
                                              value: 'second3',
                                              emoji: '🎶',
                                              description: `Requested By ${song1.user}`
 
                                         }, {
 
-                                             label: `${song2.name} - \`${song2.formattedDuration}\``,
+                                             label: `3rd`,
                                              value: 'third3',
                                              emoji: '🎶',
                                              description: `Requested By ${song2.user}`
@@ -179,7 +179,7 @@ module.exports.run = async (client, message, args, Discord) => {
                                              description: `Play the previous song`
                                         },
                                         {
-                                             label: `${song1.name} - \`${song1.formattedDuration}\``,
+                                             label: `2nd`,
                                              value: 'second4',
                                              emoji: '🎶',
                                              description: `Requested By ${song1.user}`
@@ -187,7 +187,7 @@ module.exports.run = async (client, message, args, Discord) => {
                                         },
                                         {
 
-                                             label: `${song2.name} - \`${song2.formattedDuration}\``,
+                                             label: `3rd`,
                                              value: 'third4',
                                              emoji: '🎶',
                                              description: `Requested By ${song2.user}`
@@ -195,7 +195,7 @@ module.exports.run = async (client, message, args, Discord) => {
                                         },
                                         {
 
-                                             label: `${song3.name} - \`${song3.formattedDuration}\``,
+                                             label: `4th`,
                                              value: 'fourth4',
                                              emoji: '🎶',
                                              description: `Requested By ${song4.user}`
@@ -226,14 +226,14 @@ module.exports.run = async (client, message, args, Discord) => {
                                         },
                                         {
 
-                                             label: `${song1.name} - \`${song1.formattedDuration}\``,
+                                             label: `2nd`,
                                              value: 'second5',
                                              emoji: '🎶',
                                              description: `Requested By ${song1.user}`
 
                                         },
                                         {
-                                             label: `${song2.name} - \`${song2.formattedDuration}\``,
+                                             label: `3rd`,
                                              value: 'third5',
                                              emoji: '🎶',
                                              description: `Requested By ${song2.user}`
@@ -241,7 +241,7 @@ module.exports.run = async (client, message, args, Discord) => {
                                         },
                                         {
 
-                                             label: `${song3.name} - \`${song3.formattedDuration}\``,
+                                             label: `4th`,
                                              value: 'fourth5',
                                              emoji: '🎶',
                                              description: `Requested By ${song3.user}`
@@ -249,7 +249,7 @@ module.exports.run = async (client, message, args, Discord) => {
                                         },
                                         {
 
-                                             label: `${song4.name} - \`${song4.formattedDuration}\``,
+                                             label: `5th`,
                                              value: 'fifth5',
                                              emoji: '🎶',
                                              description: `Requested By ${song4.user}`
