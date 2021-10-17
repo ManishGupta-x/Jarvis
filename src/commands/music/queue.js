@@ -19,28 +19,7 @@ module.exports.run = async (client, message, args, Discord) => {
      let queue = await client.distube.getQueue(message);
 
      /*-----------------------------------------------------------------------------------------------------------------*/
-     if (queue.songs.length == 2) {
-
-          song1 = queue.songs[1];
-
-     }
-     else if (queue.songs.length == 3) {
-          song1 = queue.songs[1];
-          song2 = queue.songs[2];
-
-     }
-     else if (queue.songs.length == 4) {
-          song1 = queue.songs[1];
-          song2 = queue.songs[2];
-          song3 = queue.songs[3];
-
-     } else if (queue.songs.length == 5) {
-
-          song1 = queue.songs[1];
-          song2 = queue.songs[2];
-          song3 = queue.songs[3];
-          song4 = queue.songs[4];
-     }
+  
 
      /*-----------------------------------------------------------------------------------------------------------------*/
      //row1
