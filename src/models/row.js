@@ -3,7 +3,10 @@ const disTube = require('distube');
 const { MessageEmbed, Util } = require("discord.js")
 const { MessageActionRow, MessageSelectMenu } = require('discord.js')
 const Discord = require("discord.js")
-
+const client = new ClientManager({
+    partials: ["MESSAGE", "CHANNEL", "REACTION"],
+    intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS', 'GUILD_PRESENCES', 'GUILD_VOICE_STATES', 'GUILD_MESSAGE_REACTIONS']
+});
 let queue =  client.distube.getQueue(message);
 if (queue.songs.length == 2) {
 
