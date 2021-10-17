@@ -109,10 +109,10 @@ module.exports.run = async (client, message, args, Discord) => {
                                              description: `Play the previous song`
                                         },
                                         {
-                                             label: `2nd`,
+                                             label: `Play 2nd Song`,
                                              value: 'second2',
                                              emoji: '🎶',
-                                             description: `Requested By ${song1.user}`
+                                           
 
                                         }
 
@@ -141,17 +141,17 @@ module.exports.run = async (client, message, args, Discord) => {
                                              description: `Play the previous song`
                                         },
                                         {
-                                             label: `2nd`,
+                                             label: `Play 2nd Song`,
                                              value: 'second3',
                                              emoji: '🎶',
-                                             description: `Requested By ${song1.user}`
+                                     
 
                                         }, {
 
-                                             label: `3rd`,
+                                             label: `Play 3rd Song`,
                                              value: 'third3',
                                              emoji: '🎶',
-                                             description: `Requested By ${song2.user}`
+                                           
 
                                         }
 
@@ -179,26 +179,25 @@ module.exports.run = async (client, message, args, Discord) => {
                                              description: `Play the previous song`
                                         },
                                         {
-                                             label: `2nd`,
+                                             label: `Play 2nd Song`,
                                              value: 'second4',
                                              emoji: '🎶',
-                                             description: `Requested By ${song1.user}`
-
+                                           
                                         },
                                         {
 
-                                             label: `3rd`,
+                                             label: `Play 3rd song`,
                                              value: 'third4',
                                              emoji: '🎶',
-                                             description: `Requested By ${song2.user}`
+                                           
 
                                         },
                                         {
 
-                                             label: `4th`,
+                                             label: `Play 4th song`,
                                              value: 'fourth4',
                                              emoji: '🎶',
-                                             description: `Requested By ${song4.user}`
+                                  
 
                                         }
 
@@ -226,33 +225,33 @@ module.exports.run = async (client, message, args, Discord) => {
                                         },
                                         {
 
-                                             label: `2nd`,
+                                             label: `Play 2nd song`,
                                              value: 'second5',
                                              emoji: '🎶',
-                                             description: `Requested By ${song1.user}`
+                                          
 
                                         },
                                         {
-                                             label: `3rd`,
+                                             label: `Play 3rd song `,
                                              value: 'third5',
                                              emoji: '🎶',
-                                             description: `Requested By ${song2.user}`
+                                          
 
                                         },
                                         {
 
-                                             label: `4th`,
+                                             label: `Play 4th song`,
                                              value: 'fourth5',
                                              emoji: '🎶',
-                                             description: `Requested By ${song3.user}`
+                                         
 
                                         },
                                         {
 
-                                             label: `5th`,
+                                             label: `Play 5th song`,
                                              value: 'fifth5',
                                              emoji: '🎶',
-                                             description: `Requested By ${song4.user}`
+                                         
 
                                         }
 
