@@ -3,7 +3,7 @@ const { MessageEmbed, Util } = require("discord.js")
 const { MessageActionRow, MessageSelectMenu } = require('discord.js')
 const Discord = require("discord.js")
 
-const { row1, row2, row3, row4, row5 } = require('../../models/row')
+const {  row2, row3, row4, row5 } = require('../../models/row')
 
 module.exports.run = async (client, message, args, Discord) => {
 
@@ -19,7 +19,22 @@ module.exports.run = async (client, message, args, Discord) => {
      let queue = await client.distube.getQueue(message);
 
 
+     const row1 = new Discord.MessageActionRow()
+     .addComponents(
 
+         new MessageSelectMenu()
+             .setCustomId('queue1')
+             .setPlaceholder('Skip to Next or Previous songs')
+             .addOptions([
+                 {
+                    label: `Previous Song`,
+                    value: 'first1',
+                    emoji: '🎶',
+                    description: `Play the previous song`
+                 }
+                 ],
+             )
+     )
 
 
      if (!queue) {
