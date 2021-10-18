@@ -239,6 +239,9 @@ module.exports.run = async (client, message, args, Discord) => {
                                    )
                          )
                     message.channel.send({ embeds: [embed9], components: [row5] })
+               }else{
+
+                    message.channel.send({ embeds: [embed9] })
                }
           }
           const filter = (interaction) => interaction.isSelectMenu() && interaction.user.id == message.author.id;
