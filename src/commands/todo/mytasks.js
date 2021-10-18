@@ -42,7 +42,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
             .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTimestamp();
-        message.channel.send({ embeds: [embed2] });
+        message.channel.send({ embeds: [embed2] , ephemeral : true});
 
     }
 
