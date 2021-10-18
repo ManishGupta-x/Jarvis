@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args, Discord) => {
      let queue = await client.distube.getQueue(message);
 
      /*-----------------------------------------------------------------------------------------------------------------*/
-  
+
 
      /*-----------------------------------------------------------------------------------------------------------------*/
      //row1
@@ -239,13 +239,13 @@ module.exports.run = async (client, message, args, Discord) => {
                                    )
                          )
                     message.channel.send({ embeds: [embed9], components: [row5] })
-               }else{
+               } else {
 
                     message.channel.send({ embeds: [embed9] })
                }
           }
           const filter = (interaction) => interaction.isSelectMenu() && interaction.user.id == message.author.id;
-          const collector = message.channel.createMessageComponentCollector({ filter, time: 30000 , max: 2 });
+          const collector = message.channel.createMessageComponentCollector({ filter, time: 30000, max: 2 });
           collector.on('collect', async collected => {
 
                const value = collected.values[0];
@@ -304,7 +304,7 @@ module.exports.run = async (client, message, args, Discord) => {
                     .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
                     .setTimestamp();
                message.channel.send({ embeds: [embed9] })
-               await message.channel.send({ embeds: [embed10], components: [row] })
+               await message.channel.send({ embeds: [embed10] })
                if (y[2] && !y[3]) {
 
                     const embed9 = new Discord.MessageEmbed()
@@ -333,7 +333,7 @@ module.exports.run = async (client, message, args, Discord) => {
                          .setTimestamp();
                     message.channel.send({ embeds: [embed9] });
                     await message.channel.send({ embeds: [embed10] })
-                    await message.channel.send({ embeds: [embed12], components: [row] })
+                    await message.channel.send({ embeds: [embed12] })
                }
                if (y[3]) {
 
@@ -374,15 +374,9 @@ module.exports.run = async (client, message, args, Discord) => {
                     message.channel.send({ embeds: [embed9] });
                     await message.channel.send({ embeds: [embed10] })
                     await message.channel.send({ embeds: [embed12] })
-                    await message.channel.send({ embeds: [embed14], components: [row] })
+                    await message.channel.send({ embeds: [embed14] })
 
                }
-
-
-
-
-
-
 
 
           }
