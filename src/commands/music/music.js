@@ -111,7 +111,6 @@ module.exports.run = async (client, message, args,Discord) => {
             {name : `🎧 ${data.Prefix}volume [value] ` , value : ` • Sets Volume to the value . Eg ! p!volume 70 `},
             {name : `🎧 ${data.Prefix}skip ` , value : ` • To skip song `},          
             {name : `🎧 ${data.Prefix}remove [queue no]` , value : ` • Removes Song from the queue Eg: \`p!remove 3\` `},
-            {name : `🎧 ${data.Prefix}helpremind` , value : ` • Sets reminders for you `},
             {name : `🎧 ${data.Prefix}stop` , value : ` • Clears The queue And stops music  `},
             {name : `🎧 ${data.Prefix}dc` , value : ` • Disconnects the Bot From vc `},
            
