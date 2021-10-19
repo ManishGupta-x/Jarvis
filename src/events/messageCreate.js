@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const prefix = require('../models/prefix');
 const prefixModel = require("../models/prefix")
 const config = require('../../settings.json')
-
+const superagent = require('superagent')
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 var d;
 module.exports = async (client, message) => {
@@ -34,7 +34,7 @@ module.exports = async (client, message) => {
 	if (data) {
 
 
-	const prefix1 = data.Prefix;
+		const prefix1 = data.Prefix;
 		if (!message.content.startsWith(prefix1)) {
 
 			switch (message.content) {
@@ -50,6 +50,35 @@ module.exports = async (client, message) => {
 					break;
 				case "adnan short story": message.channel.send("https://cdn.discordapp.com/attachments/794240262972243979/860556430490468362/VID_20210701_195116_318.mp4")
 					break;
+
+				case "jarvis google kr":
+					message.channel.send('Kya search krna h?')
+					const filter = m => m.author.id == message.author.id;
+					const collected = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
+					const query = collected.first().content;
+					let result = await superagent.get("https://customsearch.googleapis.com/customsearch/v1").query({ q: query, cx: '2a2bde9b24e897647', key: "AIzaSyDAXbVjTS4gOEJdNvXaOtLUnmi0zo0gVUA" })
+					if (!result.body.items) return message.channel.send(" Nothing Found! ")
+					if (result.status >= 400)
+						return message.channel.send("error");
+
+					let res = result.body.items[0];
+					const embed = new Discord.MessageEmbed()
+						.setColor('RANDOM')
+						.setTitle(res.title)
+						.setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/899921053877432370/ben-sweet-2LowviVHZ-E-unsplash-1.png ')
+						.setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+						.setDescription(res.snippet)
+						.setURL(res.link)
+						.setImage(res.pagemap.cse_image[0].src || res.pagemap.cse_thumbnail[0].src)
+
+						.setFooter(client.user.username, client.user.displayAvatarURL())
+						.setTimestamp();
+					message.channel.send({ embeds: [embed] });
+					break;
+
+
+
+
 				case "jarvis expose cvm": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
 					break;
 				case "jarvis expose shivam": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
@@ -160,6 +189,30 @@ module.exports = async (client, message) => {
 					break;
 				case "adnan short story": message.channel.send("https://cdn.discordapp.com/attachments/794240262972243979/860556430490468362/VID_20210701_195116_318.mp4")
 					break;
+				case "jarvis google kr":
+					message.channel.send('Kya search krna h?')
+					const filter = m => m.author.id == message.author.id;
+					const collected = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
+					const query = collected.first().content;
+					let result = await superagent.get("https://customsearch.googleapis.com/customsearch/v1").query({ q: query, cx: '2a2bde9b24e897647', key: "AIzaSyDAXbVjTS4gOEJdNvXaOtLUnmi0zo0gVUA" })
+					if (!result.body.items) return message.channel.send(" Nothing Found! ")
+					if (result.status >= 400)
+						return message.channel.send("error").then(console.log(result.message));
+
+					let res = result.body.items[0];
+					const embed = new Discord.MessageEmbed()
+						.setColor('RANDOM')
+						.setTitle(res.title)
+						.setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/899921053877432370/ben-sweet-2LowviVHZ-E-unsplash-1.png ')
+						.setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+						.setDescription(res.snippet)
+						.setURL(res.link)
+						.setImage(res.pagemap.cse_image[0].src || res.pagemap.cse_thumbnail[0].src)
+
+						.setFooter(client.user.username, client.user.displayAvatarURL())
+						.setTimestamp();
+					message.channel.send({ embeds: [embed] });
+					break;
 				case "jarvis expose cvm": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
 					break;
 				case "jarvis expose shivam": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
@@ -246,7 +299,7 @@ module.exports = async (client, message) => {
 			}
 
 		} else if (message.content.startsWith(prefix2)) {
-			const commandfile = client.commands.get(cmd.slice(prefix2.length).toString().toLowerCase())|| client.commands.get(client.aliases.get(cmd.slice(prefix2.length).toString().toLowerCase()));
+			const commandfile = client.commands.get(cmd.slice(prefix2.length).toString().toLowerCase()) || client.commands.get(client.aliases.get(cmd.slice(prefix2.length).toString().toLowerCase()));
 			if (commandfile) {
 				commandfile.run(client, message, args, Discord);
 			}
