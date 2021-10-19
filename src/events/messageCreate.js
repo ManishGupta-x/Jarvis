@@ -190,7 +190,7 @@ module.exports = async (client, message) => {
 				case "adnan short story": message.channel.send("https://cdn.discordapp.com/attachments/794240262972243979/860556430490468362/VID_20210701_195116_318.mp4")
 					break;
 				case "jarvis google kr":
-					message.channel.send('Kya search krna h?')
+					message.reply('Kya search krna h?')
 					const filter = m => m.author.id == message.author.id;
 					const collected = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
 					const query = collected.first().content;
