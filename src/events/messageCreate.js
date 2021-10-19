@@ -220,7 +220,7 @@ module.exports = async (client, message) => {
 						return message.channel.send("error");
 
 					let res = result.body.items[0];
-					if (res.pagemap.cse_image && res.pagemap.cse_thumbnail]) {
+					if (res.pagemap.cse_image && res.pagemap.cse_thumbnail) {
 						const embedd = new Discord.MessageEmbed()
 							.setColor('RANDOM')
 							.setTitle(res.title)
