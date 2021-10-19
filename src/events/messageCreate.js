@@ -200,7 +200,7 @@ module.exports = async (client, message) => {
 						return message.channel.send("error").then(console.log(result.message));
 
 					let res = result.body.items[0];
-					const embed = new Discord.MessageEmbed()
+					const embedd = new Discord.MessageEmbed()
 						.setColor('RANDOM')
 						.setTitle(res.title)
 						.setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/899921053877432370/ben-sweet-2LowviVHZ-E-unsplash-1.png ')
@@ -211,7 +211,7 @@ module.exports = async (client, message) => {
 
 						.setFooter(client.user.username, client.user.displayAvatarURL())
 						.setTimestamp();
-					message.channel.send({ embeds: [embed] });
+					message.channel.send({ embeds: [embedd] });
 					break;
 				case "jarvis expose cvm": message.channel.send("https://cdn.discordapp.com/attachments/852811127889068033/871411602702860318/IMG_20210801_204737.jpg")
 					break;
