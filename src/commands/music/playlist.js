@@ -16,9 +16,7 @@ module.exports.run = async (client, message, args, Discord) => {
     const data1 = await prefixModel.findOne({
         GuildID: message.guild.id
     });
-    if(data1)   const prefixx = data1.prefix;
-    if(!data1)  const prefixx = 'p!';
-    
+   
 
     const embed1 = new Discord.MessageEmbed()
         .setColor('RANDOM')
@@ -27,7 +25,7 @@ module.exports.run = async (client, message, args, Discord) => {
         .setDescription(`Congrats you added the song to your playlist 😉`)
 
 
-        .setFooter(`${prefixx}pl  view to view Playlist`, client.user.displayAvatarURL())
+        .setFooter(`p!pl  view to view Playlist`, client.user.displayAvatarURL())
         .setTimestamp();
 
     const embed2 = new Discord.MessageEmbed()
@@ -37,7 +35,7 @@ module.exports.run = async (client, message, args, Discord) => {
         .setDescription(`Congrats you added your first song to your playlist 😉`)
 
 
-        .setFooter(`${prefixx}pl view to view Playlist`, client.user.displayAvatarURL())
+        .setFooter(`p!pl view to view Playlist`, client.user.displayAvatarURL())
         .setTimestamp();
  if(!args[0]){
             message.reply('Invalid command ')
@@ -167,7 +165,7 @@ break;
         case 'remove': if (!args[1]) {
 
 
-            message.reply(`Pls mention song number from your playlist , to view your playlist type \`${prefixx}pl view\` \n Correct usage : Eg : \`${prefixx}pl remove 2\``)
+            message.reply(`Pls mention song number from your playlist , to view your playlist type \`p!pl view\` \n Correct usage : Eg : \`p!pl remove 2\``)
             return;
         } if (isNaN(args[1]) || data.playlist.length < args[1]) {
 
@@ -203,7 +201,7 @@ break;
                 .setDescription(data.playlist.map((song,id,playlist) => ` **${id + 1}**.   \`${playlist[id].song}\` `).join('\n'))
     
     
-                .setFooter(`Add songs ${prefixx}pl add [song]`, client.user.displayAvatarURL())
+                .setFooter(`Add songs p!pl add [song]`, client.user.displayAvatarURL())
                 .setTimestamp();
             message.channel.send({ embeds: [embed3] });
     
@@ -219,13 +217,13 @@ break;
             .setDescription(`Bruh it seems you dont have a Playlist 😥`)
 
 
-            .setFooter(`Add songs ${prefixx}pl add [song]`, client.user.displayAvatarURL())
+            .setFooter(`Add songs p!pl add [song]`, client.user.displayAvatarURL())
             .setTimestamp();
         message.channel.send({ embeds: [embed4]});
         }
         case 'play' : if(!args[1]){
             
-            message.reply(`Please mention song number u want to play from your playlist \n \`Eg: ${prefixx}pl play 2\` `)
+            message.reply(`Please mention song number u want to play from your playlist \n \`Eg: p!pl play 2\` `)
         }
         if(isNaN(args[1] || data.playlist.length < args[1])){
 
