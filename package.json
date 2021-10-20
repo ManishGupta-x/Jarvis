@@ -29,6 +29,7 @@
     "mysql": "^2.18.1",
     "node": "16.6.1",
     "node-fetch": "^2.6.1",
+    "opusscript": "^0.0.8",
     "random-puppy": "^1.1.0",
     "solenolyrics": "^5.0.0",
     "sqlite": "^4.0.19",
