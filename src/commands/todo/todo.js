@@ -1,5 +1,4 @@
 const Discord = require("discord.js")
-
 const mongoose = require("mongoose");
 const config = require('../../../settings.json')
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });

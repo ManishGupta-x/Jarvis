@@ -1,3 +1,4 @@
+/*-------------------------------------------------------------------------------------------------------*/
 const Discord = require("discord.js")
 const disTube = require('distube');
 module.exports.run = async (client, message, args,Discord) => {
@@ -9,6 +10,12 @@ module.exports.config = {
     aliases: [],
     Description: 'Command',
 }
+/*-------------------------------------------------------------------------------------------------------*/
+
+ const filter = m => m.author.id == message.author.id;
+        const collected = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
+        const response = collected.first().content;
+/*-------------------------------------------------------------------------------------------------------*/
 
 const embed = new Discord.MessageEmbed()
 .setColor('RANDOM')
@@ -20,6 +27,7 @@ const embed = new Discord.MessageEmbed()
 .setFooter(client.user.username, client.user.displayAvatarURL())
 .setTimestamp();
 message.channel.send({ embeds: [embed] });
+/*-------------------------------------------------------------------------------------------------------*/
 
 //selectmenu
  const row1 = new Discord.MessageActionRow()
