@@ -190,7 +190,7 @@ break;
 
             }
             break;
-        case 'view' :  if (data) {
+        case 'view' :  if (data && data.playlist.length > 0) {
 
 
             const embed3 = new Discord.MessageEmbed()
@@ -221,6 +221,7 @@ break;
             .setTimestamp();
         message.channel.send({ embeds: [embed4]});
         }
+        break;
         case 'play' : if(!args[1]){
             
             message.reply(`Please mention song number u want to play from your playlist \n \`Eg: p!pl play 2\` `)
