@@ -197,7 +197,7 @@ break;
 
             const embed3 = new Discord.MessageEmbed()
                 .setColor('RANDOM')
-                .setTitle(`__**${(message.author.id).username}'s Playlist**__`)
+                .setTitle(`__**Here is your Playlist 😉**__`)
                 .setThumbnail(`${message.author.displayAvatarURL()}`)
                 .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')  
                 .setDescription(data.playlist.map((song,id,playlist) => ` **${id + 1}**.   \`${playlist[id].song}\` `).join('\n'))
