@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const config = require('../../../settings.json')
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 const playlist = require('../../models/playlistdata');
+const prefixModel = require("../../models/prefix")
 const disTube = require('distube');
 var prefixx;
 module.exports.run = async (client, message, args, Discord) => {
@@ -38,7 +39,9 @@ module.exports.run = async (client, message, args, Discord) => {
 
         .setFooter(`${prefixx}pl view to view Playlist`, client.user.displayAvatarURL())
         .setTimestamp();
-
+ if(!args[0]){
+            message.reply('Invalid command ')
+}
 
     switch (args[0]) {
 
