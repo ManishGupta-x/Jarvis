@@ -12,7 +12,7 @@
     "node": ">=16.6.0"
   },
   "dependencies": {
-    "@discordjs/opus": "^0.5.0",
+    "@discordjs/opus": "^0.6.0",
     "@discordjs/voice": "^0.6.0",
     "@distube/spotify": "^0.6.3",
     "discord.js": "^13.1.0",
