@@ -119,10 +119,6 @@ module.exports.run = async (client, message, args, Discord) => {
                     message.channel.send({ embeds: [embed2] });
 
                 }
-
-            } else {
-
-                message.reply('Invalid Reply -_-')
             }
 
 
