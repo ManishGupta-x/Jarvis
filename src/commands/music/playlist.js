@@ -179,7 +179,7 @@ break;
                 data.save();
                 const embed9 = new Discord.MessageEmbed()
                     .setColor('RANDOM')
-                    .setThumbnail(`${message.author.displayAvatarURL}`)
+                    .setThumbnail(`https://media.discordapp.net/attachments/730714810614022228/900375278734442496/310182.png?width=885&height=498`)
                     .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
                     .setDescription(`Removed Song number \`${num}\` from your playlist`)
 
