@@ -5,7 +5,7 @@ mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: tr
 const playlist = require('../../models/playlistdata');
 const prefixModel = require("../../models/prefix")
 const disTube = require('distube');
-var prefixx;
+
 module.exports.run = async (client, message, args, Discord) => {
 
     let queue = client.distube.getQueue(message);
@@ -16,8 +16,8 @@ module.exports.run = async (client, message, args, Discord) => {
     const data1 = await prefixModel.findOne({
         GuildID: message.guild.id
     });
-    if(data1)   prefixx = data1.prefix;
-    if(!data1)  prefixx = 'p!';
+    if(data1)   const prefixx = data1.prefix;
+    if(!data1)  const prefixx = 'p!';
     
 
     const embed1 = new Discord.MessageEmbed()
@@ -87,7 +87,7 @@ module.exports.run = async (client, message, args, Discord) => {
             } else if (response1 == 'no' || response1 == 'No' || response1 == 'NO') {
 
                 message.reply('Ok then, Type the song name you want to add to the playlist or type \`cancel\` to cancel!')
-                const filte2 = m => m.author.id == message.author.id;
+                const filter2 = m => m.author.id == message.author.id;
 
                 const collected2 = await message.channel.awaitMessages({ filter2, max: 1, time: 60000, errors: ['time'] });
                 const response2 = collected2.first().content;
@@ -163,7 +163,7 @@ module.exports.run = async (client, message, args, Discord) => {
             }
 
         }
-
+break;
         case 'remove': if (!args[1]) {
 
 
@@ -191,6 +191,7 @@ module.exports.run = async (client, message, args, Discord) => {
                 message.channel.send({ embeds: [embed9] });
 
             }
+            break;
         case 'view' :  if (data) {
 
 
