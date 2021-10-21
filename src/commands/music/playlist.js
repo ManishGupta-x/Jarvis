@@ -116,7 +116,7 @@ module.exports.run = async (client, message, args, Discord) => {
                     const collector = await message.channel.createMessageCollector({ filter1, max : 2, time: 15000 });
 
                     collector.on('collect', m => {
-                        console.log(`Collected ${m.content}`);
+                        console.log(`Collected ${m.second().content}`);
                     });
 
                   
