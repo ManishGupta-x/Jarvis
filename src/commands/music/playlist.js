@@ -113,7 +113,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
                      message.channel.send('Enter song')
                      console.log(message.author.id)
-                    const filter = m => m.content.includes('discord') &&  m.user.id === message.author.id;
+                    const filter = m => m.content.includes('discord') &&  m.author.id === message.author.id;
                     const collector =  message.channel.createMessageCollector({ filter, max : 1, time: 15000 });
 
                     collector.on('collect', m => {
