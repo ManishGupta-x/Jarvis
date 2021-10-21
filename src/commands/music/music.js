@@ -91,8 +91,7 @@ module.exports.run = async (client, message, args,Discord) => {
          {name : `🎧 Filters Available` , value : ` •  Bassboost , 8d , Echo , Nightcore, Vaporwave To run \`p!bassboost\``},
        
          
-          
-          
+           
        
      
      
