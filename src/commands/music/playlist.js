@@ -71,7 +71,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
             message.channel.send({ embeds: [embed6], components: [row] });
-            client.on('interactionCreate', interaction => {    
+          
             const filter1 = (interaction) => interaction.isButton() && interaction.user.id == message.author.id && interaction.customId === 'yes' || interaction.customId === 'no'
 
             const collector = message.channel.createMessageComponentCollector({ filter1, time: 60000 });
@@ -112,7 +112,7 @@ module.exports.run = async (client, message, args, Discord) => {
                 } else if (collected.customId === 'no') {
 
                      message.channel.send('Enter song')
-                    const filter = m => m.content.includes('discord') && m.author.id != '778267007439077396' && m.author.id === interaction.user.id;
+                    const filter = m => m.content.includes('discord') && m.author.id != '778267007439077396' && m.author.id === messsage.author.id;
                     const collector = await message.channel.createMessageCollector({ filter, max : 1, time: 15000 });
 
                     collector.on('collect', m => {
@@ -122,7 +122,7 @@ module.exports.run = async (client, message, args, Discord) => {
                   
 
                 }
-            })
+           
 
             })
 
