@@ -118,9 +118,7 @@ module.exports.run = async (client, message, args, Discord) => {
                         console.log(`Collected ${m.content}`);
                     });
 
-                    collector.on('end', collected => {
-                        console.log(`Collected ${collected.size} items`);
-                    });
+                  
 
                 }
 
