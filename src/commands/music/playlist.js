@@ -111,12 +111,12 @@ module.exports.run = async (client, message, args, Discord) => {
 
                 } else if (collected.customId === 'no') {
 
-                     message.channel.send('Enter song')
+                     message.edit('Enter song')
                     const filter1 = m => m.content.includes('discord') && m.author.id != '778267007439077396' && m.author.id == interaction.user.id;
-                    const collector = await message.channel.createMessageCollector({ filter1, max : 2, time: 15000 });
+                    const collector = await message.channel.createMessageCollector({ filter1, max : 1, time: 15000 });
 
                     collector.on('collect', m => {
-                        console.log(`Collected ${m.second().content}`);
+                        console.log(`Collected ${m.content}`);
                     });
 
                   
