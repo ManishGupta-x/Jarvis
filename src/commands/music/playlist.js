@@ -111,19 +111,19 @@ module.exports.run = async (client, message, args, Discord) => {
 
                 } else if (collected.customId === 'no') {
 
-                    
+
                     const embed7 = new Discord.MessageEmbed()
                         .setColor('RANDOM')
                         .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png')
                         .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
                         .setDescription(`Type the song name u want to add to the playlist `)
-        
-        
+
+
                         .setFooter(client.user.username, client.user.displayAvatarURL())
                         .setTimestamp();
-        
-        
-                    message.channel.send({ embeds: [embed7]});
+
+
+                    message.channel.send({ embeds: [embed7] });
                     console.log(message.author.id)
                     const filter = m => m.author.id === message.author.id;
 
@@ -164,7 +164,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
                 }
-
+                collected.deferUpdate()
 
             })
 
@@ -263,6 +263,19 @@ module.exports.run = async (client, message, args, Discord) => {
                 .setFooter(`Add songs p!pl add [song]`, client.user.displayAvatarURL())
                 .setTimestamp();
             message.channel.send({ embeds: [embed4] });
+        }else if(data.playlist.length == 0){
+
+            const embed41 = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/900356283146829834/maxresdefault.png')
+            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+            .setDescription(`Bruh it seems you dont have a Playlist 😥`)
+
+
+            .setFooter(`Add songs p!pl add [song]`, client.user.displayAvatarURL())
+            .setTimestamp();
+            message.channel.send({ embeds: [embed41] });
+
         }
             break;
         case 'play': if (!args[1]) {
@@ -285,6 +298,52 @@ module.exports.run = async (client, message, args, Discord) => {
 
                 })
             }
+            break;
+        case 'delete': if (data) {
+            message.reply('Are you sure u want to delete your playlist? yes/no')
+            const filter = m => m.author.id == message.author.id;
+            const collected = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
+            const response = collected.first().content;
+            if (response == 'yes' || response == 'Yes' || response == 'YES') {
+                playlist.findOneAndDelete({
+                    UserID: message.author.id
+
+                }, (err, res) => {
+                    if (err) console.log(err)
+                    const embed8 = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setThumbnail('https://media.discordapp.net/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
+                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                        .setDescription(`Data Deleted succesfully!`)
+
+
+                        .setFooter(client.user.username, client.user.displayAvatarURL())
+                        .setTimestamp();
+                    message.channel.send({ embeds: [embed8] });
+                })
+
+            } else if (response == 'no' || response == 'No' || response == 'NO') {
+
+                message.reply('Data recovered 😒!')
+            } else {
+
+                message.reply('Invalid Reply -_-')
+            }
+
+
+        } if (!data) {
+
+            const embeddd = new Discord.MessageEmbed()
+                .setColor('RANDOM')
+                .setThumbnail('')
+                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                .setDescription(`Bruh you don't have a playlist 😥`)
+
+
+                .setFooter(client.user.username, client.user.displayAvatarURL())
+                .setTimestamp();
+            message.channel.send({ embeds: [embeddd] });
+        }
 
     }
 }
