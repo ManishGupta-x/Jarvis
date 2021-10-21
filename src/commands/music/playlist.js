@@ -124,7 +124,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
                     message.channel.send({ embeds: [embed7] });
-                    console.log(message.author.id)
+                  
                     const filter = m => m.author.id === message.author.id;
 
                     const collector = message.channel.createMessageCollector({ filter, max: 1, time: 15000 });
