@@ -71,7 +71,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
             message.channel.send({ embeds: [embed6], components: [row] });
-          
+
             const filter1 = (interaction) => interaction.isButton() && interaction.user.id == message.author.id && interaction.customId === 'yes' || interaction.customId === 'no'
 
             const collector = message.channel.createMessageComponentCollector({ filter1, time: 60000 });
@@ -111,21 +111,60 @@ module.exports.run = async (client, message, args, Discord) => {
 
                 } else if (collected.customId === 'no') {
 
-                     message.channel.send('Enter song')
-                     console.log(message.author.id)
-                    const filter = m =>  m.author.id === message.author.id;
-                   
-                    const collector =  message.channel.createMessageCollector({ filter, max : 1, time: 15000 });
+                    
+                    const embed7 = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png')
+                        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                        .setDescription(`Type the song name u want to add to the playlist `)
+        
+        
+                        .setFooter(client.user.username, client.user.displayAvatarURL())
+                        .setTimestamp();
+        
+        
+                    message.channel.send({ embeds: [embed7]});
+                    console.log(message.author.id)
+                    const filter = m => m.author.id === message.author.id;
+
+                    const collector = message.channel.createMessageCollector({ filter, max: 1, time: 15000 });
 
                     collector.on('collect', m => {
-                    
-                        console.log(`Collected ${m.content}`);
+
+                        if (data) {
+                            data.playlist.unshift({
+                                User: message.author.id,
+                                song: m.content,
+                            });
+                            data.save();
+
+
+                            message.channel.send({ embeds: [embed1] });
+
+
+
+                        } else if (!data) {
+                            let newData = new playlist({
+
+                                UserID: message.author.id,
+                                playlist: [{
+                                    song: m.content,
+
+                                },],
+
+                            });
+                            newData.save();
+                            message.channel.send({ embeds: [embed2] });
+
+                            return;
+                        }
+
                     });
 
-                  
+
 
                 }
-           
+
 
             })
 
