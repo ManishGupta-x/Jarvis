@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args, Discord) => {
     const data1 = await prefixModel.findOne({
         GuildID: message.guild.id
     });
-   
+
 
     const embed1 = new Discord.MessageEmbed()
         .setColor('RANDOM')
@@ -38,106 +38,93 @@ module.exports.run = async (client, message, args, Discord) => {
 
         .setFooter(`p!pl view to view Playlist`, client.user.displayAvatarURL())
         .setTimestamp();
- if(!args[0]){
-            message.reply('Invalid command ')
-}
+    if (!args[0]) {
+        message.reply('Invalid command ')
+    }
 
     switch (args[0]) {
 
         case 'add': if (queue) {
 
-            
+
             const row = new MessageActionRow()
-            .addComponents(
-                new MessageButton()
-                    .setCustomId('yes')
-                    .setLabel('Yes')
-                    .setStyle('SUCCESS'),
+                .addComponents(
+                    new MessageButton()
+                        .setCustomId('yes')
+                        .setLabel('Yes')
+                        .setStyle('SUCCESS'),
 
-                new MessageButton()
-                    .setCustomId('no')
-                    .setLabel('No')
-                    .setStyle('DANGER'),
-                    );
-           message.channel.send( {content : "Do you want to add current song playing? yes/no " , components : [row]});
-           const filter1 = (interaction) => interaction.isButton() && interaction.user.id == message.author.id && interaction.customId === 'yes' || interaction.customId === 'no' 
+                    new MessageButton()
+                        .setCustomId('no')
+                        .setLabel('No')
+                        .setStyle('DANGER'),
+                );
+            const embed6 = new Discord.MessageEmbed()
+                .setColor('RANDOM')
+                .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png')
+                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                .setDescription(`Do you want to add current song playing?`)
 
-             const collector = message.channel.createMessageComponentCollector({ filter1, time: 60000 });
 
-             collector.on('collect' , async collected =>{
-                   
-                if (collected.customId === 'yes'){
+                .setFooter(client.user.username, client.user.displayAvatarURL())
+                .setTimestamp();
+
+
+            message.channel.send({ embeds: [embed6], components: [row] });
+            const filter1 = (interaction) => interaction.isButton() && interaction.user.id == message.author.id && interaction.customId === 'yes' || interaction.customId === 'no'
+
+            const collector = message.channel.createMessageComponentCollector({ filter1, time: 60000 });
+
+            collector.on('collect', async collected => {
+
+                if (collected.customId === 'yes') {
                     currentsong = queue.songs[0];
-                   
+
                     if (data) {
                         data.playlist.unshift({
                             User: message.author.id,
                             song: currentsong.name,
                         });
                         data.save();
-    
-    
+
+
                         message.channel.send({ embeds: [embed1] });
-    
-    
-    
+
+
+
                     } else if (!data) {
                         let newData = new playlist({
-    
+
                             UserID: message.author.id,
                             playlist: [{
                                 song: currentsong.name,
-    
+
                             },],
-    
+
                         });
                         newData.save();
                         message.channel.send({ embeds: [embed2] });
-    
-                         return;
-                    }
-                    
-                }else if(collected.customId === 'no'){
 
-                   let msg = message.channel.send({content : 'Ok then, Type the song name you want to add to the playlist or type \`cancel\` to cancel!'})
-                    const filter2 = m2 => m2.author.id == msg.author.id;
-
-                    const collected2 = await msg.channel.awaitMessages({ filter2, max: 1, time: 60000, errors: ['time'] });
-                    const response2 = collected2.first().content;
-                    if (response2 == 'cancel' || response2 == 'Cancel' || response2 == 'CANCEL') {
-    
-                        message.reply(" Ok -_- !")
                         return;
                     }
-                    if (data) {
-                        data.playlist.unshift({
-                            User: message.author.id,
-                            song: response2,
-                        });
-                        data.save();
-    
-                        message.channel.send({ embeds: [embed1] });
-    
-    
-                    } else if (!data) {
-                        let newData = new playlist({
-    
-                            UserID: message.author.id,
-                            playlist: [{
-                                song: response2,
-    
-                            },],
-    
-                        });
-                        newData.save();
-    
-                        message.channel.send({ embeds: [embed2] });
-    
-                    }
+
+                } else if (collected.customId === 'no') {
+
+                    const filter1 = m => m.content.includes('discord') && m.author.id == message.author.id;
+                    const collector = interaction.channel.createMessageCollector({ filter1, max : 1, time: 15000 });
+
+                    collector.on('collect', m => {
+                        console.log(`Collected ${m.content}`);
+                    });
+
+                    collector.on('end', collected => {
+                        console.log(`Collected ${collected.size} items`);
+                    });
+
                 }
-                
-             })
-           
+
+            })
+
 
         } else if (!queue) {
 
@@ -174,7 +161,7 @@ module.exports.run = async (client, message, args, Discord) => {
             }
 
         }
-break;
+            break;
         case 'remove': if (!args[1]) {
 
 
@@ -203,60 +190,60 @@ break;
 
             }
             break;
-        case 'view' :  if (data && data.playlist.length > 0) {
+        case 'view': if (data && data.playlist.length > 0) {
 
 
             const embed3 = new Discord.MessageEmbed()
                 .setColor('RANDOM')
                 .setTitle(`__**Here is your Playlist 😉**__`)
                 .setThumbnail(`${message.author.displayAvatarURL()}`)
-                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')  
-                .setDescription(data.playlist.map((song,id,playlist) => ` **${id + 1}**.   \`${playlist[id].song}\` `).join('\n'))
-    
-    
+                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                .setDescription(data.playlist.map((song, id, playlist) => ` **${id + 1}**.   \`${playlist[id].song}\` `).join('\n'))
+
+
                 .setFooter(`Add songs p!pl add [song]`, client.user.displayAvatarURL())
                 .setTimestamp();
             message.channel.send({ embeds: [embed3] });
-    
-    
-    
-    
-        } else if(!data){
+
+
+
+
+        } else if (!data) {
 
             const embed4 = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/900356283146829834/maxresdefault.png')
-            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setDescription(`Bruh it seems you dont have a Playlist 😥`)
+                .setColor('RANDOM')
+                .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/900356283146829834/maxresdefault.png')
+                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                .setDescription(`Bruh it seems you dont have a Playlist 😥`)
 
 
-            .setFooter(`Add songs p!pl add [song]`, client.user.displayAvatarURL())
-            .setTimestamp();
-        message.channel.send({ embeds: [embed4]});
+                .setFooter(`Add songs p!pl add [song]`, client.user.displayAvatarURL())
+                .setTimestamp();
+            message.channel.send({ embeds: [embed4] });
         }
-        break;
-        case 'play' : if(!args[1]){
-            
+            break;
+        case 'play': if (!args[1]) {
+
             message.reply(`Please mention song number u want to play from your playlist \n \`Eg: p!pl play 2\` `)
         }
-        if(isNaN(args[1] || data.playlist.length < args[1])){
+            if (isNaN(args[1] || data.playlist.length < args[1])) {
 
-                   message.reply('Invalid song number')
-    }else if(args[1]){
-
-
-        if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
-         data.playlist.map((song,id,playlist) => {
-
-                const numm = args[1]-1;
-                const music = playlist[numm].song;
-                client.distube.play(message,music)
+                message.reply('Invalid song number')
+            } else if (args[1]) {
 
 
-         })
+                if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
+                data.playlist.map((song, id, playlist) => {
+
+                    const numm = args[1] - 1;
+                    const music = playlist[numm].song;
+                    client.distube.play(message, music)
+
+
+                })
+            }
+
     }
-
-}
 }
 module.exports.config = {
     name: "playlist",
