@@ -59,7 +59,7 @@ module.exports.run = async (client, message, args,Discord) => {
            {name : "🎧 p!remove [queue no]" , value : ` • Removes Song from the queue Eg: \`p!remove 3\` `},
            {name : "🎧 p!stop" , value : ` • Clears The queue And stops music  `},
            {name : "🎧 p!dc" , value : ` • Disconnects the Bot From vc `},
-          
+           {name : "🎧 p!playlist add/remove/view/play" , value : ` • Save or view playlist , play songs from it `},
            
             
             
@@ -113,7 +113,7 @@ module.exports.run = async (client, message, args,Discord) => {
             {name : `🎧 ${data.Prefix}remove [queue no]` , value : ` • Removes Song from the queue Eg: \`p!remove 3\` `},
             {name : `🎧 ${data.Prefix}stop` , value : ` • Clears The queue And stops music  `},
             {name : `🎧 ${data.Prefix}dc` , value : ` • Disconnects the Bot From vc `},
-           
+            {name : `🎧 ${data.Prefix}playlist add/remove/view/play` , value : ` • Save or view playlist , play songs from it `},
             
              
              
