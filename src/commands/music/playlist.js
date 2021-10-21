@@ -45,83 +45,98 @@ module.exports.run = async (client, message, args, Discord) => {
 
         case 'add': if (queue) {
 
-            message.reply("Do you want to add current song playing? yes/no ");
-            const filter1 = m1 => m1.author.id == message.author.id;
+            
+            const row = new MessageActionRow()
+            .addComponents(
+                new MessageButton()
+                    .setCustomId('yes')
+                    .setLabel('Yes')
+                    .setStyle('SUCCESS'),
 
-            const collected1 = await message.channel.awaitMessages({ filter1, max: 1, time: 60000, errors: ['time'] });
-            const response1 = collected1.first().content;
-            if (response1 == 'yes' || response1 == 'Yes' || response1 == 'YES') {
+                new MessageButton()
+                    .setCustomId('no')
+                    .setLabel('No')
+                    .setStyle('DANGER'),
+                    );
+           message.channel.send( {content : "Do you want to add current song playing? yes/no " , components : [row]});
+           const filter1 = (interaction) => interaction.isButton() && interaction.user.id == message.author.id && interaction.customId === 'yes' || interaction.customId === 'no' 
 
-                currentsong = queue.songs[0];
-                console.log(currentsong);
-                if (data) {
-                    data.playlist.unshift({
-                        User: message.author.id,
-                        song: currentsong.name,
-                    });
-                    data.save();
+             const collector = message.channel.createMessageComponentCollector({ filter1, time: 60000 });
 
-
-                    message.channel.send({ embeds: [embed1] });
-
-
-
-                } else if (!data) {
-                    let newData = new playlist({
-
-                        UserID: message.author.id,
-                        playlist: [{
+             collector.on('collect' , async collected =>{
+                   
+                if (collected.customId === 'yes'){
+                    currentsong = queue.songs[0];
+                   
+                    if (data) {
+                        data.playlist.unshift({
+                            User: message.author.id,
                             song: currentsong.name,
+                        });
+                        data.save();
+    
+    
+                        message.channel.send({ embeds: [embed1] });
+    
+    
+    
+                    } else if (!data) {
+                        let newData = new playlist({
+    
+                            UserID: message.author.id,
+                            playlist: [{
+                                song: currentsong.name,
+    
+                            },],
+    
+                        });
+                        newData.save();
+                        message.channel.send({ embeds: [embed2] });
+    
+                         return;
+                    }
+                    
+                }else if(collected.customId === 'no'){
 
-                        },],
+                   let msg = message.channel.send({content : 'Ok then, Type the song name you want to add to the playlist or type \`cancel\` to cancel!'})
+                    const filter2 = m2 => m2.author.id == msg.author.id;
 
-                    });
-                    newData.save();
-                    message.channel.send({ embeds: [embed2] });
-
-
-                }
-
-
-            } else if (response1 == 'no' || response1 == 'No' || response1 == 'NO') {
-
-                message.reply('Ok then, Type the song name you want to add to the playlist or type \`cancel\` to cancel!')
-                const filter2 = m2 => m2.author.id == message.author.id;
-
-                const collected2 = await message.channel.awaitMessages({ filter2, max: 1, time: 60000, errors: ['time'] });
-                const response2 = collected2.first().content;
-                if (response2 == 'cancel' || response2 == 'Cancel' || response2 == 'CANCEL') {
-
-                    message.reply(" Ok -_- !")
-                    return;
-                }
-                if (data) {
-                    data.playlist.unshift({
-                        User: message.author.id,
-                        song: response2,
-                    });
-                    data.save();
-
-                    message.channel.send({ embeds: [embed1] });
-
-
-                } else if (!data) {
-                    let newData = new playlist({
-
-                        UserID: message.author.id,
-                        playlist: [{
+                    const collected2 = await msg.channel.awaitMessages({ filter2, max: 1, time: 60000, errors: ['time'] });
+                    const response2 = collected2.first().content;
+                    if (response2 == 'cancel' || response2 == 'Cancel' || response2 == 'CANCEL') {
+    
+                        message.reply(" Ok -_- !")
+                        return;
+                    }
+                    if (data) {
+                        data.playlist.unshift({
+                            User: message.author.id,
                             song: response2,
-
-                        },],
-
-                    });
-                    newData.save();
-
-                    message.channel.send({ embeds: [embed2] });
-
+                        });
+                        data.save();
+    
+                        message.channel.send({ embeds: [embed1] });
+    
+    
+                    } else if (!data) {
+                        let newData = new playlist({
+    
+                            UserID: message.author.id,
+                            playlist: [{
+                                song: response2,
+    
+                            },],
+    
+                        });
+                        newData.save();
+    
+                        message.channel.send({ embeds: [embed2] });
+    
+                    }
                 }
-            }
-
+                
+             })
+           
 
         } else if (!queue) {
 
