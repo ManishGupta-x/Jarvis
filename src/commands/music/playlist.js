@@ -46,13 +46,14 @@ module.exports.run = async (client, message, args, Discord) => {
         case 'add': if (queue) {
 
             message.reply("Do you want to add current song playing? yes/no ");
-            const filter1 = m => m.author.id == message.author.id;
+            const filter1 = m1 => m1.author.id == message.author.id;
 
             const collected1 = await message.channel.awaitMessages({ filter1, max: 1, time: 60000, errors: ['time'] });
             const response1 = collected1.first().content;
             if (response1 == 'yes' || response1 == 'Yes' || response1 == 'YES') {
 
                 currentsong = queue.songs[0];
+                console.log(currentsong);
                 if (data) {
                     data.playlist.unshift({
                         User: message.author.id,
@@ -85,7 +86,7 @@ module.exports.run = async (client, message, args, Discord) => {
             } else if (response1 == 'no' || response1 == 'No' || response1 == 'NO') {
 
                 message.reply('Ok then, Type the song name you want to add to the playlist or type \`cancel\` to cancel!')
-                const filter2 = m => m.author.id == message.author.id;
+                const filter2 = m2 => m2.author.id == message.author.id;
 
                 const collected2 = await message.channel.awaitMessages({ filter2, max: 1, time: 60000, errors: ['time'] });
                 const response2 = collected2.first().content;
@@ -177,7 +178,7 @@ break;
                     .setColor('RANDOM')
                     .setThumbnail(`${message.author.displayAvatarURL()}`)
                     .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                    .setDescription(`Removed Song number \`${num}\` from your playlist`)
+                    .setDescription(`Removed Song number \`${args[1]}\` from your playlist`)
 
 
                     .setFooter(client.user.username, client.user.displayAvatarURL())
