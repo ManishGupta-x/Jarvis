@@ -244,7 +244,7 @@ module.exports.run = async (client, message, args, Discord) => {
                 .setDescription(data.playlist.map((song, id, playlist) => ` **${id + 1}**.   ${playlist[id].song} `).join('\n'))
 
 
-                .setFooter(`Add songs p!pl add [song]`, client.user.displayAvatarURL())
+                .setFooter(`Add songs p!pl add`, client.user.displayAvatarURL())
                 .setTimestamp();
             message.channel.send({ embeds: [embed3] });
 
@@ -260,7 +260,7 @@ module.exports.run = async (client, message, args, Discord) => {
                 .setDescription(`Bruh it seems you dont have a Playlist 😥`)
 
 
-                .setFooter(`Add songs p!pl add [song]`, client.user.displayAvatarURL())
+                .setFooter(`Add songs p!pl add `, client.user.displayAvatarURL())
                 .setTimestamp();
             message.channel.send({ embeds: [embed4] });
         }else if(data.playlist.length == 0){
@@ -272,7 +272,7 @@ module.exports.run = async (client, message, args, Discord) => {
             .setDescription(`Bruh it seems you dont have a Playlist 😥`)
 
 
-            .setFooter(`Add songs p!pl add [song]`, client.user.displayAvatarURL())
+            .setFooter(`Add songs p!pl add `, client.user.displayAvatarURL())
             .setTimestamp();
             message.channel.send({ embeds: [embed41] });
 
@@ -312,9 +312,9 @@ module.exports.run = async (client, message, args, Discord) => {
                     if (err) console.log(err)
                     const embed8 = new Discord.MessageEmbed()
                         .setColor('RANDOM')
-                        .setThumbnail('https://media.discordapp.net/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
+                        .setThumbnail('https://media.discordapp.net/attachments/730714810614022228/900375278734442496/310182.png?width=885&height=498')
                         .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                        .setDescription(`Data Deleted succesfully!`)
+                        .setDescription(`Playlist Deleted succesfully!`)
 
 
                         .setFooter(client.user.username, client.user.displayAvatarURL())
