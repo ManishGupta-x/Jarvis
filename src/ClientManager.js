@@ -61,7 +61,6 @@ module.exports = class ClientManager extends Client {
 
 				queue.textChannel.send({ embeds: [playsong] })
 
-
 			}).on("addSong", (queue, song) => {
 
 				const addsong = new Discord.MessageEmbed()
