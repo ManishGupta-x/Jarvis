@@ -302,7 +302,7 @@ module.exports.run = async (client, message, args, Discord) => {
         case 'delete': if (data) {
             message.reply('Are you sure u want to delete your playlist? yes/no')
             const filter = m => m.author.id == message.author.id;
-            const collected = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
+            const collected = await message.channel.awaitMessages({ filter, max: 1, time: 10000, errors: ['time'] });
             const response = collected.first().content;
             if (response == 'yes' || response == 'Yes' || response == 'YES') {
                 playlist.findOneAndDelete({
