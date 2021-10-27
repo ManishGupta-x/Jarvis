@@ -49,7 +49,7 @@ module.exports.run = async (client, message, args, Discord) => {
 }
 
 module.exports.config = {
-	name: "'gsearch",
+	name: "gsearch",
 	aliases: ['gs'],
 	Description: 'Command',
 }
