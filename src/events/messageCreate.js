@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const prefix = require('../models/prefix');
 const prefixModel = require("../models/prefix")
 const config = require('../../settings.json')
-const superagent = require('superagent')
+
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 var d;
 
@@ -24,8 +24,8 @@ var d;
 
    //commandfile declaration
 
-   const file = client.commands.get(snipe);
-   const searchfile = client.commands.get(gsearch);
+   const file = client.commands.get(`snipe`);
+   const searchfile = client.commands.get(`gsearch`);
 
    /*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
 
