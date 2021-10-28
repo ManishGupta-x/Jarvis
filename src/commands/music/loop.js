@@ -19,6 +19,8 @@ module.exports.run = async (client, message, args, Discord) => {
 		loop = 2;
 	} else if (args[0] == "off" || args[0] == "Off" || args[0] == "OFF") {
 		loop = 0;
+	} else {
+		message.reply("Invalid loop type");
 	}
 	if (!message.member.voice.channel)
 		return message.channel.send("You must be in a voice channel to use this command.");
