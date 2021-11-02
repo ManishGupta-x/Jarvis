@@ -124,7 +124,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
                     message.channel.send({ embeds: [embed7] });
-                  
+
                     const filter = m => m.author.id === message.author.id;
 
                     const collector = message.channel.createMessageCollector({ filter, max: 1, time: 15000 });
@@ -263,17 +263,17 @@ module.exports.run = async (client, message, args, Discord) => {
                 .setFooter(`Add songs p!pl add `, client.user.displayAvatarURL())
                 .setTimestamp();
             message.channel.send({ embeds: [embed4] });
-        }else if(data.playlist.length == 0){
+        } else if (data.playlist.length == 0) {
 
             const embed41 = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/900356283146829834/maxresdefault.png')
-            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setDescription(`Bruh it seems you dont have a Playlist 😥`)
+                .setColor('RANDOM')
+                .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/900356283146829834/maxresdefault.png')
+                .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                .setDescription(`Bruh it seems you dont have a Playlist 😥`)
 
 
-            .setFooter(`Add songs p!pl add `, client.user.displayAvatarURL())
-            .setTimestamp();
+                .setFooter(`Add songs p!pl add `, client.user.displayAvatarURL())
+                .setTimestamp();
             message.channel.send({ embeds: [embed41] });
 
         }
@@ -294,7 +294,7 @@ module.exports.run = async (client, message, args, Discord) => {
                     const numm = args[1] - 1;
                     const music = playlist[numm].song;
                     client.distube.play(message, music)
-
+                    return;
 
                 })
             }
