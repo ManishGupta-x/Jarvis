@@ -24,7 +24,7 @@ module.exports.run = async (client, message, args, Discord) => {
                     .setStyle('DANGER'),
 
                 new MessageButton()
-                    .setCustomId('bassboost')
+                    .setCustomId('lightbass')
                     .setLabel('🎶 Bassboost')
                     .setStyle('PRIMARY'),
                 new MessageButton()
@@ -64,7 +64,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
 
-        const filter = (interaction) => interaction.isButton() && interaction.customId === 'skip' || interaction.customId === '8d' || interaction.customId === 'bassboost' || interaction.customId === 'nightcore';
+        const filter = (interaction) => interaction.isButton() && interaction.customId === 'skip' || interaction.customId === '8d' || interaction.customId === 'lightbass' || interaction.customId === 'nightcore';
 
         const collector = message.channel.createMessageComponentCollector({ filter, time: 180000 });
         collector.on('collect', async collected => {
@@ -77,7 +77,7 @@ module.exports.run = async (client, message, args, Discord) => {
                 await collected.channel.send({ content: "Skipping" })
                 
                 await commandfile.run(client, message, args, Discord)
-            } else if (collected.customId === 'bassboost') {
+            } else if (collected.customId === 'lightbass') {
 
 
                 
