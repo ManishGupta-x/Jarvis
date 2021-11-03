@@ -55,7 +55,7 @@ module.exports.run = async (client, message, args,Discord) => {
             .setTitle("__Jarvis Reviews__")
             .setThumbnail('https://cdn.discordapp.com/attachments/833731235821387826/905510143616229406/Healthcare-Thank-You.png')
             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')  
-            .setDescription(data.reviews.map((review, id, reviews) => ` **${id + 1}**.   \`${reviews[id].review}\` \t  \`${reviews[id].review}\``).join('\n'))
+            .setDescription(data.reviews.map((review, id, reviews) => ` **${id + 1}**.   \`${reviews[id].review}\``).join('\n'))
 
 
             .setFooter(`Thank to All for these Amazing reviews 🥰 💘`, client.user.displayAvatarURL())
