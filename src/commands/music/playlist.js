@@ -289,11 +289,11 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
                 if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
-                data.playlist.map((song, id, playlist) => {
+                data.playlist.map(async (song, id, playlist) => {
 
                     const numm = args[1] - 1;
                     const music = playlist[numm].song;
-                   await client.distube.play(message, music)
+                    await client.distube.play(message, music);
                     return;
 
                 })
