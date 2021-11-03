@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args, Discord) => {
 	}
 	if (!args[0]) {
 		message.reply(
-			"What kind of loop U want type `p!loop song` to loop song or `p!loop queue ` to Loop Queue"
+			"What kind of loop U want type `p!loop song` to loop song or `p!loop queue ` to Loop Queue . To turn it off further type p!loop off "
 		);
 		return;
 	} else if (args[0] == "song" || args[0] == "Song") {

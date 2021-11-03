@@ -293,7 +293,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
                     const numm = args[1] - 1;
                     const music = playlist[numm].song;
-                    client.distube.play(message, music)
+                   await client.distube.play(message, music)
                     return;
 
                 })
