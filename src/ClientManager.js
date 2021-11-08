@@ -47,6 +47,12 @@ module.exports = class ClientManager extends Client {
 					"https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png",
 					"https://cdn.discordapp.com/attachments/730714810614022228/882284384202395678/neon-wallpaper-2008181520192-scaled.png",
 					"https://cdn.discordapp.com/attachments/730714810614022228/882283761868357682/edm-house-music-dj-producer-beatmaker-wallpaper-hd-4k-desktop-6-2048x1080.png",
+                    "https://cdn.discordapp.com/attachments/730714810614022228/888355852082376724/photo-1513829596324-4bb2800c5efb.png",
+					"https://cdn.discordapp.com/attachments/730714810614022228/888355751276449822/photo-1499415479124-43c32433a620.png",
+					"https://cdn.discordapp.com/attachments/730714810614022228/888355120411209738/1792303.png",
+					"https://cdn.discordapp.com/attachments/730714810614022228/888355457704542278/977273-desktop-background-music-1920x1080-for-samsung.png"
+
+
 				];
 				var mu = Math.floor(Math.random() * wallpapers.length);
 
