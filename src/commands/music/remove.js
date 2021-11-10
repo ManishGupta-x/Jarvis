@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args,Discord) => {
     if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
 
     let queue = await client.distube.getQueue(message);
-    if (!args[0] || args[0] == 1) {
+    if (!args[0] || args[0] == 1 || isNaN(args[0])) {
          if(!args[0] || isNaN(args[0]))
 {            message.reply("Mention song number to remove Eg: p!remove 4")}
         else { message.reply("Song is currently playing can't be removed") }
