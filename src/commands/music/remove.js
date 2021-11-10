@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args,Discord) => {
 
     let queue = await client.distube.getQueue(message);
     if (!args[0] || args[0] == 1) {
-         if(!args[0])
+         if(!args[0] || isNaN(args[0]))
 {            message.reply("Mention song number to remove Eg: p!remove 4")}
         else { message.reply("Song is currently playing can't be removed") }
         return;
