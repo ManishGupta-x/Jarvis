@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args,Discord) => {
             .setDescription(`Getting some issues try again `)
 
 
-            .setFooter(client.user.username, client.user.displayAvatarURL())
+            .setFooter(`Report Manish<3 if you get this error`, client.user.displayAvatarURL())
             .setTimestamp();
         message.channel.send({ embeds: [embed9] });
     });
