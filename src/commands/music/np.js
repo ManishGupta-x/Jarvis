@@ -43,7 +43,7 @@ module.exports.run = async (client, message, args, Discord) => {
                 .setAuthor('Jarvis', 'https://images-ext-1.discordapp.net/external/DkPCBVBHBDJC8xHHCF2G7-rJXnTwj_qs78udThL8Cy0/%3Fv%3D1/https/cdn.discordapp.com/emojis/859459305152708630.gif')
                 .setTitle(`Now Playing`)
                 .setDescription(`${song.name} | Requested by: ${song.user} || at \`${queue.formattedCurrentTime}\`/ \`${song.formattedDuration}\` \n\n${status(queue)}`)
-                .setFooter(client.user.username, client.user.displayAvatarURL())
+                .setFooter(`Likes • 💖 ${song.likes} 〣 Views • 👁️ ${song.views}`, client.user.displayAvatarURL())
                 .setTimestamp();
             message.channel.send({ embeds: [embed1], components: [row] });
         } else {
