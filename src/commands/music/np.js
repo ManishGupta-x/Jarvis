@@ -55,7 +55,7 @@ module.exports.run = async (client, message, args, Discord) => {
                 .setTitle(`Now Playing`)
                 .setDescription(`${song.name} | Requested by: ${song.user} || at \` ${queue.formattedCurrentTime}\`/ \`${song.formattedDuration}\` \n ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ `)
                 .addField("Upcoming Song :", `${upcomingsong.name} | Requested by: ${upcomingsong.user}\` | ${upcomingsong.formattedDuration}\`\n\n${status(queue)}`)
-                .setFooter(client.user.username, client.user.displayAvatarURL())
+                .setFooter(`💖 ${song.likes} • 👁️ ${song.views}`, client.user.displayAvatarURL())
                 .setTimestamp();
             message.channel.send({ embeds: [embed2], components: [row] });
         }
