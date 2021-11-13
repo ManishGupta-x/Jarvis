@@ -68,7 +68,7 @@ module.exports = class ClientManager extends Client {
 						`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\` `
 					)
 
-					.setFooter(`💖 ${song.likes} • 👁️ ${song.views} `)
+					.setFooter(`💖 ${song.likes} • 👁️ ${song.views}`)
 					.setTimestamp();
 
 				queue.textChannel.send({ embeds: [playsong] });
