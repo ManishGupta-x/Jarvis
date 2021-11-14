@@ -2,7 +2,9 @@ const disTube = require('distube');
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 const Discord = require("discord.js")
-
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
 module.exports.run = async (client, message, args, Discord) => {
     if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
     var wallpapers = ["https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png", "https://cdn.discordapp.com/attachments/730714810614022228/882284561726308372/433536-Klayton-women-science_fiction-planet-Scandroid.png"
@@ -15,7 +17,8 @@ module.exports.run = async (client, message, args, Discord) => {
     } else {
         const song = queue.songs[0];
         const status = (queue) => `Volume: \`${queue.volume}%\` | Loop: \`${queue.repeatMode ? queue.repeatMode == 2 ? "Repeat queue" : "Repeat song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``;
-
+        const likes = numberWithCommas(song.likes);
+        const views = numberWithCommas(song.views);
         const row = new MessageActionRow()
             .addComponents(
                 new MessageButton()
@@ -37,13 +40,14 @@ module.exports.run = async (client, message, args, Discord) => {
                     .setStyle('SUCCESS'),
             );
         if (queue.songs.length <= 1) {
+
             const embed1 = new Discord.MessageEmbed()
                 .setColor('#F0074F')
                 .setThumbnail(`${mu}`)
                 .setAuthor('Jarvis', 'https://images-ext-1.discordapp.net/external/DkPCBVBHBDJC8xHHCF2G7-rJXnTwj_qs78udThL8Cy0/%3Fv%3D1/https/cdn.discordapp.com/emojis/859459305152708630.gif')
                 .setTitle(`Now Playing`)
                 .setDescription(`${song.name} | Requested by: ${song.user} || at \`${queue.formattedCurrentTime}\`/ \`${song.formattedDuration}\` \n\n${status(queue)}`)
-                .setFooter(`Likes • 💖 ${song.likes} 〣 Views • 👁️ ${song.views}`, client.user.displayAvatarURL())
+                .setFooter(`Likes • 💖 ${likes} 〣 Views • 👁️ ${views}`, client.user.displayAvatarURL())
                 .setTimestamp();
             message.channel.send({ embeds: [embed1], components: [row] });
         } else {
