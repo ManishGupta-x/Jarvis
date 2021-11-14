@@ -4,6 +4,9 @@ const { Client, Collection } = require("discord.js");
 const EventHandler = require("./utils/loadEvents");
 const Discord = require("discord.js");
 const cookie = require(`../settings.json`);
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
 module.exports = class ClientManager extends Client {
 	constructor(options) {
 		super(options);
@@ -54,6 +57,8 @@ module.exports = class ClientManager extends Client {
 
 
 				];
+				const likes = numberWithCommas(song.likes);
+				const views = numberWithCommas(song.views);
 				var mu = Math.floor(Math.random() * wallpapers.length);
 
 				const playsong = new Discord.MessageEmbed()
@@ -68,7 +73,7 @@ module.exports = class ClientManager extends Client {
 						`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\` `
 					)
 
-					.setFooter(`Likes • 💖 ${song.likes} 〣 Views • 👁️ ${song.views}`)
+					.setFooter(`Likes • 💖 ${likes} 〣 Views • 👁️ ${views}`)
 					.setTimestamp();
 
 				queue.textChannel.send({ embeds: [playsong] });
