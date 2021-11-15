@@ -89,6 +89,7 @@ module.exports.run = async (client, message, args,Discord) => {
          {name : `🎧 ${data.Prefix}pause/resume` , value : ` •  Pause/Resume Songs`},
          {name : `🎧 ${data.Prefix}queue` , value : ` •  Gives Current queue`},
          {name : `🎧 ${data.Prefix}search [song query]` , value : ` •  To search song`},
+         {name : `🎧 ${data.Prefix}jumpto [Song queue Number]` , value : ` • Jumps to the required song`},
          {name : `🎧 Filters Available` , value : ` •  Bassboost , 8d , Echo , Nightcore, Vaporwave To run \`p!bassboost\``},
        
          
