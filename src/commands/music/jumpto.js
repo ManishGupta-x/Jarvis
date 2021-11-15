@@ -16,8 +16,8 @@ module.exports.run = async (client, message, args,Discord) => {
 
         }else if(args[0]){
  
-            const num = args[0]+1;
-            await client.distube.jump(message, num);
+          
+            await client.distube.jump(message, Number(args[0]+1));
             const embed6 = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png')
