@@ -16,8 +16,8 @@ module.exports.run = async (client, message, args,Discord) => {
 
         }else if(args[0]){
  
-          
-            await client.distube.jump(message, Number(args[0]+1)).catch(error => {
+               const num = args[0]+1;
+            await client.distube.jump(message, Number(num)).catch(error => {
 
                 const embed9 = new Discord.MessageEmbed()
                     .setColor('RANDOM')
@@ -29,6 +29,7 @@ module.exports.run = async (client, message, args,Discord) => {
                     .setFooter(`Report Manish<3 if you get this error`, client.user.displayAvatarURL())
                     .setTimestamp();
                 message.channel.send({ embeds: [embed9] });
+                return;
             });
             const embed6 = new Discord.MessageEmbed()
             .setColor('RANDOM')
