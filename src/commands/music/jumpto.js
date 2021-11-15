@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args,Discord) => {
 
         }else if(args[0]){
  
-            const num = parseInt(args[0]) + 1;
+            const num = parseInt(args[0]) - 1;
             await client.distube.jump(message, Number(num)).catch(error => {
 
                 const embed9 = new Discord.MessageEmbed()
