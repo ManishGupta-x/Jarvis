@@ -16,8 +16,8 @@
         return;
        }
          let content = JSON.parse(response.body);
-          if(content){
-        if(content[0].data){         
+          if(content[0]){
+                
           let permalink = content[0].data.children[0].data.permalink;
           let picUrl = `https://reddit.com${permalink}`;
           let picImage = content[0].data.children[0].data.url;
@@ -30,12 +30,11 @@
           embed.setImage(picImage)
           embed.setColor('RANDOM')
           embed.setFooter(`👍 ${picUpvotes} 👎 ${picDownvotes} 💬 ${picNumComments}`)
-          message.channel.send({embeds :[embed]}).catch(err => {
+          message.channel.send({embeds :[embed]}).catch(error => {
 
             message.channel.send("error");
           });
-        }
-        }
+                }
   
   } )
   }
