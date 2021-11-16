@@ -287,7 +287,19 @@ module.exports.run = async (client, message, args, Discord) => {
                 message.reply('Invalid song number')
             } else if (args[1]) {
 
-
+                  if(!data){
+                    const embedddd = new Discord.MessageEmbed()
+                    .setColor('RANDOM')
+                    .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/900356283146829834/maxresdefault.png')
+                    .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                    .setDescription(`Bruh it seems you dont have a Playlist 😥`)
+    
+    
+                    .setFooter(`Add songs p!pl add `, client.user.displayAvatarURL())
+                    .setTimestamp();
+                message.channel.send({ embeds: [embedddd] });
+                return;
+                  }
                 if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
                 data.playlist.map(async (song, id, playlist) => {
 
