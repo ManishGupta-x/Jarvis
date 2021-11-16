@@ -11,6 +11,7 @@
       const embed = new Discord.MessageEmbed()
       got(`https://www.reddit.com/r/${rd}/random/.json`).then(response => {
           let content = JSON.parse(response.body);
+          if(content){
         if(content[0].data){         
           let permalink = content[0].data.children[0].data.permalink;
           let picUrl = `https://reddit.com${permalink}`;
@@ -28,6 +29,7 @@
 
             message.channel.send("error");
           });
+        }
         }
   
   } )
