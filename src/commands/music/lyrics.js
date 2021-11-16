@@ -38,7 +38,19 @@ module.exports.run = async (client, message, args,Discord) => {
           .setColor('RANDOM')
 
 
-        message.channel.send({ embeds: [lyricsEmbed1] })
+        message.channel.send({ embeds: [lyricsEmbed1] }).catch(error => {
+
+          const embed1 = new Discord.MessageEmbed()
+              .setColor('RANDOM')
+              .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+              .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+              .setDescription(`Getting some issues try again `)
+  
+  
+              .setFooter(`Report Manish<3 if you get this error`, client.user.displayAvatarURL())
+              .setTimestamp();
+          message.channel.send({ embeds: [embed1] });
+      });
 
         if (y1[1]) {
           await message.channel.send({ embeds: [lyricsEmbed3] })
@@ -71,7 +83,19 @@ module.exports.run = async (client, message, args,Discord) => {
           .setColor('RANDOM')
 
 
-        message.channel.send({ embeds: [lyricsEmbed] })
+        message.channel.send({ embeds: [lyricsEmbed] }).catch(error => {
+
+          const embed9 = new Discord.MessageEmbed()
+              .setColor('RANDOM')
+              .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
+              .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+              .setDescription(`Getting some issues try again `)
+  
+  
+              .setFooter(`Report Manish<3 if you get this error`, client.user.displayAvatarURL())
+              .setTimestamp();
+          message.channel.send({ embeds: [embed9] });
+      });
 
         if (y[1]) {
           await message.channel.send({ embeds: [lyricsEmbed2] })

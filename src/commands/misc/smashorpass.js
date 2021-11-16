@@ -23,7 +23,10 @@
           embed.setImage(picImage)
           embed.setColor('RANDOM')
           embed.setFooter(`👍 ${picUpvotes} 👎 ${picDownvotes} 💬 ${picNumComments}`)
-          message.channel.send({embeds :[embed]});
+          message.channel.send({embeds :[embed]}).catch(err => {
+
+            message.channel.send("error");
+          });
       
   
   } )
