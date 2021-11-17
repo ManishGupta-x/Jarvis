@@ -376,17 +376,6 @@ module.exports.run = async (client, message, args, Discord) => {
                     await message.channel.send({ embeds: [embed12] })
                     await message.channel.send({ embeds: [embed14] })
 
-               }else {
-
-                    const defaultembed = new Discord.MessageEmbed()
-                    .setColor('RANDOM')
-                    .setThumbnail(`${mu}`)
-                    .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-                    .setDescription(`${y[0]}\n\n${status(queue)}`)
-                    .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
-                    .setTimestamp();
-                    message.channel.send({embeds : [defaultembed]});
-
                }
 
 
