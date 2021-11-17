@@ -385,7 +385,7 @@ module.exports.run = async (client, message, args, Discord) => {
                     .setDescription(`${y[0]}\n\n${status(queue)}`)
                     .setFooter(`Total Queue Time : ${queue.formattedDuration}`)
                     .setTimestamp();
-                    message.channel.send({embeds : defaultembed});
+                    message.channel.send({embeds : [defaultembed]});
 
                }
 
