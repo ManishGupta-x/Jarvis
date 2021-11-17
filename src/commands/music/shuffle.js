@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args,Discord) => {
     if(queue){
 
         await client.distube.shuffle(message);
-        message.channel.send({contents : "Successfully shuffeled queue"})
+        message.channel.send({content : "Successfully shuffeled queue"});
     }
 }
 
