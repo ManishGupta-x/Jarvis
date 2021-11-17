@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args,Discord) => {
 
 
     if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
-    client.distube.getQueue(message);
+   const queue = client.distube.getQueue(message);
     if(!queue){
         return;
     }
