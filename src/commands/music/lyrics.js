@@ -30,7 +30,7 @@ module.exports.run = async (client, message, args,Discord) => {
       if (lyrics1) {
         let lyricsEmbed1 = new Discord.MessageEmbed()
           .setTitle("📑 Lyrics")
-          .setDescription(`**${searchsong}}**\n\n${y1[0]}`)
+          .setDescription(`**${searchsong}**\n\n${y1[0]}`)
           .setColor('RANDOM')
         let lyricsEmbed3 = new Discord.MessageEmbed()
           .setTitle("📑 Lyrics")

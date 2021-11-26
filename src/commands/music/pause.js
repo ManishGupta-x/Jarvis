@@ -7,8 +7,15 @@ module.exports.run = async (client, message, args,Discord) => {
     if (!message.member.voice.channel) return message.channel.send('You must be in a voice channel to use this command.');
 
         let queue = await client.distube.getQueue(message);
-    
+
+          
         if(queue) {
+
+            if(queue.paused){
+
+                message.reply("Player already paused resume it with resume command");
+                return;
+            }
             client.distube.pause(message)
             const embed = new Discord.MessageEmbed()
             .setColor('#F0074F')
