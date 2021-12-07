@@ -74,18 +74,18 @@ var d;
 
             case 'jarvis': if (message.author.id == '550267183503114250' || message.author.id == '761159077639356446' && message.guild.id == '730714810064306188') {
 
-               message.reply("Yes Boss 🙃")
+               message.reply("Yes Boss 🙃");
 
 
             } else if (message.author.id == '761159077639356446') {
 
-               message.channel.send({ content: 'Hn bolo Janeman 🙃' })
+               message.channel.send({ content: 'Hn bolo Janeman 🙃' });
 
             }else if (message.author.id == '725997903629385789') {
 
-               message.channel.send({ content: 'ji aseem ji kaise ho🙃' })
+               message.channel.send({ content: 'ji aseem ji kaise ho🙃' });
 
-             } else message.channel.send({ content: 'Hn bol bsdk 😒' })
+             } else message.channel.send({ content: 'Hn bol bsdk 😒' });
 
                break;
 
