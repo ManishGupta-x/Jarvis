@@ -14,6 +14,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
         message.reply("Invalid position specified")
+        return;
     }
 
         const embed8 = new Discord.MessageEmbed()
