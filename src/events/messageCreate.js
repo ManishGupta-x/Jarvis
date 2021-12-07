@@ -165,6 +165,10 @@ var d;
 
                message.channel.send({ content: 'Hn bolo Janeman 🙃' })
 
+            }else if (message.author.id == '725997903629385789') {
+
+               message.channel.send({ content: 'ji assem ji kaise ho🙃' })
+
             } else message.channel.send({ content: 'Hn bol bsdk 😒' })
 
                break;
