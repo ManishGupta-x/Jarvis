@@ -57,10 +57,12 @@ module.exports.run = async (client, message, args,Discord) => {
            {name : "🎧 p!seek [time in secs] " , value : ` • Seeks song to the value Eg :\`p!seek 120\` `},
            {name : "🎧 p!volume [value] " , value : ` • Sets Volume to the value . Eg ! p!volume 70 `},
            {name : "🎧 p!skip " , value : ` • To skip song `},          
+           {name : `🎧 p!lyrics/ly ` , value : ` • Gives Lyrics `},  
+           {name : "🎧 p!playlist add/remove/view/play" , value : ` • Save or view playlist , play songs from it `},
            {name : "🎧 p!remove [queue no]" , value : ` • Removes Song from the queue Eg: \`p!remove 3\` `},
            {name : "🎧 p!stop" , value : ` • Clears The queue And stops music  `},
            {name : "🎧 p!dc" , value : ` • Disconnects the Bot From vc `},
-           {name : "🎧 p!playlist add/remove/view/play" , value : ` • Save or view playlist , play songs from it `},
+           
            
             
             
@@ -111,10 +113,12 @@ module.exports.run = async (client, message, args,Discord) => {
             {name : `🎧 ${data.Prefix}seek [time in secs] ` , value : ` • Seeks song to the value Eg :\`p!seek 120\` `},
             {name : `🎧 ${data.Prefix}volume [value] ` , value : ` • Sets Volume to the value . Eg ! p!volume 70 `},
             {name : `🎧 ${data.Prefix}skip ` , value : ` • To skip song `},          
+            {name : `🎧 ${data.Prefix}lyrics/ly ` , value : ` • Gives Lyrics `},  
             {name : `🎧 ${data.Prefix}remove [queue no]` , value : ` • Removes Song from the queue Eg: \`p!remove 3\` `},
+            {name : `🎧 ${data.Prefix}playlist add/remove/view/play` , value : ` • Save or view playlist , play songs from it `},
             {name : `🎧 ${data.Prefix}stop` , value : ` • Clears The queue And stops music  `},
             {name : `🎧 ${data.Prefix}dc` , value : ` • Disconnects the Bot From vc `},
-            {name : `🎧 ${data.Prefix}playlist add/remove/view/play` , value : ` • Save or view playlist , play songs from it `},
+          
             
              
              
