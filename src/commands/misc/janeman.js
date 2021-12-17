@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 
 module.exports.run = async (client, message, args,Discord) => {
-    let text = args.slice(0).join(' ');
+    let text = args.slice(1).join(' ');
         
     if (!args[0]) {
 
@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args,Discord) => {
    
     
        
-   channelID = '833731235821387826';
+   channelID = args[0];
        
    client.channels.cache.get(`${channelID}`).send(text)
        message.delete({ timeout: 2000 })
