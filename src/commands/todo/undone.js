@@ -32,7 +32,7 @@ module.exports.run = async (client, message, args, Discord) => {
                 Task: savetask,
                 status: state1
         });
-        
+        data.save();
             }
             data.save();
             const embed1 = new Discord.MessageEmbed()
