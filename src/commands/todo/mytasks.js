@@ -1,56 +1,90 @@
-const Discord = require("discord.js")
+const Discord = require("discord.js");
 
 const mongoose = require("mongoose");
-const config = require('../../../settings.json')
+const config = require("../../../settings.json");
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
-const list = require('../../models/todolist');
+const list = require("../../models/todolist");
 module.exports.run = async (client, message, args, Discord) => {
+	let data = await list.findOne({
+		UserID: message.author.id,
+	});
+
+	if (data) {
 
 
-    let data = await list.findOne({
+		const embed1 = new Discord.MessageEmbed()
+			.setColor("RANDOM")
+			.setTitle("__Your Todo List__")
+			.setThumbnail(
+				"https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png"
+			)
+			.setAuthor(
+				"Jarvis",
+				"https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp"
+			)
+			.setDescription(
+				data.list
+					.map(
+						(Task, id, list) => ` **${id + 1}**.    \`${list[id].Task}\` \t  \`${list[id].status}\``
+					)
+					.join("\n")
+			)
 
-        UserID: message.author.id
-    });
+			.setFooter(`Type p!todo [task] to add task`, client.user.displayAvatarURL())
+			.setTimestamp();
 
-    if (data) {
+		const row = new MessageActionRow().addComponents(
+			new MessageButton().setCustomId("Dm").setLabel("Dm").setStyle("SUCCESS"),
 
-
-        const embed1 = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setTitle("__Your Todo List__")
-            .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
-            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')  
-            .setDescription(data.list.map((Task, id, list) => ` **${id + 1}**.    \`${list[id].Task}\` \t  \`${list[id].status}\``).join('\n'))
-
-
-            .setFooter(`Type p!todo [task] to add task`, client.user.displayAvatarURL())
-            .setTimestamp();
-        message.channel.send({ embeds: [embed1] });
-
-
-
-
-    } else if (!data) {
-
-
-        const embed2 = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
-            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setDescription(`Bruh You dont have a Task to do 😥`)
+			new MessageButton().setCustomId("Channel").setLabel("Channel").setStyle("DANGER")
+		);
 
 
-            .setFooter(client.user.username, client.user.displayAvatarURL())
-            .setTimestamp();
-        message.channel.send({ embeds: [embed2] , ephemeral : true});
 
-    }
+		const embed6 = new Discord.MessageEmbed()
+			.setColor("RANDOM")
+			.setThumbnail(
+				"https://cdn.discordapp.com/attachments/730714810614022228/882284227457073172/thumb2-music-neon-icon-4k-violet-background-neon-symbols-music.png"
+			)
+			.setAuthor(
+				"Jarvis",
+				"https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp"
+			)
+			.setDescription(`Do you want `)
 
+			.setFooter(client.user.username, client.user.displayAvatarURL())
+			.setTimestamp();
 
-}
+		message.channel.send({ embeds: [embed6], components: [row] });
+
+		const filter1 = (interaction) =>
+			(interaction.isButton() &&
+				interaction.user.id == message.author.id &&
+				interaction.customId === "yes") ||
+			interaction.customId === "no";
+
+		const collector = message.channel.createMessageComponentCollector({ filter1, time: 60000 });
+		message.channel.send({ embeds: [embed1] });
+	} else if (!data) {
+		const embed2 = new Discord.MessageEmbed()
+			.setColor("RANDOM")
+			.setThumbnail(
+				"https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png"
+			)
+			.setAuthor(
+				"Jarvis",
+				"https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp"
+			)
+			.setDescription(`Bruh You dont have a Task to do 😥`)
+
+			.setFooter(client.user.username, client.user.displayAvatarURL())
+			.setTimestamp();
+		message.channel.send({ embeds: [embed2], ephemeral: true });
+	}
+};
 
 module.exports.config = {
-    name: "mytasks",
-    aliases: [],
-    Description: 'Command',
-}
+	name: "mytasks",
+	aliases: [],
+	Description: "Command",
+};
