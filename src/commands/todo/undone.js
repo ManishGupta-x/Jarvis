@@ -22,6 +22,8 @@ module.exports.run = async (client, message, args, Discord) => {
         const response = collected.first().content;
         if(response=='yes'|| response=='YES'|| response == 'Yes'){
 
+            console.log(data.list.length);
+
             for(x=0;x<data.list.length ;x++){
 
                 let savetask = data.list[x].Task;
