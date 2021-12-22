@@ -16,43 +16,43 @@ module.exports.run = async (client, message, args, Discord) => {
     var x=0;
     if (!args[0] && data) {
 
-        message.reply("Are you sure u want to undone all yours tasks !");
-        const filter = m => m.author.id == message.author.id;
-        const collected = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
-        const response = collected.first().content;
-        if(response=='yes'|| response=='YES'|| response == 'Yes'){
-
-            console.log(data.list.length);
-
-            for(x=0;x<data.list.length ;x++){
-
-                let savetask = data.list[x].Task;
-
-                data.list.splice(x, 1);
-                data.list.unshift({
-                User: message.author.id,
-                Task: savetask,
-                status: state1
-        });
-        data.save();
-            }
-            data.save();
-            const embed1 = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
-            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-            .setDescription(`The Tasks Has Been Marked UnDone ! `)
+    //     message.reply("Are you sure u want to undone all yours tasks !");
+    //     const filter = m => m.author.id == message.author.id;
+    //     const collected = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
+    //     const response = collected.first().content;
+    //     if(response=='yes'|| response=='YES'|| response == 'Yes'){
 
 
-            .setFooter(client.user.username, client.user.displayAvatarURL())
-            .setTimestamp();
-        message.channel.send({ embeds: [embed1] });
-        }else{
+    //         for(x=0;x<data.list.length ;x++){
 
-               message.reply("Cancelled the operation 😥");
-               return;
-        }
-    }
+    //             let savetask = data.list[x].Task;
+
+    //             data.list.splice(x, 1);
+    //             data.list.unshift({
+    //             User: message.author.id,
+    //             Task: savetask,
+    //             status: state1
+    //     });
+    //     data.save();
+    //         }
+    //         data.save();
+    //         const embed1 = new Discord.MessageEmbed()
+    //         .setColor('RANDOM')
+    //         .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/895927613292421140/6-things-to-do-list.png')
+    //         .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+    //         .setDescription(`The Tasks Has Been Marked UnDone ! `)
+
+
+    //         .setFooter(client.user.username, client.user.displayAvatarURL())
+    //         .setTimestamp();
+    //     message.channel.send({ embeds: [embed1] });
+    //     }else{
+
+    //            message.reply("Cancelled the operation 😥");
+    //            return;
+    //     }
+    message.reply("mention task number")
+     }
 
     
     if (data) {
