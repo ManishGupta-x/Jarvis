@@ -44,7 +44,7 @@ module.exports = class ClientManager extends Client {
 
 		const errChannel = "918106499203616788";
 
-		this.process.on("unhandledRejection", (reason, p) => {
+		this.on("unhandledRejection", (reason, p) => {
 			console.log(" [Anti - Crash] :: Unhandled Rejection /crash");
 			console.log(reason, p);
 	
@@ -64,7 +64,7 @@ module.exports = class ClientManager extends Client {
 		});
 	
 		  /*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
-		  this.process.on("uncaughtException", (err, origin) => {
+		  this.on("uncaughtException", (err, origin) => {
 			console.log(" [Anti - Crash] :: Unhandled Rejection /crash");
 			console.log(err,origin);
 	
@@ -85,7 +85,7 @@ module.exports = class ClientManager extends Client {
 	
 	
 		/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
-		this.process.on("multipleResolves", (type,promise,reason) => {
+		this.on("multipleResolves", (type,promise,reason) => {
 			console.log(" [Anti - Crash] :: Multiple Resolves /crash");
 			console.log(type,promise,reason);
 	
@@ -105,7 +105,7 @@ module.exports = class ClientManager extends Client {
 		});
 	
 		/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
-		this.process.on("uncaughtExceptionMonitor", (err, origin) => {
+		this.on("uncaughtExceptionMonitor", (err, origin) => {
 			console.log(" [Anti - Crash] :: UnCaught Exception  /crash (Monitor)");
 			console.log(err, origin);
 	
