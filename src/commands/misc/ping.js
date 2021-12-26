@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args,Discord) => {
   message.reply('Computing...').then((resultMessage) => {
     const ping = resultMessage.createdTimestamp - message.createdTimestamp
 
-    resultMessage.edit(`Pong! : Latency: \`${ping} ms\`, API Latency: \`${clint.ws.ping} ms\``)
+    resultMessage.edit(`Pong! : Latency: \`${ping} ms\`, API Latency: \`${client.ws.ping} ms\``)
   })
 }
 
