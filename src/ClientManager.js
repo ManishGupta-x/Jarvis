@@ -1,6 +1,7 @@
 /*╠════════════════════════════════════════ 𝓒𝓵𝓲𝓮𝓷𝓽 𝓶𝓪𝓷𝓪𝓰𝓮𝓻 ═════════════════════════════════════════════════╣*/
-
+const errChannel = "918106499203616788";
 const { Client, Collection } = require("discord.js");
+const client = require('../index');
 const EventHandler = require("./utils/loadEvents");
 const Discord = require("discord.js");
 const cookie = require(`../settings.json`);
@@ -107,9 +108,27 @@ module.exports = class ClientManager extends Client {
 			.on("searchDone", (message) => message.channel.send(`Search Done!`))
 			.on("searchCancel", (message) => message.channel.send(`Searching canceled`))
 			.on("searchInvalidAnswer", (message) => message.channel.send(`You answered an invalid `))
-			.on("error" , (channel,error) => channel.send(
-				"An error encountered: " + error
-			))
+			.on("error" , (channel,error) => {
+			
+			
+			const embed = new Discord.MessageEmbed()
+			.setColor("RANDOM")
+			.setTitle("Error Boss")
+
+			.setAuthor(
+				"Jarvis",
+				"https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp"
+			)
+			.setDescription("\n\n**ERROR**\n\n ```" + error  + "```")
+
+			.setFooter(`Anti Crash System`, client.user.displayAvatarURL())
+			.setTimestamp();
+		     client.channels.cache.get(errChannel).send({ embeds: [embed] });}
+			)
+			
+			// channel.send(
+			// 	"An error encountered: " + error
+			// ))
 			.on("searchNoResult", (message, query) =>
 				message.channel.send(`No result found for ${query}!`)
 			)
