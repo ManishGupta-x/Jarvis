@@ -72,7 +72,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
             message.channel.send({ embeds: [embed6], components: [row] });
 
-            const filter1 = (interaction) => interaction.isButton() && interaction.user.id == message.author.id && interaction.customId === 'yes' || interaction.customId === 'no'
+            const filter1 = (interaction) => interaction.isButton() && interaction.user.id === message.author.id && interaction.customId === 'yes' || interaction.customId === 'no'
 
             const collector = message.channel.createMessageComponentCollector({ filter1, time: 60000 });
 

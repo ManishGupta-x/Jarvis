@@ -68,7 +68,7 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
 
-        const filter = (interaction) => interaction.isButton() && interaction.author.id == message.author.id && interaction.customId === 'skip' || interaction.customId === '8d' || interaction.customId === 'lightbass' || interaction.customId === 'nightcore';
+        const filter = (interaction) => interaction.isButton() && interaction.author.id === message.author.id && interaction.customId === 'skip' || interaction.customId === '8d' || interaction.customId === 'lightbass' || interaction.customId === 'nightcore';
 
         const collector = message.channel.createMessageComponentCollector({ filter, time: 180000 });
         collector.on('collect', async collected => {
