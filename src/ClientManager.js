@@ -107,7 +107,9 @@ module.exports = class ClientManager extends Client {
 			.on("searchDone", (message) => message.channel.send(`Search Done!`))
 			.on("searchCancel", (message) => message.channel.send(`Searching canceled`))
 			.on("searchInvalidAnswer", (message) => message.channel.send(`You answered an invalid `))
-			.on("error" , (message) => message.channel.send({content : 'something went wrong with song try searching another'}))
+			.on("error" , (channel,error) => channel.send(
+				"An error encountered: " + error
+			))
 			.on("searchNoResult", (message, query) =>
 				message.channel.send(`No result found for ${query}!`)
 			)
