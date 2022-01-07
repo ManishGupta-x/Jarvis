@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const disTube = require('distube');
+const errChannel = "918106499203616788";
 module.exports.run = async (client, message, args,Discord) => {
     if (!args[0]) {
         message.channel.send({ content: 'Please Mention song!' })
@@ -10,19 +11,22 @@ module.exports.run = async (client, message, args,Discord) => {
     const music = args.join(" ");
 
     client.distube.play(message, music)
-    // .catch(error => {
+    .catch(error => {
 
-    //     const embed9 = new Discord.MessageEmbed()
-    //         .setColor('RANDOM')
-    //         .setThumbnail('https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png')
-    //         .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-    //         .setDescription(`Getting some issues try again `)
+        const embed = new Discord.MessageEmbed()
+        .setColor("RANDOM")
+        .setTitle("Error Boss")
 
+        .setAuthor(
+            "Jarvis",
+            "https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp"
+        )
+        .setDescription("\n\n**ERROR**\n\n ```" + error  + "```")
 
-    //         .setFooter(`Report Manish<3 if you get this error`, client.user.displayAvatarURL())
-    //         .setTimestamp();
-    //     message.channel.send({ embeds: [embed9] });
-    // });
+        .setFooter(`Anti Crash System`, client.user.displayAvatarURL())
+        .setTimestamp();
+         client.channels.cache.get(errChannel).send({ embeds: [embed] });
+    });
 
 }
 
