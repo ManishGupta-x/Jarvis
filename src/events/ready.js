@@ -16,9 +16,8 @@ us = us/10;
         `${client.guilds.cache.size}  Servers`,
         `${client.channels.cache.size} Channels`,
         `${us}K Users`,
-        `p!help `,
-        `New year Celebrations 🎉`
-
+        `p!help `
+       
     ]
     setInterval(() => {
 
