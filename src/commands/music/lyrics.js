@@ -68,7 +68,7 @@ module.exports.run = async (client, message, args,Discord) => {
 
       }
       if (!lyrics) {
-        lyrics = `No lyrics found for ${song.name}.`;
+        lyrics = `No lyrics found for ${song.name}. Try Typing song name after command!`;
       }
 
       let y = Util.splitMessage(lyrics, { maxLength: 3500 })
