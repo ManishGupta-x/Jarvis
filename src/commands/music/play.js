@@ -23,7 +23,7 @@ module.exports.run = async (client, message, args,Discord) => {
         )
         .setDescription("\n\n**ERROR**\n\n ```" + error  + "```")
 
-        .setFooter(`Anti Crash System`, client.user.displayAvatarURL())
+        .setFooter(`Anti Crash System`, `https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp`)
         .setTimestamp();
          client.channels.cache.get(errChannel).send({ embeds: [embed] });
     });
