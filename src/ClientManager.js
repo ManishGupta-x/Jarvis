@@ -124,7 +124,7 @@ module.exports = class ClientManager extends Client {
 			)
 			.setDescription("\n\n**ERROR**\n\n ```" + error  + "```")
 
-			.setFooter(`Anti Crash System`, client.user.displayAvatarURL())
+			.setFooter(`Anti Crash System`)
 			.setTimestamp();
 		     client.channels.cache.get(errChannel).send({ embeds: [embed] });}
 			)
