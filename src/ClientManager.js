@@ -33,6 +33,9 @@ module.exports = class ClientManager extends Client {
 				heavybass: "bass=g=20,dynaudnorm=f=200",
 			    slowreverb: "atempo=0.85,aecho=1.0:0.5:10:0.5"
 			},
+			ytdlOptions : {
+                format = 'audioonly',
+			},
 			leaveOnFinish: false,
 			emptyCooldown: 15,
 			leaveOnEmpty: true,
