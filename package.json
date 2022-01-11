@@ -34,6 +34,7 @@
     "node-fetch": "^2.6.1",
     "opusscript": "^0.0.8",
     "random-puppy": "^1.1.0",
+    "shelljs": "^0.8.5",
     "solenolyrics": "^5.0.0",
     "sqlite": "^4.0.19",
     "superagent": "^6.1.0",
