@@ -126,12 +126,9 @@ module.exports = class ClientManager extends Client {
 
 			.setFooter(`Anti Crash System`)
 			.setTimestamp();
-		     client.channels.cache.get(errChannel).send({ embeds: [embed] });}
+		     client.channels.get(errChannel).send({ embeds: [embed] });}
 			)
 			
-			// channel.send(
-			// 	"An error encountered: " + error
-			// ))
 			.on("searchNoResult", (message, query) =>
 				message.channel.send(`No result found for ${query}!`)
 			)
