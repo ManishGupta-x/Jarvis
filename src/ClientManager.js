@@ -113,7 +113,7 @@ module.exports = class ClientManager extends Client {
 			.on("searchInvalidAnswer", (message) => message.channel.send(`You answered an invalid `))
 			.on("error" , (channel,error) => {
 			
-				
+				const errChannel = "918106499203616788";
 			const embed = new Discord.MessageEmbed()
 			.setColor("RANDOM")
 			.setTitle("Error Boss")
