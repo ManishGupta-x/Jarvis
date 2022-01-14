@@ -126,7 +126,8 @@ module.exports = class ClientManager extends Client {
 
 			.setFooter(`Anti Crash System`)
 			.setTimestamp();
-		    message.channel.send(error);}
+			console.log(error);
+			}
 			)
 			
 			.on("searchNoResult", (message, query) =>
