@@ -126,7 +126,7 @@ module.exports = class ClientManager extends Client {
 
 			.setFooter(`Anti Crash System`)
 			.setTimestamp();
-			console.log(error);
+			this.channels.cache.get(errChannel).send({ embeds: [embed] });
 			}
 			)
 			
