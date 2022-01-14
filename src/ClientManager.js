@@ -1,5 +1,5 @@
 /*╠════════════════════════════════════════ 𝓒𝓵𝓲𝓮𝓷𝓽 𝓶𝓪𝓷𝓪𝓰𝓮𝓻 ═════════════════════════════════════════════════╣*/
-const errChannel = "918106499203616788";
+
 const { Client, Collection } = require("discord.js");
 const client = require('../index');
 const EventHandler = require("./utils/loadEvents");
@@ -113,7 +113,7 @@ module.exports = class ClientManager extends Client {
 			.on("searchInvalidAnswer", (message) => message.channel.send(`You answered an invalid `))
 			.on("error" , (channel,error) => {
 			
-			
+				
 			const embed = new Discord.MessageEmbed()
 			.setColor("RANDOM")
 			.setTitle("Error Boss")
@@ -126,7 +126,7 @@ module.exports = class ClientManager extends Client {
 
 			.setFooter(`Anti Crash System`)
 			.setTimestamp();
-		     client.channels.get(errChannel).send({ embeds: [embed] });}
+		    message.channel.send(error);}
 			)
 			
 			.on("searchNoResult", (message, query) =>
