@@ -35,6 +35,7 @@ module.exports = class ClientManager extends Client {
 			},
 			ytdlOptions : {
 				quality : 'highestaudio',
+				format : 'audioonly'
                 },
 			leaveOnFinish: false,
 			emptyCooldown: 15,
