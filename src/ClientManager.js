@@ -128,7 +128,7 @@ module.exports = class ClientManager extends Client {
 			.setFooter(`Anti Crash System`)
 			.setTimestamp();
 			this.channels.cache.get(errChannel).send({ embeds: [embed] });
-			message.channel.send(" Bot Is Down Currently, the problem has been reported ! \n Service will be back soon kindly Disconnect the bot ! ")
+			channel.send(" Bot Is Down Currently, the problem has been reported ! \n Service will be back soon kindly Disconnect the bot ! ")
 			}
 			)
 			
