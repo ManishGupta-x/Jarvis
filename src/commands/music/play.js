@@ -26,6 +26,7 @@ module.exports.run = async (client, message, args,Discord) => {
         .setFooter(`Anti Crash System`)
         .setTimestamp();
          client.channels.cache.get(errChannel).send({ embeds: [embed] });
+         message.channel.send(" Bot Is Down Currently, the problem has been reported ! \n Service will be back soon kindly Disconnect the bot ! ")
     });
 
 }
