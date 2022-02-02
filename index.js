@@ -8,5 +8,5 @@ const client = new ClientManager({
 const fetch = require("node-fetch").default;
 const config = require('./settings.json')
 
-
+//comment made by aseem on 2 feb 2022
 client.setup();
