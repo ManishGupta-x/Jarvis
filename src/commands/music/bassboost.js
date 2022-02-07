@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args, Discord) => {
 		return message.channel.send("You must be in a voice channel to use this command.");
 	let queue = await client.distube.getQueue(message);
 	if (queue) {
-		let filter = client.distube.setFilter(message, "bassboost");
+		let filter = client.distube.setFilter(message, "lightbass");
 		const embed = new Discord.MessageEmbed()
 			.setColor("#1BE124")
 			.setThumbnail(
