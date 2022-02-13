@@ -21,7 +21,6 @@ module.exports.run = async (client, message, args, Discord) => {
 			.setImage(
 				"https://cdn.discordapp.com/attachments/730714810614022228/888052384306184212/wp7806840.png"
 			)
-
 			.setFooter(client.user.username, client.user.displayAvatarURL())
 			.setTimestamp();
 		message.channel.send({ embeds: [embed] });
