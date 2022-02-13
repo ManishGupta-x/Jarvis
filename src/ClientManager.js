@@ -134,8 +134,7 @@ module.exports = class ClientManager extends Client {
 				message.channel.send(`No result found for ${query}!`)
 			)
 			.on("noRelated", (queue) => queue.textChannel.send("Can't find related video to play."));
-		require("./utils/loadCommands")(this);
-           
+		require("./utils/loadCommands")(this); 
 		this.login(process.env.token);
 	}
 };
