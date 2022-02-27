@@ -29,7 +29,7 @@ module.exports = class ClientManager extends Client {
 			],
 			customFilters: {
 				"8d": "apulsator=hz=0.08",
-				lightbass: "bass=g=8,dynaudnorm=f=200",
+				lightbass: "bass=g=6,dynaudnorm=f=200",
 				heavybass: "bass=g=20,dynaudnorm=f=200",
 			    slowreverb: "atempo=0.85,aecho=1.0:0.5:10:0.5"
 			},
