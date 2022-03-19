@@ -88,10 +88,7 @@ module.exports = class ClientManager extends Client {
 					.setColor("#F0074F")
 					.setThumbnail(`${song.thumbnail}`)
 					.setTitle(`Added to Queue`)
-					.setAuthor(
-						"Jarvis",
-						"https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp"
-					)
+					.setAuthor({ name: 'Jarvis', iconURL: 'https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256' })
 					.setDescription(
 						`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\``
 					)
@@ -117,10 +114,7 @@ module.exports = class ClientManager extends Client {
 			const embed = new Discord.MessageEmbed()
 			.setColor("RANDOM")
 			.setTitle("Error Boss")
-			.setAuthor(
-				"Jarvis",
-				"https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp"
-			)
+			.setAuthor({ name: 'Jarvis', iconURL: 'https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256' })
 			.setDescription("\n\n**ERROR**\n\n ```" + error  + "```")
 
 			.setFooter(`Anti Crash System`)
