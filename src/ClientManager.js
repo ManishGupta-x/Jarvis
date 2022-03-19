@@ -88,7 +88,7 @@ module.exports = class ClientManager extends Client {
 					.setColor("#F0074F")
 					.setThumbnail(`${song.thumbnail}`)
 					.setTitle(`Added to Queue`)
-					.setAuthor({ name: 'Jarvis', iconURL: 'https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256' })
+					.setAuthor({ name: "Jarvis", iconURL: 'https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256' })
 					.setDescription(
 						`${song.name} | Requested by: ${song.user} || \`${song.formattedDuration}\``
 					)
