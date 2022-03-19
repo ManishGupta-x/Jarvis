@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args,Discord) => {
 
         .setAuthor(
             "Jarvis",
-            "https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp"
+            "https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256"
         )
         .setDescription("\n\n**ERROR**\n\n ```" + error  + "```")
 

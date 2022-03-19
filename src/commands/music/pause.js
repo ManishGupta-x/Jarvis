@@ -20,7 +20,10 @@ module.exports.run = async (client, message, args,Discord) => {
             const embed = new Discord.MessageEmbed()
             .setColor('#F0074F')
             .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/882269936716763136/thumb-pause-neon-icon-4k-purple-background-neon-symbols-pause.png')
-            .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+            .setAuthor(
+				"Jarvis",
+				"https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256"
+			)
             .setDescription(`Paused the player! `)
           
             

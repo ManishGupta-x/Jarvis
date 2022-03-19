@@ -44,7 +44,10 @@ module.exports.run = async (client, message, args, Discord) => {
             const embed1 = new Discord.MessageEmbed()
                 .setColor('#F0074F')
                 .setThumbnail(`${mu}`)
-                .setAuthor('Jarvis', 'https://images-ext-1.discordapp.net/external/DkPCBVBHBDJC8xHHCF2G7-rJXnTwj_qs78udThL8Cy0/%3Fv%3D1/https/cdn.discordapp.com/emojis/859459305152708630.gif')
+                .setAuthor(
+                    "Jarvis",
+                    "https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256"
+                )
                 .setTitle(`Now Playing`)
                 .setDescription(`${song.name} | Requested by: ${song.user} || at \`${queue.formattedCurrentTime}\`/ \`${song.formattedDuration}\` \n\n${status(queue)}`)
                 .setFooter(`Likes • 💖 ${likes} 〣 Views • 👁️ ${views}`, client.user.displayAvatarURL())
@@ -55,7 +58,10 @@ module.exports.run = async (client, message, args, Discord) => {
             const embed2 = new Discord.MessageEmbed()
                 .setColor('#F0074F')
                 .setThumbnail(`${mu}`)
-                .setAuthor('Jarvis', 'https://images-ext-1.discordapp.net/external/DkPCBVBHBDJC8xHHCF2G7-rJXnTwj_qs78udThL8Cy0/%3Fv%3D1/https/cdn.discordapp.com/emojis/859459305152708630.gif')
+                .setAuthor(
+                    "Jarvis",
+                    "https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256"
+                )
                 .setTitle(`Now Playing`)
                 .setDescription(`${song.name} | Requested by: ${song.user} || at \` ${queue.formattedCurrentTime}\`/ \`${song.formattedDuration}\` \n ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ `)
                 .addField("Upcoming Song :", `${upcomingsong.name} | Requested by: ${upcomingsong.user}\` | ${upcomingsong.formattedDuration}\`\n\n${status(queue)}`)

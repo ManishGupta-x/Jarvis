@@ -22,7 +22,10 @@ module.exports.run = async (client, message, args, Discord) => {
     const embed1 = new Discord.MessageEmbed()
         .setColor('RANDOM')
         .setThumbnail(`https://cdn.discordapp.com/attachments/730714810614022228/900375278734442496/310182.png`)
-        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+        .setAuthor(
+            "Jarvis",
+            "https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256"
+        )
         .setDescription(`Congrats you added the song to your playlist 😉`)
 
 
@@ -32,7 +35,10 @@ module.exports.run = async (client, message, args, Discord) => {
     const embed2 = new Discord.MessageEmbed()
         .setColor('RANDOM')
         .setThumbnail(`https://cdn.discordapp.com/attachments/730714810614022228/900375278734442496/310182.png`)
-        .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+        .setAuthor(
+            "Jarvis",
+            "https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256"
+        )
         .setDescription(`Congrats you added your first song to your playlist 😉`)
 
 

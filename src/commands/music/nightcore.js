@@ -10,7 +10,10 @@ module.exports.run = async (client, message, args,Discord) => {
         const embed = new Discord.MessageEmbed()
         .setColor('#F0074F')
         .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/888053234273497179/1482252.png')
-        .setAuthor('Jarvis' , 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+        .setAuthor(
+            "Jarvis",
+            "https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256"
+        )
         .setDescription("Filter : " +  (filter.join("+ ")  || "Off"))
          .setImage('https://cdn.discordapp.com/attachments/730714810614022228/888053145366835200/kPNqom.png')
         

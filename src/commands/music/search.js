@@ -19,7 +19,10 @@ module.exports.run = async (client, message, args,Discord) => {
         const embed9 = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setThumbnail(`${mu}`)
-            .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+            .setAuthor(
+				"Jarvis",
+				"https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256"
+			)
             .setDescription(`**Choose an Option from Below : **\n\n${result.map((song, id) => `**${id + 1}**. ${song.name} - \`${song.formattedDuration}\``).join("\n")}`)
 
 
