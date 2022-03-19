@@ -114,7 +114,7 @@ module.exports = class ClientManager extends Client {
 			const embed = new Discord.MessageEmbed()
 			.setColor("RANDOM")
 			.setTitle("Error Boss")
-			.setAuthor({ name: 'Jarvis', iconURL: 'https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256' })
+			.setAuthor({ name: "Jarvis", iconURL: 'https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256' })
 			.setDescription("\n\n**ERROR**\n\n ```" + error  + "```")
 
 			.setFooter(`Anti Crash System`)
