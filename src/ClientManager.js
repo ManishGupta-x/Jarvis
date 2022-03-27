@@ -127,7 +127,7 @@ module.exports = class ClientManager extends Client {
 			.setTimestamp();
 			this.channels.cache.get(errChannel).send({ embeds: [embed] });
 			channel.send(" Bot Is Down Currently, the problem has been reported ! \n Service will be back soon kindly Disconnect the bot ! ")
-			}
+		}
 			)
 			
 			.on("searchNoResult", (message, query) =>
