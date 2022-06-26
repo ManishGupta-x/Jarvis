@@ -36,7 +36,6 @@
     "shelljs": "^0.8.5",
     "solenolyrics": "^5.0.0",
     "sqlite": "^4.0.19",
-    "superagent": "^6.1.0",
-    "ytdl-core": "github:kabirsingh2004/node-ytdl-core"
+    "superagent": "^6.1.0"
   }
 }
