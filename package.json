@@ -15,7 +15,7 @@
     "@discordjs/opus": "^0.6.0",
     "@discordjs/voice": "^0.6.0",
     "@distube/spotify": "^0.6.3",
-    "@distube/ytdl-core": "^4.11.3",
+    "@distube/ytdl-core": "^4.11.4",
     "discord.js": "^13.1.0",
     "distube": "^3.0.0-beta.37",
     "ffmpeg-static": "^4.3.0",
