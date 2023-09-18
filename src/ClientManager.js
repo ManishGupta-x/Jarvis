@@ -60,7 +60,6 @@ module.exports = class ClientManager extends Client {
 					"https://cdn.discordapp.com/attachments/730714810614022228/888355120411209738/1792303.png",
 					"https://cdn.discordapp.com/attachments/730714810614022228/888355457704542278/977273-desktop-background-music-1920x1080-for-samsung.png"
 
-
 				];
 				const likes = numberWithCommas(song.likes);
 				const views = numberWithCommas(song.views);
@@ -135,6 +134,6 @@ module.exports = class ClientManager extends Client {
 			)
 			.on("noRelated", (queue) => queue.textChannel.send("Can't find related video to play."));
 		require("./utils/loadCommands")(this); 
-		this.login(process.env.token);
+		this.login("Nzc4MjY3MDA3NDM5MDc3Mzk2.GJObIO.eSNWFwpPd6XSdYryJ56BUBD2K5RcR9X6ID79ag");
 	}
 };

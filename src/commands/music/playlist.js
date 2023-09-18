@@ -8,7 +8,7 @@ const disTube = require('distube');
 const { MessageActionRow, MessageButton } = require('discord.js');
 
 module.exports.run = async (client, message, args, Discord) => {
-
+    var times = 1;
     let queue = client.distube.getQueue(message);
     let data = await playlist.findOne({
 
@@ -287,39 +287,69 @@ module.exports.run = async (client, message, args, Discord) => {
 
 
 
-         case 'play':  message.reply("Sorry, this feature is currently unavailable") ;
-         //if (!args[1]) {
+        case 'play': //message.reply("Sorry, this feature is currently unavailable");
+            
+        
+         if (!args[1]) {
 
-        //     message.reply(`Please mention song number u want to play from your playlist \n \`Eg: p!pl play 2\` `)
-        // }
-        //     if (isNaN(args[1] || data.playlist.length < args[1])) {
+            message.reply(`Please mention song number u want to play from your playlist \n \`Eg: p!pl play 2\` `)
+        }
+            if (isNaN(args[1] || data.playlist.length < args[1])) {
 
-        //         message.reply('Invalid song number')
-        //     } else if (args[1]) {
+                message.reply('Invalid song number')
+            } else if (args[1]) {
 
-        //           if(!data){
-        //             const embedddd = new Discord.MessageEmbed()
-        //             .setColor('RANDOM')
-        //             .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/900356283146829834/maxresdefault.png')
-        //             .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
-        //             .setDescription(`Bruh it seems you dont have a Playlist 😥`)
+                  if(!data){
+                    const embedddd = new Discord.MessageEmbed()
+                    .setColor('RANDOM')
+                    .setThumbnail('https://cdn.discordapp.com/attachments/730714810614022228/900356283146829834/maxresdefault.png')
+                    .setAuthor('Jarvis', 'https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp')
+                    .setDescription(`Bruh it seems you dont have a Playlist 😥`)
     
     
-        //             .setFooter(`Add songs p!pl add `, client.user.displayAvatarURL())
-        //             .setTimestamp();
-        //         message.channel.send({ embeds: [embedddd] });
-        //         return;
-        //           }
-        //         if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
-        //         data.playlist.map(async (song, id, playlist) => {
+                    .setFooter(`Add songs p!pl add `, client.user.displayAvatarURL())
+                    .setTimestamp();
+                message.channel.send({ embeds: [embedddd] });
+                return;
+                  }
+                if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
+                if (times == 1) {
+            
+                    data.playlist.map((song, id, playlist) => {
 
-        //             const numm = args[1] - 1;
-        //             const music = playlist[numm].song;
-        //             await client.distube.play(message, music);
-        //             return;
+                        if (times == 1) {
+                            
+                            const numm = args[1] - 1;
+                            console.log(numm);
+                            const music = playlist[numm].song;
+                            console.log(music);
+                            client.distube.play(message, music).catch(error => {
 
-        //         })
-        //     }
+                                const embed = new Discord.MessageEmbed()
+                                .setColor("RANDOM")
+                                .setTitle("Error Boss")
+                        
+                                .setAuthor(
+                                    "Jarvis",
+                                    "https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256"
+                                )
+                                .setDescription("\n\n**ERROR**\n\n ```" + error  + "```")
+                        
+                                .setFooter(`Anti Crash System`)
+                                .setTimestamp();
+                                 client.channels.cache.get(errChannel).send({ embeds: [embed] });
+                                 message.channel.send(" Bot Is Down Currently, the problem has been reported ! \n Service will be back soon kindly Disconnect the bot ! ")
+                            });
+                            times = 0;
+                            
+
+                        }
+                       
+    
+                    })
+                    return;
+                }
+            }
             break;
         case 'delete': if (data) {
             message.reply('Are you sure u want to delete your playlist? yes/no')

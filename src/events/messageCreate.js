@@ -1,7 +1,7 @@
 /*╠══════════════════════════════════════════ 𝕸𝖊𝖘𝖘𝖆𝖌𝖊 𝖈𝖗𝖊𝖆𝖙𝖊 𝖊𝖛𝖊𝖓𝖙 ═════════════════════════════════════════════════════════════════╣*/
 const errChannel = "918106499203616788";
 const Discord = require("discord.js");
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 const mongoose = require("mongoose");
 const prefix = require("../models/prefix");
 const prefixModel = require("../models/prefix");
@@ -18,7 +18,7 @@ module.exports = async (client, message) => {
 		GuildID: message.guild.id,
 	});
 
-	/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
+	// /*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
 
 	//commandfile declaration
 
@@ -31,7 +31,7 @@ module.exports = async (client, message) => {
 
 	const messageArray = message.content.split(" ");
 	const cmd = messageArray[0];
-	const args = messageArray.slice(1);
+	const args = messageArray.slice(1); 
 
 	if (message.author.bot || message.channel.type === "dm") return;
 	if (message.author.bot) return;
@@ -86,6 +86,13 @@ module.exports = async (client, message) => {
 					searchfile.run(client, message, args, Discord);
 
 					break;
+				
+				/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
+
+				case "jarvis ip dena":
+					message.channel.send("connect omegaindiaworld.win ; password 0m3g@start");
+
+					break;
 				/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
 
 				case "jarvis playlist lgade":
@@ -95,7 +102,7 @@ module.exports = async (client, message) => {
 							`https://open.spotify.com/playlist/0Jz8ImcWSYiXkMPatXN75l?si=29eDcG5XRsSvDetb0OV-5w&utm_source=copy-link`
 						)
 						.catch((error) => {
-							const embed = new Discord.MessageEmbed()
+							const embed = new Discord.EmbedBuilder()
 								.setColor("RANDOM")
 								.setTitle("Error Boss")
 
@@ -161,14 +168,14 @@ module.exports = async (client, message) => {
 		} else if (message.content.startsWith(prefix1)) {
 			const commandfile =
 				client.commands.get(cmd.slice(prefix1.length).toString().toLowerCase()) ||
-				client.commands.get(client.aliases.get(cmd.slice(prefix1.length).toString().toLowerCase()));
+				client.commands.get(client.aliases.get(cmd.slice(prefix1.length).toString().toLowerCase())); //-play
 
 			if (commandfile) {
 				commandfile.run(client, message, args, Discord);
 			}
 		}
 	} else if (!data) {
-		const prefix2 = "p!";
+		const prefix2 = "o!";
 
 		if (!message.content.startsWith(prefix2)) {
 			switch (message.content) {
@@ -184,7 +191,9 @@ module.exports = async (client, message) => {
 						message.channel.send({ content: "Hn bolo Janeman 🙃" });
 					} else if (message.author.id == "725997903629385789") {
 						message.channel.send({ content: "ji aseem ji kaise ho🙃" });
-					} else message.channel.send({ content: "Hn bol bsdk 😒" });
+					}else if(message.author.id == "1106366063542796359"){
+						message.channel.send({content : "Hn Bol meri jaan 🥰"});   
+				   } else message.channel.send({ content: "Hn bol bsdk 😒" });
 
 					break;
 
@@ -195,31 +204,13 @@ module.exports = async (client, message) => {
 
 					break;
 				/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
+				case "jarvis ip dena":
+					message.channel.send("connect omegaindiaworld.win ; password 0m3g@start");
 
+					break;
+				
 				case "jarvis playlist lgade":
-					client.distube
-						.play(
-							message,
-							`https://open.spotify.com/playlist/0Jz8ImcWSYiXkMPatXN75l?si=29eDcG5XRsSvDetb0OV-5w&utm_source=copy-link`
-						)
-						.catch((error) => {
-							const embed = new Discord.MessageEmbed()
-								.setColor("RANDOM")
-								.setTitle("Error Boss")
-
-								.setAuthor(
-									"Jarvis",
-									"https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp"
-								)
-								.setDescription("\n\n**ERROR**\n\n ```" + error + "```")
-
-								.setFooter(`Anti Crash System`)
-								.setTimestamp();
-							client.channels.cache.get(errChannel).send({ embeds: [embed] });
-							message.channel.send(
-								" Bot Is Down Currently, the problem has been reported ! \n Service will be back soon kindly Disconnect the bot ! "
-							);
-						});
+					
 
 					break;
 

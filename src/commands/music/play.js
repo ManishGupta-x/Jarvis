@@ -1,11 +1,11 @@
 const Discord = require("discord.js")
 const disTube = require('distube');
 const errChannel = "918106499203616788";
-module.exports.run = async (client, message, args,Discord) => {
+module.exports.run = async (client, message, args, Discord) => {
+  
     if (!args[0]) {
         message.channel.send({ content: 'Please Mention song!' })
         return;
-
     }
     if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
     const music = args.join(" ");
