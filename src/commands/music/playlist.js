@@ -252,7 +252,12 @@ module.exports.run = async (client, message, args, Discord) => {
 
                 .setFooter(`Add songs p!pl add`, client.user.displayAvatarURL())
                 .setTimestamp();
-            message.channel.send({ embeds: [embed3] });
+            try {
+                message.channel.send({ embeds: [embed3] });
+            } catch (err) {
+                
+                message.reply('Playlist is too long to display 😥')
+            }
 
 
 
@@ -320,9 +325,8 @@ module.exports.run = async (client, message, args, Discord) => {
                         if (times == 1) {
                             
                             const numm = args[1] - 1;
-                            console.log(numm);
                             const music = playlist[numm].song;
-                            console.log(music);
+                        
                             client.distube.play(message, music).catch(error => {
 
                                 const embed = new Discord.MessageEmbed()

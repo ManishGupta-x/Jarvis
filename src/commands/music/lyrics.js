@@ -15,7 +15,14 @@ module.exports.run = async (client, message, args,Discord) => {
     if (args[0]) {
 
       const searchsong = args.join(" ");
-      var lyrics1 = await lyricsFinder("", searchsong)
+      try {
+        var lyrics1 = await lyricsFinder("", searchsong)
+
+      }catch(error){
+        console.log(error)
+        return;
+      }
+    
 
       if (!lyrics1) {
         lyrics1 = await solenolyrics.requestLyricsFor(searchsong)
@@ -47,7 +54,7 @@ module.exports.run = async (client, message, args,Discord) => {
               .setDescription(`Getting some issues try again `)
   
   
-              .setFooter(`Report Manish<3 if you get this error`, client.user.displayAvatarURL())
+              .setFooter(`Report Manu<3 if you get this error`, client.user.displayAvatarURL())
               .setTimestamp();
           message.channel.send({ embeds: [embed1] });
       });

@@ -7,11 +7,17 @@ module.exports.run = async (client, message, args, Discord) => {
     }
     if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
     let queue = await client.distube.getQueue(message);
-    try { 
-        
+    
+    let currentsong = queue.songs[0];
+    let currentsongtime = currentsong.duration;
+  
+    currentsongtime = 0.90*currentsongtime;
+    if (args[0] > currentsongtime) return message.reply('Seek Limit exceedes the song duration')
+    
+    
+    try {       
         client.distube.seek(message, Number(args[0])); 
     }catch(err){
-
 
         message.reply("Invalid position specified")
         return;

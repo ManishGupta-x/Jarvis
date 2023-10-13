@@ -9,6 +9,9 @@ const config = require("../../settings.json");
 
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 var d;
+var g;
+
+var gptuser;
 
 /*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
 //gettingprefix
@@ -24,6 +27,8 @@ module.exports = async (client, message) => {
 
 	const file = client.commands.get(`snipe`);
 	const searchfile = client.commands.get(`gsearch`);
+	const ipfile = client.commands.get(`ip`);
+	const gpt = client.commands.get(`gpt`);
 
 	/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
 
@@ -35,6 +40,15 @@ module.exports = async (client, message) => {
 
 	if (message.author.bot || message.channel.type === "dm") return;
 	if (message.author.bot) return;
+	/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
+	//gpt system
+
+	if (g == 1 && message.author.id == gptuser) {
+
+		gpt.run(client, message, args, Discord);
+
+	}
+
 
 	/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
 	if (message.mentions.members.first()) {
@@ -63,7 +77,7 @@ module.exports = async (client, message) => {
 		/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
 
 		if (!message.content.startsWith(prefix1)) {
-			switch (message.content) {
+			switch (message.content.toLowerCase()) {
 				/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
 
 				case "jarvis":
@@ -82,6 +96,23 @@ module.exports = async (client, message) => {
 
 				/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
 
+				case "activate chat mode":
+					
+					g = 1;
+					message.channel.send("Alright!");
+					gptuser = message.author.id;
+
+					break;
+				
+				case "deactivate chat mode":
+
+					g = 0;
+					message.channel.send("Nice talk!");
+					gptuser = null;
+
+					break;
+				/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
+
 				case "jarvis google kr":
 					searchfile.run(client, message, args, Discord);
 
@@ -90,7 +121,7 @@ module.exports = async (client, message) => {
 				/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
 
 				case "jarvis ip dena":
-					message.channel.send("connect omegaindiaworld.win ; password 0m3g@start");
+					ipfile.run(client, message, args, Discord);
 
 					break;
 				/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
@@ -99,7 +130,7 @@ module.exports = async (client, message) => {
 					client.distube
 						.play(
 							message,
-							`https://open.spotify.com/playlist/0Jz8ImcWSYiXkMPatXN75l?si=29eDcG5XRsSvDetb0OV-5w&utm_source=copy-link`
+							`https://open.spotify.com/playlist/0WJNp4U7stGpoAOlIZo29r?si=85bff0487fc74d6a`
 						)
 						.catch((error) => {
 							const embed = new Discord.EmbedBuilder()
@@ -166,19 +197,26 @@ module.exports = async (client, message) => {
 					break;
 			}
 		} else if (message.content.startsWith(prefix1)) {
-			const commandfile =
-				client.commands.get(cmd.slice(prefix1.length).toString().toLowerCase()) ||
-				client.commands.get(client.aliases.get(cmd.slice(prefix1.length).toString().toLowerCase())); //-play
 
-			if (commandfile) {
-				commandfile.run(client, message, args, Discord);
-			}
+			
+			// if (message.author.id == "550267183503114250") {
+				const commandfile =
+					client.commands.get(cmd.slice(prefix1.length).toString().toLowerCase()) ||
+					client.commands.get(client.aliases.get(cmd.slice(prefix1.length).toString().toLowerCase())); //-play
+
+				if (commandfile) {
+					commandfile.run(client, message, args, Discord);
+				}
+			// } else {
+			// 	message.channel.send("Boss is sprucing me up for peak performance—stay tuned for the upgraded version!")
+
+			// }
 		}
 	} else if (!data) {
 		const prefix2 = "o!";
 
 		if (!message.content.startsWith(prefix2)) {
-			switch (message.content) {
+			switch (message.content.toLowerCase()) {
 				/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
 
 				case "jarvis":
@@ -205,13 +243,34 @@ module.exports = async (client, message) => {
 					break;
 				/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
 				case "jarvis ip dena":
-					message.channel.send("connect omegaindiaworld.win ; password 0m3g@start");
-
+					ipfile.run(client, message, args, Discord);
 					break;
 				
 				case "jarvis playlist lgade":
-					
+					client.distube
+					.play(
+						message,
+						`https://open.spotify.com/playlist/0WJNp4U7stGpoAOlIZo29r?si=85bff0487fc74d6a`
+					)
+					.catch((error) => {
+						const embed = new Discord.EmbedBuilder()
+							.setColor("RANDOM")
+							.setTitle("Error Boss")
 
+							.setAuthor(
+								"Jarvis",
+								"https://cdn.discordapp.com/avatars/778267007439077396/66fa9525d6e9af153dac819fc04d3ee1.webp"
+							)
+							.setDescription("\n\n**ERROR**\n\n ```" + error + "```")
+
+							.setFooter(`Anti Crash System`)
+							.setTimestamp();
+						client.channels.cache.get(errChannel).send({ embeds: [embed] });
+						message.channel.send(
+							" Bot Is Down Currently, the problem has been reported ! \n Service will be back soon kindly Disconnect the bot ! "
+						);
+					});
+				   	
 					break;
 
 				/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
@@ -258,13 +317,20 @@ module.exports = async (client, message) => {
 					break;
 			}
 		} else if (message.content.startsWith(prefix2)) {
-			const commandfile =
-				client.commands.get(cmd.slice(prefix2.length).toString().toLowerCase()) ||
-				client.commands.get(client.aliases.get(cmd.slice(prefix2.length).toString().toLowerCase()));
 
-			if (commandfile) {
-				commandfile.run(client, message, args, Discord);
-			}
+			
+			// if (message.author.id == "550267183503114250") {
+				const commandfile =
+					client.commands.get(cmd.slice(prefix2.length).toString().toLowerCase()) ||
+					client.commands.get(client.aliases.get(cmd.slice(prefix2.length).toString().toLowerCase()));
+
+				if (commandfile) {
+					commandfile.run(client, message, args, Discord);
+				}
+			// } else {
+			// 	message.channel.send("Boss is sprucing me up for peak performance—stay tuned for the upgraded version!")
+
+			// }
 		}
 	}
 };

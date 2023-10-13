@@ -30,6 +30,7 @@
     "mysql": "^2.18.1",
     "node-cron": "^3.0.0",
     "node-fetch": "^2.6.1",
+    "openai": "^4.11.1",
     "opusscript": "^0.0.8",
     "random-puppy": "^1.1.0",
     "shelljs": "^0.8.5",

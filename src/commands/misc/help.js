@@ -44,10 +44,11 @@ module.exports.run = async (client, message, args, Discord) => {
 
     message.channel.send({ embeds: [embed], components: [row] });
     const filter = (interaction) => interaction.isSelectMenu() && interaction.user.id == message.author.id;
-    const collector = message.channel.createMessageComponentCollector({ filter, time: 100000, max: 2 });
-    collector.on('collect', async collected => {
+    try {
+        const collector = message.channel.createMessageComponentCollector({ filter, time: 100000, max: 2 });
+        collector.on('collect', async collected => {
 
-       const value = collected.values[0];
+            const value = collected.values[0];
             if (value === 'first') {
                 const commandfile = client.commands.get('music')
                 await commandfile.run(client, message, args, Discord)
@@ -56,8 +57,11 @@ module.exports.run = async (client, message, args, Discord) => {
                 await commandfile.run(client, message, args, Discord)
             }
         
-        collected.deferUpdate()
-    })
+            collected.deferUpdate()
+        })
+    } catch (err) {
+        console.log(err)
+    }
 
 }
 
