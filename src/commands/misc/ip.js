@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args, Discord) => {
     query == "cS2" ||
     query == "cS2"
   ) {
-    message.channel.send("connect cs2.omegaindiaworld.win ; password 0m3g@CS2");
+   //
   } else if (
     query == "csgo" ||
     query == "Csgo" ||
@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args, Discord) => {
     query == "CsGo" ||
     query == "CSGo"
   ) {
-    message.channel.send("connect omegaindiaworld.win ; password 0m3g@start");
+    //
     }
   try {
     const collected2 = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
