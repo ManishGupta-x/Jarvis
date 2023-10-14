@@ -37,12 +37,19 @@ module.exports.run = async (client, message, args,Discord) => {
         const filter = m => m.author.id == message.author.id;
         const collected = await message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ['time'] });
         const numSong = collected.first().content - 1;
-        if (numSong > 15 || numSong == NaN) {
+
+        try {
+            if (numSong > 15 || numSong == NaN) {
+                message.reply(`Invalid Song id`)
+                return;
+            } else {
+                await client.distube.play(message, result[numSong]);
+            }
+        } catch (e) {
             message.reply(`Invalid Song id`)
             return;
-        } else {
-            await client.distube.play(message, result[numSong]);
         }
+        
     }
 }
 

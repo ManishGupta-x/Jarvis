@@ -77,40 +77,44 @@ module.exports.run = async (client, message, args, Discord) => {
         const filter = (interaction) => interaction.isButton() && interaction.user.id === message.author.id && interaction.customId === 'skip' || interaction.customId === '8d' || interaction.customId === 'lightbass' || interaction.customId === 'nightcore';
 
         const collector = message.channel.createMessageComponentCollector({ filter, time: 10000 });
-        collector.on('collect', async collected => {
+        try {
+            collector.on('collect', async collected => {
 
-            const commandfile = client.commands.get(collected.customId)
+                const commandfile = client.commands.get(collected.customId)
 
 
 
-            if (collected.customId === 'skip') {
-                await collected.channel.send({ content: "Skipping" })
+                if (collected.customId === 'skip') {
+                    await collected.channel.send({ content: "Skipping" })
                 
-                await commandfile.run(client, message, args, Discord)
-            } else if (collected.customId === 'lightbass') {
+                    await commandfile.run(client, message, args, Discord)
+                } else if (collected.customId === 'lightbass') {
 
 
                 
-                await commandfile.run(client, message, args, Discord)
+                    await commandfile.run(client, message, args, Discord)
 
 
-            } else if (collected.customId === 'nightcore') {
+                } else if (collected.customId === 'nightcore') {
 
                
-                await commandfile.run(client, message, args, Discord)
+                    await commandfile.run(client, message, args, Discord)
 
 
-            } else if (collected.customId === '8d') {
+                } else if (collected.customId === '8d') {
 
                
-                await commandfile.run(client, message, args, Discord)
+                    await commandfile.run(client, message, args, Discord)
 
 
-            }
-            collected.deferUpdate()
+                }
+                collected.deferUpdate()
 
-        })
-
+            })
+        } catch (e) {
+            console.log(e)
+        }
+        
     }
 
 }
