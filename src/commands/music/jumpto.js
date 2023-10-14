@@ -70,6 +70,7 @@ module.exports.run = async (client, message, args, Discord) => {
             message.channel.send({ embeds: [embed9] });
             return;
           });
+          return;
         } else {
           message.channel.send(
             `We needed ${number_of_members_needed} votes to jump to the song ! sadly not enough ☹️`
