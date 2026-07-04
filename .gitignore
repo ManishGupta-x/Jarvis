@@ -1,1 +1,7 @@
 node_modules
+daemon/*.log
+*-player-script.js
+
+# Secrets - never commit
+.env
+settings.json

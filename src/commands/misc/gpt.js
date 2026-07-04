@@ -1,7 +1,7 @@
 
 const Discord = require("discord.js")
 const { OpenAI } = require('openai');
-const config = require('../../../settings.json');
+const config = require('../../../config');
 const errChannel = "918106499203616788";
 module.exports.run = async (client, message, args,Discord) => {
     

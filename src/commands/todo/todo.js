@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 const mongoose = require("mongoose");
-const config = require('../../../settings.json')
+const config = require('../../../config')
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 const list = require('../../models/todolist');
 module.exports.run = async (client, message, args, Discord) => {

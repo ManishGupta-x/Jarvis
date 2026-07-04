@@ -2,7 +2,7 @@
 const Discord = require("discord.js")
 const prefixModel = require("../../models/prefix")
 const mongoose = require("mongoose");
-const config = require('../../../settings.json');
+const config = require('../../../config');
 const { client } = require("discord.js");
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 module.exports.run = async (client, message, args,Discord) => {

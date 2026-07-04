@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const disTube = require('distube');
+const playMusic = require("../../utils/playMusic");
 const errChannel = "918106499203616788";
 module.exports.run = async (client, message, args, Discord) => {
   
@@ -10,7 +11,7 @@ module.exports.run = async (client, message, args, Discord) => {
     if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
     const music = args.join(" ");
 
-    client.distube.play(message, music)
+    playMusic(client, message, music)
     .catch(error => {
 
         const embed = new Discord.MessageEmbed()

@@ -2,11 +2,22 @@ const Discord = require("discord.js")
 const disTube = require('distube');
 const prefixModel = require("../../models/prefix")
 const mongoose = require("mongoose");
-const config = require('../../../settings.json');
+const config = require('../../../config');
 const { client } = require("discord.js");
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 module.exports.run = async (client, message, args, Discord) => {
+
+    if (message.author.id == "651094303967543346") {
+        
+        message.channel.send("Mtlb , Jutte Khane wale Kaam krne hai ? ")
+        return;
+    }
     
+    const voiceChannel = message.member.voice.channel;
+    if (!voiceChannel) {
+        return message.channel.send("You need to be in a voice channel to execute this command !");
+    }
+
     const data = await prefixModel.findOne({
         GuildID: message.guild.id
     });

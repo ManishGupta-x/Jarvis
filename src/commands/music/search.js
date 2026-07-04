@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const disTube = require('distube');
+const playMusic = require("../../utils/playMusic");
 module.exports.run = async (client, message, args,Discord) => {
     if (!message.member.voice.channel) return message.channel.send({ content: 'You must be in a voice channel to use this command.' });
 
@@ -43,7 +44,7 @@ module.exports.run = async (client, message, args,Discord) => {
                 message.reply(`Invalid Song id`)
                 return;
             } else {
-                await client.distube.play(message, result[numSong]);
+                await playMusic(client, message, result[numSong]);
             }
         } catch (e) {
             message.reply(`Invalid Song id`)

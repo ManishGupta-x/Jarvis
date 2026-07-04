@@ -14,7 +14,7 @@ module.exports.config = {
 // const { ButtonInteraction } = require("discord.js");
 // const fs = require("fs");
 // const mongoose = require('mongoose');
-// const config = require('../../../settings.json')
+// const config = require('../../../config')
 // mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 // var x = 0;
 

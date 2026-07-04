@@ -4,7 +4,7 @@ const { Client, Collection } = require("discord.js");
 const client = require('../index');
 const EventHandler = require("./utils/loadEvents");
 const Discord = require("discord.js");
-const cookie = require(`../settings.json`);
+const config = require(`../config`);
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
@@ -19,6 +19,9 @@ module.exports = class ClientManager extends Client {
 	setup() {
 		const { DisTube } = require("distube");
 		const { SpotifyPlugin } = require("@distube/spotify");
+		const { YtDlpPlugin } = require("@distube/yt-dlp");
+		const { DisTubeStream } = require("distube");
+		const ytDlpPlugin = new YtDlpPlugin({ update: true });
 		this.distube = new DisTube(this, {
 			emitNewSongOnly: true,
 			plugins: [
@@ -26,6 +29,7 @@ module.exports = class ClientManager extends Client {
 					parallel: true,
 					emitEventsAfterFetching: false,
 				}),
+				ytDlpPlugin,
 			],
 			customFilters: {
 				"8d": "apulsator=hz=0.08",
@@ -40,13 +44,87 @@ module.exports = class ClientManager extends Client {
 			emptyCooldown: 15,
 			leaveOnEmpty: true,
 			leaveOnStop: false,
-			youtubeCookie: `${cookie}`,
+			youtubeDL: false,
 		});
 		this.events = new EventHandler(this);
 		this.events.init();
+
+		const playSong = this.distube.queues.playSong.bind(this.distube.queues);
+		this.distube.queues.playSong = async (queue) => {
+			if (!queue || !queue.songs.length || queue.stopped) {
+				return playSong(queue);
+			}
+
+			const song = queue.songs[0];
+			if (song.source !== "youtube") {
+				return playSong(queue);
+			}
+
+			try {
+				const filterArgs = [];
+				queue.filters.forEach((filter) => filterArgs.push(this.distube.filters[filter]));
+				const ffmpegArgs = queue.filters.length ? ["-af", filterArgs.join(",")] : undefined;
+				const streamURL = await ytDlpPlugin.getStreamURL(song.url);
+				const stream = DisTubeStream.DirectLink(streamURL, {
+					ffmpegArgs,
+					seek: song.duration ? queue.beginTime : undefined,
+					isLive: song.isLive,
+				});
+
+				queue.voice.play(stream);
+				song.streamURL = stream.url;
+				if (queue.stopped) queue.stop();
+				else if (queue.paused) queue.voice.pause();
+				return false;
+			} catch (error) {
+				this.distube.emitError(error, queue.textChannel);
+				queue.stop();
+				return true;
+			}
+		};
+
+		const attachVoiceDebug = (voice) => {
+			if (!voice || voice.debugAttached || !voice.connection) return voice;
+			voice.debugAttached = true;
+			voice.connection
+				.on("stateChange", (oldState, newState) => {
+					console.log(`[Voice] ${voice.id}: ${oldState.status} -> ${newState.status}`);
+				})
+				.on("debug", (message) => {
+					console.log(`[Voice debug] ${voice.id}: ${message}`);
+				})
+				.on("error", (error) => {
+					console.warn(`[Voice error] ${voice.id}:`, error);
+				});
+			return voice;
+		};
+
+		const createVoice = this.distube.voices.create.bind(this.distube.voices);
+		this.distube.voices.create = (channel) => attachVoiceDebug(createVoice(channel));
+		const joinVoice = this.distube.voices.join.bind(this.distube.voices);
+		this.distube.voices.join = async (channel) => {
+			const voice = attachVoiceDebug(await joinVoice(channel));
+			voice.setSelfDeaf(false);
+			return voice;
+		};
 		
 		this.distube
+			.on("initQueue", (queue) => {
+				queue.volume = 100;
+				const voice = this.distube.voices.get(queue.id);
+				if (voice && voice.audioPlayer && !voice.audioDebugAttached) {
+					voice.audioDebugAttached = true;
+					voice.audioPlayer
+						.on("stateChange", (oldState, newState) => {
+							console.log(`[Audio] ${queue.id}: ${oldState.status} -> ${newState.status}`);
+						})
+						.on("error", (error) => {
+							console.warn(`[Audio error] ${queue.id}:`, error);
+						});
+				}
+			})
 			.on("playSong", async (queue, song) => {
+				console.log(`[DisTube] Playing: ${song.name} (${song.formattedDuration})`);
 				var wallpapers = [
 					"https://cdn.discordapp.com/attachments/610950416498425886/848609872521461800/thumb-1920-554935.png",
 					"https://cdn.discordapp.com/attachments/730714810614022228/882284561726308372/433536-Klayton-women-science_fiction-planet-Scandroid.png",
@@ -83,6 +161,7 @@ module.exports = class ClientManager extends Client {
 				queue.textChannel.send({ embeds: [playsong] });
 			})
 			.on("addSong", (queue, song) => {
+				console.log(`[DisTube] Added: ${song.name} (${song.formattedDuration})`);
 				const addsong = new Discord.MessageEmbed()
 					.setColor("#F0074F")
 					.setThumbnail(`${song.thumbnail}`)
@@ -111,6 +190,7 @@ module.exports = class ClientManager extends Client {
 			.on("searchCancel", (message) => message.channel.send(`Searching canceled`))
 			.on("searchInvalidAnswer", (message) => message.channel.send(`You answered an invalid `))
 			.on("error" , (channel,error) => {
+				console.error("[DisTube error]", error);
 			
 				const errChannel = "918106499203616788";
 			const embed = new Discord.MessageEmbed()
@@ -120,6 +200,18 @@ module.exports = class ClientManager extends Client {
 				"Jarvis",
 				"https://cdn.discordapp.com/avatars/778267007439077396/b3f9ab1c6342de220b333fcbdff93ec5.png?size=256"
 			)
+			.on("finishSong", (queue, song) => {
+				console.log(`[DisTube] Finished song: ${song.name}`);
+			})
+			.on("finish", (queue) => {
+				console.log(`[DisTube] Finished queue: ${queue.id}`);
+			})
+			.on("deleteQueue", (queue) => {
+				console.log(`[DisTube] Deleted queue: ${queue.id}`);
+			})
+			.on("disconnect", (queue) => {
+				console.log(`[DisTube] Disconnected: ${queue.id}`);
+			})
 			.setDescription("\n\n**ERROR**\n\n ```" + error  + "```")
 
 			.setFooter(`Anti Crash System`)
@@ -134,6 +226,6 @@ module.exports = class ClientManager extends Client {
 			)
 			.on("noRelated", (queue) => queue.textChannel.send("Can't find related video to play."));
 		require("./utils/loadCommands")(this); 
-		this.login(process.env.token);
+		this.login(config.token);
 	}
 };

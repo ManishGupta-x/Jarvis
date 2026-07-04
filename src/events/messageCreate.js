@@ -5,7 +5,8 @@ const { EmbedBuilder } = require("discord.js");
 const mongoose = require("mongoose");
 const prefix = require("../models/prefix");
 const prefixModel = require("../models/prefix");
-const config = require("../../settings.json");
+const playMusic = require("../utils/playMusic");
+const config = require("../../config");
 
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 var d;
@@ -127,13 +128,13 @@ module.exports = async (client, message) => {
 				/*╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣*/
 
 				case "jarvis playlist lgade":
-					client.distube
-						.play(
-							message,
-							`https://open.spotify.com/playlist/0WJNp4U7stGpoAOlIZo29r?si=85bff0487fc74d6a`
-						)
+					playMusic(
+						client,
+						message,
+						`https://open.spotify.com/playlist/0WJNp4U7stGpoAOlIZo29r?si=85bff0487fc74d6a`
+					)
 						.catch((error) => {
-							const embed = new Discord.EmbedBuilder()
+							const embed = new Discord.MessageEmbed()
 								.setColor("RANDOM")
 								.setTitle("Error Boss")
 
@@ -247,8 +248,8 @@ module.exports = async (client, message) => {
 					break;
 				
 				case "jarvis playlist lgade":
-					client.distube
-					.play(
+					playMusic(
+						client,
 						message,
 						`https://open.spotify.com/playlist/0WJNp4U7stGpoAOlIZo29r?si=85bff0487fc74d6a`
 					)

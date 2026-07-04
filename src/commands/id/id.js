@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const mongoose = require('mongoose');
-const config = require('../../../settings.json')
+const config = require('../../../config')
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 const Discord = require('discord.js');
 

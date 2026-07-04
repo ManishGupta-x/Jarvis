@@ -1,0 +1,31 @@
+<service>
+	<id>jafri.exe</id>
+	<name>Jafri</name>
+	<description>Node.js service description goes here.</description>
+	<executable>C:\Program Files\nodejs\node.exe</executable>
+	<argument>--harmony</argument>
+	<argument>C:\Users\Manish Gupta\OneDrive\Documents\Jarvis-master\Jarvis-master\node_modules\node-windows\lib\wrapper.js</argument>
+	<argument>--file</argument>
+	<argument>C:\Users\Manish Gupta\OneDrive\Documents\Jarvis-master\Jarvis-master\index.js</argument>
+	<argument>--scriptoptions=</argument>
+	<argument>--log</argument>
+	<argument>Jafri wrapper</argument>
+	<argument>--grow</argument>
+	<argument>0.25</argument>
+	<argument>--wait</argument>
+	<argument>1</argument>
+	<argument>--maxrestarts</argument>
+	<argument>3</argument>
+	<argument>--abortonerror</argument>
+	<argument>n</argument>
+	<argument>--stopparentfirst</argument>
+	<argument>undefined</argument>
+	<logmode>rotate</logmode>
+	<stoptimeout>30sec</stoptimeout>
+	<serviceaccount>
+		<domain>JAFRI-1322</domain>
+		<user>LocalSystem</user>
+		<password></password>
+	</serviceaccount>
+	<workingdirectory>C:\Users\Manish Gupta\OneDrive\Documents\Jarvis-master\Jarvis-master</workingdirectory>
+</service>

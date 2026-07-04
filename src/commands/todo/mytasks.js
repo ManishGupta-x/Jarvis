@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const { MessageActionRow, MessageButton } = require('discord.js');
 const mongoose = require("mongoose");
-const config = require("../../../settings.json");
+const config = require("../../../config");
 mongoose.connect(config.mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
 const list = require("../../models/todolist");
 module.exports.run = async (client, message, args, Discord) => {
@@ -10,8 +10,6 @@ module.exports.run = async (client, message, args, Discord) => {
 	});
 
 	if (data) {
-
-
 		const embed1 = new Discord.MessageEmbed()
 			.setColor("RANDOM")
 			.setTitle("__Your Todo List__")
@@ -64,21 +62,19 @@ module.exports.run = async (client, message, args, Discord) => {
 			interaction.customId === "Channel";
 
 		const collector = message.channel.createMessageComponentCollector({ filter1, time: 10000 });
-		
 
-     collector.on('collect',async collected =>{
 
-          if(collected.customId =='Dm'){
+		collector.on('collect', async collected => {
 
-            message.author.send({embeds : [embed1]});
+			if (collected.customId == 'Dm') {
+				message.author.send({ embeds: [embed1] });
+				message.channel.send({ content: 'Your Tasks have been uploaded to your dm !' })
+			} else if (collected.customId == 'Channel') {
 
-            message.channel.send({content : 'Your Tasks have been uploaded to your dm !'})
-          }else if(collected.customId == 'Channel'){
+				message.channel.send({ embeds: [embed1] });
+			}
 
-             message.channel.send({embeds : [embed1] });
-          }
-
-     })
+		})
 
 
 
